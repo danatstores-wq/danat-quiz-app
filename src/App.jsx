@@ -151,7 +151,7 @@ export default function App() {
 
                 <div className="relative z-10 flex justify-center my-2">
                   <img 
-                    src={`${import.meta.env.BASE_URL}logo.PNG`} 
+                    src={`${import.meta.env.BASE_URL}logo.png`} 
                     alt="Danat Coin Logo" 
                     className="w-32 h-32 object-contain drop-shadow-[0_5px_15px_rgba(234,179,8,0.6)]"
                   />
@@ -316,7 +316,7 @@ export default function App() {
           {activeTab === 'rewards' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2 flex flex-col items-center">
-                <img src={`${import.meta.env.BASE_URL}logo.PNG`} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
+                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">مكافآتي</h2>
               </div>
 
@@ -337,7 +337,7 @@ export default function App() {
 
               <div className="w-full bg-[#12285c]/90 rounded-2xl p-5 border border-yellow-500/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
-                  <img src={`${import.meta.env.BASE_URL}logo.PNG`} alt="Logo" className="w-10 h-10 object-contain" />
+                  <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-10 h-10 object-contain" />
                   <div>
                     <div className="text-xs text-slate-300">رصيد DNC</div>
                     <div className="text-2xl font-black text-yellow-400">{user.dncBalance.toLocaleString()}</div>
