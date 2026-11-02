@@ -18,13 +18,11 @@ import {
   Settings
 } from 'lucide-react';
 
-// Import your uploaded logo using the exact filename and path
-import DanatLogoImg from './logo.PNG';
-
+// Direct public asset reference for your uploaded logo
 const DanatCoinLogo = ({ className = "w-24 h-24" }) => (
   <div className={`relative flex items-center justify-center rounded-full shadow-[0_0_35px_rgba(234,179,8,0.5)] ${className}`}>
     <img 
-      src={DanatLogoImg} 
+      src="/logo.PNG" 
       alt="Danat Coin Logo" 
       className="w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]"
     />
