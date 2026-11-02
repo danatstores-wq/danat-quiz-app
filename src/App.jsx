@@ -18,18 +18,16 @@ import {
   Settings
 } from 'lucide-react';
 
-// Exact Detailed Danat Coin Gold Logo Component with Ring & Stars
-const DanatCoinLogo = ({ className = "w-16 h-16" }) => (
-  <div className={`relative flex items-center justify-center rounded-full bg-gradient-to-tr from-amber-700 via-yellow-400 to-amber-200 p-1.5 shadow-xl shadow-yellow-500/40 ${className}`}>
-    <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center border-2 border-yellow-300 relative overflow-hidden shadow-inner">
-      {/* Outer ring text simulation / stars effect */}
-      <div className="absolute inset-0 rounded-full border border-yellow-500/40 flex items-center justify-center">
-        <span className="text-[7px] font-bold text-yellow-400 tracking-widest absolute top-1">★ DANAT COIN ★</span>
-        <span className="text-[7px] font-bold text-yellow-400 tracking-widest absolute bottom-1">★ DIGITAL CURRENCY ★</span>
-      </div>
-      {/* Center Big Letter D */}
-      <span className="font-black text-yellow-400 text-2xl tracking-tighter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">D</span>
-    </div>
+// Import your uploaded logo using the exact filename and path
+import DanatLogoImg from './logo.PNG';
+
+const DanatCoinLogo = ({ className = "w-24 h-24" }) => (
+  <div className={`relative flex items-center justify-center rounded-full shadow-[0_0_35px_rgba(234,179,8,0.5)] ${className}`}>
+    <img 
+      src={DanatLogoImg} 
+      alt="Danat Coin Logo" 
+      className="w-full h-full object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]"
+    />
   </div>
 );
 
@@ -126,21 +124,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
-      {/* Mobile Shell Wrapper */}
-      <div className="w-full max-w-md bg-[#0b0f19] border-0 md:border-4 md:border-slate-800 rounded-none md:rounded-[40px] shadow-2xl overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
+      {/* Mobile Shell Wrapper with Rich Royal Blue Design */}
+      <div className="w-full max-w-md bg-gradient-to-b from-[#0f2253] via-[#091538] to-[#040817] border-0 md:border-4 md:border-slate-800 rounded-none md:rounded-[40px] shadow-2xl overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
         
         {/* TOP STATUS BAR */}
-        <div className="bg-[#07090e] px-6 py-2.5 flex justify-between items-center text-xs text-slate-400 border-b border-slate-800/80 z-10">
+        <div className="bg-[#060c24]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-300 border-b border-blue-500/20 z-10">
           <span className="font-bold text-white">9:41</span>
           <div className="flex items-center gap-2">
             <button 
               onClick={() => setActiveTab('admin')} 
-              className="text-[10px] bg-yellow-500/20 text-yellow-400 px-2.5 py-1 rounded-lg border border-yellow-500/30 font-bold flex items-center gap-1"
+              className="text-[10px] bg-yellow-500/20 text-yellow-400 px-2.5 py-1 rounded-lg border border-yellow-500/30 font-bold flex items-center gap-1 shadow"
             >
               <ShieldCheck className="w-3.5 h-3.5" /> لوحة الإدارة
             </button>
-            <span className="text-slate-600">|</span>
-            <span className="flex items-center gap-1">🌐 العربية</span>
+            <span className="text-blue-400/50">|</span>
+            <span className="flex items-center gap-1 text-slate-300">🌐 العربية</span>
             <span>📶 🔋</span>
           </div>
         </div>
@@ -151,33 +149,35 @@ export default function App() {
           {/* SCREEN 1: HOME */}
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-5">
-              {/* Top Coin Header Banner matching image */}
-              <div className="relative w-full bg-gradient-to-b from-amber-950/40 via-slate-900/60 to-slate-900 rounded-3xl p-5 border border-yellow-500/30 text-center shadow-xl overflow-hidden">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl"></div>
+              <div className="relative w-full bg-gradient-to-b from-blue-900/50 via-slate-900/80 to-[#0c1633] rounded-3xl p-5 border border-yellow-500/40 text-center shadow-2xl overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-yellow-500/15 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
                 
-                <div className="flex justify-between items-center mb-2">
-                  <button className="p-2 bg-slate-800/80 rounded-full text-yellow-400 border border-slate-700">
+                <div className="flex justify-between items-center mb-1 relative z-10">
+                  <button className="p-2 bg-blue-950/80 rounded-full text-yellow-400 border border-blue-500/30 shadow">
                     <Settings className="w-4 h-4" />
                   </button>
-                  <div className="flex gap-1.5 opacity-80">
-                    <div className="w-6 h-6 rounded-full bg-yellow-500/20 border border-yellow-400 flex items-center justify-center text-[10px]">🪙</div>
-                    <div className="w-6 h-6 rounded-full bg-yellow-500/30 border border-yellow-400 flex items-center justify-center text-[10px]">🪙</div>
+                  <div className="flex gap-2">
+                    <span className="w-7 h-7 rounded-full bg-yellow-500/20 border border-yellow-400/60 flex items-center justify-center text-xs shadow">🪙</span>
+                    <span className="w-7 h-7 rounded-full bg-yellow-500/30 border border-yellow-400/80 flex items-center justify-center text-xs shadow">🪙</span>
                   </div>
                 </div>
 
-                <DanatCoinLogo className="w-28 h-28 mx-auto mb-3" />
+                <div className="relative z-10 flex justify-center my-2">
+                  <DanatCoinLogo className="w-32 h-32" />
+                </div>
                 
-                <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow">
+                <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-lg relative z-10">
                   دانات كويز
                 </h1>
-                <p className="text-xs text-yellow-100/70 mt-1 font-medium">اختبر معلوماتك .. واربح المكافآت</p>
+                <p className="text-xs text-yellow-100/80 mt-1 font-medium relative z-10">اختبر معلوماتك .. واربح المكافآت</p>
               </div>
 
               {/* User Info Bar */}
-              <div className="w-full bg-[#131b2e] rounded-2xl p-4 border border-yellow-500/30 flex justify-between items-center shadow-lg">
+              <div className="w-full bg-[#122246]/90 rounded-2xl p-4 border border-blue-500/30 flex justify-between items-center shadow-lg backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-full bg-amber-500/20 border-2 border-yellow-400 flex items-center justify-center text-xl overflow-hidden">
+                    <div className="w-12 h-12 rounded-full bg-amber-500/20 border-2 border-yellow-400 flex items-center justify-center text-xl shadow">
                       👦🏻
                     </div>
                     <span className="absolute -bottom-1 -right-1 bg-yellow-500 text-slate-950 text-[10px] font-black px-1.5 py-0.2 rounded-full shadow">
@@ -190,7 +190,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="text-left bg-slate-950/90 px-3.5 py-2 rounded-xl border border-slate-800">
+                <div className="text-left bg-slate-950/90 px-3.5 py-2 rounded-xl border border-blue-500/30 shadow-inner">
                   <div className="text-[10px] text-slate-400">رصيد DNC</div>
                   <div className="text-sm font-black text-yellow-400 flex items-center gap-1">
                     {user.dncBalance.toLocaleString()} <span className="text-xs">D</span>
@@ -207,11 +207,11 @@ export default function App() {
                 ابدأ اللعب
               </button>
 
-              {/* 4 Feature Cards (Matching Design) */}
+              {/* 4 Feature Cards */}
               <div className="w-full grid grid-cols-2 gap-3">
                 <button 
                   onClick={() => setActiveTab('leaderboard')}
-                  className="bg-[#131b2e] hover:bg-[#1a243d] p-4 rounded-2xl border border-slate-800 flex flex-col items-center gap-2 transition group"
+                  className="bg-[#122246]/80 hover:bg-[#192f5f] p-4 rounded-2xl border border-blue-500/30 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
                   <Trophy className="w-8 h-8 text-yellow-400 group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-200">لوحة المتصدرين</span>
@@ -219,7 +219,7 @@ export default function App() {
 
                 <button 
                   onClick={() => setActiveTab('rewards')}
-                  className="bg-[#131b2e] hover:bg-[#1a243d] p-4 rounded-2xl border border-slate-800 flex flex-col items-center gap-2 transition group"
+                  className="bg-[#122246]/80 hover:bg-[#192f5f] p-4 rounded-2xl border border-blue-500/30 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
                   <Gift className="w-8 h-8 text-purple-400 group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-200">المكافآت</span>
@@ -227,7 +227,7 @@ export default function App() {
 
                 <button 
                   onClick={() => setActiveTab('profile')}
-                  className="bg-[#131b2e] hover:bg-[#1a243d] p-4 rounded-2xl border border-slate-800 flex flex-col items-center gap-2 transition group"
+                  className="bg-[#122246]/80 hover:bg-[#192f5f] p-4 rounded-2xl border border-blue-500/30 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
                   <BarChart3 className="w-8 h-8 text-blue-400 group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-200">إحصائيات</span>
@@ -235,7 +235,7 @@ export default function App() {
 
                 <button 
                   onClick={() => setActiveTab('profile')}
-                  className="bg-[#131b2e] hover:bg-[#1a243d] p-4 rounded-2xl border border-slate-800 flex flex-col items-center gap-2 transition group"
+                  className="bg-[#122246]/80 hover:bg-[#192f5f] p-4 rounded-2xl border border-blue-500/30 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
                   <User className="w-8 h-8 text-emerald-400 group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-200">ملفي الشخصي</span>
@@ -248,24 +248,24 @@ export default function App() {
           {activeTab === 'quiz' && (
             <div className="flex flex-col gap-4">
               <div className="w-full flex items-center justify-between gap-3">
-                <button onClick={() => setActiveTab('home')} className="p-2.5 bg-slate-800 rounded-xl text-slate-300 font-bold text-xs">
+                <button onClick={() => setActiveTab('home')} className="p-2.5 bg-[#122246] rounded-xl text-slate-300 font-bold text-xs border border-blue-500/30">
                   ⏸
                 </button>
-                <div className="flex-1 bg-slate-800 h-3 rounded-full overflow-hidden p-0.5 border border-slate-700">
+                <div className="flex-1 bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-blue-500/30">
                   <div className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full w-[53%]"></div>
                 </div>
-                <div className="flex items-center gap-1 bg-slate-800 px-3 py-1.5 rounded-xl text-yellow-400 text-xs font-bold border border-slate-700">
+                <div className="flex items-center gap-1 bg-[#122246] px-3 py-1.5 rounded-xl text-yellow-400 text-xs font-bold border border-blue-500/30">
                   <Clock className="w-3.5 h-3.5" /> 25
                 </div>
               </div>
 
               <div className="flex justify-center">
-                <div className="bg-blue-600/30 border border-blue-500/50 text-blue-300 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5">
+                <div className="bg-blue-600/30 border border-blue-500/50 text-blue-300 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
                   <Globe className="w-4 h-4" /> الجغرافيا
                 </div>
               </div>
 
-              <div className="w-full bg-[#131b2e] rounded-2xl p-6 border border-slate-800 text-center shadow-xl my-2">
+              <div className="w-full bg-[#122246]/90 rounded-2xl p-6 border border-blue-500/30 text-center shadow-xl my-2">
                 <h3 className="text-lg font-bold text-white leading-relaxed">
                   ما هي عاصمة فرنسا؟
                 </h3>
@@ -283,10 +283,10 @@ export default function App() {
                     <button
                       key={opt.id}
                       onClick={() => setSelectedOption(opt.id)}
-                      className={`w-full py-3.5 px-5 rounded-2xl font-bold text-sm flex items-center justify-between transition border ${
+                      className={`w-full py-3.5 px-5 rounded-2xl font-bold text-sm flex items-center justify-between transition border shadow ${
                         isSelected
-                          ? 'bg-emerald-600/30 border-emerald-500 text-emerald-300 shadow-lg shadow-emerald-900/20'
-                          : 'bg-[#131b2e] border-slate-800 text-slate-200 hover:bg-slate-800'
+                          ? 'bg-emerald-600/30 border-emerald-500 text-emerald-300 shadow-emerald-900/30'
+                          : 'bg-[#122246]/80 border-blue-500/30 text-slate-200 hover:bg-[#192f5f]'
                       }`}
                     >
                       <span>{opt.text}</span>
@@ -300,8 +300,8 @@ export default function App() {
                 <button 
                   onClick={() => setLifelineExtraUsed(true)}
                   disabled={lifelineExtraUsed}
-                  className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition ${
-                    lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#131b2e] border-slate-800 text-yellow-400'
+                  className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition shadow ${
+                    lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#122246]/80 border-blue-500/30 text-yellow-400'
                   }`}
                 >
                   <Sparkles className="w-5 h-5" />
@@ -311,8 +311,8 @@ export default function App() {
                 <button 
                   onClick={() => setLifeline50Used(true)}
                   disabled={lifeline50Used}
-                  className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition ${
-                    lifeline50Used ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#131b2e] border-slate-800 text-blue-400'
+                  className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition shadow ${
+                    lifeline50Used ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#122246]/80 border-blue-500/30 text-blue-400'
                   }`}
                 >
                   <HelpCircle className="w-5 h-5" />
@@ -326,11 +326,11 @@ export default function App() {
           {activeTab === 'rewards' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2 flex flex-col items-center">
-                <DanatCoinLogo className="w-20 h-20 mx-auto mb-2" />
-                <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/10 px-6 py-1 rounded-full border border-amber-500/30">مكافآتي</h2>
+                <DanatCoinLogo className="w-24 h-24 mx-auto mb-2" />
+                <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/10 px-6 py-1.5 rounded-full border border-amber-500/30 shadow">مكافآتي</h2>
               </div>
 
-              <div className="w-full bg-[#131b2e] rounded-2xl p-5 border border-slate-800 flex justify-between items-center shadow-lg">
+              <div className="w-full bg-[#122246]/90 rounded-2xl p-5 border border-blue-500/30 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-2xl">
                     🔥
@@ -345,9 +345,9 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="w-full bg-[#131b2e] rounded-2xl p-5 border border-yellow-500/30 flex justify-between items-center shadow-lg">
+              <div className="w-full bg-[#122246]/90 rounded-2xl p-5 border border-yellow-500/30 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
-                  <DanatCoinLogo className="w-10 h-10" />
+                  <DanatCoinLogo className="w-12 h-12" />
                   <div>
                     <div className="text-xs text-slate-400">رصيد DNC</div>
                     <div className="text-2xl font-black text-yellow-400">{user.dncBalance.toLocaleString()}</div>
@@ -361,12 +361,12 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="w-full bg-slate-900/90 rounded-xl p-3.5 border border-slate-800 text-center text-xs text-slate-400">
-                <span className="font-bold text-slate-300">معادلة التحويل:</span> طلب استبدال 1,000 روح = DNC
+              <div className="w-full bg-slate-950/80 rounded-xl p-3.5 border border-blue-500/20 text-center text-xs text-slate-300 shadow">
+                <span className="font-bold text-yellow-400">معادلة التحويل:</span> طلب استبدال 1,000 روح = DNC
               </div>
 
               {/* GOOGLE REWARDED AD */}
-              <div className="w-full bg-gradient-to-br from-purple-900/40 to-[#131b2e] rounded-2xl p-4 border border-purple-500/30 flex items-center justify-between gap-3 shadow-lg">
+              <div className="w-full bg-gradient-to-br from-purple-900/40 to-[#122246] rounded-2xl p-4 border border-purple-500/30 flex items-center justify-between gap-3 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300">
                     <Tv className="w-5 h-5" />
@@ -396,7 +396,7 @@ export default function App() {
                 <h2 className="text-2xl font-black text-yellow-400">لوحة المتصدرين</h2>
               </div>
 
-              <div className="w-full bg-[#131b2e] p-1 rounded-xl flex gap-1 border border-slate-800 text-xs font-bold">
+              <div className="w-full bg-[#122246] p-1 rounded-xl flex gap-1 border border-blue-500/30 text-xs font-bold shadow">
                 <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
                   أفضل اللاعبين
                 </button>
@@ -405,7 +405,7 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="w-full bg-slate-900 px-4 py-2.5 rounded-lg flex text-[11px] text-slate-400 font-bold border border-slate-800">
+              <div className="w-full bg-slate-950 px-4 py-2.5 rounded-lg flex text-[11px] text-slate-400 font-bold border border-blue-500/20 shadow">
                 <span className="w-12">المركز</span>
                 <span className="flex-1 text-right">اللاعب</span>
                 <span className="w-20 text-left">النقاط</span>
@@ -419,8 +419,8 @@ export default function App() {
                   { rank: 4, name: 'ليلى منصور', points: '350,400' },
                   { rank: 5, name: 'عمر يوسف', points: '320,100' }
                 ].map(player => (
-                  <div key={player.rank} className="w-full bg-[#131b2e] p-3.5 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
-                    <div className="w-8 h-8 rounded-full bg-slate-950 border border-yellow-500/40 flex items-center justify-center font-bold text-yellow-400">
+                  <div key={player.rank} className="w-full bg-[#122246]/80 p-3.5 rounded-xl border border-blue-500/30 flex items-center justify-between text-xs shadow">
+                    <div className="w-8 h-8 rounded-full bg-slate-950 border border-yellow-500/40 flex items-center justify-center font-bold text-yellow-400 shadow">
                       {player.rank}
                     </div>
                     <div className="flex-1 px-3 font-bold text-slate-200">{player.name}</div>
@@ -452,17 +452,17 @@ export default function App() {
               </div>
 
               <div className="w-full grid grid-cols-3 gap-2">
-                <div className="bg-[#131b2e] p-3 rounded-2xl border border-slate-800 text-center">
+                <div className="bg-[#122246] p-3 rounded-2xl border border-blue-500/30 text-center shadow">
                   <div className="text-[10px] text-slate-400 mb-1">عدد الألعاب</div>
                   <div className="text-base font-black text-white">{user.totalGames}</div>
                 </div>
 
-                <div className="bg-[#131b2e] p-3 rounded-2xl border border-slate-800 text-center">
+                <div className="bg-[#122246] p-3 rounded-2xl border border-blue-500/30 text-center shadow">
                   <div className="text-[10px] text-slate-400 mb-1">أرواح مكتسبة</div>
                   <div className="text-base font-black text-blue-400">{user.totalEarnedSpirits.toLocaleString()}</div>
                 </div>
 
-                <div className="bg-[#131b2e] p-3 rounded-2xl border border-slate-800 text-center">
+                <div className="bg-[#122246] p-3 rounded-2xl border border-blue-500/30 text-center shadow">
                   <div className="text-[10px] text-slate-400 mb-1">DNC</div>
                   <div className="text-base font-black text-yellow-400">{user.dncBalance}</div>
                 </div>
@@ -471,10 +471,10 @@ export default function App() {
               <div className="w-full space-y-3 mt-2">
                 <button 
                   onClick={() => setShowWalletModal(true)}
-                  className={`w-full py-4 px-4 rounded-2xl border font-bold text-sm flex items-center justify-between transition ${
+                  className={`w-full py-4 px-4 rounded-2xl border font-bold text-sm flex items-center justify-between transition shadow ${
                     user.walletConnected 
                       ? 'bg-emerald-950/40 border-emerald-500/60 text-emerald-300' 
-                      : 'bg-[#131b2e] border-slate-800 text-purple-200 hover:bg-slate-800'
+                      : 'bg-[#122246] border-blue-500/30 text-purple-200 hover:bg-[#192f5f]'
                   }`}
                 >
                   <div className="flex items-center gap-2">
@@ -486,7 +486,7 @@ export default function App() {
                   </span>
                 </button>
 
-                <button className="w-full py-4 px-4 bg-[#131b2e] border border-slate-800 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between">
+                <button className="w-full py-4 px-4 bg-[#122246] border border-blue-500/30 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between shadow">
                   <div className="flex items-center gap-2">
                     <Globe className="w-5 h-5 text-blue-400" />
                     <span>تغيير اللغة</span>
@@ -500,18 +500,18 @@ export default function App() {
           {/* ADMIN PANEL */}
           {activeTab === 'admin' && (
             <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+              <div className="flex justify-between items-center border-b border-blue-500/30 pb-3">
                 <h2 className="text-base font-bold text-yellow-400 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5" /> لوحة موافقة الأدمن
                 </h2>
-                <button onClick={() => setActiveTab('home')} className="text-xs bg-slate-800 px-3 py-1 rounded-lg text-slate-300">إغلاق</button>
+                <button onClick={() => setActiveTab('home')} className="text-xs bg-[#122246] px-3 py-1 rounded-lg text-slate-300 border border-blue-500/30">إغلاق</button>
               </div>
 
-              <p className="text-xs text-slate-400">مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:</p>
+              <p className="text-xs text-slate-300">مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:</p>
 
               <div className="space-y-3">
                 {redemptions.map(req => (
-                  <div key={req.id} className="bg-[#131b2e] p-4 rounded-xl border border-slate-800 text-xs space-y-2.5">
+                  <div key={req.id} className="bg-[#122246]/90 p-4 rounded-xl border border-blue-500/30 text-xs space-y-2.5 shadow">
                     <div className="flex justify-between font-bold">
                       <span className="text-white">{req.user}</span>
                       <span className={req.status === 'APPROVED' ? 'text-emerald-400' : 'text-amber-400'}>
@@ -519,12 +519,12 @@ export default function App() {
                       </span>
                     </div>
 
-                    <div className="text-slate-400 flex justify-between">
+                    <div className="text-slate-300 flex justify-between">
                       <span>الأرواح: {req.spirits}</span>
                       <span className="text-yellow-400 font-bold">{req.dnc} DNC</span>
                     </div>
 
-                    <div className="text-[10px] text-slate-500 font-mono break-all bg-slate-950 p-2 rounded">
+                    <div className="text-[10px] text-slate-400 font-mono break-all bg-slate-950 p-2 rounded border border-blue-500/20">
                       المحفظة: {req.wallet}
                     </div>
 
@@ -545,7 +545,7 @@ export default function App() {
         </div>
 
         {/* FIXED BOTTOM NAVIGATION BAR */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#07090e]/95 border-t border-slate-800 px-4 py-2.5 flex justify-between items-center backdrop-blur-md z-20">
+        <div className="absolute bottom-0 left-0 right-0 bg-[#060c24]/95 border-t border-blue-500/20 px-4 py-2.5 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
           {[
             { id: 'profile', label: 'الملف', icon: User },
             { id: 'leaderboard', label: 'المتصدرين', icon: Trophy },
@@ -560,7 +560,7 @@ export default function App() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-center gap-1 px-3 py-1 rounded-xl transition ${
-                  isActive ? 'text-yellow-400 scale-105' : 'text-slate-500 hover:text-slate-300'
+                  isActive ? 'text-yellow-400 scale-105' : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
                 <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
@@ -573,15 +573,15 @@ export default function App() {
         {/* WALLETCONNECT MODAL */}
         {showWalletModal && (
           <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="w-full bg-[#131b2e] border border-slate-700 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
+            <div className="w-full bg-[#122246] border border-blue-500/40 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
               <div className="flex justify-between items-center">
                 <h3 className="font-bold text-white text-base">ربط محفظة Web3</h3>
-                <button onClick={() => setShowWalletModal(false)} className="text-slate-400 p-1">
+                <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs text-slate-300 leading-relaxed">
                 أدخل عنوان محفظة إيثريوم (MetaMask / Trust Wallet) لاستلام توكن دانات كوين (DNC):
               </p>
 
@@ -590,7 +590,7 @@ export default function App() {
                 placeholder="0x71C7656EC7ab88b098defB751B7401B5f6d8939A"
                 value={customWallet}
                 onChange={(e) => setCustomWallet(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white font-mono dir-ltr focus:border-yellow-500 outline-none"
+                className="w-full bg-slate-950 border border-blue-500/40 rounded-xl p-3 text-xs text-white font-mono dir-ltr focus:border-yellow-500 outline-none shadow-inner"
               />
 
               <button 
