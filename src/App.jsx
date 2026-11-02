@@ -8,15 +8,13 @@ import {
   Wallet, 
   HelpCircle, 
   Sparkles, 
-  CheckCircle2, 
-  X, 
   Clock, 
   BarChart3, 
   Home, 
   Check, 
   ShieldCheck, 
-  Coins, 
-  Tv 
+  Tv,
+  X
 } from 'lucide-react';
 
 // Custom Danat Coin Gold Badge Logo Component
@@ -53,7 +51,7 @@ export default function App() {
   const [adTimer, setAdTimer] = useState(5);
 
   // Quiz Game State
-  const [selectedOption, setSelectedOption] = useState('B'); // Option B is selected (Yaris) in Screen 2 design
+  const [selectedOption, setSelectedOption] = useState('B'); // Option B selected (Yaris)
   const [lifeline50Used, setLifeline50Used] = useState(false);
   const [lifelineExtraUsed, setLifelineExtraUsed] = useState(false);
 
@@ -132,7 +130,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans dir-rtl flex justify-center items-center p-0 md:p-4" dir="rtl">
+    <div className="min-h-screen bg-slate-950 text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
       {/* Mobile Shell Wrapper */}
       <div className="w-full max-w-md bg-slate-900 border-0 md:border-4 md:border-slate-800 rounded-none md:rounded-[40px] shadow-2xl overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
         
@@ -144,7 +142,7 @@ export default function App() {
               onClick={() => setActiveTab('admin')} 
               className="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded border border-yellow-500/30 font-bold"
             >
-              وحة الإدارة
+              لوحة الإدارة
             </button>
             <span>📶 🔋</span>
           </div>
@@ -610,4 +608,15 @@ export default function App() {
 
               <button 
                 onClick={() => handleConnectWallet(customWallet)}
-                className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold
+                className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold text-xs rounded-xl"
+              >
+                تأكيد وتوصيل المحفظة
+              </button>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
