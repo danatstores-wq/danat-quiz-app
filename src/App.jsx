@@ -151,7 +151,7 @@ export default function App() {
 
                 <div className="relative z-10 flex justify-center my-2">
                   <img 
-                    src="/logo.png" 
+                    src="/logo.PNG" 
                     alt="Danat Coin Logo" 
                     className="w-32 h-32 object-contain drop-shadow-[0_5px_15px_rgba(234,179,8,0.6)]"
                   />
