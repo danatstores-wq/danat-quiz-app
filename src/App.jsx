@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Check, Tv, X, Settings, Clock, Lock, Globe } from 'lucide-react';
+import { ShieldCheck, Check, Tv, X, Settings, Clock, Lock } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -156,7 +156,7 @@ export default function App() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#2a0c52]/80 via-[#1a0833]/90 to-[#0d031f]/95 z-0" />
 
-        {/* TOP STATUS BAR - FIXED LANGUAGE GLOBE ICON */}
+        {/* TOP STATUS BAR */}
         <div className="bg-[#120524]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-purple-500/30 z-10">
           <span className="font-bold text-white">9:41</span>
           <div className="flex items-center gap-2">
@@ -167,8 +167,12 @@ export default function App() {
               <ShieldCheck className="w-3.5 h-3.5" /> لوحة الإدارة
             </button>
             <span className="text-purple-400/50">|</span>
-            <span className="flex items-center gap-1 text-slate-200 font-semibold">
-              <Globe className="w-3.5 h-3.5 text-yellow-400" /> {user.language}
+            
+            <span className="flex items-center gap-1.5 text-slate-100 font-bold">
+              <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+              {user.language}
             </span>
             <span>📶 🔋</span>
           </div>
@@ -181,30 +185,36 @@ export default function App() {
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
               
-              {/* HERO CARD WITH STRETCHED LOGO & REMOVED TOP-LEFT COIN ICONS */}
-              <div className="relative w-full bg-[#1a0833]/80 rounded-3xl p-3 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col items-center">
-                <div className="absolute -top-12 -right-12 w-40 h-40 bg-yellow-500/15 rounded-full blur-3xl"></div>
+              {/* HERO CARD: FULLY COVERED BACKGROUND BANNER WITH TEXT AND SETTINGS IN FRONT */}
+              <div className="relative w-full h-56 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between">
                 
-                {/* Settings icon only (coin icons removed) */}
-                <div className="w-full flex justify-between items-center mb-2 relative z-10">
-                  <button className="p-2 bg-[#2a0c52] rounded-full text-yellow-400 border border-yellow-500/40 shadow">
+                {/* Background Stretched Coin Image */}
+                <img 
+                  src={assetPath('dnc_coin.png')} 
+                  alt="Danat Coin Background" 
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-90 z-0"
+                />
+
+                {/* Dark Vignette Overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833]/90 via-[#1a0833]/60 to-transparent z-0" />
+
+                {/* Settings Gear Button in Front */}
+                <div className="w-full flex justify-start items-center relative z-10">
+                  <button className="p-2.5 bg-[#2a0c52]/90 hover:bg-[#3b1275] rounded-full text-yellow-400 border border-yellow-500/50 shadow-lg backdrop-blur-md">
                     <Settings className="w-4 h-4" />
                   </button>
                 </div>
 
-                {/* Stretched Danat Logo to fill container cell */}
-                <div className="relative z-10 w-full h-44 rounded-2xl overflow-hidden mb-2 shadow-inner">
-                  <img 
-                    src={assetPath('dnc_coin.png')} 
-                    alt="Danat Coin Logo" 
-                    className="w-full h-full object-cover object-center drop-shadow-[0_5px_20px_rgba(234,179,8,0.6)]"
-                  />
+                {/* Title Text in Front */}
+                <div className="relative z-10 flex flex-col items-center pb-1">
+                  <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                    دانات كويز
+                  </h1>
+                  <p className="text-xs text-yellow-100 mt-0.5 font-bold drop-shadow-[0_1px_5px_rgba(0,0,0,0.8)]">
+                    اختبر معلوماتك .. واربح المكافآت
+                  </p>
                 </div>
-                
-                <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-lg relative z-10">
-                  دانات كويز
-                </h1>
-                <p className="text-xs text-yellow-100/90 mt-1 font-bold relative z-10 pb-1">اختبر معلوماتك .. واربح المكافآت</p>
+
               </div>
 
               {/* User Info Bar */}
@@ -290,7 +300,7 @@ export default function App() {
 
               <div className="flex justify-center">
                 <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                  <Globe className="w-4 h-4 text-yellow-400" /> الجغرافيا (مستوى {levelsPlayed + 1}/4)
+                  الجغرافيا (مستوى {levelsPlayed + 1}/4)
                 </div>
               </div>
 
@@ -362,7 +372,7 @@ export default function App() {
           {activeTab === 'rewards' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2 flex flex-col items-center">
-                <img src={assetPath('logo.png')} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
+                <img src={assetPath('dnc_coin.png')} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">مكافآتي</h2>
               </div>
 
@@ -383,7 +393,7 @@ export default function App() {
 
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-yellow-500/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
-                  <img src={assetPath('logo.png')} alt="Logo" className="w-10 h-10 object-contain" />
+                  <img src={assetPath('dnc_coin.png')} alt="Logo" className="w-10 h-10 object-contain" />
                   <div>
                     <div className="text-xs text-slate-300">رصيد DNC</div>
                     <div className="text-2xl font-black text-yellow-400">{user.dncBalance.toLocaleString()}</div>
@@ -628,7 +638,7 @@ export default function App() {
         {/* FIXED BOTTOM NAVIGATION BAR */}
         <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
           {[
-            { id: 'home', label: 'الرئيسية', icon: 'logo.png', type: 'image' },
+            { id: 'home', label: 'الرئيسية', icon: 'dnc_coin.png', type: 'image' },
             { id: 'quiz', label: 'اللعب', icon: 'dnc_coin.png', type: 'image' },
             { id: 'rewards', label: 'المكافآت', icon: 'nav_rewards.png', type: 'image' },
             { id: 'leaderboard', label: 'المتصدرين', icon: 'nav_leaderboard.png', type: 'image' },
