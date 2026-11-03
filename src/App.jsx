@@ -194,7 +194,7 @@ export default function App() {
                 ابدأ اللعب
               </button>
 
-              {/* 4 STRETCHED FEATURE CARDS */}
+              {/* 4 FULL-CELL STRETCHED FEATURE CARDS */}
               <div className="w-full grid grid-cols-2 gap-3 mt-1">
                 {[
                   { label: "المكافآت", icon: "gift_large.png", tab: "rewards" },
@@ -205,16 +205,21 @@ export default function App() {
                   <button 
                     key={item.label} 
                     onClick={() => setActiveTab(item.tab)}
-                    className="bg-[#240a47]/90 border border-purple-500/40 rounded-2xl p-3 flex flex-col items-center justify-between h-36 shadow-lg group overflow-hidden"
+                    className="relative w-full h-36 bg-[#240a47]/90 border border-purple-500/40 rounded-2xl overflow-hidden shadow-lg group active:scale-95 transition-transform"
                   >
-                    <div className="w-full h-24 flex items-center justify-center overflow-hidden">
-                      <img 
-                        src={assetPath(item.icon)} 
-                        alt={item.label} 
-                        className="w-full h-full object-fill transform group-hover:scale-105 transition duration-200" 
-                      />
+                    {/* Image spans edge-to-edge across the cell */}
+                    <img 
+                      src={assetPath(item.icon)} 
+                      alt={item.label} 
+                      className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300" 
+                    />
+                    
+                    {/* Gradient overlay to make text pop over the full image */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-2">
+                      <span className="text-xs font-black text-yellow-300 drop-shadow-md px-2 py-0.5 rounded bg-black/40 border border-yellow-500/30">
+                        {item.label}
+                      </span>
                     </div>
-                    <span className="text-xs font-black text-yellow-300 mt-1">{item.label}</span>
                   </button>
                 ))}
               </div>
