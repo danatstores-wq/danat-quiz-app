@@ -195,7 +195,7 @@ export default function App() {
                 {/* Stretched Danat Logo to fill container cell */}
                 <div className="relative z-10 w-full h-44 rounded-2xl overflow-hidden mb-2 shadow-inner">
                   <img 
-                    src={assetPath('logo.png')} 
+                    src={assetPath('dnc_coin.png')} 
                     alt="Danat Coin Logo" 
                     className="w-full h-full object-cover object-center drop-shadow-[0_5px_20px_rgba(234,179,8,0.6)]"
                   />
