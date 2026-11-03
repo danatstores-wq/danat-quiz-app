@@ -185,18 +185,18 @@ export default function App() {
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
               
-              {/* HERO CARD: FULLY COVERED BACKGROUND BANNER WITH TEXT AND SETTINGS IN FRONT */}
-              <div className="relative w-full h-56 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between">
+              {/* HERO CARD: object-contain USED SO THE FULL COIN IS NEVER CUT OFF */}
+              <div className="relative w-full h-60 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between">
                 
-                {/* Background Stretched Coin Image */}
+                {/* Background Coin with object-contain */}
                 <img 
                   src={assetPath('dnc_coin.png')} 
                   alt="Danat Coin Background" 
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-90 z-0"
+                  className="absolute inset-0 w-full h-full object-contain object-center p-2 z-0"
                 />
 
-                {/* Dark Vignette Overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833]/90 via-[#1a0833]/60 to-transparent z-0" />
+                {/* Gradient Vignette Overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833] via-[#1a0833]/50 to-transparent z-0" />
 
                 {/* Settings Gear Button in Front */}
                 <div className="w-full flex justify-start items-center relative z-10">
