@@ -1015,4 +1015,86 @@ export default function App() {
             <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
               <div className="flex justify-between items-center">
                 <h3 className="font-bold text-white text-base">ربط محفظة Web3</h3>
-                <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1
+                <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <p className="text-xs text-slate-300 leading-relaxed">
+                أدخل عنوان محفظة إيثريوم (MetaMask / Trust Wallet) لاستلام توكن دانات كوين (DNC):
+              </p>
+
+              <input 
+                type="text" 
+                placeholder="0x71C7656EC7ab88b098defB751B7401B5f6d8939A"
+                value={customWallet}
+                onChange={(e) => setCustomWallet(e.target.value)}
+                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl p-3 text-xs text-white font-mono dir-ltr focus:border-yellow-500 outline-none shadow-inner"
+              />
+
+              <button 
+                onClick={() => handleConnectWallet(customWallet)}
+                className="w-full py-3.5 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg"
+              >
+                تأكيد وتوصيل المحفظة
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* AVATAR SELECTOR MODAL */}
+        {showAvatarModal && (
+          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
+              <div className="flex justify-between items-center">
+                <h3 className="font-bold text-white text-lg">اختر صورتك الشخصية</h3>
+                <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1 hover:text-white">
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 my-2 max-h-80 overflow-y-auto">
+                {availableAvatars.map((item) => {
+                  const isSelected = user.avatar === item.id;
+                  return (
+                    <div 
+                      key={item.id}
+                      onClick={() => handleUpdateAvatar(item.id)}
+                      className={`relative w-full h-28 rounded-2xl border-2 cursor-pointer overflow-hidden transition duration-200 group ${
+                        isSelected 
+                          ? 'border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.4)] scale-105' 
+                          : 'border-purple-400/40 hover:border-purple-300'
+                      }`}
+                    >
+                      <img 
+                        src={assetPath(item.id)} 
+                        alt="Avatar Option" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition duration-300" 
+                      />
+                      
+                      {isSelected && (
+                        <div className="absolute top-2 right-2 bg-emerald-500 p-1.5 rounded-full border-2 border-slate-900 shadow z-10">
+                          <Check className="w-3.5 h-3.5 text-white" />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="flex gap-3">
+                <button 
+                  onClick={() => setShowAvatarModal(false)}
+                  className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
+                >
+                  إغلاق
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
