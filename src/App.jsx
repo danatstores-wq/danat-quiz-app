@@ -39,7 +39,7 @@ export default function App() {
   const availableAvatars = [
     { id: 'avatar-man-ghutra.png', name: 'شاب كويتي بالغترة' },
     { id: 'avatar-woman-afro.png', name: 'شابة (أفرو)' },
-    { id: 'avatar-woman-hijab.png', name: 'شابة بالحجاب' },
+    { id: 'avatar-woman-hijab.png', name: 'شابة بالمجاب' },
     { id: 'avatar-woman-braids.png', name: 'شابة بالجدائل' },
     { id: 'avatar_boy.png', name: 'ولد' },
     { id: 'avatar_brunette.png', name: 'شابة سمراء' },
@@ -148,7 +148,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#1a0833] text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
       {/* Mobile Shell Wrapper */}
-      <div className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
+      <div
+        className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-[#2a0c52]/80 via-[#1a0833]/90 to-[#0d031f]/95 z-0" />
 
         {/* TOP STATUS BAR */}
@@ -180,12 +182,15 @@ export default function App() {
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
               
+              {/* HERO CARD */}
               <div className="relative w-full h-60 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between bg-[#2a0c52]">
+                
                 <img 
                   src={assetPath('logo.png')} 
                   alt="Danat Coin Background" 
                   className="absolute inset-0 w-full h-full object-contain p-4 z-0 opacity-40"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833]/90 via-[#1a0833]/40 to-transparent z-0" />
 
                 <div className="w-full flex justify-start items-center relative z-10">
@@ -202,6 +207,7 @@ export default function App() {
                     اختبر معلوماتك .. واربح المكافآت
                   </p>
                 </div>
+
               </div>
 
               {/* User Info Bar */}
@@ -246,7 +252,7 @@ export default function App() {
                   { label: "المكافآت", icon: "🎁", tab: "rewards" },
                   { label: "لوحة المتصدرين", icon: "🏆", tab: "leaderboard" },
                   { label: "ملفي الشخصي", icon: "👤", tab: "profile" },
-                  { label: "إحصائيات", icon: "📊", tab: "statistics" },
+                  { label: "إحصائيات", icon: "📊", tab: "profile" },
                 ].map((item) => (
                   <button 
                     key={item.label} 
@@ -260,45 +266,6 @@ export default function App() {
                   </button>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* SCREEN: STATISTICS */}
-          {activeTab === 'statistics' && (
-            <div className="flex flex-col gap-4">
-              <div className="text-center my-2">
-                <span className="text-4xl">📊</span>
-                <h2 className="text-2xl font-black text-yellow-400 mt-2">إحصائيات اللاعب</h2>
-              </div>
-
-              <div className="w-full grid grid-cols-2 gap-3">
-                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-                  <div className="text-xs text-slate-300 mb-1">إجمالي الألعاب</div>
-                  <div className="text-2xl font-black text-white">{user.totalGames}</div>
-                </div>
-
-                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-                  <div className="text-xs text-slate-300 mb-1">المستوى الحالي</div>
-                  <div className="text-2xl font-black text-yellow-400">★ {user.level}</div>
-                </div>
-
-                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-                  <div className="text-xs text-slate-300 mb-1">الأرواح المكتسبة</div>
-                  <div className="text-xl font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
-                </div>
-
-                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-                  <div className="text-xs text-slate-300 mb-1">رصيد DNC</div>
-                  <div className="text-xl font-black text-yellow-400">{user.dncBalance}</div>
-                </div>
-              </div>
-
-              <button 
-                onClick={() => setActiveTab('home')}
-                className="w-full mt-4 py-3 bg-[#240a47] hover:bg-[#320d63] border border-purple-400/40 text-white font-bold rounded-xl transition text-xs"
-              >
-                العودة للرئيسية
-              </button>
             </div>
           )}
 
