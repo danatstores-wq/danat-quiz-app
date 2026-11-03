@@ -15,7 +15,7 @@ export default function App() {
     totalEarnedSpirits: 8750,
     walletConnected: false,
     walletAddress: '',
-    avatar: 'avatar_kuwaiti.png',
+    avatar: 'avatar-man-ghutra.png',
   });
 
   const [levelsPlayed, setLevelsPlayed] = useState(0);
@@ -37,14 +37,16 @@ export default function App() {
   ]);
 
   const availableAvatars = [
-    { id: 'avatar_kuwaiti.png' },
-    { id: 'avatar_boy.png' },
-    { id: 'avatar_hijab.png' },
-    { id: 'avatar_brunette.png' },
-    { id: 'avatar_blonde.png' },
+    { id: 'avatar-man-ghutra.png', name: 'شاب كويتي بالغترة' },
+    { id: 'avatar-woman-afro.png', name: 'شابة (أفرو)' },
+    { id: 'avatar-woman-hijab.png', name: 'شابة بالحجاب' },
+    { id: 'avatar-woman-braids.png', name: 'شابة بالجدائل' },
+    { id: 'avatar_boy.png', name: 'ولد' },
+    { id: 'avatar_brunette.png', name: 'شابة سمراء' },
+    { id: 'avatar_blonde.png', name: 'شابة شقراء' },
   ];
 
-  const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
+  const assetPath = (filename) => `${import.meta.env.BASE_URL}${filename}`;
 
   const handleCompleteLevel = () => {
     const nextLevelCount = levelsPlayed + 1;
@@ -146,14 +148,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#1a0833] text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
       {/* Mobile Shell Wrapper */}
-      <div
-        style={{
-          backgroundImage: `url(${assetPath("main_background.jpg")})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative"
-      >
+      <div className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#2a0c52]/80 via-[#1a0833]/90 to-[#0d031f]/95 z-0" />
 
         {/* TOP STATUS BAR */}
@@ -185,27 +180,20 @@ export default function App() {
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
               
-              {/* HERO CARD: object-fill USED TO FULLY STRETCH ACROSS THE CELL */}
-              <div className="relative w-full h-60 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between">
-                
-                {/* Background Stretched Coin Image */}
+              <div className="relative w-full h-60 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between bg-[#2a0c52]">
                 <img 
-                  src={assetPath('dnc_coin.png')} 
+                  src={assetPath('logo.png')} 
                   alt="Danat Coin Background" 
-                  className="absolute inset-0 w-full h-full object-fill z-0"
+                  className="absolute inset-0 w-full h-full object-contain p-4 z-0 opacity-40"
                 />
-
-                {/* Dark Vignette Overlay for readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833]/90 via-[#1a0833]/40 to-transparent z-0" />
 
-                {/* Settings Gear Button in Front */}
                 <div className="w-full flex justify-start items-center relative z-10">
                   <button className="p-2.5 bg-[#2a0c52]/90 hover:bg-[#3b1275] rounded-full text-yellow-400 border border-yellow-500/50 shadow-lg backdrop-blur-md">
                     <Settings className="w-4 h-4" />
                   </button>
                 </div>
 
-                {/* Title Text in Front */}
                 <div className="relative z-10 flex flex-col items-center pb-1">
                   <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                     دانات كويز
@@ -214,7 +202,6 @@ export default function App() {
                     اختبر معلوماتك .. واربح المكافآت
                   </p>
                 </div>
-
               </div>
 
               {/* User Info Bar */}
@@ -249,37 +236,69 @@ export default function App() {
                 onClick={() => setActiveTab('quiz')} 
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
               >
-                <img src={assetPath('3d_question.png')} alt="Play" className="w-7 h-7 object-contain" />
+                <span>🎮</span>
                 ابدأ اللعب
               </button>
 
-              {/* 4 STRETCHED FEATURE CARDS */}
+              {/* 4 FEATURE CARDS */}
               <div className="w-full grid grid-cols-2 gap-3 mt-1">
                 {[
-                  { label: "المكافآت", icon: "gift_large.png", tab: "rewards" },
-                  { label: "لوحة المتصدرين", icon: "trophy_large.png", tab: "leaderboard" },
-                  { label: "ملفي الشخصي", icon: "nav_profile.png", tab: "profile" },
-                  { label: "إحصائيات", icon: "stats_icon.png", tab: "profile" },
+                  { label: "المكافآت", icon: "🎁", tab: "rewards" },
+                  { label: "لوحة المتصدرين", icon: "🏆", tab: "leaderboard" },
+                  { label: "ملفي الشخصي", icon: "👤", tab: "profile" },
+                  { label: "إحصائيات", icon: "📊", tab: "statistics" },
                 ].map((item) => (
                   <button 
                     key={item.label} 
                     onClick={() => setActiveTab(item.tab)}
-                    className="relative w-full h-36 bg-[#240a47]/90 border border-purple-500/40 rounded-2xl overflow-hidden shadow-lg group active:scale-95 transition-transform"
+                    className="relative w-full h-28 bg-[#240a47]/90 border border-purple-500/40 rounded-2xl overflow-hidden shadow-lg group active:scale-95 transition-transform flex flex-col items-center justify-center gap-2"
                   >
-                    <img 
-                      src={assetPath(item.icon)} 
-                      alt={item.label} 
-                      className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300" 
-                    />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-2">
-                      <span className="text-xs font-black text-yellow-300 drop-shadow-md px-2 py-0.5 rounded bg-black/40 border border-yellow-500/30">
-                        {item.label}
-                      </span>
-                    </div>
+                    <span className="text-3xl">{item.icon}</span>
+                    <span className="text-xs font-black text-yellow-300 drop-shadow-md px-2 py-0.5 rounded bg-black/40 border border-yellow-500/30">
+                      {item.label}
+                    </span>
                   </button>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* SCREEN: STATISTICS */}
+          {activeTab === 'statistics' && (
+            <div className="flex flex-col gap-4">
+              <div className="text-center my-2">
+                <span className="text-4xl">📊</span>
+                <h2 className="text-2xl font-black text-yellow-400 mt-2">إحصائيات اللاعب</h2>
+              </div>
+
+              <div className="w-full grid grid-cols-2 gap-3">
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">إجمالي الألعاب</div>
+                  <div className="text-2xl font-black text-white">{user.totalGames}</div>
+                </div>
+
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">المستوى الحالي</div>
+                  <div className="text-2xl font-black text-yellow-400">★ {user.level}</div>
+                </div>
+
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">الأرواح المكتسبة</div>
+                  <div className="text-xl font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
+                </div>
+
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">رصيد DNC</div>
+                  <div className="text-xl font-black text-yellow-400">{user.dncBalance}</div>
+                </div>
+              </div>
+
+              <button 
+                onClick={() => setActiveTab('home')}
+                className="w-full mt-4 py-3 bg-[#240a47] hover:bg-[#320d63] border border-purple-400/40 text-white font-bold rounded-xl transition text-xs"
+              >
+                العودة للرئيسية
+              </button>
             </div>
           )}
 
@@ -350,7 +369,7 @@ export default function App() {
                     lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-yellow-400'
                   }`}
                 >
-                  <img src={assetPath('help.png')} alt="Help Star" className="w-6 h-6 object-contain" />
+                  <span className="text-xl">✨</span>
                   <span>50 مكافأة إضافية</span>
                 </button>
 
@@ -361,7 +380,7 @@ export default function App() {
                     lifeline50Used ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-purple-400'
                   }`}
                 >
-                  <img src={assetPath('help_5050.png')} alt="50:50" className="w-6 h-6 object-contain" />
+                  <span className="text-xl">🌓</span>
                   <span>50:50 مساعدة</span>
                 </button>
               </div>
@@ -372,14 +391,14 @@ export default function App() {
           {activeTab === 'rewards' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2 flex flex-col items-center">
-                <img src={assetPath('dnc_coin.png')} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
+                <img src={assetPath('logo.png')} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">مكافآتي</h2>
               </div>
 
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-purple-400/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center">
-                    <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-8 h-8 object-contain" />
+                    <img src={assetPath('logo.png')} alt="Coin" className="w-8 h-8 object-contain" />
                   </div>
                   <div>
                     <div className="text-xs text-slate-300">أرواح حالية</div>
@@ -393,7 +412,7 @@ export default function App() {
 
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-yellow-500/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
-                  <img src={assetPath('dnc_coin.png')} alt="Logo" className="w-10 h-10 object-contain" />
+                  <img src={assetPath('logo.png')} alt="Logo" className="w-10 h-10 object-contain" />
                   <div>
                     <div className="text-xs text-slate-300">رصيد DNC</div>
                     <div className="text-2xl font-black text-yellow-400">{user.dncBalance.toLocaleString()}</div>
@@ -438,8 +457,8 @@ export default function App() {
           {activeTab === 'leaderboard' && (
             <div className="flex flex-col gap-4">
               <div className="text-center my-2">
-                <img src={assetPath('trophy_large.png')} alt="Trophy" className="w-14 h-14 mx-auto mb-1 object-contain" />
-                <h2 className="text-2xl font-black text-yellow-400">لوحة المتصدرين</h2>
+                <span className="text-5xl">🏆</span>
+                <h2 className="text-2xl font-black text-yellow-400 mt-2">لوحة المتصدرين</h2>
               </div>
 
               <div className="w-full bg-[#240a47] p-1 rounded-xl flex gap-1 border border-purple-400/40 text-xs font-bold shadow">
@@ -500,7 +519,7 @@ export default function App() {
                   onClick={() => setShowAvatarModal(true)}
                   className="text-xs text-yellow-400 font-bold bg-yellow-500/10 px-3 py-1.5 rounded-lg border border-yellow-500/40 shadow hover:bg-yellow-500/20"
                 >
-                  ✏️ تغيير الصورة الشخصية فقط
+                  ✏️ تغيير الصورة الشخصية
                 </button>
 
                 <div className="flex items-center gap-2 mt-1 bg-[#240a47] px-4 py-2 rounded-xl border border-purple-400/30">
@@ -554,7 +573,7 @@ export default function App() {
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    <img src={assetPath('dnc_coin.png')} alt="Wallet" className="w-6 h-6 object-contain" />
+                    <img src={assetPath('logo.png')} alt="Wallet" className="w-6 h-6 object-contain" />
                     <span>{user.walletConnected ? 'المحفظة متصلة' : 'ربط المحفظة (WalletConnect)'}</span>
                   </div>
                   <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
@@ -635,35 +654,43 @@ export default function App() {
           </div>
         )}
 
-        {/* FIXED BOTTOM NAVIGATION BAR */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
-          {[
-            { id: 'home', label: 'الرئيسية', icon: 'dnc_coin.png', type: 'image' },
-            { id: 'quiz', label: 'اللعب', icon: 'dnc_coin.png', type: 'image' },
-            { id: 'rewards', label: 'المكافآت', icon: 'nav_rewards.png', type: 'image' },
-            { id: 'leaderboard', label: 'المتصدرين', icon: 'nav_leaderboard.png', type: 'image' },
-            { id: 'profile', label: 'الملف', icon: user.avatar, type: 'dynamic_avatar' }
-          ].map(tab => {
-            const isActive = activeTab === tab.id;
-            const isAvatar = tab.type === 'dynamic_avatar';
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex flex-col items-center gap-1 px-3 py-1 rounded-xl transition ${
-                  isActive ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'
-                }`}
-              >
-                {isAvatar ? (
-                  <img src={assetPath(tab.icon)} alt="Profile" className="w-7 h-7 rounded-full object-cover border border-purple-400" />
-                ) : (
-                  <img src={assetPath(tab.icon)} alt={tab.label} className="w-7 h-7 object-contain" />
-                )}
-                <span className={`text-[10px] font-bold ${isActive ? 'text-yellow-400' : 'text-slate-300'}`}>{tab.label}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* AVATAR SELECTOR MODAL */}
+        {showAvatarModal && (
+          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+            <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
+              <div className="flex justify-between items-center">
+                <h3 className="font-bold text-white text-base">اختر صورتك الرمزية</h3>
+                <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 max-h-80 overflow-y-auto p-1">
+                {availableAvatars.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setUser(prev => ({ ...prev, avatar: item.id }));
+                      setShowAvatarModal(false);
+                    }}
+                    className={`flex flex-col items-center p-2 rounded-2xl border transition ${
+                      user.avatar === item.id 
+                        ? 'border-yellow-400 bg-yellow-500/20 shadow-[0_0_15px_rgba(234,179,8,0.4)]' 
+                        : 'border-purple-500/30 bg-[#0d031f]/60 hover:bg-[#0d031f]'
+                    }`}
+                  >
+                    <img 
+                      src={assetPath(item.id)} 
+                      alt={item.name} 
+                      className="w-16 h-16 rounded-full object-cover border border-yellow-500/30"
+                    />
+                    <span className="text-[10px] text-slate-200 mt-1 font-bold text-center">{item.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* WALLETCONNECT MODAL */}
         {showWalletModal && (
@@ -698,66 +725,30 @@ export default function App() {
           </div>
         )}
 
-        {/* AVATAR SELECTOR MODAL */}
-        {showAvatarModal && (
-          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
-              <div className="flex justify-between items-center">
-                <h3 className="font-bold text-white text-lg">اختر صورتك الشخصية</h3>
-                <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1 hover:text-white">
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 my-2">
-                {availableAvatars.map((item) => {
-                  const isSelected = user.avatar === item.id;
-                  return (
-                    <div 
-                      key={item.id}
-                      onClick={() => {
-                        setUser(prev => ({ ...prev, avatar: item.id }));
-                        setShowAvatarModal(false);
-                      }}
-                      className={`relative w-full h-28 rounded-2xl border-2 cursor-pointer overflow-hidden transition duration-200 group ${
-                        isSelected 
-                          ? 'border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.4)] scale-105' 
-                          : 'border-purple-400/40 hover:border-purple-300'
-                      }`}
-                    >
-                      <img 
-                        src={assetPath(item.id)} 
-                        alt="Avatar Option" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition duration-300" 
-                      />
-                      
-                      {isSelected && (
-                        <div className="absolute top-2 right-2 bg-emerald-500 p-1.5 rounded-full border-2 border-slate-900 shadow z-10">
-                          <Check className="w-3.5 h-3.5 text-white" />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="flex gap-3">
-                <button 
-                  onClick={() => setShowAvatarModal(false)}
-                  className="flex-1 py-3 bg-[#0d031f] border border-purple-500/40 text-slate-100 font-bold text-xs rounded-xl shadow-lg hover:bg-[#1a0833]"
-                >
-                  إلغاء
-                </button>
-                <button 
-                  onClick={() => setShowAvatarModal(false)}
-                  className="flex-1 py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
-                >
-                  تأكيد الاختيار
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* FIXED BOTTOM NAVIGATION BAR */}
+        <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
+          {[
+            { id: 'home', label: 'الرئيسية', icon: '🏠' },
+            { id: 'quiz', label: 'اللعب', icon: '🎮' },
+            { id: 'rewards', label: 'المكافآت', icon: '🎁' },
+            { id: 'leaderboard', label: 'المتصدرين', icon: '🏆' },
+            { id: 'profile', label: 'الملف', icon: '👤' }
+          ].map(tab => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex flex-col items-center gap-1 px-3 py-1 rounded-xl transition ${
+                  isActive ? 'text-yellow-400 scale-105' : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                <span className="text-xl">{tab.icon}</span>
+                <span className="text-[10px] font-bold">{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
 
       </div>
     </div>
