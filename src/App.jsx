@@ -13,11 +13,9 @@ export default function App() {
     totalEarnedSpirits: 8750,
     walletConnected: false,
     walletAddress: '',
-    avatar: 'user_avatar_1.png',
   });
 
   const [showWalletModal, setShowWalletModal] = useState(false);
-  const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [customWallet, setCustomWallet] = useState('');
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
@@ -30,18 +28,7 @@ export default function App() {
     { id: '2', user: 'محمد علي', spirits: 5000, dnc: 5, wallet: '0x38B...12F', status: 'APPROVED', date: '2026-11-01' },
   ]);
 
-  const availableAvatars = [
-    'user_avatar_1.png',
-    'user_avatar_2.png',
-    'user_avatar_3.png'
-  ];
-
-  // Robust path builder compatible with GitHub Pages base URL
-  const assetPath = (filename) => {
-    const baseUrl = import.meta.env.BASE_URL || '/';
-    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-    return `${cleanBase}assets/${filename}`;
-  };
+  const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
 
   const handleConnectWallet = (address) => {
     setUser(prev => ({
@@ -109,9 +96,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#1a0833] text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
-      {/* Mobile Shell Wrapper with Deep Purple & Neon Gold Design */}
-      <div className="w-full max-w-md bg-gradient-to-b from-[#2a0c52] via-[#1a0833] to-[#0d031f] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
-        
+      {/* Mobile Shell Wrapper */}
+      <div
+        style={{
+          backgroundImage: `url(${assetPath("main_background.jpg")})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2a0c52]/80 via-[#1a0833]/90 to-[#0d031f]/95 z-0" />
+
         {/* TOP STATUS BAR */}
         <div className="bg-[#120524]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-purple-500/30 z-10">
           <span className="font-bold text-white">9:41</span>
@@ -124,19 +119,19 @@ export default function App() {
             </button>
             <span className="text-purple-400/50">|</span>
             <span className="flex items-center gap-1 text-slate-200 font-semibold">
-              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" onError={(e) => { e.target.style.display = 'none'; }} /> العربية
+              <img src={assetPath('language.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" /> العربية
             </span>
             <span>📶 🔋</span>
           </div>
         </div>
 
         {/* MAIN DISPLAY AREA */}
-        <div className="flex-1 overflow-y-auto pb-36 px-4 pt-4 relative">
+        <div className="flex-1 overflow-y-auto pb-36 px-4 pt-4 relative z-10">
 
           {/* SCREEN 1: HOME */}
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
-              <div className="relative w-full bg-gradient-to-b from-[#310e5e] via-[#1a0833] to-[#100324] rounded-3xl p-5 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden">
+              <div className="relative w-full bg-[#1a0833]/70 rounded-3xl p-5 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden">
                 <div className="absolute -top-12 -right-12 w-40 h-40 bg-yellow-500/15 rounded-full blur-3xl"></div>
                 
                 <div className="flex justify-between items-center mb-1 relative z-10">
@@ -166,11 +161,11 @@ export default function App() {
               {/* User Info Bar */}
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                  <div className="relative cursor-pointer group" onClick={() => setShowAvatarModal(true)}>
+                  <div className="relative">
                     <img 
-                      src={assetPath(user.avatar)} 
+                      src={assetPath('logo.png')} 
                       alt="User Avatar" 
-                      className="w-12 h-12 rounded-full border-2 border-yellow-400 object-cover shadow group-hover:scale-105 transition"
+                      className="w-12 h-12 rounded-full border-2 border-yellow-400 object-cover shadow"
                     />
                     <span className="absolute -bottom-1 -right-1 bg-yellow-500 text-slate-950 text-[10px] font-black px-1.5 py-0.2 rounded-full shadow">
                       ★ {user.level}
@@ -195,43 +190,33 @@ export default function App() {
                 onClick={() => setActiveTab('quiz')} 
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
               >
-                <img src={assetPath('nav_quiz.png')} alt="Play" className="w-7 h-7 object-contain" />
+                <img src={assetPath('3d_question.png')} alt="Play" className="w-7 h-7 object-contain" />
                 ابدأ اللعب
               </button>
 
-              {/* 4 Feature Cards */}
-              <div className="w-full grid grid-cols-2 gap-3">
-                <button 
-                  onClick={() => setActiveTab('leaderboard')}
-                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
-                >
-                  <img src={assetPath('trophy_large.png')} alt="Trophy" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
-                  <span className="text-sm font-bold text-slate-100">لوحة المتصدرين</span>
-                </button>
-
-                <button 
-                  onClick={() => setActiveTab('rewards')}
-                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
-                >
-                  <img src={assetPath('gift_large.png')} alt="Rewards" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
-                  <span className="text-sm font-bold text-slate-100">المكافآت</span>
-                </button>
-
-                <button 
-                  onClick={() => setActiveTab('profile')}
-                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
-                >
-                  <img src={assetPath('stats_icon.png')} alt="Stats" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
-                  <span className="text-sm font-bold text-slate-100">إحصائيات</span>
-                </button>
-
-                <button 
-                  onClick={() => setActiveTab('profile')}
-                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
-                >
-                  <img src={assetPath('nav_profile.png')} alt="Profile" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
-                  <span className="text-sm font-bold text-slate-100">ملفي الشخصي</span>
-                </button>
+              {/* 4 STRETCHED FEATURE CARDS */}
+              <div className="w-full grid grid-cols-2 gap-3 mt-1">
+                {[
+                  { label: "المكافآت", icon: "gift_large.png", tab: "rewards" },
+                  { label: "لوحة المتصدرين", icon: "trophy_large.png", tab: "leaderboard" },
+                  { label: "ملفي الشخصي", icon: "nav_profile.png", tab: "profile" },
+                  { label: "إحصائيات", icon: "stats_icon.png", tab: "profile" },
+                ].map((item) => (
+                  <button 
+                    key={item.label} 
+                    onClick={() => setActiveTab(item.tab)}
+                    className="bg-[#240a47]/90 border border-purple-500/40 rounded-2xl p-3 flex flex-col items-center justify-between h-36 shadow-lg group overflow-hidden"
+                  >
+                    <div className="w-full h-24 flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={assetPath(item.icon)} 
+                        alt={item.label} 
+                        className="w-full h-full object-fill transform group-hover:scale-105 transition duration-200" 
+                      />
+                    </div>
+                    <span className="text-xs font-black text-yellow-300 mt-1">{item.label}</span>
+                  </button>
+                ))}
               </div>
             </div>
           )}
@@ -253,7 +238,7 @@ export default function App() {
 
               <div className="flex justify-center">
                 <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                  <img src={assetPath('globe_icon.png')} alt="Globe" className="w-4 h-4 object-contain" /> الجغرافيا
+                  <img src={assetPath('language.png')} alt="Globe" className="w-4 h-4 object-contain" /> الجغرافيا
                 </div>
               </div>
 
@@ -296,7 +281,7 @@ export default function App() {
                     lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-yellow-400'
                   }`}
                 >
-                  <img src={assetPath('help_star.png')} alt="Help Star" className="w-6 h-6 object-contain" />
+                  <img src={assetPath('help.png')} alt="Help Star" className="w-6 h-6 object-contain" />
                   <span>50 مكافأة إضافية</span>
                 </button>
 
@@ -384,7 +369,7 @@ export default function App() {
           {activeTab === 'leaderboard' && (
             <div className="flex flex-col gap-4">
               <div className="text-center my-2">
-                <img src={assetPath('trophy_large.png')} alt="Trophy" className="w-14 h-14 mx-auto mb-1 object-contain" />
+                <img src={assetPath('nav_leaderboard.png')} alt="Trophy" className="w-14 h-14 mx-auto mb-1 object-contain" />
                 <h2 className="text-2xl font-black text-yellow-400">لوحة المتصدرين</h2>
               </div>
 
@@ -431,11 +416,11 @@ export default function App() {
               </div>
 
               <div className="flex flex-col items-center gap-2">
-                <div className="relative cursor-pointer group" onClick={() => setShowAvatarModal(true)}>
+                <div className="relative">
                   <img 
-                    src={assetPath(user.avatar)} 
+                    src={assetPath('logo.png')} 
                     alt="Avatar" 
-                    className="w-20 h-20 rounded-full border-2 border-yellow-400 object-cover shadow-xl group-hover:scale-105 transition"
+                    className="w-20 h-20 rounded-full border-2 border-yellow-400 object-cover shadow-xl"
                   />
                   <span className="absolute bottom-0 right-0 bg-yellow-500 text-slate-950 text-xs font-black px-2 py-0.5 rounded-full border border-slate-900 shadow">
                     ★ {user.level}
@@ -472,7 +457,7 @@ export default function App() {
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    <img src={assetPath('wallet_icon.png')} alt="Wallet" className="w-6 h-6 object-contain" />
+                    <img src={assetPath('dnc_coin.png')} alt="Wallet" className="w-6 h-6 object-contain" />
                     <span>{user.walletConnected ? 'المحفظة متصلة' : 'ربط المحفظة (WalletConnect)'}</span>
                   </div>
                   <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
@@ -482,7 +467,7 @@ export default function App() {
 
                 <button className="w-full py-4 px-4 bg-[#240a47] border border-purple-400/40 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between shadow">
                   <div className="flex items-center gap-2">
-                    <img src={assetPath('globe_icon.png')} alt="Globe" className="w-6 h-6 object-contain" />
+                    <img src={assetPath('language.png')} alt="Globe" className="w-6 h-6 object-contain" />
                     <span>تغيير اللغة</span>
                   </div>
                   <span className="text-xs text-slate-300">العربية</span>
@@ -550,11 +535,11 @@ export default function App() {
         {/* FIXED BOTTOM NAVIGATION BAR WITH 3D ICONS */}
         <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
           {[
-            { id: 'profile', label: 'الملف', icon: 'nav_profile.png' },
-            { id: 'leaderboard', label: 'المتصدرين', icon: 'nav_leaderboard.png' },
+            { id: 'home', label: 'الرئيسية', icon: 'logo.png' },
+            { id: 'quiz', label: 'اللعب', icon: 'dnc_coin.png' },
             { id: 'rewards', label: 'المكافآت', icon: 'nav_rewards.png' },
-            { id: 'quiz', label: 'اللعب', icon: 'nav_quiz.png' },
-            { id: 'home', label: 'الرئيسية', icon: 'nav_home.png' }
+            { id: 'leaderboard', label: 'المتصدرين', icon: 'nav_leaderboard.png' },
+            { id: 'profile', label: 'الملف', icon: 'logo.png' }
           ].map(tab => {
             const isActive = activeTab === tab.id;
             return (
@@ -571,45 +556,6 @@ export default function App() {
             );
           })}
         </div>
-
-        {/* AVATAR SELECTION MODAL */}
-        {showAvatarModal && (
-          <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
-              <div className="flex justify-between items-center">
-                <h3 className="font-bold text-white text-base">اختر صورتك الشخصية</h3>
-                <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="grid grid-cols-3 gap-3 my-4">
-                {availableAvatars.map((av, index) => (
-                  <div 
-                    key={index}
-                    onClick={() => {
-                      setUser(prev => ({ ...prev, avatar: av }));
-                      setShowAvatarModal(false);
-                    }}
-                    className={`p-2.5 rounded-2xl border-2 cursor-pointer flex flex-col items-center gap-1.5 transition ${
-                      user.avatar === av ? 'border-yellow-400 bg-yellow-500/20 shadow-lg' : 'border-purple-400/30 bg-[#0d031f] hover:border-purple-300'
-                    }`}
-                  >
-                    <img src={assetPath(av)} alt={`Avatar ${index + 1}`} className="w-14 h-14 rounded-full object-cover" />
-                    <span className="text-[10px] font-bold text-slate-200">شخصية {index + 1}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button 
-                onClick={() => setShowAvatarModal(false)}
-                className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
-              >
-                إغلاق
-              </button>
-            </div>
-          </div>
-        )}
 
         {/* WALLETCONNECT MODAL */}
         {showWalletModal && (
