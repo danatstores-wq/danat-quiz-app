@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { ShieldCheck, Check, Tv, X, Settings, Clock, Lock } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Check, Tv, X, Settings, Clock, Lock, Globe } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
 
   const [user, setUser] = useState({
     name: 'أحمد',
-    email: 'ahmad.dnc@danatstores.com', // Registered email (locked)
-    language: 'العربية', // Locked language
+    email: 'ahmad.dnc@danatstores.com',
+    language: 'العربية',
     level: 12,
     spirits: 2350,
     dncBalance: 120.0,
@@ -18,8 +18,8 @@ export default function App() {
     avatar: 'avatar_kuwaiti.png',
   });
 
-  const [levelsPlayed, setLevelsPlayed] = useState(0); // Tracks completed levels for forced ads
-  const [showForcedAd, setShowForcedAd] = useState(false); // Forces video ad modal automatically
+  const [levelsPlayed, setLevelsPlayed] = useState(0);
+  const [showForcedAd, setShowForcedAd] = useState(false);
   const [forcedAdTimer, setForcedAdTimer] = useState(5);
 
   const [showWalletModal, setShowWalletModal] = useState(false);
@@ -46,14 +46,12 @@ export default function App() {
 
   const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
 
-  // Simulate finishing a level round
   const handleCompleteLevel = () => {
     const nextLevelCount = levelsPlayed + 1;
     setLevelsPlayed(nextLevelCount);
 
     if (nextLevelCount >= 4) {
-      // Force Google Rewarded Video Ad automatically after 4 levels
-      setLevelsPlayed(0); // Reset counter
+      setLevelsPlayed(0);
       triggerForcedGoogleAd();
     } else {
       setActiveTab('quiz');
@@ -158,7 +156,7 @@ export default function App() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#2a0c52]/80 via-[#1a0833]/90 to-[#0d031f]/95 z-0" />
 
-        {/* TOP STATUS BAR */}
+        {/* TOP STATUS BAR - FIXED LANGUAGE GLOBE ICON */}
         <div className="bg-[#120524]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-purple-500/30 z-10">
           <span className="font-bold text-white">9:41</span>
           <div className="flex items-center gap-2">
@@ -170,7 +168,7 @@ export default function App() {
             </button>
             <span className="text-purple-400/50">|</span>
             <span className="flex items-center gap-1 text-slate-200 font-semibold">
-              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" /> {user.language}
+              <Globe className="w-3.5 h-3.5 text-yellow-400" /> {user.language}
             </span>
             <span>📶 🔋</span>
           </div>
@@ -182,31 +180,31 @@ export default function App() {
           {/* SCREEN 1: HOME */}
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
-              <div className="relative w-full bg-[#1a0833]/70 rounded-3xl p-5 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden">
+              
+              {/* HERO CARD WITH STRETCHED LOGO & REMOVED TOP-LEFT COIN ICONS */}
+              <div className="relative w-full bg-[#1a0833]/80 rounded-3xl p-3 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col items-center">
                 <div className="absolute -top-12 -right-12 w-40 h-40 bg-yellow-500/15 rounded-full blur-3xl"></div>
                 
-                <div className="flex justify-between items-center mb-1 relative z-10">
+                {/* Settings icon only (coin icons removed) */}
+                <div className="w-full flex justify-between items-center mb-2 relative z-10">
                   <button className="p-2 bg-[#2a0c52] rounded-full text-yellow-400 border border-yellow-500/40 shadow">
                     <Settings className="w-4 h-4" />
                   </button>
-                  <div className="flex gap-2">
-                    <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-7 h-7 object-contain drop-shadow" />
-                    <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-7 h-7 object-contain drop-shadow" />
-                  </div>
                 </div>
 
-                <div className="relative z-10 flex justify-center my-2">
+                {/* Stretched Danat Logo to fill container cell */}
+                <div className="relative z-10 w-full h-44 rounded-2xl overflow-hidden mb-2 shadow-inner">
                   <img 
                     src={assetPath('logo.png')} 
                     alt="Danat Coin Logo" 
-                    className="w-32 h-32 object-contain drop-shadow-[0_5px_20px_rgba(234,179,8,0.6)]"
+                    className="w-full h-full object-cover object-center drop-shadow-[0_5px_20px_rgba(234,179,8,0.6)]"
                   />
                 </div>
                 
                 <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-lg relative z-10">
                   دانات كويز
                 </h1>
-                <p className="text-xs text-yellow-100/90 mt-1 font-bold relative z-10">اختبر معلوماتك .. واربح المكافآت</p>
+                <p className="text-xs text-yellow-100/90 mt-1 font-bold relative z-10 pb-1">اختبر معلوماتك .. واربح المكافآت</p>
               </div>
 
               {/* User Info Bar */}
@@ -292,7 +290,7 @@ export default function App() {
 
               <div className="flex justify-center">
                 <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                  <img src={assetPath('globe_icon.png')} alt="Globe" className="w-4 h-4 object-contain" /> الجغرافيا (مستوى {levelsPlayed + 1}/4)
+                  <Globe className="w-4 h-4 text-yellow-400" /> الجغرافيا (مستوى {levelsPlayed + 1}/4)
                 </div>
               </div>
 
@@ -327,7 +325,6 @@ export default function App() {
                 })}
               </div>
 
-              {/* NEXT LEVEL BUTTON (TRIGGERS FORCED AD EVERY 4 ROUNDS) */}
               <button 
                 onClick={handleCompleteLevel}
                 className="w-full mt-4 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-sm rounded-2xl shadow-xl transition"
@@ -470,7 +467,7 @@ export default function App() {
             </div>
           )}
 
-          {/* SCREEN 5: PROFILE (LOCKED NAME, EMAIL, & LANGUAGE) */}
+          {/* SCREEN 5: PROFILE */}
           {activeTab === 'profile' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2">
@@ -496,16 +493,14 @@ export default function App() {
                   ✏️ تغيير الصورة الشخصية فقط
                 </button>
 
-                {/* LOCKED NAME FIELD */}
                 <div className="flex items-center gap-2 mt-1 bg-[#240a47] px-4 py-2 rounded-xl border border-purple-400/30">
                   <h3 className="text-base font-bold text-white">{user.name}</h3>
-                  <Lock className="w-3.5 h-3.5 text-slate-400" title="الاسم مسجل ولا يمكن تغييره" />
+                  <Lock className="w-3.5 h-3.5 text-slate-400" />
                 </div>
 
                 <span className="text-xs text-yellow-400 font-bold">المستوى {user.level}</span>
               </div>
 
-              {/* LOCKED ACCOUNT DETAILS (EMAIL & LANGUAGE) */}
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-purple-400/40 space-y-3 text-xs shadow">
                 <div className="flex justify-between items-center border-b border-purple-500/30 pb-2.5">
                   <span className="text-slate-300">البريد الإلكتروني المسجل:</span>
@@ -607,7 +602,7 @@ export default function App() {
 
         </div>
 
-        {/* FORCED GOOGLE REWARDED VIDEO AD MODAL (EVERY 4 LEVELS) */}
+        {/* FORCED GOOGLE REWARDED VIDEO AD MODAL */}
         {showForcedAd && (
           <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
             <div className="w-full bg-[#240a47] border-2 border-yellow-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(234,179,8,0.5)]">
