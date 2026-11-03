@@ -1,22 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  Trophy, 
-  Gift, 
-  User, 
-  Play, 
-  Globe, 
-  Wallet, 
-  HelpCircle, 
-  Sparkles, 
-  Clock, 
-  BarChart3, 
-  Home, 
-  Check, 
-  ShieldCheck, 
-  Tv,
-  X,
-  Settings
-} from 'lucide-react';
+import { ShieldCheck, Check, Tv, X, Settings, Clock } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -30,9 +13,11 @@ export default function App() {
     totalEarnedSpirits: 8750,
     walletConnected: false,
     walletAddress: '',
+    avatar: 'user_avatar_1.png', // Dynamic avatar file
   });
 
   const [showWalletModal, setShowWalletModal] = useState(false);
+  const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [customWallet, setCustomWallet] = useState('');
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
@@ -44,6 +29,14 @@ export default function App() {
     { id: '1', user: 'أحمد', spirits: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
     { id: '2', user: 'محمد علي', spirits: 5000, dnc: 5, wallet: '0x38B...12F', status: 'APPROVED', date: '2026-11-01' },
   ]);
+
+  const availableAvatars = [
+    'user_avatar_1.png',
+    'user_avatar_2.png',
+    'user_avatar_3.png'
+  ];
+
+  const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
 
   const handleConnectWallet = (address) => {
     setUser(prev => ({
@@ -110,12 +103,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
-      {/* Mobile Shell Wrapper with Exact Vibrant Blue Neon Glow Design */}
-      <div className="w-full max-w-md bg-gradient-to-b from-[#1b3b8c] via-[#0d1b45] to-[#040817] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(27,59,140,0.5)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
+    <div className="min-h-screen bg-[#1a0833] text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
+      {/* Mobile Shell Wrapper with Deep Purple & Neon Gold Design */}
+      <div className="w-full max-w-md bg-gradient-to-b from-[#2a0c52] via-[#1a0833] to-[#0d031f] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative">
         
         {/* TOP STATUS BAR */}
-        <div className="bg-[#0b1333]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-blue-400/30 z-10">
+        <div className="bg-[#120524]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-purple-500/30 z-10">
           <span className="font-bold text-white">9:41</span>
           <div className="flex items-center gap-2">
             <button 
@@ -124,36 +117,38 @@ export default function App() {
             >
               <ShieldCheck className="w-3.5 h-3.5" /> لوحة الإدارة
             </button>
-            <span className="text-blue-400/50">|</span>
-            <span className="flex items-center gap-1 text-slate-200 font-semibold">🌐 العربية</span>
+            <span className="text-purple-400/50">|</span>
+            <span className="flex items-center gap-1 text-slate-200 font-semibold">
+              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" /> العربية
+            </span>
             <span>📶 🔋</span>
           </div>
         </div>
 
         {/* MAIN DISPLAY AREA */}
-        <div className="flex-1 overflow-y-auto pb-24 px-4 pt-4 relative">
+        <div className="flex-1 overflow-y-auto pb-36 px-4 pt-4 relative">
 
           {/* SCREEN 1: HOME */}
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
-              <div className="relative w-full bg-gradient-to-b from-[#162d66] via-[#0d1738] to-[#080e24] rounded-3xl p-5 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.2)] overflow-hidden">
-                <div className="absolute -top-12 -right-12 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl"></div>
+              <div className="relative w-full bg-gradient-to-b from-[#310e5e] via-[#1a0833] to-[#100324] rounded-3xl p-5 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-yellow-500/15 rounded-full blur-3xl"></div>
                 
                 <div className="flex justify-between items-center mb-1 relative z-10">
-                  <button className="p-2 bg-[#1b3b8c] rounded-full text-yellow-400 border border-yellow-500/40 shadow">
+                  <button className="p-2 bg-[#2a0c52] rounded-full text-yellow-400 border border-yellow-500/40 shadow">
                     <Settings className="w-4 h-4" />
                   </button>
                   <div className="flex gap-2">
-                    <span className="w-7 h-7 rounded-full bg-yellow-500/30 border border-yellow-400 flex items-center justify-center text-xs shadow">🪙</span>
-                    <span className="w-7 h-7 rounded-full bg-yellow-500/40 border border-yellow-400 flex items-center justify-center text-xs shadow">🪙</span>
+                    <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-7 h-7 object-contain drop-shadow" />
+                    <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-7 h-7 object-contain drop-shadow" />
                   </div>
                 </div>
 
                 <div className="relative z-10 flex justify-center my-2">
                   <img 
-                    src={`${import.meta.env.BASE_URL}logo.png`} 
+                    src={assetPath('logo.png')} 
                     alt="Danat Coin Logo" 
-                    className="w-32 h-32 object-contain drop-shadow-[0_5px_15px_rgba(234,179,8,0.6)]"
+                    className="w-32 h-32 object-contain drop-shadow-[0_5px_20px_rgba(234,179,8,0.6)]"
                   />
                 </div>
                 
@@ -164,12 +159,14 @@ export default function App() {
               </div>
 
               {/* User Info Bar */}
-              <div className="w-full bg-[#12285c]/90 rounded-2xl p-4 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md">
+              <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-12 h-12 rounded-full bg-amber-500/20 border-2 border-yellow-400 flex items-center justify-center text-xl shadow">
-                      👦🏻
-                    </div>
+                  <div className="relative cursor-pointer group" onClick={() => setShowAvatarModal(true)}>
+                    <img 
+                      src={assetPath(user.avatar)} 
+                      alt="User Avatar" 
+                      className="w-12 h-12 rounded-full border-2 border-yellow-400 object-cover shadow group-hover:scale-105 transition"
+                    />
                     <span className="absolute -bottom-1 -right-1 bg-yellow-500 text-slate-950 text-[10px] font-black px-1.5 py-0.2 rounded-full shadow">
                       ★ {user.level}
                     </span>
@@ -180,7 +177,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="text-left bg-slate-950/90 px-3.5 py-2 rounded-xl border border-yellow-500/40 shadow-inner">
+                <div className="text-left bg-[#0f041d]/90 px-3.5 py-2 rounded-xl border border-yellow-500/40 shadow-inner">
                   <div className="text-[10px] text-slate-300">رصيد DNC</div>
                   <div className="text-sm font-black text-yellow-400 flex items-center gap-1">
                     {user.dncBalance.toLocaleString()} <span className="text-xs">D</span>
@@ -193,7 +190,7 @@ export default function App() {
                 onClick={() => setActiveTab('quiz')} 
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
               >
-                <Play className="w-6 h-6 fill-slate-950" />
+                <img src={assetPath('nav_quiz.png')} alt="Play" className="w-7 h-7 object-contain" />
                 ابدأ اللعب
               </button>
 
@@ -201,33 +198,33 @@ export default function App() {
               <div className="w-full grid grid-cols-2 gap-3">
                 <button 
                   onClick={() => setActiveTab('leaderboard')}
-                  className="bg-[#12285c]/80 hover:bg-[#1a387d] p-4 rounded-2xl border border-blue-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
+                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
-                  <Trophy className="w-8 h-8 text-yellow-400 group-hover:scale-110 transition" />
+                  <img src={assetPath('trophy_large.png')} alt="Trophy" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-100">لوحة المتصدرين</span>
                 </button>
 
                 <button 
                   onClick={() => setActiveTab('rewards')}
-                  className="bg-[#12285c]/80 hover:bg-[#1a387d] p-4 rounded-2xl border border-blue-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
+                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
-                  <Gift className="w-8 h-8 text-purple-400 group-hover:scale-110 transition" />
+                  <img src={assetPath('gift_large.png')} alt="Rewards" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-100">المكافآت</span>
                 </button>
 
                 <button 
                   onClick={() => setActiveTab('profile')}
-                  className="bg-[#12285c]/80 hover:bg-[#1a387d] p-4 rounded-2xl border border-blue-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
+                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
-                  <BarChart3 className="w-8 h-8 text-blue-400 group-hover:scale-110 transition" />
+                  <img src={assetPath('stats_icon.png')} alt="Stats" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-100">إحصائيات</span>
                 </button>
 
                 <button 
                   onClick={() => setActiveTab('profile')}
-                  className="bg-[#12285c]/80 hover:bg-[#1a387d] p-4 rounded-2xl border border-blue-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
+                  className="bg-[#240a47]/80 hover:bg-[#320d63] p-4 rounded-2xl border border-purple-400/40 flex flex-col items-center gap-2 transition group shadow-lg"
                 >
-                  <User className="w-8 h-8 text-emerald-400 group-hover:scale-110 transition" />
+                  <img src={assetPath('nav_profile.png')} alt="Profile" className="w-9 h-9 object-contain group-hover:scale-110 transition" />
                   <span className="text-sm font-bold text-slate-100">ملفي الشخصي</span>
                 </button>
               </div>
@@ -238,24 +235,24 @@ export default function App() {
           {activeTab === 'quiz' && (
             <div className="flex flex-col gap-4">
               <div className="w-full flex items-center justify-between gap-3">
-                <button onClick={() => setActiveTab('home')} className="p-2.5 bg-[#12285c] rounded-xl text-slate-200 font-bold text-xs border border-blue-400/40">
+                <button onClick={() => setActiveTab('home')} className="p-2.5 bg-[#240a47] rounded-xl text-slate-200 font-bold text-xs border border-purple-400/40">
                   ⏸
                 </button>
-                <div className="flex-1 bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-blue-400/40">
+                <div className="flex-1 bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-purple-400/40">
                   <div className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full w-[53%]"></div>
                 </div>
-                <div className="flex items-center gap-1 bg-[#12285c] px-3 py-1.5 rounded-xl text-yellow-400 text-xs font-bold border border-blue-400/40">
+                <div className="flex items-center gap-1 bg-[#240a47] px-3 py-1.5 rounded-xl text-yellow-400 text-xs font-bold border border-purple-400/40">
                   <Clock className="w-3.5 h-3.5" /> 25
                 </div>
               </div>
 
               <div className="flex justify-center">
-                <div className="bg-blue-600/40 border border-blue-400 text-blue-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                  <Globe className="w-4 h-4" /> الجغرافيا
+                <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
+                  <img src={assetPath('globe_icon.png')} alt="Globe" className="w-4 h-4 object-contain" /> الجغرافيا
                 </div>
               </div>
 
-              <div className="w-full bg-[#12285c]/90 rounded-2xl p-6 border border-blue-400/40 text-center shadow-xl my-2">
+              <div className="w-full bg-[#240a47]/90 rounded-2xl p-6 border border-purple-400/40 text-center shadow-xl my-2">
                 <h3 className="text-lg font-bold text-white leading-relaxed">
                   ما هي عاصمة فرنسا؟
                 </h3>
@@ -276,7 +273,7 @@ export default function App() {
                       className={`w-full py-3.5 px-5 rounded-2xl font-bold text-sm flex items-center justify-between transition border shadow ${
                         isSelected
                           ? 'bg-emerald-600/40 border-emerald-400 text-emerald-200 shadow-emerald-900/40'
-                          : 'bg-[#12285c]/80 border-blue-400/30 text-slate-100 hover:bg-[#1a387d]'
+                          : 'bg-[#240a47]/80 border-purple-400/30 text-slate-100 hover:bg-[#320d63]'
                       }`}
                     >
                       <span>{opt.text}</span>
@@ -291,10 +288,10 @@ export default function App() {
                   onClick={() => setLifelineExtraUsed(true)}
                   disabled={lifelineExtraUsed}
                   className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition shadow ${
-                    lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#12285c]/80 border-blue-400/30 text-yellow-400'
+                    lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-yellow-400'
                   }`}
                 >
-                  <Sparkles className="w-5 h-5" />
+                  <img src={assetPath('help_star.png')} alt="Help Star" className="w-6 h-6 object-contain" />
                   <span>50 مكافأة إضافية</span>
                 </button>
 
@@ -302,10 +299,10 @@ export default function App() {
                   onClick={() => setLifeline50Used(true)}
                   disabled={lifeline50Used}
                   className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition shadow ${
-                    lifeline50Used ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#12285c]/80 border-blue-400/30 text-blue-400'
+                    lifeline50Used ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-purple-400'
                   }`}
                 >
-                  <HelpCircle className="w-5 h-5" />
+                  <img src={assetPath('help_5050.png')} alt="50:50" className="w-6 h-6 object-contain" />
                   <span>50:50 مساعدة</span>
                 </button>
               </div>
@@ -316,28 +313,28 @@ export default function App() {
           {activeTab === 'rewards' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2 flex flex-col items-center">
-                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
+                <img src={assetPath('logo.png')} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">مكافآتي</h2>
               </div>
 
-              <div className="w-full bg-[#12285c]/90 rounded-2xl p-5 border border-blue-400/40 flex justify-between items-center shadow-lg">
+              <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-purple-400/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-2xl">
-                    🔥
+                  <div className="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center">
+                    <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-8 h-8 object-contain" />
                   </div>
                   <div>
                     <div className="text-xs text-slate-300">أرواح حالية</div>
-                    <div className="text-2xl font-black text-blue-400">{user.spirits.toLocaleString()}</div>
+                    <div className="text-2xl font-black text-purple-300">{user.spirits.toLocaleString()}</div>
                   </div>
                 </div>
-                <button onClick={handleWatchAd} className="bg-blue-600 hover:bg-blue-500 text-white w-9 h-9 rounded-full font-bold text-xl flex items-center justify-center shadow">
+                <button onClick={handleWatchAd} className="bg-purple-600 hover:bg-purple-500 text-white w-9 h-9 rounded-full font-bold text-xl flex items-center justify-center shadow">
                   +
                 </button>
               </div>
 
-              <div className="w-full bg-[#12285c]/90 rounded-2xl p-5 border border-yellow-500/40 flex justify-between items-center shadow-lg">
+              <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-yellow-500/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
-                  <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-10 h-10 object-contain" />
+                  <img src={assetPath('logo.png')} alt="Logo" className="w-10 h-10 object-contain" />
                   <div>
                     <div className="text-xs text-slate-300">رصيد DNC</div>
                     <div className="text-2xl font-black text-yellow-400">{user.dncBalance.toLocaleString()}</div>
@@ -351,12 +348,12 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="w-full bg-slate-950/80 rounded-xl p-3.5 border border-blue-400/30 text-center text-xs text-slate-200 shadow">
+              <div className="w-full bg-[#0d031f]/80 rounded-xl p-3.5 border border-purple-400/30 text-center text-xs text-slate-200 shadow">
                 <span className="font-bold text-yellow-400">معادلة التحويل:</span> طلب استبدال 1,000 روح = DNC
               </div>
 
               {/* GOOGLE REWARDED AD */}
-              <div className="w-full bg-gradient-to-br from-purple-900/50 to-[#12285c] rounded-2xl p-4 border border-purple-500/40 flex items-center justify-between gap-3 shadow-lg">
+              <div className="w-full bg-gradient-to-br from-purple-900/50 to-[#240a47] rounded-2xl p-4 border border-purple-500/40 flex items-center justify-between gap-3 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300">
                     <Tv className="w-5 h-5" />
@@ -382,11 +379,11 @@ export default function App() {
           {activeTab === 'leaderboard' && (
             <div className="flex flex-col gap-4">
               <div className="text-center my-2">
-                <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-1" />
+                <img src={assetPath('trophy_large.png')} alt="Trophy" className="w-14 h-14 mx-auto mb-1 object-contain" />
                 <h2 className="text-2xl font-black text-yellow-400">لوحة المتصدرين</h2>
               </div>
 
-              <div className="w-full bg-[#12285c] p-1 rounded-xl flex gap-1 border border-blue-400/40 text-xs font-bold shadow">
+              <div className="w-full bg-[#240a47] p-1 rounded-xl flex gap-1 border border-purple-400/40 text-xs font-bold shadow">
                 <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
                   أفضل اللاعبين
                 </button>
@@ -395,7 +392,7 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="w-full bg-slate-950 px-4 py-2.5 rounded-lg flex text-[11px] text-slate-300 font-bold border border-blue-400/30 shadow">
+              <div className="w-full bg-[#0d031f] px-4 py-2.5 rounded-lg flex text-[11px] text-slate-300 font-bold border border-purple-400/30 shadow">
                 <span className="w-12">المركز</span>
                 <span className="flex-1 text-right">اللاعب</span>
                 <span className="w-20 text-left">النقاط</span>
@@ -409,8 +406,8 @@ export default function App() {
                   { rank: 4, name: 'ليلى منصور', points: '350,400' },
                   { rank: 5, name: 'عمر يوسف', points: '320,100' }
                 ].map(player => (
-                  <div key={player.rank} className="w-full bg-[#12285c]/80 p-3.5 rounded-xl border border-blue-400/30 flex items-center justify-between text-xs shadow">
-                    <div className="w-8 h-8 rounded-full bg-slate-950 border border-yellow-500/40 flex items-center justify-center font-bold text-yellow-400 shadow">
+                  <div key={player.rank} className="w-full bg-[#240a47]/80 p-3.5 rounded-xl border border-purple-400/30 flex items-center justify-between text-xs shadow">
+                    <div className="w-8 h-8 rounded-full bg-[#0d031f] border border-yellow-500/40 flex items-center justify-center font-bold text-yellow-400 shadow">
                       {player.rank}
                     </div>
                     <div className="flex-1 px-3 font-bold text-slate-100">{player.name}</div>
@@ -429,10 +426,12 @@ export default function App() {
               </div>
 
               <div className="flex flex-col items-center gap-2">
-                <div className="relative">
-                  <div className="w-20 h-20 rounded-full bg-amber-500/20 border-2 border-yellow-400 flex items-center justify-center text-3xl shadow-xl">
-                    👦🏻
-                  </div>
+                <div className="relative cursor-pointer group" onClick={() => setShowAvatarModal(true)}>
+                  <img 
+                    src={assetPath(user.avatar)} 
+                    alt="Avatar" 
+                    className="w-20 h-20 rounded-full border-2 border-yellow-400 object-cover shadow-xl group-hover:scale-105 transition"
+                  />
                   <span className="absolute bottom-0 right-0 bg-yellow-500 text-slate-950 text-xs font-black px-2 py-0.5 rounded-full border border-slate-900 shadow">
                     ★ {user.level}
                   </span>
@@ -442,17 +441,17 @@ export default function App() {
               </div>
 
               <div className="w-full grid grid-cols-3 gap-2">
-                <div className="bg-[#12285c] p-3 rounded-2xl border border-blue-400/40 text-center shadow">
+                <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
                   <div className="text-[10px] text-slate-300 mb-1">عدد الألعاب</div>
                   <div className="text-base font-black text-white">{user.totalGames}</div>
                 </div>
 
-                <div className="bg-[#12285c] p-3 rounded-2xl border border-blue-400/40 text-center shadow">
+                <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
                   <div className="text-[10px] text-slate-300 mb-1">أرواح مكتسبة</div>
-                  <div className="text-base font-black text-blue-400">{user.totalEarnedSpirits.toLocaleString()}</div>
+                  <div className="text-base font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
                 </div>
 
-                <div className="bg-[#12285c] p-3 rounded-2xl border border-blue-400/40 text-center shadow">
+                <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
                   <div className="text-[10px] text-slate-300 mb-1">DNC</div>
                   <div className="text-base font-black text-yellow-400">{user.dncBalance}</div>
                 </div>
@@ -464,11 +463,11 @@ export default function App() {
                   className={`w-full py-4 px-4 rounded-2xl border font-bold text-sm flex items-center justify-between transition shadow ${
                     user.walletConnected 
                       ? 'bg-emerald-950/50 border-emerald-500/60 text-emerald-300' 
-                      : 'bg-[#12285c] border-blue-400/40 text-purple-200 hover:bg-[#1a387d]'
+                      : 'bg-[#240a47] border-purple-400/40 text-purple-200 hover:bg-[#320d63]'
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    <Wallet className="w-5 h-5 text-purple-400" />
+                    <img src={assetPath('wallet_icon.png')} alt="Wallet" className="w-6 h-6 object-contain" />
                     <span>{user.walletConnected ? 'المحفظة متصلة' : 'ربط المحفظة (WalletConnect)'}</span>
                   </div>
                   <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
@@ -476,9 +475,9 @@ export default function App() {
                   </span>
                 </button>
 
-                <button className="w-full py-4 px-4 bg-[#12285c] border border-blue-400/40 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between shadow">
+                <button className="w-full py-4 px-4 bg-[#240a47] border border-purple-400/40 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between shadow">
                   <div className="flex items-center gap-2">
-                    <Globe className="w-5 h-5 text-blue-400" />
+                    <img src={assetPath('globe_icon.png')} alt="Globe" className="w-6 h-6 object-contain" />
                     <span>تغيير اللغة</span>
                   </div>
                   <span className="text-xs text-slate-300">العربية</span>
@@ -490,18 +489,18 @@ export default function App() {
           {/* ADMIN PANEL */}
           {activeTab === 'admin' && (
             <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center border-b border-blue-400/40 pb-3">
+              <div className="flex justify-between items-center border-b border-purple-400/40 pb-3">
                 <h2 className="text-base font-bold text-yellow-400 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5" /> لوحة موافقة الأدمن
                 </h2>
-                <button onClick={() => setActiveTab('home')} className="text-xs bg-[#12285c] px-3 py-1 rounded-lg text-slate-200 border border-blue-400/40">إغلاق</button>
+                <button onClick={() => setActiveTab('home')} className="text-xs bg-[#240a47] px-3 py-1 rounded-lg text-slate-200 border border-purple-400/40">إغلاق</button>
               </div>
 
               <p className="text-xs text-slate-300">مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:</p>
 
               <div className="space-y-3">
                 {redemptions.map(req => (
-                  <div key={req.id} className="bg-[#12285c]/90 p-4 rounded-xl border border-blue-400/40 text-xs space-y-2.5 shadow">
+                  <div key={req.id} className="bg-[#240a47]/90 p-4 rounded-xl border border-purple-400/40 text-xs space-y-2.5 shadow">
                     <div className="flex justify-between font-bold">
                       <span className="text-white">{req.user}</span>
                       <span className={req.status === 'APPROVED' ? 'text-emerald-400' : 'text-amber-400'}>
@@ -514,7 +513,7 @@ export default function App() {
                       <span className="text-yellow-400 font-bold">{req.dnc} DNC</span>
                     </div>
 
-                    <div className="text-[10px] text-slate-300 font-mono break-all bg-slate-950 p-2 rounded border border-blue-400/30">
+                    <div className="text-[10px] text-slate-300 font-mono break-all bg-[#0d031f] p-2 rounded border border-purple-400/30">
                       المحفظة: {req.wallet}
                     </div>
 
@@ -534,36 +533,83 @@ export default function App() {
 
         </div>
 
-        {/* FIXED BOTTOM NAVIGATION BAR */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#070e26]/95 border-t border-blue-400/30 px-4 py-2.5 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
+        {/* BOTTOM FIXED GOOGLE ADS DISPLAY BANNER */}
+        <div className="absolute bottom-16 left-0 right-0 bg-[#080214] border-t border-purple-500/20 py-2 px-4 z-20 flex justify-center items-center">
+          <div className="w-full max-w-xs h-12 bg-slate-900/90 border border-slate-700/50 rounded-lg flex items-center justify-between px-3 text-[11px] text-slate-400 shadow-inner">
+            <span className="bg-yellow-500/20 text-yellow-400 text-[9px] font-bold px-1.5 py-0.5 rounded border border-yellow-500/30">إعلان</span>
+            <span className="font-sans font-semibold text-slate-300">Google AdMob Banner Area</span>
+            <span className="text-slate-500 text-[10px]">320x50</span>
+          </div>
+        </div>
+
+        {/* FIXED BOTTOM NAVIGATION BAR WITH 3D ICONS */}
+        <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
           {[
-            { id: 'profile', label: 'الملف', icon: User },
-            { id: 'leaderboard', label: 'المتصدرين', icon: Trophy },
-            { id: 'rewards', label: 'المكافآت', icon: Gift },
-            { id: 'quiz', label: 'اللعب', icon: Play },
-            { id: 'home', label: 'الرئيسية', icon: Home }
+            { id: 'profile', label: 'الملف', icon: 'nav_profile.png' },
+            { id: 'leaderboard', label: 'المتصدرين', icon: 'nav_leaderboard.png' },
+            { id: 'rewards', label: 'المكافآت', icon: 'nav_rewards.png' },
+            { id: 'quiz', label: 'اللعب', icon: 'nav_quiz.png' },
+            { id: 'home', label: 'الرئيسية', icon: 'nav_home.png' }
           ].map(tab => {
-            const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-center gap-1 px-3 py-1 rounded-xl transition ${
-                  isActive ? 'text-yellow-400 scale-105' : 'text-slate-400 hover:text-slate-200'
+                  isActive ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'
                 }`}
               >
-                <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
-                <span className="text-[10px] font-bold">{tab.label}</span>
+                <img src={assetPath(tab.icon)} alt={tab.label} className="w-7 h-7 object-contain" />
+                <span className={`text-[10px] font-bold ${isActive ? 'text-yellow-400' : 'text-slate-300'}`}>{tab.label}</span>
               </button>
             );
           })}
         </div>
 
+        {/* AVATAR SELECTION MODAL */}
+        {showAvatarModal && (
+          <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
+              <div className="flex justify-between items-center">
+                <h3 className="font-bold text-white text-base">اختر صورتك الشخصية</h3>
+                <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 my-4">
+                {availableAvatars.map((av, index) => (
+                  <div 
+                    key={index}
+                    onClick={() => {
+                      setUser(prev => ({ ...prev, avatar: av }));
+                      setShowAvatarModal(false);
+                    }}
+                    className={`p-2.5 rounded-2xl border-2 cursor-pointer flex flex-col items-center gap-1.5 transition ${
+                      user.avatar === av ? 'border-yellow-400 bg-yellow-500/20 shadow-lg' : 'border-purple-400/30 bg-[#0d031f] hover:border-purple-300'
+                    }`}
+                  >
+                    <img src={assetPath(av)} alt={`Avatar ${index + 1}`} className="w-14 h-14 rounded-full object-cover" />
+                    <span className="text-[10px] font-bold text-slate-200">شخصية {index + 1}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button 
+                onClick={() => setShowAvatarModal(false)}
+                className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
+              >
+                إغلاق
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* WALLETCONNECT MODAL */}
         {showWalletModal && (
           <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="w-full bg-[#12285c] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
+            <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
               <div className="flex justify-between items-center">
                 <h3 className="font-bold text-white text-base">ربط محفظة Web3</h3>
                 <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
@@ -580,7 +626,7 @@ export default function App() {
                 placeholder="0x71C7656EC7ab88b098defB751B7401B5f6d8939A"
                 value={customWallet}
                 onChange={(e) => setCustomWallet(e.target.value)}
-                className="w-full bg-slate-950 border border-blue-400/40 rounded-xl p-3 text-xs text-white font-mono dir-ltr focus:border-yellow-500 outline-none shadow-inner"
+                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl p-3 text-xs text-white font-mono dir-ltr focus:border-yellow-500 outline-none shadow-inner"
               />
 
               <button 
