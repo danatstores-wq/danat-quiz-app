@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Check, Tv, X, Settings, Clock, Pencil, UserCircle } from 'lucide-react';
+import { ShieldCheck, Check, Tv, X, Settings, Clock, Pencil } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -13,12 +13,13 @@ export default function App() {
     totalEarnedSpirits: 8750,
     walletConnected: false,
     walletAddress: '',
-    // --- 1. SET THE INITIAL DYNAMIC AVATAR TO ONE OF YOUR PNGS ---
-    avatar: 'avatar_kuwaiti.png', 
+    avatar: 'avatar_kuwaiti.png',
   });
 
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
+  const [showNameModal, setShowNameModal] = useState(false);
+  const [newNameInput, setNewNameInput] = useState(user.name);
   const [customWallet, setCustomWallet] = useState('');
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
@@ -31,13 +32,12 @@ export default function App() {
     { id: '2', user: 'محمد علي', spirits: 5000, dnc: 5, wallet: '0x38B...12F', status: 'APPROVED', date: '2026-11-01' },
   ]);
 
-  // --- 2. LIST OF THE 5 SELECTABLE AVATARS (Upload to public/assets/) ---
   const availableAvatars = [
-    { id: 'avatar_kuwaiti.png', name: 'كويتي' },
-    { id: 'avatar_boy.png', name: 'شاب 18' },
-    { id: 'avatar_hijab.png', name: 'بالحجاب' },
-    { id: 'avatar_brunette.png', name: 'بدون حجاب' },
-    { id: 'avatar_blonde.png', name: 'شقراء' },
+    { id: 'avatar_kuwaiti.png' },
+    { id: 'avatar_boy.png' },
+    { id: 'avatar_hijab.png' },
+    { id: 'avatar_brunette.png' },
+    { id: 'avatar_blonde.png' },
   ];
 
   const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
@@ -108,7 +108,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#1a0833] text-white font-sans flex justify-center items-center p-0 md:p-4" dir="rtl">
-      {/* Mobile Shell Wrapper with Deep Purple & Neon Gold Design */}
+      {/* Mobile Shell Wrapper */}
       <div
         style={{
           backgroundImage: `url(${assetPath("main_background.jpg")})`,
@@ -165,15 +165,14 @@ export default function App() {
                 </div>
                 
                 <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-lg relative z-10">
-              دانات كويز
+                  دانات كويز
                 </h1>
                 <p className="text-xs text-yellow-100/90 mt-1 font-bold relative z-10">اختبر معلوماتك .. واربح المكافآت</p>
               </div>
 
-              {/* User Info Bar with Clicking to Select Avatar */}
+              {/* User Info Bar */}
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                  {/* --- 3. MAKE AVATAR CLICKABLE IN HOME SCREEN --- */}
                   <div className="relative cursor-pointer group" onClick={() => setShowAvatarModal(true)}>
                     <img 
                       src={assetPath(user.avatar)} 
@@ -204,10 +203,10 @@ export default function App() {
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
               >
                 <img src={assetPath('3d_question.png')} alt="Play" className="w-7 h-7 object-contain" />
-            ابدأ اللعب
+                ابدأ اللعب
               </button>
 
-              {/* 4 Stretched Feature Cards */}
+              {/* 4 STRETCHED FEATURE CARDS */}
               <div className="w-full grid grid-cols-2 gap-3 mt-1">
                 {[
                   { label: "المكافآت", icon: "gift_large.png", tab: "rewards" },
@@ -260,7 +259,7 @@ export default function App() {
 
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-6 border border-purple-400/40 text-center shadow-xl my-2">
                 <h3 className="text-lg font-bold text-white leading-relaxed">
-              ما هي عاصمة فرنسا؟
+                  ما هي عاصمة فرنسا؟
                 </h3>
               </div>
 
@@ -350,7 +349,7 @@ export default function App() {
                   onClick={handleRedeemDnc}
                   className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow"
                 >
-              طلب استبدال
+                  طلب استبدال
                 </button>
               </div>
 
@@ -391,10 +390,10 @@ export default function App() {
 
               <div className="w-full bg-[#240a47] p-1 rounded-xl flex gap-1 border border-purple-400/40 text-xs font-bold shadow">
                 <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
-              أفضل اللاعبين
+                  أفضل اللاعبين
                 </button>
                 <button className="flex-1 py-2.5 text-slate-300 hover:text-white">
-              أعلى النقاط
+                  أعلى النقاط
                 </button>
               </div>
 
@@ -431,7 +430,6 @@ export default function App() {
                 <h2 className="text-2xl font-black text-white">ملفي الشخصي</h2>
               </div>
 
-              {/* 4. MAKE PROFILE AVATAR CLICKABLE & ADD CHANGE BUTTON */}
               <div className="flex flex-col items-center gap-3">
                 <div 
                   className="relative cursor-pointer group"
@@ -442,7 +440,6 @@ export default function App() {
                     alt="Current Portrait" 
                     className="w-24 h-24 rounded-full border-4 border-yellow-400 object-cover shadow-2xl group-hover:scale-105 transition"
                   />
-                  {/* Small edit icon badge on top corner */}
                   <div className="absolute -top-1 -right-1 bg-purple-600 p-2 rounded-full border-2 border-slate-900 shadow">
                     <Pencil className="w-3.5 h-3.5 text-white" />
                   </div>
@@ -455,7 +452,18 @@ export default function App() {
                   ✏️ تغيير الصورة الشخصية
                 </button>
 
-                <h3 className="text-lg font-bold text-white mt-1">{user.name}</h3>
+                {/* NAME & EDIT BUTTON */}
+                <div className="flex items-center gap-2 mt-1">
+                  <h3 className="text-lg font-bold text-white">{user.name}</h3>
+                  <button 
+                    onClick={() => { setNewNameInput(user.name); setShowNameModal(true); }}
+                    className="p-1 bg-yellow-500/20 text-yellow-400 rounded-md border border-yellow-500/40 hover:bg-yellow-500/30 transition"
+                    title="تغيير الاسم"
+                  >
+                    <Pencil className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+
                 <span className="text-xs text-yellow-400 font-bold">المستوى {user.level}</span>
               </div>
 
@@ -496,7 +504,7 @@ export default function App() {
 
                 <button className="w-full py-4 px-4 bg-[#240a47] border border-purple-400/40 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between shadow">
                   <div className="flex items-center gap-2">
-                    <img src={assetPath('globe_icon.png')} alt="Globe" className="w-6 h-6 object-contain" />
+                    <img src={assetPath('language.png')} alt="Globe" className="w-6 h-6 object-contain" />
                     <span>تغيير اللغة</span>
                   </div>
                   <span className="text-xs text-slate-300">العربية</span>
@@ -541,7 +549,7 @@ export default function App() {
                         onClick={() => handleAdminApprove(req.id)}
                         className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold mt-1 transition shadow"
                       >
-                    اعتماد وإرسال التوكنز
+                        اعتماد وإرسال التوكنز
                       </button>
                     )}
                   </div>
@@ -559,7 +567,6 @@ export default function App() {
             { id: 'quiz', label: 'اللعب', icon: 'dnc_coin.png', type: 'image' },
             { id: 'rewards', label: 'المكافآت', icon: 'nav_rewards.png', type: 'image' },
             { id: 'leaderboard', label: 'المتصدرين', icon: 'nav_leaderboard.png', type: 'image' },
-            // --- 5. MAKE PROFILE NAV ICON DYNAMIC TO SELECTED AVATAR ---
             { id: 'profile', label: 'الملف', icon: user.avatar, type: 'dynamic_avatar' }
           ].map(tab => {
             const isActive = activeTab === tab.id;
@@ -573,10 +580,8 @@ export default function App() {
                 }`}
               >
                 {isAvatar ? (
-                  // Small dynamic avatar icon
                   <img src={assetPath(tab.icon)} alt="Profile" className="w-7 h-7 rounded-full object-cover border border-purple-400" />
                 ) : (
-                  // Standard icon
                   <img src={assetPath(tab.icon)} alt={tab.label} className="w-7 h-7 object-contain" />
                 )}
                 <span className={`text-[10px] font-bold ${isActive ? 'text-yellow-400' : 'text-slate-300'}`}>{tab.label}</span>
@@ -584,6 +589,48 @@ export default function App() {
             );
           })}
         </div>
+
+        {/* EDIT NAME MODAL */}
+        {showNameModal && (
+          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-4 shadow-2xl">
+              <div className="flex justify-between items-center">
+                <h3 className="font-bold text-white text-base">تغيير اسم اللاعب</h3>
+                <button onClick={() => setShowNameModal(false)} className="text-slate-300 p-1">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <input 
+                type="text" 
+                value={newNameInput}
+                onChange={(e) => setNewNameInput(e.target.value)}
+                placeholder="أدخل اسمك الجديد..."
+                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl p-3 text-xs text-white outline-none focus:border-yellow-500 shadow-inner"
+              />
+
+              <div className="flex gap-3">
+                <button 
+                  onClick={() => setShowNameModal(false)}
+                  className="flex-1 py-3 bg-[#0d031f] border border-purple-500/40 text-slate-100 font-bold text-xs rounded-xl"
+                >
+                  إلغاء
+                </button>
+                <button 
+                  onClick={() => {
+                    if (newNameInput.trim()) {
+                      setUser(prev => ({ ...prev, name: newNameInput.trim() }));
+                    }
+                    setShowNameModal(false);
+                  }}
+                  className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg"
+                >
+                  حفظ الاسم
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* WALLETCONNECT MODAL */}
         {showWalletModal && (
@@ -597,7 +644,7 @@ export default function App() {
               </div>
 
               <p className="text-xs text-slate-300 leading-relaxed">
-            أدخل عنوان محفظة إيثريوم (MetaMask / Trust Wallet) لاستلام توكن دانات كوين (DNC):
+                أدخل عنوان محفظة إيثريوم (MetaMask / Trust Wallet) لاستلام توكن دانات كوين (DNC):
               </p>
 
               <input 
@@ -612,13 +659,13 @@ export default function App() {
                 onClick={() => handleConnectWallet(customWallet)}
                 className="w-full py-3.5 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg"
               >
-            تأكيد وتوصيل المحفظة
+                تأكيد وتوصيل المحفظة
               </button>
             </div>
           </div>
         )}
 
-        {/* --- 6. ADD THE AVATAR SELECTOR MODAL --- */}
+        {/* AVATAR SELECTOR MODAL */}
         {showAvatarModal && (
           <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
@@ -629,7 +676,7 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Grid of 5 Avatars */}
+              {/* Grid of Avatars */}
               <div className="grid grid-cols-2 gap-4 my-2">
                 {availableAvatars.map((item) => {
                   const isSelected = user.avatar === item.id;
@@ -637,32 +684,23 @@ export default function App() {
                     <div 
                       key={item.id}
                       onClick={() => {
-                        // Update player portrait globally
                         setUser(prev => ({ ...prev, avatar: item.id }));
-                        // Close modal
                         setShowAvatarModal(false);
                       }}
-                      className={`relative p-3 rounded-3xl border-2 cursor-pointer flex flex-col items-center gap-2 transition duration-200 group ${
+                      className={`relative w-full h-28 rounded-2xl border-2 cursor-pointer overflow-hidden transition duration-200 group ${
                         isSelected 
-                          ? 'border-yellow-400 bg-yellow-500/15 shadow-[0_0_30px_rgba(234,179,8,0.25)] scale-105' 
-                          : 'border-purple-400/30 bg-[#0d031f] hover:border-purple-300'
+                          ? 'border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.4)] scale-105' 
+                          : 'border-purple-400/40 hover:border-purple-300'
                       }`}
                     >
-                      {/* Character image */}
                       <img 
                         src={assetPath(item.id)} 
-                        alt={item.name} 
-                        className="w-16 h-16 rounded-full object-cover group-hover:scale-105 transition" 
+                        alt="Avatar Option" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition duration-300" 
                       />
                       
-                      {/* Character label */}
-                      <span className={`text-[11px] font-bold ${isSelected ? 'text-yellow-300' : 'text-slate-100'}`}>
-                        {item.name}
-                      </span>
-                      
-                      {/* Selection Checkmark Overlay */}
                       {isSelected && (
-                        <div className="absolute -top-2 -right-2 bg-emerald-500 p-1.5 rounded-full border-2 border-slate-900 shadow">
+                        <div className="absolute top-2 right-2 bg-emerald-500 p-1.5 rounded-full border-2 border-slate-900 shadow z-10">
                           <Check className="w-3.5 h-3.5 text-white" />
                         </div>
                       )}
