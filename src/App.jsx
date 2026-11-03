@@ -15,7 +15,7 @@ export default function App() {
     totalEarnedSpirits: 8750,
     walletConnected: false,
     walletAddress: '',
-    avatar: 'avatar_kuwaiti.png',
+    avatar: 'avatar-man-ghutra.png',
   });
 
   const [levelsPlayed, setLevelsPlayed] = useState(0);
@@ -37,9 +37,11 @@ export default function App() {
   ]);
 
   const availableAvatars = [
+    { id: 'avatar-man-ghutra.png' },
+    { id: 'avatar-woman-afro.png' },
+    { id: 'avatar-woman-hijab.png' },
     { id: 'avatar_kuwaiti.png' },
     { id: 'avatar_boy.png' },
-    { id: 'avatar_hijab.png' },
     { id: 'avatar_brunette.png' },
     { id: 'avatar_blonde.png' },
   ];
@@ -185,18 +187,18 @@ export default function App() {
           {activeTab === 'home' && (
             <div className="flex flex-col items-center gap-4">
               
-              {/* HERO CARD: object-contain USED SO THE FULL COIN IS NEVER CUT OFF */}
+              {/* HERO CARD: object-fill USED TO FULLY STRETCH ACROSS THE CELL */}
               <div className="relative w-full h-60 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between">
                 
-                {/* Background Coin with object-contain */}
+                {/* Background Stretched Coin Image */}
                 <img 
                   src={assetPath('dnc_coin.png')} 
                   alt="Danat Coin Background" 
-                  className="absolute inset-0 w-full h-full object-contain object-center p-2 z-0"
+                  className="absolute inset-0 w-full h-full object-fill z-0"
                 />
 
-                {/* Gradient Vignette Overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833] via-[#1a0833]/50 to-transparent z-0" />
+                {/* Dark Vignette Overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833]/90 via-[#1a0833]/40 to-transparent z-0" />
 
                 {/* Settings Gear Button in Front */}
                 <div className="w-full flex justify-start items-center relative z-10">
@@ -259,7 +261,7 @@ export default function App() {
                   { label: "المكافآت", icon: "gift_large.png", tab: "rewards" },
                   { label: "لوحة المتصدرين", icon: "trophy_large.png", tab: "leaderboard" },
                   { label: "ملفي الشخصي", icon: "nav_profile.png", tab: "profile" },
-                  { label: "إحصائيات", icon: "stats_icon.png", tab: "profile" },
+                  { label: "إحصائيات", icon: "stats_icon.png", tab: "statistics" },
                 ].map((item) => (
                   <button 
                     key={item.label} 
@@ -280,6 +282,45 @@ export default function App() {
                   </button>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* SCREEN: STATISTICS */}
+          {activeTab === 'statistics' && (
+            <div className="flex flex-col gap-4">
+              <div className="text-center my-2">
+                <span className="text-4xl">📊</span>
+                <h2 className="text-2xl font-black text-yellow-400 mt-2">إحصائيات اللاعب</h2>
+              </div>
+
+              <div className="w-full grid grid-cols-2 gap-3">
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">إجمالي الألعاب</div>
+                  <div className="text-2xl font-black text-white">{user.totalGames}</div>
+                </div>
+
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">المستوى الحالي</div>
+                  <div className="text-2xl font-black text-yellow-400">★ {user.level}</div>
+                </div>
+
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">الأرواح المكتسبة</div>
+                  <div className="text-xl font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
+                </div>
+
+                <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
+                  <div className="text-xs text-slate-300 mb-1">رصيد DNC</div>
+                  <div className="text-xl font-black text-yellow-400">{user.dncBalance}</div>
+                </div>
+              </div>
+
+              <button 
+                onClick={() => setActiveTab('home')}
+                className="w-full mt-4 py-3 bg-[#240a47] hover:bg-[#320d63] border border-purple-400/40 text-white font-bold rounded-xl transition text-xs"
+              >
+                العودة للرئيسية
+              </button>
             </div>
           )}
 
@@ -709,7 +750,7 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 my-2">
+              <div className="grid grid-cols-2 gap-4 my-2 max-h-80 overflow-y-auto">
                 {availableAvatars.map((item) => {
                   const isSelected = user.avatar === item.id;
                   return (
