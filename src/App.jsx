@@ -13,7 +13,7 @@ export default function App() {
     totalEarnedSpirits: 8750,
     walletConnected: false,
     walletAddress: '',
-    avatar: 'user_avatar_1.png', // Dynamic avatar file
+    avatar: 'user_avatar_1.png',
   });
 
   const [showWalletModal, setShowWalletModal] = useState(false);
@@ -36,7 +36,12 @@ export default function App() {
     'user_avatar_3.png'
   ];
 
-  const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
+  // Robust path builder compatible with GitHub Pages base URL
+  const assetPath = (filename) => {
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    return `${cleanBase}assets/${filename}`;
+  };
 
   const handleConnectWallet = (address) => {
     setUser(prev => ({
@@ -119,7 +124,7 @@ export default function App() {
             </button>
             <span className="text-purple-400/50">|</span>
             <span className="flex items-center gap-1 text-slate-200 font-semibold">
-              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" /> العربية
+              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" onError={(e) => { e.target.style.display = 'none'; }} /> العربية
             </span>
             <span>📶 🔋</span>
           </div>
