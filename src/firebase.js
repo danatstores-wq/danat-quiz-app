@@ -1,16 +1,21 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA8e7z-aAeuhQiWapxX7yLNZar_ngsqtk",
+  apiKey: "AIzaSyA8e7z-aAEuuhQiWapxX7yLNZar_ngsqtk",
   authDomain: "danat-quiz-app.firebaseapp.com",
   projectId: "danat-quiz-app",
   storageBucket: "danat-quiz-app.firebasestorage.app",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  messagingSenderId: "436991893081",
+  appId: "1:436991893081:web:5aaf9cbb3275c7f6139b48",
+  measurementId: "G-QWT2287WC4"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+const analytics = getAnalytics(app);
