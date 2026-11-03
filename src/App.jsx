@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { ShieldCheck, Check, Tv, X, Settings, Clock, Pencil } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ShieldCheck, Check, Tv, X, Settings, Clock, Lock } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
 
   const [user, setUser] = useState({
     name: 'أحمد',
+    email: 'ahmad.dnc@danatstores.com', // Registered email (locked)
+    language: 'العربية', // Locked language
     level: 12,
     spirits: 2350,
     dncBalance: 120.0,
@@ -16,10 +18,12 @@ export default function App() {
     avatar: 'avatar_kuwaiti.png',
   });
 
+  const [levelsPlayed, setLevelsPlayed] = useState(0); // Tracks completed levels for forced ads
+  const [showForcedAd, setShowForcedAd] = useState(false); // Forces video ad modal automatically
+  const [forcedAdTimer, setForcedAdTimer] = useState(5);
+
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
-  const [showNameModal, setShowNameModal] = useState(false);
-  const [newNameInput, setNewNameInput] = useState(user.name);
   const [customWallet, setCustomWallet] = useState('');
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
@@ -41,6 +45,41 @@ export default function App() {
   ];
 
   const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
+
+  // Simulate finishing a level round
+  const handleCompleteLevel = () => {
+    const nextLevelCount = levelsPlayed + 1;
+    setLevelsPlayed(nextLevelCount);
+
+    if (nextLevelCount >= 4) {
+      // Force Google Rewarded Video Ad automatically after 4 levels
+      setLevelsPlayed(0); // Reset counter
+      triggerForcedGoogleAd();
+    } else {
+      setActiveTab('quiz');
+    }
+  };
+
+  const triggerForcedGoogleAd = () => {
+    setShowForcedAd(true);
+    let count = 5;
+    setForcedAdTimer(count);
+    const interval = setInterval(() => {
+      count -= 1;
+      setForcedAdTimer(count);
+      if (count <= 0) {
+        clearInterval(interval);
+        setShowForcedAd(false);
+        setUser(prev => ({
+          ...prev,
+          spirits: prev.spirits + 50,
+          totalEarnedSpirits: prev.totalEarnedSpirits + 50
+        }));
+        alert('🌐 تم الاتصال بالإنترنت: شاهدت إعلان جوجل الإجباري وحصلت على 50 روح!');
+        setActiveTab('home');
+      }
+    }, 1000);
+  };
 
   const handleConnectWallet = (address) => {
     setUser(prev => ({
@@ -131,7 +170,7 @@ export default function App() {
             </button>
             <span className="text-purple-400/50">|</span>
             <span className="flex items-center gap-1 text-slate-200 font-semibold">
-              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" /> العربية
+              <img src={assetPath('globe_icon.png')} alt="Globe" className="w-3.5 h-3.5 object-contain" /> {user.language}
             </span>
             <span>📶 🔋</span>
           </div>
@@ -253,7 +292,7 @@ export default function App() {
 
               <div className="flex justify-center">
                 <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                  <img src={assetPath('globe_icon.png')} alt="Globe" className="w-4 h-4 object-contain" /> الجغرافيا
+                  <img src={assetPath('globe_icon.png')} alt="Globe" className="w-4 h-4 object-contain" /> الجغرافيا (مستوى {levelsPlayed + 1}/4)
                 </div>
               </div>
 
@@ -288,7 +327,15 @@ export default function App() {
                 })}
               </div>
 
-              <div className="w-full grid grid-cols-2 gap-3 mt-4">
+              {/* NEXT LEVEL BUTTON (TRIGGERS FORCED AD EVERY 4 ROUNDS) */}
+              <button 
+                onClick={handleCompleteLevel}
+                className="w-full mt-4 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-sm rounded-2xl shadow-xl transition"
+              >
+                السؤال التالي / إنهاء المستوى ➡️
+              </button>
+
+              <div className="w-full grid grid-cols-2 gap-3 mt-2">
                 <button 
                   onClick={() => setLifelineExtraUsed(true)}
                   disabled={lifelineExtraUsed}
@@ -423,7 +470,7 @@ export default function App() {
             </div>
           )}
 
-          {/* SCREEN 5: PROFILE */}
+          {/* SCREEN 5: PROFILE (LOCKED NAME, EMAIL, & LANGUAGE) */}
           {activeTab === 'profile' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2">
@@ -440,31 +487,39 @@ export default function App() {
                     alt="Current Portrait" 
                     className="w-24 h-24 rounded-full border-4 border-yellow-400 object-cover shadow-2xl group-hover:scale-105 transition"
                   />
-                  <div className="absolute -top-1 -right-1 bg-purple-600 p-2 rounded-full border-2 border-slate-900 shadow">
-                    <Pencil className="w-3.5 h-3.5 text-white" />
-                  </div>
                 </div>
                 
                 <button 
                   onClick={() => setShowAvatarModal(true)}
                   className="text-xs text-yellow-400 font-bold bg-yellow-500/10 px-3 py-1.5 rounded-lg border border-yellow-500/40 shadow hover:bg-yellow-500/20"
                 >
-                  ✏️ تغيير الصورة الشخصية
+                  ✏️ تغيير الصورة الشخصية فقط
                 </button>
 
-                {/* NAME & EDIT BUTTON */}
-                <div className="flex items-center gap-2 mt-1">
-                  <h3 className="text-lg font-bold text-white">{user.name}</h3>
-                  <button 
-                    onClick={() => { setNewNameInput(user.name); setShowNameModal(true); }}
-                    className="p-1 bg-yellow-500/20 text-yellow-400 rounded-md border border-yellow-500/40 hover:bg-yellow-500/30 transition"
-                    title="تغيير الاسم"
-                  >
-                    <Pencil className="w-3.5 h-3.5" />
-                  </button>
+                {/* LOCKED NAME FIELD */}
+                <div className="flex items-center gap-2 mt-1 bg-[#240a47] px-4 py-2 rounded-xl border border-purple-400/30">
+                  <h3 className="text-base font-bold text-white">{user.name}</h3>
+                  <Lock className="w-3.5 h-3.5 text-slate-400" title="الاسم مسجل ولا يمكن تغييره" />
                 </div>
 
                 <span className="text-xs text-yellow-400 font-bold">المستوى {user.level}</span>
+              </div>
+
+              {/* LOCKED ACCOUNT DETAILS (EMAIL & LANGUAGE) */}
+              <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-purple-400/40 space-y-3 text-xs shadow">
+                <div className="flex justify-between items-center border-b border-purple-500/30 pb-2.5">
+                  <span className="text-slate-300">البريد الإلكتروني المسجل:</span>
+                  <span className="font-mono text-yellow-400 flex items-center gap-1">
+                    {user.email} <Lock className="w-3 h-3 text-slate-400" />
+                  </span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300">لغة التطبيق الافتراضية:</span>
+                  <span className="font-bold text-white flex items-center gap-1">
+                    {user.language} <Lock className="w-3 h-3 text-slate-400" />
+                  </span>
+                </div>
               </div>
 
               <div className="w-full grid grid-cols-3 gap-2">
@@ -484,7 +539,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="w-full space-y-3 mt-2">
+              <div className="w-full space-y-3 mt-1">
                 <button 
                   onClick={() => setShowWalletModal(true)}
                   className={`w-full py-4 px-4 rounded-2xl border font-bold text-sm flex items-center justify-between transition shadow ${
@@ -500,14 +555,6 @@ export default function App() {
                   <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
                     {user.walletConnected ? `${user.walletAddress.substring(0,6)}...` : 'ربط'}
                   </span>
-                </button>
-
-                <button className="w-full py-4 px-4 bg-[#240a47] border border-purple-400/40 rounded-2xl font-bold text-sm text-slate-200 flex items-center justify-between shadow">
-                  <div className="flex items-center gap-2">
-                    <img src={assetPath('language.png')} alt="Globe" className="w-6 h-6 object-contain" />
-                    <span>تغيير اللغة</span>
-                  </div>
-                  <span className="text-xs text-slate-300">العربية</span>
                 </button>
               </div>
             </div>
@@ -560,7 +607,30 @@ export default function App() {
 
         </div>
 
-        {/* FIXED BOTTOM NAVIGATION BAR WITH DYNAMIC ICONS */}
+        {/* FORCED GOOGLE REWARDED VIDEO AD MODAL (EVERY 4 LEVELS) */}
+        {showForcedAd && (
+          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
+            <div className="w-full bg-[#240a47] border-2 border-yellow-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(234,179,8,0.5)]">
+              <div className="w-14 h-14 bg-yellow-500/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto text-yellow-400">
+                <Tv className="w-7 h-7 animate-pulse" />
+              </div>
+              <h3 className="text-lg font-black text-yellow-400">إعلان جوجل الإجباري</h3>
+              <p className="text-xs text-slate-200 leading-relaxed">
+                لقد أنهيت 4 مستويات بنجاح! يلزم الاتصال بالإنترنت ومشاهدة هذا الإعلان القصير للمتابعة:
+              </p>
+              
+              <div className="bg-[#0d031f] py-4 rounded-2xl border border-purple-400/40 text-sm font-black text-yellow-300">
+                ⏳ يرجى الانتظار... {forcedAdTimer} ثوانٍ
+              </div>
+              
+              <div className="text-[10px] text-purple-300">
+                ستحصل على 50 روح إضافية تلقائياً عند انتهاء الفيديو.
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* FIXED BOTTOM NAVIGATION BAR */}
         <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
           {[
             { id: 'home', label: 'الرئيسية', icon: 'logo.png', type: 'image' },
@@ -589,48 +659,6 @@ export default function App() {
             );
           })}
         </div>
-
-        {/* EDIT NAME MODAL */}
-        {showNameModal && (
-          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-4 shadow-2xl">
-              <div className="flex justify-between items-center">
-                <h3 className="font-bold text-white text-base">تغيير اسم اللاعب</h3>
-                <button onClick={() => setShowNameModal(false)} className="text-slate-300 p-1">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <input 
-                type="text" 
-                value={newNameInput}
-                onChange={(e) => setNewNameInput(e.target.value)}
-                placeholder="أدخل اسمك الجديد..."
-                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl p-3 text-xs text-white outline-none focus:border-yellow-500 shadow-inner"
-              />
-
-              <div className="flex gap-3">
-                <button 
-                  onClick={() => setShowNameModal(false)}
-                  className="flex-1 py-3 bg-[#0d031f] border border-purple-500/40 text-slate-100 font-bold text-xs rounded-xl"
-                >
-                  إلغاء
-                </button>
-                <button 
-                  onClick={() => {
-                    if (newNameInput.trim()) {
-                      setUser(prev => ({ ...prev, name: newNameInput.trim() }));
-                    }
-                    setShowNameModal(false);
-                  }}
-                  className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg"
-                >
-                  حفظ الاسم
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* WALLETCONNECT MODAL */}
         {showWalletModal && (
@@ -676,7 +704,6 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Grid of Avatars */}
               <div className="grid grid-cols-2 gap-4 my-2">
                 {availableAvatars.map((item) => {
                   const isSelected = user.avatar === item.id;
@@ -709,7 +736,6 @@ export default function App() {
                 })}
               </div>
 
-              {/* Action Buttons */}
               <div className="flex gap-3">
                 <button 
                   onClick={() => setShowAvatarModal(false)}
