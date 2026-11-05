@@ -127,6 +127,7 @@ export default function App() {
             ...prev,
             name: data.name || authUser.email.split('@')[0],
             email: authUser.email,
+            language: data.language || prev.language,
             spirits: data.spirits ?? prev.spirits,
             dncBalance: data.dncBalance ?? prev.dncBalance,
             level: data.level ?? prev.level,
@@ -156,6 +157,7 @@ export default function App() {
       const initialProfile = {
         name: nameInput || 'لاعب دانات',
         email: emailInput,
+        language: 'العربية',
         spirits: 0,
         dncBalance: 0.0,
         level: 1,
@@ -208,7 +210,16 @@ export default function App() {
   const handleSignOut = () => {
     signOut(auth);
   };
-
+  
+  const handleLanguageChange = async (newLang) => {
+    setUser(prev => ({ ...prev, language: newLang }));
+    if (currentUser) {
+      await updateDoc(doc(db, "users", currentUser.uid), {
+        language: newLang
+      });
+    }
+  };
+  
   // --- Admin CSV Export ---
   const fetchAllPlayersAndExportCSV = async () => {
     try {
@@ -241,43 +252,35 @@ export default function App() {
     }
   };
 
-  const handleAnswerSubmit = () => {
-    if (selectedOption === null) return;
-    const currentQ = questions[currentQIndex];
-    const isCorrect = selectedOption === currentQ.correctAnswer;
+  const handleCompleteLevel = async () => {
+    const nextLevelCount = levelsPlayed + 1;
+    setLevelsPlayed(nextLevelCount);
 
-    if (isCorrect) {
-      setScore(prev => prev + currentQ.points);
+    const newTotalGames = user.totalGames + 1;
+    const earnedSpirits = score;
+    setUser(prev => ({ 
+      ...prev, 
+      totalGames: newTotalGames,
+      spirits: prev.spirits + earnedSpirits,
+      totalEarnedSpirits: prev.totalEarnedSpirits + earnedSpirits
+    }));
+
+    if (currentUser) {
+      await updateDoc(doc(db, "users", currentUser.uid), {
+        totalGames: increment(1),
+        spirits: increment(earnedSpirits),
+        totalEarnedSpirits: increment(earnedSpirits)
+      });
     }
-    setIsAnswered(true);
-  };
 
-  const handleNextQuestion = async () => {
-    setSelectedOption(null);
-    setIsAnswered(false);
+    setCurrentQIndex(0);
+    setScore(0);
 
-    if (currentQIndex + 1 < questions.length) {
-      setCurrentQIndex(prev => prev + 1);
+    if (nextLevelCount >= 4) {
+      setLevelsPlayed(0);
+      triggerForcedGoogleAd();
     } else {
-      const nextLevelCount = levelsPlayed + 1;
-      setLevelsPlayed(nextLevelCount);
-
-      const newTotalGames = user.totalGames + 1;
-      setUser(prev => ({ ...prev, totalGames: newTotalGames }));
-
-      if (currentUser) {
-        await updateDoc(doc(db, "users", currentUser.uid), {
-          totalGames: increment(1)
-        });
-      }
-
-      setCurrentQIndex(0);
-      if (nextLevelCount >= 4) {
-        setLevelsPlayed(0);
-        triggerForcedGoogleAd();
-      } else {
-        setActiveTab('home');
-      }
+      setActiveTab('home');
     }
   };
 
@@ -551,8 +554,6 @@ export default function App() {
         }}
         className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2a0c52]/80 via-[#1a0833]/90 to-[#0d031f]/95 z-0" />
-
         {/* TOP STATUS BAR */}
         <div className="bg-[#120524]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-purple-500/30 z-10">
           <span className="font-bold text-white">9:41</span>
@@ -772,7 +773,14 @@ export default function App() {
 
               {!isAnswered ? (
                 <button 
-                  onClick={handleAnswerSubmit}
+                  onClick={() => {
+                    if (selectedOption === null) return;
+                    const currentQ = questions[currentQIndex];
+                    if (selectedOption === currentQ.correctAnswer) {
+                      setScore(prev => prev + currentQ.points);
+                    }
+                    setIsAnswered(true);
+                  }}
                   disabled={selectedOption === null}
                   className="w-full mt-4 py-3.5 bg-gradient-to-r from-yellow-400 to-amber-500 disabled:opacity-50 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-xl transition"
                 >
@@ -780,36 +788,20 @@ export default function App() {
                 </button>
               ) : (
                 <button 
-                  onClick={handleNextQuestion}
+                  onClick={() => {
+                    setSelectedOption(null);
+                    setIsAnswered(false);
+                    if (currentQIndex + 1 < questions.length) {
+                      setCurrentQIndex(prev => prev + 1);
+                    } else {
+                      handleCompleteLevel();
+                    }
+                  }}
                   className="w-full mt-4 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-sm rounded-2xl shadow-xl transition"
                 >
                   السؤال التالي ➡️
                 </button>
               )}
-
-              <div className="w-full grid grid-cols-2 gap-3 mt-2">
-                <button 
-                  onClick={() => setLifelineExtraUsed(true)}
-                  disabled={lifelineExtraUsed}
-                  className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition shadow ${
-                    lifelineExtraUsed ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-yellow-400'
-                  }`}
-                >
-                  <img src={assetPath('help.png')} alt="Help Star" className="w-6 h-6 object-contain" />
-                  <span>مكافأة إضافية</span>
-                </button>
-
-                <button 
-                  onClick={() => setLifeline50Used(true)}
-                  disabled={lifeline50Used}
-                  className={`py-3 px-3 rounded-2xl border text-xs font-bold flex flex-col items-center gap-1 transition shadow ${
-                    lifeline50Used ? 'bg-slate-900 border-slate-800 text-slate-600' : 'bg-[#240a47]/80 border-purple-400/30 text-purple-400'
-                  }`}
-                >
-                  <img src={assetPath('help_5050.png')} alt="50:50" className="w-6 h-6 object-contain" />
-                  <span>50:50 مساعدة</span>
-                </button>
-              </div>
             </div>
           )}
 
@@ -965,9 +957,14 @@ export default function App() {
 
                 <div className="flex justify-between items-center">
                   <span className="text-slate-300">لغة التطبيق:</span>
-                  <span className="font-bold text-white flex items-center gap-1">
-                    {user.language} <Lock className="w-3 h-3 text-slate-400" />
-                  </span>
+                  <select 
+                    value={user.language}
+                    onChange={(e) => handleLanguageChange(e.target.value)}
+                    className="bg-[#0d031f] text-yellow-400 font-bold px-3 py-1.5 rounded-xl border border-purple-400/40 outline-none text-xs cursor-pointer"
+                  >
+                    <option value="العربية">العربية</option>
+                    <option value="English">English</option>
+                  </select>
                 </div>
               </div>
 
@@ -1149,7 +1146,7 @@ export default function App() {
           </div>
         )}
 
-       {/* AVATAR SELECTOR MODAL */}
+        {/* AVATAR SELECTOR MODAL */}
         {showAvatarModal && (
           <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
