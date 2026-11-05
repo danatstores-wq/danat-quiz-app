@@ -9,9 +9,8 @@ import { auth, db } from './firebase';
 import { 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
-  signOut,
-  sendPasswordResetEmail,
-  onAuthStateChanged 
+  onAuthStateChanged, 
+  signOut 
 } from 'firebase/auth';
 import { 
   doc, 
@@ -54,12 +53,11 @@ const INITIAL_QUESTIONS = [
 export default function App() {
   // --- Auth & User State ---
   const [currentUser, setCurrentUser] = useState(null);
-  const [authMode, setAuthMode] = useState('login'); // 'login', 'signup', or 'forgot'
+  const [authMode, setAuthMode] = useState('login'); // 'login' or 'signup'
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
   const [nameInput, setNameInput] = useState('');
   const [authError, setAuthError] = useState('');
-  const [authMessage, setAuthMessage] = useState('');
 
   const [activeTab, setActiveTab] = useState('home');
 
@@ -148,7 +146,6 @@ export default function App() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     setAuthError('');
-    setAuthMessage('');
     try {
       const userCred = await createUserWithEmailAndPassword(auth, emailInput, passwordInput);
       const uid = userCred.user.uid;
@@ -179,29 +176,12 @@ export default function App() {
   const handleSignIn = async (e) => {
     e.preventDefault();
     setAuthError('');
-    setAuthMessage('');
     try {
       await signInWithEmailAndPassword(auth, emailInput, passwordInput);
       setEmailInput('');
       setPasswordInput('');
     } catch (err) {
       setAuthError("فشل تسجيل الدخول: " + err.message);
-    }
-  };
-
-  const handleForgotPassword = async (e) => {
-    e.preventDefault();
-    setAuthError('');
-    setAuthMessage('');
-    if (!emailInput) {
-      setAuthError('يرجى إدخال بريدك الإلكتروني أولاً.');
-      return;
-    }
-    try {
-      await sendPasswordResetEmail(auth, emailInput);
-      setAuthMessage('تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.');
-    } catch (err) {
-      setAuthError("فشل الإرسال: " + err.message);
     }
   };
 
@@ -241,43 +221,24 @@ export default function App() {
     }
   };
 
-  const handleAnswerSubmit = () => {
-    if (selectedOption === null) return;
-    const currentQ = questions[currentQIndex];
-    const isCorrect = selectedOption === currentQ.correctAnswer;
+  const handleCompleteLevel = async () => {
+    const nextLevelCount = levelsPlayed + 1;
+    setLevelsPlayed(nextLevelCount);
 
-    if (isCorrect) {
-      setScore(prev => prev + currentQ.points);
+    const newTotalGames = user.totalGames + 1;
+    setUser(prev => ({ ...prev, totalGames: newTotalGames }));
+
+    if (currentUser) {
+      await updateDoc(doc(db, "users", currentUser.uid), {
+        totalGames: increment(1)
+      });
     }
-    setIsAnswered(true);
-  };
 
-  const handleNextQuestion = async () => {
-    setSelectedOption(null);
-    setIsAnswered(false);
-
-    if (currentQIndex + 1 < questions.length) {
-      setCurrentQIndex(prev => prev + 1);
+    if (nextLevelCount >= 4) {
+      setLevelsPlayed(0);
+      triggerForcedGoogleAd();
     } else {
-      const nextLevelCount = levelsPlayed + 1;
-      setLevelsPlayed(nextLevelCount);
-
-      const newTotalGames = user.totalGames + 1;
-      setUser(prev => ({ ...prev, totalGames: newTotalGames }));
-
-      if (currentUser) {
-        await updateDoc(doc(db, "users", currentUser.uid), {
-          totalGames: increment(1)
-        });
-      }
-
-      setCurrentQIndex(0);
-      if (nextLevelCount >= 4) {
-        setLevelsPlayed(0);
-        triggerForcedGoogleAd();
-      } else {
-        setActiveTab('home');
-      }
+      setActiveTab('quiz');
     }
   };
 
@@ -430,111 +391,60 @@ export default function App() {
             </div>
           )}
 
-          {authMessage && (
-            <div className="bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 p-3 rounded-xl text-xs text-center font-bold">
-              {authMessage}
+          <form onSubmit={authMode === 'login' ? handleSignIn : handleSignUp} className="space-y-4">
+            {authMode === 'signup' && (
+              <div>
+                <label className="block text-xs text-slate-300 mb-1">الاسم الكامل</label>
+                <input 
+                  type="text" 
+                  value={nameInput}
+                  onChange={(e) => setNameInput(e.target.value)}
+                  placeholder="أدخل اسمك"
+                  required
+                  className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
+                />
+              </div>
+            )}
+            <div>
+              <label className="block text-xs text-slate-300 mb-1">البريد الإلكتروني</label>
+              <input 
+                type="email" 
+                value={emailInput}
+                onChange={(e) => setEmailInput(e.target.value)}
+                placeholder="name@example.com"
+                required
+                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
+              />
             </div>
-          )}
-
-          {authMode === 'forgot' ? (
-            <form onSubmit={handleForgotPassword} className="space-y-4">
-              <div>
-                <label className="block text-xs text-slate-300 mb-1">البريد الإلكتروني لاستعادة كلمة المرور</label>
-                <input 
-                  type="email" 
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  placeholder="name@example.com"
-                  required
-                  className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
-                />
-              </div>
-              <button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black py-3.5 rounded-xl shadow-lg transition text-sm"
-              >
-                إرسال رابط الاستعادة
-              </button>
-              <div className="text-center pt-2">
-                <button 
-                  type="button"
-                  onClick={() => { setAuthMode('login'); setAuthError(''); setAuthMessage(''); }}
-                  className="text-xs text-yellow-400 font-bold hover:underline"
-                >
-                  العودة لتسجيل الدخول
-                </button>
-              </div>
-            </form>
-          ) : (
-            <form onSubmit={authMode === 'login' ? handleSignIn : handleSignUp} className="space-y-4">
-              {authMode === 'signup' && (
-                <div>
-                  <label className="block text-xs text-slate-300 mb-1">الاسم الكامل</label>
-                  <input 
-                    type="text" 
-                    value={nameInput}
-                    onChange={(e) => setNameInput(e.target.value)}
-                    placeholder="أدخل اسمك"
-                    required
-                    className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
-                  />
-                </div>
-              )}
-              <div>
-                <label className="block text-xs text-slate-300 mb-1">البريد الإلكتروني</label>
-                <input 
-                  type="email" 
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  placeholder="name@example.com"
-                  required
-                  className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs text-slate-300 mb-1">كلمة المرور</label>
-                <input 
-                  type="password" 
-                  value={passwordInput}
-                  onChange={(e) => setPasswordInput(e.target.value)}
-                  placeholder="••••••••"
-                  required
-                  className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
-                />
-              </div>
-
-              {authMode === 'login' && (
-                <div className="text-left">
-                  <button 
-                    type="button"
-                    onClick={() => { setAuthMode('forgot'); setAuthError(''); setAuthMessage(''); }}
-                    className="text-[11px] text-purple-300 hover:text-yellow-400 underline"
-                  >
-                    هل نسيت كلمة المرور؟
-                  </button>
-                </div>
-              )}
-
-              <button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm"
-              >
-                {authMode === 'login' ? <LogIn className="w-4 h-4" /> : <UserPlus className="w-4 h-4" />}
-                {authMode === 'login' ? 'تسجيل الدخول' : 'إنشاء حساب جديد'}
-              </button>
-            </form>
-          )}
-
-          {authMode !== 'forgot' && (
-            <div className="text-center pt-2">
-              <button 
-                onClick={() => { setAuthMode(authMode === 'login' ? 'signup' : 'login'); setAuthError(''); setAuthMessage(''); }}
-                className="text-xs text-yellow-400 font-bold hover:underline"
-              >
-                {authMode === 'login' ? 'ليس لديك حساب؟ أنشئ حساباً الآن' : 'لديك حساب بالفعل؟ سجل الدخول'}
-              </button>
+            <div>
+              <label className="block text-xs text-slate-300 mb-1">كلمة المرور</label>
+              <input 
+                type="password" 
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
+                placeholder="••••••••"
+                required
+                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
+              />
             </div>
-          )}
+
+            <button 
+              type="submit" 
+              className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm"
+            >
+              {authMode === 'login' ? <LogIn className="w-4 h-4" /> : <UserPlus className="w-4 h-4" />}
+              {authMode === 'login' ? 'تسجيل الدخول' : 'إنشاء حساب جديد'}
+            </button>
+          </form>
+
+          <div className="text-center pt-2">
+            <button 
+              onClick={() => { setAuthMode(authMode === 'login' ? 'signup' : 'login'); setAuthError(''); }}
+              className="text-xs text-yellow-400 font-bold hover:underline"
+            >
+              {authMode === 'login' ? 'ليس لديك حساب؟ أنشئ حساباً الآن' : 'لديك حساب بالفعل؟ سجل الدخول'}
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -719,10 +629,7 @@ export default function App() {
                   ⏸
                 </button>
                 <div className="flex-1 bg-slate-950 h-3 rounded-full overflow-hidden p-0.5 border border-purple-400/40">
-                  <div 
-                    className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full transition-all duration-300"
-                    style={{ width: `${((currentQIndex + 1) / questions.length) * 100}%` }}
-                  ></div>
+                  <div className="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full w-[53%]"></div>
                 </div>
                 <div className="flex items-center gap-1 bg-[#240a47] px-3 py-1.5 rounded-xl text-yellow-400 text-xs font-bold border border-purple-400/40">
                   <Clock className="w-3.5 h-3.5" /> 25
@@ -731,62 +638,47 @@ export default function App() {
 
               <div className="flex justify-center">
                 <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                  {questions[currentQIndex].category} (السؤال {currentQIndex + 1} من {questions.length})
+                  الجغرافيا (مستوى {levelsPlayed + 1}/4)
                 </div>
               </div>
 
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-6 border border-purple-400/40 text-center shadow-xl my-2">
                 <h3 className="text-lg font-bold text-white leading-relaxed">
-                  {questions[currentQIndex].question}
+                  ما هي عاصمة فرنسا؟
                 </h3>
               </div>
 
               <div className="w-full space-y-3">
-                {questions[currentQIndex].options.map((optText, idx) => {
-                  const isSelected = selectedOption === idx;
-                  const isCorrectAnswer = idx === questions[currentQIndex].correctAnswer;
-                  
-                  let btnStyle = "bg-[#240a47]/80 border-purple-400/30 text-slate-100 hover:bg-[#320d63]";
-                  if (isAnswered) {
-                    if (isCorrectAnswer) {
-                      btnStyle = "bg-emerald-600/40 border-emerald-400 text-emerald-200";
-                    } else if (isSelected) {
-                      btnStyle = "bg-red-600/40 border-red-400 text-red-200";
-                    }
-                  } else if (isSelected) {
-                    btnStyle = "bg-yellow-600/40 border-yellow-400 text-yellow-200";
-                  }
-
+                {[
+                  { id: 'A', text: 'برلين' },
+                  { id: 'B', text: 'باريس' },
+                  { id: 'C', text: 'مدريد' },
+                  { id: 'D', text: 'روما' }
+                ].map(opt => {
+                  const isSelected = selectedOption === opt.id;
                   return (
                     <button
-                      key={idx}
-                      disabled={isAnswered}
-                      onClick={() => setSelectedOption(idx)}
-                      className={`w-full py-3.5 px-5 rounded-2xl font-bold text-sm flex items-center justify-between transition border shadow ${btnStyle}`}
+                      key={opt.id}
+                      onClick={() => setSelectedOption(opt.id)}
+                      className={`w-full py-3.5 px-5 rounded-2xl font-bold text-sm flex items-center justify-between transition border shadow ${
+                        isSelected
+                          ? 'bg-emerald-600/40 border-emerald-400 text-emerald-200 shadow-emerald-900/40'
+                          : 'bg-[#240a47]/80 border-purple-400/30 text-slate-100 hover:bg-[#320d63]'
+                      }`}
                     >
-                      <span>{optText}</span>
-                      {isAnswered && isCorrectAnswer && <Check className="w-5 h-5 text-emerald-400" />}
+                      <span>{opt.text}</span>
+                      {isSelected && <Check className="w-5 h-5 text-emerald-400" />}
                     </button>
                   );
                 })}
               </div>
 
-              {!isAnswered ? (
-                <button 
-                  onClick={handleAnswerSubmit}
-                  disabled={selectedOption === null}
-                  className="w-full mt-4 py-3.5 bg-gradient-to-r from-yellow-400 to-amber-500 disabled:opacity-50 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-xl transition"
-                >
-                  تأكيد الإجابة
-                </button>
-              ) : (
-                <button 
-                  onClick={handleNextQuestion}
-                  className="w-full mt-4 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-sm rounded-2xl shadow-xl transition"
-                >
-                  السؤال التالي ➡️
-                </button>
-              )}
+              <button 
+                onClick={handleCompleteLevel}
+                className="w-full mt-4 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-sm rounded-2xl shadow-xl transition"
+              >
+                السؤال التالي / إنهاء المستوى ➡️
+              </button>
 
               <div className="w-full grid grid-cols-2 gap-3 mt-2">
                 <button 
@@ -797,7 +689,7 @@ export default function App() {
                   }`}
                 >
                   <img src={assetPath('help.png')} alt="Help Star" className="w-6 h-6 object-contain" />
-                  <span>مكافأة إضافية</span>
+                  <span>50 مكافأة إضافية</span>
                 </button>
 
                 <button 
