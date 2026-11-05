@@ -259,7 +259,6 @@ export default function App() {
     if (currentQIndex + 1 < questions.length) {
       setCurrentQIndex(prev => prev + 1);
     } else {
-      // Quiz finished for this set
       const nextLevelCount = levelsPlayed + 1;
       setLevelsPlayed(nextLevelCount);
 
@@ -1154,4 +1153,56 @@ export default function App() {
         {/* AVATAR SELECTOR MODAL */}
         {showAvatarModal && (
           <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="
+            <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
+              <div className="flex justify-between items-center">
+                <h3 className="font-bold text-white text-lg">اختر صورتك الشخصية</h3>
+                <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1 hover:text-white">
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 my-2 max-h-80 overflow-y-auto">
+                {availableAvatars.map((item) => {
+                  const isSelected = user.avatar === item.id;
+                  return (
+                    <div 
+                      key={item.id}
+                      onClick={() => handleUpdateAvatar(item.id)}
+                      className={`relative w-full h-28 rounded-2xl border-2 cursor-pointer overflow-hidden transition duration-200 group ${
+                        isSelected 
+                          ? 'border-yellow-400 shadow-[0_0_25px_rgba(234,179,8,0.4)] scale-105' 
+                          : 'border-purple-400/40 hover:border-purple-300'
+                      }`}
+                    >
+                      <img 
+                        src={assetPath(item.id)} 
+                        alt="Avatar Option" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition duration-300" 
+                      />
+                      
+                      {isSelected && (
+                        <div className="absolute top-2 right-2 bg-emerald-500 p-1.5 rounded-full border-2 border-slate-900 shadow z-10">
+                          <Check className="w-3.5 h-3.5 text-white" />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="flex gap-3">
+                <button 
+                  onClick={() => setShowAvatarModal(false)}
+                  className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
+                >
+                  إغلاق
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
