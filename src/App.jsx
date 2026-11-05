@@ -639,7 +639,6 @@ export default function App() {
                 onClick={() => setActiveTab('quiz')} 
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
               >
-                <img src={assetPath('3d_question.png')} alt="Play" className="w-7 h-7 object-contain" />
                 ابدأ اللعب
               </button>
 
