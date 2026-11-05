@@ -1150,7 +1150,7 @@ export default function App() {
           </div>
         )}
 
-        {/* AVATAR SELECTOR MODAL */}
+       {/* AVATAR SELECTOR MODAL */}
         {showAvatarModal && (
           <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
