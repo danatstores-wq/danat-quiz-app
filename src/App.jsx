@@ -208,7 +208,16 @@ export default function App() {
   const handleSignOut = () => {
     signOut(auth);
   };
-
+  
+const handleLanguageChange = async (newLang) => {
+    setUser(prev => ({ ...prev, language: newLang }));
+    if (currentUser) {
+      await updateDoc(doc(db, "users", currentUser.uid), {
+        language: newLang
+      });
+    }
+  };
+  
   // --- Admin CSV Export ---
   const fetchAllPlayersAndExportCSV = async () => {
     try {
@@ -639,7 +648,6 @@ export default function App() {
                 onClick={() => setActiveTab('quiz')} 
                 className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
               >
-                <img src={assetPath('3d_question.png')} alt="Play" className="w-7 h-7 object-contain" />
                 ابدأ اللعب
               </button>
 
@@ -966,9 +974,14 @@ export default function App() {
 
                 <div className="flex justify-between items-center">
                   <span className="text-slate-300">لغة التطبيق:</span>
-                  <span className="font-bold text-white flex items-center gap-1">
-                    {user.language} <Lock className="w-3 h-3 text-slate-400" />
-                  </span>
+                  <select 
+                    value={user.language}
+                    onChange={(e) => handleLanguageChange(e.target.value)}
+                    className="bg-[#0d031f] text-yellow-400 font-bold px-3 py-1.5 rounded-xl border border-purple-400/40 outline-none text-xs"
+                  >
+                    <option value="العربية">العربية</option>
+                    <option value="English">English</option>
+                  </select>
                 </div>
               </div>
 
