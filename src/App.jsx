@@ -68,8 +68,8 @@ export default function App() {
     email: 'ahmad.dnc@danatstores.com',
     language: 'العربية',
     level: 1,
-    spirits: 2350,
-    dncBalance: 120.0,
+    spirits: 0,
+    dncBalance: 0.0,
     totalGames: 0,
     totalEarnedSpirits: 0,
     walletConnected: false,
@@ -156,8 +156,8 @@ export default function App() {
       const initialProfile = {
         name: nameInput || 'لاعب دانات',
         email: emailInput,
-        spirits: 2350,
-        dncBalance: 120.0,
+        spirits: 0,
+        dncBalance: 0.0,
         level: 1,
         totalGames: 0,
         totalEarnedSpirits: 0,
@@ -718,8 +718,8 @@ const handleLanguageChange = async (newLang) => {
               </button>
             </div>
           )}
-
-          {/* SCREEN 2: QUIZ */}
+		  
+         {/* SCREEN 2: QUIZ */}
           {activeTab === 'quiz' && (
             <div className="flex flex-col gap-4">
               <div className="w-full flex items-center justify-between gap-3">
@@ -781,7 +781,14 @@ const handleLanguageChange = async (newLang) => {
 
               {!isAnswered ? (
                 <button 
-                  onClick={handleAnswerSubmit}
+                  onClick={() => {
+                    if (selectedOption === null) return;
+                    const currentQ = questions[currentQIndex];
+                    if (selectedOption === currentQ.correctAnswer) {
+                      setScore(prev => prev + currentQ.points);
+                    }
+                    setIsAnswered(true);
+                  }}
                   disabled={selectedOption === null}
                   className="w-full mt-4 py-3.5 bg-gradient-to-r from-yellow-400 to-amber-500 disabled:opacity-50 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-xl transition"
                 >
@@ -789,13 +796,23 @@ const handleLanguageChange = async (newLang) => {
                 </button>
               ) : (
                 <button 
-                  onClick={handleNextQuestion}
+                  onClick={() => {
+                    setSelectedOption(null);
+                    setIsAnswered(false);
+                    if (currentQIndex + 1 < questions.length) {
+                      setCurrentQIndex(prev => prev + 1);
+                    } else {
+                      handleCompleteLevel();
+                    }
+                  }}
                   className="w-full mt-4 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-black text-sm rounded-2xl shadow-xl transition"
                 >
                   السؤال التالي ➡️
                 </button>
               )}
-
+            </div>
+          )}
+             
               <div className="w-full grid grid-cols-2 gap-3 mt-2">
                 <button 
                   onClick={() => setLifelineExtraUsed(true)}
@@ -977,7 +994,7 @@ const handleLanguageChange = async (newLang) => {
                   <select 
                     value={user.language}
                     onChange={(e) => handleLanguageChange(e.target.value)}
-                    className="bg-[#0d031f] text-yellow-400 font-bold px-3 py-1.5 rounded-xl border border-purple-400/40 outline-none text-xs"
+                    className="bg-[#0d031f] text-yellow-400 font-bold px-3 py-1.5 rounded-xl border border-purple-400/40 outline-none text-xs cursor-pointer"
                   >
                     <option value="العربية">العربية</option>
                     <option value="English">English</option>
@@ -1200,10 +1217,7 @@ const handleLanguageChange = async (newLang) => {
                       )}
                     </div>
                   );
-                })}
-              </div>
-
-              <div className="flex gap-3">
+       <div className="flex gap-3">
                 <button 
                   onClick={() => setShowAvatarModal(false)}
                   className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
