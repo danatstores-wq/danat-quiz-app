@@ -1220,7 +1220,7 @@ const handleLanguageChange = async (newLang) => {
                 })}
               </div>
 
-              <div className="flex gap-3">
+        <div className="flex gap-3">
                 <button 
                   onClick={() => setShowAvatarModal(false)}
                   className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl shadow-lg"
