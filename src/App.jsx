@@ -24,7 +24,7 @@ getDocs
 } from 'firebase/firestore';
 
 // --- Sample Initial Questions ---
-const INITIAL_QUESTIONS = \[
+const INITIAL_QUESTIONS = [
 {
 id: 1,
 question: "ما هي عاصمة المملكة العربية السعودية؟",
