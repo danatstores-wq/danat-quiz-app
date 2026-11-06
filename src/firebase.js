@@ -6,7 +6,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8e7z-aAEuuhQiWapxX7yLNZar_ngsqtk",
+  apiKey: "import.meta.env.VITE_FIREBASE_API_KEY",
   authDomain: "danat-quiz-app.firebaseapp.com",
   projectId: "danat-quiz-app",
   storageBucket: "danat-quiz-app.firebasestorage.app",
