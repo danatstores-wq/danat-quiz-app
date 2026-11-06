@@ -1,0 +1,106 @@
+[
+  {
+    "category": { "ar": "جغرافيا", "en": "Geography" },
+    "question": {
+      "ar": "ما هي عاصمة المملكة العربية السعودية؟",
+      "en": "What is the capital of Saudi Arabia?"
+    },
+    "options": {
+      "ar": ["جدة", "الرياض", "الدمام", "مكة المكرمة"],
+      "en": ["Jeddah", "Riyadh", "Dammam", "Makkah"]
+    },
+    "correctAnswer": 1,
+    "points": 50
+  },
+  {
+    "category": { "ar": "جغرافيا", "en": "Geography" },
+    "question": {
+      "ar": "ما هو أطول نهر في العالم؟",
+      "en": "What is the longest river in the world?"
+    },
+    "options": {
+      "ar": ["نهر الأمازون", "نهر النيل", "نهر الميسيسيبي", "نهر يانغتسي"],
+      "en": ["Amazon River", "Nile River", "Mississippi River", "Yangtze River"]
+    },
+    "correctAnswer": 1,
+    "points": 50
+  },
+  {
+    "category": { "ar": "تاريخ", "en": "History" },
+    "question": {
+      "ar": "في أي عام اندلعت الحرب العالمية الأولى؟",
+      "en": "In which year did World War I start?"
+    },
+    "options": {
+      "ar": ["1914", "1918", "1939", "1945"],
+      "en": ["1914", "1918", "1939", "1945"]
+    },
+    "correctAnswer": 0,
+    "points": 50
+  },
+  {
+    "category": { "ar": "سياسة", "en": "Politics" },
+    "question": {
+      "ar": "أين يقع مقر الأمم المتحدة الرئيسي؟",
+      "en": "Where is the main headquarters of the United Nations located?"
+    },
+    "options": {
+      "ar": ["جنيف", "نيويورك", "باريس", "لندن"],
+      "en": ["Geneva", "New York", "Paris", "London"]
+    },
+    "correctAnswer": 1,
+    "points": 50
+  },
+  {
+    "category": { "ar": "فيزياء", "en": "Physics" },
+    "question": {
+      "ar": "ما هي سرعة الضوء في الفراغ تقريباً؟",
+      "en": "What is the approximate speed of light in a vacuum?"
+    },
+    "options": {
+      "ar": ["150,000 كم/ث", "300,000 كم/ث", "450,000 كم/ث", "600,000 كم/ث"],
+      "en": ["150,000 km/s", "300,000 km/s", "450,000 km/s", "600,000 km/s"]
+    },
+    "correctAnswer": 1,
+    "points": 100
+  },
+  {
+    "category": { "ar": "علوم", "en": "Science" },
+    "question": {
+      "ar": "ما هو العنصر الكيميائي الأكثر وفرة في الكون؟",
+      "en": "What is the most abundant chemical element in the universe?"
+    },
+    "options": {
+      "ar": ["الأكسجين", "الهيدروجين", "الهيليوم", "الكربون"],
+      "en": ["Oxygen", "Hydrogen", "Helium", "Carbon"]
+    },
+    "correctAnswer": 1,
+    "points": 50
+  },
+  {
+    "category": { "ar": "ذكاء وألغاز", "en": "Logic & Brain Teasers" },
+    "question": {
+      "ar": "إذا كان لديك 3 تفاحات وأخذت منها 2، فكم تفاحة لديك؟",
+      "en": "If you have 3 apples and you take away 2, how many apples do you have?"
+    },
+    "options": {
+      "ar": ["1", "2", "3", "0"],
+      "en": ["1", "2", "3", "0"]
+    },
+    "correctAnswer": 1,
+    "points": 100
+  },
+  {
+    "category": { "ar": "كريبتو", "en": "Crypto" },
+    "question": {
+      "ar": "ما هي العملة الأساسية لشَبكة Danat Coin؟",
+      "en": "What is the main token of the Danat Coin network?"
+    },
+    "options": {
+      "ar": ["ETH", "USDT", "DNC", "BTC"],
+      "en": ["ETH", "USDT", "DNC", "BTC"]
+    },
+    "correctAnswer": 2,
+    "points": 100
+  }
+]
