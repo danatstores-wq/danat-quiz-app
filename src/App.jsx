@@ -983,7 +983,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               onClick={() => setShowAvatarModal(true)}
               className="text-xs text-yellow-400 font-bold bg-yellow-500/10 px-3 py-1.5 rounded-lg border border-yellow-500/40 shadow hover:bg-yellow-500/20"
             >
-              {language === 'ar' ? 'تغيير الصورة الشخصية' : 'Change Profile Picture'}
+             {user.language === 'العربية' ? 'تغيير الصورة الشخصية' : 'Change Profile Picture'}
             </button>
 
             <div className="flex items-center gap-2 mt-1 bg-[#240a47] px-4 py-2 rounded-xl border border-purple-400/30">
@@ -996,8 +996,8 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 
           <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-purple-400/40 space-y-3 text-xs shadow">
             <div className="flex justify-between items-center border-b border-purple-500/30 pb-2.5">
-           <span className="text-slate-300">
-  {language === 'ar' ? 'البريد الإلكتروني:' : 'Email:'}
+              <span className="text-slate-300">
+  {user.language === 'العربية' ? 'البريد الإلكتروني:' : 'Email:'}
 </span>
               <span className="font-mono text-yellow-400 flex items-center gap-1">
                 {currentUser?.email} <Lock className="w-3 h-3 text-slate-400" />
@@ -1005,8 +1005,8 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
             </div>
 
             <div className="flex justify-between items-center">
-             <span className="text-slate-300">
-  {language === 'ar' ? 'لغة التطبيق:' : 'App Language:'}
+              <span className="text-slate-300">
+  {user.language === 'العربية' ? 'لغة التطبيق:' : 'App Language:'}
 </span>
               <select 
                 value={user.language}
@@ -1153,8 +1153,8 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
                 onChange={(e) => handleLanguageChange(e.target.value)}
                 className="bg-[#240a47] text-yellow-400 font-bold px-3 py-1.5 rounded-lg border border-purple-400/40 outline-none text-xs cursor-pointer"
               >
-                <option value="ar">العربية</option>
-                <option value="en">English</option>
+                <option value="العربية">العربية</option>
+                <option value="English">English</option>
               </select>
             </div>
           </div>
