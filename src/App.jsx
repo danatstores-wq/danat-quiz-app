@@ -1153,8 +1153,8 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
                 onChange={(e) => handleLanguageChange(e.target.value)}
                 className="bg-[#240a47] text-yellow-400 font-bold px-3 py-1.5 rounded-lg border border-purple-400/40 outline-none text-xs cursor-pointer"
               >
-                <option value="العربية">العربية</option>
-                <option value="English">English</option>
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
               </select>
             </div>
           </div>
