@@ -991,7 +991,9 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               <Lock className="w-3.5 h-3.5 text-slate-400" />
             </div>
 
-            <span className="text-xs text-yellow-400 font-bold">المستوى {user.level}</span>
+           <span className="text-xs text-yellow-400 font-bold">
+  {user.language === 'العربية' ? `المستوى ${user.level}` : `Level ${user.level}`}
+</span>
           </div>
 
           <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-purple-400/40 space-y-3 text-xs shadow">
