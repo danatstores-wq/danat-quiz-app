@@ -1022,21 +1022,16 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
           </div>
 
           <div className="w-full grid grid-cols-3 gap-2">
-  <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
-    <div className="text-[10px] text-slate-300 mb-1">
-      {user.language === 'العربية' ? 'عدد الألعاب' : 'Games Played'}
-    </div>
-    <div className="text-base font-black text-white">{user.totalGames}</div>
-  </div>
+            <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
+              <div className="text-[10px] text-slate-300 mb-1">عدد الألعاب</div>
+              <div className="text-base font-black text-white">{user.totalGames}</div>
+            </div>
 
-  <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
-    <div className="text-[10px] text-slate-300 mb-1">
-      {user.language === 'العربية' ? 'أرواح مكتسبة' : 'Souls Earned'}
-    </div>
-    <div className="text-base font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
-  </div>
-</div>
-
+            <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
+              <div className="text-[10px] text-slate-300 mb-1">أرواح مكتسبة</div>
+              <div className="text-base font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
+            </div>
+			  
             <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
               <div className="text-[10px] text-slate-300 mb-1">DNC</div>
               <div className="text-base font-black text-yellow-400">{user.dncBalance}</div>
