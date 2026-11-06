@@ -69,6 +69,19 @@ web_modules/
 .env
 .env.*
 !.env.example
+*.local
+
+# Secrets, private keys, and Firebase service accounts
+serviceAccountKey.json
+*.json.key
+secrets/
+*.pem
+
+# SQL Database dumps and schemas
+schema.sql
+*.sql
+*.sqlite
+*.db
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -147,3 +160,9 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
