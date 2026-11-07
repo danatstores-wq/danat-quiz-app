@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+with open("App.jsx", "w", encoding="utf-8") as f:
+    f.write('''import React, { useState, useEffect } from 'react';
 import {
 ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
 Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye
@@ -30,7 +31,7 @@ id: 1,
 question: "ما هي عاصمة المملكة العربية السعودية؟",
 options: ["جدة", "الرياض", "الدمام", "مكة المكرمة"],
 correctAnswer: 1,
-points: 50,
+points: 10,
 category: "جغرافيا"
 },
 {
@@ -38,7 +39,7 @@ id: 2,
 question: "ما هي العملة الأساسية لشَبكة Danat Coin؟",
 options: ["ETH", "USDT", "DNC", "BTC"],
 correctAnswer: 2,
-points: 100,
+points: 10,
 category: "كريبتو"
 },
 {
@@ -46,7 +47,7 @@ id: 3,
 question: "كم عدد أركان الإسلام؟",
 options: ["4", "5", "6", "7"],
 correctAnswer: 1,
-points: 50,
+points: 10,
 category: "ثقافة عامة"
 }
 ];
@@ -70,7 +71,11 @@ close: 'إغلاق',
 nextQuestion: 'السؤال التالي ➡️',
 confirmAnswer: 'تأكيد الإجابة',
 connectWallet: 'ربط المحفظة (WalletConnect)',
-walletConnected: 'المحفظة متصلة'
+walletConnected: 'المحفظة متصلة',
+gamesPlayed: 'عدد الألعاب',
+spiritsEarned: 'أرواح مكتسبة',
+levelLabel: 'المستوى',
+emptyLeaderboard: 'لا يوجد لاعبون بعد'
 },
 'English': {
 appName: 'Danat Quiz',
@@ -89,7 +94,11 @@ close: 'Close',
 nextQuestion: 'Next Question ➡️',
 confirmAnswer: 'Confirm Answer',
 connectWallet: 'Connect Wallet (WalletConnect)',
-walletConnected: 'Wallet Connected'
+walletConnected: 'Wallet Connected',
+gamesPlayed: 'Games Played',
+spiritsEarned: 'Lives Earned',
+levelLabel: 'Level',
+emptyLeaderboard: 'Empty'
 }
 };
 
@@ -107,7 +116,7 @@ const [activeTab, setActiveTab] = useState('home');
 const [user, setUser] = useState({
 name: 'أحمد',
 email: 'ahmad.dnc@danatstores.com',
-language: 'العربية',
+language: 'English',
 level: 1,
 spirits: 0,
 dncBalance: 0.0,
@@ -118,7 +127,7 @@ walletAddress: '',
 avatar: 'avatar-man-ghutra.png',
 });
 
-const t = TRANSLATIONS[user.language] || TRANSLATIONS['العربية'];
+const t = TRANSLATIONS[user.language] || TRANSLATIONS['English'];
 
 const [levelsPlayed, setLevelsPlayed] = useState(0);
 const [showForcedAd, setShowForcedAd] = useState(false);
@@ -205,7 +214,7 @@ const uid = userCred.user.uid;
     walletConnected: false,
     walletAddress: '',
     avatar: 'avatar-man-ghutra.png',
-    language: 'العربية',
+    language: 'English',
     createdAt: new Date().toISOString()
   };
 
@@ -264,7 +273,7 @@ const fetchAllPlayersAndExportCSV = async () => {
 try {
 const querySnapshot = await getDocs(collection(db, "users"));
 let csvContent = "data:text/csv;charset=utf-8,";
-csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\n";
+csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\\n";
 
   querySnapshot.forEach((docSnap) => {
     const p = docSnap.data();
@@ -276,7 +285,7 @@ csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\n";
       p.totalGames || 0,
       `"${p.walletAddress || 'Not Connected'}"`
     ].join(",");
-    csvContent += row + "\n";
+    csvContent += row + "\\n";
   });
 
   const encodedUri = encodeURI(csvContent);
@@ -297,7 +306,7 @@ const currentQ = questions[currentQIndex];
 const isCorrect = selectedOption === currentQ.correctAnswer;
 
 if (isCorrect) {
-  const earned = currentQ.points;
+  const earned = 10;
   setScore(prev => prev + earned);
   setUser(prev => ({
     ...prev,
@@ -685,7 +694,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               </div>
               <div>
                 <div className="font-bold text-white text-base">{user.name}</div>
-                <div className="text-xs text-yellow-400 font-bold">المستوى {user.level}</div>
+                <div className="text-xs text-yellow-400 font-bold">{t.levelLabel} {user.level}</div>
               </div>
             </div>
 
@@ -744,17 +753,17 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 
           <div className="w-full grid grid-cols-2 gap-3">
             <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-              <div className="text-xs text-slate-300 mb-1">إجمالي الألعاب</div>
+              <div className="text-xs text-slate-300 mb-1">{t.gamesPlayed}</div>
               <div className="text-2xl font-black text-white">{user.totalGames}</div>
             </div>
 
             <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-              <div className="text-xs text-slate-300 mb-1">المستوى الحالي</div>
+              <div className="text-xs text-slate-300 mb-1">{t.levelLabel}</div>
               <div className="text-2xl font-black text-yellow-400">★ {user.level}</div>
             </div>
 
             <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-              <div className="text-xs text-slate-300 mb-1">الأرواح المكتسبة</div>
+              <div className="text-xs text-slate-300 mb-1">{t.spiritsEarned}</div>
               <div className="text-xl font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
             </div>
 
@@ -768,7 +777,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
             onClick={() => setActiveTab('home')}
             className="w-full mt-4 py-3 bg-[#240a47] hover:bg-[#320d63] border border-purple-400/40 text-white font-bold rounded-xl transition text-xs"
           >
-            العودة للرئيسية
+            {user.language === 'العربية' ? 'العودة للرئيسية' : 'Back to Home'}
           </button>
         </div>
       )}
@@ -793,7 +802,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 
           <div className="flex justify-center">
             <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-              {questions[currentQIndex].category} (السؤال {currentQIndex + 1} من {questions.length})
+              {questions[currentQIndex].category} ({user.language === 'العربية' ? `السؤال ${currentQIndex + 1} من ${questions.length}` : `Question ${currentQIndex + 1} of ${questions.length}`})
             </div>
           </div>
 
@@ -887,12 +896,12 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               onClick={handleRedeemDnc}
               className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow"
             >
-              طلب استبدال
+              {user.language === 'العربية' ? 'طلب استبدال' : 'Redeem Request'}
             </button>
           </div>
 
           <div className="w-full bg-[#0d031f]/80 rounded-xl p-3.5 border border-purple-400/30 text-center text-xs text-slate-200 shadow">
-            <span className="font-bold text-yellow-400">معادلة التحويل:</span> 1,000 روح = 1 DNC
+            <span className="font-bold text-yellow-400">{user.language === 'العربية' ? 'معادلة التحويل:' : 'Conversion Rate:'}</span> 1,000 {t.spirits} = 1 DNC
           </div>
 
           <div className="w-full bg-gradient-to-br from-purple-900/50 to-[#240a47] rounded-2xl p-4 border border-purple-500/40 flex items-center justify-between gap-3 shadow-lg">
@@ -901,8 +910,8 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
                 <Tv className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs font-bold text-white">شاهد فيديو إعلاني</div>
-                <div className="text-[10px] text-purple-300">واحصل على 100 روح إضافية</div>
+                <div className="text-xs font-bold text-white">{user.language === 'العربية' ? 'شاهد فيديو إعلاني' : 'Watch Ad Video'}</div>
+                <div className="text-[10px] text-purple-300">{user.language === 'العربية' ? 'واحصل على 100 روح إضافية' : 'And get 100 bonus spirits'}</div>
               </div>
             </div>
 
@@ -911,7 +920,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               disabled={isWatchingAd}
               className="bg-purple-600 hover:bg-purple-500 disabled:bg-purple-950 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center gap-1.5 shadow"
             >
-              {isWatchingAd ? `${adTimer}s...` : 'مشاهدة'}
+              {isWatchingAd ? `${adTimer}s...` : (user.language === 'العربية' ? 'مشاهدة' : 'Watch')}
             </button>
           </div>
         </div>
@@ -927,35 +936,24 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 
           <div className="w-full bg-[#240a47] p-1 rounded-xl flex gap-1 border border-purple-400/40 text-xs font-bold shadow">
             <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
-              أفضل اللاعبين
+              {user.language === 'العربية' ? 'أفضل اللاعبين' : 'Top Players'}
             </button>
             <button className="flex-1 py-2.5 text-slate-300 hover:text-white">
-              أعلى النقاط
+              {user.language === 'العربية' ? 'أعلى النقاط' : 'Top Points'}
             </button>
           </div>
 
           <div className="w-full bg-[#0d031f] px-4 py-2.5 rounded-lg flex text-[11px] text-slate-300 font-bold border border-purple-400/30 shadow">
-            <span className="w-12">المركز</span>
-            <span className="flex-1 text-right">اللاعب</span>
-            <span className="w-20 text-left">النقاط</span>
+            <span className="w-12">{user.language === 'العربية' ? 'المركز' : 'Rank'}</span>
+            <span className="flex-1 text-right">{user.language === 'العربية' ? 'اللاعب' : 'Player'}</span>
+            <span className="w-20 text-left">{user.language === 'العربية' ? 'النقاط' : 'Points'}</span>
           </div>
 
           <div className="w-full space-y-2.5">
-            {[
-              { rank: 1, name: 'محمد علي', points: '450,250' },
-              { rank: 2, name: 'سارة أحمد', points: '420,750' },
-              { rank: 3, name: 'أحمد خالد', points: '380,600' },
-              { rank: 4, name: 'ليلى منصور', points: '350,400' },
-              { rank: 5, name: 'عمر يوسف', points: '320,100' }
-            ].map(player => (
-              <div key={player.rank} className="w-full bg-[#240a47]/80 p-3.5 rounded-xl border border-purple-400/30 flex items-center justify-between text-xs shadow">
-                <div className="w-8 h-8 rounded-full bg-[#0d031f] border border-yellow-500/40 flex items-center justify-center font-bold text-yellow-400 shadow">
-                  {player.rank}
-                </div>
-                <div className="flex-1 px-3 font-bold text-slate-100">{player.name}</div>
-                <div className="w-24 text-left font-black text-yellow-400">{player.points}</div>
-              </div>
-            ))}
+            {/* Dummy leaderboard users set to 0 as requested */}
+            <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
+              {t.emptyLeaderboard}
+            </div>
           </div>
         </div>
       )}
@@ -983,7 +981,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               onClick={() => setShowAvatarModal(true)}
               className="text-xs text-yellow-400 font-bold bg-yellow-500/10 px-3 py-1.5 rounded-lg border border-yellow-500/40 shadow hover:bg-yellow-500/20"
             >
-             {user.language === 'العربية' ? 'تغيير الصورة الشخصية' : 'Change Profile Picture'}
+              ✏️ {user.language === 'العربية' ? 'تغيير الصورة الشخصية' : 'Change Profile Picture'}
             </button>
 
             <div className="flex items-center gap-2 mt-1 bg-[#240a47] px-4 py-2 rounded-xl border border-purple-400/30">
@@ -991,25 +989,19 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
               <Lock className="w-3.5 h-3.5 text-slate-400" />
             </div>
 
-           <span className="text-xs text-yellow-400 font-bold">
-  {user.language === 'العربية' ? `المستوى ${user.level}` : `Level ${user.level}`}
-</span>
+            <span className="text-xs text-yellow-400 font-bold">{t.levelLabel} {user.level}</span>
           </div>
 
           <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-purple-400/40 space-y-3 text-xs shadow">
             <div className="flex justify-between items-center border-b border-purple-500/30 pb-2.5">
-              <span className="text-slate-300">
-  {user.language === 'العربية' ? 'البريد الإلكتروني:' : 'Email:'}
-</span>
+              <span className="text-slate-300">{user.language === 'العربية' ? 'البريد الإلكتروني:' : 'Email:'}</span>
               <span className="font-mono text-yellow-400 flex items-center gap-1">
                 {currentUser?.email} <Lock className="w-3 h-3 text-slate-400" />
               </span>
             </div>
 
             <div className="flex justify-between items-center">
-              <span className="text-slate-300">
-  {user.language === 'العربية' ? 'لغة التطبيق:' : 'App Language:'}
-</span>
+              <span className="text-slate-300">{user.language === 'العربية' ? 'لغة التطبيق:' : 'App Language:'}</span>
               <select 
                 value={user.language}
                 onChange={(e) => handleLanguageChange(e.target.value)}
@@ -1023,15 +1015,15 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 
           <div className="w-full grid grid-cols-3 gap-2">
             <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
-              <div className="text-[10px] text-slate-300 mb-1">عدد الألعاب</div>
+              <div className="text-[10px] text-slate-300 mb-1">{t.gamesPlayed}</div>
               <div className="text-base font-black text-white">{user.totalGames}</div>
             </div>
 
             <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
-              <div className="text-[10px] text-slate-300 mb-1">أرواح مكتسبة</div>
+              <div className="text-[10px] text-slate-300 mb-1">{t.spiritsEarned}</div>
               <div className="text-base font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
             </div>
-			  
+
             <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
               <div className="text-[10px] text-slate-300 mb-1">DNC</div>
               <div className="text-base font-black text-yellow-400">{user.dncBalance}</div>
@@ -1052,7 +1044,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
                 <span>{user.walletConnected ? t.walletConnected : t.connectWallet}</span>
               </div>
               <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
-                {user.walletConnected ? `${user.walletAddress.substring(0,6)}...` : 'ربط'}
+                {user.walletConnected ? `${user.walletAddress.substring(0,6)}...` : (user.language === 'العربية' ? 'ربط' : 'Connect')}
               </span>
             </button>
           </div>
@@ -1073,10 +1065,10 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
             onClick={fetchAllPlayersAndExportCSV}
             className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition text-xs"
           >
-            <Download className="w-4 h-4" /> تحميل تقرير اللاعبين الكامل (CSV)
+            <Download className="w-4 h-4" /> {user.language === 'العربية' ? 'تحميل تقرير اللاعبين الكامل (CSV)' : 'Download Full Players Report (CSV)'}
           </button>
 
-          <p className="text-xs text-slate-300 mt-2">مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:</p>
+          <p className="text-xs text-slate-300 mt-2">{user.language === 'العربية' ? 'مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:' : 'Review Danat Coin redemption requests before sending tokens:'}</p>
 
           <div className="space-y-3">
             {redemptions.map(req => (
@@ -1084,17 +1076,17 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
                 <div className="flex justify-between font-bold">
                   <span className="text-white">{req.user}</span>
                   <span className={req.status === 'APPROVED' ? 'text-emerald-400' : 'text-amber-400'}>
-                    {req.status === 'APPROVED' ? 'تم الاعتماد' : 'قيد الانتظار'}
+                    {req.status === 'APPROVED' ? (user.language === 'العربية' ? 'تم الاعتماد' : 'Approved') : (user.language === 'العربية' ? 'قيد الانتظار' : 'Pending')}
                   </span>
                 </div>
 
                 <div className="text-slate-300 flex justify-between">
-                  <span>الأرواح: {req.spirits}</span>
+                  <span>{user.language === 'العربية' ? 'الأرواح:' : 'Spirits:'} {req.spirits}</span>
                   <span className="text-yellow-400 font-bold">{req.dnc} DNC</span>
                 </div>
 
                 <div className="text-[10px] text-slate-300 font-mono break-all bg-[#0d031f] p-2 rounded border border-purple-400/30">
-                  المحفظة: {req.wallet}
+                  {user.language === 'العربية' ? 'المحفظة:' : 'Wallet:'} {req.wallet}
                 </div>
 
                 {req.status === 'PENDING' && (
@@ -1102,7 +1094,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
                     onClick={() => handleAdminApprove(req.id)}
                     className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold mt-1 transition shadow"
                   >
-                    اعتماد وإرسال التوكنز
+                    {user.language === 'العربية' ? 'اعتماد وإرسال التوكنز' : 'Approve & Send Tokens'}
                   </button>
                 )}
               </div>
@@ -1120,17 +1112,17 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
           <div className="w-14 h-14 bg-yellow-500/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto text-yellow-400">
             <Tv className="w-7 h-7 animate-pulse" />
           </div>
-          <h3 className="text-lg font-black text-yellow-400">إعلان جوجل الإجباري</h3>
+          <h3 className="text-lg font-black text-yellow-400">{user.language === 'العربية' ? 'إعلان جوجل الإجباري' : 'Forced Google Ad'}</h3>
           <p className="text-xs text-slate-200 leading-relaxed">
-            لقد أنهيت 4 مستويات بنجاح! يلزم الاتصال بالإنترنت ومشاهدة هذا الإعلان القصير للمتابعة:
+            {user.language === 'العربية' ? 'لقد أنهيت 4 مستويات بنجاح! يلزم الاتصال بالإنترنت ومشاهدة هذا الإعلان القصير للمتابعة:' : 'You successfully finished 4 levels! Internet connection and watching this short ad are required to continue:'}
           </p>
           
           <div className="bg-[#0d031f] py-4 rounded-2xl border border-purple-400/40 text-sm font-black text-yellow-300">
-            ⏳ يرجى الانتظار... {forcedAdTimer} ثوانٍ
+            ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {forcedAdTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
           </div>
           
           <div className="text-[10px] text-purple-300">
-            ستحصل على 50 روح إضافية تلقائياً عند انتهاء الفيديو.
+            {user.language === 'العربية' ? 'ستحصل على 50 روح إضافية تلقائياً عند انتهاء الفيديو.' : 'You will automatically receive 50 bonus spirits when the video ends.'}
           </div>
         </div>
       </div>
@@ -1139,7 +1131,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
     {/* SETTINGS MODAL */}
     {showSettingsModal && (
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
+        <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-white text-base">{t.settings}</h3>
             <button onClick={() => setShowSettingsModal(false)} className="text-slate-300 p-1">
@@ -1174,8 +1166,8 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
     {/* FIXED BOTTOM NAVIGATION BAR */}
     <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
       {[
-        { id: 'home', label: t.appName, icon: 'dnc_coin.png', type: 'image' },
-        { id: 'quiz', label: t.startPlay, icon: 'dnc_coin.png', type: 'image' },
+        { id: 'home', label: user.language === 'العربية' ? 'دانات كويز' : 'Danat Quiz', icon: 'dnc_coin.png', type: 'image' },
+        { id: 'quiz', label: user.language === 'العربية' ? 'ابدأ اللعب' : 'Start Playing', icon: 'dnc_coin.png', type: 'image' },
         { id: 'rewards', label: t.rewards, icon: 'nav_rewards.png', type: 'image' },
         { id: 'leaderboard', label: t.leaderboard, icon: 'nav_leaderboard.png', type: 'image' },
         { id: 'profile', label: t.profile, icon: user.avatar, type: 'dynamic_avatar' }
@@ -1204,7 +1196,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
     {/* WALLETCONNECT MODAL */}
     {showWalletModal && (
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl">
+        <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-white text-base">ربط محفظة Web3</h3>
             <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
@@ -1237,7 +1229,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
     {/* AVATAR SELECTOR MODAL */}
     {showAvatarModal && (
       <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]">
+        <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-white text-lg">اختر صورتك الشخصية</h3>
             <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1 hover:text-white">
@@ -1290,3 +1282,5 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 </div>
 );
 }
+''')
+print("File written successfully!")
