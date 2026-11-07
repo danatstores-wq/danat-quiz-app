@@ -272,21 +272,19 @@ const fetchAllPlayersAndExportCSV = async () => {
 try {
 const querySnapshot = await getDocs(collection(db, "users"));
 let csvContent = "data:text/csv;charset=utf-8,";
-csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address
-";
+csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\n";
 
   querySnapshot.forEach((docSnap) => {
     const p = docSnap.data();
     const row = [
-      `"${p.name || ''}"`,
-      `"${p.email || ''}"`,
+      '"' + (p.name || '') + '"',
+      '"' + (p.email || '') + '"',
       p.spirits || 0,
       p.dncBalance || 0,
       p.totalGames || 0,
-      `"${p.walletAddress || 'Not Connected'}"`
+      '"' + (p.walletAddress || 'Not Connected') + '"'
     ].join(",");
-    csvContent += row + "
-";
+    csvContent += row + "\n";
   });
 
   const encodedUri = encodeURI(csvContent);
@@ -951,7 +949,6 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
           </div>
 
           <div className="w-full space-y-2.5">
-            {/* Dummy leaderboard users set to 0 as requested */}
             <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
               {t.emptyLeaderboard}
             </div>
@@ -1200,7 +1197,7 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
         <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-white text-base">ربط محفظة Web3</h3>
-            <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
+            <button onClick={() => setShowWalletModal(false)} className="text-[#slate-300] p-1">
               <X className="w-5 h-5" />
             </button>
           </div>
