@@ -1,5 +1,4 @@
-with open("App.jsx", "w", encoding="utf-8") as f:
-    f.write('''import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
 Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye
@@ -273,7 +272,8 @@ const fetchAllPlayersAndExportCSV = async () => {
 try {
 const querySnapshot = await getDocs(collection(db, "users"));
 let csvContent = "data:text/csv;charset=utf-8,";
-csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\\n";
+csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address
+";
 
   querySnapshot.forEach((docSnap) => {
     const p = docSnap.data();
@@ -285,7 +285,8 @@ csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\\n";
       p.totalGames || 0,
       `"${p.walletAddress || 'Not Connected'}"`
     ].join(",");
-    csvContent += row + "\\n";
+    csvContent += row + "
+";
   });
 
   const encodedUri = encodeURI(csvContent);
@@ -1282,5 +1283,3 @@ className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-50
 </div>
 );
 }
-''')
-print("File written successfully!")
