@@ -1,106 +1,1682 @@
 [
   {
-    "category": { "ar": "جغرافيا", "en": "Geography" },
+    "id": "q1",
     "question": {
-      "ar": "ما هي عاصمة المملكة العربية السعودية؟",
-      "en": "What is the capital of Saudi Arabia?"
+      "en": "What is the capital of France?",
+      "ar": "ما هي عاصمة فرنسا؟"
     },
     "options": {
-      "ar": ["جدة", "الرياض", "الدمام", "مكة المكرمة"],
-      "en": ["Jeddah", "Riyadh", "Dammam", "Makkah"]
+      "en": ["London", "Berlin", "Paris", "Madrid"],
+      "ar": ["لندن", "برلين", "باريس", "مدريد"]
     },
-    "correctAnswer": 1,
-    "points": 50
+    "correctAnswer": {
+      "en": "Paris",
+      "ar": "باريس"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "جغرافيا", "en": "Geography" },
+    "id": "q2",
     "question": {
-      "ar": "ما هو أطول نهر في العالم؟",
-      "en": "What is the longest river in the world?"
+      "en": "Which programming language is primarily used for React development?",
+      "ar": "ما هي لغة البرمجة المستخدمة أساساً لتطوير ريآكت؟"
     },
     "options": {
-      "ar": ["نهر الأمازون", "نهر النيل", "نهر الميسيسيبي", "نهر يانغتسي"],
-      "en": ["Amazon River", "Nile River", "Mississippi River", "Yangtze River"]
+      "en": ["Python", "JavaScript", "C++", "Ruby"],
+      "ar": ["بايثون", "جافا سكريبت", "سي بلس بلس", "روبي"]
     },
-    "correctAnswer": 1,
-    "points": 50
+    "correctAnswer": {
+      "en": "JavaScript",
+      "ar": "جافا سكريبت"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "تاريخ", "en": "History" },
+    "id": "q3",
     "question": {
-      "ar": "في أي عام اندلعت الحرب العالمية الأولى؟",
-      "en": "In which year did World War I start?"
+      "en": "What does CSS stand for?",
+      "ar": "ماذا تعني اختصار CSS؟"
     },
     "options": {
-      "ar": ["1914", "1918", "1939", "1945"],
-      "en": ["1914", "1918", "1939", "1945"]
+      "en": [
+        "Computer Style Sheets",
+        "Cascading Style Sheets",
+        "Creative Style System",
+        "Colorful Style Sheets"
+      ],
+      "ar": [
+        "أوراق الأنماط الحاسوبية",
+        "أوراق الأنماط المتسلسلة",
+        "نظام الأنماط الإبداعية",
+        "أوراق الأنماط الملونة"
+      ]
     },
-    "correctAnswer": 0,
-    "points": 50
+    "correctAnswer": {
+      "en": "Cascading Style Sheets",
+      "ar": "أوراق الأنماط المتسلسلة"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "سياسة", "en": "Politics" },
+    "id": "q4",
     "question": {
-      "ar": "أين يقع مقر الأمم المتحدة الرئيسي؟",
-      "en": "Where is the main headquarters of the United Nations located?"
+      "en": "Which planet is known as the Red Planet?",
+      "ar": "أي كوكب يُعرف بالكوكب الأحمر؟"
     },
     "options": {
-      "ar": ["جنيف", "نيويورك", "باريس", "لندن"],
-      "en": ["Geneva", "New York", "Paris", "London"]
+      "en": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "ar": ["الزهرة", "المريخ", "المشتري", "زحل"]
     },
-    "correctAnswer": 1,
-    "points": 50
+    "correctAnswer": {
+      "en": "Mars",
+      "ar": "المريخ"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "فيزياء", "en": "Physics" },
+    "id": "q5",
     "question": {
-      "ar": "ما هي سرعة الضوء في الفراغ تقريباً؟",
-      "en": "What is the approximate speed of light in a vacuum?"
+      "en": "What is the chemical symbol for Gold?",
+      "ar": "ما هو الرمز الكيميائي للذهب؟"
     },
     "options": {
-      "ar": ["150,000 كم/ث", "300,000 كم/ث", "450,000 كم/ث", "600,000 كم/ث"],
-      "en": ["150,000 km/s", "300,000 km/s", "450,000 km/s", "600,000 km/s"]
+      "en": ["Ag", "Fe", "Au", "Cu"],
+      "ar": ["Ag", "Fe", "Au", "Cu"]
     },
-    "correctAnswer": 1,
-    "points": 100
+    "correctAnswer": {
+      "en": "Au",
+      "ar": "Au"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "علوم", "en": "Science" },
+    "id": "q6",
     "question": {
-      "ar": "ما هو العنصر الكيميائي الأكثر وفرة في الكون؟",
-      "en": "What is the most abundant chemical element in the universe?"
+      "en": "Which database is a NoSQL document database offered by Google Cloud?",
+      "ar": "ما هي قاعدة بيانات NoSQL المستندة المقدمة من سحابة جوجل؟"
     },
     "options": {
-      "ar": ["الأكسجين", "الهيدروجين", "الهيليوم", "الكربون"],
-      "en": ["Oxygen", "Hydrogen", "Helium", "Carbon"]
+      "en": ["MySQL", "Firebase Firestore", "PostgreSQL", "SQLite"],
+      "ar": ["MySQL", "فايربيز فايستور", "بوستجري إس كيو إل", "إس كيو إل لايت"]
     },
-    "correctAnswer": 1,
-    "points": 50
+    "correctAnswer": {
+      "en": "Firebase Firestore",
+      "ar": "فايربيز فايستور"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "ذكاء وألغاز", "en": "Logic & Brain Teasers" },
+    "id": "q7",
     "question": {
-      "ar": "إذا كان لديك 3 تفاحات وأخذت منها 2، فكم تفاحة لديك؟",
-      "en": "If you have 3 apples and you take away 2, how many apples do you have?"
+      "en": "What is the largest ocean on Earth?",
+      "ar": "ما هو أكبر محيط على وجه الأرض؟"
     },
     "options": {
-      "ar": ["1", "2", "3", "0"],
-      "en": ["1", "2", "3", "0"]
+      "en": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "ar": ["المحيط الأطلسي", "المحيط الهندي", "المحيط المتجمد الشمالي", "المحيط الهادئ"]
     },
-    "correctAnswer": 1,
-    "points": 100
+    "correctAnswer": {
+      "en": "Pacific Ocean",
+      "ar": "المحيط الهادئ"
+    },
+    "points": 10
   },
   {
-    "category": { "ar": "كريبتو", "en": "Crypto" },
+    "id": "q8",
     "question": {
-      "ar": "ما هي العملة الأساسية لشَبكة Danat Coin؟",
-      "en": "What is the main token of the Danat Coin network?"
+      "en": "Who wrote 'Romeo and Juliet'?",
+      "ar": "من كتب مسرحية 'روميو وجولييت'؟"
     },
     "options": {
-      "ar": ["ETH", "USDT", "DNC", "BTC"],
-      "en": ["ETH", "USDT", "DNC", "BTC"]
+      "en": ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
+      "ar": ["تشارلز ديكنز", "ويليام شكسبير", "مارك توين", "جين أوستن"]
     },
-    "correctAnswer": 2,
-    "points": 100
+    "correctAnswer": {
+      "en": "William Shakespeare",
+      "ar": "ويليام شكسبير"
+    },
+    "points": 10
+  },
+  {
+    "id": "q9",
+    "question": {
+      "en": "What is the speed of light in a vacuum approximately?",
+      "ar": "ما هي سرعة الضوء في الفراغ تقريباً؟"
+    },
+    "options": {
+      "en": [
+        "300,000 km/s",
+        "150,000 km/s",
+        "1,000 km/s",
+        "3,000,000 km/s"
+      ],
+      "ar": [
+        "300,000 كم/ثانية",
+        "150,000 كم/ثانية",
+        "1,000 كم/ثانية",
+        "3,000,000 كم/ثانية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "300,000 km/s",
+      "ar": "300,000 كم/ثانية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q10",
+    "question": {
+      "en": "Which HTML tag is used to define an internal style sheet?",
+      "ar": "أي وسم HTML يُستخدم لتحديد ورقة أنماط داخلية؟"
+    },
+    "options": {
+      "en": ["<script>", "<style>", "<css>", "<design>"],
+      "ar": ["<script>", "<style>", "<css>", "<design>"]
+    },
+    "correctAnswer": {
+      "en": "<style>",
+      "ar": "<style>"
+    },
+    "points": 10
+  },
+  {
+    "id": "q11",
+    "question": {
+      "en": "What is the boiling point of water at standard atmospheric pressure?",
+      "ar": "ما هي درجة غليان الماء عند الضغط الجوي العادي؟"
+    },
+    "options": {
+      "en": ["90°C", "100°C", "110°C", "120°C"],
+      "ar": ["90°م", "100°م", "110°م", "120°م"]
+    },
+    "correctAnswer": {
+      "en": "100°C",
+      "ar": "100°م"
+    },
+    "points": 10
+  },
+  {
+    "id": "q12",
+    "question": {
+      "en": "In what year did World War II end?",
+      "ar": "في أي عام انتهت الحرب العالمية الثانية؟"
+    },
+    "options": {
+      "en": ["1942", "1945", "1948", "1950"],
+      "ar": ["1942", "1945", "1948", "1950"]
+    },
+    "correctAnswer": {
+      "en": "1945",
+      "ar": "1945"
+    },
+    "points": 10
+  },
+  {
+    "id": "q13",
+    "question": {
+      "en": "What does API stand for?",
+      "ar": "ماذا تعني واجهة برمجة التطبيقات API؟"
+    },
+    "options": {
+      "en": [
+        "Application Programming Interface",
+        "Advanced Program Interaction",
+        "Automated Process Integration",
+        "Application Program Integration"
+      ],
+      "ar": [
+        "واجهة برمجة التطبيقات",
+        "التفاعل البرمجي المتقدم",
+        "تكامل العمليات الآلي",
+        "تكامل برامج التطبيقات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Application Programming Interface",
+      "ar": "واجهة برمجة التطبيقات"
+    },
+    "points": 10
+  },
+  {
+    "id": "q14",
+    "question": {
+      "en": "Which country is home to the Kangaroo?",
+      "ar": "أي دولة موطن لحيوان الكنغر؟"
+    },
+    "options": {
+      "en": ["New Zealand", "South Africa", "Australia", "Brazil"],
+      "ar": ["نيوزيلندا", "جنوب أفريقيا", "أستراليا", "البرازيل"]
+    },
+    "correctAnswer": {
+      "en": "Australia",
+      "ar": "أستراليا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q15",
+    "question": {
+      "en": "What is the currency of Japan?",
+      "ar": "ما هي عملة اليابان؟"
+    },
+    "options": {
+      "en": ["Yuan", "Yen", "Won", "Dollar"],
+      "ar": ["يوان", "ين", "وون", "دولار"]
+    },
+    "correctAnswer": {
+      "en": "Yen",
+      "ar": "ين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q16",
+    "question": {
+      "en": "Which element is the most abundant in the Earth's crust?",
+      "ar": "ما هو العنصر الأكثر وفرة في قشرة الأرض؟"
+    },
+    "options": {
+      "en": ["Carbon", "Oxygen", "Hydrogen", "Silicon"],
+      "ar": ["كربون", "أكسجين", "هيدروجين", "سيليكون"]
+    },
+    "correctAnswer": {
+      "en": "Oxygen",
+      "ar": "أكسجين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q17",
+    "question": {
+      "en": "Who painted the Mona Lisa?",
+      "ar": "من رسم لوحة الموناليزا؟"
+    },
+    "options": {
+      "en": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+      "ar": ["فنسنت فان غوغ", "بابلو بيكاسو", "ليوناردو دافنشي", "كلود مونيه"]
+    },
+    "correctAnswer": {
+      "en": "Leonardo da Vinci",
+      "ar": "ليوناردو دافنشي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q18",
+    "question": {
+      "en": "What is the capital city of Egypt?",
+      "ar": "ما هي عاصمة جمهورية مصر العربية؟"
+    },
+    "options": {
+      "en": ["Alexandria", "Cairo", "Giza", "Luxor"],
+      "ar": ["الإسكندرية", "القاهرة", "الجيزة", "الأقصر"]
+    },
+    "correctAnswer": {
+      "en": "Cairo",
+      "ar": "القاهرة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q19",
+    "question": {
+      "en": "Which protocol is securely used to browse websites over the web?",
+      "ar": "ما هو البروتوكول المستخدم بأمان لتصفح مواقع الويب؟"
+    },
+    "options": {
+      "en": ["HTTP", "HTTPS", "FTP", "SMTP"],
+      "ar": ["HTTP", "HTTPS", "FTP", "SMTP"]
+    },
+    "correctAnswer": {
+      "en": "HTTPS",
+      "ar": "HTTPS"
+    },
+    "points": 10
+  },
+  {
+    "id": "q20",
+    "question": {
+      "en": "How many bones are in an adult human body?",
+      "ar": "كم عدد العظام في جسم الإنسان البالغ؟"
+    },
+    "options": {
+      "en": ["206", "210", "195", "220"],
+      "ar": ["206", "210", "195", "220"]
+    },
+    "correctAnswer": {
+      "en": "206",
+      "ar": "206"
+    },
+    "points": 10
+  },
+  {
+    "id": "q21",
+    "question": {
+      "en": "What is the square root of 144?",
+      "ar": "ما هو الجذر التربيعي للعدد 144؟"
+    },
+    "options": {
+      "en": ["10", "12", "14", "16"],
+      "ar": ["10", "12", "14", "16"]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12"
+    },
+    "points": 10
+  },
+  {
+    "id": "q22",
+    "question": {
+      "en": "Which gas do plants absorb from the atmosphere for photosynthesis?",
+      "ar": "ما هو الغاز الذي تمتصه النباتات من الغلاف الجوي لعملية التمثيل الضوئي؟"
+    },
+    "options": {
+      "en": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+      "ar": ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"]
+    },
+    "correctAnswer": {
+      "en": "Carbon Dioxide",
+      "ar": "ثاني أكسيد الكربون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q23",
+    "question": {
+      "en": "What is the largest mammal in the world?",
+      "ar": "ما هو أكبر حيوان ثديي في العالم؟"
+    },
+    "options": {
+      "en": ["African Elephant", "Blue Whale", "Giraffe", "Great White Shark"],
+      "ar": ["الفيل الأفريقي", "الحوت الأزرق", "الزرافة", "القرش الأبيض الكبير"]
+    },
+    "correctAnswer": {
+      "en": "Blue Whale",
+      "ar": "الحوت الأزرق"
+    },
+    "points": 10
+  },
+  {
+    "id": "q24",
+    "question": {
+      "en": "Which framework or library is maintained by Meta (Facebook)?",
+      "ar": "أي إطار عمل أو مكتبة تتم صيانتها بواسطة ميتا (فيسبوك)؟"
+    },
+    "options": {
+      "en": ["Angular", "Vue.js", "React", "Svelte"],
+      "ar": ["انجلار", "فيو دوت إس", "ريآكت", "سفيلت"]
+    },
+    "correctAnswer": {
+      "en": "React",
+      "ar": "ريآكت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q25",
+    "question": {
+      "en": "In which country are the Great Pyramids of Giza located?",
+      "ar": "في أي دولة تقع أهرامات الجيزة الكبرى؟"
+    },
+    "options": {
+      "en": ["Sudan", "Egypt", "Mexico", "Iraq"],
+      "ar": ["السودان", "مصر", "المكسيك", "العراق"]
+    },
+    "correctAnswer": {
+      "en": "Egypt",
+      "ar": "مصر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q26",
+    "question": {
+      "en": "What is the main component of the sun?",
+      "ar": "ما هو المكون الرئيسي للشمس؟"
+    },
+    "options": {
+      "en": ["Helium", "Hydrogen", "Oxygen", "Nitrogen"],
+      "ar": ["هيليوم", "هيدروجين", "أكسجين", "نيتروجين"]
+    },
+    "correctAnswer": {
+      "en": "Hydrogen",
+      "ar": "هيدروجين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q27",
+    "question": {
+      "en": "Which country won the FIFA World Cup in 2018?",
+      "ar": "أي دولة فازت بكأس العالم لكرة القدم عام 2018؟"
+    },
+    "options": {
+      "en": ["Brazil", "Germany", "France", "Argentina"],
+      "ar": ["البرازيل", "ألمانيا", "فرنسا", "الأرجنتين"]
+    },
+    "correctAnswer": {
+      "en": "France",
+      "ar": "فرنسا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q28",
+    "question": {
+      "en": "What does CPU stand for in computing?",
+      "ar": "ماذا تعني وحدة المعالجة المركزية CPU في الحاسوب؟"
+    },
+    "options": {
+      "en": [
+        "Central Processing Unit",
+        "Computer Personal Unit",
+        "Central Program Utility",
+        "Core Processing Utility"
+      ],
+      "ar": [
+        "وحدة المعالجة المركزية",
+        "وحدة الحاسوب الشخصية",
+        "أداة البرنامج المركزي",
+        "أداة المعالجة الأساسية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Central Processing Unit",
+      "ar": "وحدة المعالجة المركزية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q29",
+    "question": {
+      "en": "Which continent is the Sahara Desert located in?",
+      "ar": "في أي قارة تقع الصحراء الكبرى؟"
+    },
+    "options": {
+      "en": ["Asia", "Africa", "Australia", "South America"],
+      "ar": ["آسيا", "أفريقيا", "أستراليا", "أمريكا الجنوبية"]
+    },
+    "correctAnswer": {
+      "en": "Africa",
+      "ar": "أفريقيا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q30",
+    "question": {
+      "en": "What is the hardest natural substance on Earth?",
+      "ar": "ما هي أصلب مادة طبيعية على وجه الأرض؟"
+    },
+    "options": {
+      "en": ["Gold", "Iron", "Diamond", "Platinum"],
+      "ar": ["ذهب", "حديد", "ألماس", "بلاتين"]
+    },
+    "correctAnswer": {
+      "en": "Diamond",
+      "ar": "ألماس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q31",
+    "question": {
+      "en": "Who developed the theory of relativity?",
+      "ar": "من وضع نظرية النسبية؟"
+    },
+    "options": {
+      "en": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+      "ar": ["إسحاق نيوتن", "ألبرت أينشتاين", "غاليليو غاليلي", "نيكولا تسلا"]
+    },
+    "correctAnswer": {
+      "en": "Albert Einstein",
+      "ar": "ألبرت أينشتاين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q32",
+    "question": {
+      "en": "What is the national currency of the United Kingdom?",
+      "ar": "ما هي العملة الوطنية للمملكة المتحدة؟"
+    },
+    "options": {
+      "en": ["Euro", "Dollar", "Pound Sterling", "Franc"],
+      "ar": ["يورو", "دولار", "جنيه إسترليني", "فرنك"]
+    },
+    "correctAnswer": {
+      "en": "Pound Sterling",
+      "ar": "جنيه إسترليني"
+    },
+    "points": 10
+  },
+  {
+    "id": "q33",
+    "question": {
+      "en": "Which programming language is known for snake logo and data science popularity?",
+      "ar": "ما هي لغة البرمجة المعروفة بشعار الثعبان وشهرتها في علم البيانات؟"
+    },
+    "options": {
+      "en": ["Java", "Python", "C#", "Swift"],
+      "ar": ["جافا", "بايثون", "سي شارب", "سويفت"]
+    },
+    "correctAnswer": {
+      "en": "Python",
+      "ar": "بايثون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q34",
+    "question": {
+      "en": "What is the capital of Italy?",
+      "ar": "ما هي عاصمة إيطاليا؟"
+    },
+    "options": {
+      "en": ["Venice", "Milan", "Rome", "Florence"],
+      "ar": ["البندقية", "ميلانو", "روما", "فلورنس"]
+    },
+    "correctAnswer": {
+      "en": "Rome",
+      "ar": "روما"
+    },
+    "points": 10
+  },
+  {
+    "id": "q35",
+    "question": {
+      "en": "How many planets are in our solar system?",
+      "ar": "كم عدد الكواكب في نظامنا الشمسي؟"
+    },
+    "options": {
+      "en": ["7", "8", "9", "10"],
+      "ar": ["7", "8", "9", "10"]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8"
+    },
+    "points": 10
+  },
+  {
+    "id": "q36",
+    "question": {
+      "en": "What does HTML stand for?",
+      "ar": "ماذا تعني لغة HTML؟"
+    },
+    "options": {
+      "en": [
+        "HyperText Markup Language",
+        "High Tech Modern Language",
+        "Hyperlink and Text Markup Language",
+        "Home Tool Markup Language"
+      ],
+      "ar": [
+        "لغة ترميز النص الفائق",
+        "لغة حديثة عالية التقنية",
+        "لغة ترميز النصوص والروابط",
+        "لغة ترميز الأدوات المنزلية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "HyperText Markup Language",
+      "ar": "لغة ترميز النص الفائق"
+    },
+    "points": 10
+  },
+  {
+    "id": "q37",
+    "question": {
+      "en": "Which organ in the human body pumps blood?",
+      "ar": "أي عضو في جسم الإنسان يضخ الدم؟"
+    },
+    "options": {
+      "en": ["Brain", "Lungs", "Heart", "Liver"],
+      "ar": ["الدماغ", "الرئتان", "القلب", "الكبد"]
+    },
+    "correctAnswer": {
+      "en": "Heart",
+      "ar": "القلب"
+    },
+    "points": 10
+  },
+  {
+    "id": "q38",
+    "question": {
+      "en": "What is the capital of Canada?",
+      "ar": "ما هي عاصمة كندا؟"
+    },
+    "options": {
+      "en": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
+      "ar": ["تورونتو", "فانكوفر", "أوتاوا", "مونتريال"]
+    },
+    "correctAnswer": {
+      "en": "Ottawa",
+      "ar": "أوتاوا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q39",
+    "question": {
+      "en": "Which social platform uses tweets and a bird logo (historically)?",
+      "ar": "ما هي منصة التواصل الاجتماعي التي تستخدم التغريدات وشعار الطائر (تاريخياً)؟"
+    },
+    "options": {
+      "en": ["Facebook", "Twitter", "Instagram", "LinkedIn"],
+      "ar": ["فيسبوك", "تويتر", "إنستغرام", "لينكد إن"]
+    },
+    "correctAnswer": {
+      "en": "Twitter",
+      "ar": "تويتر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q40",
+    "question": {
+      "en": "What is the freezing point of water in Fahrenheit?",
+      "ar": "ما هي درجة تجمد الماء بمقياس فهرنهايت؟"
+    },
+    "options": {
+      "en": ["0°F", "32°F", "100°F", "212°F"],
+      "ar": ["0°ف", "32°ف", "100°ف", "212°ف"]
+    },
+    "correctAnswer": {
+      "en": "32°F",
+      "ar": "32°ف"
+    },
+    "points": 10
+  },
+  {
+    "id": "q41",
+    "question": {
+      "en": "Who is known as the father of computer science and code breaker?",
+      "ar": "من يُعرف بأبي علم الحاسوب وكسار الشفرات؟"
+    },
+    "options": {
+      "en": ["Alan Turing", "Bill Gates", "Steve Jobs", "Tim Berners-Lee"],
+      "ar": ["آلان تورينج", "بيل غيتس", "ستيف جوبز", "تيم بيرнерز لي"]
+    },
+    "correctAnswer": {
+      "en": "Alan Turing",
+      "ar": "آلان تورينج"
+    },
+    "points": 10
+  },
+  {
+    "id": "q42",
+    "question": {
+      "en": "What is the tallest mountain in the world?",
+      "ar": "ما هو أعلى جبل في العالم؟"
+    },
+    "options": {
+      "en": ["K2", "Mount Kilimanjaro", "Mount Everest", "Mont Blanc"],
+      "ar": ["كي 2", "جبل كليمنجارو", "جبل إيفرست", "مون بلان"]
+    },
+    "correctAnswer": {
+      "en": "Mount Everest",
+      "ar": "جبل إيفرست"
+    },
+    "points": 10
+  },
+  {
+    "id": "q43",
+    "question": {
+      "en": "Which country spans across both Europe and Asia?",
+      "ar": "أي دولة تمتد عبر قارتي أوروبا وآسيا؟"
+    },
+    "options": {
+      "en": ["Egypt", "Turkey", "Brazil", "Australia"],
+      "ar": ["مصر", "تركيا", "البرازيل", "أستراليا"]
+    },
+    "correctAnswer": {
+      "en": "Turkey",
+      "ar": "تركيا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q44",
+    "question": {
+      "en": "What is the primary function of RAM in a computer?",
+      "ar": "ما هي الوظيفة الأساسية للذاكرة العشوائية (RAM) في الحاسوب؟"
+    },
+    "options": {
+      "en": [
+        "Long-term data storage",
+        "Temporary working memory for active tasks",
+        "Cooling the processor",
+        "Displaying graphics"
+      ],
+      "ar": [
+        "تخزين البيانات على المدى الطويل",
+        "ذاكرة عمل مؤقتة للمهام النشطة",
+        "تكييف المعالج",
+        "عرض الرسومات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Temporary working memory for active tasks",
+      "ar": "ذاكرة عمل مؤقتة للمهام النشطة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q45",
+    "question": {
+      "en": "Which chemical element has the symbol 'Na'?",
+      "ar": "ما هو العنصر الكيميائي الذي يملك الرمز 'Na'؟"
+    },
+    "options": {
+      "en": ["Sodium", "Nitrogen", "Neon", "Nickel"],
+      "ar": ["صوديوم", "نيتروجين", "نيون", "نيكل"]
+    },
+    "correctAnswer": {
+      "en": "Sodium",
+      "ar": "صوديوم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q46",
+    "question": {
+      "en": "What is the capital of Germany?",
+      "ar": "ما هي عاصمة ألمانيا؟"
+    },
+    "options": {
+      "en": ["Munich", "Frankfurt", "Berlin", "Hamburg"],
+      "ar": ["ميونيخ", "فرانكفورت", "برلين", "هامبورغ"]
+    },
+    "correctAnswer": {
+      "en": "Berlin",
+      "ar": "برلين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q47",
+    "question": {
+      "en": "Which web technology is used to style web pages?",
+      "ar": "ما هي تقنية الويب المستخدمة لتصميم وتنسيق صفحات الويب؟"
+    },
+    "options": {
+      "en": ["HTML", "CSS", "Python", "SQL"],
+      "ar": ["HTML", "CSS", "باثيون", "SQL"]
+    },
+    "correctAnswer": {
+      "en": "CSS",
+      "ar": "CSS"
+    },
+    "points": 10
+  },
+  {
+    "id": "q48",
+    "question": {
+      "en": "How many continents are there on Earth?",
+      "ar": "كم عدد القارات على سطح الأرض؟"
+    },
+    "options": {
+      "en": ["5", "6", "7", "8"],
+      "ar": ["5", "6", "7", "8"]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7"
+    },
+    "points": 10
+  },
+  {
+    "id": "q49",
+    "question": {
+      "en": "What is the capital of Japan?",
+      "ar": "ما هي عاصمة اليابان؟"
+    },
+    "options": {
+      "en": ["Kyoto", "Osaka", "Tokyo", "Hiroshima"],
+      "ar": ["كيوتو", "أوساكا", "طوكيو", "هيروشيما"]
+    },
+    "correctAnswer": {
+      "en": "Tokyo",
+      "ar": "طوكيو"
+    },
+    "points": 10
+  },
+  {
+    "id": "q50",
+    "question": {
+      "en": "What does URL stand for in web terminology?",
+      "ar": "ماذا تعني اختصار URL في مصطلحات الويب؟"
+    },
+    "options": {
+      "en": [
+        "Uniform Resource Locator",
+        "Universal Response Link",
+        "Unified Retrieval Language",
+        "Unique Registry Location"
+      ],
+      "ar": [
+        "محدد الموارد الموحد",
+        "رابط الاستجابة العالمي",
+        "لغة الاسترجاع الموحدة",
+        "موقع السجل الفريد"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Uniform Resource Locator",
+      "ar": "محدد الموارد الموحد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q51",
+    "question": {
+      "en": "Which animal is known as the 'Ship of the Desert'?",
+      "ar": "أي حيوان يُعرف بـ 'سفينة الصحراء'؟"
+    },
+    "options": {
+      "en": ["Horse", "Camel", "Elephant", "Donkey"],
+      "ar": ["الحصان", "الجمل", "الفيل", "الحمار"]
+    },
+    "correctAnswer": {
+      "en": "Camel",
+      "ar": "الجمل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q52",
+    "question": {
+      "en": "What is the capital of Spain?",
+      "ar": "ما هي عاصمة إسبانيا؟"
+    },
+    "options": {
+      "en": ["Barcelona", "Madrid", "Seville", "Valencia"],
+      "ar": ["برشلونة", "مدريد", "إشبيلية", "فالنسيا"]
+    },
+    "correctAnswer": {
+      "en": "Madrid",
+      "ar": "مدريد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q53",
+    "question": {
+      "en": "Which company developed the JavaScript programming language?",
+      "ar": "ما هي الشركة التي طورت لغة برمجة جافا سكريبت؟"
+    },
+    "options": {
+      "en": ["Microsoft", "Netscape", "Apple", "Google"],
+      "ar": ["مايكروسوفت", "نتسكيب", "أبل", "جوجل"]
+    },
+    "correctAnswer": {
+      "en": "Netscape",
+      "ar": "نتسكيب"
+    },
+    "points": 10
+  },
+  {
+    "id": "q54",
+    "question": {
+      "en": "What is the main gas found in the air we breathe?",
+      "ar": "ما هو الغاز الرئيسي الموجود في الهواء الذي نتنفسه؟"
+    },
+    "options": {
+      "en": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+      "ar": ["الأكسجين", "النيتروجين", "ثاني أكسيد الكربون", "الأرجون"]
+    },
+    "correctAnswer": {
+      "en": "Nitrogen",
+      "ar": "النيتروجين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q55",
+    "question": {
+      "en": "Who painted 'The Starry Night'?",
+      "ar": "من رسم لوحة 'ليلة مرصعة بالنجوم'؟"
+    },
+    "options": {
+      "en": ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dali"],
+      "ar": ["كلود مونيه", "فنسنت فان غوغ", "بابلو بيكاسو", "سالفادور دالي"]
+    },
+    "correctAnswer": {
+      "en": "Vincent van Gogh",
+      "ar": "فنسنت فان غوغ"
+    },
+    "points": 10
+  },
+  {
+    "id": "q56",
+    "question": {
+      "en": "What is the smallest prime number?",
+      "ar": "ما هو أصغر عدد أولي؟"
+    },
+    "options": {
+      "en": ["0", "1", "2", "3"],
+      "ar": ["0", "1", "2", "3"]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2"
+    },
+    "points": 10
+  },
+  {
+    "id": "q57",
+    "question": {
+      "en": "Which tool version control system is commonly used via GitHub?",
+      "ar": "ما هو نظام التحكم في الإصدارات الشائع استخدامه عبر غيت هاب؟"
+    },
+    "options": {
+      "en": ["SVN", "Git", "Mercurial", "CVS"],
+      "ar": ["SVN", "جيت", "Mercurial", "CVS"]
+    },
+    "correctAnswer": {
+      "en": "Git",
+      "ar": "جيت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q58",
+    "question": {
+      "en": "What is the capital of Australia?",
+      "ar": "ما هي عاصمة أستراليا؟"
+    },
+    "options": {
+      "en": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+      "ar": ["سيدني", "ملبورن", "كانبرا", "بريسبان"]
+    },
+    "correctAnswer": {
+      "en": "Canberra",
+      "ar": "كانبرا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q59",
+    "question": {
+      "en": "Which vitamin is primarily produced when the human skin is exposed to sunlight?",
+      "ar": "أي فيتامين يتم إنتاجه أساساً عندما يتعرض جلد الإنسان لأشعة الشمس؟"
+    },
+    "options": {
+      "en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+      "ar": ["فيتامين أ", "فيتامين ب", "فيتامين ج", "فيتامين د"]
+    },
+    "correctAnswer": {
+      "en": "Vitamin D",
+      "ar": "فيتامين د"
+    },
+    "points": 10
+  },
+  {
+    "id": "q60",
+    "question": {
+      "en": "What is the largest planet in our solar system?",
+      "ar": "ما هو أكبر كوكب في نظامنا الشمسي؟"
+    },
+    "options": {
+      "en": ["Saturn", "Jupiter", "Neptune", "Uranus"],
+      "ar": ["زحل", "المشتري", "نبتون", "أورانوس"]
+    },
+    "correctAnswer": {
+      "en": "Jupiter",
+      "ar": "المشتري"
+    },
+    "points": 10
+  },
+  {
+    "id": "q61",
+    "question": {
+      "en": "Which programming paradigm does React heavily promote through UI components?",
+      "ar": "ما هو النمط البرمجي الذي تشجعه ريآكت بشدة من خلال مكونات واجهة المستخدم؟"
+    },
+    "options": {
+      "en": ["Procedural Programming", "Component-Based / Declarative", "Assembly Coding", "Imperative Logic"],
+      "ar": ["البرمجة الإجرائية", "القائمة على المكونات / التصريحية", "برمجة لغة التجميع", "المنطق الأمرائي"]
+    },
+    "correctAnswer": {
+      "en": "Component-Based / Declarative",
+      "ar": "القائمة على المكونات / التصريحية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q62",
+    "question": {
+      "en": "What is the chemical formula for water?",
+      "ar": "ما هي الصيغة الكيميائية للماء؟"
+    },
+    "options": {
+      "en": ["CO2", "H2O", "NaCl", "O2"],
+      "ar": ["CO2", "H2O", "NaCl", "O2"]
+    },
+    "correctAnswer": {
+      "en": "H2O",
+      "ar": "H2O"
+    },
+    "points": 10
+  },
+  {
+    "id": "q63",
+    "question": {
+      "en": "What is the capital of Brazil?",
+      "ar": "ما هي عاصمة البرازيل؟"
+    },
+    "options": {
+      "en": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Salvador"],
+      "ar": ["ريو دي جانيرو", "ساو باولو", "برازيليا", "سالفادور"]
+    },
+    "correctAnswer": {
+      "en": "Brasilia",
+      "ar": "برازيليا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q64",
+    "question": {
+      "en": "Which company created the iPhone?",
+      "ar": "ما هي الشركة التي ابتكرت هاتف آيفون؟"
+    },
+    "options": {
+      "en": ["Samsung", "Google", "Apple", "Microsoft"],
+      "ar": ["سامسونج", "جوجل", "أبل", "مايكروسوفت"]
+    },
+    "correctAnswer": {
+      "en": "Apple",
+      "ar": "أبل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q65",
+    "question": {
+      "en": "What is the main language spoken in Brazil?",
+      "ar": "ما هي اللغة الرئيسية المتحدثة في البرازيل؟"
+    },
+    "options": {
+      "en": ["Spanish", "Portuguese", "English", "French"],
+      "ar": ["الإسبانية", "البرتغالية", "الإنجليزية", "الفرنسية"]
+    },
+    "correctAnswer": {
+      "en": "Portuguese",
+      "ar": "البرتغالية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q66",
+    "question": {
+      "en": "What does JSON stand for?",
+      "ar": "ماذا تعني اختصار JSON؟"
+    },
+    "options": {
+      "en": [
+        "JavaScript Object Notation",
+        "Java Standard Output Network",
+        "Junction Scripting Object Node",
+        "JavaScript Online Notation"
+      ],
+      "ar": [
+        "ترميز كائنات جافا سكريبت",
+        "شبكة إخراج جافا القياسية",
+        "عقدة كائنات البرمجة المتقاطعة",
+        "الترميز عبر الإنترنت لجافا سكريبت"
+      ]
+    },
+    "correctAnswer": {
+      "en": "JavaScript Object Notation",
+      "ar": "ترميز كائنات جافا سكريبت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q67",
+    "question": {
+      "en": "Which country is famous for the ancient pyramids and the Nile River?",
+      "ar": "أي دولة تشتهر بالأهرامات القديمة ونهر النيل؟"
+    },
+    "options": {
+      "en": ["Greece", "Egypt", "Italy", "India"],
+      "ar": ["اليونان", "مصر", "إيطاليا", "الهند"]
+    },
+    "correctAnswer": {
+      "en": "Egypt",
+      "ar": "مصر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q68",
+    "question": {
+      "en": "What is the capital of Argentina?",
+      "ar": "ما هي عاصمة الأرجنتين؟"
+    },
+    "options": {
+      "en": ["Buenos Aires", "Cordoba", "Rosario", "Mendoza"],
+      "ar": ["بوينس آيرس", "قرطبة", "روزاريو", "مندوزا"]
+    },
+    "correctAnswer": {
+      "en": "Buenos Aires",
+      "ar": "بوينس آيرس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q69",
+    "question": {
+      "en": "Which device is used to input text into a computer?",
+      "ar": "ما هو الجهاز المستخدم لإدخال النصوص إلى الحاسوب؟"
+    },
+    "options": {
+      "en": ["Monitor", "Keyboard", "Printer", "Speaker"],
+      "ar": ["الشاشة", "لوحة المفاتيح", "الطابعة", "مكبر الصوت"]
+    },
+    "correctAnswer": {
+      "en": "Keyboard",
+      "ar": "لوحة المفاتيح"
+    },
+    "points": 10
+  },
+  {
+    "id": "q70",
+    "question": {
+      "en": "What is the largest country in the world by land area?",
+      "ar": "ما هي أكبر دولة في العالم من حيث مساحة الأراضي؟"
+    },
+    "options": {
+      "en": ["Canada", "China", "Russia", "United States"],
+      "ar": ["كندا", "الصين", "روسيا", "الولايات المتحدة"]
+    },
+    "correctAnswer": {
+      "en": "Russia",
+      "ar": "روسيا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q71",
+    "question": {
+      "en": "Which protocol is used to transfer web pages from a server to a browser?",
+      "ar": "ما هو البروتوكول المستخدم لنقل صفحات الويب من الخادم إلى المتصفح؟"
+    },
+    "options": {
+      "en": ["FTP", "HTTP", "SMTP", "SSH"],
+      "ar": ["FTP", "HTTP", "SMTP", "SSH"]
+    },
+    "correctAnswer": {
+      "en": "HTTP",
+      "ar": "HTTP"
+    },
+    "points": 10
+  },
+  {
+    "id": "q72",
+    "question": {
+      "en": "What is the capital of Mexico?",
+      "ar": "ما هي عاصمة المكسيك؟"
+    },
+    "options": {
+      "en": ["Cancun", "Mexico City", "Guadalajara", "Monterrey"],
+      "ar": ["كانكون", "مدينة المكسيك", "غوادالاخارا", "مونتيري"]
+    },
+    "correctAnswer": {
+      "en": "Mexico City",
+      "ar": "مدينة المكسيك"
+    },
+    "points": 10
+  },
+  {
+    "id": "q73",
+    "question": {
+      "en": "Which organ is primarily responsible for filtering human blood?",
+      "ar": "أي عضو مسؤول أساساً عن تصفية دم الإنسان؟"
+    },
+    "options": {
+      "en": ["Liver", "Kidneys", "Lungs", "Stomach"],
+      "ar": ["الكبد", "الكليتان", "الرئتان", "المعدة"]
+    },
+    "correctAnswer": {
+      "en": "Kidneys",
+      "ar": "الكليتان"
+    },
+    "points": 10
+  },
+  {
+    "id": "q74",
+    "question": {
+      "en": "What is the capital of South Korea?",
+      "ar": "ما هي عاصمة كوريا الجنوبية؟"
+    },
+    "options": {
+      "en": ["Busan", "Incheon", "Seoul", "Daegu"],
+      "ar": ["بوسان", "إنتشون", "سيول", "دايغو"]
+    },
+    "correctAnswer": {
+      "en": "Seoul",
+      "ar": "سيول"
+    },
+    "points": 10
+  },
+  {
+    "id": "q75",
+    "question": {
+      "en": "Which programming tool is used for packaging and containerizing applications?",
+      "ar": "ما هي أداة البرمجة المستخدمة لتغليف وتعبئة التطبيقات في حاويات؟"
+    },
+    "options": {
+      "en": ["Docker", "Photoshop", "Notepad", "Excel"],
+      "ar": ["دوكر", "فوتوشوب", "مفكرة", "إكسل"]
+    },
+    "correctAnswer": {
+      "en": "Docker",
+      "ar": "دوكر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q76",
+    "question": {
+      "en": "What is the national flower of Japan?",
+      "ar": "ما هي الزهرة الوطنية لليابان؟"
+    },
+    "options": {
+      "en": ["Rose", "Tulip", "Cherry Blossom (Sakura)", "Lotus"],
+      "ar": ["الورد", "التوليب", "زهرة الساكورا (الكرز)", "اللوتس"]
+    },
+    "correctAnswer": {
+      "en": "Cherry Blossom (Sakura)",
+      "ar": "زهرة الساكورا (الكرز)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q77",
+    "question": {
+      "en": "What is the capital of India?",
+      "ar": "ما هي عاصمة الهند؟"
+    },
+    "options": {
+      "en": ["Mumbai", "New Delhi", "Bangalore", "Kolkata"],
+      "ar": ["مومباي", "نيودلهي", "بنغالور", "كولكاتا"]
+    },
+    "correctAnswer": {
+      "en": "New Delhi",
+      "ar": "نيودلهي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q78",
+    "question": {
+      "en": "Which subatomic particle carries a negative electrical charge?",
+      "ar": "أي جسيم دون ذري يحمل شحنة كهربائية سالبة؟"
+    },
+    "options": {
+      "en": ["Proton", "Neutron", "Electron", "Positron"],
+      "ar": ["بروتون", "نيوترون", "إلكترون", "بوزيترون"]
+    },
+    "correctAnswer": {
+      "en": "Electron",
+      "ar": "إلكترون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q79",
+    "question": {
+      "en": "What is the capital of Saudi Arabia?",
+      "ar": "ما هي عاصمة المملكة العربية السعودية؟"
+    },
+    "options": {
+      "en": ["Jeddah", "Riyadh", "Mecca", "Dammam"],
+      "ar": ["جدة", "الرياض", "مكة المكرمة", "الدمام"]
+    },
+    "correctAnswer": {
+      "en": "Riyadh",
+      "ar": "الرياض"
+    },
+    "points": 10
+  },
+  {
+    "id": "q80",
+    "question": {
+      "en": "Which software version control platform hosts millions of open-source projects?",
+      "ar": "ما هي منصة التحكم في إصدارات البرمجيات التي تستضيف ملايين المشاريع مفتوحة المصدر؟"
+    },
+    "options": {
+      "en": ["GitHub", "Google Drive", "Dropbox", "OneDrive"],
+      "ar": ["غيت هاب", "جوجل درايف", "دروبوكس", "ون درايف"]
+    },
+    "correctAnswer": {
+      "en": "GitHub",
+      "ar": "غيت هاب"
+    },
+    "points": 10
+  },
+  {
+    "id": "q81",
+    "question": {
+      "en": "What is the capital of the United States?",
+      "ar": "ما هي عاصمة الولايات المتحدة الأمريكية؟"
+    },
+    "options": {
+      "en": ["New York", "Los Angeles", "Washington, D.C.", "Chicago"],
+      "ar": ["نيويورك", "لوس أنجلوس", "واشنطن العاصمة", "شيكاغو"]
+    },
+    "correctAnswer": {
+      "en": "Washington, D.C.",
+      "ar": "واشنطن العاصمة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q82",
+    "question": {
+      "en": "Which planet is closest to the Sun?",
+      "ar": "ما هو الكوكب الأقرب إلى الشمس؟"
+    },
+    "options": {
+      "en": ["Venus", "Mercury", "Earth", "Mars"],
+      "ar": ["الزهرة", "عطارد", "الأرض", "المريخ"]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "عطارد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q83",
+    "question": {
+      "en": "What is the capital of United Arab Emirates?",
+      "ar": "ما هي عاصمة دولة الإمارات العربية المتحدة؟"
+    },
+    "options": {
+      "en": ["Dubai", "Sharjah", "Abu Dhabi", "Ajman"],
+      "ar": ["دبي", "الشارقة", "أبوظبي", "عجمان"]
+    },
+    "correctAnswer": {
+      "en": "Abu Dhabi",
+      "ar": "أبوظبي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q84",
+    "question": {
+      "en": "Which language is used alongside HTML and CSS to create interactive web client features?",
+      "ar": "ما هي اللغة المستخدمة بجانب HTML و CSS لإنشاء ميزات تفاعلية لعميل الويب؟"
+    },
+    "options": {
+      "en": ["Python", "JavaScript", "C++", "SQL"],
+      "ar": ["بايثون", "جافا سكريبت", "سي بلس بلس", "SQL"]
+    },
+    "correctAnswer": {
+      "en": "JavaScript",
+      "ar": "جافا سكريبت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q85",
+    "question": {
+      "en": "What is the capital of China?",
+      "ar": "ما هي عاصمة الصين؟"
+    },
+    "options": {
+      "en": ["Shanghai", "Beijing", "Hong Kong", "Shenzhen"],
+      "ar": ["شانغهاي", "بكين", "هونغ كونغ", "شنتشن"]
+    },
+    "correctAnswer": {
+      "en": "Beijing",
+      "ar": "بكين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q86",
+    "question": {
+      "en": "Which star is at the center of our solar system?",
+      "ar": "أي نجم يوجد في مركز نظامنا الشمسي؟"
+    },
+    "options": {
+      "en": ["Polaris", "Sun", "Sirius", "Betelgeuse"],
+      "ar": ["النجم القطبى", "الشمس", "الشعرى اليمانية", "منكب الجوزاء"]
+    },
+    "correctAnswer": {
+      "en": "Sun",
+      "ar": "الشمس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q87",
+    "question": {
+      "en": "What is the capital of Turkey?",
+      "ar": "ما هي عاصمة تركيا؟"
+    },
+    "options": {
+      "en": ["Istanbul", "Ankara", "Izmir", "Antalya"],
+      "ar": ["إسطنبول", "أنقرة", "إزمير", "أنطاليا"]
+    },
+    "correctAnswer": {
+      "en": "Ankara",
+      "ar": "أنقرة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q88",
+    "question": {
+      "en": "Which mathematical term describes a shape with three sides?",
+      "ar": "ما هو المصطلح الرياضي الذي يصف شكلاً ذو ثلاثة أضلع؟"
+    },
+    "options": {
+      "en": ["Square", "Triangle", "Pentagon", "Circle"],
+      "ar": ["مربع", "مثلث", "خماسسي الأضلاع", "دائرة"]
+    },
+    "correctAnswer": {
+      "en": "Triangle",
+      "ar": "مثلث"
+    },
+    "points": 10
+  },
+  {
+    "id": "q89",
+    "question": {
+      "en": "What is the capital of South Africa?",
+      "ar": "ما هي عاصمة جنوب أفريقيا؟"
+    },
+    "options": {
+      "en": ["Johannesburg", "Cape Town", "Pretoria", "Durban"],
+      "ar": ["جوهانسبرغ", "كيب تاون", "بريتوريا", "ديربان"]
+    },
+    "correctAnswer": {
+      "en": "Pretoria",
+      "ar": "بريتوريا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q90",
+    "question": {
+      "en": "Which company created the Android operating system?",
+      "ar": "ما هي الشركة التي ابتكرت نظام تشغيل أندرويد؟"
+    },
+    "options": {
+      "en": ["Apple", "Google", "Microsoft", "IBM"],
+      "ar": ["أبل", "جوجل", "مايكروسوفت", "آي بي إم"]
+    },
+    "correctAnswer": {
+      "en": "Google",
+      "ar": "جوجل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q91",
+    "question": {
+      "en": "What is the capital of Greece?",
+      "ar": "ما هي عاصمة اليونان؟"
+    },
+    "options": {
+      "en": ["Athens", "Sparta", "Thessaloniki", "Patras"],
+      "ar": ["أثينا", "اسبرطة", "سالونيك", "باتراس"]
+    },
+    "correctAnswer": {
+      "en": "Athens",
+      "ar": "أثينا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q92",
+    "question": {
+      "en": "Which ocean is the largest by volume and area?",
+      "ar": "أي محيط هو الأكبر من حيث الحجم والمساحة؟"
+    },
+    "options": {
+      "en": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+      "ar": ["المحيط الأطلسي", "المحيط الهندي", "المحيط الهادئ", "المحيط المتجمد الشمالي"]
+    },
+    "correctAnswer": {
+      "en": "Pacific Ocean",
+      "ar": "المحيط الهادئ"
+    },
+    "points": 10
+  },
+  {
+    "id": "q93",
+    "question": {
+      "en": "What is the capital of Portugal?",
+      "ar": "ما هي عاصمة البرتغال؟"
+    },
+    "options": {
+      "en": ["Porto", "Lisbon", "Coimbra", "Faro"],
+      "ar": ["بورتو", "لشبونة", "كويمبرا", "فارو"]
+    },
+    "correctAnswer": {
+      "en": "Lisbon",
+      "ar": "لشبونة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q94",
+    "question": {
+      "en": "Which computing file extension typically denotes a React component file?",
+      "ar": "ما هي امتداد ملفات الحوسبة الذي غالباً ما يشير إلى ملف مكون ريآكت؟"
+    },
+    "options": {
+      "en": [".html", ".jsx", ".py", ".java"],
+      "ar": [".html", ".jsx", ".py", ".java"]
+    },
+    "correctAnswer": {
+      "en": ".jsx",
+      "ar": ".jsx"
+    },
+    "points": 10
+  },
+  {
+    "id": "q95",
+    "question": {
+      "en": "What is the capital of Sweden?",
+      "ar": "ما هي عاصمة السويد؟"
+    },
+    "options": {
+      "en": ["Oslo", "Stockholm", "Copenhagen", "Helsinki"],
+      "ar": ["أوسلو", "ستوكهولم", "كوبنهاغن", "هلسنكي"]
+    },
+    "correctAnswer": {
+      "en": "Stockholm",
+      "ar": "ستوكهولم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q96",
+    "question": {
+      "en": "Which chemical element has the symbol 'Fe'?",
+      "ar": "ما هو العنصر الكيميائي الذي يحمل الرمز 'Fe'؟"
+    },
+    "options": {
+      "en": ["Iron", "Fluorine", "Francium", "Fermium"],
+      "ar": ["حديد", "فلور", "فرانسيوم", "فيرميوم"]
+    },
+    "correctAnswer": {
+      "en": "Iron",
+      "ar": "حديد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q97",
+    "question": {
+      "en": "What is the capital of Iraq?",
+      "ar": "ما هي عاصمة العراق؟"
+    },
+    "options": {
+      "en": ["Basra", "Erbil", "Baghdad", "Mosul"],
+      "ar": ["البصرة", "أربيل", "بغداد", "الموصل"]
+    },
+    "correctAnswer": {
+      "en": "Baghdad",
+      "ar": "بغداد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q98",
+    "question": {
+      "en": "Which network connects computers globally across the world?",
+      "ar": "ما هي الشبكة التي تربط أجهزة الحاسوب عالمياً عبر العالم؟"
+    },
+    "options": {
+      "en": ["LAN", "Intranet", "Internet", "Bluetooth"],
+      "ar": ["شبكة محلية (LAN)", "شبكة داخلية (Intranet)", "الإنترنت", "بلوتوث"]
+    },
+    "correctAnswer": {
+      "en": "Internet",
+      "ar": "الإنترنت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q99",
+    "question": {
+      "en": "What is the capital of Netherlands?",
+      "ar": "ما هي عاصمة هولندا؟"
+    },
+    "options": {
+      "en": ["Rotterdam", "Amsterdam", "The Hague", "Utrecht"],
+      "ar": ["روتردام", "أمستردام", "لاهاي", "أوترخت"]
+    },
+    "correctAnswer": {
+      "en": "Amsterdam",
+      "ar": "أمستردام"
+    },
+    "points": 10
+  },
+  {
+    "id": "q100",
+    "question": {
+      "en": "Which cloud database service powers modern web apps like this quiz?",
+      "ar": "ما هي خدمة قاعدة البيانات السحابية التي تشغل تطبيقات الويب الحديثة مثل هذا الاختبار؟"
+    },
+    "options": {
+      "en": ["Firebase Firestore", "MS Paint", "Notepad++", "Winamp"],
+      "ar": ["فايربيز فايستور", "رسام مايكروسوفت", "نوت باد++", "وين أمب"]
+    },
+    "correctAnswer": {
+      "en": "Firebase Firestore",
+      "ar": "فايربيز فايستور"
+    },
+    "points": 10
   }
 ]
