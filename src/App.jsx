@@ -23,6 +23,10 @@ import {
   getDocs
 } from 'firebase/firestore';
 
+// --- LocalStorage Storage Keys ---
+const QUIZ_INDEX_KEY = 'danat_quiz_current_index';
+const SESSION_ANSWERS_KEY = 'danat_quiz_session_answered_count';
+
 // --- Google AdMob Unit Configuration (Prepared for Native Mobile Builds) ---
 const ADMOB_UNITS = {
   BOTTOM_BANNER: 'ca-app-pub-1622329571366129/722852979',
@@ -199,13 +203,27 @@ export default function App() {
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
 
-  // Quiz Loop State
+  // Quiz Loop State with LocalStorage Persistence
   const [questions, setQuestions] = useState(INITIAL_QUESTIONS);
-  const [currentQIndex, setCurrentQIndex] = useState(0);
+  
+  const [currentQIndex, setCurrentQIndex] = useState(() => {
+    const saved = localStorage.getItem(QUIZ_INDEX_KEY);
+    const parsed = saved !== null ? parseInt(saved, 10) : 0;
+    return !isNaN(parsed) && parsed >= 0 ? parsed : 0;
+  });
+
+  // Track total answered questions to fire video ad every 10 answers
+  const [questionsAnsweredCounter, setQuestionsAnsweredCounter] = useState(0);
+
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [loadingQuestions, setLoadingQuestions] = useState(true);
+
+  // Save current question index automatically on change
+  useEffect(() => {
+    localStorage.setItem(QUIZ_INDEX_KEY, currentQIndex.toString());
+  }, [currentQIndex]);
 
   const [redemptions, setRedemptions] = useState([
     { id: '1', user: 'أحمد', spirits: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
@@ -237,10 +255,12 @@ export default function App() {
 
         if (docsList.length > 0) {
           setQuestions(docsList);
+          // Safety check for out-of-bounds saved index
+          setCurrentQIndex((prev) => (prev < docsList.length ? prev : 0));
         }
       } catch (err) {
         console.error("Firestore questions fetch failed, fallback used:", err);
-      } finally {
+      } font-finally {
         setLoadingQuestions(false);
       }
     }
@@ -433,6 +453,13 @@ export default function App() {
     const newAnsweredCount = user.totalQuestionsAnswered + 1;
     const newLevel = Math.floor(newAnsweredCount / 50) + 1;
 
+    // Check 10-questions interval for video trigger
+    const newSessionCount = questionsAnsweredCounter + 1;
+    setQuestionsAnsweredCounter(newSessionCount);
+    if (newSessionCount % 10 === 0) {
+      handleWatchAd();
+    }
+
     if (isCorrect) {
       const earned = currentQ.points || 10;
       setScore(prev => prev + earned);
@@ -541,7 +568,6 @@ export default function App() {
 
   // Rewarded Video: Extra Life (AdMob Unit: REWARDED_LIFE)
   const handleWatchForLife = async () => {
-    // Mobile Capacitor AdMob integration ready: ADMOB_UNITS.REWARDED_LIFE
     incrementVideoCount();
     setLives(prev => prev + 1);
 
@@ -556,7 +582,6 @@ export default function App() {
 
   // Rewarded Video: Bonus Points (AdMob Unit: REWARDED_POINTS)
   const handleWatchForPoints = async () => {
-    // Mobile Capacitor AdMob integration ready: ADMOB_UNITS.REWARDED_POINTS
     incrementVideoCount();
     setScore(prev => prev + 10);
     setUser(prev => ({
