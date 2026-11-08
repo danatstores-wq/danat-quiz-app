@@ -484,7 +484,7 @@ export default function App() {
     const newSessionCount = questionsAnsweredCounter + 1;
     setQuestionsAnsweredCounter(newSessionCount);
     if (newSessionCount % 10 === 0) {
-      handleWatchAd();
+      trigger10QuestionAd();
     }
 
     if (isCorrect) {
@@ -557,32 +557,26 @@ export default function App() {
     }
   };
 
-  const triggerForcedGoogleAd = () => {
-    setShowForcedAd(true);
+  const trigger10QuestionAd = () => {
+    setShow10QAd(true);
     let count = 5;
-    setForcedAdTimer(count);
+    setAd10QTimer(count);
     const interval = setInterval(async () => {
       count -= 1;
-      setForcedAdTimer(count);
+      setAd10QTimer(count);
       if (count <= 0) {
         clearInterval(interval);
-        setShowForcedAd(false);
-        setUser(prev => ({
-          ...prev,
-          spirits: prev.spirits + 50,
-          totalEarnedSpirits: prev.totalEarnedSpirits + 50
-        }));
+        setShow10QAd(false);
+        incrementVideoCount();
+        setLives(prev => prev + 1); // <-- Adds +1 Life only! (No spirits/points added)
 
         if (currentUser) {
           await updateDoc(doc(db, "users", currentUser.uid), {
-            spirits: increment(50),
-            totalEarnedSpirits: increment(50),
-            forcedAdsWatched: increment(1)
+            rewardedAdsWatched: increment(1)
           });
         }
 
-        alert(user.language === 'العربية' ? '🌐 تم الاتصال بالإنترنت: شاهدت إعلان جوجل الإجباري وحصلت على 50 روح!' : '🌐 Connected: Watched forced ad and earned 50 spirits!');
-        setActiveTab('home');
+        alert(user.language === 'العربية' ? '🎉 تم مشاهدة الإعلان التلقائي! حصلت على حياة إضافية واحدة (+1 ❤️).' : '🎉 Auto ad watched! You earned 1 Extra Life (+1 ❤️).');
       }
     }, 1000);
   };
