@@ -453,15 +453,19 @@ export default function App() {
         });
       }
     } else {
+      // Incorrect answer: Deduct 1 life and 5 spirits penalty (floor at 0)
+      const spiritPenalty = 5;
       setLives(prev => Math.max(0, prev - 1));
       setUser(prev => ({
         ...prev,
+        spirits: Math.max(0, prev.spirits - spiritPenalty),
         totalQuestionsAnswered: newAnsweredCount,
         level: newLevel
       }));
 
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
+          spirits: increment(-spiritPenalty),
           totalQuestionsAnswered: increment(1),
           level: newLevel
         });
