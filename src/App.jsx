@@ -194,8 +194,6 @@ export default function App() {
   const [levelsPlayed, setLevelsPlayed] = useState(0);
   const [showForcedAd, setShowForcedAd] = useState(false);
   const [forcedAdTimer, setForcedAdTimer] = useState(5);
-  const [show10QAd, setShow10QAd] = useState(false);
-  const [ad10QTimer, setAd10QTimer] = useState(5);
 
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
@@ -482,11 +480,11 @@ export default function App() {
     const newAnsweredCount = user.totalQuestionsAnswered + 1;
     const newLevel = Math.floor(newAnsweredCount / 50) + 1;
 
-    // Check 10-questions interval to automatically trigger ad popup for +1 Extra Life
+    // Check 10-questions interval for video trigger
     const newSessionCount = questionsAnsweredCounter + 1;
     setQuestionsAnsweredCounter(newSessionCount);
     if (newSessionCount % 10 === 0) {
-      trigger10QuestionAd();
+      handleWatchAd();
     }
 
     if (isCorrect) {
@@ -557,30 +555,6 @@ export default function App() {
         setActiveTab('home');
       }
     }
-  };
-
-  const trigger10QuestionAd = () => {
-    setShow10QAd(true);
-    let count = 5;
-    setAd10QTimer(count);
-    const interval = setInterval(async () => {
-      count -= 1;
-      setAd10QTimer(count);
-      if (count <= 0) {
-        clearInterval(interval);
-        setShow10QAd(false);
-        incrementVideoCount();
-        setLives(prev => prev + 1);
-
-        if (currentUser) {
-          await updateDoc(doc(db, "users", currentUser.uid), {
-            rewardedAdsWatched: increment(1)
-          });
-        }
-
-        alert(user.language === 'العربية' ? '🎉 تم مشاهدة الإعلان التلقائي! حصلت على حياة إضافية واحدة (+1 ❤️).' : '🎉 Auto ad watched! You earned 1 Extra Life (+1 ❤️).');
-      }
-    }, 1000);
   };
 
   const triggerForcedGoogleAd = () => {
@@ -1512,33 +1486,6 @@ export default function App() {
           )}
 
         </div>
-
-        {/* 10-QUESTION AUTOMATIC REWARDED VIDEO AD MODAL (+1 LIFE ONLY) */}
-        {show10QAd && (
-          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
-            <div className="w-full bg-[#240a47] border-2 border-rose-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(244,63,94,0.5)]">
-              <div className="w-14 h-14 bg-rose-500/20 border border-rose-400 rounded-full flex items-center justify-center mx-auto text-rose-400">
-                <Tv className="w-7 h-7 animate-pulse" />
-              </div>
-              <h3 className="text-lg font-black text-rose-400">
-                {user.language === 'العربية' ? 'إعلان المكافأة التلقائي (10 أسئلة)' : '10-Question Reward Ad'}
-              </h3>
-              <p className="text-xs text-slate-200 leading-relaxed">
-                {user.language === 'العربية' 
-                  ? 'أجبت على 10 أسئلة! جاري تشغيل إعلان قصير لمنحك حياة إضافية واحدة (+1 ❤️):' 
-                  : 'You answered 10 questions! Watching a short video ad to claim 1 Extra Life (+1 ❤️):'}
-              </p>
-              
-              <div className="bg-[#0d031f] py-4 rounded-2xl border border-rose-400/40 text-sm font-black text-rose-300">
-                ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {ad10QTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
-              </div>
-              
-              <div className="text-[10px] text-rose-200 font-bold">
-                +{user.language === 'العربية' ? '1 حياة فقط ❤️ (بدون نقاط)' : '1 Life Only ❤️ (No points)'}
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* FORCED GOOGLE REWARDED VIDEO AD MODAL */}
         {showForcedAd && (
