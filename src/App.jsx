@@ -23,6 +23,13 @@ import {
   getDocs
 } from 'firebase/firestore';
 
+// --- Google AdMob Unit Configuration (Prepared for Native Mobile Builds) ---
+const ADMOB_UNITS = {
+  BOTTOM_BANNER: 'ca-app-pub-1622329571366129/722852979',
+  REWARDED_POINTS: 'ca-app-pub-1622329571366129/4581162153',
+  REWARDED_LIFE: 'ca-app-pub-1622329571366129/5894243820'
+};
+
 // --- Sample Initial Questions (Fallback) ---
 const INITIAL_QUESTIONS = [
   {
@@ -107,7 +114,10 @@ const TRANSLATIONS = {
     watchForPoints: '📺 شاهد فيديو لـ 10 نقاط (+10 🪙)',
     outOfLivesTitle: 'انتهت الأرواح! 💔',
     outOfLivesDesc: 'شاهد فيديو إعلاني للحصول على حياة إضافية ومتابعة اللعب.',
-    adsWatched: 'الإعلانات المشاهدة'
+    adsWatched: 'الإعلانات المشاهدة',
+    timedBonusTitle: 'مكافأة كل 3 ساعات ⏳',
+    timedBonusDesc: 'احصل على 5 أرواح مجانية كل 3 ساعات (حد أقصى 10 أرواح).',
+    claimBonus: 'استلام المكافأة'
   },
   'English': {
     appName: 'Danat Quiz',
@@ -136,7 +146,10 @@ const TRANSLATIONS = {
     watchForPoints: '📺 Watch Ad for +10 Points (+10 🪙)',
     outOfLivesTitle: 'Out of Lives! 💔',
     outOfLivesDesc: 'Watch a video ad to get an extra life and continue playing.',
-    adsWatched: 'Ads Watched'
+    adsWatched: 'Ads Watched',
+    timedBonusTitle: '3-Hour Spirit Bonus ⏳',
+    timedBonusDesc: 'Claim 5 free spirits every 3 hours (Max cap 10 spirits).',
+    claimBonus: 'Claim Bonus'
   }
 };
 
@@ -160,6 +173,8 @@ export default function App() {
     dncBalance: 0.0,
     totalGames: 0,
     totalEarnedSpirits: 0,
+    totalQuestionsAnswered: 0,
+    lastSpiritClaimTime: 0,
     walletConnected: false,
     walletAddress: '',
     avatar: 'avatar-man-ghutra.png',
@@ -240,15 +255,20 @@ export default function App() {
         const userSnap = await getDoc(userDocRef);
         if (userSnap.exists()) {
           const data = userSnap.data();
+          const answeredCount = data.totalQuestionsAnswered || 0;
+          const calculatedLevel = Math.floor(answeredCount / 50) + 1;
+
           setUser(prev => ({
             ...prev,
             name: data.name || authUser.email.split('@')[0],
             email: authUser.email,
             spirits: data.spirits ?? prev.spirits,
             dncBalance: data.dncBalance ?? prev.dncBalance,
-            level: data.level ?? prev.level,
+            level: data.level ?? calculatedLevel,
             totalGames: data.totalGames ?? prev.totalGames,
             totalEarnedSpirits: data.totalEarnedSpirits ?? prev.totalEarnedSpirits,
+            totalQuestionsAnswered: answeredCount,
+            lastSpiritClaimTime: data.lastSpiritClaimTime || 0,
             walletConnected: data.walletConnected ?? prev.walletConnected,
             walletAddress: data.walletAddress ?? prev.walletAddress,
             avatar: data.avatar ?? prev.avatar,
@@ -278,6 +298,8 @@ export default function App() {
         level: 1,
         totalGames: 0,
         totalEarnedSpirits: 0,
+        totalQuestionsAnswered: 0,
+        lastSpiritClaimTime: 0,
         walletConnected: false,
         walletAddress: '',
         avatar: 'avatar-man-ghutra.png',
@@ -408,23 +430,42 @@ export default function App() {
       isCorrect = selectedText === currentQ.correctAnswer;
     }
 
+    const newAnsweredCount = user.totalQuestionsAnswered + 1;
+    const newLevel = Math.floor(newAnsweredCount / 50) + 1;
+
     if (isCorrect) {
       const earned = currentQ.points || 10;
       setScore(prev => prev + earned);
       setUser(prev => ({
         ...prev,
         spirits: prev.spirits + earned,
-        totalEarnedSpirits: prev.totalEarnedSpirits + earned
+        totalEarnedSpirits: prev.totalEarnedSpirits + earned,
+        totalQuestionsAnswered: newAnsweredCount,
+        level: newLevel
       }));
 
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
           spirits: increment(earned),
-          totalEarnedSpirits: increment(earned)
+          totalEarnedSpirits: increment(earned),
+          totalQuestionsAnswered: increment(1),
+          level: newLevel
         });
       }
     } else {
       setLives(prev => Math.max(0, prev - 1));
+      setUser(prev => ({
+        ...prev,
+        totalQuestionsAnswered: newAnsweredCount,
+        level: newLevel
+      }));
+
+      if (currentUser) {
+        await updateDoc(doc(db, "users", currentUser.uid), {
+          totalQuestionsAnswered: increment(1),
+          level: newLevel
+        });
+      }
     }
     setIsAnswered(true);
   };
@@ -494,8 +535,9 @@ export default function App() {
     localStorage.setItem('videosWatched', newCount.toString());
   };
 
-  // Rewarded Video: Extra Life
+  // Rewarded Video: Extra Life (AdMob Unit: REWARDED_LIFE)
   const handleWatchForLife = async () => {
+    // Mobile Capacitor AdMob integration ready: ADMOB_UNITS.REWARDED_LIFE
     incrementVideoCount();
     setLives(prev => prev + 1);
 
@@ -508,8 +550,9 @@ export default function App() {
     alert(user.language === 'العربية' ? 'حصلت على حياة إضافية! ❤️' : 'You earned 1 Extra Life! ❤️');
   };
 
-  // Rewarded Video: Bonus Points
+  // Rewarded Video: Bonus Points (AdMob Unit: REWARDED_POINTS)
   const handleWatchForPoints = async () => {
+    // Mobile Capacitor AdMob integration ready: ADMOB_UNITS.REWARDED_POINTS
     incrementVideoCount();
     setScore(prev => prev + 10);
     setUser(prev => ({
@@ -527,6 +570,43 @@ export default function App() {
     }
 
     alert(user.language === 'العربية' ? 'حصلت على 10 نقاط إضافية! 🪙' : 'You earned 10 Bonus Points! 🪙');
+  };
+
+  // 3-Hour Timed Spirits Bonus (+5 Spirits every 3 hrs, max 10 spirits)
+  const handleClaimTimedSpirits = async () => {
+    const now = Date.now();
+    const lastClaim = user.lastSpiritClaimTime || 0;
+    const hoursElapsed = (now - lastClaim) / (1000 * 60 * 60);
+
+    if (hoursElapsed < 3) {
+      const hoursLeft = (3 - hoursElapsed).toFixed(1);
+      alert(user.language === 'العربية' 
+        ? `يرجى الانتظار ${hoursLeft} ساعة لقطف الأرواح المجانية القادمة!` 
+        : `Please wait ${hoursLeft} hours to claim your next free spirits!`);
+      return;
+    }
+
+    const spiritsToAdd = 5;
+    const updatedSpirits = user.spirits + spiritsToAdd;
+
+    setUser(prev => ({
+      ...prev,
+      spirits: updatedSpirits,
+      totalEarnedSpirits: prev.totalEarnedSpirits + spiritsToAdd,
+      lastSpiritClaimTime: now
+    }));
+
+    if (currentUser) {
+      await updateDoc(doc(db, "users", currentUser.uid), {
+        spirits: increment(spiritsToAdd),
+        totalEarnedSpirits: increment(spiritsToAdd),
+        lastSpiritClaimTime: now
+      });
+    }
+
+    alert(user.language === 'العربية' 
+      ? '🎉 تهانينا! حصلت على 5 أرواح مجانية (مكافأة كل 3 ساعات).' 
+      : '🎉 Congrats! You claimed 5 free spirits (3-hour bonus).');
   };
 
   const handleConnectWallet = async (address) => {
@@ -794,6 +874,26 @@ export default function App() {
         {/* MAIN DISPLAY AREA */}
         <div className="flex-1 overflow-y-auto pb-36 px-4 pt-4 relative z-10">
 
+          {/* GLOBAL REAL-TIME PLAYER STATS BAR */}
+          <div className="w-full bg-[#240a47]/95 rounded-2xl p-3 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md mb-4">
+            <div className="flex items-center gap-2">
+              {/* Lives Counter */}
+              <div className="bg-rose-950/80 border border-rose-500/50 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-rose-300">
+                ❤️ <span>{lives}</span>
+              </div>
+
+              {/* Spirits / Points Counter */}
+              <div className="bg-purple-950/80 border border-purple-400/50 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-purple-200">
+                🪙 <span>{user.spirits.toLocaleString()}</span>
+              </div>
+            </div>
+
+            {/* DNC Token Balance */}
+            <div className="bg-[#0f041d]/90 px-3 py-1 rounded-xl border border-yellow-500/40 text-xs font-black text-yellow-400 flex items-center gap-1">
+              <span>{user.dncBalance}</span> <span className="text-[10px] text-slate-300">DNC</span>
+            </div>
+          </div>
+
           {/* SCREEN 1: HOME */}
           {activeTab === 'home' && (
             <div className="flex flex-col gap-4">
@@ -1058,6 +1158,26 @@ export default function App() {
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">{t.rewards}</h2>
               </div>
 
+              {/* 3-Hour Timed Spirits Bonus Claim Card */}
+              <div className="w-full bg-gradient-to-br from-amber-900/40 to-[#240a47] rounded-2xl p-4 border border-amber-500/40 flex items-center justify-between gap-3 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg font-bold">
+                    ⏳
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white">{t.timedBonusTitle}</div>
+                    <div className="text-[10px] text-amber-300">{t.timedBonusDesc}</div>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={handleClaimTimedSpirits}
+                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-4 py-2.5 rounded-xl text-xs transition shadow"
+                >
+                  {t.claimBonus}
+                </button>
+              </div>
+
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-purple-400/40 flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center">
@@ -1193,7 +1313,7 @@ export default function App() {
                   <select 
                     value={user.language}
                     onChange={(e) => handleLanguageChange(e.target.value)}
-                    className="bg-[#0d031f] text-yellow-400 font-bold px-3 py-1.5 rounded-xl border border-purple-400/40 outline-none text-xs cursor-pointer"
+                    className="bg-[#0d031f] text-yellow-400 font-bold px-3 py-1.5 rounded-lg border border-purple-400/40 outline-none text-xs cursor-pointer"
                   >
                     <option value="العربية">العربية</option>
                     <option value="English">English</option>
