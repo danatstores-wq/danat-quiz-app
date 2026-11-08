@@ -202,6 +202,10 @@ export default function App() {
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
 
+  // Leaderboard State
+  const [leaderboardUsers, setLeaderboardUsers] = useState([]);
+  const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
+
   // Quiz Loop State with LocalStorage Persistence
   const [questions, setQuestions] = useState(INITIAL_QUESTIONS);
   
@@ -223,6 +227,30 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem(QUIZ_INDEX_KEY, currentQIndex.toString());
   }, [currentQIndex]);
+
+  // Real-time Leaderboard Fetching from Firestore
+  useEffect(() => {
+    if (activeTab === 'leaderboard') {
+      async function fetchLeaderboard() {
+        setLoadingLeaderboard(true);
+        try {
+          const querySnapshot = await getDocs(collection(db, "users"));
+          const usersList = [];
+          querySnapshot.forEach((docSnap) => {
+            usersList.push({ id: docSnap.id, ...docSnap.data() });
+          });
+          // Sort descending by spirits / points
+          usersList.sort((a, b) => (b.spirits || 0) - (a.spirits || 0));
+          setLeaderboardUsers(usersList);
+        } catch (err) {
+          console.error("Failed to fetch leaderboard:", err);
+        } finally {
+          setLoadingLeaderboard(false);
+        }
+      }
+      fetchLeaderboard();
+    }
+  }, [activeTab]);
 
   const [redemptions, setRedemptions] = useState([
     { id: '1', user: 'أحمد', spirits: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
@@ -1275,9 +1303,6 @@ export default function App() {
                 <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
                   {user.language === 'العربية' ? 'أفضل اللاعبين' : 'Top Players'}
                 </button>
-                <button className="flex-1 py-2.5 text-slate-300 hover:text-white">
-                  {user.language === 'العربية' ? 'أعلى النقاط' : 'Top Points'}
-                </button>
               </div>
 
               <div className="w-full bg-[#0d031f] px-4 py-2.5 rounded-lg flex text-[11px] text-slate-300 font-bold border border-purple-400/30 shadow">
@@ -1287,9 +1312,30 @@ export default function App() {
               </div>
 
               <div className="w-full space-y-2.5">
-                <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
-                  {t.emptyLeaderboard}
-                </div>
+                {loadingLeaderboard ? (
+                  <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
+                    {user.language === 'العربية' ? 'جاري التحميل...' : 'Loading...'}
+                  </div>
+                ) : leaderboardUsers.length === 0 ? (
+                  <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
+                    {t.emptyLeaderboard}
+                  </div>
+                ) : (
+                  leaderboardUsers.map((player, index) => (
+                    <div key={player.id} className="w-full bg-[#240a47]/90 px-4 py-3 rounded-xl border border-purple-400/40 flex items-center justify-between text-xs shadow">
+                      <div className="w-12 font-black text-yellow-400 flex items-center gap-1">
+                        {index === 0 ? '👑 1' : index === 1 ? '🥈 2' : index === 2 ? '🥉 3' : `#${index + 1}`}
+                      </div>
+                      <div className="flex-1 flex items-center gap-2.5 text-right">
+                        <img src={assetPath(player.avatar || 'avatar-man-ghutra.png')} alt="Avatar" className="w-8 h-8 rounded-full border border-yellow-400 object-cover" />
+                        <span className="font-bold text-white truncate max-w-[120px]">{player.name || 'لاعب'}</span>
+                      </div>
+                      <div className="w-20 text-left font-black text-purple-300">
+                        {(player.spirits || 0).toLocaleString()} 🪙
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           )}
