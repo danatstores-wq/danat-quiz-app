@@ -480,11 +480,11 @@ export default function App() {
     const newAnsweredCount = user.totalQuestionsAnswered + 1;
     const newLevel = Math.floor(newAnsweredCount / 50) + 1;
 
-    // Check 10-questions interval for video trigger
+    // Check 10-questions interval to automatically trigger ad for +1 Extra Life
     const newSessionCount = questionsAnsweredCounter + 1;
     setQuestionsAnsweredCounter(newSessionCount);
     if (newSessionCount % 10 === 0) {
-      handleWatchAd();
+      handleWatchForLife();
     }
 
     if (isCorrect) {
