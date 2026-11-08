@@ -1,4 +1,7 @@
-import { db } from "./firebase.js";
+import dotenv from "dotenv";
+dotenv.config();
+
+import { db } from "./src/firebase.js";
 import { collection, doc, writeBatch } from "firebase/firestore";
 import fs from "fs";
 
