@@ -1,12 +1,22 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
+// Safely resolve the API key for both Vite (import.meta.env) and Node.js/GitHub Actions (process.env)
+const getApiKey = () => {
+  try {
+    if (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_FIREBASE_API_KEY) {
+      return import.meta.env.VITE_FIREBASE_API_KEY;
+    }
+  } catch (e) {
+    // Ignore import.meta error if thrown
+  }
+  return process.env.VITE_FIREBASE_API_KEY;
+};
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey: getApiKey(),
   authDomain: "danat-quiz-app.firebaseapp.com",
   projectId: "danat-quiz-app",
   storageBucket: "danat-quiz-app.firebasestorage.app",
@@ -15,8 +25,12 @@ const firebaseConfig = {
   measurementId: "G-QWT2287WC4"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+let analytics = null;
+if (typeof window !== "undefined") {
+  analytics = getAnalytics(app);
+}
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);
