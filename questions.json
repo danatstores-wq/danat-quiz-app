@@ -6,8 +6,18 @@
       "ar": "ما هي عاصمة فرنسا؟"
     },
     "options": {
-      "en": ["London", "Berlin", "Paris", "Madrid"],
-      "ar": ["لندن", "برلين", "باريس", "مدريد"]
+      "en": [
+        "London",
+        "Berlin",
+        "Paris",
+        "Madrid"
+      ],
+      "ar": [
+        "لندن",
+        "برلين",
+        "باريس",
+        "مدريد"
+      ]
     },
     "correctAnswer": {
       "en": "Paris",
@@ -22,8 +32,18 @@
       "ar": "ما هي لغة البرمجة المستخدمة أساساً لتطوير ريآكت؟"
     },
     "options": {
-      "en": ["Python", "JavaScript", "C++", "Ruby"],
-      "ar": ["بايثون", "جافا سكريبت", "سي بلس بلس", "روبي"]
+      "en": [
+        "Python",
+        "JavaScript",
+        "C++",
+        "Ruby"
+      ],
+      "ar": [
+        "بايثون",
+        "جافا سكريبت",
+        "سي بلس بلس",
+        "روبي"
+      ]
     },
     "correctAnswer": {
       "en": "JavaScript",
@@ -64,8 +84,18 @@
       "ar": "أي كوكب يُعرف بالكوكب الأحمر؟"
     },
     "options": {
-      "en": ["Venus", "Mars", "Jupiter", "Saturn"],
-      "ar": ["الزهرة", "المريخ", "المشتري", "زحل"]
+      "en": [
+        "Venus",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "ar": [
+        "الزهرة",
+        "المريخ",
+        "المشتري",
+        "زحل"
+      ]
     },
     "correctAnswer": {
       "en": "Mars",
@@ -80,8 +110,18 @@
       "ar": "ما هو الرمز الكيميائي للذهب؟"
     },
     "options": {
-      "en": ["Ag", "Fe", "Au", "Cu"],
-      "ar": ["Ag", "Fe", "Au", "Cu"]
+      "en": [
+        "Ag",
+        "Fe",
+        "Au",
+        "Cu"
+      ],
+      "ar": [
+        "Ag",
+        "Fe",
+        "Au",
+        "Cu"
+      ]
     },
     "correctAnswer": {
       "en": "Au",
@@ -96,8 +136,18 @@
       "ar": "ما هي قاعدة بيانات NoSQL المستندة المقدمة من سحابة جوجل؟"
     },
     "options": {
-      "en": ["MySQL", "Firebase Firestore", "PostgreSQL", "SQLite"],
-      "ar": ["MySQL", "فايربيز فايستور", "بوستجري إس كيو إل", "إس كيو إل لايت"]
+      "en": [
+        "MySQL",
+        "Firebase Firestore",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "ar": [
+        "MySQL",
+        "فايربيز فايستور",
+        "بوستجري إس كيو إل",
+        "إس كيو إل لايت"
+      ]
     },
     "correctAnswer": {
       "en": "Firebase Firestore",
@@ -112,8 +162,18 @@
       "ar": "ما هو أكبر محيط على وجه الأرض؟"
     },
     "options": {
-      "en": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-      "ar": ["المحيط الأطلسي", "المحيط الهندي", "المحيط المتجمد الشمالي", "المحيط الهادئ"]
+      "en": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean",
+        "Pacific Ocean"
+      ],
+      "ar": [
+        "المحيط الأطلسي",
+        "المحيط الهندي",
+        "المحيط المتجمد الشمالي",
+        "المحيط الهادئ"
+      ]
     },
     "correctAnswer": {
       "en": "Pacific Ocean",
@@ -128,8 +188,18 @@
       "ar": "من كتب مسرحية 'روميو وجولييت'؟"
     },
     "options": {
-      "en": ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
-      "ar": ["تشارلز ديكنز", "ويليام شكسبير", "مارك توين", "جين أوستن"]
+      "en": [
+        "Charles Dickens",
+        "William Shakespeare",
+        "Mark Twain",
+        "Jane Austen"
+      ],
+      "ar": [
+        "تشارلز ديكنز",
+        "ويليام شكسبير",
+        "مارك توين",
+        "جين أوستن"
+      ]
     },
     "correctAnswer": {
       "en": "William Shakespeare",
@@ -170,8 +240,18 @@
       "ar": "أي وسم HTML يُستخدم لتحديد ورقة أنماط داخلية؟"
     },
     "options": {
-      "en": ["<script>", "<style>", "<css>", "<design>"],
-      "ar": ["<script>", "<style>", "<css>", "<design>"]
+      "en": [
+        "<script>",
+        "<style>",
+        "<css>",
+        "<design>"
+      ],
+      "ar": [
+        "<script>",
+        "<style>",
+        "<css>",
+        "<design>"
+      ]
     },
     "correctAnswer": {
       "en": "<style>",
@@ -186,8 +266,18 @@
       "ar": "ما هي درجة غليان الماء عند الضغط الجوي العادي؟"
     },
     "options": {
-      "en": ["90°C", "100°C", "110°C", "120°C"],
-      "ar": ["90°م", "100°م", "110°م", "120°م"]
+      "en": [
+        "90°C",
+        "100°C",
+        "110°C",
+        "120°C"
+      ],
+      "ar": [
+        "90°م",
+        "100°م",
+        "110°م",
+        "120°م"
+      ]
     },
     "correctAnswer": {
       "en": "100°C",
@@ -202,8 +292,18 @@
       "ar": "في أي عام انتهت الحرب العالمية الثانية؟"
     },
     "options": {
-      "en": ["1942", "1945", "1948", "1950"],
-      "ar": ["1942", "1945", "1948", "1950"]
+      "en": [
+        "1942",
+        "1945",
+        "1948",
+        "1950"
+      ],
+      "ar": [
+        "1942",
+        "1945",
+        "1948",
+        "1950"
+      ]
     },
     "correctAnswer": {
       "en": "1945",
@@ -244,8 +344,18 @@
       "ar": "أي دولة موطن لحيوان الكنغر؟"
     },
     "options": {
-      "en": ["New Zealand", "South Africa", "Australia", "Brazil"],
-      "ar": ["نيوزيلندا", "جنوب أفريقيا", "أستراليا", "البرازيل"]
+      "en": [
+        "New Zealand",
+        "South Africa",
+        "Australia",
+        "Brazil"
+      ],
+      "ar": [
+        "نيوزيلندا",
+        "جنوب أفريقيا",
+        "أستراليا",
+        "البرازيل"
+      ]
     },
     "correctAnswer": {
       "en": "Australia",
@@ -260,8 +370,18 @@
       "ar": "ما هي عملة اليابان؟"
     },
     "options": {
-      "en": ["Yuan", "Yen", "Won", "Dollar"],
-      "ar": ["يوان", "ين", "وون", "دولار"]
+      "en": [
+        "Yuan",
+        "Yen",
+        "Won",
+        "Dollar"
+      ],
+      "ar": [
+        "يوان",
+        "ين",
+        "وون",
+        "دولار"
+      ]
     },
     "correctAnswer": {
       "en": "Yen",
@@ -276,8 +396,18 @@
       "ar": "ما هو العنصر الأكثر وفرة في قشرة الأرض؟"
     },
     "options": {
-      "en": ["Carbon", "Oxygen", "Hydrogen", "Silicon"],
-      "ar": ["كربون", "أكسجين", "هيدروجين", "سيليكون"]
+      "en": [
+        "Carbon",
+        "Oxygen",
+        "Hydrogen",
+        "Silicon"
+      ],
+      "ar": [
+        "كربون",
+        "أكسجين",
+        "هيدروجين",
+        "سيليكون"
+      ]
     },
     "correctAnswer": {
       "en": "Oxygen",
@@ -292,8 +422,18 @@
       "ar": "من رسم لوحة الموناليزا؟"
     },
     "options": {
-      "en": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
-      "ar": ["فنسنت فان غوغ", "بابلو بيكاسو", "ليوناردو دافنشي", "كلود مونيه"]
+      "en": [
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Leonardo da Vinci",
+        "Claude Monet"
+      ],
+      "ar": [
+        "فنسنت فان غوغ",
+        "بابلو بيكاسو",
+        "ليوناردو دافنشي",
+        "كلود مونيه"
+      ]
     },
     "correctAnswer": {
       "en": "Leonardo da Vinci",
@@ -308,8 +448,18 @@
       "ar": "ما هي عاصمة جمهورية مصر العربية؟"
     },
     "options": {
-      "en": ["Alexandria", "Cairo", "Giza", "Luxor"],
-      "ar": ["الإسكندرية", "القاهرة", "الجيزة", "الأقصر"]
+      "en": [
+        "Alexandria",
+        "Cairo",
+        "Giza",
+        "Luxor"
+      ],
+      "ar": [
+        "الإسكندرية",
+        "القاهرة",
+        "الجيزة",
+        "الأقصر"
+      ]
     },
     "correctAnswer": {
       "en": "Cairo",
@@ -324,8 +474,18 @@
       "ar": "ما هو البروتوكول المستخدم بأمان لتصفح مواقع الويب؟"
     },
     "options": {
-      "en": ["HTTP", "HTTPS", "FTP", "SMTP"],
-      "ar": ["HTTP", "HTTPS", "FTP", "SMTP"]
+      "en": [
+        "HTTP",
+        "HTTPS",
+        "FTP",
+        "SMTP"
+      ],
+      "ar": [
+        "HTTP",
+        "HTTPS",
+        "FTP",
+        "SMTP"
+      ]
     },
     "correctAnswer": {
       "en": "HTTPS",
@@ -340,8 +500,18 @@
       "ar": "كم عدد العظام في جسم الإنسان البالغ؟"
     },
     "options": {
-      "en": ["206", "210", "195", "220"],
-      "ar": ["206", "210", "195", "220"]
+      "en": [
+        "206",
+        "210",
+        "195",
+        "220"
+      ],
+      "ar": [
+        "206",
+        "210",
+        "195",
+        "220"
+      ]
     },
     "correctAnswer": {
       "en": "206",
@@ -356,8 +526,18 @@
       "ar": "ما هو الجذر التربيعي للعدد 144؟"
     },
     "options": {
-      "en": ["10", "12", "14", "16"],
-      "ar": ["10", "12", "14", "16"]
+      "en": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "ar": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ]
     },
     "correctAnswer": {
       "en": "12",
@@ -372,8 +552,18 @@
       "ar": "ما هو الغاز الذي تمتصه النباتات من الغلاف الجوي لعملية التمثيل الضوئي؟"
     },
     "options": {
-      "en": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-      "ar": ["الأكسجين", "ثاني أكسيد الكربون", "النيتروجين", "الهيدروجين"]
+      "en": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "ar": [
+        "الأكسجين",
+        "ثاني أكسيد الكربون",
+        "النيتروجين",
+        "الهيدروجين"
+      ]
     },
     "correctAnswer": {
       "en": "Carbon Dioxide",
@@ -388,8 +578,18 @@
       "ar": "ما هو أكبر حيوان ثديي في العالم؟"
     },
     "options": {
-      "en": ["African Elephant", "Blue Whale", "Giraffe", "Great White Shark"],
-      "ar": ["الفيل الأفريقي", "الحوت الأزرق", "الزرافة", "القرش الأبيض الكبير"]
+      "en": [
+        "African Elephant",
+        "Blue Whale",
+        "Giraffe",
+        "Great White Shark"
+      ],
+      "ar": [
+        "الفيل الأفريقي",
+        "الحوت الأزرق",
+        "الزرافة",
+        "القرش الأبيض الكبير"
+      ]
     },
     "correctAnswer": {
       "en": "Blue Whale",
@@ -404,8 +604,18 @@
       "ar": "أي إطار عمل أو مكتبة تتم صيانتها بواسطة ميتا (فيسبوك)؟"
     },
     "options": {
-      "en": ["Angular", "Vue.js", "React", "Svelte"],
-      "ar": ["انجلار", "فيو دوت إس", "ريآكت", "سفيلت"]
+      "en": [
+        "Angular",
+        "Vue.js",
+        "React",
+        "Svelte"
+      ],
+      "ar": [
+        "انجلار",
+        "فيو دوت إس",
+        "ريآكت",
+        "سفيلت"
+      ]
     },
     "correctAnswer": {
       "en": "React",
@@ -420,8 +630,18 @@
       "ar": "في أي دولة تقع أهرامات الجيزة الكبرى؟"
     },
     "options": {
-      "en": ["Sudan", "Egypt", "Mexico", "Iraq"],
-      "ar": ["السودان", "مصر", "المكسيك", "العراق"]
+      "en": [
+        "Sudan",
+        "Egypt",
+        "Mexico",
+        "Iraq"
+      ],
+      "ar": [
+        "السودان",
+        "مصر",
+        "المكسيك",
+        "العراق"
+      ]
     },
     "correctAnswer": {
       "en": "Egypt",
@@ -436,8 +656,18 @@
       "ar": "ما هو المكون الرئيسي للشمس؟"
     },
     "options": {
-      "en": ["Helium", "Hydrogen", "Oxygen", "Nitrogen"],
-      "ar": ["هيليوم", "هيدروجين", "أكسجين", "نيتروجين"]
+      "en": [
+        "Helium",
+        "Hydrogen",
+        "Oxygen",
+        "Nitrogen"
+      ],
+      "ar": [
+        "هيليوم",
+        "هيدروجين",
+        "أكسجين",
+        "نيتروجين"
+      ]
     },
     "correctAnswer": {
       "en": "Hydrogen",
@@ -452,8 +682,18 @@
       "ar": "أي دولة فازت بكأس العالم لكرة القدم عام 2018؟"
     },
     "options": {
-      "en": ["Brazil", "Germany", "France", "Argentina"],
-      "ar": ["البرازيل", "ألمانيا", "فرنسا", "الأرجنتين"]
+      "en": [
+        "Brazil",
+        "Germany",
+        "France",
+        "Argentina"
+      ],
+      "ar": [
+        "البرازيل",
+        "ألمانيا",
+        "فرنسا",
+        "الأرجنتين"
+      ]
     },
     "correctAnswer": {
       "en": "France",
@@ -494,8 +734,18 @@
       "ar": "في أي قارة تقع الصحراء الكبرى؟"
     },
     "options": {
-      "en": ["Asia", "Africa", "Australia", "South America"],
-      "ar": ["آسيا", "أفريقيا", "أستراليا", "أمريكا الجنوبية"]
+      "en": [
+        "Asia",
+        "Africa",
+        "Australia",
+        "South America"
+      ],
+      "ar": [
+        "آسيا",
+        "أفريقيا",
+        "أستراليا",
+        "أمريكا الجنوبية"
+      ]
     },
     "correctAnswer": {
       "en": "Africa",
@@ -510,8 +760,18 @@
       "ar": "ما هي أصلب مادة طبيعية على وجه الأرض؟"
     },
     "options": {
-      "en": ["Gold", "Iron", "Diamond", "Platinum"],
-      "ar": ["ذهب", "حديد", "ألماس", "بلاتين"]
+      "en": [
+        "Gold",
+        "Iron",
+        "Diamond",
+        "Platinum"
+      ],
+      "ar": [
+        "ذهب",
+        "حديد",
+        "ألماس",
+        "بلاتين"
+      ]
     },
     "correctAnswer": {
       "en": "Diamond",
@@ -526,8 +786,18 @@
       "ar": "من وضع نظرية النسبية؟"
     },
     "options": {
-      "en": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
-      "ar": ["إسحاق نيوتن", "ألبرت أينشتاين", "غاليليو غاليلي", "نيكولا تسلا"]
+      "en": [
+        "Isaac Newton",
+        "Albert Einstein",
+        "Galileo Galilei",
+        "Nikola Tesla"
+      ],
+      "ar": [
+        "إسحاق نيوتن",
+        "ألبرت أينشتاين",
+        "غاليليو غاليلي",
+        "نيكولا تسلا"
+      ]
     },
     "correctAnswer": {
       "en": "Albert Einstein",
@@ -542,8 +812,18 @@
       "ar": "ما هي العملة الوطنية للمملكة المتحدة؟"
     },
     "options": {
-      "en": ["Euro", "Dollar", "Pound Sterling", "Franc"],
-      "ar": ["يورو", "دولار", "جنيه إسترليني", "فرنك"]
+      "en": [
+        "Euro",
+        "Dollar",
+        "Pound Sterling",
+        "Franc"
+      ],
+      "ar": [
+        "يورو",
+        "دولار",
+        "جنيه إسترليني",
+        "فرنك"
+      ]
     },
     "correctAnswer": {
       "en": "Pound Sterling",
@@ -558,8 +838,18 @@
       "ar": "ما هي لغة البرمجة المعروفة بشعار الثعبان وشهرتها في علم البيانات؟"
     },
     "options": {
-      "en": ["Java", "Python", "C#", "Swift"],
-      "ar": ["جافا", "بايثون", "سي شارب", "سويفت"]
+      "en": [
+        "Java",
+        "Python",
+        "C#",
+        "Swift"
+      ],
+      "ar": [
+        "جافا",
+        "بايثون",
+        "سي شارب",
+        "سويفت"
+      ]
     },
     "correctAnswer": {
       "en": "Python",
@@ -574,8 +864,18 @@
       "ar": "ما هي عاصمة إيطاليا؟"
     },
     "options": {
-      "en": ["Venice", "Milan", "Rome", "Florence"],
-      "ar": ["البندقية", "ميلانو", "روما", "فلورنس"]
+      "en": [
+        "Venice",
+        "Milan",
+        "Rome",
+        "Florence"
+      ],
+      "ar": [
+        "البندقية",
+        "ميلانو",
+        "روما",
+        "فلورنس"
+      ]
     },
     "correctAnswer": {
       "en": "Rome",
@@ -590,8 +890,18 @@
       "ar": "كم عدد الكواكب في نظامنا الشمسي؟"
     },
     "options": {
-      "en": ["7", "8", "9", "10"],
-      "ar": ["7", "8", "9", "10"]
+      "en": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "ar": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
     },
     "correctAnswer": {
       "en": "8",
@@ -632,8 +942,18 @@
       "ar": "أي عضو في جسم الإنسان يضخ الدم؟"
     },
     "options": {
-      "en": ["Brain", "Lungs", "Heart", "Liver"],
-      "ar": ["الدماغ", "الرئتان", "القلب", "الكبد"]
+      "en": [
+        "Brain",
+        "Lungs",
+        "Heart",
+        "Liver"
+      ],
+      "ar": [
+        "الدماغ",
+        "الرئتان",
+        "القلب",
+        "الكبد"
+      ]
     },
     "correctAnswer": {
       "en": "Heart",
@@ -648,8 +968,18 @@
       "ar": "ما هي عاصمة كندا؟"
     },
     "options": {
-      "en": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
-      "ar": ["تورونتو", "فانكوفر", "أوتاوا", "مونتريال"]
+      "en": [
+        "Toronto",
+        "Vancouver",
+        "Ottawa",
+        "Montreal"
+      ],
+      "ar": [
+        "تورونتو",
+        "فانكوفر",
+        "أوتاوا",
+        "مونتريال"
+      ]
     },
     "correctAnswer": {
       "en": "Ottawa",
@@ -664,8 +994,18 @@
       "ar": "ما هي منصة التواصل الاجتماعي التي تستخدم التغريدات وشعار الطائر (تاريخياً)؟"
     },
     "options": {
-      "en": ["Facebook", "Twitter", "Instagram", "LinkedIn"],
-      "ar": ["فيسبوك", "تويتر", "إنستغرام", "لينكد إن"]
+      "en": [
+        "Facebook",
+        "Twitter",
+        "Instagram",
+        "LinkedIn"
+      ],
+      "ar": [
+        "فيسبوك",
+        "تويتر",
+        "إنستغرام",
+        "لينكد إن"
+      ]
     },
     "correctAnswer": {
       "en": "Twitter",
@@ -680,8 +1020,18 @@
       "ar": "ما هي درجة تجمد الماء بمقياس فهرنهايت؟"
     },
     "options": {
-      "en": ["0°F", "32°F", "100°F", "212°F"],
-      "ar": ["0°ف", "32°ف", "100°ف", "212°ف"]
+      "en": [
+        "0°F",
+        "32°F",
+        "100°F",
+        "212°F"
+      ],
+      "ar": [
+        "0°ف",
+        "32°ف",
+        "100°ف",
+        "212°ف"
+      ]
     },
     "correctAnswer": {
       "en": "32°F",
@@ -696,8 +1046,18 @@
       "ar": "من يُعرف بأبي علم الحاسوب وكسار الشفرات؟"
     },
     "options": {
-      "en": ["Alan Turing", "Bill Gates", "Steve Jobs", "Tim Berners-Lee"],
-      "ar": ["آلان تورينج", "بيل غيتس", "ستيف جوبز", "تيم بيرнерز لي"]
+      "en": [
+        "Alan Turing",
+        "Bill Gates",
+        "Steve Jobs",
+        "Tim Berners-Lee"
+      ],
+      "ar": [
+        "آلان تورينج",
+        "بيل غيتس",
+        "ستيف جوبز",
+        "تيم بيرنرز لي"
+      ]
     },
     "correctAnswer": {
       "en": "Alan Turing",
@@ -712,8 +1072,18 @@
       "ar": "ما هو أعلى جبل في العالم؟"
     },
     "options": {
-      "en": ["K2", "Mount Kilimanjaro", "Mount Everest", "Mont Blanc"],
-      "ar": ["كي 2", "جبل كليمنجارو", "جبل إيفرست", "مون بلان"]
+      "en": [
+        "K2",
+        "Mount Kilimanjaro",
+        "Mount Everest",
+        "Mont Blanc"
+      ],
+      "ar": [
+        "كي 2",
+        "جبل كليمنجارو",
+        "جبل إيفرست",
+        "مون بلان"
+      ]
     },
     "correctAnswer": {
       "en": "Mount Everest",
@@ -728,8 +1098,18 @@
       "ar": "أي دولة تمتد عبر قارتي أوروبا وآسيا؟"
     },
     "options": {
-      "en": ["Egypt", "Turkey", "Brazil", "Australia"],
-      "ar": ["مصر", "تركيا", "البرازيل", "أستراليا"]
+      "en": [
+        "Egypt",
+        "Turkey",
+        "Brazil",
+        "Australia"
+      ],
+      "ar": [
+        "مصر",
+        "تركيا",
+        "البرازيل",
+        "أستراليا"
+      ]
     },
     "correctAnswer": {
       "en": "Turkey",
@@ -770,8 +1150,18 @@
       "ar": "ما هو العنصر الكيميائي الذي يملك الرمز 'Na'؟"
     },
     "options": {
-      "en": ["Sodium", "Nitrogen", "Neon", "Nickel"],
-      "ar": ["صوديوم", "نيتروجين", "نيون", "نيكل"]
+      "en": [
+        "Sodium",
+        "Nitrogen",
+        "Neon",
+        "Nickel"
+      ],
+      "ar": [
+        "صوديوم",
+        "نيتروجين",
+        "نيون",
+        "نيكل"
+      ]
     },
     "correctAnswer": {
       "en": "Sodium",
@@ -786,8 +1176,18 @@
       "ar": "ما هي عاصمة ألمانيا؟"
     },
     "options": {
-      "en": ["Munich", "Frankfurt", "Berlin", "Hamburg"],
-      "ar": ["ميونيخ", "فرانكفورت", "برلين", "هامبورغ"]
+      "en": [
+        "Munich",
+        "Frankfurt",
+        "Berlin",
+        "Hamburg"
+      ],
+      "ar": [
+        "ميونيخ",
+        "فرانكفورت",
+        "برلين",
+        "هامبورغ"
+      ]
     },
     "correctAnswer": {
       "en": "Berlin",
@@ -802,8 +1202,18 @@
       "ar": "ما هي تقنية الويب المستخدمة لتصميم وتنسيق صفحات الويب؟"
     },
     "options": {
-      "en": ["HTML", "CSS", "Python", "SQL"],
-      "ar": ["HTML", "CSS", "باثيون", "SQL"]
+      "en": [
+        "HTML",
+        "CSS",
+        "Python",
+        "SQL"
+      ],
+      "ar": [
+        "HTML",
+        "CSS",
+        "باثيون",
+        "SQL"
+      ]
     },
     "correctAnswer": {
       "en": "CSS",
@@ -818,8 +1228,18 @@
       "ar": "كم عدد القارات على سطح الأرض؟"
     },
     "options": {
-      "en": ["5", "6", "7", "8"],
-      "ar": ["5", "6", "7", "8"]
+      "en": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "ar": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
     },
     "correctAnswer": {
       "en": "7",
@@ -834,8 +1254,18 @@
       "ar": "ما هي عاصمة اليابان؟"
     },
     "options": {
-      "en": ["Kyoto", "Osaka", "Tokyo", "Hiroshima"],
-      "ar": ["كيوتو", "أوساكا", "طوكيو", "هيروشيما"]
+      "en": [
+        "Kyoto",
+        "Osaka",
+        "Tokyo",
+        "Hiroshima"
+      ],
+      "ar": [
+        "كيوتو",
+        "أوساكا",
+        "طوكيو",
+        "هيروشيما"
+      ]
     },
     "correctAnswer": {
       "en": "Tokyo",
@@ -876,8 +1306,18 @@
       "ar": "أي حيوان يُعرف بـ 'سفينة الصحراء'؟"
     },
     "options": {
-      "en": ["Horse", "Camel", "Elephant", "Donkey"],
-      "ar": ["الحصان", "الجمل", "الفيل", "الحمار"]
+      "en": [
+        "Horse",
+        "Camel",
+        "Elephant",
+        "Donkey"
+      ],
+      "ar": [
+        "الحصان",
+        "الجمل",
+        "الفيل",
+        "الحمار"
+      ]
     },
     "correctAnswer": {
       "en": "Camel",
@@ -892,8 +1332,18 @@
       "ar": "ما هي عاصمة إسبانيا؟"
     },
     "options": {
-      "en": ["Barcelona", "Madrid", "Seville", "Valencia"],
-      "ar": ["برشلونة", "مدريد", "إشبيلية", "فالنسيا"]
+      "en": [
+        "Barcelona",
+        "Madrid",
+        "Seville",
+        "Valencia"
+      ],
+      "ar": [
+        "برشلونة",
+        "مدريد",
+        "إشبيلية",
+        "فالنسيا"
+      ]
     },
     "correctAnswer": {
       "en": "Madrid",
@@ -908,8 +1358,18 @@
       "ar": "ما هي الشركة التي طورت لغة برمجة جافا سكريبت؟"
     },
     "options": {
-      "en": ["Microsoft", "Netscape", "Apple", "Google"],
-      "ar": ["مايكروسوفت", "نتسكيب", "أبل", "جوجل"]
+      "en": [
+        "Microsoft",
+        "Netscape",
+        "Apple",
+        "Google"
+      ],
+      "ar": [
+        "مايكروسوفت",
+        "نتسكيب",
+        "أبل",
+        "جوجل"
+      ]
     },
     "correctAnswer": {
       "en": "Netscape",
@@ -924,8 +1384,18 @@
       "ar": "ما هو الغاز الرئيسي الموجود في الهواء الذي نتنفسه؟"
     },
     "options": {
-      "en": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
-      "ar": ["الأكسجين", "النيتروجين", "ثاني أكسيد الكربون", "الأرجون"]
+      "en": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon Dioxide",
+        "Argon"
+      ],
+      "ar": [
+        "الأكسجين",
+        "النيتروجين",
+        "ثاني أكسيد الكربون",
+        "الأرجون"
+      ]
     },
     "correctAnswer": {
       "en": "Nitrogen",
@@ -940,8 +1410,18 @@
       "ar": "من رسم لوحة 'ليلة مرصعة بالنجوم'؟"
     },
     "options": {
-      "en": ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dali"],
-      "ar": ["كلود مونيه", "فنسنت فان غوغ", "بابلو بيكاسو", "سالفادور دالي"]
+      "en": [
+        "Claude Monet",
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Salvador Dali"
+      ],
+      "ar": [
+        "كلود مونيه",
+        "فنسنت فان غوغ",
+        "بابلو بيكاسو",
+        "سالفادور دالي"
+      ]
     },
     "correctAnswer": {
       "en": "Vincent van Gogh",
@@ -956,8 +1436,18 @@
       "ar": "ما هو أصغر عدد أولي؟"
     },
     "options": {
-      "en": ["0", "1", "2", "3"],
-      "ar": ["0", "1", "2", "3"]
+      "en": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "ar": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ]
     },
     "correctAnswer": {
       "en": "2",
@@ -972,8 +1462,18 @@
       "ar": "ما هو نظام التحكم في الإصدارات الشائع استخدامه عبر غيت هاب؟"
     },
     "options": {
-      "en": ["SVN", "Git", "Mercurial", "CVS"],
-      "ar": ["SVN", "جيت", "Mercurial", "CVS"]
+      "en": [
+        "SVN",
+        "Git",
+        "Mercurial",
+        "CVS"
+      ],
+      "ar": [
+        "SVN",
+        "جيت",
+        "Mercurial",
+        "CVS"
+      ]
     },
     "correctAnswer": {
       "en": "Git",
@@ -988,8 +1488,18 @@
       "ar": "ما هي عاصمة أستراليا؟"
     },
     "options": {
-      "en": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-      "ar": ["سيدني", "ملبورن", "كانبرا", "بريسبان"]
+      "en": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Brisbane"
+      ],
+      "ar": [
+        "سيدني",
+        "ملبورن",
+        "كانبرا",
+        "بريسبان"
+      ]
     },
     "correctAnswer": {
       "en": "Canberra",
@@ -1004,8 +1514,18 @@
       "ar": "أي فيتامين يتم إنتاجه أساساً عندما يتعرض جلد الإنسان لأشعة الشمس؟"
     },
     "options": {
-      "en": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
-      "ar": ["فيتامين أ", "فيتامين ب", "فيتامين ج", "فيتامين د"]
+      "en": [
+        "Vitamin A",
+        "Vitamin B",
+        "Vitamin C",
+        "Vitamin D"
+      ],
+      "ar": [
+        "فيتامين أ",
+        "فيتامين ب",
+        "فيتامين ج",
+        "فيتامين د"
+      ]
     },
     "correctAnswer": {
       "en": "Vitamin D",
@@ -1020,8 +1540,18 @@
       "ar": "ما هو أكبر كوكب في نظامنا الشمسي؟"
     },
     "options": {
-      "en": ["Saturn", "Jupiter", "Neptune", "Uranus"],
-      "ar": ["زحل", "المشتري", "نبتون", "أورانوس"]
+      "en": [
+        "Saturn",
+        "Jupiter",
+        "Neptune",
+        "Uranus"
+      ],
+      "ar": [
+        "زحل",
+        "المشتري",
+        "نبتون",
+        "أورانوس"
+      ]
     },
     "correctAnswer": {
       "en": "Jupiter",
@@ -1036,8 +1566,18 @@
       "ar": "ما هو النمط البرمجي الذي تشجعه ريآكت بشدة من خلال مكونات واجهة المستخدم؟"
     },
     "options": {
-      "en": ["Procedural Programming", "Component-Based / Declarative", "Assembly Coding", "Imperative Logic"],
-      "ar": ["البرمجة الإجرائية", "القائمة على المكونات / التصريحية", "برمجة لغة التجميع", "المنطق الأمرائي"]
+      "en": [
+        "Procedural Programming",
+        "Component-Based / Declarative",
+        "Assembly Coding",
+        "Imperative Logic"
+      ],
+      "ar": [
+        "البرمجة الإجرائية",
+        "القائمة على المكونات / التصريحية",
+        "برمجة لغة التجميع",
+        "المنطق الأمرائي"
+      ]
     },
     "correctAnswer": {
       "en": "Component-Based / Declarative",
@@ -1052,8 +1592,18 @@
       "ar": "ما هي الصيغة الكيميائية للماء؟"
     },
     "options": {
-      "en": ["CO2", "H2O", "NaCl", "O2"],
-      "ar": ["CO2", "H2O", "NaCl", "O2"]
+      "en": [
+        "CO2",
+        "H2O",
+        "NaCl",
+        "O2"
+      ],
+      "ar": [
+        "CO2",
+        "H2O",
+        "NaCl",
+        "O2"
+      ]
     },
     "correctAnswer": {
       "en": "H2O",
@@ -1068,8 +1618,18 @@
       "ar": "ما هي عاصمة البرازيل؟"
     },
     "options": {
-      "en": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Salvador"],
-      "ar": ["ريو دي جانيرو", "ساو باولو", "برازيليا", "سالفادور"]
+      "en": [
+        "Rio de Janeiro",
+        "Sao Paulo",
+        "Brasilia",
+        "Salvador"
+      ],
+      "ar": [
+        "ريو دي جانيرو",
+        "ساو باولو",
+        "برازيليا",
+        "سالفادور"
+      ]
     },
     "correctAnswer": {
       "en": "Brasilia",
@@ -1084,8 +1644,18 @@
       "ar": "ما هي الشركة التي ابتكرت هاتف آيفون؟"
     },
     "options": {
-      "en": ["Samsung", "Google", "Apple", "Microsoft"],
-      "ar": ["سامسونج", "جوجل", "أبل", "مايكروسوفت"]
+      "en": [
+        "Samsung",
+        "Google",
+        "Apple",
+        "Microsoft"
+      ],
+      "ar": [
+        "سامسونج",
+        "جوجل",
+        "أبل",
+        "مايكروسوفت"
+      ]
     },
     "correctAnswer": {
       "en": "Apple",
@@ -1100,8 +1670,18 @@
       "ar": "ما هي اللغة الرئيسية المتحدثة في البرازيل؟"
     },
     "options": {
-      "en": ["Spanish", "Portuguese", "English", "French"],
-      "ar": ["الإسبانية", "البرتغالية", "الإنجليزية", "الفرنسية"]
+      "en": [
+        "Spanish",
+        "Portuguese",
+        "English",
+        "French"
+      ],
+      "ar": [
+        "الإسبانية",
+        "البرتغالية",
+        "الإنجليزية",
+        "الفرنسية"
+      ]
     },
     "correctAnswer": {
       "en": "Portuguese",
@@ -1142,8 +1722,18 @@
       "ar": "أي دولة تشتهر بالأهرامات القديمة ونهر النيل؟"
     },
     "options": {
-      "en": ["Greece", "Egypt", "Italy", "India"],
-      "ar": ["اليونان", "مصر", "إيطاليا", "الهند"]
+      "en": [
+        "Greece",
+        "Egypt",
+        "Italy",
+        "India"
+      ],
+      "ar": [
+        "اليونان",
+        "مصر",
+        "إيطاليا",
+        "الهند"
+      ]
     },
     "correctAnswer": {
       "en": "Egypt",
@@ -1158,8 +1748,18 @@
       "ar": "ما هي عاصمة الأرجنتين؟"
     },
     "options": {
-      "en": ["Buenos Aires", "Cordoba", "Rosario", "Mendoza"],
-      "ar": ["بوينس آيرس", "قرطبة", "روزاريو", "مندوزا"]
+      "en": [
+        "Buenos Aires",
+        "Cordoba",
+        "Rosario",
+        "Mendoza"
+      ],
+      "ar": [
+        "بوينس آيرس",
+        "قرطبة",
+        "روزاريو",
+        "مندوزا"
+      ]
     },
     "correctAnswer": {
       "en": "Buenos Aires",
@@ -1174,8 +1774,18 @@
       "ar": "ما هو الجهاز المستخدم لإدخال النصوص إلى الحاسوب؟"
     },
     "options": {
-      "en": ["Monitor", "Keyboard", "Printer", "Speaker"],
-      "ar": ["الشاشة", "لوحة المفاتيح", "الطابعة", "مكبر الصوت"]
+      "en": [
+        "Monitor",
+        "Keyboard",
+        "Printer",
+        "Speaker"
+      ],
+      "ar": [
+        "الشاشة",
+        "لوحة المفاتيح",
+        "الطابعة",
+        "مكبر الصوت"
+      ]
     },
     "correctAnswer": {
       "en": "Keyboard",
@@ -1190,8 +1800,18 @@
       "ar": "ما هي أكبر دولة في العالم من حيث مساحة الأراضي؟"
     },
     "options": {
-      "en": ["Canada", "China", "Russia", "United States"],
-      "ar": ["كندا", "الصين", "روسيا", "الولايات المتحدة"]
+      "en": [
+        "Canada",
+        "China",
+        "Russia",
+        "United States"
+      ],
+      "ar": [
+        "كندا",
+        "الصين",
+        "روسيا",
+        "الولايات المتحدة"
+      ]
     },
     "correctAnswer": {
       "en": "Russia",
@@ -1206,8 +1826,18 @@
       "ar": "ما هو البروتوكول المستخدم لنقل صفحات الويب من الخادم إلى المتصفح؟"
     },
     "options": {
-      "en": ["FTP", "HTTP", "SMTP", "SSH"],
-      "ar": ["FTP", "HTTP", "SMTP", "SSH"]
+      "en": [
+        "FTP",
+        "HTTP",
+        "SMTP",
+        "SSH"
+      ],
+      "ar": [
+        "FTP",
+        "HTTP",
+        "SMTP",
+        "SSH"
+      ]
     },
     "correctAnswer": {
       "en": "HTTP",
@@ -1222,8 +1852,18 @@
       "ar": "ما هي عاصمة المكسيك؟"
     },
     "options": {
-      "en": ["Cancun", "Mexico City", "Guadalajara", "Monterrey"],
-      "ar": ["كانكون", "مدينة المكسيك", "غوادالاخارا", "مونتيري"]
+      "en": [
+        "Cancun",
+        "Mexico City",
+        "Guadalajara",
+        "Monterrey"
+      ],
+      "ar": [
+        "كانكون",
+        "مدينة المكسيك",
+        "غوادالاخارا",
+        "مونتيري"
+      ]
     },
     "correctAnswer": {
       "en": "Mexico City",
@@ -1238,8 +1878,18 @@
       "ar": "أي عضو مسؤول أساساً عن تصفية دم الإنسان؟"
     },
     "options": {
-      "en": ["Liver", "Kidneys", "Lungs", "Stomach"],
-      "ar": ["الكبد", "الكليتان", "الرئتان", "المعدة"]
+      "en": [
+        "Liver",
+        "Kidneys",
+        "Lungs",
+        "Stomach"
+      ],
+      "ar": [
+        "الكبد",
+        "الكليتان",
+        "الرئتان",
+        "المعدة"
+      ]
     },
     "correctAnswer": {
       "en": "Kidneys",
@@ -1254,8 +1904,18 @@
       "ar": "ما هي عاصمة كوريا الجنوبية؟"
     },
     "options": {
-      "en": ["Busan", "Incheon", "Seoul", "Daegu"],
-      "ar": ["بوسان", "إنتشون", "سيول", "دايغو"]
+      "en": [
+        "Busan",
+        "Incheon",
+        "Seoul",
+        "Daegu"
+      ],
+      "ar": [
+        "بوسان",
+        "إنتشون",
+        "سيول",
+        "دايغو"
+      ]
     },
     "correctAnswer": {
       "en": "Seoul",
@@ -1270,8 +1930,18 @@
       "ar": "ما هي أداة البرمجة المستخدمة لتغليف وتعبئة التطبيقات في حاويات؟"
     },
     "options": {
-      "en": ["Docker", "Photoshop", "Notepad", "Excel"],
-      "ar": ["دوكر", "فوتوشوب", "مفكرة", "إكسل"]
+      "en": [
+        "Docker",
+        "Photoshop",
+        "Notepad",
+        "Excel"
+      ],
+      "ar": [
+        "دوكر",
+        "فوتوشوب",
+        "مفكرة",
+        "إكسل"
+      ]
     },
     "correctAnswer": {
       "en": "Docker",
@@ -1286,8 +1956,18 @@
       "ar": "ما هي الزهرة الوطنية لليابان؟"
     },
     "options": {
-      "en": ["Rose", "Tulip", "Cherry Blossom (Sakura)", "Lotus"],
-      "ar": ["الورد", "التوليب", "زهرة الساكورا (الكرز)", "اللوتس"]
+      "en": [
+        "Rose",
+        "Tulip",
+        "Cherry Blossom (Sakura)",
+        "Lotus"
+      ],
+      "ar": [
+        "الورد",
+        "التوليب",
+        "زهرة الساكورا (الكرز)",
+        "اللوتس"
+      ]
     },
     "correctAnswer": {
       "en": "Cherry Blossom (Sakura)",
@@ -1302,8 +1982,18 @@
       "ar": "ما هي عاصمة الهند؟"
     },
     "options": {
-      "en": ["Mumbai", "New Delhi", "Bangalore", "Kolkata"],
-      "ar": ["مومباي", "نيودلهي", "بنغالور", "كولكاتا"]
+      "en": [
+        "Mumbai",
+        "New Delhi",
+        "Bangalore",
+        "Kolkata"
+      ],
+      "ar": [
+        "مومباي",
+        "نيودلهي",
+        "بنغالور",
+        "كولكاتا"
+      ]
     },
     "correctAnswer": {
       "en": "New Delhi",
@@ -1318,8 +2008,18 @@
       "ar": "أي جسيم دون ذري يحمل شحنة كهربائية سالبة؟"
     },
     "options": {
-      "en": ["Proton", "Neutron", "Electron", "Positron"],
-      "ar": ["بروتون", "نيوترون", "إلكترون", "بوزيترون"]
+      "en": [
+        "Proton",
+        "Neutron",
+        "Electron",
+        "Positron"
+      ],
+      "ar": [
+        "بروتون",
+        "نيوترون",
+        "إلكترون",
+        "بوزيترون"
+      ]
     },
     "correctAnswer": {
       "en": "Electron",
@@ -1334,8 +2034,18 @@
       "ar": "ما هي عاصمة المملكة العربية السعودية؟"
     },
     "options": {
-      "en": ["Jeddah", "Riyadh", "Mecca", "Dammam"],
-      "ar": ["جدة", "الرياض", "مكة المكرمة", "الدمام"]
+      "en": [
+        "Jeddah",
+        "Riyadh",
+        "Mecca",
+        "Dammam"
+      ],
+      "ar": [
+        "جدة",
+        "الرياض",
+        "مكة المكرمة",
+        "الدمام"
+      ]
     },
     "correctAnswer": {
       "en": "Riyadh",
@@ -1350,8 +2060,18 @@
       "ar": "ما هي منصة التحكم في إصدارات البرمجيات التي تستضيف ملايين المشاريع مفتوحة المصدر؟"
     },
     "options": {
-      "en": ["GitHub", "Google Drive", "Dropbox", "OneDrive"],
-      "ar": ["غيت هاب", "جوجل درايف", "دروبوكس", "ون درايف"]
+      "en": [
+        "GitHub",
+        "Google Drive",
+        "Dropbox",
+        "OneDrive"
+      ],
+      "ar": [
+        "غيت هاب",
+        "جوجل درايف",
+        "دروبوكس",
+        "ون درايف"
+      ]
     },
     "correctAnswer": {
       "en": "GitHub",
@@ -1366,8 +2086,18 @@
       "ar": "ما هي عاصمة الولايات المتحدة الأمريكية؟"
     },
     "options": {
-      "en": ["New York", "Los Angeles", "Washington, D.C.", "Chicago"],
-      "ar": ["نيويورك", "لوس أنجلوس", "واشنطن العاصمة", "شيكاغو"]
+      "en": [
+        "New York",
+        "Los Angeles",
+        "Washington, D.C.",
+        "Chicago"
+      ],
+      "ar": [
+        "نيويورك",
+        "لوس أنجلوس",
+        "واشنطن العاصمة",
+        "شيكاغو"
+      ]
     },
     "correctAnswer": {
       "en": "Washington, D.C.",
@@ -1382,8 +2112,18 @@
       "ar": "ما هو الكوكب الأقرب إلى الشمس؟"
     },
     "options": {
-      "en": ["Venus", "Mercury", "Earth", "Mars"],
-      "ar": ["الزهرة", "عطارد", "الأرض", "المريخ"]
+      "en": [
+        "Venus",
+        "Mercury",
+        "Earth",
+        "Mars"
+      ],
+      "ar": [
+        "الزهرة",
+        "عطارد",
+        "الأرض",
+        "المريخ"
+      ]
     },
     "correctAnswer": {
       "en": "Mercury",
@@ -1398,8 +2138,18 @@
       "ar": "ما هي عاصمة دولة الإمارات العربية المتحدة؟"
     },
     "options": {
-      "en": ["Dubai", "Sharjah", "Abu Dhabi", "Ajman"],
-      "ar": ["دبي", "الشارقة", "أبوظبي", "عجمان"]
+      "en": [
+        "Dubai",
+        "Sharjah",
+        "Abu Dhabi",
+        "Ajman"
+      ],
+      "ar": [
+        "دبي",
+        "الشارقة",
+        "أبوظبي",
+        "عجمان"
+      ]
     },
     "correctAnswer": {
       "en": "Abu Dhabi",
@@ -1414,8 +2164,18 @@
       "ar": "ما هي اللغة المستخدمة بجانب HTML و CSS لإنشاء ميزات تفاعلية لعميل الويب؟"
     },
     "options": {
-      "en": ["Python", "JavaScript", "C++", "SQL"],
-      "ar": ["بايثون", "جافا سكريبت", "سي بلس بلس", "SQL"]
+      "en": [
+        "Python",
+        "JavaScript",
+        "C++",
+        "SQL"
+      ],
+      "ar": [
+        "بايثون",
+        "جافا سكريبت",
+        "سي بلس بلس",
+        "SQL"
+      ]
     },
     "correctAnswer": {
       "en": "JavaScript",
@@ -1430,8 +2190,18 @@
       "ar": "ما هي عاصمة الصين؟"
     },
     "options": {
-      "en": ["Shanghai", "Beijing", "Hong Kong", "Shenzhen"],
-      "ar": ["شانغهاي", "بكين", "هونغ كونغ", "شنتشن"]
+      "en": [
+        "Shanghai",
+        "Beijing",
+        "Hong Kong",
+        "Shenzhen"
+      ],
+      "ar": [
+        "شانغهاي",
+        "بكين",
+        "هونغ كونغ",
+        "شنتشن"
+      ]
     },
     "correctAnswer": {
       "en": "Beijing",
@@ -1446,8 +2216,18 @@
       "ar": "أي نجم يوجد في مركز نظامنا الشمسي؟"
     },
     "options": {
-      "en": ["Polaris", "Sun", "Sirius", "Betelgeuse"],
-      "ar": ["النجم القطبى", "الشمس", "الشعرى اليمانية", "منكب الجوزاء"]
+      "en": [
+        "Polaris",
+        "Sun",
+        "Sirius",
+        "Betelgeuse"
+      ],
+      "ar": [
+        "النجم القطبى",
+        "الشمس",
+        "الشعرى اليمانية",
+        "منكب الجوزاء"
+      ]
     },
     "correctAnswer": {
       "en": "Sun",
@@ -1462,8 +2242,18 @@
       "ar": "ما هي عاصمة تركيا؟"
     },
     "options": {
-      "en": ["Istanbul", "Ankara", "Izmir", "Antalya"],
-      "ar": ["إسطنبول", "أنقرة", "إزمير", "أنطاليا"]
+      "en": [
+        "Istanbul",
+        "Ankara",
+        "Izmir",
+        "Antalya"
+      ],
+      "ar": [
+        "إسطنبول",
+        "أنقرة",
+        "إزمير",
+        "أنطاليا"
+      ]
     },
     "correctAnswer": {
       "en": "Ankara",
@@ -1478,8 +2268,18 @@
       "ar": "ما هو المصطلح الرياضي الذي يصف شكلاً ذو ثلاثة أضلع؟"
     },
     "options": {
-      "en": ["Square", "Triangle", "Pentagon", "Circle"],
-      "ar": ["مربع", "مثلث", "خماسسي الأضلاع", "دائرة"]
+      "en": [
+        "Square",
+        "Triangle",
+        "Pentagon",
+        "Circle"
+      ],
+      "ar": [
+        "مربع",
+        "مثلث",
+        "خماسسي الأضلاع",
+        "دائرة"
+      ]
     },
     "correctAnswer": {
       "en": "Triangle",
@@ -1494,8 +2294,18 @@
       "ar": "ما هي عاصمة جنوب أفريقيا؟"
     },
     "options": {
-      "en": ["Johannesburg", "Cape Town", "Pretoria", "Durban"],
-      "ar": ["جوهانسبرغ", "كيب تاون", "بريتوريا", "ديربان"]
+      "en": [
+        "Johannesburg",
+        "Cape Town",
+        "Pretoria",
+        "Durban"
+      ],
+      "ar": [
+        "جوهانسبرغ",
+        "كيب تاون",
+        "بريتوريا",
+        "ديربان"
+      ]
     },
     "correctAnswer": {
       "en": "Pretoria",
@@ -1510,8 +2320,18 @@
       "ar": "ما هي الشركة التي ابتكرت نظام تشغيل أندرويد؟"
     },
     "options": {
-      "en": ["Apple", "Google", "Microsoft", "IBM"],
-      "ar": ["أبل", "جوجل", "مايكروسوفت", "آي بي إم"]
+      "en": [
+        "Apple",
+        "Google",
+        "Microsoft",
+        "IBM"
+      ],
+      "ar": [
+        "أبل",
+        "جوجل",
+        "مايكروسوفت",
+        "آي بي إم"
+      ]
     },
     "correctAnswer": {
       "en": "Google",
@@ -1526,8 +2346,18 @@
       "ar": "ما هي عاصمة اليونان؟"
     },
     "options": {
-      "en": ["Athens", "Sparta", "Thessaloniki", "Patras"],
-      "ar": ["أثينا", "اسبرطة", "سالونيك", "باتراس"]
+      "en": [
+        "Athens",
+        "Sparta",
+        "Thessaloniki",
+        "Patras"
+      ],
+      "ar": [
+        "أثينا",
+        "اسبرطة",
+        "سالونيك",
+        "باتراس"
+      ]
     },
     "correctAnswer": {
       "en": "Athens",
@@ -1542,8 +2372,18 @@
       "ar": "أي محيط هو الأكبر من حيث الحجم والمساحة؟"
     },
     "options": {
-      "en": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
-      "ar": ["المحيط الأطلسي", "المحيط الهندي", "المحيط الهادئ", "المحيط المتجمد الشمالي"]
+      "en": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean"
+      ],
+      "ar": [
+        "المحيط الأطلسي",
+        "المحيط الهندي",
+        "المحيط الهادئ",
+        "المحيط المتجمد الشمالي"
+      ]
     },
     "correctAnswer": {
       "en": "Pacific Ocean",
@@ -1558,8 +2398,18 @@
       "ar": "ما هي عاصمة البرتغال؟"
     },
     "options": {
-      "en": ["Porto", "Lisbon", "Coimbra", "Faro"],
-      "ar": ["بورتو", "لشبونة", "كويمبرا", "فارو"]
+      "en": [
+        "Porto",
+        "Lisbon",
+        "Coimbra",
+        "Faro"
+      ],
+      "ar": [
+        "بورتو",
+        "لشبونة",
+        "كويمبرا",
+        "فارو"
+      ]
     },
     "correctAnswer": {
       "en": "Lisbon",
@@ -1574,8 +2424,18 @@
       "ar": "ما هي امتداد ملفات الحوسبة الذي غالباً ما يشير إلى ملف مكون ريآكت؟"
     },
     "options": {
-      "en": [".html", ".jsx", ".py", ".java"],
-      "ar": [".html", ".jsx", ".py", ".java"]
+      "en": [
+        ".html",
+        ".jsx",
+        ".py",
+        ".java"
+      ],
+      "ar": [
+        ".html",
+        ".jsx",
+        ".py",
+        ".java"
+      ]
     },
     "correctAnswer": {
       "en": ".jsx",
@@ -1590,8 +2450,18 @@
       "ar": "ما هي عاصمة السويد؟"
     },
     "options": {
-      "en": ["Oslo", "Stockholm", "Copenhagen", "Helsinki"],
-      "ar": ["أوسلو", "ستوكهولم", "كوبنهاغن", "هلسنكي"]
+      "en": [
+        "Oslo",
+        "Stockholm",
+        "Copenhagen",
+        "Helsinki"
+      ],
+      "ar": [
+        "أوسلو",
+        "ستوكهولم",
+        "كوبنهاغن",
+        "هلسنكي"
+      ]
     },
     "correctAnswer": {
       "en": "Stockholm",
@@ -1606,8 +2476,18 @@
       "ar": "ما هو العنصر الكيميائي الذي يحمل الرمز 'Fe'؟"
     },
     "options": {
-      "en": ["Iron", "Fluorine", "Francium", "Fermium"],
-      "ar": ["حديد", "فلور", "فرانسيوم", "فيرميوم"]
+      "en": [
+        "Iron",
+        "Fluorine",
+        "Francium",
+        "Fermium"
+      ],
+      "ar": [
+        "حديد",
+        "فلور",
+        "فرانسيوم",
+        "فيرميوم"
+      ]
     },
     "correctAnswer": {
       "en": "Iron",
@@ -1622,8 +2502,18 @@
       "ar": "ما هي عاصمة العراق؟"
     },
     "options": {
-      "en": ["Basra", "Erbil", "Baghdad", "Mosul"],
-      "ar": ["البصرة", "أربيل", "بغداد", "الموصل"]
+      "en": [
+        "Basra",
+        "Erbil",
+        "Baghdad",
+        "Mosul"
+      ],
+      "ar": [
+        "البصرة",
+        "أربيل",
+        "بغداد",
+        "الموصل"
+      ]
     },
     "correctAnswer": {
       "en": "Baghdad",
@@ -1638,8 +2528,18 @@
       "ar": "ما هي الشبكة التي تربط أجهزة الحاسوب عالمياً عبر العالم؟"
     },
     "options": {
-      "en": ["LAN", "Intranet", "Internet", "Bluetooth"],
-      "ar": ["شبكة محلية (LAN)", "شبكة داخلية (Intranet)", "الإنترنت", "بلوتوث"]
+      "en": [
+        "LAN",
+        "Intranet",
+        "Internet",
+        "Bluetooth"
+      ],
+      "ar": [
+        "شبكة محلية (LAN)",
+        "شبكة داخلية (Intranet)",
+        "الإنترنت",
+        "بلوتوث"
+      ]
     },
     "correctAnswer": {
       "en": "Internet",
@@ -1654,8 +2554,18 @@
       "ar": "ما هي عاصمة هولندا؟"
     },
     "options": {
-      "en": ["Rotterdam", "Amsterdam", "The Hague", "Utrecht"],
-      "ar": ["روتردام", "أمستردام", "لاهاي", "أوترخت"]
+      "en": [
+        "Rotterdam",
+        "Amsterdam",
+        "The Hague",
+        "Utrecht"
+      ],
+      "ar": [
+        "روتردام",
+        "أمستردام",
+        "لاهاي",
+        "أوترخت"
+      ]
     },
     "correctAnswer": {
       "en": "Amsterdam",
@@ -1670,12 +2580,5222 @@
       "ar": "ما هي خدمة قاعدة البيانات السحابية التي تشغل تطبيقات الويب الحديثة مثل هذا الاختبار؟"
     },
     "options": {
-      "en": ["Firebase Firestore", "MS Paint", "Notepad++", "Winamp"],
-      "ar": ["فايربيز فايستور", "رسام مايكروسوفت", "نوت باد++", "وين أمب"]
+      "en": [
+        "Firebase Firestore",
+        "MS Paint",
+        "Notepad++",
+        "Winamp"
+      ],
+      "ar": [
+        "فايربيز فايستور",
+        "رسام مايكروسوفت",
+        "نوت باد++",
+        "وين أمب"
+      ]
     },
     "correctAnswer": {
       "en": "Firebase Firestore",
       "ar": "فايربيز فايستور"
+    },
+    "points": 10
+  },
+  {
+    "id": "q101",
+    "question": {
+      "en": "What is the capital of Russia?",
+      "ar": "ما هي عاصمة روسيا؟"
+    },
+    "options": {
+      "en": [
+        "Moscow",
+        "Sochi",
+        "Kazan",
+        "Saint Petersburg"
+      ],
+      "ar": [
+        "مسكو",
+        "سوتشي",
+        "كازان",
+        "سانت بطرسبرغ"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Moscow",
+      "ar": "مسكو"
+    },
+    "points": 10
+  },
+  {
+    "id": "q102",
+    "question": {
+      "en": "Which is the longest river in the world?",
+      "ar": "ما هو أطول نهر في العالم؟"
+    },
+    "options": {
+      "en": [
+        "Nile River",
+        "Mississippi River",
+        "Yangtze River",
+        "Amazon River"
+      ],
+      "ar": [
+        "نهر النيل",
+        "نهر المسيسيبي",
+        "نهر يانغتسي",
+        "نهر الأمازون"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nile River",
+      "ar": "نهر النيل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q103",
+    "question": {
+      "en": "Which country has the largest population in the world?",
+      "ar": "أي دولة تضم أكبر عدد من السكان في العالم؟"
+    },
+    "options": {
+      "en": [
+        "India",
+        "China",
+        "United States",
+        "Indonesia"
+      ],
+      "ar": [
+        "الهند",
+        "الصين",
+        "الولايات المتحدة",
+        "إندونيسيا"
+      ]
+    },
+    "correctAnswer": {
+      "en": "India",
+      "ar": "الهند"
+    },
+    "points": 10
+  },
+  {
+    "id": "q104",
+    "question": {
+      "en": "What is the capital of Egypt?",
+      "ar": "ما هي عاصمة مصر؟"
+    },
+    "options": {
+      "en": [
+        "Alexandria",
+        "Giza",
+        "Luxor",
+        "Cairo"
+      ],
+      "ar": [
+        "الإسكندرية",
+        "الجيزة",
+        "الأقصر",
+        "القاهرة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cairo",
+      "ar": "القاهرة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q105",
+    "question": {
+      "en": "In which country is Mount Fuji located?",
+      "ar": "في أي دولة يقع جبل فوجي؟"
+    },
+    "options": {
+      "en": [
+        "China",
+        "Japan",
+        "Thailand",
+        "South Korea"
+      ],
+      "ar": [
+        "الصين",
+        "اليابان",
+        "تايلاند",
+        "كوريا الجنوبية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Japan",
+      "ar": "اليابان"
+    },
+    "points": 10
+  },
+  {
+    "id": "q106",
+    "question": {
+      "en": "What is the capital of Spain?",
+      "ar": "ما هي عاصمة إسبانيا؟"
+    },
+    "options": {
+      "en": [
+        "Seville",
+        "Madrid",
+        "Barcelona",
+        "Valencia"
+      ],
+      "ar": [
+        "إشبيلية",
+        "مدريد",
+        "برشلونة",
+        "فالنسيا"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Madrid",
+      "ar": "مدريد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q107",
+    "question": {
+      "en": "Which is the smallest country in the world?",
+      "ar": "ما هي أصغر دولة في العالم؟"
+    },
+    "options": {
+      "en": [
+        "Monaco",
+        "Liechtenstein",
+        "San Marino",
+        "Vatican City"
+      ],
+      "ar": [
+        "موناكو",
+        "ليختنشتاين",
+        "سان مارينو",
+        "مدينة الفاتيكان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vatican City",
+      "ar": "مدينة الفاتيكان"
+    },
+    "points": 10
+  },
+  {
+    "id": "q108",
+    "question": {
+      "en": "What is the capital of Argentina?",
+      "ar": "ما هي عاصمة الأرجنتين؟"
+    },
+    "options": {
+      "en": [
+        "Mendoza",
+        "Buenos Aires",
+        "Rosario",
+        "Cordoba"
+      ],
+      "ar": [
+        "مندوزا",
+        "بوينس آيرس",
+        "روزاريو",
+        "قرطبة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Buenos Aires",
+      "ar": "بوينس آيرس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q109",
+    "question": {
+      "en": "Which desert is the largest hot desert in the world?",
+      "ar": "ما هي أكبر صحراء حارة في العالم؟"
+    },
+    "options": {
+      "en": [
+        "Arabian Desert",
+        "Gobi Desert",
+        "Sahara Desert",
+        "Kalahari Desert"
+      ],
+      "ar": [
+        "الصحراء العربية",
+        "صحراء جوبي",
+        "الصحراء الكبرى",
+        "صحراء كالاهاري"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sahara Desert",
+      "ar": "الصحراء الكبرى"
+    },
+    "points": 10
+  },
+  {
+    "id": "q110",
+    "question": {
+      "en": "What is the capital of Canada?",
+      "ar": "ما هي عاصمة كندا؟"
+    },
+    "options": {
+      "en": [
+        "Vancouver",
+        "Toronto",
+        "Ottawa",
+        "Montreal"
+      ],
+      "ar": [
+        "فانكوفر",
+        "تورونتو",
+        "أوتاوا",
+        "مونتريال"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ottawa",
+      "ar": "أوتاوا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q111",
+    "question": {
+      "en": "Which country is known as the Land of the Rising Sun?",
+      "ar": "أي دولة تُعرف بأرض كوكب الشرق (كوكب الشمس المشرقة)؟"
+    },
+    "options": {
+      "en": [
+        "China",
+        "South Korea",
+        "Vietnam",
+        "Japan"
+      ],
+      "ar": [
+        "الصين",
+        "كوريا الجنوبية",
+        "فيتنام",
+        "اليابان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Japan",
+      "ar": "اليابان"
+    },
+    "points": 10
+  },
+  {
+    "id": "q112",
+    "question": {
+      "en": "What is the capital of Switzerland?",
+      "ar": "ما هي عاصمة سويسرا؟"
+    },
+    "options": {
+      "en": [
+        "Zurich",
+        "Geneva",
+        "Bern",
+        "Basel"
+      ],
+      "ar": [
+        "زيورخ",
+        "جنيف",
+        "برن",
+        "بازل"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bern",
+      "ar": "برن"
+    },
+    "points": 10
+  },
+  {
+    "id": "q113",
+    "question": {
+      "en": "Which strait separates Europe and Africa at Gibraltar?",
+      "ar": "أي مضيق يفصل بين أوروبا وأفريقيا عند جبل طارق؟"
+    },
+    "options": {
+      "en": [
+        "Bering Strait",
+        "Bosphorus Strait",
+        "Strait of Hormuz",
+        "Strait of Gibraltar"
+      ],
+      "ar": [
+        "مضيق بيرينغ",
+        "مضيق البوسفور",
+        "مضيق هرمز",
+        "مضيق جبل طارق"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Strait of Gibraltar",
+      "ar": "مضيق جبل طارق"
+    },
+    "points": 10
+  },
+  {
+    "id": "q114",
+    "question": {
+      "en": "What is the capital of Norway?",
+      "ar": "ما هي عاصمة النرويج؟"
+    },
+    "options": {
+      "en": [
+        "Stavanger",
+        "Oslo",
+        "Trondheim",
+        "Bergen"
+      ],
+      "ar": [
+        "ستافانغر",
+        "أوسلو",
+        "تروندهايم",
+        "بيرغن"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Oslo",
+      "ar": "أوسلو"
+    },
+    "points": 10
+  },
+  {
+    "id": "q115",
+    "question": {
+      "en": "Which continent has the most countries?",
+      "ar": "أي قارة تحتوي على أكبر عدد من الدول؟"
+    },
+    "options": {
+      "en": [
+        "Africa",
+        "South America",
+        "Asia",
+        "Europe"
+      ],
+      "ar": [
+        "أفريقيا",
+        "أمريكا الجنوبية",
+        "آسيا",
+        "أوروبا"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Africa",
+      "ar": "أفريقيا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q116",
+    "question": {
+      "en": "What is the capital of Saudi Arabia?",
+      "ar": "ما هي عاصمة المملكة العربية السعودية؟"
+    },
+    "options": {
+      "en": [
+        "Jeddah",
+        "Dammam",
+        "Riyadh",
+        "Mecca"
+      ],
+      "ar": [
+        "جدة",
+        "الدمام",
+        "الرياض",
+        "مكة المكرمة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Riyadh",
+      "ar": "الرياض"
+    },
+    "points": 10
+  },
+  {
+    "id": "q117",
+    "question": {
+      "en": "Which ocean surrounds the Maldives?",
+      "ar": "أي محيط يحيط بجزر المالديف؟"
+    },
+    "options": {
+      "en": [
+        "Arctic Ocean",
+        "Indian Ocean",
+        "Atlantic Ocean",
+        "Pacific Ocean"
+      ],
+      "ar": [
+        "المحيط المتجمد الشمالي",
+        "المحيط الهندي",
+        "المحيط الأطلسي",
+        "المحيط الهادئ"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Indian Ocean",
+      "ar": "المحيط الهندي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q118",
+    "question": {
+      "en": "What is the capital of Thailand?",
+      "ar": "ما هي عاصمة تايلاند؟"
+    },
+    "options": {
+      "en": [
+        "Bangkok",
+        "Chiang Mai",
+        "Pattaya",
+        "Phuket"
+      ],
+      "ar": [
+        "بانكوك",
+        "شيانغ ماي",
+        "باتايا",
+        "فوكيت"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bangkok",
+      "ar": "بانكوك"
+    },
+    "points": 10
+  },
+  {
+    "id": "q119",
+    "question": {
+      "en": "Which is the largest island in the world?",
+      "ar": "ما هي أكبر جزيرة في العالم؟"
+    },
+    "options": {
+      "en": [
+        "New Guinea",
+        "Madagascar",
+        "Greenland",
+        "Borneo"
+      ],
+      "ar": [
+        "غينيا الجديدة",
+        "مدغشقر",
+        "جرينلاند",
+        "بورنيو"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Greenland",
+      "ar": "جرينلاند"
+    },
+    "points": 10
+  },
+  {
+    "id": "q120",
+    "question": {
+      "en": "What is the capital of Turkey?",
+      "ar": "ما هي عاصمة تركيا؟"
+    },
+    "options": {
+      "en": [
+        "Izmir",
+        "Antalya",
+        "Istanbul",
+        "Ankara"
+      ],
+      "ar": [
+        "إزمير",
+        "أنطاليا",
+        "إسطنبول",
+        "أنقرة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ankara",
+      "ar": "أنقرة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q121",
+    "question": {
+      "en": "Which European mountain range stretches through France, Italy, and Switzerland?",
+      "ar": "أي سلسلة جبال أوروبية تمتد عبر فرنسا وإيطاليا وسويسرا؟"
+    },
+    "options": {
+      "en": [
+        "Carpathians",
+        "Alps",
+        "Urals",
+        "Pyrenees"
+      ],
+      "ar": [
+        "جبال الكاربات",
+        "جبال الألب",
+        "جبال الأورال",
+        "جبال البرانس"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alps",
+      "ar": "جبال الألب"
+    },
+    "points": 10
+  },
+  {
+    "id": "q122",
+    "question": {
+      "en": "What is the capital of Morocco?",
+      "ar": "ما هي عاصمة المغرب؟"
+    },
+    "options": {
+      "en": [
+        "Casablanca",
+        "Fes",
+        "Rabat",
+        "Marrakech"
+      ],
+      "ar": [
+        "الدار البيضاء",
+        "فاس",
+        "الرباط",
+        "مراكش"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rabat",
+      "ar": "الرباط"
+    },
+    "points": 10
+  },
+  {
+    "id": "q123",
+    "question": {
+      "en": "Which river flows through Baghdad?",
+      "ar": "أي نهر يجري عبر مدينة بغداد؟"
+    },
+    "options": {
+      "en": [
+        "Nile River",
+        "Danube River",
+        "Euphrates River",
+        "Tigris River"
+      ],
+      "ar": [
+        "نهر النيل",
+        "نهر الدانوب",
+        "نهر الفرات",
+        "نهر دجلة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tigris River",
+      "ar": "نهر دجلة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q124",
+    "question": {
+      "en": "What is the capital of Kenya?",
+      "ar": "ما هي عاصمة كينيا؟"
+    },
+    "options": {
+      "en": [
+        "Nairobi",
+        "Mombasa",
+        "Nakuru",
+        "Kisumu"
+      ],
+      "ar": [
+        "نيروبي",
+        "مومباسا",
+        "ناكورو",
+        "كيسومو"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nairobi",
+      "ar": "نيروبي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q125",
+    "question": {
+      "en": "Which lake is the largest freshwater lake by surface area in North America?",
+      "ar": "ما هي أكبر بحيرة مياه عذبة من حيث المساحة في أمريكا الشمالية؟"
+    },
+    "options": {
+      "en": [
+        "Lake Huron",
+        "Lake Erie",
+        "Lake Superior",
+        "Lake Michigan"
+      ],
+      "ar": [
+        "بحيرة هورون",
+        "بحيرة إيري",
+        "بحيرة سوبريرور",
+        "بحيرة ميشيغان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Lake Superior",
+      "ar": "بحيرة سوبريرور"
+    },
+    "points": 10
+  },
+  {
+    "id": "q126",
+    "question": {
+      "en": "What is the capital of Austria?",
+      "ar": "ما هي عاصمة النمسا؟"
+    },
+    "options": {
+      "en": [
+        "Graz",
+        "Innsbruck",
+        "Vienna",
+        "Salzburg"
+      ],
+      "ar": [
+        "غراتس",
+        "إنسبروك",
+        "فيينا",
+        "سالزبورغ"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vienna",
+      "ar": "فيينا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q127",
+    "question": {
+      "en": "Which sea lies between Italy and the Balkan peninsula?",
+      "ar": "أي بحر يقع بين إيطاليا وشبه جزيرة البلقان؟"
+    },
+    "options": {
+      "en": [
+        "Aegean Sea",
+        "Tyrrhenian Sea",
+        "Black Sea",
+        "Adriatic Sea"
+      ],
+      "ar": [
+        "بحر إيجة",
+        "البحر التيراني",
+        "البحر الأسود",
+        "البحر الأدرياتيكي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Adriatic Sea",
+      "ar": "البحر الأدرياتيكي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q128",
+    "question": {
+      "en": "What is the capital of Mexico?",
+      "ar": "ما هي عاصمة المكسيك؟"
+    },
+    "options": {
+      "en": [
+        "Cancun",
+        "Mexico City",
+        "Monterrey",
+        "Guadalajara"
+      ],
+      "ar": [
+        "كانكون",
+        "مدينة المكسيك",
+        "مونتيري",
+        "غوادالاخارا"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mexico City",
+      "ar": "مدينة المكسيك"
+    },
+    "points": 10
+  },
+  {
+    "id": "q129",
+    "question": {
+      "en": "Who was the first President of the United States?",
+      "ar": "من كان أول رئيس للولايات المتحدة؟"
+    },
+    "options": {
+      "en": [
+        "John Adams",
+        "George Washington",
+        "Thomas Jefferson",
+        "Abraham Lincoln"
+      ],
+      "ar": [
+        "جون أدامز",
+        "جورج واشنطن",
+        "توماس جيفرسون",
+        "أبراهام لينكون"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Washington",
+      "ar": "جورج واشنطن"
+    },
+    "points": 10
+  },
+  {
+    "id": "q130",
+    "question": {
+      "en": "In which year did the Titanic sink?",
+      "ar": "في أي عام غرقت سفينة تايتانيك؟"
+    },
+    "options": {
+      "en": [
+        "1910",
+        "1914",
+        "1912",
+        "1920"
+      ],
+      "ar": [
+        "1910",
+        "1914",
+        "1912",
+        "1920"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1912",
+      "ar": "1912"
+    },
+    "points": 10
+  },
+  {
+    "id": "q131",
+    "question": {
+      "en": "Who was the ancient Egyptian queen married to Mark Antony?",
+      "ar": "من هي ملكة مصر القديمة التي تزوجت من مارك أنطوني؟"
+    },
+    "options": {
+      "en": [
+        "Merneith",
+        "Nefertiti",
+        "Cleopatra",
+        "Hatshepsut"
+      ],
+      "ar": [
+        "ميرنيت",
+        "نفرتيتي",
+        "كليوباترا",
+        "حتشبسوت"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cleopatra",
+      "ar": "كليوباترا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q132",
+    "question": {
+      "en": "In which century did the French Revolution start?",
+      "ar": "في أي قرن بدأت الثورة الفرنسية؟"
+    },
+    "options": {
+      "en": [
+        "18th Century",
+        "17th Century",
+        "16th Century",
+        "19th Century"
+      ],
+      "ar": [
+        "القرن 18",
+        "القرن 17",
+        "القرن 16",
+        "القرن 19"
+      ]
+    },
+    "correctAnswer": {
+      "en": "18th Century",
+      "ar": "القرن 18"
+    },
+    "points": 10
+  },
+  {
+    "id": "q133",
+    "question": {
+      "en": "Who conquered the Persian Empire and expanded his empire to India?",
+      "ar": "من الذي فتح الإمبراطورية الفارسية ووسع إمبراطوريته حتى الهند؟"
+    },
+    "options": {
+      "en": [
+        "Julius Caesar",
+        "Charlemagne",
+        "Alexander the Great",
+        "Genghis Khan"
+      ],
+      "ar": [
+        "يوليوس قيصر",
+        "شارلمان",
+        "الإسكندر الأكبر",
+        "جنكيز خان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alexander the Great",
+      "ar": "الإسكندر الأكبر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q134",
+    "question": {
+      "en": "Which ancient civilization built the Colosseum in Rome?",
+      "ar": "أي حضارة قديمة بنَت المدرج الروماني (الكولوسيوم) في روما؟"
+    },
+    "options": {
+      "en": [
+        "Roman Empire",
+        "Ancient Greeks",
+        "Ottoman Empire",
+        "Byzantine Empire"
+      ],
+      "ar": [
+        "الإمبراطورية الرومانية",
+        "الإغريق القدماء",
+        "الإمبراطورية العثمانية",
+        "الإمبراطورية البيزنطية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Roman Empire",
+      "ar": "الإمبراطورية الرومانية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q135",
+    "question": {
+      "en": "In which year did Christopher Columbus reach the Americas?",
+      "ar": "في أي عام وصل كريستوفر كولومبوس إلى الأمريكتين؟"
+    },
+    "options": {
+      "en": [
+        "1492",
+        "1488",
+        "1512",
+        "1500"
+      ],
+      "ar": [
+        "1492",
+        "1488",
+        "1512",
+        "1500"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1492",
+      "ar": "1492"
+    },
+    "points": 10
+  },
+  {
+    "id": "q136",
+    "question": {
+      "en": "Who was the prime minister of Great Britain during most of World War II?",
+      "ar": "من كان رئيس وزراء بريطانيا العظمى خلال معظم الحرب العالمية الثانية؟"
+    },
+    "options": {
+      "en": [
+        "Neville Chamberlain",
+        "Winston Churchill",
+        "Clement Attlee",
+        "Anthony Eden"
+      ],
+      "ar": [
+        "نيفيل تشامبرلين",
+        "وينستون تشرشل",
+        "كليمنت أتلي",
+        "أنتوني إيدن"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Winston Churchill",
+      "ar": "وينستون تشرشل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q137",
+    "question": {
+      "en": "Which famous wall split Berlin from 1961 to 1989?",
+      "ar": "أي جدار شهير فصل برلين من عام 1961 إلى 1989؟"
+    },
+    "options": {
+      "en": [
+        "Hadrian's Wall",
+        "Berlin Wall",
+        "Western Wall",
+        "Great Wall of China"
+      ],
+      "ar": [
+        "جدار هادريان",
+        "جدار برلين",
+        "حائط البراق",
+        "سور الصين العظيم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Berlin Wall",
+      "ar": "جدار برلين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q138",
+    "question": {
+      "en": "Who was the founder of the Mongol Empire?",
+      "ar": "من هو مؤسس الإمبراطورية المغولية؟"
+    },
+    "options": {
+      "en": [
+        "Kublai Khan",
+        "Tamerlane",
+        "Batu Khan",
+        "Genghis Khan"
+      ],
+      "ar": [
+        "قوبلاي خان",
+        "تيمورلنك",
+        "باتو خان",
+        "جنكيز خان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Genghis Khan",
+      "ar": "جنكيز خان"
+    },
+    "points": 10
+  },
+  {
+    "id": "q139",
+    "question": {
+      "en": "In which year did World War I begin?",
+      "ar": "في أي عام بدأت الحرب العالمية الأولى؟"
+    },
+    "options": {
+      "en": [
+        "1939",
+        "1914",
+        "1918",
+        "1912"
+      ],
+      "ar": [
+        "1939",
+        "1914",
+        "1918",
+        "1912"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1914",
+      "ar": "1914"
+    },
+    "points": 10
+  },
+  {
+    "id": "q140",
+    "question": {
+      "en": "Who painted the Sistine Chapel ceiling?",
+      "ar": "من رسم سقف كنيسة السيستين؟"
+    },
+    "options": {
+      "en": [
+        "Raphael",
+        "Michelangelo",
+        "Donatello",
+        "Leonardo da Vinci"
+      ],
+      "ar": [
+        "رافاييل",
+        "مايكل أنجلو",
+        "دوناتيلو",
+        "ليوناردو دافنشي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Michelangelo",
+      "ar": "مايكل أنجلو"
+    },
+    "points": 10
+  },
+  {
+    "id": "q141",
+    "question": {
+      "en": "Which empire built the Taj Mahal in Agra, India?",
+      "ar": "أي إمبراطورية بنَت تاج محل في أذرة (أغرا) بالهند؟"
+    },
+    "options": {
+      "en": [
+        "British Empire",
+        "Ottoman Empire",
+        "Safavid Empire",
+        "Mughal Empire"
+      ],
+      "ar": [
+        "الإمبراطورية البريطانية",
+        "الإمبراطورية العثمانية",
+        "الدولة الصفوية",
+        "إمبراطورية المغول الهند"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mughal Empire",
+      "ar": "إمبراطورية المغول الهند"
+    },
+    "points": 10
+  },
+  {
+    "id": "q142",
+    "question": {
+      "en": "Who was the first human to travel into space?",
+      "ar": "من كان أول إنسان يسافر إلى الفضاء؟"
+    },
+    "options": {
+      "en": [
+        "Buzz Aldrin",
+        "Yuri Gagarin",
+        "Neil Armstrong",
+        "John Glenn"
+      ],
+      "ar": [
+        "بز الدرن",
+        "يوري غاغارين",
+        "نيل أرمسترونغ",
+        "جون جلين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Yuri Gagarin",
+      "ar": "يوري غاغارين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q143",
+    "question": {
+      "en": "What was the period of cultural and scientific rebirth in Europe called?",
+      "ar": "ماذا سُميت فترة النهضة الثقافية والعلمية في أوروبا؟"
+    },
+    "options": {
+      "en": [
+        "The Enlightenment",
+        "The Industrial Revolution",
+        "The Dark Ages",
+        "The Renaissance"
+      ],
+      "ar": [
+        "عصر الأنوار",
+        "الثورة الصناعية",
+        "العصور المظلمة",
+        "عصر النهضة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "The Renaissance",
+      "ar": "عصر النهضة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q144",
+    "question": {
+      "en": "In which year did the United States declare independence?",
+      "ar": "في أي عام أعلنت الولايات المتحدة استقلالها؟"
+    },
+    "options": {
+      "en": [
+        "1804",
+        "1789",
+        "1776",
+        "1812"
+      ],
+      "ar": [
+        "1804",
+        "1789",
+        "1776",
+        "1812"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1776",
+      "ar": "1776"
+    },
+    "points": 10
+  },
+  {
+    "id": "q145",
+    "question": {
+      "en": "Who was the leader of the Soviet Union during World War II?",
+      "ar": "من كان قائد الاتحاد السوفيتي خلال الحرب العالمية الثانية؟"
+    },
+    "options": {
+      "en": [
+        "Joseph Stalin",
+        "Vladimir Lenin",
+        "Nikita Khrushchev",
+        "Leon Trotsky"
+      ],
+      "ar": [
+        "جوزيف ستالين",
+        "فلاديمير لينين",
+        "نيكيتا خروتشوف",
+        "ليون تروتسكي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Joseph Stalin",
+      "ar": "جوزيف ستالين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q146",
+    "question": {
+      "en": "Which war was fought between the North and South regions in the United States?",
+      "ar": "أي حرب دارت بين الشمال والجنوب في الولايات المتحدة؟"
+    },
+    "options": {
+      "en": [
+        "War of 1812",
+        "Mexican-American War",
+        "American Civil War",
+        "Revolutionary War"
+      ],
+      "ar": [
+        "حرب 1812",
+        "الحرب الأمريكية المكسيكية",
+        "الحرب الأهلية الأمريكية",
+        "حرب الاستقلال"
+      ]
+    },
+    "correctAnswer": {
+      "en": "American Civil War",
+      "ar": "الحرب الأهلية الأمريكية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q147",
+    "question": {
+      "en": "Which ancient city was buried by the eruption of Mount Vesuvius in 79 AD?",
+      "ar": "أي مدينة قديمة دُفنت بسبب ثوران جبل فيزوف عام 79 م؟"
+    },
+    "options": {
+      "en": [
+        "Pompeii",
+        "Carthage",
+        "Troy",
+        "Athens"
+      ],
+      "ar": [
+        "بومبي",
+        "قرطاج",
+        "طروادة",
+        "أثينا"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pompeii",
+      "ar": "بومبي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q148",
+    "question": {
+      "en": "Who wrote the ancient Greek epics 'Iliad' and 'Odyssey'?",
+      "ar": "من كتب الملحمتين الإغريقيتين القديمتين 'الإلياذة' و'الأوديسة'؟"
+    },
+    "options": {
+      "en": [
+        "Socrates",
+        "Homer",
+        "Plato",
+        "Aristotle"
+      ],
+      "ar": [
+        "سقراط",
+        "هوميروس",
+        "أفلاطون",
+        "أرسطو"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Homer",
+      "ar": "هوميروس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q149",
+    "question": {
+      "en": "Which empire was ruled by Suleiman the Magnificent in the 16th century?",
+      "ar": "أي إمبراطورية حكمها سليمان القانوني في القرن السادس عشر؟"
+    },
+    "options": {
+      "en": [
+        "Persian Empire",
+        "Byzantine Empire",
+        "Roman Empire",
+        "Ottoman Empire"
+      ],
+      "ar": [
+        "الإمبراطورية الفارسية",
+        "الإمبراطورية البيزنطية",
+        "الإمبراطورية الرومانية",
+        "الإمبراطورية العثمانية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ottoman Empire",
+      "ar": "الإمبراطورية العثمانية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q150",
+    "question": {
+      "en": "Who was the first woman to win a Nobel Prize?",
+      "ar": "من هي أول امرأة تفوز بجائزة نوبل؟"
+    },
+    "options": {
+      "en": [
+        "Florence Nightingale",
+        "Marie Curie",
+        "Rosalind Franklin",
+        "Ada Lovelace"
+      ],
+      "ar": [
+        "فلورنس نايتينجيل",
+        "ماري كوري",
+        "روزاليند فرانكلين",
+        "آدا لوفليس"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Marie Curie",
+      "ar": "ماري كوري"
+    },
+    "points": 10
+  },
+  {
+    "id": "q151",
+    "question": {
+      "en": "In which year did man first land on the Moon?",
+      "ar": "في أي عام هبط الإنسان لأول مرة على سطح القمر؟"
+    },
+    "options": {
+      "en": [
+        "1969",
+        "1965",
+        "1972",
+        "1975"
+      ],
+      "ar": [
+        "1969",
+        "1965",
+        "1972",
+        "1975"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1969",
+      "ar": "1969"
+    },
+    "points": 10
+  },
+  {
+    "id": "q152",
+    "question": {
+      "en": "Which treaty ended World War I in 1919?",
+      "ar": "أي معاهدة أنهت الحرب العالمية الأولى عام 1919؟"
+    },
+    "options": {
+      "en": [
+        "Treaty of Paris",
+        "Treaty of Versailles",
+        "Treaty of Ghent",
+        "Treaty of Utrecht"
+      ],
+      "ar": [
+        "معاهدة باريس",
+        "معاهدة فرساي",
+        "معاهدة غنت",
+        "معاهدة أوترخت"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Treaty of Versailles",
+      "ar": "معاهدة فرساي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q153",
+    "question": {
+      "en": "Who was the first Emperor of China who built the Terracotta Army?",
+      "ar": "من هو أول إمبراطور للصين الذي بنى جيش التراكوتا (المحاربين الخزفيين)؟"
+    },
+    "options": {
+      "en": [
+        "Han Wudi",
+        "Tang Taizong",
+        "Qin Shi Huang",
+        "Kublai Khan"
+      ],
+      "ar": [
+        "هان وودي",
+        "تانغ تايزونغ",
+        "تشين شي هوانغ",
+        "قوبلاي خان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Qin Shi Huang",
+      "ar": "تشين شي هوانغ"
+    },
+    "points": 10
+  },
+  {
+    "id": "q154",
+    "question": {
+      "en": "Which civilization developed the cuneiform writing system?",
+      "ar": "أي حضارة طورت نظام الكتابة المسمارية؟"
+    },
+    "options": {
+      "en": [
+        "Sumerians",
+        "Phoenicians",
+        "Hittites",
+        "Egyptians"
+      ],
+      "ar": [
+        "السومريون",
+        "الفينيقيون",
+        "الحثيون",
+        "المصريون القدماء"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sumerians",
+      "ar": "السومريون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q155",
+    "question": {
+      "en": "Who led the Salt March in India in 1930 to protest British salt taxation?",
+      "ar": "من قاد مسيرة الملح في الهند عام 1930 للاحتجاج على ضريبة الملح البريطانية؟"
+    },
+    "options": {
+      "en": [
+        "Mahatma Gandhi",
+        "Jawaharlal Nehru",
+        "Sardar Patel",
+        "Subhas Chandra Bose"
+      ],
+      "ar": [
+        "مهاتما غاندي",
+        "جواهر لال نهرو",
+        "سردار باتيل",
+        "سوبهاس شاندرا بوس"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mahatma Gandhi",
+      "ar": "مهاتما غاندي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q156",
+    "question": {
+      "en": "In which city was the League of Nations headquartered?",
+      "ar": "في أي مدينة كان مقر عصبة الأمم؟"
+    },
+    "options": {
+      "en": [
+        "London",
+        "Geneva",
+        "Paris",
+        "New York"
+      ],
+      "ar": [
+        "لندن",
+        "جنيف",
+        "باريس",
+        "نيويورك"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Geneva",
+      "ar": "جنيف"
+    },
+    "points": 10
+  },
+  {
+    "id": "q157",
+    "question": {
+      "en": "What is the most common element in the universe?",
+      "ar": "ما هو العنصر الأكثر شيوعاً في الكون؟"
+    },
+    "options": {
+      "en": [
+        "Helium",
+        "Oxygen",
+        "Hydrogen",
+        "Carbon"
+      ],
+      "ar": [
+        "الهيليوم",
+        "الأكسجين",
+        "الهيدروجين",
+        "الكربون"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Hydrogen",
+      "ar": "الهيدروجين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q158",
+    "question": {
+      "en": "What process do plants use to convert sunlight into food?",
+      "ar": "ما هي العملية التي تستخدمها النباتات لتحويل ضوء الشمس إلى غذاء؟"
+    },
+    "options": {
+      "en": [
+        "Transpiration",
+        "Fermentation",
+        "Photosynthesis",
+        "Respiration"
+      ],
+      "ar": [
+        "النتح",
+        "التخمر",
+        "البناء الضوئي",
+        "التنفس الخلوي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Photosynthesis",
+      "ar": "البناء الضوئي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q159",
+    "question": {
+      "en": "What is the main atmospheric gas that protects Earth from harmful ultraviolet radiation?",
+      "ar": "ما هو الغاز الجوي الرئيسي الذي يحمي الأرض من الأشعة فوق البنفسجية الضارة؟"
+    },
+    "options": {
+      "en": [
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Ozone",
+        "Methane"
+      ],
+      "ar": [
+        "ثاني أكسيد الكربون",
+        "النيتروجين",
+        "الأوزون",
+        "الميثان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ozone",
+      "ar": "الأوزون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q160",
+    "question": {
+      "en": "What is the pH level of pure water at 25°C?",
+      "ar": "ما هو مستوى الرقم الهيدروجيني (pH) للماء النقي عند 25°م؟"
+    },
+    "options": {
+      "en": [
+        "0",
+        "5",
+        "9",
+        "7"
+      ],
+      "ar": [
+        "0",
+        "5",
+        "9",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7"
+    },
+    "points": 10
+  },
+  {
+    "id": "q161",
+    "question": {
+      "en": "Which part of the cell is known as the powerhouse of the cell?",
+      "ar": "أي جزء من الخلية يُعرف بمحطة طاقة الخلية؟"
+    },
+    "options": {
+      "en": [
+        "Endoplasmic Reticulum",
+        "Mitochondria",
+        "Ribosome",
+        "Nucleus"
+      ],
+      "ar": [
+        "الشبكة الاندوبلازمية",
+        "الميتوكوندريا",
+        "الريبوسوم",
+        "النواة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mitochondria",
+      "ar": "الميتوكوندريا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q162",
+    "question": {
+      "en": "What type of rock is formed from cooling magma or lava?",
+      "ar": "ما نوع الصخور التي تتكون من تبريد الماغما أو الحمم البركانية؟"
+    },
+    "options": {
+      "en": [
+        "Sedimentary",
+        "Fossiliferous",
+        "Metamorphic",
+        "Igneous"
+      ],
+      "ar": [
+        "رسوبية",
+        "احفورية",
+        "متحولة",
+        "نارية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Igneous",
+      "ar": "نارية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q163",
+    "question": {
+      "en": "What chemical component gives blood its red color?",
+      "ar": "ما هو المكون الكيميائي الذي يعطي الدم لونه الأحمر؟"
+    },
+    "options": {
+      "en": [
+        "Myoglobin",
+        "Hemoglobin",
+        "Chlorophyll",
+        "Bilirubin"
+      ],
+      "ar": [
+        "المايوجلوبين",
+        "الهيموجلوبين",
+        "الكلوروفيل",
+        "البيليروبين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Hemoglobin",
+      "ar": "الهيموجلوبين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q164",
+    "question": {
+      "en": "What is the absolute zero temperature on the Celsius scale?",
+      "ar": "ما هي درجة الحرارة الصفر المطلق على مقياس سيليسيوس؟"
+    },
+    "options": {
+      "en": [
+        "-459.67°C",
+        "-100°C",
+        "0°C",
+        "-273.15°C"
+      ],
+      "ar": [
+        "-459.67°م",
+        "-100°م",
+        "0°م",
+        "-273.15°م"
+      ]
+    },
+    "correctAnswer": {
+      "en": "-273.15°C",
+      "ar": "-273.15°م"
+    },
+    "points": 10
+  },
+  {
+    "id": "q165",
+    "question": {
+      "en": "Which layer of Earth's atmosphere is closest to the surface?",
+      "ar": "أي طبقة من الغلاف الجوي للأرض هي الأقرب إلى السطح؟"
+    },
+    "options": {
+      "en": [
+        "Mesosphere",
+        "Stratosphere",
+        "Thermosphere",
+        "Troposphere"
+      ],
+      "ar": [
+        "الميزوسفير",
+        "الستراتوسفير",
+        "الثرموسفير",
+        "التروبوسفير"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Troposphere",
+      "ar": "التروبوسفير"
+    },
+    "points": 10
+  },
+  {
+    "id": "q166",
+    "question": {
+      "en": "What instrument is used to measure atmospheric pressure?",
+      "ar": "ما هي الأداة المستخدمة لقياس الضغط الجوي؟"
+    },
+    "options": {
+      "en": [
+        "Barometer",
+        "Anemometer",
+        "Hygrometer",
+        "Thermometer"
+      ],
+      "ar": [
+        "البارومتر",
+        "الأنيمومتر",
+        "الهيجرومتر",
+        "الترمومتر"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Barometer",
+      "ar": "البارومتر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q167",
+    "question": {
+      "en": "What is the fundamental unit of life?",
+      "ar": "ما هي الوحدة الأساسية للحياة؟"
+    },
+    "options": {
+      "en": [
+        "Organ",
+        "Molecule",
+        "Cell",
+        "Tissue"
+      ],
+      "ar": [
+        "العضو",
+        "الجزيء",
+        "الخلية",
+        "النسيج"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cell",
+      "ar": "الخلية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q168",
+    "question": {
+      "en": "Which chemical element has the symbol 'K'?",
+      "ar": "ما هو العنصر الكيميائي الذي يحمل الرمز 'K'؟"
+    },
+    "options": {
+      "en": [
+        "Phosphorus",
+        "Krypton",
+        "Calcium",
+        "Potassium"
+      ],
+      "ar": [
+        "الفوسفور",
+        "الكريبتون",
+        "الكالسيوم",
+        "البوتاسيوم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Potassium",
+      "ar": "البوتاسيوم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q169",
+    "question": {
+      "en": "What force keeps planets in orbit around the Sun?",
+      "ar": "ما هي القوة التي تبقي الكواكب في مدارها حول الشمس؟"
+    },
+    "options": {
+      "en": [
+        "Electromagnetic Force",
+        "Gravity",
+        "Centrifugal Force",
+        "Strong Nuclear Force"
+      ],
+      "ar": [
+        "القوة الكهرومغناطيسية",
+        "الجاذبية",
+        "القوة الطاردة المركزية",
+        "القوة النووية القوية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gravity",
+      "ar": "الجاذبية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q170",
+    "question": {
+      "en": "What is the chemical name for common table salt?",
+      "ar": "ما هو الاسم الكيميائي لملح الطعام الشائع؟"
+    },
+    "options": {
+      "en": [
+        "Sodium Chloride",
+        "Sodium Bicarbonate",
+        "Potassium Chloride",
+        "Calcium Carbonate"
+      ],
+      "ar": [
+        "كلوريد الصوديوم",
+        "بيكربونات الصوديوم",
+        "كلوريد البوتاسيوم",
+        "كربونات الكالسيوم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sodium Chloride",
+      "ar": "كلوريد الصوديوم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q171",
+    "question": {
+      "en": "What type of galaxy is our Milky Way?",
+      "ar": "ما نوع مجرتنا درب التبانة؟"
+    },
+    "options": {
+      "en": [
+        "Irregular Galaxy",
+        "Spiral Galaxy",
+        "Elliptical Galaxy",
+        "Lenticular Galaxy"
+      ],
+      "ar": [
+        "مجرة غير منتظمة",
+        "مجرة حلزونية",
+        "مجرة إهليلجية",
+        "مجرة عدسية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Spiral Galaxy",
+      "ar": "مجرة حلزونية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q172",
+    "question": {
+      "en": "Which biological macromolecule carries genetic information?",
+      "ar": "أي جزيء أحيائي كبير يحمل المعلومات الوراثية؟"
+    },
+    "options": {
+      "en": [
+        "Proteins",
+        "Carbohydrates",
+        "DNA",
+        "Lipids"
+      ],
+      "ar": [
+        "البروتينات",
+        "السكريات",
+        "الحمض النووي (DNA)",
+        "الدهون"
+      ]
+    },
+    "correctAnswer": {
+      "en": "DNA",
+      "ar": "الحمض النووي (DNA)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q173",
+    "question": {
+      "en": "What is the scientific name for the human species?",
+      "ar": "ما هو الاسم العلمي للنوع البشري؟"
+    },
+    "options": {
+      "en": [
+        "Homo sapiens",
+        "Neanderthal",
+        "Homo erectus",
+        "Homo habilis"
+      ],
+      "ar": [
+        "إنسان عاقل (Homo sapiens)",
+        "النياندرتال",
+        "الإنسان المنتصب",
+        "الإنسان الماهر"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Homo sapiens",
+      "ar": "إنسان عاقل (Homo sapiens)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q174",
+    "question": {
+      "en": "What state of matter has a definite volume but no definite shape?",
+      "ar": "ما هي حالة المادة التي لها حجم محدد ولكن ليس لها شكل محدد؟"
+    },
+    "options": {
+      "en": [
+        "Gas",
+        "Plasma",
+        "Solid",
+        "Liquid"
+      ],
+      "ar": [
+        "الغازية",
+        "البلازما",
+        "الصلبة",
+        "السائلة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Liquid",
+      "ar": "السائلة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q175",
+    "question": {
+      "en": "Which scale is used to measure earthquake intensity?",
+      "ar": "أي مقياس يُستخدم لقياس قوة وحجم الزلازل؟"
+    },
+    "options": {
+      "en": [
+        "Mohs Scale",
+        "Kelvin Scale",
+        "Richter Scale",
+        "Beaufort Scale"
+      ],
+      "ar": [
+        "مقياس موهس",
+        "مقياس كلفن",
+        "مقياس ريختر",
+        "مقياس بوفورت"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Richter Scale",
+      "ar": "مقياس ريختر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q176",
+    "question": {
+      "en": "What element is present in all organic molecules?",
+      "ar": "ما هو العنصر الموجود في جميع الجزيئات العضوية؟"
+    },
+    "options": {
+      "en": [
+        "Nitrogen",
+        "Sulfur",
+        "Iron",
+        "Carbon"
+      ],
+      "ar": [
+        "النيتروجين",
+        "الكبريت",
+        "الحديد",
+        "الكربون"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Carbon",
+      "ar": "الكربون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q177",
+    "question": {
+      "en": "What phenomenon causes the sky to appear blue?",
+      "ar": "ما هي الظاهرة التي تجعل السماء تبدو زرقاء؟"
+    },
+    "options": {
+      "en": [
+        "Rayleigh Scattering",
+        "Diffraction",
+        "Total Internal Reflection",
+        "Refraction"
+      ],
+      "ar": [
+        "تشتت رايلي",
+        "الحيود",
+        "الانعكاس الكلي الداخلي",
+        "الانكسار"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rayleigh Scattering",
+      "ar": "تشتت رايلي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q178",
+    "question": {
+      "en": "Which organelle is responsible for protein synthesis?",
+      "ar": "أي عضيّة مسؤولة عن تصنيع البروتين في الخلية؟"
+    },
+    "options": {
+      "en": [
+        "Vacuole",
+        "Golgi Apparatus",
+        "Lysosome",
+        "Ribosome"
+      ],
+      "ar": [
+        "الفجوة العصاريه",
+        "جهاز جولجي",
+        "الليسوسوم",
+        "الريبوسوم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ribosome",
+      "ar": "الريبوسوم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q179",
+    "question": {
+      "en": "What is the chemical formula for carbon dioxide?",
+      "ar": "ما هي الصيغة الكيميائية لثاني أكسيد الكربون؟"
+    },
+    "options": {
+      "en": [
+        "H2CO3",
+        "C2O",
+        "CO2",
+        "CO"
+      ],
+      "ar": [
+        "H2CO3",
+        "C2O",
+        "CO2",
+        "CO"
+      ]
+    },
+    "correctAnswer": {
+      "en": "CO2",
+      "ar": "CO2"
+    },
+    "points": 10
+  },
+  {
+    "id": "q180",
+    "question": {
+      "en": "Which branch of science studies fungi?",
+      "ar": "أي فرع من فروع العلوم يدرس الفطريات؟"
+    },
+    "options": {
+      "en": [
+        "Virology",
+        "Zoology",
+        "Mycology",
+        "Botany"
+      ],
+      "ar": [
+        "علم الفيروسات",
+        "علم الحيوان",
+        "علم الفطريات",
+        "علم النبات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mycology",
+      "ar": "علم الفطريات"
+    },
+    "points": 10
+  },
+  {
+    "id": "q181",
+    "question": {
+      "en": "What metal is liquid at room temperature?",
+      "ar": "ما هو المعدن الذي يكون سائلاً في درجة حرارة الغرفة؟"
+    },
+    "options": {
+      "en": [
+        "Tin",
+        "Lead",
+        "Gallium",
+        "Mercury"
+      ],
+      "ar": [
+        "القصدير",
+        "الرصاص",
+        "الغاليوم",
+        "الزئبق"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "الزئبق"
+    },
+    "points": 10
+  },
+  {
+    "id": "q182",
+    "question": {
+      "en": "What is the primary function of white blood cells?",
+      "ar": "ما هي الوظيفة الأساسية لخلايا الدم البيضاء؟"
+    },
+    "options": {
+      "en": [
+        "Clotting blood",
+        "Fighting infections and pathogens",
+        "Carrying oxygen",
+        "Storing nutrients"
+      ],
+      "ar": [
+        "تجلط الدم",
+        "محاربة العدوى والأجسام الغريبة",
+        "نقل الأكسجين",
+        "تخزين المواد المغذية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Fighting infections and pathogens",
+      "ar": "محاربة العدوى والأجسام الغريبة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q183",
+    "question": {
+      "en": "What is the unit of electrical resistance?",
+      "ar": "ما هي وحدة المقاومة الكهربائية؟"
+    },
+    "options": {
+      "en": [
+        "Volt",
+        "Ampere",
+        "Watt",
+        "Ohm"
+      ],
+      "ar": [
+        "فولت",
+        "أمبير",
+        "واط",
+        "أوم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ohm",
+      "ar": "أوم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q184",
+    "question": {
+      "en": "Which gas is emitted during anaerobic respiration in yeast?",
+      "ar": "أي غاز ينبعث أثناء التنفس اللاهوائي في الخميرة؟"
+    },
+    "options": {
+      "en": [
+        "Oxygen",
+        "Methane",
+        "Carbon Dioxide",
+        "Nitrogen"
+      ],
+      "ar": [
+        "الأكسجين",
+        "الميثان",
+        "ثاني أكسيد الكربون",
+        "النيتروجين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Carbon Dioxide",
+      "ar": "ثاني أكسيد الكربون"
+    },
+    "points": 10
+  },
+  {
+    "id": "q185",
+    "question": {
+      "en": "What is the value of Pi rounded to two decimal places?",
+      "ar": "ما هي قيمة باي (π) مقربة لإلكترونين عشريين؟"
+    },
+    "options": {
+      "en": [
+        "3.16",
+        "3.12",
+        "3.18",
+        "3.14"
+      ],
+      "ar": [
+        "3.16",
+        "3.12",
+        "3.18",
+        "3.14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3.14",
+      "ar": "3.14"
+    },
+    "points": 10
+  },
+  {
+    "id": "q186",
+    "question": {
+      "en": "What is the sum of interior angles in a triangle?",
+      "ar": "ما هو مجموع الزوايا الداخلية للمثلث؟"
+    },
+    "options": {
+      "en": [
+        "180 degrees",
+        "360 degrees",
+        "270 degrees",
+        "90 degrees"
+      ],
+      "ar": [
+        "180 درجة",
+        "360 درجة",
+        "270 درجة",
+        "90 درجة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "180 degrees",
+      "ar": "180 درجة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q187",
+    "question": {
+      "en": "What is 15 multiplied by 8?",
+      "ar": "ما هو حاصل ضرب 15 في 8؟"
+    },
+    "options": {
+      "en": [
+        "125",
+        "120",
+        "110",
+        "130"
+      ],
+      "ar": [
+        "125",
+        "120",
+        "110",
+        "130"
+      ]
+    },
+    "correctAnswer": {
+      "en": "120",
+      "ar": "120"
+    },
+    "points": 10
+  },
+  {
+    "id": "q188",
+    "question": {
+      "en": "What is 2 raised to the power of 5?",
+      "ar": "ما هو الناتج من 2 أس 5؟"
+    },
+    "options": {
+      "en": [
+        "64",
+        "32",
+        "25",
+        "16"
+      ],
+      "ar": [
+        "64",
+        "32",
+        "25",
+        "16"
+      ]
+    },
+    "correctAnswer": {
+      "en": "32",
+      "ar": "32"
+    },
+    "points": 10
+  },
+  {
+    "id": "q189",
+    "question": {
+      "en": "What is the perimeter of a square with a side length of 6 cm?",
+      "ar": "ما هو محيط مربع طول ضلعه 6 سم؟"
+    },
+    "options": {
+      "en": [
+        "24 cm",
+        "36 cm",
+        "12 cm",
+        "18 cm"
+      ],
+      "ar": [
+        "24 سم",
+        "36 سم",
+        "12 سم",
+        "18 سم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "24 cm",
+      "ar": "24 سم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q190",
+    "question": {
+      "en": "If x + 7 = 15, what is the value of x?",
+      "ar": "إذا كانت س + 7 = 15، فما هي قيمة س؟"
+    },
+    "options": {
+      "en": [
+        "9",
+        "7",
+        "6",
+        "8"
+      ],
+      "ar": [
+        "9",
+        "7",
+        "6",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8"
+    },
+    "points": 10
+  },
+  {
+    "id": "q191",
+    "question": {
+      "en": "What is the median of the dataset [3, 7, 9, 12, 15]?",
+      "ar": "ما هو الوسيط لمجموعة البيانات [3، 7، 9، 12، 15]؟"
+    },
+    "options": {
+      "en": [
+        "9",
+        "10",
+        "8",
+        "7"
+      ],
+      "ar": [
+        "9",
+        "10",
+        "8",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "9",
+      "ar": "9"
+    },
+    "points": 10
+  },
+  {
+    "id": "q192",
+    "question": {
+      "en": "What is the formula for the area of a circle?",
+      "ar": "ما هي قانون مساحة الدائرة؟"
+    },
+    "options": {
+      "en": [
+        "½πr²",
+        "πr²",
+        "2πr",
+        "πd"
+      ],
+      "ar": [
+        "½πr²",
+        "πr²",
+        "2πr",
+        "πd"
+      ]
+    },
+    "correctAnswer": {
+      "en": "πr²",
+      "ar": "πr²"
+    },
+    "points": 10
+  },
+  {
+    "id": "q193",
+    "question": {
+      "en": "What is 100 divided by 4?",
+      "ar": "ما هو حاصل قسمة 100 على 4؟"
+    },
+    "options": {
+      "en": [
+        "30",
+        "20",
+        "25",
+        "15"
+      ],
+      "ar": [
+        "30",
+        "20",
+        "25",
+        "15"
+      ]
+    },
+    "correctAnswer": {
+      "en": "25",
+      "ar": "25"
+    },
+    "points": 10
+  },
+  {
+    "id": "q194",
+    "question": {
+      "en": "What is the derivative of x² with respect to x?",
+      "ar": "ما هي مشتقة س² بالنسبة إلى س؟"
+    },
+    "options": {
+      "en": [
+        "x",
+        "x³",
+        "2",
+        "2x"
+      ],
+      "ar": [
+        "س",
+        "س³",
+        "2",
+        "2س"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2x",
+      "ar": "2س"
+    },
+    "points": 10
+  },
+  {
+    "id": "q195",
+    "question": {
+      "en": "What is the hypotenuse of a right triangle with legs of length 3 and 4?",
+      "ar": "ما هو طول وتر مثلث قائم الزاوية طول ضلعيه 3 و 4؟"
+    },
+    "options": {
+      "en": [
+        "6",
+        "7",
+        "5",
+        "4.5"
+      ],
+      "ar": [
+        "6",
+        "7",
+        "5",
+        "4.5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5"
+    },
+    "points": 10
+  },
+  {
+    "id": "q196",
+    "question": {
+      "en": "What is 25 percent of 200?",
+      "ar": "ما هو 25 بالمئة من 200؟"
+    },
+    "options": {
+      "en": [
+        "75",
+        "25",
+        "100",
+        "50"
+      ],
+      "ar": [
+        "75",
+        "25",
+        "100",
+        "50"
+      ]
+    },
+    "correctAnswer": {
+      "en": "50",
+      "ar": "50"
+    },
+    "points": 10
+  },
+  {
+    "id": "q197",
+    "question": {
+      "en": "What is the absolute value of -42?",
+      "ar": "ما هي القيمة المطلقة للعدد -42؟"
+    },
+    "options": {
+      "en": [
+        "-42",
+        "0",
+        "1",
+        "42"
+      ],
+      "ar": [
+        "-42",
+        "0",
+        "1",
+        "42"
+      ]
+    },
+    "correctAnswer": {
+      "en": "42",
+      "ar": "42"
+    },
+    "points": 10
+  },
+  {
+    "id": "q198",
+    "question": {
+      "en": "How many sides does a regular octagon have?",
+      "ar": "كم عدد أضلاع الثماني المنتظم؟"
+    },
+    "options": {
+      "en": [
+        "12",
+        "6",
+        "10",
+        "8"
+      ],
+      "ar": [
+        "12",
+        "6",
+        "10",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8"
+    },
+    "points": 10
+  },
+  {
+    "id": "q199",
+    "question": {
+      "en": "What is 7 factorial (7!) divided by 6 factorial (6!)?",
+      "ar": "ما هو حاصل قسمة مفكوك 7 (7!) على مفكوك 6 (6!)؟"
+    },
+    "options": {
+      "en": [
+        "7",
+        "42",
+        "6",
+        "1"
+      ],
+      "ar": [
+        "7",
+        "42",
+        "6",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7"
+    },
+    "points": 10
+  },
+  {
+    "id": "q200",
+    "question": {
+      "en": "What is the value of log10(1000)?",
+      "ar": "ما هي قيمة لوغاريتم (1000) للأساس 10؟"
+    },
+    "options": {
+      "en": [
+        "10",
+        "100",
+        "2",
+        "3"
+      ],
+      "ar": [
+        "10",
+        "100",
+        "2",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3"
+    },
+    "points": 10
+  },
+  {
+    "id": "q201",
+    "question": {
+      "en": "What is the sum of angles in a quadrilateral?",
+      "ar": "ما هو مجموع الزوايا في الشكل الرباعي؟"
+    },
+    "options": {
+      "en": [
+        "540 degrees",
+        "180 degrees",
+        "270 degrees",
+        "360 degrees"
+      ],
+      "ar": [
+        "540 درجة",
+        "180 درجة",
+        "270 درجة",
+        "360 درجة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "360 degrees",
+      "ar": "360 درجة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q202",
+    "question": {
+      "en": "What is the smallest positive integer divisible by both 4 and 6?",
+      "ar": "ما هو أصغر عدد صحيح إيجابي يكسر على 4 و 6 معاً (المضاعف المشترك الأصغر)؟"
+    },
+    "options": {
+      "en": [
+        "12",
+        "24",
+        "18",
+        "8"
+      ],
+      "ar": [
+        "12",
+        "24",
+        "18",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12"
+    },
+    "points": 10
+  },
+  {
+    "id": "q203",
+    "question": {
+      "en": "If a die is rolled, what is the probability of getting an even number?",
+      "ar": "إذا تما إلقاء حجر نرد، فما احتمال الحصول على عدد زوجي؟"
+    },
+    "options": {
+      "en": [
+        "1/3",
+        "1/6",
+        "2/3",
+        "1/2"
+      ],
+      "ar": [
+        "1/3",
+        "1/6",
+        "2/3",
+        "1/2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1/2",
+      "ar": "1/2"
+    },
+    "points": 10
+  },
+  {
+    "id": "q204",
+    "question": {
+      "en": "What is the slope of a horizontal line?",
+      "ar": "ما هو ميل الخط المستقيم الأفقي؟"
+    },
+    "options": {
+      "en": [
+        "1",
+        "Undefined",
+        "0",
+        "Infinite"
+      ],
+      "ar": [
+        "1",
+        "غير معرف",
+        "0",
+        "ما لا نهاية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "0",
+      "ar": "0"
+    },
+    "points": 10
+  },
+  {
+    "id": "q205",
+    "question": {
+      "en": "What is 9 squared?",
+      "ar": "ما هو مربع العدد 9؟"
+    },
+    "options": {
+      "en": [
+        "72",
+        "81",
+        "18",
+        "99"
+      ],
+      "ar": [
+        "72",
+        "81",
+        "18",
+        "99"
+      ]
+    },
+    "correctAnswer": {
+      "en": "81",
+      "ar": "81"
+    },
+    "points": 10
+  },
+  {
+    "id": "q206",
+    "question": {
+      "en": "What is the average of 10, 20, 30, and 40?",
+      "ar": "ما هو المتوسط الحسابي للأعداد 10، 20، 30، و 40؟"
+    },
+    "options": {
+      "en": [
+        "30",
+        "20",
+        "35",
+        "25"
+      ],
+      "ar": [
+        "30",
+        "20",
+        "35",
+        "25"
+      ]
+    },
+    "correctAnswer": {
+      "en": "25",
+      "ar": "25"
+    },
+    "points": 10
+  },
+  {
+    "id": "q207",
+    "question": {
+      "en": "What is the golden ratio approximately equal to?",
+      "ar": "ما هي النسبة الذهبية تقريباً؟"
+    },
+    "options": {
+      "en": [
+        "3.141",
+        "1.618",
+        "2.718",
+        "1.414"
+      ],
+      "ar": [
+        "3.141",
+        "1.618",
+        "2.718",
+        "1.414"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1.618",
+      "ar": "1.618"
+    },
+    "points": 10
+  },
+  {
+    "id": "q208",
+    "question": {
+      "en": "What is the cosine of 0 degrees?",
+      "ar": "ما هو جيب التمام (جتا) للزاوية 0 درجة؟"
+    },
+    "options": {
+      "en": [
+        "0",
+        "1",
+        "0.5",
+        "-1"
+      ],
+      "ar": [
+        "0",
+        "1",
+        "0.5",
+        "-1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1"
+    },
+    "points": 10
+  },
+  {
+    "id": "q209",
+    "question": {
+      "en": "How many vertices does a cube have?",
+      "ar": "كم عدد رؤوس المكعب؟"
+    },
+    "options": {
+      "en": [
+        "12",
+        "6",
+        "4",
+        "8"
+      ],
+      "ar": [
+        "12",
+        "6",
+        "4",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8"
+    },
+    "points": 10
+  },
+  {
+    "id": "q210",
+    "question": {
+      "en": "What is the value of 3³?",
+      "ar": "ما هي قيمة 3 أس 3؟"
+    },
+    "options": {
+      "en": [
+        "81",
+        "9",
+        "27",
+        "18"
+      ],
+      "ar": [
+        "81",
+        "9",
+        "27",
+        "18"
+      ]
+    },
+    "correctAnswer": {
+      "en": "27",
+      "ar": "27"
+    },
+    "points": 10
+  },
+  {
+    "id": "q211",
+    "question": {
+      "en": "What is the binary representation of the decimal number 5?",
+      "ar": "ما هو التمثيل الثنائي للعدد العشري 5؟"
+    },
+    "options": {
+      "en": [
+        "110",
+        "101",
+        "011",
+        "100"
+      ],
+      "ar": [
+        "110",
+        "101",
+        "011",
+        "100"
+      ]
+    },
+    "correctAnswer": {
+      "en": "101",
+      "ar": "101"
+    },
+    "points": 10
+  },
+  {
+    "id": "q212",
+    "question": {
+      "en": "What is the volume of a cube with edge length 4 cm?",
+      "ar": "ما هو حجم مكعب طول ضلعه 4 سم؟"
+    },
+    "options": {
+      "en": [
+        "16 cm³",
+        "64 cm³",
+        "48 cm³",
+        "32 cm³"
+      ],
+      "ar": [
+        "16 سم³",
+        "64 سم³",
+        "48 سم³",
+        "32 سم³"
+      ]
+    },
+    "correctAnswer": {
+      "en": "64 cm³",
+      "ar": "64 سم³"
+    },
+    "points": 10
+  },
+  {
+    "id": "q213",
+    "question": {
+      "en": "What type of triangle has all three sides of equal length?",
+      "ar": "ما نوع المثلث الذي تكون أضلاعه الثلاثة متساوية في الطول؟"
+    },
+    "options": {
+      "en": [
+        "Scalene",
+        "Equilateral",
+        "Right-angled",
+        "Isosceles"
+      ],
+      "ar": [
+        "مختلف الأضلاع",
+        "متساوي الأضلاع",
+        "قائم الزاوية",
+        "متساوي الساقين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Equilateral",
+      "ar": "متساوي الأضلاع"
+    },
+    "points": 10
+  },
+  {
+    "id": "q214",
+    "question": {
+      "en": "Which number comes next in the sequence: 2, 4, 8, 16, ...?",
+      "ar": "ما هو العدد التالي في المتتالية: 2، 4، 8، 16، ...؟"
+    },
+    "options": {
+      "en": [
+        "32",
+        "20",
+        "24",
+        "64"
+      ],
+      "ar": [
+        "32",
+        "20",
+        "24",
+        "64"
+      ]
+    },
+    "correctAnswer": {
+      "en": "32",
+      "ar": "32"
+    },
+    "points": 10
+  },
+  {
+    "id": "q215",
+    "question": {
+      "en": "Which word does not belong with the others: Apple, Banana, Potato, Orange?",
+      "ar": "أي كلمة لا تنتمي إلى المجموعة: تفاح، موز، بطاطس، برتقال؟"
+    },
+    "options": {
+      "en": [
+        "Orange",
+        "Apple",
+        "Banana",
+        "Potato"
+      ],
+      "ar": [
+        "برتقال",
+        "تفاح",
+        "موز",
+        "بطاطس"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Potato",
+      "ar": "بطاطس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q216",
+    "question": {
+      "en": "If ALL BLOOPS ARE FLOOPS and ALL FLOOPS ARE GLOOPS, then are ALL BLOOPS GLOOPS?",
+      "ar": "إذا كانت جميع 'أ' تنتمي إلى 'ب' وجميع 'ب' تنتمي إلى 'ج'، فهل جميع 'أ' تنتمي إلى 'ج'؟"
+    },
+    "options": {
+      "en": [
+        "Insufficient info",
+        "Yes, always",
+        "Sometimes",
+        "No, never"
+      ],
+      "ar": [
+        "معلومات غير كافية",
+        "نعم، دائماً",
+        "أحياناً",
+        "لا، أبداً"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Yes, always",
+      "ar": "نعم، دائماً"
+    },
+    "points": 10
+  },
+  {
+    "id": "q217",
+    "question": {
+      "en": "Find the missing number: 3, 6, 11, 18, 27, __?",
+      "ar": "أوجد الرقم المفقود: 3، 6، 11، 18، 27، __؟"
+    },
+    "options": {
+      "en": [
+        "36",
+        "40",
+        "38",
+        "35"
+      ],
+      "ar": [
+        "36",
+        "40",
+        "38",
+        "35"
+      ]
+    },
+    "correctAnswer": {
+      "en": "38",
+      "ar": "38"
+    },
+    "points": 10
+  },
+  {
+    "id": "q218",
+    "question": {
+      "en": "What is the odd one out: Circle, Triangle, Cube, Square?",
+      "ar": "ما هو الشكل الغريب في المجموع التالية: دائرة، مثلث، مكعب، مربع؟"
+    },
+    "options": {
+      "en": [
+        "Circle",
+        "Square",
+        "Cube",
+        "Triangle"
+      ],
+      "ar": [
+        "دائرة",
+        "مربع",
+        "مكعب",
+        "مثلث"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cube",
+      "ar": "مكعب"
+    },
+    "points": 10
+  },
+  {
+    "id": "q219",
+    "question": {
+      "en": "Which number comes next: 1, 1, 2, 3, 5, 8, 13, __?",
+      "ar": "ما هو الرقم التالي في متتالية فيبوناتشي: 1، 1، 2، 3، 5، 8، 13، __؟"
+    },
+    "options": {
+      "en": [
+        "20",
+        "21",
+        "18",
+        "22"
+      ],
+      "ar": [
+        "20",
+        "21",
+        "18",
+        "22"
+      ]
+    },
+    "correctAnswer": {
+      "en": "21",
+      "ar": "21"
+    },
+    "points": 10
+  },
+  {
+    "id": "q220",
+    "question": {
+      "en": "If 5 cats can catch 5 mice in 5 minutes, how many cats are needed to catch 100 mice in 100 minutes?",
+      "ar": "إذا كان 5 قطط تستطيع صيد 5 فيران في 5 دقائق، فكم قطة تلزم لصيد 100 فأر في 100 دقيقة؟"
+    },
+    "options": {
+      "en": [
+        "50",
+        "5",
+        "20",
+        "100"
+      ],
+      "ar": [
+        "50",
+        "5",
+        "20",
+        "100"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5"
+    },
+    "points": 10
+  },
+  {
+    "id": "q221",
+    "question": {
+      "en": "Rearrange the letters 'LISTEN' to spell another common English word:",
+      "ar": "إعادة ترتيب أحرف الكلمة الإنجليزية 'LISTEN' لإنشاء كلمة إنجليزية أخرى:"
+    },
+    "options": {
+      "en": [
+        "TINSEL",
+        "SILENT",
+        "All of the above",
+        "ENLIST"
+      ],
+      "ar": [
+        "TINSEL",
+        "SILENT",
+        "كل ما سبق",
+        "ENLIST"
+      ]
+    },
+    "correctAnswer": {
+      "en": "All of the above",
+      "ar": "كل ما سبق"
+    },
+    "points": 10
+  },
+  {
+    "id": "q222",
+    "question": {
+      "en": "What comes next in the pattern: O, T, T, F, F, S, S, E, __?",
+      "ar": "ما هو الحرف التالي في النمط المعبر عن الأرقام (One, Two, Three...): O, T, T, F, F, S, S, E, __؟"
+    },
+    "options": {
+      "en": [
+        "O",
+        "T",
+        "S",
+        "N"
+      ],
+      "ar": [
+        "O",
+        "T",
+        "S",
+        "N"
+      ]
+    },
+    "correctAnswer": {
+      "en": "N",
+      "ar": "N"
+    },
+    "points": 10
+  },
+  {
+    "id": "q223",
+    "question": {
+      "en": "Some months have 30 days, some have 31. How many months have 28 days?",
+      "ar": "بعض الأشهر تحتوي على 30 يوماً، وبعضها 31. كم شهراً يحتوي على 28 يوماً؟"
+    },
+    "options": {
+      "en": [
+        "12",
+        "0",
+        "1",
+        "6"
+      ],
+      "ar": [
+        "12",
+        "0",
+        "1",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12"
+    },
+    "points": 10
+  },
+  {
+    "id": "q224",
+    "question": {
+      "en": "A doctor gives you 3 pills and tells you to take one every half hour. How long do they last?",
+      "ar": "أعطاك الطبيب 3 حبات دواء وقال لك أن تأخذ حبة كل نصف ساعة. كم من الوقت تستغرق؟"
+    },
+    "options": {
+      "en": [
+        "2 hours",
+        "1.5 hours",
+        "45 minutes",
+        "1 hour"
+      ],
+      "ar": [
+        "ساعتان",
+        "ساعة ونصف",
+        "45 دقيقة",
+        "ساعة واحدة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1 hour",
+      "ar": "ساعة واحدة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q225",
+    "question": {
+      "en": "Which number comes next: 100, 95, 85, 70, 50, __?",
+      "ar": "ما هو الرقم التالي في النمط: 100، 95، 85، 70، 50، __؟"
+    },
+    "options": {
+      "en": [
+        "20",
+        "35",
+        "25",
+        "30"
+      ],
+      "ar": [
+        "20",
+        "35",
+        "25",
+        "30"
+      ]
+    },
+    "correctAnswer": {
+      "en": "25",
+      "ar": "25"
+    },
+    "points": 10
+  },
+  {
+    "id": "q226",
+    "question": {
+      "en": "If Red = 3, Blue = 4, Yellow = 6, what does Green equal?",
+      "ar": "إذا كان أحمر = 3، أزرق = 4، أصفر = 4، فماذا يمثل أخضر (Green - عدد الحروف)?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "6",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "4",
+        "6",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5"
+    },
+    "points": 10
+  },
+  {
+    "id": "q227",
+    "question": {
+      "en": "Mary's father has five daughters: Nana, Nene, Nini, Nono. What is the fifth daughter's name?",
+      "ar": "والد ماري لديه خمس بنات: نانا، نيني، نيني، نونو. ما اسم البنت الخامسة؟"
+    },
+    "options": {
+      "en": [
+        "Mary",
+        "Nunu",
+        "Nany",
+        "Nina"
+      ],
+      "ar": [
+        "ماري",
+        "نونو",
+        "ناني",
+        "نينا"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mary",
+      "ar": "ماري"
+    },
+    "points": 10
+  },
+  {
+    "id": "q228",
+    "question": {
+      "en": "What gets wetter the more it dries?",
+      "ar": "ما هو الشيء الذي يبتل أكثر كلما جفف أكثر؟"
+    },
+    "options": {
+      "en": [
+        "Water",
+        "A towel",
+        "Rain",
+        "A sponge"
+      ],
+      "ar": [
+        "الماء",
+        "المنشفة",
+        "المطر",
+        "الأسفنجة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "A towel",
+      "ar": "المنشفة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q229",
+    "question": {
+      "en": "What has hands but cannot clap?",
+      "ar": "ما هو الشيء الذي يملك عقارب (أيدٍ) ولكنه لا يستطيع التصفيق؟"
+    },
+    "options": {
+      "en": [
+        "A gloves",
+        "A shadow",
+        "A clock",
+        "A robot"
+      ],
+      "ar": [
+        "القفازات",
+        "الظل",
+        "الساعة",
+        "الروبوت"
+      ]
+    },
+    "correctAnswer": {
+      "en": "A clock",
+      "ar": "الساعة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q230",
+    "question": {
+      "en": "If you overtake the person in 2nd place in a race, what place are you in?",
+      "ar": "إذا تجاوزت الشخص المتواجد في المركز الثاني في سباق، ففي أي مركز أصبحت؟"
+    },
+    "options": {
+      "en": [
+        "3rd place",
+        "2nd place",
+        "Last place",
+        "1st place"
+      ],
+      "ar": [
+        "المركز الثالث",
+        "المركز الثاني",
+        "المركز الأخير",
+        "المركز الأول"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2nd place",
+      "ar": "المركز الثاني"
+    },
+    "points": 10
+  },
+  {
+    "id": "q231",
+    "question": {
+      "en": "Which letter comes next in the sequence: A, C, E, G, __?",
+      "ar": "ما هو الحرف التالي في المتتالية: A, C, E, G, __؟"
+    },
+    "options": {
+      "en": [
+        "J",
+        "H",
+        "K",
+        "I"
+      ],
+      "ar": [
+        "J",
+        "H",
+        "K",
+        "I"
+      ]
+    },
+    "correctAnswer": {
+      "en": "I",
+      "ar": "I"
+    },
+    "points": 10
+  },
+  {
+    "id": "q232",
+    "question": {
+      "en": "How many 9s are there between 1 and 100?",
+      "ar": "كم عدد الأرقام 9 الموجودة بين العدد 1 والعدد 100؟"
+    },
+    "options": {
+      "en": [
+        "10",
+        "11",
+        "20",
+        "19"
+      ],
+      "ar": [
+        "10",
+        "11",
+        "20",
+        "19"
+      ]
+    },
+    "correctAnswer": {
+      "en": "20",
+      "ar": "20"
+    },
+    "points": 10
+  },
+  {
+    "id": "q233",
+    "question": {
+      "en": "Which number completes the analogy: 4 is to 16 as 7 is to __?",
+      "ar": "أي رقم يكمل التناظر: 4 بالنسبة لـ 16 مثل 7 بالنسبة لـ __؟"
+    },
+    "options": {
+      "en": [
+        "35",
+        "49",
+        "42",
+        "28"
+      ],
+      "ar": [
+        "35",
+        "49",
+        "42",
+        "28"
+      ]
+    },
+    "correctAnswer": {
+      "en": "49",
+      "ar": "49"
+    },
+    "points": 10
+  },
+  {
+    "id": "q234",
+    "question": {
+      "en": "What has a head and a tail but no body?",
+      "ar": "ما هو الشيء الذي يملك رأساً وذيل (وجه وظهر) ولكن ليس له جسد؟"
+    },
+    "options": {
+      "en": [
+        "A needle",
+        "A coin",
+        "A snake",
+        "A kite"
+      ],
+      "ar": [
+        "الإبرة",
+        "العملة المعدنية",
+        "الأفعى",
+        "الطائرة الورقية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "A coin",
+      "ar": "العملة المعدنية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q235",
+    "question": {
+      "en": "What can travel around the world while staying in a corner?",
+      "ar": "ما هو الشيء الذي يسافر حول العالم ويبقى ثابتاً في الزاوية؟"
+    },
+    "options": {
+      "en": [
+        "A postcard",
+        "A stamp",
+        "An airplane",
+        "A satellite"
+      ],
+      "ar": [
+        "البطاقة البريدية",
+        "طابع البريد",
+        "الطائرة",
+        "القمر الصناعي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "A stamp",
+      "ar": "طابع البريد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q236",
+    "question": {
+      "en": "If tomorrow is Monday, what day was yesterday?",
+      "ar": "إذا كان الغد يوم الاثنين، فما هو اليوم الذي كان البارحة؟"
+    },
+    "options": {
+      "en": [
+        "Saturday",
+        "Tuesday",
+        "Sunday",
+        "Friday"
+      ],
+      "ar": [
+        "السبت",
+        "الثلاثاء",
+        "الأحد",
+        "الجمعة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Saturday",
+      "ar": "السبت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q237",
+    "question": {
+      "en": "Complete the sequence: 81, 64, 49, 36, 25, __?",
+      "ar": "أكمل المتتالية التربيعية: 81، 64، 49، 36، 25، __؟"
+    },
+    "options": {
+      "en": [
+        "20",
+        "15",
+        "16",
+        "12"
+      ],
+      "ar": [
+        "20",
+        "15",
+        "16",
+        "12"
+      ]
+    },
+    "correctAnswer": {
+      "en": "16",
+      "ar": "16"
+    },
+    "points": 10
+  },
+  {
+    "id": "q238",
+    "question": {
+      "en": "What belongs to you, but other people use it more than you do?",
+      "ar": "ما هو الشيء الذي يخصك ولكن الناس يستخدمونه أكثر منك؟"
+    },
+    "options": {
+      "en": [
+        "Your car",
+        "Your phone",
+        "Your name",
+        "Your money"
+      ],
+      "ar": [
+        "سيارتك",
+        "هاتفك",
+        "اسمك",
+        "مالك"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Your name",
+      "ar": "اسمك"
+    },
+    "points": 10
+  },
+  {
+    "id": "q239",
+    "question": {
+      "en": "What has many keys but can't open a single lock?",
+      "ar": "ما هو الشيء الذي يحتوي على مفاتيح كثيرة ولكنه لا يفتح قفلاً واحداً؟"
+    },
+    "options": {
+      "en": [
+        "A map",
+        "A key ring",
+        "A safe",
+        "A piano"
+      ],
+      "ar": [
+        "الخريطة",
+        "ميدالية المفاتيح",
+        "الخزنة",
+        "البيانو"
+      ]
+    },
+    "correctAnswer": {
+      "en": "A piano",
+      "ar": "البيانو"
+    },
+    "points": 10
+  },
+  {
+    "id": "q240",
+    "question": {
+      "en": "Which number is one half of one quarter of one tenth of 800?",
+      "ar": "ما هو الرقم الذي يمثل نصف ربع ربع (نصف × ربع × عشير) 800؟"
+    },
+    "options": {
+      "en": [
+        "5",
+        "20",
+        "40",
+        "10"
+      ],
+      "ar": [
+        "5",
+        "20",
+        "40",
+        "10"
+      ]
+    },
+    "correctAnswer": {
+      "en": "10",
+      "ar": "10"
+    },
+    "points": 10
+  },
+  {
+    "id": "q241",
+    "question": {
+      "en": "If you have 6 apples and you take away 4, how many apples do you have?",
+      "ar": "إذا كان لديك 6 تفاحات وأخذت منها 4، فكم تفاحة لديك الآن؟"
+    },
+    "options": {
+      "en": [
+        "6",
+        "0",
+        "2",
+        "4"
+      ],
+      "ar": [
+        "6",
+        "0",
+        "2",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4"
+    },
+    "points": 10
+  },
+  {
+    "id": "q242",
+    "question": {
+      "en": "What word is spelled incorrectly in every dictionary?",
+      "ar": "ما هي الكلمة الوحيدة التي تُكتب دائماً بشكل غير صحيح (Incorrectly) في كل القواميس؟"
+    },
+    "options": {
+      "en": [
+        "False",
+        "Wrong",
+        "Incorrectly",
+        "Mistake"
+      ],
+      "ar": [
+        "باطل",
+        "خاطئ",
+        "Incorrectly (غير صحيح)",
+        "خطأ"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Incorrectly",
+      "ar": "Incorrectly (غير صحيح)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q243",
+    "question": {
+      "en": "What is the basic unit of heredity in living organisms?",
+      "ar": "ما هي الوحدة الأساسية للوراثة في الكائنات الحية؟"
+    },
+    "options": {
+      "en": [
+        "Nucleotide",
+        "Gene",
+        "Chromosome",
+        "Cell"
+      ],
+      "ar": [
+        "النيوكليوتيد",
+        "الجين",
+        "الكروموسوم",
+        "الخلية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gene",
+      "ar": "الجين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q244",
+    "question": {
+      "en": "Which organ in humans is responsible for producing insulin?",
+      "ar": "أي عضو في جسم الإنسان مسؤول عن إنتاج الإنسولين؟"
+    },
+    "options": {
+      "en": [
+        "Pancreas",
+        "Spleen",
+        "Liver",
+        "Kidney"
+      ],
+      "ar": [
+        "البنكرياس",
+        "الطحال",
+        "الكبد",
+        "الكلية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pancreas",
+      "ar": "البنكرياس"
+    },
+    "points": 10
+  },
+  {
+    "id": "q245",
+    "question": {
+      "en": "What type of blood cells carry oxygen throughout the body?",
+      "ar": "ما نوع خلايا الدم التي تنقل الأكسجين عبر الجسم؟"
+    },
+    "options": {
+      "en": [
+        "Red Blood Cells",
+        "Platelets",
+        "Plasma",
+        "White Blood Cells"
+      ],
+      "ar": [
+        "خلايا الدم الحمراء",
+        "الصفائح الدموية",
+        "البلازما",
+        "خلايا الدم البيضاء"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Red Blood Cells",
+      "ar": "خلايا الدم الحمراء"
+    },
+    "points": 10
+  },
+  {
+    "id": "q246",
+    "question": {
+      "en": "What is the largest organ of the human body?",
+      "ar": "ما هو أكبر عضو في جسم الإنسان؟"
+    },
+    "options": {
+      "en": [
+        "Lungs",
+        "Liver",
+        "Brain",
+        "Skin"
+      ],
+      "ar": [
+        "الرئتان",
+        "الكبد",
+        "الدماغ",
+        "الجلد"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Skin",
+      "ar": "الجلد"
+    },
+    "points": 10
+  },
+  {
+    "id": "q247",
+    "question": {
+      "en": "Which green pigment in plants traps solar energy for photosynthesis?",
+      "ar": "ما هي الصبغة الخضراء في النباتات التي تمتص الطاقة الشمسية للبناء الضوئي؟"
+    },
+    "options": {
+      "en": [
+        "Xanthophyll",
+        "Chlorophyll",
+        "Carotenoid",
+        "Anthocyanin"
+      ],
+      "ar": [
+        "الكسانثوفيل",
+        "الكلوروفيل",
+        "الكاروتين",
+        "الأنثوسيانين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Chlorophyll",
+      "ar": "الكلوروفيل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q248",
+    "question": {
+      "en": "How many pairs of chromosomes do humans normally have?",
+      "ar": "كم عدد أزواج الكروموسومات لدى الإنسان الطبيعي؟"
+    },
+    "options": {
+      "en": [
+        "23 pairs",
+        "46 pairs",
+        "22 pairs",
+        "24 pairs"
+      ],
+      "ar": [
+        "23 زوجاً",
+        "46 زوجاً",
+        "22 زوجاً",
+        "24 زوجاً"
+      ]
+    },
+    "correctAnswer": {
+      "en": "23 pairs",
+      "ar": "23 زوجاً"
+    },
+    "points": 10
+  },
+  {
+    "id": "q249",
+    "question": {
+      "en": "Which organ system is responsible for removing waste products from the blood?",
+      "ar": "أي جهاز عضوي مسؤول عن التخلص من الفضلات من الدم؟"
+    },
+    "options": {
+      "en": [
+        "Excretory System",
+        "Digestive System",
+        "Respiratory System",
+        "Nervous System"
+      ],
+      "ar": [
+        "الجهاز البولي / الإخراجي",
+        "الجهاز الهضمي",
+        "الجهاز التنفسي",
+        "الجهاز العصبي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Excretory System",
+      "ar": "الجهاز البولي / الإخراجي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q250",
+    "question": {
+      "en": "What is the process of cell division that results in four daughter cells with half the chromosomes?",
+      "ar": "ما هي عملية الانقسام الخلوي التي تنتج 4 خلايا وليدة بنصف عدد الكروموسومات؟"
+    },
+    "options": {
+      "en": [
+        "Binary Fission",
+        "Meiosis",
+        "Mitosis",
+        "Budding"
+      ],
+      "ar": [
+        "الانقسام الثنائي",
+        "الانقسام الاختزالي (ميوزي)",
+        "الانقسام المتساوي (ميتوزي)",
+        "التبرعم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Meiosis",
+      "ar": "الانقسام الاختزالي (ميوزي)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q251",
+    "question": {
+      "en": "Which animal class lays eggs, has feathers, and is warm-blooded?",
+      "ar": "أي طائفة حيوانية تبيض وتملك ريشاً وتعتبر من ذوات الدم الدافئ؟"
+    },
+    "options": {
+      "en": [
+        "Birds (Aves)",
+        "Reptiles",
+        "Mammals",
+        "Amphibians"
+      ],
+      "ar": [
+        "الطيور",
+        "الزواحف",
+        "الثدييات",
+        "البرمائيات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Birds (Aves)",
+      "ar": "الطيور"
+    },
+    "points": 10
+  },
+  {
+    "id": "q252",
+    "question": {
+      "en": "What is the fluid portion of blood called?",
+      "ar": "ماذا يُسمى الجزء السائل من الدم؟"
+    },
+    "options": {
+      "en": [
+        "Cytosol",
+        "Serum",
+        "Lymph",
+        "Plasma"
+      ],
+      "ar": [
+        "السيتوسول",
+        "المصل",
+        "الليمف",
+        "البلازما"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Plasma",
+      "ar": "البلازما"
+    },
+    "points": 10
+  },
+  {
+    "id": "q253",
+    "question": {
+      "en": "Which chamber of the human heart pumps oxygenated blood out to the body?",
+      "ar": "أي حجرة في قلب الإنسان تضخ الدم المؤكسج إلى باقي أعضاء الجسم؟"
+    },
+    "options": {
+      "en": [
+        "Left Atrium",
+        "Left Ventricle",
+        "Right Ventricle",
+        "Right Atrium"
+      ],
+      "ar": [
+        "الأذين الأيسر",
+        "البطين الأيسر",
+        "البطين الأيمن",
+        "الأذين الأيمن"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Left Ventricle",
+      "ar": "البطين الأيسر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q254",
+    "question": {
+      "en": "What structural sugar composes plant cell walls?",
+      "ar": "ما هو السكر الهيكلي الذي تتكون منه جدران الخلايا النباتية؟"
+    },
+    "options": {
+      "en": [
+        "Cellulose",
+        "Starch",
+        "Chitin",
+        "Glycogen"
+      ],
+      "ar": [
+        "السليلوز",
+        "النشا",
+        "الكيوتين / الكيتين",
+        "الجلايكوجين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cellulose",
+      "ar": "السليلوز"
+    },
+    "points": 10
+  },
+  {
+    "id": "q255",
+    "question": {
+      "en": "What type of joint is found at the shoulder and hip?",
+      "ar": "ما نوع المفصل الموجود في الكتف والورك؟"
+    },
+    "options": {
+      "en": [
+        "Pivot joint",
+        "Gliding joint",
+        "Hinge joint",
+        "Ball and socket joint"
+      ],
+      "ar": [
+        "مفصل محوري",
+        "مفصل انزلاقي",
+        "مفصل رزي (مفصلي)",
+        "مفصل كروي (حقي)"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ball and socket joint",
+      "ar": "مفصل كروي (حقي)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q256",
+    "question": {
+      "en": "Which microscopic organisms are prokaryotes with no membrane-bound nucleus?",
+      "ar": "أي كائنات دقيقة هي بدائيات النوى ولا تملك نواة محاطة بغشاء؟"
+    },
+    "options": {
+      "en": [
+        "Bacteria",
+        "Protozoa",
+        "Fungi",
+        "Algae"
+      ],
+      "ar": [
+        "البكتيريا",
+        "الأوليات",
+        "الفطريات",
+        "الطحالب"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bacteria",
+      "ar": "البكتيريا"
+    },
+    "points": 10
+  },
+  {
+    "id": "q257",
+    "question": {
+      "en": "What structure connects muscles to bones?",
+      "ar": "ما هو التركيب الذي يربط العضلات بالعظام؟"
+    },
+    "options": {
+      "en": [
+        "Fascia",
+        "Tendon",
+        "Ligament",
+        "Cartilage"
+      ],
+      "ar": [
+        "اللفافة",
+        "الوتر",
+        "الرباط",
+        "الغضروف"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tendon",
+      "ar": "الوتر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q258",
+    "question": {
+      "en": "Which organ stores bile produced by the liver?",
+      "ar": "أي عضو يخزن العصارة الصفراوية التي ينتجها الكبد؟"
+    },
+    "options": {
+      "en": [
+        "Spleen",
+        "Pancreas",
+        "Stomach",
+        "Gallbladder"
+      ],
+      "ar": [
+        "الطحال",
+        "البنكرياس",
+        "المعدة",
+        "الحويصلة الهوائية / المرارة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gallbladder",
+      "ar": "الحويصلة الهوائية / المرارة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q259",
+    "question": {
+      "en": "What is the primary function of enzymes in biological systems?",
+      "ar": "ما هي الوظيفة الأساسية للإنزيمات في الأنظمة الأحيائية؟"
+    },
+    "options": {
+      "en": [
+        "Provide structural support",
+        "Encode genetic traits",
+        "Store long-term energy",
+        "Act as biological catalysts to speed reactions"
+      ],
+      "ar": [
+        "تقديم الدعم الهيكلي",
+        "تشفير الصفات الوراثية",
+        "تخزين الطاقة طويلة المدى",
+        "العمل كمحفزات أحيائية لتسريع التفاعلات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Act as biological catalysts to speed reactions",
+      "ar": "العمل كمحفزات أحيائية لتسريع التفاعلات"
+    },
+    "points": 10
+  },
+  {
+    "id": "q260",
+    "question": {
+      "en": "Which gas is produced as a byproduct during photosynthesis?",
+      "ar": "أي غاز يُنتج كمنتج ثانوي أثناء عملية البناء الضوئي؟"
+    },
+    "options": {
+      "en": [
+        "Nitrogen",
+        "Methane",
+        "Oxygen",
+        "Carbon Dioxide"
+      ],
+      "ar": [
+        "النيتروجين",
+        "الميثان",
+        "الأكسجين",
+        "ثاني أكسيد الكربون"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Oxygen",
+      "ar": "الأكسجين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q261",
+    "question": {
+      "en": "Which part of the human brain controls balance and movement coordination?",
+      "ar": "أي جزء من دماغ الإنسان يتحكم في التوازن وتنسيق الحركة؟"
+    },
+    "options": {
+      "en": [
+        "Cerebrum",
+        "Brainstem",
+        "Cerebellum",
+        "Hypothalamus"
+      ],
+      "ar": [
+        "المخ",
+        "جذع الدماغ",
+        "المخيخ",
+        "المهاد / تحت المهاد"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cerebellum",
+      "ar": "المخيخ"
+    },
+    "points": 10
+  },
+  {
+    "id": "q262",
+    "question": {
+      "en": "What are organisms that make their own food using sunlight called?",
+      "ar": "ماذا تُسمى الكائنات الحية التي تصنع غذائها بنفسها باستخدام ضوء الشمس؟"
+    },
+    "options": {
+      "en": [
+        "Autotrophs",
+        "Heterotrophs",
+        "Carnivores",
+        "Decomposers"
+      ],
+      "ar": [
+        "ذاتية التغذية",
+        "غير ذاتية التغذية",
+        "آكلات اللحوم",
+        "المحللات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Autotrophs",
+      "ar": "ذاتية التغذية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q263",
+    "question": {
+      "en": "What tissue carries water and dissolved minerals upwards in plants?",
+      "ar": "أي نسيج ينقل الماء والمعادن الذائبة إلى الأعلى في النباتات؟"
+    },
+    "options": {
+      "en": [
+        "Xylem",
+        "Cambium",
+        "Phloem",
+        "Epidermis"
+      ],
+      "ar": [
+        "خشب النبات (Xylem)",
+        "الكامبيوم",
+        "لحاء النبات",
+        "البشرة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Xylem",
+      "ar": "خشب النبات (Xylem)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q264",
+    "question": {
+      "en": "Which vitamin is necessary for normal blood clotting?",
+      "ar": "أي فيتامين ضروري لتجلط الدم الطبيعي؟"
+    },
+    "options": {
+      "en": [
+        "Vitamin C",
+        "Vitamin K",
+        "Vitamin E",
+        "Vitamin A"
+      ],
+      "ar": [
+        "فيتامين ج",
+        "فيتامين ك",
+        "فيتامين هـ",
+        "فيتامين أ"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vitamin K",
+      "ar": "فيتامين ك"
+    },
+    "points": 10
+  },
+  {
+    "id": "q265",
+    "question": {
+      "en": "What is the term for animals that eat both plants and meat?",
+      "ar": "ما هو المصطلح الذي يطلق على الحيوانات التي تأكل النباتات واللحوم معاً؟"
+    },
+    "options": {
+      "en": [
+        "Omnivores",
+        "Carnivores",
+        "Herbivores",
+        "Insectivores"
+      ],
+      "ar": [
+        "القوارض / القوارت (Omnivores)",
+        "آكلات اللحوم",
+        "آكلات الأعشاب",
+        "آكلات الحشرات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Omnivores",
+      "ar": "القوارض / القوارت (Omnivores)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q266",
+    "question": {
+      "en": "Which gland in the human neck regulates metabolism?",
+      "ar": "أي غدة في رقبة الإنسان تنظم عملية الأيض (التمثيل الغذائي)؟"
+    },
+    "options": {
+      "en": [
+        "Adrenal gland",
+        "Pineal gland",
+        "Pituitary gland",
+        "Thyroid gland"
+      ],
+      "ar": [
+        "الغدة الكظرية",
+        "الغدة الصنوبرية",
+        "الغدة النخامية",
+        "الغدة الدرقية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thyroid gland",
+      "ar": "الغدة الدرقية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q267",
+    "question": {
+      "en": "What are the smallest blood vessels in the body where gas exchange occurs?",
+      "ar": "ما هي أصغر الأوعية الدموية في الجسم حيث يتم تبادل الغازات؟"
+    },
+    "options": {
+      "en": [
+        "Veins",
+        "Venules",
+        "Capillaries",
+        "Arteries"
+      ],
+      "ar": [
+        "الأوردة",
+        "الوريدات",
+        "الشعيرات الدموية",
+        "الشرايين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Capillaries",
+      "ar": "الشعيرات الدموية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q268",
+    "question": {
+      "en": "Which nitrogenous base is found in RNA but NOT in DNA?",
+      "ar": "أي قاعدة نيتروجينية توجد في RNA ولكن لا توجد في DNA؟"
+    },
+    "options": {
+      "en": [
+        "Guanine",
+        "Thymine",
+        "Uracil",
+        "Adenine"
+      ],
+      "ar": [
+        "الجوانين",
+        "الثايمين",
+        "اليوراسيل",
+        "الأدينين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Uracil",
+      "ar": "اليوراسيل"
+    },
+    "points": 10
+  },
+  {
+    "id": "q269",
+    "question": {
+      "en": "What is the protective outer covering of insects and crustaceans made of?",
+      "ar": "ما هي المادة التي يتكون منها الغطاء الخارجي الواقي للحشرات والقشريات؟"
+    },
+    "options": {
+      "en": [
+        "Keratin",
+        "Collagen",
+        "Fibrin",
+        "Chitin"
+      ],
+      "ar": [
+        "الكرياتين",
+        "الكولاجين",
+        "الفبرين",
+        "الكيوتين / الكيتين"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Chitin",
+      "ar": "الكيوتين / الكيتين"
+    },
+    "points": 10
+  },
+  {
+    "id": "q270",
+    "question": {
+      "en": "Which system includes the brain, spinal cord, and sensory nerves?",
+      "ar": "أي جهاز يشمل الدماغ والحبل شوكي والأعصاب الحسية؟"
+    },
+    "options": {
+      "en": [
+        "Lymphatic System",
+        "Nervous System",
+        "Circulatory System",
+        "Endocrine System"
+      ],
+      "ar": [
+        "الجهاز الليمفاوي",
+        "الجهاز العصبي",
+        "الجهاز الدوري",
+        "جهاز الغدد الصماء"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nervous System",
+      "ar": "الجهاز العصبي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q271",
+    "question": {
+      "en": "What process describes the movement of water molecules through a semi-permeable membrane?",
+      "ar": "ما العملية التي تصف حركة جزيئات الماء عبر غشاء شبه منفذ؟"
+    },
+    "options": {
+      "en": [
+        "Osmosis",
+        "Diffusion",
+        "Active Transport",
+        "Endocytosis"
+      ],
+      "ar": [
+        "الخاصية الاسموزية",
+        "الانتشار",
+        "النقل النشط",
+        "الإدخال الخلوي"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Osmosis",
+      "ar": "الخاصية الاسموزية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q272",
+    "question": {
+      "en": "What is Newton's First Law of Motion also known as?",
+      "ar": "بماذا يُعرف قانون نيوتن الأول في الحركة أيضاً؟"
+    },
+    "options": {
+      "en": [
+        "Law of Action and Reaction",
+        "Law of Inertia",
+        "Law of Acceleration",
+        "Law of Gravitation"
+      ],
+      "ar": [
+        "قانون الفعل وراد الفعل",
+        "قانون القصور الذاتي",
+        "قانون التسارع",
+        "قانون الجاذبية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Law of Inertia",
+      "ar": "قانون القصور الذاتي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q273",
+    "question": {
+      "en": "What is the SI unit of force?",
+      "ar": "ما هي وحدة القياس العالمية (SI) للقوة؟"
+    },
+    "options": {
+      "en": [
+        "Watt",
+        "Newton",
+        "Pascal",
+        "Joule"
+      ],
+      "ar": [
+        "واط",
+        "نيوتن",
+        "باسكال",
+        "جول"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Newton",
+      "ar": "نيوتن"
+    },
+    "points": 10
+  },
+  {
+    "id": "q274",
+    "question": {
+      "en": "What is the speed of sound in dry air at room temperature approximately?",
+      "ar": "ما هي سرعة الصوت تقريباً في الهواء الجاف عند درجة حرارة الغرفة؟"
+    },
+    "options": {
+      "en": [
+        "343 m/s",
+        "1,500 m/s",
+        "120 m/s",
+        "300,000 km/s"
+      ],
+      "ar": [
+        "343 متر/ثانية",
+        "1,500 متر/ثانية",
+        "120 متر/ثانية",
+        "300,000 كم/ثانية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "343 m/s",
+      "ar": "343 متر/ثانية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q275",
+    "question": {
+      "en": "What is the SI unit of energy or work?",
+      "ar": "ما هي وحدة القياس العالمية للطاقة أو شغل القوة؟"
+    },
+    "options": {
+      "en": [
+        "Volt",
+        "Newton",
+        "Watt",
+        "Joule"
+      ],
+      "ar": [
+        "فولت",
+        "نيوتن",
+        "واط",
+        "جول"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Joule",
+      "ar": "جول"
+    },
+    "points": 10
+  },
+  {
+    "id": "q276",
+    "question": {
+      "en": "What particle carries an electric current in metal wires?",
+      "ar": "أي جسيم يحمل التيار الكهربائي في الأسلاك المعدنية؟"
+    },
+    "options": {
+      "en": [
+        "Protons",
+        "Photons",
+        "Electrons",
+        "Neutrons"
+      ],
+      "ar": [
+        "البروتونات",
+        "الفوتونات",
+        "الإلكترونات",
+        "النيوترونات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Electrons",
+      "ar": "الإلكترونات"
+    },
+    "points": 10
+  },
+  {
+    "id": "q277",
+    "question": {
+      "en": "What formula represents Einstein's mass-energy equivalence?",
+      "ar": "ما هي الصيغة التي تمثل تكافؤ الكتلة والطاقة لأينشتاين؟"
+    },
+    "options": {
+      "en": [
+        "F = ma",
+        "V = IR",
+        "P = IV",
+        "E = mc²"
+      ],
+      "ar": [
+        "F = ma",
+        "V = IR",
+        "P = IV",
+        "E = mc²"
+      ]
+    },
+    "correctAnswer": {
+      "en": "E = mc²",
+      "ar": "E = mc²"
+    },
+    "points": 10
+  },
+  {
+    "id": "q278",
+    "question": {
+      "en": "What device converts mechanical energy into electrical energy?",
+      "ar": "ما الجهاز الذي يحول الطاقة الميكانيكية إلى طاقة كهربائية؟"
+    },
+    "options": {
+      "en": [
+        "Electric Generator",
+        "Capacitor",
+        "Electric Motor",
+        "Transformer"
+      ],
+      "ar": [
+        "المولد الكهربائي",
+        "المكثف",
+        "المحرك الكهربائي",
+        "المحول"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Electric Generator",
+      "ar": "المولد الكهربائي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q279",
+    "question": {
+      "en": "What is the rate of change of velocity over time called?",
+      "ar": "ماذا يسمى معدل التغير في السرعة المتجهة بالنسبة للزمن؟"
+    },
+    "options": {
+      "en": [
+        "Displacement",
+        "Acceleration",
+        "Speed",
+        "Momentum"
+      ],
+      "ar": [
+        "الإزاحة",
+        "التسارع",
+        "السرعة القياسية",
+        "زخم الحركة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Acceleration",
+      "ar": "التسارع"
+    },
+    "points": 10
+  },
+  {
+    "id": "q280",
+    "question": {
+      "en": "What is the unit of frequency equal to one cycle per second?",
+      "ar": "ما هي وحدة التردد المسارية لدورة واحدة في الثانية؟"
+    },
+    "options": {
+      "en": [
+        "Tesla",
+        "Hertz",
+        "Decibel",
+        "Radian"
+      ],
+      "ar": [
+        "تسلا",
+        "هيرتز",
+        "ديسيبل",
+        "راديان"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Hertz",
+      "ar": "هيرتز"
+    },
+    "points": 10
+  },
+  {
+    "id": "q281",
+    "question": {
+      "en": "Which spectrum wave has the shortest wavelength and highest energy?",
+      "ar": "أي موجة في الطيف الكهرومغناطيسي تملك أقصر طول موجي وأعلى طاقة؟"
+    },
+    "options": {
+      "en": [
+        "Infrared",
+        "Microwaves",
+        "Radio waves",
+        "Gamma rays"
+      ],
+      "ar": [
+        "الأشعة تحت الحمراء",
+        "الموجات الدقيقة (ميكروويف)",
+        "موجات الراديو",
+        "أشعة جاما"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gamma rays",
+      "ar": "أشعة جاما"
+    },
+    "points": 10
+  },
+  {
+    "id": "q282",
+    "question": {
+      "en": "What is the measure of the average kinetic energy of particles in a substance?",
+      "ar": "ما هو مقياس متوسط الطاقة الحركية للجسيمات في مادة ما؟"
+    },
+    "options": {
+      "en": [
+        "Enthalpy",
+        "Heat",
+        "Entropy",
+        "Temperature"
+      ],
+      "ar": [
+        "المحتوى الحراري",
+        "الكمية الحرارية",
+        "الإنتروبي (الفوضى)",
+        "درجة الحرارة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Temperature",
+      "ar": "درجة الحرارة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q283",
+    "question": {
+      "en": "What states that energy cannot be created or destroyed, only transformed?",
+      "ar": "ما الذي ينص على أن الطاقة لا تُفنى ولا تُستحدث من العدم، بل تتحول من شكل لآخر؟"
+    },
+    "options": {
+      "en": [
+        "Ohm's Law",
+        "Law of Entropy",
+        "Boyle's Law",
+        "Law of Conservation of Energy"
+      ],
+      "ar": [
+        "قانون أوم",
+        "قانون الإنتروبي",
+        "قانون بويل",
+        "قانون حفظ الطاقة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Law of Conservation of Energy",
+      "ar": "قانون حفظ الطاقة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q284",
+    "question": {
+      "en": "What is the optical phenomenon of light bending as it passes from one medium to another?",
+      "ar": "ما هي الظاهرة الضوئية لانحراف الضوء عند انتقاله من وسط لأخر؟"
+    },
+    "options": {
+      "en": [
+        "Polarization",
+        "Diffraction",
+        "Reflection",
+        "Refraction"
+      ],
+      "ar": [
+        "الاستقطاب",
+        "الحيود",
+        "الانعكاس",
+        "الانكسار"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Refraction",
+      "ar": "الانكسار"
+    },
+    "points": 10
+  },
+  {
+    "id": "q285",
+    "question": {
+      "en": "What is the SI unit of electrical potential difference?",
+      "ar": "ما هي وحدة قياس فرق الجهد الكهربائي حسب النظام الدولي؟"
+    },
+    "options": {
+      "en": [
+        "Volt",
+        "Coulomb",
+        "Ampere",
+        "Ohm"
+      ],
+      "ar": [
+        "فولت",
+        "كولوم",
+        "أمبير",
+        "أوم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Volt",
+      "ar": "فولت"
+    },
+    "points": 10
+  },
+  {
+    "id": "q286",
+    "question": {
+      "en": "What physical quantity is calculated by multiplying mass by velocity?",
+      "ar": "ما هي الكمية الفيزيائية التي تُحسب بضرب الكتلة في السرعة المتجهة؟"
+    },
+    "options": {
+      "en": [
+        "Work",
+        "Force",
+        "Momentum",
+        "Impulse"
+      ],
+      "ar": [
+        "الشغل",
+        "القوة",
+        "الزخم (كمية الحركة)",
+        "الدفع"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Momentum",
+      "ar": "الزخم (كمية الحركة)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q287",
+    "question": {
+      "en": "What is the unit of pressure equivalent to one Newton per square meter?",
+      "ar": "ما هي وحدة الضغط المكافئة لنيوتن واحد لكل متر مربع؟"
+    },
+    "options": {
+      "en": [
+        "Torr",
+        "Atmosphere",
+        "Bar",
+        "Pascal"
+      ],
+      "ar": [
+        "طور",
+        "ضغط جوي",
+        "بار",
+        "باسكال"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pascal",
+      "ar": "باسكال"
+    },
+    "points": 10
+  },
+  {
+    "id": "q288",
+    "question": {
+      "en": "What type of lens curves outward and converges light rays?",
+      "ar": "ما نوع العدسة المحدبة التي تنحني للخارج وتجمع الأشعة الضوئية؟"
+    },
+    "options": {
+      "en": [
+        "Convex lens",
+        "Cylindrical lens",
+        "Concave lens",
+        "Plano-concave lens"
+      ],
+      "ar": [
+        "عدسة محدبة",
+        "عدسة اسطوانية",
+        "عدسة مقعرة",
+        "عدسة مستوية مقعرة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Convex lens",
+      "ar": "عدسة محدبة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q289",
+    "question": {
+      "en": "What fundamental force holds protons and neutrons together inside the nucleus?",
+      "ar": "ما هي القوة الأساسية التي تربط البروتونات والنيوترونات معاً داخل النواة؟"
+    },
+    "options": {
+      "en": [
+        "Weak Nuclear Force",
+        "Strong Nuclear Force",
+        "Electromagnetic Force",
+        "Gravitational Force"
+      ],
+      "ar": [
+        "القوة النووية الضعيفة",
+        "القوة النووية القوية",
+        "القوة الكهرومغناطيسية",
+        "قوة الجاذبية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Strong Nuclear Force",
+      "ar": "القوة النووية القوية"
+    },
+    "points": 10
+  },
+  {
+    "id": "q290",
+    "question": {
+      "en": "What states that the current through a conductor is proportional to voltage (V = IR)?",
+      "ar": "ما القانون الذي ينص على أن التيار عبر موصل يتناسب طردياً مع الجهد (V = IR)؟"
+    },
+    "options": {
+      "en": [
+        "Ampere's Law",
+        "Ohm's Law",
+        "Faraday's Law",
+        "Coulomb's Law"
+      ],
+      "ar": [
+        "قانون أمبير",
+        "قانون أوم",
+        "قانون فاراداي",
+        "قانون كولوم"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ohm's Law",
+      "ar": "قانون أوم"
+    },
+    "points": 10
+  },
+  {
+    "id": "q291",
+    "question": {
+      "en": "What is the tendency of a fluid to resist gradual deformation by shear stress?",
+      "ar": "ما هي خاصية المائع لمقاومة الجريان والانسياب (المقاومة للقص)؟"
+    },
+    "options": {
+      "en": [
+        "Surface Tension",
+        "Viscosity",
+        "Density",
+        "Buoyancy"
+      ],
+      "ar": [
+        "التوتر السطحي",
+        "اللزوجة",
+        "الكثافة",
+        "الطفو"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Viscosity",
+      "ar": "اللزوجة"
+    },
+    "points": 10
+  },
+  {
+    "id": "q292",
+    "question": {
+      "en": "What is the name of quantum energy packets of light?",
+      "ar": "ما اسم الكمات الموجية أو الجسيمية المقدرة من الطاقة الضوئية؟"
+    },
+    "options": {
+      "en": [
+        "Quarks",
+        "Photons",
+        "Neutrinos",
+        "Electrons"
+      ],
+      "ar": [
+        "الكواركات",
+        "الفوتونات",
+        "النيوترينوات",
+        "الإلكترونات"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Photons",
+      "ar": "الفوتونات"
+    },
+    "points": 10
+  },
+  {
+    "id": "q293",
+    "question": {
+      "en": "What property of a wave determines its volume/loudness in sound?",
+      "ar": "أي خاصية للموجة تحدد مقدار علو أو شدة الصوت؟"
+    },
+    "options": {
+      "en": [
+        "Wavelength",
+        "Amplitude",
+        "Frequency",
+        "Speed"
+      ],
+      "ar": [
+        "الطول الموجي",
+        "السعة (Amplitude)",
+        "التردد",
+        "السرعة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Amplitude",
+      "ar": "السعة (Amplitude)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q294",
+    "question": {
+      "en": "Which scientist discovered electromagnetic induction?",
+      "ar": "من هو العالم الذي اكتشف الحث الكهرومغناطيسي؟"
+    },
+    "options": {
+      "en": [
+        "Nikola Tesla",
+        "Thomas Edison",
+        "Michael Faraday",
+        "James Clerk Maxwell"
+      ],
+      "ar": [
+        "نيكولا تسلا",
+        "توماس إديسون",
+        "مايكل فاراداي",
+        "جيمس كلارك ماكسويل"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Michael Faraday",
+      "ar": "مايكل فاراداي"
+    },
+    "points": 10
+  },
+  {
+    "id": "q295",
+    "question": {
+      "en": "What is the upward force exerted by a fluid on an immersed object called?",
+      "ar": "ما هي القوة الراسية إلى الأعلى التي يمارسها مائع على جسم مغمور فيه؟"
+    },
+    "options": {
+      "en": [
+        "Buoyant force (Archimedes' principle)",
+        "Friction force",
+        "Centripetal force",
+        "Tension force"
+      ],
+      "ar": [
+        "قوة الطفو (قاعدة أرشميدس)",
+        "قوة الاحتكاك",
+        "القوة الجاذبة المركزية",
+        "قوة الشد"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Buoyant force (Archimedes' principle)",
+      "ar": "قوة الطفو (قاعدة أرشميدس)"
+    },
+    "points": 10
+  },
+  {
+    "id": "q296",
+    "question": {
+      "en": "What temperature scale starts at absolute zero?",
+      "ar": "ما هو مقياس درجة الحرارة الذي يبدأ من الصفر المطلق؟"
+    },
+    "options": {
+      "en": [
+        "Rankine scale",
+        "Fahrenheit scale",
+        "Celsius scale",
+        "Kelvin scale"
+      ],
+      "ar": [
+        "مقياس رانكين",
+        "مقياس فهرنهايت",
+        "مقياس سيليسيوس",
+        "مقياس كلفن"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Kelvin scale",
+      "ar": "مقياس كلفن"
+    },
+    "points": 10
+  },
+  {
+    "id": "q297",
+    "question": {
+      "en": "What state of matter consists of ionized gas with free electrons and ions?",
+      "ar": "ما هي حالة المادة التي تتكون من غاز متأين يضم إلكترونات وأيونات حرة؟"
+    },
+    "options": {
+      "en": [
+        "Plasma",
+        "Gas",
+        "Bose-Einstein condensate",
+        "Liquid"
+      ],
+      "ar": [
+        "البلازما",
+        "الغازية",
+        "تكاثف بوز-أينشتاين",
+        "السائلة"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Plasma",
+      "ar": "البلازما"
+    },
+    "points": 10
+  },
+  {
+    "id": "q298",
+    "question": {
+      "en": "What is the resistance of a superconductor below its critical temperature?",
+      "ar": "ما هي قيمة المقاومة الكهربائية للموصل الفائق أسفل درجة حرارته الحرجة؟"
+    },
+    "options": {
+      "en": [
+        "Negligible positive value",
+        "Zero",
+        "1 Ohm",
+        "Infinite"
+      ],
+      "ar": [
+        "قيمة موجبة ضئيلة جداً",
+        "صفر",
+        "1 أوم",
+        "ما لا نهاية"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Zero",
+      "ar": "صفر"
+    },
+    "points": 10
+  },
+  {
+    "id": "q299",
+    "question": {
+      "en": "What is the acceleration due to gravity on Earth's surface approximately?",
+      "ar": "ما هي قيمة تسارع الجاذبية الأرضية على سطح الأرض تقريباً؟"
+    },
+    "options": {
+      "en": [
+        "1.6 m/s²",
+        "9.8 m/s²",
+        "15.2 m/s²",
+        "5.0 m/s²"
+      ],
+      "ar": [
+        "1.6 متر/ثانية²",
+        "9.8 متر/ثانية²",
+        "15.2 متر/ثانية²",
+        "5.0 متر/ثانية²"
+      ]
+    },
+    "correctAnswer": {
+      "en": "9.8 m/s²",
+      "ar": "9.8 متر/ثانية²"
+    },
+    "points": 10
+  },
+  {
+    "id": "q300",
+    "question": {
+      "en": "Which device stores electrical energy in an electrostatic field between two plates?",
+      "ar": "ما هو المكون الذي يخزن الطاقة الكهربائية في مجال إلكتروستاتيكي بين لوحين؟"
+    },
+    "options": {
+      "en": [
+        "Diode",
+        "Capacitor",
+        "Resistor",
+        "Inductor"
+      ],
+      "ar": [
+        "الدايود (الموحد)",
+        "المكثف الكهربائي",
+        "المقاومة",
+        "المحث"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Capacitor",
+      "ar": "المكثف الكهربائي"
     },
     "points": 10
   }
