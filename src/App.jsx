@@ -381,8 +381,7 @@ export default function App() {
     try {
       const querySnapshot = await getDocs(collection(db, "users"));
       let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address
-";
+      csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\n";
 
       querySnapshot.forEach((docSnap) => {
         const p = docSnap.data();
@@ -394,8 +393,7 @@ export default function App() {
           p.totalGames || 0,
           '"' + (p.walletAddress || 'Not Connected') + '"'
         ].join(",");
-        csvContent += row + "
-";
+        csvContent += row + "\n";
       });
 
       const encodedUri = encodeURI(csvContent);
