@@ -722,19 +722,19 @@ export default function App() {
         incrementVideoCount();
         setUser(prev => ({
           ...prev,
-          points: prev.points + 100,
-          totalEarnedPoints: prev.totalEarnedPoints + 100
+          points: prev.points + 10,
+          totalEarnedPoints: prev.totalEarnedPoints + 10
         }));
 
         if (currentUser) {
           await updateDoc(doc(db, "users", currentUser.uid), {
-            points: increment(100),
-            totalEarnedPoints: increment(100),
+            points: increment(10),
+            totalEarnedPoints: increment(10),
             rewardedAdsWatched: increment(1)
           });
         }
 
-        alert(user.language === 'العربية' ? '🎉 تهانينا! حصلت على 100 نقطة إضافية.' : '🎉 Congrats! Earned 100 bonus points.');
+        alert(user.language === 'العربية' ? '🎉 تهانينا! حصلت على 10 نقاط إضافية.' : '🎉 Congrats! Earned 10 bonus points.');
       }
     }, 1000);
   };
@@ -1303,7 +1303,7 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-white">{user.language === 'العربية' ? 'شاهد فيديو إعلاني' : 'Watch Ad Video'}</div>
-                    <div className="text-[10px] text-purple-300">{user.language === 'العربية' ? 'واحصل على 100 نقطة إضافية' : 'And get 100 bonus points'}</div>
+                    <div className="text-[10px] text-purple-300">{user.language === 'العربية' ? 'واحصل على 10 نقاط إضافية' : 'And get 10 bonus points'}</div>
                   </div>
                 </div>
 
