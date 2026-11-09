@@ -195,6 +195,10 @@ export default function App() {
   const [showForcedAd, setShowForcedAd] = useState(false);
   const [forcedAdTimer, setForcedAdTimer] = useState(5);
 
+  // 10-Question Ad Trigger States
+  const [show10QAd, setShow10QAd] = useState(false);
+  const [ad10QTimer, setAd10QTimer] = useState(5);
+
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
@@ -1480,6 +1484,33 @@ export default function App() {
           )}
 
         </div>
+
+        {/* 10-QUESTION AUTOMATIC REWARDED VIDEO AD MODAL (+1 LIFE ONLY) */}
+        {show10QAd && (
+          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
+            <div className="w-full bg-[#240a47] border-2 border-rose-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(244,63,94,0.5)]">
+              <div className="w-14 h-14 bg-rose-500/20 border border-rose-400 rounded-full flex items-center justify-center mx-auto text-rose-400">
+                <Tv className="w-7 h-7 animate-pulse" />
+              </div>
+              <h3 className="text-lg font-black text-rose-400">
+                {user.language === 'العربية' ? 'إعلان المكافأة التلقائي (10 أسئلة)' : '10-Question Reward Ad'}
+              </h3>
+              <p className="text-xs text-slate-200 leading-relaxed">
+                {user.language === 'العربية' 
+                  ? 'أجبت على 10 أسئلة! جاري تشغيل إعلان قصير لمنحك حياة إضافية واحدة (+1 ❤️):' 
+                  : 'You answered 10 questions! Watching a short video ad to claim 1 Extra Life (+1 ❤️):'}
+              </p>
+              
+              <div className="bg-[#0d031f] py-4 rounded-2xl border border-rose-400/40 text-sm font-black text-rose-300">
+                ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {ad10QTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
+              </div>
+              
+              <div className="text-[10px] text-rose-200 font-bold">
+                +{user.language === 'العربية' ? '1 حياة فقط ❤️ (بدون نقاط)' : '1 Life Only ❤️ (No points)'}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* FORCED GOOGLE REWARDED VIDEO AD MODAL */}
         {showForcedAd && (
