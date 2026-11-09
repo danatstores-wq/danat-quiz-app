@@ -99,7 +99,7 @@ const TRANSLATIONS = {
     profile: 'ملفي الشخصي',
     statistics: 'إحصائيات',
     dncBalance: 'رصيد DNC',
-    spirits: 'أرواح حالية',
+    points: 'النقاط الحالية',
     lives: 'الأرواح',
     settings: 'الإعدادات',
     logout: 'خروج',
@@ -110,7 +110,7 @@ const TRANSLATIONS = {
     connectWallet: 'ربط المحفظة (WalletConnect)',
     walletConnected: 'المحفظة متصلة',
     gamesPlayed: 'عدد الألعاب',
-    spiritsEarned: 'أرواح مكتسبة',
+    pointsEarned: 'النقاط المكتسبة',
     levelLabel: 'المستوى',
     emptyLeaderboard: 'لا يوجد لاعبون بعد',
     watchForLife: '📺 شاهد فيديو لحياة إضافية (+1 ❤️)',
@@ -119,7 +119,7 @@ const TRANSLATIONS = {
     outOfLivesDesc: 'شاهد فيديو إعلاني للحصول على حياة إضافية ومتابعة اللعب.',
     adsWatched: 'الإعلانات المشاهدة',
     timedBonusTitle: 'مكافأة كل 3 ساعات ⏳',
-    timedBonusDesc: 'احصل على 5 أرواح مجانية كل 3 ساعات (حد أقصى 10 أرواح).',
+    timedBonusDesc: 'احصل على 5 أرواح مجانية كل 3 ساعات (حد أقصى 10 أرواح في 24 ساعة).',
     claimBonus: 'استلام المكافأة'
   },
   'English': {
@@ -131,7 +131,7 @@ const TRANSLATIONS = {
     profile: 'My Profile',
     statistics: 'Statistics',
     dncBalance: 'DNC Balance',
-    spirits: 'Current Spirits',
+    points: 'Current Points',
     lives: 'Lives',
     settings: 'Settings',
     logout: 'Logout',
@@ -142,7 +142,7 @@ const TRANSLATIONS = {
     connectWallet: 'Connect Wallet (WalletConnect)',
     walletConnected: 'Wallet Connected',
     gamesPlayed: 'Games Played',
-    spiritsEarned: 'Lives Earned',
+    pointsEarned: 'Points Earned',
     levelLabel: 'Level',
     emptyLeaderboard: 'Empty',
     watchForLife: '📺 Watch Ad for +1 Life (+1 ❤️)',
@@ -150,8 +150,8 @@ const TRANSLATIONS = {
     outOfLivesTitle: 'Out of Lives! 💔',
     outOfLivesDesc: 'Watch a video ad to get an extra life and continue playing.',
     adsWatched: 'Ads Watched',
-    timedBonusTitle: '3-Hour Spirit Bonus ⏳',
-    timedBonusDesc: 'Claim 5 free spirits every 3 hours (Max cap 10 spirits).',
+    timedBonusTitle: '3-Hour Life Bonus ⏳',
+    timedBonusDesc: 'Claim 5 free lives every 3 hours (Max cap 10 lives per 24 hours).',
     claimBonus: 'Claim Bonus'
   }
 };
@@ -172,12 +172,14 @@ export default function App() {
     email: 'ahmad.dnc@danatstores.com',
     language: 'English',
     level: 1,
-    spirits: 0,
+    points: 0,
     dncBalance: 0.0,
     totalGames: 0,
-    totalEarnedSpirits: 0,
+    totalEarnedPoints: 0,
     totalQuestionsAnswered: 0,
     lastSpiritClaimTime: 0,
+    dailyClaimedLives: 0,
+    lastDailyResetTime: 0,
     walletConnected: false,
     walletAddress: '',
     avatar: 'avatar-man-ghutra.png',
@@ -194,10 +196,6 @@ export default function App() {
   const [levelsPlayed, setLevelsPlayed] = useState(0);
   const [showForcedAd, setShowForcedAd] = useState(false);
   const [forcedAdTimer, setForcedAdTimer] = useState(5);
-
-  // 10-Question Ad Trigger States
-  const [show10QAd, setShow10QAd] = useState(false);
-  const [ad10QTimer, setAd10QTimer] = useState(5);
 
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
@@ -243,8 +241,8 @@ export default function App() {
           querySnapshot.forEach((docSnap) => {
             usersList.push({ id: docSnap.id, ...docSnap.data() });
           });
-          // Sort descending by spirits / points
-          usersList.sort((a, b) => (b.spirits || 0) - (a.spirits || 0));
+          // Sort descending by points
+          usersList.sort((a, b) => (b.points || b.spirits || 0) - (a.points || a.spirits || 0));
           setLeaderboardUsers(usersList);
         } catch (err) {
           console.error("Failed to fetch leaderboard:", err);
@@ -257,8 +255,8 @@ export default function App() {
   }, [activeTab]);
 
   const [redemptions, setRedemptions] = useState([
-    { id: '1', user: 'أحمد', spirits: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
-    { id: '2', user: 'محمد علي', spirits: 5000, dnc: 5, wallet: '0x38B...12F', status: 'APPROVED', date: '2026-11-01' },
+    { id: '1', user: 'أحمد', points: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
+    { id: '2', user: 'محمد علي', points: 5000, dnc: 5, wallet: '0x38B...12F', status: 'APPROVED', date: '2026-11-01' },
   ]);
 
   const availableAvatars = [
@@ -313,13 +311,15 @@ export default function App() {
             ...prev,
             name: data.name || authUser.email.split('@')[0],
             email: authUser.email,
-            spirits: data.spirits ?? prev.spirits,
+            points: data.points ?? data.spirits ?? prev.points,
             dncBalance: data.dncBalance ?? prev.dncBalance,
             level: data.level ?? calculatedLevel,
             totalGames: data.totalGames ?? prev.totalGames,
-            totalEarnedSpirits: data.totalEarnedSpirits ?? prev.totalEarnedSpirits,
+            totalEarnedPoints: data.totalEarnedPoints ?? data.totalEarnedSpirits ?? prev.totalEarnedPoints,
             totalQuestionsAnswered: answeredCount,
             lastSpiritClaimTime: data.lastSpiritClaimTime || 0,
+            dailyClaimedLives: data.dailyClaimedLives || 0,
+            lastDailyResetTime: data.lastDailyResetTime || 0,
             walletConnected: data.walletConnected ?? prev.walletConnected,
             walletAddress: data.walletAddress ?? prev.walletAddress,
             avatar: data.avatar ?? prev.avatar,
@@ -344,13 +344,15 @@ export default function App() {
       const initialProfile = {
         name: nameInput || 'لاعب دانات',
         email: emailInput,
-        spirits: 0,
+        points: 0,
         dncBalance: 0.0,
         level: 1,
         totalGames: 0,
-        totalEarnedSpirits: 0,
+        totalEarnedPoints: 0,
         totalQuestionsAnswered: 0,
         lastSpiritClaimTime: 0,
+        dailyClaimedLives: 0,
+        lastDailyResetTime: 0,
         walletConnected: false,
         walletAddress: '',
         avatar: 'avatar-man-ghutra.png',
@@ -413,14 +415,14 @@ export default function App() {
     try {
       const querySnapshot = await getDocs(collection(db, "users"));
       let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += "Name,Email,Spirits,DNC Balance,Total Games,Wallet Address\n";
+      csvContent += "Name,Email,Points,DNC Balance,Total Games,Wallet Address\n";
 
       querySnapshot.forEach((docSnap) => {
         const p = docSnap.data();
         const row = [
           '"' + (p.name || '') + '"',
           '"' + (p.email || '') + '"',
-          p.spirits || 0,
+          p.points || p.spirits || 0,
           p.dncBalance || 0,
           p.totalGames || 0,
           '"' + (p.walletAddress || 'Not Connected') + '"'
@@ -488,7 +490,7 @@ export default function App() {
     const newSessionCount = questionsAnsweredCounter + 1;
     setQuestionsAnsweredCounter(newSessionCount);
     if (newSessionCount % 10 === 0) {
-      trigger10QuestionAd();
+      handleWatchAd();
     }
 
     if (isCorrect) {
@@ -496,34 +498,34 @@ export default function App() {
       setScore(prev => prev + earned);
       setUser(prev => ({
         ...prev,
-        spirits: prev.spirits + earned,
-        totalEarnedSpirits: prev.totalEarnedSpirits + earned,
+        points: prev.points + earned,
+        totalEarnedPoints: prev.totalEarnedPoints + earned,
         totalQuestionsAnswered: newAnsweredCount,
         level: newLevel
       }));
 
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
-          spirits: increment(earned),
-          totalEarnedSpirits: increment(earned),
+          points: increment(earned),
+          totalEarnedPoints: increment(earned),
           totalQuestionsAnswered: increment(1),
           level: newLevel
         });
       }
     } else {
-      // Incorrect answer: Deduct 1 life and 5 spirits penalty (floor at 0)
-      const spiritPenalty = 5;
+      // Incorrect answer: Deduct 1 life and 5 points penalty (floor at 0)
+      const pointPenalty = 5;
       setLives(prev => Math.max(0, prev - 1));
       setUser(prev => ({
         ...prev,
-        spirits: Math.max(0, prev.spirits - spiritPenalty),
+        points: Math.max(0, prev.points - pointPenalty),
         totalQuestionsAnswered: newAnsweredCount,
         level: newLevel
       }));
 
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
-          spirits: increment(-spiritPenalty),
+          points: increment(-pointPenalty),
           totalQuestionsAnswered: increment(1),
           level: newLevel
         });
@@ -561,26 +563,32 @@ export default function App() {
     }
   };
 
-  const trigger10QuestionAd = () => {
-    setShow10QAd(true);
+  const triggerForcedGoogleAd = () => {
+    setShowForcedAd(true);
     let count = 5;
-    setAd10QTimer(count);
+    setForcedAdTimer(count);
     const interval = setInterval(async () => {
       count -= 1;
-      setAd10QTimer(count);
+      setForcedAdTimer(count);
       if (count <= 0) {
         clearInterval(interval);
-        setShow10QAd(false);
-        incrementVideoCount();
-        setLives(prev => prev + 1); // <-- Adds +1 Life only! (No spirits/points added)
+        setShowForcedAd(false);
+        setUser(prev => ({
+          ...prev,
+          points: prev.points + 50,
+          totalEarnedPoints: prev.totalEarnedPoints + 50
+        }));
 
         if (currentUser) {
           await updateDoc(doc(db, "users", currentUser.uid), {
-            rewardedAdsWatched: increment(1)
+            points: increment(50),
+            totalEarnedPoints: increment(50),
+            forcedAdsWatched: increment(1)
           });
         }
 
-        alert(user.language === 'العربية' ? '🎉 تم مشاهدة الإعلان التلقائي! حصلت على حياة إضافية واحدة (+1 ❤️).' : '🎉 Auto ad watched! You earned 1 Extra Life (+1 ❤️).');
+        alert(user.language === 'العربية' ? '🌐 تم الاتصال بالإنترنت: شاهدت إعلان جوجل الإجباري وحصلت على 50 نقطة!' : '🌐 Connected: Watched forced ad and earned 50 points!');
+        setActiveTab('home');
       }
     }, 1000);
   };
@@ -611,14 +619,14 @@ export default function App() {
     setScore(prev => prev + 10);
     setUser(prev => ({
       ...prev,
-      spirits: prev.spirits + 10,
-      totalEarnedSpirits: prev.totalEarnedSpirits + 10
+      points: prev.points + 10,
+      totalEarnedPoints: prev.totalEarnedPoints + 10
     }));
 
     if (currentUser) {
       await updateDoc(doc(db, "users", currentUser.uid), {
-        spirits: increment(10),
-        totalEarnedSpirits: increment(10),
+        points: increment(10),
+        totalEarnedPoints: increment(10),
         rewardedAdsWatched: increment(1)
       });
     }
@@ -626,7 +634,7 @@ export default function App() {
     alert(user.language === 'العربية' ? 'حصلت على 10 نقاط إضافية! 🪙' : 'You earned 10 Bonus Points! 🪙');
   };
 
-  // 3-Hour Timed Spirits Bonus (+5 Spirits every 3 hrs, max 10 spirits)
+  // 3-Hour Timed Lives Bonus (+5 Lives every 3 hrs, max 10 lives per 24 hours)
   const handleClaimTimedSpirits = async () => {
     const now = Date.now();
     const lastClaim = user.lastSpiritClaimTime || 0;
@@ -636,31 +644,52 @@ export default function App() {
       const hoursLeft = (3 - hoursElapsed).toFixed(1);
       alert(user.language === 'العربية' 
         ? `يرجى الانتظار ${hoursLeft} ساعة لقطف الأرواح المجانية القادمة!` 
-        : `Please wait ${hoursLeft} hours to claim your next free spirits!`);
+        : `Please wait ${hoursLeft} hours to claim your next free lives!`);
       return;
     }
 
-    const spiritsToAdd = 5;
-    const updatedSpirits = user.spirits + spiritsToAdd;
+    // Check 24-hour window reset
+    const lastReset = user.lastDailyResetTime || 0;
+    const resetElapsedHours = (now - lastReset) / (1000 * 60 * 60);
+    
+    let currentDailyClaimed = user.dailyClaimedLives || 0;
+    let newResetTime = lastReset;
+
+    if (resetElapsedHours >= 24) {
+      currentDailyClaimed = 0;
+      newResetTime = now;
+    }
+
+    if (currentDailyClaimed >= 10) {
+      alert(user.language === 'العربية' 
+        ? '⚠️ وصلت إلى الحد الأقصى للأرواح المجانية (10 أرواح في 24 ساعة).' 
+        : '⚠️ You reached the max limit for free lives (10 lives per 24 hours).');
+      return;
+    }
+
+    const livesToAdd = 5;
+    const updatedDailyClaimed = currentDailyClaimed + livesToAdd;
+
+    setLives(prev => prev + livesToAdd);
 
     setUser(prev => ({
       ...prev,
-      spirits: updatedSpirits,
-      totalEarnedSpirits: prev.totalEarnedSpirits + spiritsToAdd,
-      lastSpiritClaimTime: now
+      lastSpiritClaimTime: now,
+      dailyClaimedLives: updatedDailyClaimed,
+      lastDailyResetTime: newResetTime
     }));
 
     if (currentUser) {
       await updateDoc(doc(db, "users", currentUser.uid), {
-        spirits: increment(spiritsToAdd),
-        totalEarnedSpirits: increment(spiritsToAdd),
-        lastSpiritClaimTime: now
+        lastSpiritClaimTime: now,
+        dailyClaimedLives: updatedDailyClaimed,
+        lastDailyResetTime: newResetTime
       });
     }
 
     alert(user.language === 'العربية' 
-      ? '🎉 تهانينا! حصلت على 5 أرواح مجانية (مكافأة كل 3 ساعات).' 
-      : '🎉 Congrats! You claimed 5 free spirits (3-hour bonus).');
+      ? '🎉 تهانينا! حصلت على 5 أرواح مجانية (+5 ❤️).' 
+      : '🎉 Congrats! You claimed 5 free lives (+5 ❤️).');
   };
 
   const handleConnectWallet = async (address) => {
@@ -693,19 +722,19 @@ export default function App() {
         incrementVideoCount();
         setUser(prev => ({
           ...prev,
-          spirits: prev.spirits + 100,
-          totalEarnedSpirits: prev.totalEarnedSpirits + 100
+          points: prev.points + 100,
+          totalEarnedPoints: prev.totalEarnedPoints + 100
         }));
 
         if (currentUser) {
           await updateDoc(doc(db, "users", currentUser.uid), {
-            spirits: increment(100),
-            totalEarnedSpirits: increment(100),
+            points: increment(100),
+            totalEarnedPoints: increment(100),
             rewardedAdsWatched: increment(1)
           });
         }
 
-        alert(user.language === 'العربية' ? '🎉 تهانينا! حصلت على 100 روح إضافية.' : '🎉 Congrats! Earned 100 bonus spirits.');
+        alert(user.language === 'العربية' ? '🎉 تهانينا! حصلت على 100 نقطة إضافية.' : '🎉 Congrats! Earned 100 bonus points.');
       }
     }, 1000);
   };
@@ -727,23 +756,23 @@ export default function App() {
       setActiveTab('profile');
       return;
     }
-    if (user.spirits < 1000) {
-      alert('رصيدك غير كافٍ. الحد الأدنى للتحويل هو 1,000 روح.');
+    if (user.points < 1000) {
+      alert('رصيدك غير كافٍ. الحد الأدنى للتحويل هو 1,000 نقطة.');
       return;
     }
 
-    const updatedSpirits = user.spirits - 1000;
+    const updatedPoints = user.points - 1000;
     const updatedDnc = user.dncBalance + 1;
 
     setUser(prev => ({
       ...prev,
-      spirits: updatedSpirits,
+      points: updatedPoints,
       dncBalance: updatedDnc
     }));
 
     if (currentUser) {
       await updateDoc(doc(db, "users", currentUser.uid), {
-        spirits: increment(-1000),
+        points: increment(-1000),
         dncBalance: increment(1)
       });
     }
@@ -751,7 +780,7 @@ export default function App() {
     const newReq = {
       id: Date.now().toString(),
       user: user.name,
-      spirits: 1000,
+      points: 1000,
       dnc: 1,
       wallet: user.walletAddress,
       status: 'PENDING',
@@ -936,9 +965,9 @@ export default function App() {
                 ❤️ <span>{lives}</span>
               </div>
 
-              {/* Spirits / Points Counter */}
+              {/* Points Counter */}
               <div className="bg-purple-950/80 border border-purple-400/50 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-purple-200">
-                🪙 <span>{user.spirits.toLocaleString()}</span>
+                🪙 <span>{user.points.toLocaleString()}</span>
               </div>
             </div>
 
@@ -1083,8 +1112,8 @@ export default function App() {
                 </div>
 
                 <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
-                  <div className="text-xs text-slate-300 mb-1">{t.spiritsEarned}</div>
-                  <div className="text-xl font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
+                  <div className="text-xs text-slate-300 mb-1">{t.pointsEarned}</div>
+                  <div className="text-xl font-black text-purple-300">{user.totalEarnedPoints.toLocaleString()}</div>
                 </div>
 
                 <div className="bg-[#240a47] p-4 rounded-2xl border border-purple-400/40 text-center shadow">
@@ -1212,7 +1241,7 @@ export default function App() {
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">{t.rewards}</h2>
               </div>
 
-              {/* 3-Hour Timed Spirits Bonus Claim Card */}
+              {/* 3-Hour Timed Lives Bonus Claim Card */}
               <div className="w-full bg-gradient-to-br from-amber-900/40 to-[#240a47] rounded-2xl p-4 border border-amber-500/40 flex items-center justify-between gap-3 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 text-lg font-bold">
@@ -1238,8 +1267,8 @@ export default function App() {
                     <img src={assetPath('dnc_coin.png')} alt="Coin" className="w-8 h-8 object-contain" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-300">{t.spirits}</div>
-                    <div className="text-2xl font-black text-purple-300">{user.spirits.toLocaleString()}</div>
+                    <div className="text-xs text-slate-300">{t.points}</div>
+                    <div className="text-2xl font-black text-purple-300">{user.points.toLocaleString()}</div>
                   </div>
                 </div>
                 <button onClick={handleWatchAd} className="bg-purple-600 hover:bg-purple-500 text-white w-9 h-9 rounded-full font-bold text-xl flex items-center justify-center shadow">
@@ -1264,7 +1293,7 @@ export default function App() {
               </div>
 
               <div className="w-full bg-[#0d031f]/80 rounded-xl p-3.5 border border-purple-400/30 text-center text-xs text-slate-200 shadow">
-                <span className="font-bold text-yellow-400">{user.language === 'العربية' ? 'معادلة التحويل:' : 'Conversion Rate:'}</span> 1,000 {t.spirits} = 1 DNC
+                <span className="font-bold text-yellow-400">{user.language === 'العربية' ? 'معادلة التحويل:' : 'Conversion Rate:'}</span> 1,000 {t.points} = 1 DNC
               </div>
 
               <div className="w-full bg-gradient-to-br from-purple-900/50 to-[#240a47] rounded-2xl p-4 border border-purple-500/40 flex items-center justify-between gap-3 shadow-lg">
@@ -1274,7 +1303,7 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-white">{user.language === 'العربية' ? 'شاهد فيديو إعلاني' : 'Watch Ad Video'}</div>
-                    <div className="text-[10px] text-purple-300">{user.language === 'العربية' ? 'واحصل على 100 روح إضافية' : 'And get 100 bonus spirits'}</div>
+                    <div className="text-[10px] text-purple-300">{user.language === 'العربية' ? 'واحصل على 100 نقطة إضافية' : 'And get 100 bonus points'}</div>
                   </div>
                 </div>
 
@@ -1329,7 +1358,7 @@ export default function App() {
                         <span className="font-bold text-white truncate max-w-[120px]">{player.name || 'لاعب'}</span>
                       </div>
                       <div className="w-20 text-left font-black text-purple-300">
-                        {(player.spirits || 0).toLocaleString()} 🪙
+                        {(player.points || player.spirits || 0).toLocaleString()} 🪙
                       </div>
                     </div>
                   ))
@@ -1400,8 +1429,8 @@ export default function App() {
                 </div>
 
                 <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
-                  <div className="text-[10px] text-slate-300 mb-1">{t.spiritsEarned}</div>
-                  <div className="text-base font-black text-purple-300">{user.totalEarnedSpirits.toLocaleString()}</div>
+                  <div className="text-[10px] text-slate-300 mb-1">{t.pointsEarned}</div>
+                  <div className="text-base font-black text-purple-300">{user.totalEarnedPoints.toLocaleString()}</div>
                 </div>
 
                 <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
@@ -1461,7 +1490,7 @@ export default function App() {
                     </div>
 
                     <div className="text-slate-300 flex justify-between">
-                      <span>{user.language === 'العربية' ? 'الأرواح:' : 'Spirits:'} {req.spirits}</span>
+                      <span>{user.language === 'العربية' ? 'النقاط:' : 'Points:'} {req.points}</span>
                       <span className="text-yellow-400 font-bold">{req.dnc} DNC</span>
                     </div>
 
@@ -1485,33 +1514,6 @@ export default function App() {
 
         </div>
 
-        {/* 10-QUESTION AUTOMATIC REWARDED VIDEO AD MODAL (+1 LIFE ONLY) */}
-        {show10QAd && (
-          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
-            <div className="w-full bg-[#240a47] border-2 border-rose-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(244,63,94,0.5)]">
-              <div className="w-14 h-14 bg-rose-500/20 border border-rose-400 rounded-full flex items-center justify-center mx-auto text-rose-400">
-                <Tv className="w-7 h-7 animate-pulse" />
-              </div>
-              <h3 className="text-lg font-black text-rose-400">
-                {user.language === 'العربية' ? 'إعلان المكافأة التلقائي (10 أسئلة)' : '10-Question Reward Ad'}
-              </h3>
-              <p className="text-xs text-slate-200 leading-relaxed">
-                {user.language === 'العربية' 
-                  ? 'أجبت على 10 أسئلة! جاري تشغيل إعلان قصير لمنحك حياة إضافية واحدة (+1 ❤️):' 
-                  : 'You answered 10 questions! Watching a short video ad to claim 1 Extra Life (+1 ❤️):'}
-              </p>
-              
-              <div className="bg-[#0d031f] py-4 rounded-2xl border border-rose-400/40 text-sm font-black text-rose-300">
-                ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {ad10QTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
-              </div>
-              
-              <div className="text-[10px] text-rose-200 font-bold">
-                +{user.language === 'العربية' ? '1 حياة فقط ❤️ (بدون نقاط)' : '1 Life Only ❤️ (No points)'}
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* FORCED GOOGLE REWARDED VIDEO AD MODAL */}
         {showForcedAd && (
           <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
@@ -1529,7 +1531,7 @@ export default function App() {
               </div>
               
               <div className="text-[10px] text-purple-300">
-                {user.language === 'العربية' ? 'ستحصل على 50 روح إضافية تلقائياً عند انتهاء الفيديو.' : 'You will automatically receive 50 bonus spirits when the video ends.'}
+                {user.language === 'العربية' ? 'ستحصل على 50 نقطة إضافية تلقائياً عند انتهاء الفيديو.' : 'You will automatically receive 50 bonus points when the video ends.'}
               </div>
             </div>
           </div>
