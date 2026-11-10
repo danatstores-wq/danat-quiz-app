@@ -601,16 +601,27 @@ export default function App() {
 
   // Rewarded Video: Extra Life (AdMob Unit: REWARDED_LIFE)
   const handleWatchForLife = async () => {
-    incrementVideoCount();
-    setLives(prev => prev + 1);
+    setIsWatchingAd(true);
+    let count = 5;
+    setAdTimer(count);
+    const interval = setInterval(async () => {
+      count -= 1;
+      setAdTimer(count);
+      if (count <= 0) {
+        clearInterval(interval);
+        setIsWatchingAd(false);
+        incrementVideoCount();
+        setLives(prev => prev + 1);
 
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        rewardedAdsWatched: increment(1)
-      });
-    }
+        if (currentUser) {
+          await updateDoc(doc(db, "users", currentUser.uid), {
+            rewardedAdsWatched: increment(1)
+          });
+        }
 
-    alert(user.language === 'العربية' ? 'حصلت على حياة إضافية! ❤️' : 'You earned 1 Extra Life! ❤️');
+        alert(user.language === 'العربية' ? '🎉 حصلت على حياة إضافية! ❤️' : '🎉 You earned 1 Extra Life! ❤️');
+      }
+    }, 1000);
   };
 
   // Rewarded Video: Bonus Points (AdMob Unit: REWARDED_POINTS)
