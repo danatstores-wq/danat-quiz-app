@@ -204,6 +204,10 @@ export default function App() {
   const [isWatchingAd, setIsWatchingAd] = useState(false);
   const [adTimer, setAdTimer] = useState(5);
 
+  // 10-Questions Milestone Ad State
+  const [showMilestoneAd, setShowMilestoneAd] = useState(false);
+  const [milestoneAdTimer, setMilestoneAdTimer] = useState(5);
+
   // Leaderboard State
   const [leaderboardUsers, setLeaderboardUsers] = useState([]);
   const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
@@ -467,6 +471,40 @@ export default function App() {
     return q.category;
   };
 
+  const triggerMilestoneVideoAd = () => {
+    setShowMilestoneAd(true);
+    let count = 5;
+    setMilestoneAdTimer(count);
+    const interval = setInterval(async () => {
+      count -= 1;
+      setMilestoneAdTimer(count);
+      if (count <= 0) {
+        clearInterval(interval);
+        setShowMilestoneAd(false);
+        incrementVideoCount();
+
+        // Reward: +10 Points
+        setUser(prev => ({
+          ...prev,
+          points: prev.points + 10,
+          totalEarnedPoints: prev.totalEarnedPoints + 10
+        }));
+
+        if (currentUser) {
+          await updateDoc(doc(db, "users", currentUser.uid), {
+            points: increment(10),
+            totalEarnedPoints: increment(10),
+            rewardedAdsWatched: increment(1)
+          });
+        }
+
+        alert(user.language === 'العربية' 
+          ? '🎉 أتممت 10 أسئلة! شاهدت إعلان المكافأة وحصلت على 10 نقاط (+10 🪙)!' 
+          : '🎉 Completed 10 questions! Watched rewarded ad and earned 10 points (+10 🪙)!');
+      }
+    }, 1000);
+  };
+
   const handleAnswerSubmit = async () => {
     if (selectedOption === null || lives <= 0) return;
     const currentQ = questions[currentQIndex];
@@ -486,12 +524,9 @@ export default function App() {
     const newAnsweredCount = user.totalQuestionsAnswered + 1;
     const newLevel = Math.floor(newAnsweredCount / 50) + 1;
 
-    // Check 10-questions interval for video trigger
+    // Track answered questions for 10-questions interval ad trigger
     const newSessionCount = questionsAnsweredCounter + 1;
     setQuestionsAnsweredCounter(newSessionCount);
-    if (newSessionCount % 10 === 0) {
-      handleWatchAd();
-    }
 
     if (isCorrect) {
       const earned = currentQ.points || 10;
@@ -532,6 +567,11 @@ export default function App() {
       }
     }
     setIsAnswered(true);
+
+    // Trigger video ad after every 10 questions answered
+    if (newSessionCount % 10 === 0) {
+      triggerMilestoneVideoAd();
+    }
   };
 
   const handleNextQuestion = async () => {
@@ -1513,6 +1553,33 @@ export default function App() {
           )}
 
         </div>
+
+        {/* 10-QUESTIONS MILESTONE VIDEO AD MODAL */}
+        {showMilestoneAd && (
+          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
+            <div className="w-full bg-[#240a47] border-2 border-yellow-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(234,179,8,0.5)]">
+              <div className="w-14 h-14 bg-yellow-500/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto text-yellow-400">
+                <Tv className="w-7 h-7 animate-pulse" />
+              </div>
+              <h3 className="text-lg font-black text-yellow-400">
+                {user.language === 'العربية' ? 'إعلان مكافأة كل 10 أسئلة' : '10-Questions Milestone Ad'}
+              </h3>
+              <p className="text-xs text-slate-200 leading-relaxed">
+                {user.language === 'العربية' 
+                  ? 'لقد أجبت على 10 أسئلة! شاهد هذا الفيديو القصير للحصول على 10 نقاط (+10 🪙):' 
+                  : 'You answered 10 questions! Watch this short video to earn 10 points (+10 🪙):'}
+              </p>
+              
+              <div className="bg-[#0d031f] py-4 rounded-2xl border border-purple-400/40 text-sm font-black text-yellow-300">
+                ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {milestoneAdTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
+              </div>
+              
+              <div className="text-[10px] text-purple-300">
+                {user.language === 'العربية' ? 'ستحصل على المكافأة تلقائياً عند انتهاء الإعلان.' : 'You will automatically receive your reward when the ad finishes.'}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* FORCED GOOGLE REWARDED VIDEO AD MODAL */}
         {showForcedAd && (
