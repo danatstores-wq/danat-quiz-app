@@ -264,86 +264,86 @@ const TRANSLATIONS = {
     hasAccountPrompt: 'Already have an account? Login'
   },
   'Français': {
-    appName: 'Danat Quiz',
-    subtitle: 'Testez vos connaissances et gagnez des récompensess',
-    startPlay: 'Commencer à jouer',
-    rewards: 'Récompenses',
-    leaderboard: 'Classement',
-    profile: 'Mon Profil',
-    statistics: 'Statistiques',
-    dncBalance: 'Solde DNC',
-    points: 'Points Actuels',
-    lives: 'Vies',
-    settings: 'Paramètres',
-    logout: 'Déconnexion',
+    appName: "Danat Quiz",
+    subtitle: "Testez vos connaissances et gagnez des récompenses",
+    startPlay: "Commencer à jouer",
+    rewards: "Récompenses",
+    leaderboard: "Classement",
+    profile: "Mon Profil",
+    statistics: "Statistiques",
+    dncBalance: "Solde DNC",
+    points: "Points Actuels",
+    lives: "Vies",
+    settings: "Paramètres",
+    logout: "Déconnexion",
     adminPanel: "Panneau d'administration",
-    close: 'Fermer',
-    nextQuestion: 'Question Suivante ➡️',
-    confirmAnswer: 'Confirmer la réponse',
-    connectWallet: 'Connecter le portefeuille (WalletConnect)',
-    walletConnected: 'Portefeuille connecté',
-    gamesPlayed: 'Parties jouées',
-    pointsEarned: 'Points gagnés',
-    levelLabel: 'Niveau',
-    emptyLeaderboard: 'Aucun joueur pour le moment',
-    watchForLife: '📺 Regarder une pub pour +1 Vie (+1 ❤️)',
-    watchForPoints: '📺 Regarder une pub pour +10 Points (+10 🪙)',
-    outOfLivesTitle: 'Plus de vies ! 💔',
-    outOfLivesDesc: 'Regardez une vidéo publicitaire pour obtenir une vie supplémentaire et continuer à jouer.',
-    adsWatched: 'Publicités regardées',
-    timedBonusTitle: 'Bonus de vie toutes les 3 heures ⏳',
-    timedBonusDesc: 'Réclamez 5 vies gratuites toutes les 3 heures (Limite max 10 vies par 24h).',
-    claimBonus: 'Réclamer le bonus',
+    close: "Fermer",
+    nextQuestion: "Question Suivante ➡️",
+    confirmAnswer: "Confirmer la réponse",
+    connectWallet: "Connecter le portefeuille (WalletConnect)",
+    walletConnected: "Portefeuille connecté",
+    gamesPlayed: "Parties jouées",
+    pointsEarned: "Points gagnés",
+    levelLabel: "Niveau",
+    emptyLeaderboard: "Aucun joueur pour le moment",
+    watchForLife: "📺 Regarder une pub pour +1 Vie (+1 ❤️)",
+    watchForPoints: "📺 Regarder une pub pour +10 Points (+10 🪙)",
+    outOfLivesTitle: "Plus de vies ! 💔",
+    outOfLivesDesc: "Regardez une vidéo publicitaire pour obtenir une vie supplémentaire et continuer à jouer.",
+    adsWatched: "Publicités regardées",
+    timedBonusTitle: "Bonus de vie toutes les 3 heures ⏳",
+    timedBonusDesc: "Réclamez 5 vies gratuites toutes les 3 heures (Limite max 10 vies par 24h).",
+    claimBonus: "Réclamer le bonus",
     appLanguage: "Langue de l'application",
-    changeProfilePic: 'Changer la photo de profil',
-    emailLabel: 'E-mail :',
+    changeProfilePic: "Changer la photo de profil",
+    emailLabel: "E-mail :",
     appLanguageLabel: "Langue de l'application :",
-    conversionRate: 'Taux de conversion :',
-    watchAdVideoTitle: 'Regarder une vidéo publicitaire',
-    watchAdVideoDesc: 'Et obtenez 10 points bonus',
-    watchBtn: 'Regarder',
-    topPlayers: 'Meilleurs Joueurs',
-    rank: 'Rang',
-    player: 'Joueur',
-    pts: 'Points',
-    loading: 'Chargement...',
-    redeemReq: 'Demande d'échange',
-    connectBtn: 'Connecter',
-    downloadCsvReport: 'Télécharger le rapport complet des joueurs (CSV)',
-    adminRedeemNotice: 'Examinez les demandes d'échange de Danat Coin avant d'envoyer des jetons :',
-    approved: 'Approuvé',
-    pending: 'En attente',
-    walletLabel: 'Portefeuille :',
-    approveAndSend: 'Approuver et envoyer les jetons',
-    milestoneAdTitle: 'Publicité d'étape tous les 10 questions',
-    milestoneAdDesc: 'Vous avez répondu à 10 questions ! Regardez cette courte vidéo pour gagner 10 points (+10 🪙) :',
-    pleaseWait: 'Veuillez patienter...',
-    seconds: 'secondes',
-    autoRewardNotice: 'Vous recevrez automatiquement votre récompense à la fin de la publicité.',
-    forcedAdTitle: 'Publicité Google obligatoire',
-    forcedAdDesc: 'Vous avez terminé 4 niveaux avec succès ! Une connexion Internet et le visionnage de cette courte publicité sont requis pour continuer :',
-    forcedAdRewardNotice: 'Vous recevrez automatiquement 50 points bonus à la fin de la vidéo.',
-    connectWeb3Title: 'Connecter le portefeuille Web3',
-    connectWeb3Desc: 'Entrez l'adresse de votre portefeuille Ethereum (MetaMask / Trust Wallet) pour recevoir Danat Coin (DNC) :',
-    confirmConnectBtn: 'Confirmer et connecter le portefeuille',
-    selectAvatarTitle: 'Choisissez votre avatar',
-    backToHome: 'Retour à l'accueil',
-    questionNav: 'Question',
-    ofNav: 'sur',
-    loginTitle: 'Danat Quiz',
-    loginSubtitle: 'Connectez-vous ou créez un compte pour enregistrer vos données dans le cloud',
-    forgotPasswordLabel: 'E-mail pour réinitialiser le mot de passe',
-    sendResetLink: 'Envoyer le lien de réinitialisation',
-    backToLogin: 'Retour à la connexion',
-    fullName: 'Nom complet',
-    enterName: 'Entrez votre nom',
-    email: 'E-mail',
-    password: 'Mot de passe',
-    forgotPasswordQuestion: 'Mot de passe oublié ?',
-    loginBtn: 'Se connecter',
-    signupBtn: 'Créer un nouveau compte',
+    conversionRate: "Taux de conversion :",
+    watchAdVideoTitle: "Regarder une vidéo publicitaire",
+    watchAdVideoDesc: "Et obtenez 10 points bonus",
+    watchBtn: "Regarder",
+    topPlayers: "Meilleurs Joueurs",
+    rank: "Rang",
+    player: "Joueur",
+    pts: "Points",
+    loading: "Chargement...",
+    redeemReq: "Demande d'échange",
+    connectBtn: "Connecter",
+    downloadCsvReport: "Télécharger le rapport complet des joueurs (CSV)",
+    adminRedeemNotice: "Examinez les demandes d'échange de Danat Coin avant d'envoyer des jetons :",
+    approved: "Approuvé",
+    pending: "En attente",
+    walletLabel: "Portefeuille :",
+    approveAndSend: "Approuver et envoyer les jetons",
+    milestoneAdTitle: "Publicité d'étape tous les 10 questions",
+    milestoneAdDesc: "Vous avez répondu à 10 questions ! Regardez cette courte vidéo pour gagner 10 points (+10 🪙) :",
+    pleaseWait: "Veuillez patienter...",
+    seconds: "secondes",
+    autoRewardNotice: "Vous recevrez automatiquement votre récompense à la fin de la publicité.",
+    forcedAdTitle: "Publicité Google obligatoire",
+    forcedAdDesc: "Vous avez terminé 4 niveaux avec succès ! Une connexion Internet et le visionnage de cette courte publicité sont requis pour continuer :",
+    forcedAdRewardNotice: "Vous recevrez automatiquement 50 points bonus à la fin de la vidéo.",
+    connectWeb3Title: "Connecter le portefeuille Web3",
+    connectWeb3Desc: "Entrez l'adresse de votre portefeuille Ethereum (MetaMask / Trust Wallet) pour recevoir Danat Coin (DNC) :",
+    confirmConnectBtn: "Confirmer et connecter le portefeuille",
+    selectAvatarTitle: "Choisissez votre avatar",
+    backToHome: "Retour à l'accueil",
+    questionNav: "Question",
+    ofNav: "sur",
+    loginTitle: "Danat Quiz",
+    loginSubtitle: "Connectez-vous ou créez un compte pour enregistrer vos données dans le cloud",
+    forgotPasswordLabel: "E-mail pour réinitialiser le mot de passe",
+    sendResetLink: "Envoyer le lien de réinitialisation",
+    backToLogin: "Retour à la connexion",
+    fullName: "Nom complet",
+    enterName: "Entrez votre nom",
+    email: "E-mail",
+    password: "Mot de passe",
+    forgotPasswordQuestion: "Mot de passe oublié ?",
+    loginBtn: "Se connecter",
+    signupBtn: "Créer un nouveau compte",
     noAccountPrompt: "Vous n'avez pas de compte ? Créez-en un maintenant",
-    hasAccountPrompt: 'Vous avez déjà un compte ? Connectez-vous'
+    hasAccountPrompt: "Vous avez déjà un compte ? Connectez-vous"
   }
 };
 
@@ -441,7 +441,7 @@ export default function App() {
           setLeaderboardUsers(usersList);
         } catch (err) {
           console.error("Failed to fetch leaderboard:", err);
-        } fontally {
+        } finally {
           setLoadingLeaderboard(false);
         }
       }
@@ -610,8 +610,7 @@ export default function App() {
     try {
       const querySnapshot = await getDocs(collection(db, "users"));
       let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += "Name,Email,Points,DNC Balance,Total Games,Wallet Address
-";
+      csvContent += "Name,Email,Points,DNC Balance,Total Games,Wallet Address\n";
 
       querySnapshot.forEach((docSnap) => {
         const p = docSnap.data();
@@ -623,8 +622,7 @@ export default function App() {
           p.totalGames || 0,
           '"' + (p.walletAddress || 'Not Connected') + '"'
         ].join(",");
-        csvContent += row + "
-";
+        csvContent += row + "\n";
       });
 
       const encodedUri = encodeURI(csvContent);
@@ -993,7 +991,7 @@ export default function App() {
 
   const handleRedeemDnc = async () => {
     if (!user.walletConnected) {
-      alert(user.language === 'العربية' ? 'يرجى ربط محفظتك أولاً من صفحة الملف الشخصي!' : user.language === 'Français' ? 'Veuillez d'abord connecter votre portefeuille dans le profil !' : 'Please connect your wallet first from the profile page!');
+      alert(user.language === 'العربية' ? 'يرجى ربط محفظتك أولاً من صفحة الملف الشخصي!' : user.language === 'Français' ? "Veuillez d'abord connecter votre portefeuille dans le profil !" : 'Please connect your wallet first from the profile page!');
       setActiveTab('profile');
       return;
     }
@@ -1029,7 +1027,7 @@ export default function App() {
     };
 
     setRedemptions([newReq, ...redemptions]);
-    alert(user.language === 'العربية' ? 'تم تقديم طلب الاستبدال بنجاح! بانتظار موافقة المسؤول.' : user.language === 'Français' ? 'Demande d'échange soumise avec succès ! En attente d'approbation.' : 'Redemption request submitted successfully! Awaiting admin approval.');
+    alert(user.language === 'العربية' ? 'تم تقديم طلب الاستبدال بنجاح! بانتظار موافقة المسؤول.' : user.language === 'Français' ? "Demande d'échange soumise avec succès ! En attente d'approbation." : 'Redemption request submitted successfully! Awaiting admin approval.');
   };
 
   const handleAdminApprove = (id) => {
