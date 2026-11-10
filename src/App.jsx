@@ -490,7 +490,7 @@ export default function App() {
     const newSessionCount = questionsAnsweredCounter + 1;
     setQuestionsAnsweredCounter(newSessionCount);
     if (newSessionCount % 10 === 0) {
-      handleWatchAd();
+      handleWatchForLife();
     }
 
     if (isCorrect) {
