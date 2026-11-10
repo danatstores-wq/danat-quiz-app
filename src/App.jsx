@@ -39,52 +39,61 @@ const INITIAL_QUESTIONS = [
     id: "q1",
     question: {
       en: "What is the capital of Saudi Arabia?",
-      ar: "ما هي عاصمة المملكة العربية السعودية؟"
+      ar: "ما هي عاصمة المملكة العربية السعودية؟",
+      fr: "Quelle est la capitale de l'Arabie Saoudite ?"
     },
     options: {
       en: ["Jeddah", "Riyadh", "Dammam", "Mecca"],
-      ar: ["جدة", "الرياض", "الدمام", "مكة المكرمة"]
+      ar: ["جدة", "الرياض", "الدمام", "مكة المكرمة"],
+      fr: ["Djeddah", "Riyad", "Dammam", "La Mecque"]
     },
     correctAnswer: {
       en: "Riyadh",
-      ar: "الرياض"
+      ar: "الرياض",
+      fr: "Riyad"
     },
     points: 10,
-    category: { en: "Geography", ar: "جغرافيا" }
+    category: { en: "Geography", ar: "جغرافيا", fr: "Géographie" }
   },
   {
     id: "q2",
     question: {
       en: "What is the main token of Danat network?",
-      ar: "ما هي العملة الأساسية لشَبكة Danat Coin؟"
+      ar: "ما هي العملة الأساسية لشَبكة Danat Coin؟",
+      fr: "Quel est le jeton principal du réseau Danat ?"
     },
     options: {
       en: ["ETH", "USDT", "DNC", "BTC"],
-      ar: ["ETH", "USDT", "DNC", "BTC"]
+      ar: ["ETH", "USDT", "DNC", "BTC"],
+      fr: ["ETH", "USDT", "DNC", "BTC"]
     },
     correctAnswer: {
       en: "DNC",
-      ar: "DNC"
+      ar: "DNC",
+      fr: "DNC"
     },
     points: 10,
-    category: { en: "Crypto", ar: "كريبتو" }
+    category: { en: "Crypto", ar: "كريبتو", fr: "Crypto" }
   },
   {
     id: "q3",
     question: {
       en: "How many pillars of Islam are there?",
-      ar: "كم عدد أركان الإسلام؟"
+      ar: "كم عدد أركان الإسلام؟",
+      fr: "Combien y a-t-il de piliers de l'Islam ?"
     },
     options: {
       en: ["4", "5", "6", "7"],
-      ar: ["4", "5", "6", "7"]
+      ar: ["4", "5", "6", "7"],
+      fr: ["4", "5", "6", "7"]
     },
     correctAnswer: {
       en: "5",
-      ar: "5"
+      ar: "5",
+      fr: "5"
     },
     points: 10,
-    category: { en: "General Culture", ar: "ثقافة عامة" }
+    category: { en: "General Culture", ar: "ثقافة عامة", fr: "Culture Générale" }
   }
 ];
 
@@ -120,7 +129,57 @@ const TRANSLATIONS = {
     adsWatched: 'الإعلانات المشاهدة',
     timedBonusTitle: 'مكافأة كل 3 ساعات ⏳',
     timedBonusDesc: 'احصل على 5 أرواح مجانية كل 3 ساعات (حد أقصى 10 أرواح في 24 ساعة).',
-    claimBonus: 'استلام المكافأة'
+    claimBonus: 'استلام المكافأة',
+    appLanguage: 'لغة التطبيق',
+    changeProfilePic: 'تغيير الصورة الشخصية',
+    emailLabel: 'البريد الإلكتروني:',
+    appLanguageLabel: 'لغة التطبيق:',
+    conversionRate: 'معادلة التحويل:',
+    watchAdVideoTitle: 'شاهد فيديو إعلاني',
+    watchAdVideoDesc: 'واحصل على 10 نقاط إضافية',
+    watchBtn: 'مشاهدة',
+    topPlayers: 'أفضل اللاعبين',
+    rank: 'المركز',
+    player: 'اللاعب',
+    pts: 'النقاط',
+    loading: 'جاري التحميل...',
+    redeemReq: 'طلب استبدال',
+    connectBtn: 'ربط',
+    downloadCsvReport: 'تحميل تقرير اللاعبين الكامل (CSV)',
+    adminRedeemNotice: 'مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:',
+    approved: 'تم الاعتماد',
+    pending: 'قيد الانتظار',
+    walletLabel: 'المحفظة:',
+    approveAndSend: 'اعتماد وإرسال التوكنز',
+    milestoneAdTitle: 'إعلان مكافأة كل 10 أسئلة',
+    milestoneAdDesc: 'لقد أجبت على 10 أسئلة! شاهد هذا الفيديو القصير للحصول على 10 نقاط (+10 🪙):',
+    pleaseWait: 'يرجى الانتظار...',
+    seconds: 'ثوانٍ',
+    autoRewardNotice: 'ستحصل على المكافأة تلقائياً عند انتهاء الإعلان.',
+    forcedAdTitle: 'إعلان جوجل الإجباري',
+    forcedAdDesc: 'لقد أنهيت 4 مستويات بنجاح! يلزم الاتصال بالإنترنت ومشاهدة هذا الإعلان القصير للمتابعة:',
+    forcedAdRewardNotice: 'ستحصل على 50 نقطة إضافية تلقائياً عند انتهاء الفيديو.',
+    connectWeb3Title: 'ربط محفظة Web3',
+    connectWeb3Desc: 'أدخل عنوان محفظة إيثريوم (MetaMask / Trust Wallet) لاستلام توكن دانات كوين (DNC):',
+    confirmConnectBtn: 'تأكيد وتوصيل المحفظة',
+    selectAvatarTitle: 'اختر صورتك الشخصية',
+    backToHome: 'العودة للرئيسية',
+    questionNav: 'السؤال',
+    ofNav: 'من',
+    loginTitle: 'دانات كويز | Danat Quiz',
+    loginSubtitle: 'سجل دخولك أو أنشئ حساباً لحفظ بياناتك في السحابة',
+    forgotPasswordLabel: 'البريد الإلكتروني لاستعادة كلمة المرور',
+    sendResetLink: 'إرسال رابط الاستعادة',
+    backToLogin: 'العودة لتسجيل الدخول',
+    fullName: 'الاسم الكامل',
+    enterName: 'أدخل اسمك',
+    email: 'البريد الإلكتروني',
+    password: 'كلمة المرور',
+    forgotPasswordQuestion: 'هل نسيت كلمة المرور؟',
+    loginBtn: 'تسجيل الدخول',
+    signupBtn: 'إنشاء حساب جديد',
+    noAccountPrompt: 'ليس لديك حساب؟ أنشئ حساباً الآن',
+    hasAccountPrompt: 'لديك حساب بالفعل؟ سجل الدخول'
   },
   'English': {
     appName: 'Danat Quiz',
@@ -152,7 +211,139 @@ const TRANSLATIONS = {
     adsWatched: 'Ads Watched',
     timedBonusTitle: '3-Hour Life Bonus ⏳',
     timedBonusDesc: 'Claim 5 free lives every 3 hours (Max cap 10 lives per 24 hours).',
-    claimBonus: 'Claim Bonus'
+    claimBonus: 'Claim Bonus',
+    appLanguage: 'App Language',
+    changeProfilePic: 'Change Profile Picture',
+    emailLabel: 'Email:',
+    appLanguageLabel: 'App Language:',
+    conversionRate: 'Conversion Rate:',
+    watchAdVideoTitle: 'Watch Ad Video',
+    watchAdVideoDesc: 'And get 10 bonus points',
+    watchBtn: 'Watch',
+    topPlayers: 'Top Players',
+    rank: 'Rank',
+    player: 'Player',
+    pts: 'Points',
+    loading: 'Loading...',
+    redeemReq: 'Redeem Request',
+    connectBtn: 'Connect',
+    downloadCsvReport: 'Download Full Players Report (CSV)',
+    adminRedeemNotice: 'Review Danat Coin redemption requests before sending tokens:',
+    approved: 'Approved',
+    pending: 'Pending',
+    walletLabel: 'Wallet:',
+    approveAndSend: 'Approve & Send Tokens',
+    milestoneAdTitle: '10-Questions Milestone Ad',
+    milestoneAdDesc: 'You answered 10 questions! Watch this short video to earn 10 points (+10 🪙):',
+    pleaseWait: 'Please wait...',
+    seconds: 'seconds',
+    autoRewardNotice: 'You will automatically receive your reward when the ad finishes.',
+    forcedAdTitle: 'Forced Google Ad',
+    forcedAdDesc: 'You successfully finished 4 levels! Internet connection and watching this short ad are required to continue:',
+    forcedAdRewardNotice: 'You will automatically receive 50 bonus points when the video ends.',
+    connectWeb3Title: 'Connect Web3 Wallet',
+    connectWeb3Desc: 'Enter Ethereum wallet address (MetaMask / Trust Wallet) to receive Danat Coin (DNC):',
+    confirmConnectBtn: 'Confirm & Connect Wallet',
+    selectAvatarTitle: 'Select Your Avatar',
+    backToHome: 'Back to Home',
+    questionNav: 'Question',
+    ofNav: 'of',
+    loginTitle: 'Danat Quiz',
+    loginSubtitle: 'Log in or create an account to save your data in the cloud',
+    forgotPasswordLabel: 'Email to reset password',
+    sendResetLink: 'Send Reset Link',
+    backToLogin: 'Back to Login',
+    fullName: 'Full Name',
+    enterName: 'Enter your name',
+    email: 'Email',
+    password: 'Password',
+    forgotPasswordQuestion: 'Forgot password?',
+    loginBtn: 'Login',
+    signupBtn: 'Create New Account',
+    noAccountPrompt: "Don't have an account? Create one now",
+    hasAccountPrompt: 'Already have an account? Login'
+  },
+  'Français': {
+    appName: 'Danat Quiz',
+    subtitle: 'Testez vos connaissances et gagnez des récompensess',
+    startPlay: 'Commencer à jouer',
+    rewards: 'Récompenses',
+    leaderboard: 'Classement',
+    profile: 'Mon Profil',
+    statistics: 'Statistiques',
+    dncBalance: 'Solde DNC',
+    points: 'Points Actuels',
+    lives: 'Vies',
+    settings: 'Paramètres',
+    logout: 'Déconnexion',
+    adminPanel: "Panneau d'administration",
+    close: 'Fermer',
+    nextQuestion: 'Question Suivante ➡️',
+    confirmAnswer: 'Confirmer la réponse',
+    connectWallet: 'Connecter le portefeuille (WalletConnect)',
+    walletConnected: 'Portefeuille connecté',
+    gamesPlayed: 'Parties jouées',
+    pointsEarned: 'Points gagnés',
+    levelLabel: 'Niveau',
+    emptyLeaderboard: 'Aucun joueur pour le moment',
+    watchForLife: '📺 Regarder une pub pour +1 Vie (+1 ❤️)',
+    watchForPoints: '📺 Regarder une pub pour +10 Points (+10 🪙)',
+    outOfLivesTitle: 'Plus de vies ! 💔',
+    outOfLivesDesc: 'Regardez une vidéo publicitaire pour obtenir une vie supplémentaire et continuer à jouer.',
+    adsWatched: 'Publicités regardées',
+    timedBonusTitle: 'Bonus de vie toutes les 3 heures ⏳',
+    timedBonusDesc: 'Réclamez 5 vies gratuites toutes les 3 heures (Limite max 10 vies par 24h).',
+    claimBonus: 'Réclamer le bonus',
+    appLanguage: "Langue de l'application",
+    changeProfilePic: 'Changer la photo de profil',
+    emailLabel: 'E-mail :',
+    appLanguageLabel: "Langue de l'application :",
+    conversionRate: 'Taux de conversion :',
+    watchAdVideoTitle: 'Regarder une vidéo publicitaire',
+    watchAdVideoDesc: 'Et obtenez 10 points bonus',
+    watchBtn: 'Regarder',
+    topPlayers: 'Meilleurs Joueurs',
+    rank: 'Rang',
+    player: 'Joueur',
+    pts: 'Points',
+    loading: 'Chargement...',
+    redeemReq: 'Demande d'échange',
+    connectBtn: 'Connecter',
+    downloadCsvReport: 'Télécharger le rapport complet des joueurs (CSV)',
+    adminRedeemNotice: 'Examinez les demandes d'échange de Danat Coin avant d'envoyer des jetons :',
+    approved: 'Approuvé',
+    pending: 'En attente',
+    walletLabel: 'Portefeuille :',
+    approveAndSend: 'Approuver et envoyer les jetons',
+    milestoneAdTitle: 'Publicité d'étape tous les 10 questions',
+    milestoneAdDesc: 'Vous avez répondu à 10 questions ! Regardez cette courte vidéo pour gagner 10 points (+10 🪙) :',
+    pleaseWait: 'Veuillez patienter...',
+    seconds: 'secondes',
+    autoRewardNotice: 'Vous recevrez automatiquement votre récompense à la fin de la publicité.',
+    forcedAdTitle: 'Publicité Google obligatoire',
+    forcedAdDesc: 'Vous avez terminé 4 niveaux avec succès ! Une connexion Internet et le visionnage de cette courte publicité sont requis pour continuer :',
+    forcedAdRewardNotice: 'Vous recevrez automatiquement 50 points bonus à la fin de la vidéo.',
+    connectWeb3Title: 'Connecter le portefeuille Web3',
+    connectWeb3Desc: 'Entrez l'adresse de votre portefeuille Ethereum (MetaMask / Trust Wallet) pour recevoir Danat Coin (DNC) :',
+    confirmConnectBtn: 'Confirmer et connecter le portefeuille',
+    selectAvatarTitle: 'Choisissez votre avatar',
+    backToHome: 'Retour à l'accueil',
+    questionNav: 'Question',
+    ofNav: 'sur',
+    loginTitle: 'Danat Quiz',
+    loginSubtitle: 'Connectez-vous ou créez un compte pour enregistrer vos données dans le cloud',
+    forgotPasswordLabel: 'E-mail pour réinitialiser le mot de passe',
+    sendResetLink: 'Envoyer le lien de réinitialisation',
+    backToLogin: 'Retour à la connexion',
+    fullName: 'Nom complet',
+    enterName: 'Entrez votre nom',
+    email: 'E-mail',
+    password: 'Mot de passe',
+    forgotPasswordQuestion: 'Mot de passe oublié ?',
+    loginBtn: 'Se connecter',
+    signupBtn: 'Créer un nouveau compte',
+    noAccountPrompt: "Vous n'avez pas de compte ? Créez-en un maintenant",
+    hasAccountPrompt: 'Vous avez déjà un compte ? Connectez-vous'
   }
 };
 
@@ -185,7 +376,7 @@ export default function App() {
     avatar: 'avatar-man-ghutra.png',
   });
 
-  const langKey = user.language === 'العربية' ? 'ar' : 'en';
+  const langKey = user.language === 'العربية' ? 'ar' : user.language === 'Français' ? 'fr' : 'en';
   const t = TRANSLATIONS[user.language] || TRANSLATIONS['English'];
 
   const [lives, setLives] = useState(3);
@@ -250,7 +441,7 @@ export default function App() {
           setLeaderboardUsers(usersList);
         } catch (err) {
           console.error("Failed to fetch leaderboard:", err);
-        } finally {
+        } fontally {
           setLoadingLeaderboard(false);
         }
       }
@@ -419,7 +610,8 @@ export default function App() {
     try {
       const querySnapshot = await getDocs(collection(db, "users"));
       let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += "Name,Email,Points,DNC Balance,Total Games,Wallet Address\n";
+      csvContent += "Name,Email,Points,DNC Balance,Total Games,Wallet Address
+";
 
       querySnapshot.forEach((docSnap) => {
         const p = docSnap.data();
@@ -431,7 +623,8 @@ export default function App() {
           p.totalGames || 0,
           '"' + (p.walletAddress || 'Not Connected') + '"'
         ].join(",");
-        csvContent += row + "\n";
+        csvContent += row + "
+";
       });
 
       const encodedUri = encodeURI(csvContent);
@@ -450,7 +643,7 @@ export default function App() {
   const getQuestionText = (q) => {
     if (!q) return "";
     if (typeof q.question === 'object' && q.question !== null) {
-      return q.question[langKey] || q.question['en'] || q.question['ar'] || "";
+      return q.question[langKey] || q.question['en'] || q.question['ar'] || q.question['fr'] || "";
     }
     return q.question || "";
   };
@@ -458,15 +651,15 @@ export default function App() {
   const getQuestionOptions = (q) => {
     if (!q) return [];
     if (typeof q.options === 'object' && !Array.isArray(q.options) && q.options !== null) {
-      return q.options[langKey] || q.options['en'] || q.options['ar'] || [];
+      return q.options[langKey] || q.options['en'] || q.options['ar'] || q.options['fr'] || [];
     }
     return Array.isArray(q.options) ? q.options : [];
   };
 
   const getQuestionCategory = (q) => {
-    if (!q || !q.category) return user.language === 'العربية' ? "عام" : "General";
+    if (!q || !q.category) return user.language === 'العربية' ? "عام" : user.language === 'Français' ? "Général" : "General";
     if (typeof q.category === 'object') {
-      return q.category[langKey] || q.category['en'] || q.category['ar'] || "";
+      return q.category[langKey] || q.category['en'] || q.category['ar'] || q.category['fr'] || "";
     }
     return q.category;
   };
@@ -500,6 +693,8 @@ export default function App() {
 
         alert(user.language === 'العربية' 
           ? '🎉 أتممت 10 أسئلة! شاهدت إعلان المكافأة وحصلت على 10 نقاط (+10 🪙)!' 
+          : user.language === 'Français'
+          ? '🎉 10 questions terminées ! Vous avez regardé la publicité et gagné 10 points (+10 🪙) !'
           : '🎉 Completed 10 questions! Watched rewarded ad and earned 10 points (+10 🪙)!');
       }
     }, 1000);
@@ -627,7 +822,7 @@ export default function App() {
           });
         }
 
-        alert(user.language === 'العربية' ? '🌐 تم الاتصال بالإنترنت: شاهدت إعلان جوجل الإجباري وحصلت على 50 نقطة!' : '🌐 Connected: Watched forced ad and earned 50 points!');
+        alert(user.language === 'العربية' ? '🌐 تم الاتصال بالإنترنت: شاهدت إعلان جوجل الإجباري وحصلت على 50 نقطة!' : user.language === 'Français' ? '🌐 Connecté : Vous avez regardé la publicité Google et gagné 50 points !' : '🌐 Connected: Watched forced ad and earned 50 points!');
         setActiveTab('home');
       }
     }, 1000);
@@ -650,7 +845,7 @@ export default function App() {
       });
     }
 
-    alert(user.language === 'العربية' ? 'حصلت على حياة إضافية! ❤️' : 'You earned 1 Extra Life! ❤️');
+    alert(user.language === 'العربية' ? 'حصلت على حياة إضافية! ❤️' : user.language === 'Français' ? 'Vous avez gagné 1 vie supplémentaire ! ❤️' : 'You earned 1 Extra Life! ❤️');
   };
 
   // Rewarded Video: Bonus Points (AdMob Unit: REWARDED_POINTS)
@@ -671,7 +866,7 @@ export default function App() {
       });
     }
 
-    alert(user.language === 'العربية' ? 'حصلت على 10 نقاط إضافية! 🪙' : 'You earned 10 Bonus Points! 🪙');
+    alert(user.language === 'العربية' ? 'حصلت على 10 نقاط إضافية! 🪙' : user.language === 'Français' ? 'Vous avez gagné 10 points bonus ! 🪙' : 'You earned 10 Bonus Points! 🪙');
   };
 
   // 3-Hour Timed Lives Bonus (+5 Lives every 3 hrs, max 10 lives per 24 hours)
@@ -684,6 +879,8 @@ export default function App() {
       const hoursLeft = (3 - hoursElapsed).toFixed(1);
       alert(user.language === 'العربية' 
         ? `يرجى الانتظار ${hoursLeft} ساعة لقطف الأرواح المجانية القادمة!` 
+        : user.language === 'Français'
+        ? `Veuillez patienter ${hoursLeft} heures pour réclamer vos prochaines vies gratuites !`
         : `Please wait ${hoursLeft} hours to claim your next free lives!`);
       return;
     }
@@ -703,6 +900,8 @@ export default function App() {
     if (currentDailyClaimed >= 10) {
       alert(user.language === 'العربية' 
         ? '⚠️ وصلت إلى الحد الأقصى للأرواح المجانية (10 أرواح في 24 ساعة).' 
+        : user.language === 'Français'
+        ? '⚠️ Vous avez atteint la limite maximale de vies gratuites (10 vies par 24 heures).'
         : '⚠️ You reached the max limit for free lives (10 lives per 24 hours).');
       return;
     }
@@ -729,6 +928,8 @@ export default function App() {
 
     alert(user.language === 'العربية' 
       ? '🎉 تهانينا! حصلت على 5 أرواح مجانية (+5 ❤️).' 
+      : user.language === 'Français'
+      ? '🎉 Félicitations ! Vous avez réclamé 5 vies gratuites (+5 ❤️).'
       : '🎉 Congrats! You claimed 5 free lives (+5 ❤️).');
   };
 
@@ -774,7 +975,7 @@ export default function App() {
           });
         }
 
-        alert(user.language === 'العربية' ? '🎉 تهانينا! حصلت على 10 نقاط إضافية.' : '🎉 Congrats! Earned 10 bonus points.');
+        alert(user.language === 'العربية' ? '🎉 تهانينا! حصلت على 10 نقاط إضافية.' : user.language === 'Français' ? '🎉 Félicitations ! Vous avez gagné 10 points bonus.' : '🎉 Congrats! Earned 10 bonus points.');
       }
     }, 1000);
   };
@@ -792,12 +993,12 @@ export default function App() {
 
   const handleRedeemDnc = async () => {
     if (!user.walletConnected) {
-      alert('يرجى ربط محفظتك أولاً من صفحة الملف الشخصي!');
+      alert(user.language === 'العربية' ? 'يرجى ربط محفظتك أولاً من صفحة الملف الشخصي!' : user.language === 'Français' ? 'Veuillez d'abord connecter votre portefeuille dans le profil !' : 'Please connect your wallet first from the profile page!');
       setActiveTab('profile');
       return;
     }
     if (user.points < 1000) {
-      alert('رصيدك غير كافٍ. الحد الأدنى للتحويل هو 1,000 نقطة.');
+      alert(user.language === 'العربية' ? 'رصيدك غير كافٍ. الحد الأدنى للتحويل هو 1,000 نقطة.' : user.language === 'Français' ? 'Solde insuffisant. Le transfert minimum est de 1 000 points.' : 'Insufficient balance. Minimum transfer is 1,000 points.');
       return;
     }
 
@@ -828,7 +1029,7 @@ export default function App() {
     };
 
     setRedemptions([newReq, ...redemptions]);
-    alert('تم تقديم طلب الاستبدال بنجاح! بانتظار موافقة المسؤول.');
+    alert(user.language === 'العربية' ? 'تم تقديم طلب الاستبدال بنجاح! بانتظار موافقة المسؤول.' : user.language === 'Français' ? 'Demande d'échange soumise avec succès ! En attente d'approbation.' : 'Redemption request submitted successfully! Awaiting admin approval.');
   };
 
   const handleAdminApprove = (id) => {
@@ -840,8 +1041,8 @@ export default function App() {
       <div className="min-h-screen bg-[#1a0833] text-white flex items-center justify-center p-4" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
         <div className="w-full max-w-sm bg-[#240a47]/90 border border-purple-500/40 rounded-3xl p-6 shadow-2xl space-y-4">
           <div className="text-center space-y-1">
-            <h1 className="text-xl font-black text-yellow-400">دانات كويز | Danat Quiz</h1>
-            <p className="text-xs text-slate-300">سجل دخولك أو أنشئ حساباً لحفظ بياناتك في السحابة</p>
+            <h1 className="text-xl font-black text-yellow-400">{t.loginTitle}</h1>
+            <p className="text-xs text-slate-300">{t.loginSubtitle}</p>
           </div>
 
           {authError && (
@@ -859,7 +1060,7 @@ export default function App() {
           {authMode === 'forgot' ? (
             <form onSubmit={handleForgotPassword} className="space-y-4">
               <div>
-                <label className="block text-xs text-slate-300 mb-1">البريد الإلكتروني لاستعادة كلمة المرور</label>
+                <label className="block text-xs text-slate-300 mb-1">{t.forgotPasswordLabel}</label>
                 <input 
                   type="email" 
                   value={emailInput}
@@ -873,7 +1074,7 @@ export default function App() {
                 type="submit" 
                 className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black py-3.5 rounded-xl shadow-lg transition text-sm"
               >
-                إرسال رابط الاستعادة
+                {t.sendResetLink}
               </button>
               <div className="text-center pt-2">
                 <button 
@@ -881,7 +1082,7 @@ export default function App() {
                   onClick={() => { setAuthMode('login'); setAuthError(''); setAuthMessage(''); }}
                   className="text-xs text-yellow-400 font-bold hover:underline"
                 >
-                  العودة لتسجيل الدخول
+                  {t.backToLogin}
                 </button>
               </div>
             </form>
@@ -889,19 +1090,19 @@ export default function App() {
             <form onSubmit={authMode === 'login' ? handleSignIn : handleSignUp} className="space-y-4">
               {authMode === 'signup' && (
                 <div>
-                  <label className="block text-xs text-slate-300 mb-1">الاسم الكامل</label>
+                  <label className="block text-xs text-slate-300 mb-1">{t.fullName}</label>
                   <input 
                     type="text" 
                     value={nameInput}
                     onChange={(e) => setNameInput(e.target.value)}
-                    placeholder="أدخل اسمك"
+                    placeholder={t.enterName}
                     required
                     className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
                   />
                 </div>
               )}
               <div>
-                <label className="block text-xs text-slate-300 mb-1">البريد الإلكتروني</label>
+                <label className="block text-xs text-slate-300 mb-1">{t.email}</label>
                 <input 
                   type="email" 
                   value={emailInput}
@@ -912,7 +1113,7 @@ export default function App() {
                 />
               </div>
               <div>
-                <label className="block text-xs text-slate-300 mb-1">كلمة المرور</label>
+                <label className="block text-xs text-slate-300 mb-1">{t.password}</label>
                 <input 
                   type="password" 
                   value={passwordInput}
@@ -930,7 +1131,7 @@ export default function App() {
                     onClick={() => { setAuthMode('forgot'); setAuthError(''); setAuthMessage(''); }}
                     className="text-[11px] text-purple-300 hover:text-yellow-400 underline"
                   >
-                    هل نسيت كلمة المرور؟
+                    {t.forgotPasswordQuestion}
                   </button>
                 </div>
               )}
@@ -940,7 +1141,7 @@ export default function App() {
                 className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm"
               >
                 {authMode === 'login' ? <LogIn className="w-4 h-4" /> : <UserPlus className="w-4 h-4" />}
-                {authMode === 'login' ? 'تسجيل الدخول' : 'إنشاء حساب جديد'}
+                {authMode === 'login' ? t.loginBtn : t.signupBtn}
               </button>
             </form>
           )}
@@ -951,7 +1152,7 @@ export default function App() {
                 onClick={() => { setAuthMode(authMode === 'login' ? 'signup' : 'login'); setAuthError(''); setAuthMessage(''); }}
                 className="text-xs text-yellow-400 font-bold hover:underline"
               >
-                {authMode === 'login' ? 'ليس لديك حساب؟ أنشئ حساباً الآن' : 'لديك حساب بالفعل؟ سجل الدخول'}
+                {authMode === 'login' ? t.noAccountPrompt : t.hasAccountPrompt}
               </button>
             </div>
           )}
@@ -1166,7 +1367,7 @@ export default function App() {
                 onClick={() => setActiveTab('home')}
                 className="w-full mt-4 py-3 bg-[#240a47] hover:bg-[#320d63] border border-purple-400/40 text-white font-bold rounded-xl transition text-xs"
               >
-                {user.language === 'العربية' ? 'العودة للرئيسية' : 'Back to Home'}
+                {t.backToHome}
               </button>
             </div>
           )}
@@ -1204,7 +1405,7 @@ export default function App() {
                 <>
                   <div className="flex justify-center">
                     <div className="bg-purple-600/40 border border-purple-400 text-purple-200 px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow">
-                      {getQuestionCategory(questions[currentQIndex])} ({user.language === 'العربية' ? `السؤال ${currentQIndex + 1} من ${questions.length}` : `Question ${currentQIndex + 1} of ${questions.length}`})
+                      {getQuestionCategory(questions[currentQIndex])} ({t.questionNav} {currentQIndex + 1} {t.ofNav} {questions.length})
                     </div>
                   </div>
 
@@ -1328,12 +1529,12 @@ export default function App() {
                   onClick={handleRedeemDnc}
                   className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow"
                 >
-                  {user.language === 'العربية' ? 'طلب استبدال' : 'Redeem Request'}
+                  {t.redeemReq}
                 </button>
               </div>
 
               <div className="w-full bg-[#0d031f]/80 rounded-xl p-3.5 border border-purple-400/30 text-center text-xs text-slate-200 shadow">
-                <span className="font-bold text-yellow-400">{user.language === 'العربية' ? 'معادلة التحويل:' : 'Conversion Rate:'}</span> 1,000 {t.points} = 1 DNC
+                <span className="font-bold text-yellow-400">{t.conversionRate}</span> 1,000 {t.points} = 1 DNC
               </div>
 
               <div className="w-full bg-gradient-to-br from-purple-900/50 to-[#240a47] rounded-2xl p-4 border border-purple-500/40 flex items-center justify-between gap-3 shadow-lg">
@@ -1342,8 +1543,8 @@ export default function App() {
                     <Tv className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white">{user.language === 'العربية' ? 'شاهد فيديو إعلاني' : 'Watch Ad Video'}</div>
-                    <div className="text-[10px] text-purple-300">{user.language === 'العربية' ? 'واحصل على 10 نقاط إضافية' : 'And get 10 bonus points'}</div>
+                    <div className="text-xs font-bold text-white">{t.watchAdVideoTitle}</div>
+                    <div className="text-[10px] text-purple-300">{t.watchAdVideoDesc}</div>
                   </div>
                 </div>
 
@@ -1352,7 +1553,7 @@ export default function App() {
                   disabled={isWatchingAd}
                   className="bg-purple-600 hover:bg-purple-500 disabled:bg-purple-950 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center gap-1.5 shadow"
                 >
-                  {isWatchingAd ? `${adTimer}s...` : (user.language === 'العربية' ? 'مشاهدة' : 'Watch')}
+                  {isWatchingAd ? `${adTimer}s...` : t.watchBtn}
                 </button>
               </div>
             </div>
@@ -1368,20 +1569,20 @@ export default function App() {
 
               <div className="w-full bg-[#240a47] p-1 rounded-xl flex gap-1 border border-purple-400/40 text-xs font-bold shadow">
                 <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
-                  {user.language === 'العربية' ? 'أفضل اللاعبين' : 'Top Players'}
+                  {t.topPlayers}
                 </button>
               </div>
 
               <div className="w-full bg-[#0d031f] px-4 py-2.5 rounded-lg flex text-[11px] text-slate-300 font-bold border border-purple-400/30 shadow">
-                <span className="w-12">{user.language === 'العربية' ? 'المركز' : 'Rank'}</span>
-                <span className="flex-1 text-right">{user.language === 'العربية' ? 'اللاعب' : 'Player'}</span>
-                <span className="w-20 text-left">{user.language === 'العربية' ? 'النقاط' : 'Points'}</span>
+                <span className="w-12">{t.rank}</span>
+                <span className="flex-1 text-right">{t.player}</span>
+                <span className="w-20 text-left">{t.pts}</span>
               </div>
 
               <div className="w-full space-y-2.5">
                 {loadingLeaderboard ? (
                   <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
-                    {user.language === 'العربية' ? 'جاري التحميل...' : 'Loading...'}
+                    {t.loading}
                   </div>
                 ) : leaderboardUsers.length === 0 ? (
                   <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
@@ -1430,7 +1631,7 @@ export default function App() {
                   onClick={() => setShowAvatarModal(true)}
                   className="text-xs text-yellow-400 font-bold bg-yellow-500/10 px-3 py-1.5 rounded-lg border border-yellow-500/40 shadow hover:bg-yellow-500/20"
                 >
-                  ✏️ {user.language === 'العربية' ? 'تغيير الصورة الشخصية' : 'Change Profile Picture'}
+                  ✏️ {t.changeProfilePic}
                 </button>
 
                 <div className="flex items-center gap-2 mt-1 bg-[#240a47] px-4 py-2 rounded-xl border border-purple-400/30">
@@ -1443,14 +1644,14 @@ export default function App() {
 
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-purple-400/40 space-y-3 text-xs shadow">
                 <div className="flex justify-between items-center border-b border-purple-500/30 pb-2.5">
-                  <span className="text-slate-300">{user.language === 'العربية' ? 'البريد الإلكتروني:' : 'Email:'}</span>
+                  <span className="text-slate-300">{t.emailLabel}</span>
                   <span className="font-mono text-yellow-400 flex items-center gap-1">
                     {currentUser?.email} <Lock className="w-3 h-3 text-slate-400" />
                   </span>
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-300">{user.language === 'العربية' ? 'لغة التطبيق:' : 'App Language:'}</span>
+                  <span className="text-slate-300">{t.appLanguageLabel}</span>
                   <select 
                     value={user.language}
                     onChange={(e) => handleLanguageChange(e.target.value)}
@@ -1458,6 +1659,7 @@ export default function App() {
                   >
                     <option value="العربية">العربية</option>
                     <option value="English">English</option>
+                    <option value="Français">Français</option>
                   </select>
                 </div>
               </div>
@@ -1493,7 +1695,7 @@ export default function App() {
                     <span>{user.walletConnected ? t.walletConnected : t.connectWallet}</span>
                   </div>
                   <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
-                    {user.walletConnected ? `${user.walletAddress.substring(0,6)}...` : (user.language === 'العربية' ? 'ربط' : 'Connect')}
+                    {user.walletConnected ? `${user.walletAddress.substring(0,6)}...` : t.connectBtn}
                   </span>
                 </button>
               </div>
@@ -1514,10 +1716,10 @@ export default function App() {
                 onClick={fetchAllPlayersAndExportCSV}
                 className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition text-xs"
               >
-                <Download className="w-4 h-4" /> {user.language === 'العربية' ? 'تحميل تقرير اللاعبين الكامل (CSV)' : 'Download Full Players Report (CSV)'}
+                <Download className="w-4 h-4" /> {t.downloadCsvReport}
               </button>
 
-              <p className="text-xs text-slate-300 mt-2">{user.language === 'العربية' ? 'مراجعة طلبات استبدال دانات كوين قبل إرسال التوكنز للمحفظة:' : 'Review Danat Coin redemption requests before sending tokens:'}</p>
+              <p className="text-xs text-slate-300 mt-2">{t.adminRedeemNotice}</p>
 
               <div className="space-y-3">
                 {redemptions.map(req => (
@@ -1525,17 +1727,17 @@ export default function App() {
                     <div className="flex justify-between font-bold">
                       <span className="text-white">{req.user}</span>
                       <span className={req.status === 'APPROVED' ? 'text-emerald-400' : 'text-amber-400'}>
-                        {req.status === 'APPROVED' ? (user.language === 'العربية' ? 'تم الاعتماد' : 'Approved') : (user.language === 'العربية' ? 'قيد الانتظار' : 'Pending')}
+                        {req.status === 'APPROVED' ? t.approved : t.pending}
                       </span>
                     </div>
 
                     <div className="text-slate-300 flex justify-between">
-                      <span>{user.language === 'العربية' ? 'النقاط:' : 'Points:'} {req.points}</span>
+                      <span>{t.pts}: {req.points}</span>
                       <span className="text-yellow-400 font-bold">{req.dnc} DNC</span>
                     </div>
 
                     <div className="text-[10px] text-slate-300 font-mono break-all bg-[#0d031f] p-2 rounded border border-purple-400/30">
-                      {user.language === 'العربية' ? 'المحفظة:' : 'Wallet:'} {req.wallet}
+                      {t.walletLabel} {req.wallet}
                     </div>
 
                     {req.status === 'PENDING' && (
@@ -1543,7 +1745,7 @@ export default function App() {
                         onClick={() => handleAdminApprove(req.id)}
                         className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold mt-1 transition shadow"
                       >
-                        {user.language === 'العربية' ? 'اعتماد وإرسال التوكنز' : 'Approve & Send Tokens'}
+                        {t.approveAndSend}
                       </button>
                     )}
                   </div>
@@ -1562,20 +1764,18 @@ export default function App() {
                 <Tv className="w-7 h-7 animate-pulse" />
               </div>
               <h3 className="text-lg font-black text-yellow-400">
-                {user.language === 'العربية' ? 'إعلان مكافأة كل 10 أسئلة' : '10-Questions Milestone Ad'}
+                {t.milestoneAdTitle}
               </h3>
               <p className="text-xs text-slate-200 leading-relaxed">
-                {user.language === 'العربية' 
-                  ? 'لقد أجبت على 10 أسئلة! شاهد هذا الفيديو القصير للحصول على 10 نقاط (+10 🪙):' 
-                  : 'You answered 10 questions! Watch this short video to earn 10 points (+10 🪙):'}
+                {t.milestoneAdDesc}
               </p>
               
               <div className="bg-[#0d031f] py-4 rounded-2xl border border-purple-400/40 text-sm font-black text-yellow-300">
-                ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {milestoneAdTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
+                ⏳ {t.pleaseWait} {milestoneAdTimer} {t.seconds}
               </div>
               
               <div className="text-[10px] text-purple-300">
-                {user.language === 'العربية' ? 'ستحصل على المكافأة تلقائياً عند انتهاء الإعلان.' : 'You will automatically receive your reward when the ad finishes.'}
+                {t.autoRewardNotice}
               </div>
             </div>
           </div>
@@ -1588,17 +1788,17 @@ export default function App() {
               <div className="w-14 h-14 bg-yellow-500/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto text-yellow-400">
                 <Tv className="w-7 h-7 animate-pulse" />
               </div>
-              <h3 className="text-lg font-black text-yellow-400">{user.language === 'العربية' ? 'إعلان جوجل الإجباري' : 'Forced Google Ad'}</h3>
+              <h3 className="text-lg font-black text-yellow-400">{t.forcedAdTitle}</h3>
               <p className="text-xs text-slate-200 leading-relaxed">
-                {user.language === 'العربية' ? 'لقد أنهيت 4 مستويات بنجاح! يلزم الاتصال بالإنترنت ومشاهدة هذا الإعلان القصير للمتابعة:' : 'You successfully finished 4 levels! Internet connection and watching this short ad are required to continue:'}
+                {t.forcedAdDesc}
               </p>
               
               <div className="bg-[#0d031f] py-4 rounded-2xl border border-purple-400/40 text-sm font-black text-yellow-300">
-                ⏳ {user.language === 'العربية' ? 'يرجى الانتظار...' : 'Please wait...'} {forcedAdTimer} {user.language === 'العربية' ? 'ثوانٍ' : 'seconds'}
+                ⏳ {t.pleaseWait} {forcedAdTimer} {t.seconds}
               </div>
               
               <div className="text-[10px] text-purple-300">
-                {user.language === 'العربية' ? 'ستحصل على 50 نقطة إضافية تلقائياً عند انتهاء الفيديو.' : 'You will automatically receive 50 bonus points when the video ends.'}
+                {t.forcedAdRewardNotice}
               </div>
             </div>
           </div>
@@ -1617,7 +1817,7 @@ export default function App() {
 
               <div className="space-y-3 text-xs">
                 <div className="flex justify-between items-center bg-[#0d031f] p-3 rounded-xl border border-purple-400/30">
-                  <span className="text-slate-300">لغة التطبيق (Language)</span>
+                  <span className="text-slate-300">{t.appLanguage} (Language)</span>
                   <select 
                     value={user.language}
                     onChange={(e) => handleLanguageChange(e.target.value)}
@@ -1625,6 +1825,7 @@ export default function App() {
                   >
                     <option value="العربية">العربية</option>
                     <option value="English">English</option>
+                    <option value="Français">Français</option>
                   </select>
                 </div>
               </div>
@@ -1642,8 +1843,8 @@ export default function App() {
         {/* FIXED BOTTOM NAVIGATION BAR */}
         <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
           {[
-            { id: 'home', label: user.language === 'العربية' ? 'دانات كويز' : 'Danat Quiz', icon: 'dnc_coin.png', type: 'image' },
-            { id: 'quiz', label: user.language === 'العربية' ? 'ابدأ اللعب' : 'Start Playing', icon: 'dnc_coin.png', type: 'image' },
+            { id: 'home', label: t.appName, icon: 'dnc_coin.png', type: 'image' },
+            { id: 'quiz', label: t.startPlay, icon: 'dnc_coin.png', type: 'image' },
             { id: 'rewards', label: t.rewards, icon: 'nav_rewards.png', type: 'image' },
             { id: 'leaderboard', label: t.leaderboard, icon: 'nav_leaderboard.png', type: 'image' },
             { id: 'profile', label: t.profile, icon: user.avatar, type: 'dynamic_avatar' }
@@ -1674,14 +1875,14 @@ export default function App() {
           <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
               <div className="flex justify-between items-center">
-                <h3 className="font-bold text-white text-base">ربط محفظة Web3</h3>
-                <button onClick={() => setShowWalletModal(false)} className="text-[#slate-300] p-1">
+                <h3 className="font-bold text-white text-base">{t.connectWeb3Title}</h3>
+                <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               <p className="text-xs text-slate-300 leading-relaxed">
-                أدخل عنوان محفظة إيثريوم (MetaMask / Trust Wallet) لاستلام توكن دانات كوين (DNC):
+                {t.connectWeb3Desc}
               </p>
 
               <input 
@@ -1696,7 +1897,7 @@ export default function App() {
                 onClick={() => handleConnectWallet(customWallet)}
                 className="w-full py-3.5 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg"
               >
-                تأكيد وتوصيل المحفظة
+                {t.confirmConnectBtn}
               </button>
             </div>
           </div>
@@ -1707,7 +1908,7 @@ export default function App() {
           <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="w-full bg-[#240a47] border-2 border-yellow-500/50 rounded-3xl p-6 text-right space-y-5 shadow-[0_0_60px_rgba(234,179,8,0.3)]" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
               <div className="flex justify-between items-center">
-                <h3 className="font-bold text-white text-lg">اختر صورتك الشخصية</h3>
+                <h3 className="font-bold text-white text-lg">{t.selectAvatarTitle}</h3>
                 <button onClick={() => setShowAvatarModal(false)} className="text-slate-300 p-1 hover:text-white">
                   <X className="w-6 h-6" />
                 </button>
