@@ -1383,13 +1383,15 @@ export default function App() {
                 {t.startPlay}
               </button>
 
-              {/* FOUR MINI-GAME CARDS */}
+              {/* SIX MINI-GAME CARDS */}
               <div className="w-full grid grid-cols-2 gap-3 mt-1">
                 {[
                   { game: 'block', label: langKey === 'ar' ? 'تركيب المكعبات' : langKey === 'fr' ? 'Block Blast' : 'Block Blast', icon: '🧱' },
                   { game: 'word', label: langKey === 'ar' ? 'لعبة الكلمات' : langKey === 'fr' ? 'Jeu de mots' : 'Word Puzzle', icon: '🔤' },
                   { game: 'sudoku', label: 'Sudoku', icon: '🔢' },
                   { game: 'jigsaw', label: langKey === 'ar' ? 'أحجية الصور' : langKey === 'fr' ? 'Puzzle' : 'Jigsaw Puzzle', icon: '🧩' },
+                  { game: 'dama', label: langKey === 'ar' ? 'داما' : langKey === 'fr' ? 'Dames' : 'Dama', icon: '🔴' },
+                  { game: 'chess', label: langKey === 'ar' ? 'الشطرنج' : langKey === 'fr' ? 'Échecs' : 'Chess', icon: '♟️' },
                 ].map((item) => (
                   <button
                     key={item.game}
