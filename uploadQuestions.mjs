@@ -6,7 +6,7 @@ import { collection, doc, writeBatch } from "firebase/firestore";
 import fs from "fs";
 
 // CONFIGURATION FOR UPLOAD
-const START_INDEX = 300; // Starting from index 300
+const START_INDEX = 0; // Starting from index 300
 const DAILY_LIMIT = null; // Set to null to process all remaining items to the end
 
 async function uploadQuestions() {
