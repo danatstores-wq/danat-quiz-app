@@ -365,6 +365,7 @@ export default function App() {
   const [authMessage, setAuthMessage] = useState('');
 
   const [activeTab, setActiveTab] = useState('home');
+  const [selectedMiniGame, setSelectedMiniGame] = useState(null);
 
   const [user, setUser] = useState({
     name: 'أحمد',
@@ -1360,14 +1361,14 @@ export default function App() {
               {/* FOUR MINI-GAME CARDS */}
               <div className="w-full grid grid-cols-2 gap-3 mt-1">
                 {[
-                  { label: langKey === 'ar' ? 'تركيب المكعبات' : langKey === 'fr' ? 'Block Blast' : 'Block Blast', icon: '🧱' },
-                  { label: langKey === 'ar' ? 'لعبة الكلمات' : langKey === 'fr' ? 'Jeu de mots' : 'Word Puzzle', icon: '🔤' },
-                  { label: 'Sudoku', icon: '🔢' },
-                  { label: langKey === 'ar' ? 'أحجية الصور' : langKey === 'fr' ? 'Puzzle' : 'Jigsaw Puzzle', icon: '🧩' },
+                  { game: 'block', label: langKey === 'ar' ? 'تركيب المكعبات' : langKey === 'fr' ? 'Block Blast' : 'Block Blast', icon: '🧱' },
+                  { game: 'word', label: langKey === 'ar' ? 'لعبة الكلمات' : langKey === 'fr' ? 'Jeu de mots' : 'Word Puzzle', icon: '🔤' },
+                  { game: 'sudoku', label: 'Sudoku', icon: '🔢' },
+                  { game: 'jigsaw', label: langKey === 'ar' ? 'أحجية الصور' : langKey === 'fr' ? 'Puzzle' : 'Jigsaw Puzzle', icon: '🧩' },
                 ].map((item) => (
                   <button
-                    key={item.label}
-                    onClick={() => setActiveTab('minigames')}
+                    key={item.game}
+                    onClick={() => { setSelectedMiniGame(item.game); setActiveTab('minigames'); }}
                     className="w-full h-36 bg-gradient-to-br from-[#32105c] to-[#170629] border border-yellow-500/40 rounded-2xl overflow-hidden shadow-lg active:scale-95 transition-transform flex flex-col items-center justify-center gap-3"
                   >
                     <span className="text-5xl">{item.icon}</span>
@@ -1380,7 +1381,7 @@ export default function App() {
 
           {/* MINI GAMES - scores stay separate from quiz points */}
           {activeTab === 'minigames' && (
-            <MiniGames language={user.language} onBack={() => setActiveTab('home')} />
+            <MiniGames language={user.language} initialGame={selectedMiniGame} onBack={() => { setSelectedMiniGame(null); setActiveTab('home'); }} />
           )}
 
           {/* SCREEN: STATISTICS */}
