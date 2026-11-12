@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "@react-three/fiber": "^8.18.0",
+    "chess.js": "^1.4.0",
     "three": "^0.170.0"
   },
   "devDependencies": {
