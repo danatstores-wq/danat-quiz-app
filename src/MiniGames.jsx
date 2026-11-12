@@ -1,229 +1,58 @@
-import React, { useMemo, useState } from 'react';
+import React, { Suspense, useMemo, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import * as THREE from 'three';
 
 const COPY = {
-  en: {
-    back: 'Back to Home', allGames: 'All games', games: 'Mini Games', choose: 'Choose a game',
-    block: 'Block Blast', word: 'Word Puzzle', sudoku: 'Sudoku', jigsaw: 'Jigsaw Puzzle',
-    score: 'Game score', best: 'Best', newGame: 'New game', selectPiece: 'Choose a block, then tap the board.',
-    wordHint: 'Unscramble the letters to make the word.', answer: 'Your answer', check: 'Check word',
-    correct: 'Great job!', tryAgain: 'Not quite. Try again.', next: 'Next word',
-    sudokuHint: 'Fill each row, column and 3×3 box with numbers 1–9.',
-    erase: 'Erase', solved: 'Puzzle solved!', jigsawHint: 'Tap a tile next to the empty space to move it.',
-    won: 'You completed the puzzle!', moves: 'Moves', miniScoreNote: 'Mini-game scores are separate from quiz points.'
-  },
-  ar: {
-    back: 'العودة للرئيسية', allGames: 'كل الألعاب', games: 'الألعاب المصغّرة', choose: 'اختر لعبة',
-    block: 'تركيب المكعبات', word: 'لعبة الكلمات', sudoku: 'سودوكو', jigsaw: 'أحجية الصور',
-    score: 'نقاط اللعبة', best: 'الأفضل', newGame: 'لعبة جديدة', selectPiece: 'اختر شكلاً ثم اضغط على لوحة اللعب.',
-    wordHint: 'رتّب الحروف لتكوين الكلمة الصحيحة.', answer: 'إجابتك', check: 'تحقق من الكلمة',
-    correct: 'أحسنت!', tryAgain: 'ليست صحيحة بعد، حاول مجدداً.', next: 'الكلمة التالية',
-    sudokuHint: 'املأ كل صف وعمود ومربع 3×3 بالأرقام من 1 إلى 9.',
-    erase: 'مسح', solved: 'تم حل اللغز!', jigsawHint: 'اضغط على قطعة بجانب الفراغ لتحريكها.',
-    won: 'أكملت الأحجية!', moves: 'الحركات', miniScoreNote: 'نقاط الألعاب المصغّرة منفصلة عن نقاط الاختبار.'
-  },
-  fr: {
-    back: 'Retour à l’accueil', allGames: 'Tous les jeux', games: 'Mini-jeux', choose: 'Choisissez un jeu',
-    block: 'Block Blast', word: 'Jeu de mots', sudoku: 'Sudoku', jigsaw: 'Puzzle',
-    score: 'Score du jeu', best: 'Record', newGame: 'Nouvelle partie', selectPiece: 'Choisissez une forme, puis touchez la grille.',
-    wordHint: 'Remettez les lettres dans le bon ordre.', answer: 'Votre réponse', check: 'Vérifier',
-    correct: 'Bravo !', tryAgain: 'Pas encore. Réessayez.', next: 'Mot suivant',
-    sudokuHint: 'Remplissez chaque ligne, colonne et carré 3×3 avec les chiffres de 1 à 9.',
-    erase: 'Effacer', solved: 'Puzzle résolu !', jigsawHint: 'Touchez une pièce voisine de la case vide pour la déplacer.',
-    won: 'Puzzle terminé !', moves: 'Coups', miniScoreNote: 'Les scores des mini-jeux sont séparés des points du quiz.'
-  }
+  en: { back:'Back to Home',allGames:'All games',games:'3D Mini Games',choose:'Choose a game',block:'Block Blast 3D',word:'Word Puzzle 3D',sudoku:'Sudoku 3D',jigsaw:'Jigsaw 3D',score:'Game score',best:'Best',newGame:'New game',selectPiece:'Choose a glowing block shape, then tap the board.',wordHint:'Unscramble the floating letter cubes.',answer:'Your answer',check:'Check word',correct:'Great job!',tryAgain:'Not quite. Try again.',next:'Next word',sudokuHint:'Select a raised tile, then choose a number.',erase:'Erase',solved:'Puzzle solved!',jigsawHint:'Tap a piece beside the empty space to slide it.',won:'You completed the puzzle!',moves:'Moves',miniScoreNote:'Mini-game scores are separate from quiz points.' },
+  ar: { back:'العودة للرئيسية',allGames:'كل الألعاب',games:'ألعاب ثلاثية الأبعاد',choose:'اختر لعبة',block:'تركيب المكعبات 3D',word:'لعبة الكلمات 3D',sudoku:'سودوكو 3D',jigsaw:'أحجية 3D',score:'نقاط اللعبة',best:'الأفضل',newGame:'لعبة جديدة',selectPiece:'اختر شكلاً مضيئاً ثم اضغط على اللوحة.',wordHint:'رتّب مكعبات الحروف لتكوين الكلمة.',answer:'إجابتك',check:'تحقق من الكلمة',correct:'أحسنت!',tryAgain:'ليست صحيحة بعد، حاول مجدداً.',next:'الكلمة التالية',sudokuHint:'اختر مربعاً بارزاً ثم اختر رقماً.',erase:'مسح',solved:'تم حل اللغز!',jigsawHint:'اضغط على قطعة بجانب الفراغ لتحريكها.',won:'أكملت الأحجية!',moves:'الحركات',miniScoreNote:'نقاط الألعاب المصغّرة منفصلة عن نقاط الاختبار.' },
+  fr: { back:'Retour à l’accueil',allGames:'Tous les jeux',games:'Mini-jeux 3D',choose:'Choisissez un jeu',block:'Blocs 3D',word:'Mots 3D',sudoku:'Sudoku 3D',jigsaw:'Puzzle 3D',score:'Score du jeu',best:'Record',newGame:'Nouvelle partie',selectPiece:'Choisissez une forme lumineuse, puis touchez la grille.',wordHint:'Remettez les cubes-lettres dans l’ordre.',answer:'Votre réponse',check:'Vérifier',correct:'Bravo !',tryAgain:'Pas encore. Réessayez.',next:'Mot suivant',sudokuHint:'Choisissez une case en relief puis un chiffre.',erase:'Effacer',solved:'Puzzle résolu !',jigsawHint:'Touchez une pièce voisine de la case vide.',won:'Puzzle terminé !',moves:'Coups',miniScoreNote:'Les scores des mini-jeux sont séparés des points du quiz.' }
 };
-
 const WORDS = {
-  en: [{w:'APPLE',h:'A fruit that can be red or green.'},{w:'OCEAN',h:'A very large body of salt water.'},{w:'PLANET',h:'Earth is one.'},{w:'GARDEN',h:'A place where flowers grow.'}],
-  ar: [{w:'تفاحة',h:'فاكهة قد تكون حمراء أو خضراء.'},{w:'مدرسة',h:'مكان يتعلم فيه الطلاب.'},{w:'حديقة',h:'مكان تنمو فيه الأزهار.'},{w:'قمر',h:'جسم مضيء نراه ليلاً.'}],
-  fr: [{w:'POMME',h:'Un fruit rouge ou vert.'},{w:'OCÉAN',h:'Une immense étendue d’eau salée.'},{w:'PLANÈTE',h:'La Terre en est une.'},{w:'JARDIN',h:'Un endroit où poussent les fleurs.'}]
+ en:[{w:'APPLE',h:'A fruit that can be red or green.'},{w:'OCEAN',h:'A very large body of salt water.'},{w:'PLANET',h:'Earth is one.'},{w:'GARDEN',h:'A place where flowers grow.'}],
+ ar:[{w:'تفاحة',h:'فاكهة قد تكون حمراء أو خضراء.'},{w:'مدرسة',h:'مكان يتعلم فيه الطلاب.'},{w:'حديقة',h:'مكان تنمو فيه الأزهار.'},{w:'قمر',h:'جسم مضيء نراه ليلاً.'}],
+ fr:[{w:'POMME',h:'Un fruit rouge ou vert.'},{w:'OCÉAN',h:'Une immense étendue d’eau salée.'},{w:'PLANÈTE',h:'La Terre en est une.'},{w:'JARDIN',h:'Un endroit où poussent les fleurs.'}]
 };
+const SUDOKU_START=[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]];
+const SUDOKU_SOLUTION=[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]];
+const SHAPES=[[[1,1],[1,1]],[[1,1,1]],[[1],[1],[1]],[[1,1,1],[0,1,0]],[[1,0],[1,0],[1,1]],[[1,1,0],[0,1,1]],[[1,1,1],[1,0,0]]];
+const makeBoard=()=>Array.from({length:8},()=>Array(8).fill(0));
+const shufflePuzzle=()=>{const a=[1,2,3,4,5,6,7,8,0];let e=8,p=-1;for(let s=0;s<45;s++){const opts=[e-3,e+3,...(e%3?[e-1]:[]),...(e%3<2?[e+1]:[])].filter(i=>i>=0&&i<9&&i!==p);const n=opts[Math.floor(Math.random()*opts.length)];[a[e],a[n]]=[a[n],a[e]];p=e;e=n;}return a;};
+const randomPieces=()=>Array.from({length:3},()=>SHAPES[Math.floor(Math.random()*SHAPES.length)]);
 
-const SUDOKU_START = [
-  [5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],
-  [8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],
-  [0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]
-];
-const SUDOKU_SOLUTION = [
-  [5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],
-  [8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],
-  [9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]
-];
-
-const SHAPES = [
-  [[1,1],[1,1]], [[1,1,1]], [[1],[1],[1]], [[1,1,1],[0,1,0]],
-  [[1,0],[1,0],[1,1]], [[1,1,0],[0,1,1]], [[1,1,1],[1,0,0]]
-];
-const makeBoard = () => Array.from({length:8},()=>Array(8).fill(0));
-const shufflePuzzle = () => {
-  const board=[1,2,3,4,5,6,7,8,0];
-  let empty=8, previous=-1;
-  for(let step=0;step<45;step++){
-    const options=[empty-3,empty+3,...(empty%3>0?[empty-1]:[]),...(empty%3<2?[empty+1]:[])].filter(i=>i>=0&&i<9&&i!==previous);
-    const next=options[Math.floor(Math.random()*options.length)];
-    [board[empty],board[next]]=[board[next],board[empty]];
-    previous=empty; empty=next;
-  }
-  return board;
-};
-const randomPieces = () => Array.from({length:3},()=>SHAPES[Math.floor(Math.random()*SHAPES.length)]);
-
-function MiniGameCard({icon,title,onClick}) {
-  return <button onClick={onClick} className="rounded-2xl border border-purple-400/40 bg-[#240a47]/95 p-4 text-center shadow-lg active:scale-95 transition">
-    <div className="text-4xl mb-2">{icon}</div>
-    <div className="font-black text-yellow-300 text-sm">{title}</div>
-  </button>;
-}
+function Lights(){return <><ambientLight intensity={1.15}/><directionalLight position={[5,8,7]} intensity={2.4} castShadow/><pointLight position={[-5,2,-4]} intensity={1.1} color="#8b5cf6"/></>;}
+function Floor(){return <mesh rotation={[-Math.PI/2,0,0]} position={[0,-.42,0]} receiveShadow><planeGeometry args={[30,30]}/><meshStandardMaterial color="#10051f" roughness={.88}/></mesh>;}
+function Cube({position,color='#8b5cf6',onClick,scale=1,label,emissive=0.18}){return <group position={position} onClick={onClick}><mesh castShadow receiveShadow scale={[scale,scale,scale]}><boxGeometry args={[.88,.88,.88]}/><meshStandardMaterial color={color} metalness={.32} roughness={.24} emissive={color} emissiveIntensity={emissive}/></mesh><mesh position={[0,.446,0]} scale={[scale*.78,.018,scale*.78]}><boxGeometry/><meshBasicMaterial color="#ffffff" transparent opacity={.24}/></mesh>{label!==undefined&&<sprite position={[0,0,.48]} scale={[.42,.42,1]}><spriteMaterial color="#ffffff"/></sprite>}</group>;}
+function BlockScene({board,pieces,pieceIndex,onCell}){return <><Lights/><Floor/><group rotation={[-.12,0,0]} position={[0,.15,0]}>{board.flatMap((row,r)=>row.map((v,c)=><Cube key={r+'-'+c} position={[(c-3.5)*.94,0,(r-3.5)*.94]} color={v?'#f5b82e':'#352052'} emissive={v?.35:.05} onClick={()=>onCell(r,c)} scale={.94}/>))}</group><group position={[0,-.15,5]}>{pieces[pieceIndex]?.flatMap((row,y)=>row.map((v,x)=>v?<Cube key={x+'-'+y} position={[(x-(pieces[pieceIndex].length-1)/2)*.42,(row.length-y)*.0,0]} color="#facc15" scale={.42}/>:null))}</group></>;}
+function WordScene({letters}){return <><Lights/><Floor/><group position={[0,.2,0]}>{letters.map((letter,i)=><group key={i} position={[(i-(letters.length-1)/2)*1.12,Math.sin(i*1.8)*.28,0]} rotation={[.12,i*.13,.08]}><Cube position={[0,0,0]} color={['#8b5cf6','#4f46e5','#0ea5e9','#a855f7'][i%4]} scale={.92}/><mesh position={[0,0,.49]}><planeGeometry args={[.7,.7]}/><meshBasicMaterial color="#fff" transparent opacity={0}/></mesh></group>)}</group><mesh position={[0,-.38,-1]} rotation={[-Math.PI/2,0,0]}><circleGeometry args={[5,64]}/><meshStandardMaterial color="#24113e"/></mesh></>;}
+function SudokuScene({board,selected,onCell}){return <><Lights/><Floor/><group rotation={[-.12,0,0]}>{board.flatMap((row,r)=>row.map((v,c)=><group key={r+'-'+c} position={[(c-4)*.9,0,(r-4)*.9]} onClick={()=>onCell(r,c)}><mesh position={[0,-.04,0]} castShadow><boxGeometry args={[.84,.22,.84]}/><meshStandardMaterial color={selected[0]===r&&selected[1]===c?'#facc15':v?'#39235b':'#24113e'} metalness={.25} roughness={.3}/></mesh>{v>0&&<mesh position={[0,.09,0]}><boxGeometry args={[.48,.08,.48]}/><meshStandardMaterial color={SUDOKU_START[r][c]?'#f4e9ff':'#a78bfa'} emissive="#8b5cf6" emissiveIntensity={.22}/></mesh>}</group>))}</group></>;}
+function JigsawScene({tiles,onTile}){const colors=['#000000','#06b6d4','#0ea5e9','#2563eb','#7c3aed','#a855f7','#ec4899','#f59e0b','#14b8a6'];return <><Lights/><Floor/><group rotation={[-.12,0,0]}>{tiles.map((v,i)=>v===0?<mesh key={i} position={[(i%3-1)*1.25,-.15,(Math.floor(i/3)-1)*1.25]}><boxGeometry args={[1.12,.12,1.12]}/><meshStandardMaterial color="#160d25" wireframe/></mesh>:<group key={i} position={[(i%3-1)*1.25,0,(Math.floor(i/3)-1)*1.25]} onClick={()=>onTile(i)}><mesh castShadow><boxGeometry args={[1.12,.32,1.12]}/><meshStandardMaterial color={colors[v]} metalness={.35} roughness={.24} emissive={colors[v]} emissiveIntensity={.18}/></mesh><mesh position={[0,.18,0]}><boxGeometry args={[.94,.04,.94]}/><meshStandardMaterial color="#ffffff" metalness={.2} roughness={.3}/></mesh></group>)}</group></>;}
+function GameCanvas({children}){return <div className="w-full h-[340px] sm:h-[410px] rounded-2xl overflow-hidden border border-purple-300/30 bg-[radial-gradient(ellipse_at_top,#39205e,#10051f_72%)] shadow-[0_18px_50px_rgba(0,0,0,.5)]"><Canvas shadows dpr={[1,1.5]} camera={{position:[0,7.2,9.5],fov:43}} gl={{antialias:true,alpha:false}}><color attach="background" args={['#10051f']}/><fog attach="fog" args={['#10051f',12,24]}/><Suspense fallback={null}>{children}</Suspense></Canvas></div>;}
+function GameCard({icon,title,onClick}){return <button onClick={onClick} className="group relative overflow-hidden rounded-2xl border border-purple-300/40 bg-gradient-to-br from-[#42216d] via-[#241044] to-[#10051f] p-4 text-center shadow-[0_10px_25px_rgba(0,0,0,.35)] transition hover:-translate-y-1 hover:border-yellow-300 active:scale-95"><div className="absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-yellow-300/80 to-transparent"/><div className="mb-2 text-4xl drop-shadow-[0_6px_5px_rgba(0,0,0,.6)]">{icon}</div><div className="font-black text-yellow-300 text-sm">{title}</div><div className="mt-2 text-[9px] font-bold tracking-[.2em] text-purple-200">PLAY IN 3D</div></button>;}
 
 export default function MiniGames({language='en',onBack}) {
-  const lang = language === 'العربية' ? 'ar' : language === 'Français' ? 'fr' : 'en';
-  const t = COPY[lang];
-  const rtl = lang === 'ar';
-  const [game,setGame] = useState(null);
-  const [scores,setScores] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('danatMiniGameScores') || '{}'); } catch { return {}; }
-  });
-  const [blockBoard,setBlockBoard] = useState(makeBoard);
-  const [pieces,setPieces] = useState(randomPieces);
-  const [pieceIndex,setPieceIndex] = useState(0);
-  const [wordIndex,setWordIndex] = useState(0);
-  const [wordInput,setWordInput] = useState('');
-  const [wordMessage,setWordMessage] = useState('');
-  const [sudoku,setSudoku] = useState(()=>SUDOKU_START.map(row=>[...row]));
-  const [sudokuCell,setSudokuCell] = useState([0,2]);
-  const [jigsaw,setJigsaw] = useState(shufflePuzzle);
-  const [jigsawMoves,setJigsawMoves] = useState(0);
-  const [jigsawWon,setJigsawWon] = useState(false);
-  const words = WORDS[lang];
-  const currentWord = words[wordIndex % words.length];
-  const scrambled = useMemo(() => currentWord.w.split('').sort((a,b)=>a.localeCompare(b)).join(''),[currentWord]);
-  const best = game ? (scores[game] || 0) : 0;
-
-  const addScore = (key,amount) => {
-    setScores(old => {
-      const next = {...old,[key]:Math.max(old[key] || 0, amount)};
-      try { localStorage.setItem('danatMiniGameScores',JSON.stringify(next)); } catch {}
-      return next;
-    });
-  };
-  const startGame = key => {
-    setGame(key);
-    if(key==='block'){setBlockBoard(makeBoard());setPieces(randomPieces());setPieceIndex(0);}
-    if(key==='word'){setWordIndex(0);setWordInput('');setWordMessage('');}
-    if(key==='sudoku'){setSudoku(SUDOKU_START.map(row=>[...row]));setSudokuCell([0,2]);}
-    if(key==='jigsaw'){setJigsaw(shufflePuzzle());setJigsawMoves(0);setJigsawWon(false);}
-  };
-
-  const placeBlock = (r,c) => {
-    const shape=pieces[pieceIndex];
-    if(!shape) return;
-    const cells=[];
-    shape.forEach((row,y)=>row.forEach((v,x)=>{if(v) cells.push([r+y,c+x]);}));
-    if(cells.some(([y,x])=>y>=8||x>=8||blockBoard[y][x])) return;
-    const next=blockBoard.map(row=>[...row]);
-    cells.forEach(([y,x])=>{next[y][x]=1;});
-    const rows=next.map((row,i)=>row.every(Boolean)?i:-1).filter(i=>i>=0);
-    const cols=Array.from({length:8},(_,x)=>x).filter(x=>next.every(row=>row[x]));
-    rows.forEach(y=>next[y].fill(0));
-    cols.forEach(x=>next.forEach(row=>row[x]=0));
-    setBlockBoard(next);
-    const points=cells.length+rows.length*8+cols.length*8;
-    addScore('block',(scores.block||0)+points);
-    if(pieceIndex===2){setPieces(randomPieces());setPieceIndex(0);} else setPieceIndex(pieceIndex+1);
-  };
-
-  const checkWord = () => {
-    if(wordInput.trim().toLocaleUpperCase()===currentWord.w.toLocaleUpperCase()){
-      const nextScore=(scores.word||0)+10; addScore('word',nextScore); setWordMessage(t.correct);
-    } else setWordMessage(t.tryAgain);
-  };
-  const nextWord = () => {setWordIndex(i=>(i+1)%words.length);setWordInput('');setWordMessage('');};
-
-  const setSudokuValue = value => {
-    const [r,c]=sudokuCell;
-    if(SUDOKU_START[r][c]!==0) return;
-    const next=sudoku.map(row=>[...row]); next[r][c]=value; setSudoku(next);
-    if(next.every((row,y)=>row.every((n,x)=>n===SUDOKU_SOLUTION[y][x]))){
-      addScore('sudoku',(scores.sudoku||0)+100);
-    }
-  };
-
-  const moveJigsaw = index => {
-    if(jigsawWon) return;
-    const empty=jigsaw.indexOf(0);
-    const adjacent=Math.abs(Math.floor(index/3)-Math.floor(empty/3))+Math.abs(index%3-empty%3)===1;
-    if(!adjacent) return;
-    const next=[...jigsaw]; [next[index],next[empty]]=[next[empty],next[index]];
-    setJigsaw(next); setJigsawMoves(m=>m+1);
-    if(next.every((v,i)=>v===((i+1)%9))){setJigsawWon(true);addScore('jigsaw',Math.max(10,100-(jigsawMoves+1)));}
-  };
-
-  return <div className="flex flex-col gap-4" dir={rtl?'rtl':'ltr'}>
-    <div className="flex items-center justify-between gap-2">
-      <button onClick={game?()=>setGame(null):onBack} className="rounded-xl border border-purple-400/40 bg-[#240a47] px-3 py-2 text-xs font-bold">{game?t.allGames:t.back}</button>
-      <div className="text-lg font-black text-yellow-300">{game ? t[game] : t.games}</div>
-      <div className="w-16" />
-    </div>
-    {!game ? <>
-      <div className="text-center"><h2 className="text-xl font-black text-white">{t.choose}</h2><p className="text-[11px] text-purple-200 mt-1">{t.miniScoreNote}</p></div>
-      <div className="grid grid-cols-2 gap-3">
-        <MiniGameCard icon="🧱" title={t.block} onClick={()=>startGame('block')}/>
-        <MiniGameCard icon="🔤" title={t.word} onClick={()=>startGame('word')}/>
-        <MiniGameCard icon="🔢" title={t.sudoku} onClick={()=>startGame('sudoku')}/>
-        <MiniGameCard icon="🧩" title={t.jigsaw} onClick={()=>startGame('jigsaw')}/>
-      </div>
-      <div className="rounded-xl border border-yellow-500/30 bg-black/30 p-3 text-xs text-yellow-100">
-        {t.score}: {Object.values(scores).reduce((a,b)=>a+b,0)} · {t.best}: {Math.max(0,...Object.values(scores))}
-      </div>
-    </> : <>
-      <div className="flex justify-between rounded-xl border border-yellow-500/30 bg-black/30 p-3 text-xs">
-        <span>{t.score}: <b className="text-yellow-300">{scores[game]||0}</b></span>
-        <span>{t.best}: <b className="text-yellow-300">{best}</b></span>
-      </div>
-      {game==='block' && <div className="space-y-3">
-        <p className="text-center text-xs text-purple-100">{t.selectPiece}</p>
-        <div className="grid grid-cols-8 gap-1 rounded-xl bg-[#10051f] p-2 border border-purple-400/30">
-          {blockBoard.map((row,r)=>row.map((v,c)=><button key={r+'-'+c} onClick={()=>placeBlock(r,c)} className={'aspect-square rounded-sm border border-purple-300/10 '+(v?'bg-yellow-400':'bg-purple-900/70 hover:bg-purple-700')}/>))}
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          {pieces.map((shape,i)=><button key={i} onClick={()=>setPieceIndex(i)} className={'min-h-16 rounded-xl border p-2 flex items-center justify-center '+(pieceIndex===i?'border-yellow-300 bg-yellow-500/20':'border-purple-400/30 bg-[#240a47]')}>
-            <div className="grid gap-0.5" style={{gridTemplateColumns:'repeat('+Math.max(...shape.map(row=>row.length))+', 12px)'}}>
-              {shape.flatMap((row,y)=>row.map((v,x)=><span key={y+'-'+x} className={'w-3 h-3 rounded-[2px] '+(v?'bg-yellow-400':'bg-transparent')}/>))}
-            </div>
-          </button>)}
-        </div>
-        <button onClick={()=>startGame('block')} className="w-full rounded-xl bg-purple-800 py-2 text-xs font-bold">{t.newGame}</button>
-      </div>}
-      {game==='word' && <div className="rounded-2xl border border-purple-400/40 bg-[#240a47]/90 p-5 text-center space-y-4">
-        <div className="text-5xl">🔤</div><p className="text-xs text-purple-100">{t.wordHint}</p>
-        <p className="text-2xl font-black tracking-widest text-yellow-300">{scrambled.split('').join(' ')}</p>
-        <p className="text-xs text-purple-200">{currentWord.h}</p>
-        <input value={wordInput} onChange={e=>setWordInput(e.target.value)} placeholder={t.answer} className="w-full rounded-xl bg-[#10051f] border border-purple-400/40 p-3 text-center text-white outline-none"/>
-        {wordMessage && <p className="text-sm font-bold text-yellow-300">{wordMessage}</p>}
-        {wordMessage===t.correct ? <button onClick={nextWord} className="w-full rounded-xl bg-yellow-400 p-3 font-black text-black">{t.next}</button> : <button onClick={checkWord} className="w-full rounded-xl bg-yellow-400 p-3 font-black text-black">{t.check}</button>}
-      </div>}
-      {game==='sudoku' && <div className="space-y-3">
-        <p className="text-center text-xs text-purple-100">{t.sudokuHint}</p>
-        <div className="grid grid-cols-9 overflow-hidden rounded-lg border-2 border-yellow-400 bg-[#10051f]">
-          {sudoku.flatMap((row,r)=>row.map((value,c)=><button key={r+'-'+c} onClick={()=>setSudokuCell([r,c])} className={'aspect-square text-sm font-bold border border-purple-300/20 '+(SUDOKU_START[r][c]?'text-white bg-purple-950':sudokuCell[0]===r&&sudokuCell[1]===c?'bg-yellow-400 text-black':'text-yellow-200 bg-[#240a47]')+(c%3===2&&c!==8?' border-r-2 border-r-yellow-400':'')+(r%3===2&&r!==8?' border-b-2 border-b-yellow-400':'' )}>{value||''}</button>))}
-        </div>
-        <div className="grid grid-cols-5 gap-2">
-          {[1,2,3,4,5,6,7,8,9].map(n=><button key={n} onClick={()=>setSudokuValue(n)} className="rounded-lg bg-purple-800 py-3 font-black">{n}</button>)}
-          <button onClick={()=>setSudokuValue(0)} className="rounded-lg bg-rose-800 py-3 text-xs font-bold">{t.erase}</button>
-        </div>
-        {sudoku.every((row,r)=>row.every((n,c)=>n===SUDOKU_SOLUTION[r][c]))&&<p className="text-center font-black text-yellow-300">{t.solved}</p>}
-        <button onClick={()=>startGame('sudoku')} className="w-full rounded-xl bg-purple-800 py-2 text-xs font-bold">{t.newGame}</button>
-      </div>}
-      {game==='jigsaw' && <div className="space-y-3">
-        <p className="text-center text-xs text-purple-100">{t.jigsawHint}</p>
-        <div className="grid grid-cols-3 gap-2 rounded-xl bg-[#10051f] p-2">
-          {jigsaw.map((value,index)=><button key={index} onClick={()=>moveJigsaw(index)} className={'aspect-square rounded-xl border-2 text-2xl font-black shadow-inner '+(value===0?'border-dashed border-purple-400/40 bg-black/30':'border-yellow-400/50 bg-gradient-to-br from-purple-500 to-indigo-800 text-white')}>
-            {value===0?'':(['','🌅','🌴','🌊','⛵','☀️','🏝️','🐚','🌺'][value])}
-          </button>)}
-        </div>
-        <div className="flex justify-between text-xs text-purple-100"><span>{t.moves}: {jigsawMoves}</span>{jigsawWon&&<b className="text-yellow-300">{t.won}</b>}</div>
-        <button onClick={()=>startGame('jigsaw')} className="w-full rounded-xl bg-purple-800 py-2 text-xs font-bold">{t.newGame}</button>
-      </div>}
-    </>}
-  </div>;
+ const lang=language==='العربية'?'ar':language==='Français'?'fr':'en',t=COPY[lang],rtl=lang==='ar';
+ const [game,setGame]=useState(null);
+ const [scores,setScores]=useState(()=>{try{return JSON.parse(localStorage.getItem('danatMiniGameScores')||'{}');}catch{return {};}});
+ const [blockBoard,setBlockBoard]=useState(makeBoard),[pieces,setPieces]=useState(randomPieces),[pieceIndex,setPieceIndex]=useState(0);
+ const [wordIndex,setWordIndex]=useState(0),[wordInput,setWordInput]=useState(''),[wordMessage,setWordMessage]=useState('');
+ const [sudoku,setSudoku]=useState(()=>SUDOKU_START.map(r=>[...r])),[sudokuCell,setSudokuCell]=useState([0,2]);
+ const [jigsaw,setJigsaw]=useState(shufflePuzzle),[jigsawMoves,setJigsawMoves]=useState(0),[jigsawWon,setJigsawWon]=useState(false);
+ const words=WORDS[lang],currentWord=words[wordIndex%words.length],scrambled=useMemo(()=>currentWord.w.split('').sort((a,b)=>a.localeCompare(b)).join(''),[currentWord]);
+ const best=game?(scores[game]||0):0;
+ const addScore=(key,amount)=>setScores(old=>{const next={...old,[key]:Math.max(old[key]||0,amount)};try{localStorage.setItem('danatMiniGameScores',JSON.stringify(next));}catch{}return next;});
+ const startGame=key=>{setGame(key);if(key==='block'){setBlockBoard(makeBoard());setPieces(randomPieces());setPieceIndex(0);}if(key==='word'){setWordIndex(0);setWordInput('');setWordMessage('');}if(key==='sudoku'){setSudoku(SUDOKU_START.map(r=>[...r]));setSudokuCell([0,2]);}if(key==='jigsaw'){setJigsaw(shufflePuzzle());setJigsawMoves(0);setJigsawWon(false);}};
+ const placeBlock=(r,c)=>{const shape=pieces[pieceIndex];if(!shape)return;const cells=[];shape.forEach((row,y)=>row.forEach((v,x)=>{if(v)cells.push([r+y,c+x]);}));if(cells.some(([y,x])=>y>=8||x>=8||blockBoard[y][x]))return;const next=blockBoard.map(row=>[...row]);cells.forEach(([y,x])=>next[y][x]=1);const rows=next.map((row,i)=>row.every(Boolean)?i:-1).filter(i=>i>=0),cols=Array.from({length:8},(_,x)=>x).filter(x=>next.every(row=>row[x]));rows.forEach(y=>next[y].fill(0));cols.forEach(x=>next.forEach(row=>row[x]=0));setBlockBoard(next);addScore('block',(scores.block||0)+cells.length+rows.length*8+cols.length*8);if(pieceIndex===2){setPieces(randomPieces());setPieceIndex(0);}else setPieceIndex(pieceIndex+1);};
+ const checkWord=()=>{if(wordInput.trim().toLocaleUpperCase()===currentWord.w.toLocaleUpperCase()){addScore('word',(scores.word||0)+10);setWordMessage(t.correct);}else setWordMessage(t.tryAgain);};
+ const setSudokuValue=value=>{const [r,c]=sudokuCell;if(SUDOKU_START[r][c]!==0)return;const next=sudoku.map(row=>[...row]);next[r][c]=value;setSudoku(next);if(next.every((row,y)=>row.every((n,x)=>n===SUDOKU_SOLUTION[y][x])))addScore('sudoku',(scores.sudoku||0)+100);};
+ const moveJigsaw=index=>{if(jigsawWon)return;const empty=jigsaw.indexOf(0),adjacent=Math.abs(Math.floor(index/3)-Math.floor(empty/3))+Math.abs(index%3-empty%3)===1;if(!adjacent)return;const next=[...jigsaw];[next[index],next[empty]]=[next[empty],next[index]];setJigsaw(next);setJigsawMoves(m=>m+1);if(next.every((v,i)=>v===(i+1)%9)){setJigsawWon(true);addScore('jigsaw',Math.max(10,100-(jigsawMoves+1)));}};
+ return <div className="flex flex-col gap-4" dir={rtl?'rtl':'ltr'}>
+  <div className="flex items-center justify-between gap-2"><button onClick={game?()=>setGame(null):onBack} className="rounded-xl border border-purple-400/40 bg-[#240a47] px-3 py-2 text-xs font-bold text-white">{game?t.allGames:t.back}</button><div className="text-lg font-black text-yellow-300">{game?t[game]:t.games}</div><div className="w-16"/></div>
+  {!game?<><div className="text-center"><h2 className="text-xl font-black text-white">{t.choose}</h2><p className="mt-1 text-[11px] text-purple-200">{t.miniScoreNote}</p></div><div className="grid grid-cols-2 gap-3"><GameCard icon="🧊" title={t.block} onClick={()=>startGame('block')}/><GameCard icon="🔮" title={t.word} onClick={()=>startGame('word')}/><GameCard icon="🔢" title={t.sudoku} onClick={()=>startGame('sudoku')}/><GameCard icon="🧩" title={t.jigsaw} onClick={()=>startGame('jigsaw')}/></div><div className="rounded-xl border border-yellow-500/30 bg-black/30 p-3 text-xs text-yellow-100">{t.score}: {Object.values(scores).reduce((a,b)=>a+b,0)} · {t.best}: {Math.max(0,...Object.values(scores))}</div></>:<>
+  <div className="flex justify-between rounded-xl border border-yellow-500/30 bg-black/30 p-3 text-xs text-white"><span>{t.score}: <b className="text-yellow-300">{scores[game]||0}</b></span><span>{t.best}: <b className="text-yellow-300">{best}</b></span></div>
+  {game==='block'&&<div className="space-y-3"><p className="text-center text-xs text-purple-100">{t.selectPiece}</p><GameCanvas><BlockScene board={blockBoard} pieces={pieces} pieceIndex={pieceIndex} onCell={placeBlock}/></GameCanvas><div className="grid grid-cols-3 gap-2">{pieces.map((shape,i)=><button key={i} onClick={()=>setPieceIndex(i)} className={'min-h-16 rounded-xl border p-2 flex items-center justify-center '+(pieceIndex===i?'border-yellow-300 bg-yellow-500/20':'border-purple-400/30 bg-[#240a47]')}><span className="text-xl">{shape.map(row=>row.map(v=>v?'🟨':'　').join('')).join(' ')}</span></button>)}</div><button onClick={()=>startGame('block')} className="w-full rounded-xl bg-purple-800 py-2 text-xs font-bold text-white">{t.newGame}</button></div>}
+  {game==='word'&&<div className="space-y-3"><p className="text-center text-xs text-purple-100">{t.wordHint}</p><GameCanvas><WordScene letters={scrambled.split('')}/></GameCanvas><p className="text-center text-2xl font-black tracking-widest text-yellow-300">{scrambled.split('').join(' ')}</p><p className="text-center text-xs text-purple-200">{currentWord.h}</p><input value={wordInput} onChange={e=>setWordInput(e.target.value)} placeholder={t.answer} className="w-full rounded-xl border border-purple-400/40 bg-[#10051f] p-3 text-center text-white outline-none"/>{wordMessage&&<p className="text-center text-sm font-bold text-yellow-300">{wordMessage}</p>}{wordMessage===t.correct?<button onClick={()=>{setWordIndex(i=>(i+1)%words.length);setWordInput('');setWordMessage('');}} className="w-full rounded-xl bg-yellow-400 p-3 font-black text-black">{t.next}</button>:<button onClick={checkWord} className="w-full rounded-xl bg-yellow-400 p-3 font-black text-black">{t.check}</button>}</div>}
+  {game==='sudoku'&&<div className="space-y-3"><p className="text-center text-xs text-purple-100">{t.sudokuHint}</p><GameCanvas><SudokuScene board={sudoku} selected={sudokuCell} onCell={(r,c)=>setSudokuCell([r,c])}/></GameCanvas><div className="grid grid-cols-9 gap-1 rounded-xl border border-yellow-400/40 bg-[#160b28] p-2">{sudoku.flatMap((row,r)=>row.map((value,c)=><button key={r+'-'+c} onClick={()=>setSudokuCell([r,c])} className={'aspect-square rounded text-[10px] font-black '+(SUDOKU_START[r][c]?'bg-purple-950 text-white':sudokuCell[0]===r&&sudokuCell[1]===c?'bg-yellow-400 text-black':'bg-[#382052] text-yellow-100')}>{value||''}</button>))}</div><div className="grid grid-cols-5 gap-2">{[1,2,3,4,5,6,7,8,9].map(n=><button key={n} onClick={()=>setSudokuValue(n)} className="rounded-lg bg-purple-800 py-3 font-black text-white">{n}</button>)}<button onClick={()=>setSudokuValue(0)} className="rounded-lg bg-rose-800 py-3 text-xs font-bold text-white">{t.erase}</button></div>{sudoku.every((row,r)=>row.every((n,c)=>n===SUDOKU_SOLUTION[r][c]))&&<p className="text-center font-black text-yellow-300">{t.solved}</p>}<button onClick={()=>startGame('sudoku')} className="w-full rounded-xl bg-purple-800 py-2 text-xs font-bold text-white">{t.newGame}</button></div>}
+  {game==='jigsaw'&&<div className="space-y-3"><p className="text-center text-xs text-purple-100">{t.jigsawHint}</p><GameCanvas><JigsawScene tiles={jigsaw} onTile={moveJigsaw}/></GameCanvas><div className="flex justify-between text-xs text-purple-100"><span>{t.moves}: {jigsawMoves}</span>{jigsawWon&&<b className="text-yellow-300">{t.won}</b>}</div><button onClick={()=>startGame('jigsaw')} className="w-full rounded-xl bg-purple-800 py-2 text-xs font-bold text-white">{t.newGame}</button></div>}
+  </>}
+ </div>;
 }
