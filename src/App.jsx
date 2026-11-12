@@ -355,6 +355,32 @@ const TRANSLATIONS = {
   }
 };
 
+class MiniGamesErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+  componentDidCatch(error, info) {
+    console.error('Mini-games screen failed to render:', error, info);
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <div className="rounded-2xl border border-yellow-500/40 bg-[#160b28] p-6 text-center text-white">
+          <h2 className="text-lg font-black text-yellow-300">The game could not load</h2>
+          <p className="mt-2 text-sm text-purple-100">The game screen encountered an error. Your quiz account and quiz points are unchanged.</p>
+          <p className="mt-2 break-words text-xs text-rose-300">{this.state.error.message}</p>
+          <button onClick={this.props.onBack} className="mt-4 rounded-xl bg-yellow-400 px-5 py-3 font-black text-black">Back to Home</button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authMode, setAuthMode] = useState('login');
@@ -1380,7 +1406,9 @@ export default function App() {
 
           {/* MINI GAMES - scores stay separate from quiz points */}
           {activeTab.startsWith('minigame-') && (
-            <MiniGames key={activeTab} language={user.language} initialGame={activeTab.replace('minigame-', '')} onBack={() => setActiveTab('home')} />
+            <MiniGamesErrorBoundary key={activeTab} onBack={() => setActiveTab('home')}>
+              <MiniGames language={user.language} initialGame={activeTab.replace('minigame-', '')} onBack={() => setActiveTab('home')} />
+            </MiniGamesErrorBoundary>
           )}
 
           {/* SCREEN: STATISTICS */}
