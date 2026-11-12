@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 const COPY = {
   en: {
-    back: 'Back to Home', games: 'Mini Games', choose: 'Choose a game',
+    back: 'Back to Home', allGames: 'All games', games: 'Mini Games', choose: 'Choose a game',
     block: 'Block Blast', word: 'Word Puzzle', sudoku: 'Sudoku', jigsaw: 'Jigsaw Puzzle',
     score: 'Game score', best: 'Best', newGame: 'New game', selectPiece: 'Choose a block, then tap the board.',
     wordHint: 'Unscramble the letters to make the word.', answer: 'Your answer', check: 'Check word',
@@ -12,7 +12,7 @@ const COPY = {
     won: 'You completed the puzzle!', moves: 'Moves', miniScoreNote: 'Mini-game scores are separate from quiz points.'
   },
   ar: {
-    back: 'العودة للرئيسية', games: 'الألعاب المصغّرة', choose: 'اختر لعبة',
+    back: 'العودة للرئيسية', allGames: 'كل الألعاب', games: 'الألعاب المصغّرة', choose: 'اختر لعبة',
     block: 'تركيب المكعبات', word: 'لعبة الكلمات', sudoku: 'سودوكو', jigsaw: 'أحجية الصور',
     score: 'نقاط اللعبة', best: 'الأفضل', newGame: 'لعبة جديدة', selectPiece: 'اختر شكلاً ثم اضغط على لوحة اللعب.',
     wordHint: 'رتّب الحروف لتكوين الكلمة الصحيحة.', answer: 'إجابتك', check: 'تحقق من الكلمة',
@@ -22,7 +22,7 @@ const COPY = {
     won: 'أكملت الأحجية!', moves: 'الحركات', miniScoreNote: 'نقاط الألعاب المصغّرة منفصلة عن نقاط الاختبار.'
   },
   fr: {
-    back: 'Retour à l’accueil', games: 'Mini-jeux', choose: 'Choisissez un jeu',
+    back: 'Retour à l’accueil', allGames: 'Tous les jeux', games: 'Mini-jeux', choose: 'Choisissez un jeu',
     block: 'Block Blast', word: 'Jeu de mots', sudoku: 'Sudoku', jigsaw: 'Puzzle',
     score: 'Score du jeu', best: 'Record', newGame: 'Nouvelle partie', selectPiece: 'Choisissez une forme, puis touchez la grille.',
     wordHint: 'Remettez les lettres dans le bon ordre.', answer: 'Votre réponse', check: 'Vérifier',
@@ -55,6 +55,17 @@ const SHAPES = [
   [[1,0],[1,0],[1,1]], [[1,1,0],[0,1,1]], [[1,1,1],[1,0,0]]
 ];
 const makeBoard = () => Array.from({length:8},()=>Array(8).fill(0));
+const shufflePuzzle = () => {
+  const board=[1,2,3,4,5,6,7,8,0];
+  let empty=8, previous=-1;
+  for(let step=0;step<45;step++){
+    const options=[empty-3,empty+3,...(empty%3>0?[empty-1]:[]),...(empty%3<2?[empty+1]:[])].filter(i=>i>=0&&i<9&&i!==previous);
+    const next=options[Math.floor(Math.random()*options.length)];
+    [board[empty],board[next]]=[board[next],board[empty]];
+    previous=empty; empty=next;
+  }
+  return board;
+};
 const randomPieces = () => Array.from({length:3},()=>SHAPES[Math.floor(Math.random()*SHAPES.length)]);
 
 function MiniGameCard({icon,title,onClick}) {
@@ -80,7 +91,7 @@ export default function MiniGames({language='en',onBack}) {
   const [wordMessage,setWordMessage] = useState('');
   const [sudoku,setSudoku] = useState(()=>SUDOKU_START.map(row=>[...row]));
   const [sudokuCell,setSudokuCell] = useState([0,2]);
-  const [jigsaw,setJigsaw] = useState([1,2,3,4,5,6,7,0,8]);
+  const [jigsaw,setJigsaw] = useState(shufflePuzzle);
   const [jigsawMoves,setJigsawMoves] = useState(0);
   const [jigsawWon,setJigsawWon] = useState(false);
   const words = WORDS[lang];
@@ -100,7 +111,7 @@ export default function MiniGames({language='en',onBack}) {
     if(key==='block'){setBlockBoard(makeBoard());setPieces(randomPieces());setPieceIndex(0);}
     if(key==='word'){setWordIndex(0);setWordInput('');setWordMessage('');}
     if(key==='sudoku'){setSudoku(SUDOKU_START.map(row=>[...row]));setSudokuCell([0,2]);}
-    if(key==='jigsaw'){setJigsaw([1,2,3,4,5,6,7,0,8]);setJigsawMoves(0);setJigsawWon(false);}
+    if(key==='jigsaw'){setJigsaw(shufflePuzzle());setJigsawMoves(0);setJigsawWon(false);}
   };
 
   const placeBlock = (r,c) => {
@@ -149,7 +160,7 @@ export default function MiniGames({language='en',onBack}) {
 
   return <div className="flex flex-col gap-4" dir={rtl?'rtl':'ltr'}>
     <div className="flex items-center justify-between gap-2">
-      <button onClick={game?()=>setGame(null):onBack} className="rounded-xl border border-purple-400/40 bg-[#240a47] px-3 py-2 text-xs font-bold">{game?t.back:t.back}</button>
+      <button onClick={game?()=>setGame(null):onBack} className="rounded-xl border border-purple-400/40 bg-[#240a47] px-3 py-2 text-xs font-bold">{game?t.allGames:t.back}</button>
       <div className="text-lg font-black text-yellow-300">{game ? t[game] : t.games}</div>
       <div className="w-16" />
     </div>
