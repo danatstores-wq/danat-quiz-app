@@ -27,49 +27,6 @@ const damaMovesFrom=(board,from,player)=>{const piece=board[from];if(!piece||pie
 const allDamaMoves=(board,player)=>{const all=[];for(let i=0;i<64;i++)if(board[i]?.toLowerCase()===player)all.push(...damaMovesFrom(board,i,player).map(m=>({...m,from:i})));const captures=all.filter(m=>m.capture!==null);return captures.length?captures:all;};
 const damaWinner=board=>{const red=board.some(p=>p?.toLowerCase()==='r'),black=board.some(p=>p?.toLowerCase()==='b');if(!red)return'b';if(!black)return'r';if(!allDamaMoves(board,'r').length)return'b';if(!allDamaMoves(board,'b').length)return'r';return null;};
 const CHESS_GLYPH={wk:'♔',wq:'♕',wr:'♖',wb:'♗',wn:'♘',wp:'♙',bk:'♚',bq:'♛',br:'♜',bb:'♝',bn:'♞',bp:'♟︎'};
-const CHESS_VALUE={p:100,n:320,b:335,r:500,q:900,k:20000};
-const chessEval=game=>{
- let score=0;const board=game.board();
- for(let r=0;r<8;r++)for(let c=0;c<8;c++){const p=board[r][c];if(!p)continue;const sign=p.color==='w'?1:-1,type=p.type,center=7-(Math.abs(3.5-r)+Math.abs(3.5-c));let positional=0;
-  if(type==='p')positional+=(p.color==='w'?(6-r):(r-1))*7+center*2;
-  else if(type==='n')positional=center*11;
-  else if(type==='b')positional=center*5;
-  else if(type==='q')positional=center*2;
-  else if(type==='k')positional-=center*5;
-  score+=sign*(CHESS_VALUE[type]+positional);
- }
- if(game.isCheck())score+=(game.turn()==='w'?-28:28);
- return score;
-};
-const chessMoveOrder=m=>(m.captured?(CHESS_VALUE[m.captured]||0)*10-(CHESS_VALUE[m.piece]||0):0)+(m.promotion?850:0)+(m.san.includes('+')?45:0)+(m.san.includes('#')?50000:0);
-const chessSearch=(game,depth,alpha=-Infinity,beta=Infinity)=>{
- if(game.isCheckmate())return game.turn()==='w'?-100000-depth:100000+depth;
- if(game.isDraw()||depth===0)return chessEval(game);
- const moves=game.moves({verbose:true}).sort((a,b)=>chessMoveOrder(b)-chessMoveOrder(a));
- if(game.turn()==='w'){let best=-Infinity;for(const m of moves){const child=new Chess(game.fen());child.move({from:m.from,to:m.to,promotion:m.promotion});best=Math.max(best,chessSearch(child,depth-1,alpha,beta));alpha=Math.max(alpha,best);if(beta<=alpha)break;}return best;}
- let best=Infinity;for(const m of moves){const child=new Chess(game.fen());child.move({from:m.from,to:m.to,promotion:m.promotion});best=Math.min(best,chessSearch(child,depth-1,alpha,beta));beta=Math.min(beta,best);if(beta<=alpha)break;}return best;
-};
-const chooseChessReply=(game,difficulty)=>{
- const moves=game.moves({verbose:true});if(!moves.length)return null;
- const history=game.history({verbose:true}),lastBlack=[...history].reverse().find(m=>m.color==='b');
- const ranked=moves.map(move=>{
-  const child=new Chess(game.fen());child.move({from:move.from,to:move.to,promotion:move.promotion});
-  const reversal=lastBlack&&move.from===lastBlack.to&&move.to===lastBlack.from;
-  const repetition=child.isThreefoldRepetition();
-  let score=chessSearch(child,difficulty==='expert'?3:difficulty==='hard'?2:difficulty==='medium'?1:0);
-  if(reversal)score+=game.turn()==='b'?180:-180;
-  if(repetition)score+=game.turn()==='b'?500:-500;
-  return {move,score};
- });
- if(difficulty==='easy'){
-  const safe=ranked.filter(x=>!((lastBlack&&x.move.from===lastBlack.to&&x.move.to===lastBlack.from)||new Chess(game.fen()).isThreefoldRepetition()));
-  const pool=(safe.length?safe:ranked).sort((a,b)=>a.score-b.score);
-  return pool[Math.floor(Math.random()*Math.max(1,Math.ceil(pool.length*.65)))].move;
- }
- ranked.sort((a,b)=>a.score-b.score);
- const best=ranked[0].score,ties=ranked.filter(x=>x.score<=best+12);
- return ties[Math.floor(Math.random()*ties.length)].move;
-};
 function Lights(){return <><ambientLight intensity={1.35}/><directionalLight position={[5,8,7]} intensity={2.2} castShadow/><pointLight position={[-5,2,-4]} intensity={1.25} color="#d6a84b"/></>;}
 function Floor(){return <mesh rotation={[-Math.PI/2,0,0]} position={[0,-.42,0]} receiveShadow><planeGeometry args={[30,30]}/><meshStandardMaterial color="#090909" roughness={.88}/></mesh>;}
 function Cube({position,color='#c99b3b',onClick,scale=1,emissive=0.12}){return <group position={position} onClick={onClick}><mesh castShadow receiveShadow scale={[scale,scale,scale]}><boxGeometry args={[.88,.88,.88]}/><meshStandardMaterial color={color} metalness={.52} roughness={.22} emissive={color} emissiveIntensity={emissive}/></mesh><mesh position={[0,.446,0]} scale={[scale*.78,.018,scale*.78]}><boxGeometry/><meshBasicMaterial color="#fff2c7" transparent opacity={.2}/></mesh></group>;}
@@ -111,7 +68,7 @@ export default function MiniGames({language='en',onBack,initialGame=null}) {
  const moveJigsaw=index=>{if(jigsawWon)return;if(jigsawSelected===null){setJigsawSelected(index);return;}if(jigsawSelected===index){setJigsawSelected(null);return;}const next=[...jigsaw];[next[index],next[jigsawSelected]]=[next[jigsawSelected],next[index]];setJigsaw(next);setJigsawMoves(m=>m+1);setJigsawSelected(null);if(next.every((v,i)=>v===i)){setJigsawWon(true);addScore('jigsaw',(scores.jigsaw||0)+({easy:160,medium:220,hard:300,expert:400}[difficulty]||220));}};
  const playChessMove=(from,to)=>{const cg=chessGameRef.current;try{cg.move({from,to,promotion:'q'});setChessFen(cg.fen());setChessSelected(null);setChessTargets([]);if(cg.isCheckmate()){setChessMessage(cg.turn()==='b'?'You win — checkmate!':'Computer wins — checkmate.');if(cg.turn()==='b')addScore('chess',(scores.chess||0)+100);}else if(cg.isDraw())setChessMessage('Draw game.');else setChessMessage(cg.turn()==='w'?'Your turn':'Computer thinking…');}catch{setChessSelected(null);setChessTargets([]);}};
  const clickChessSquare=square=>{const cg=chessGameRef.current;if(cg.turn()!=='w'||cg.isGameOver())return;const piece=cg.get(square);if(chessSelected&&chessTargets.includes(square)){playChessMove(chessSelected,square);return;}if(piece?.color==='w'){setChessSelected(square);setChessTargets(cg.moves({square,verbose:true}).map(m=>m.to));}else{setChessSelected(null);setChessTargets([]);}};
- useEffect(()=>{if(game!=='chess'||chessGameRef.current.turn()!=='b'||chessGameRef.current.isGameOver())return;const timer=setTimeout(()=>{const cg=chessGameRef.current,move=chooseChessReply(cg,difficulty);if(!move)return;cg.move({from:move.from,to:move.to,promotion:move.promotion||'q'});setChessFen(cg.fen());setChessSelected(null);setChessTargets([]);setChessMessage(cg.isCheckmate()?'Computer wins — checkmate.':cg.isDraw()?'Draw game.':'Your turn');},500);return()=>clearTimeout(timer);},[game,chessFen,difficulty]);
+ useEffect(()=>{if(game!=='chess'||chessGameRef.current.turn()!=='b'||chessGameRef.current.isGameOver())return;const timer=setTimeout(()=>{const cg=chessGameRef.current,moves=cg.moves({verbose:true});if(!moves.length)return;const values={p:1,n:3,b:3,r:5,q:9,k:20};moves.sort((a,b)=>((b.captured?values[b.captured]:0)+(b.promotion?8:0)+(b.san.includes('+')?1:0))-((a.captured?values[a.captured]:0)+(a.promotion?8:0)+(a.san.includes('+')?1:0)));const choiceCount=difficulty==='easy'?moves.length:difficulty==='medium'?Math.min(8,moves.length):difficulty==='hard'?Math.min(3,moves.length):1;cg.move(moves[Math.floor(Math.random()*choiceCount)]);setChessFen(cg.fen());setChessSelected(null);setChessTargets([]);setChessMessage(cg.isCheckmate()?'Computer wins — checkmate.':cg.isDraw()?'Draw game.':'Your turn');},650);return()=>clearTimeout(timer);},[game,chessFen,difficulty]);
  const finishDamaMove=(from,move)=>{const next=[...damaBoard],piece=next[from];next[from]=null;if(move.capture!==null)next[move.capture]=null;let moved=piece;if(piece==='r'&&Math.floor(move.to/8)===0)moved='R';next[move.to]=moved;if(move.capture!==null){const follow=damaMovesFrom(next,move.to,'r').filter(m=>m.capture!==null);if(follow.length){setDamaBoard(next);setDamaSelected(move.to);setDamaTargets(follow.map(m=>m.to));return;}}setDamaBoard(next);const winner=damaWinner(next);if(winner){setDamaOver(true);setDamaMessage(winner==='r'?'You win!':'Computer wins.');if(winner==='r')addScore('dama',(scores.dama||0)+50);setDamaSelected(null);setDamaTargets([]);return;}setDamaTurn('b');setDamaSelected(null);setDamaTargets([]);setDamaMessage('Computer thinking…');};
  const clickDamaSquare=index=>{if(damaOver||damaTurn!=='r')return;if(damaSelected!==null&&damaTargets.includes(index)){const move=damaMovesFrom(damaBoard,damaSelected,'r').find(m=>m.to===index);if(move)finishDamaMove(damaSelected,move);return;}if(damaBoard[index]?.toLowerCase()==='r'){const available=allDamaMoves(damaBoard,'r').filter(m=>m.from===index);setDamaSelected(index);setDamaTargets(available.map(m=>m.to));}};
  useEffect(()=>{if(game!=='dama'||damaTurn!=='b'||damaOver)return;const timer=setTimeout(()=>{let board=[...damaBoard],moves=allDamaMoves(board,'b');if(!moves.length){setDamaOver(true);setDamaMessage('You win!');addScore('dama',(scores.dama||0)+50);return;}const rankMove=m=>{const p=board[m.from],r=Math.floor(m.to/8);return (m.capture!==null?12:0)+(p==='B'?2:0)+(r===7?10:r*.15)+Math.random()*.35;};moves.sort((a,b)=>rankMove(b)-rankMove(a));const choiceCount=difficulty==='easy'?moves.length:difficulty==='medium'?Math.min(5,moves.length):difficulty==='hard'?Math.min(3,moves.length):1;let move=moves[Math.floor(Math.random()*choiceCount)],from=move.from,to=move.to,piece=board[from];board[from]=null;if(move.capture!==null)board[move.capture]=null;if(piece==='b'&&Math.floor(to/8)===7)piece='B';board[to]=piece;while(move.capture!==null){const follow=damaMovesFrom(board,to,'b').filter(m=>m.capture!==null);if(!follow.length)break;move=follow[Math.floor(Math.random()*follow.length)];board[to]=null;board[move.capture]=null;to=move.to;board[to]=piece;}setDamaBoard(board);const winner=damaWinner(board);if(winner){setDamaOver(true);setDamaMessage(winner==='r'?'You win!':'Computer wins.');if(winner==='r')addScore('dama',(scores.dama||0)+50);}else{setDamaTurn('r');setDamaMessage('Your turn');}},650);return()=>clearTimeout(timer);},[game,damaTurn,damaOver,damaBoard,difficulty]);
