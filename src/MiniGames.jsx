@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Chess } from 'chess.js';
+import './MiniGames.css';
 
 const COPY = {
   en: { back:'Back to Home',allGames:'All games',games:'Arcade Games',choose:'Choose a game',block:'Block Blast',word:'Word Puzzle',sudoku:'Sudoku',jigsaw:'Jigsaw Puzzle',score:'Game score',best:'Best',newGame:'New game',selectPiece:'Drag a block onto the board, or tap a shape and then a cell.',wordHint:'Unscramble the floating letter cubes.',answer:'Your answer',check:'Check word',correct:'Great job!',tryAgain:'Not quite. Try again.',next:'Next word',sudokuHint:'Select a cell, then choose a number.',erase:'Erase',solved:'Puzzle solved!',jigsawHint:'Select two picture tiles to swap them into the correct positions.',won:'You completed the puzzle!',moves:'Moves',miniScoreNote:'Mini-game scores are separate from quiz points.',dama:'Dama',chess:'Chess',yourTurn:'Your turn',computerThinking:'Computer thinking…',youWin:'You win!',youLose:'Computer wins.',draw:'Draw game.',difficulty:'Difficulty',easy:'Easy',medium:'Medium',hard:'Hard',expert:'Expert' },
