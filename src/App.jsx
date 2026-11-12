@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import MiniGames from './MiniGames';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
   Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye
@@ -1302,33 +1303,30 @@ export default function App() {
                 {t.startPlay}
               </button>
 
-              {/* 4 FEATURE CARDS */}
+              {/* FOUR MINI-GAME CARDS */}
               <div className="w-full grid grid-cols-2 gap-3 mt-1">
                 {[
-                  { label: t.rewards, icon: 'gift_large.png', tab: 'rewards' },
-                  { label: t.leaderboard, icon: 'trophy_large.png', tab: 'leaderboard' },
-                  { label: t.profile, icon: 'nav_profile.png', tab: 'profile' },
-                  { label: t.statistics, icon: 'stats_icon.png', tab: 'statistics' },
+                  { label: langKey === 'ar' ? 'تركيب المكعبات' : langKey === 'fr' ? 'Block Blast' : 'Block Blast', icon: '🧱' },
+                  { label: langKey === 'ar' ? 'لعبة الكلمات' : langKey === 'fr' ? 'Jeu de mots' : 'Word Puzzle', icon: '🔤' },
+                  { label: 'Sudoku', icon: '🔢' },
+                  { label: langKey === 'ar' ? 'أحجية الصور' : langKey === 'fr' ? 'Puzzle' : 'Jigsaw Puzzle', icon: '🧩' },
                 ].map((item) => (
-                  <button 
-                    key={item.label} 
-                    onClick={() => setActiveTab(item.tab)}
-                    className="relative w-full h-36 bg-[#240a47]/90 border border-purple-500/40 rounded-2xl overflow-hidden shadow-lg group active:scale-95 transition-transform"
+                  <button
+                    key={item.label}
+                    onClick={() => setActiveTab('minigames')}
+                    className="w-full h-36 bg-gradient-to-br from-[#32105c] to-[#170629] border border-yellow-500/40 rounded-2xl overflow-hidden shadow-lg active:scale-95 transition-transform flex flex-col items-center justify-center gap-3"
                   >
-                    <img 
-                      src={assetPath(item.icon)} 
-                      alt={item.label} 
-                      className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-2">
-                      <span className="text-xs font-black text-yellow-300 drop-shadow-md px-2 py-0.5 rounded bg-black/40 border border-yellow-500/30">
-                        {item.label}
-                      </span>
-                    </div>
+                    <span className="text-5xl">{item.icon}</span>
+                    <span className="text-sm font-black text-yellow-300 drop-shadow-md px-2 text-center">{item.label}</span>
                   </button>
                 ))}
               </div>
             </div>
+          )}
+
+          {/* MINI GAMES - scores stay separate from quiz points */}
+          {activeTab === 'minigames' && (
+            <MiniGames language={user.language} onBack={() => setActiveTab('home')} />
           )}
 
           {/* SCREEN: STATISTICS */}
