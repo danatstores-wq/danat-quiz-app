@@ -3,8 +3,11 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Safely resolve the API key for both Vite (import.meta.env) and Node.js/GitHub Actions (process.env)
+// Safely resolve the API key: check process.env first (for Node scripts), then import.meta.env (for Vite browser)
 const getApiKey = () => {
+  if (process.env.VITE_FIREBASE_API_KEY) {
+    return process.env.VITE_FIREBASE_API_KEY;
+  }
   try {
     if (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_FIREBASE_API_KEY) {
       return import.meta.env.VITE_FIREBASE_API_KEY;
@@ -12,7 +15,7 @@ const getApiKey = () => {
   } catch (e) {
     // Ignore import.meta error if thrown
   }
-  return process.env.VITE_FIREBASE_API_KEY;
+  return undefined;
 };
 
 const firebaseConfig = {
