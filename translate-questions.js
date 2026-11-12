@@ -1,7 +1,7 @@
-const fs = require('fs');
-const { translate } = require('google-translate-api-x');
+import fs from 'fs';
+import pkg from 'google-translate-api-x';
+const { translate } = pkg;
 
-// Helper function to delay between requests to avoid rate limits
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function translateQuestions() {
@@ -23,53 +23,60 @@ async function translateQuestions() {
     return;
   }
 
-  console.log(`🚀 Found ${questions.length} questions. Starting translation to French...`);
+  console.log(`🚀 Found ${questions.length} questions. Scanning for missing translations from q311 onwards...`);
 
   for (let i = 0; i < questions.length; i++) {
     const q = questions[i];
     
-    // Skip if French translation already exists to save time/requests
-    if (q.question.fr && q.options.fr && q.correctAnswer.fr) {
+    // Extract the numeric part of the ID (e.g., "q311" -> 311)
+    const qNum = parseInt(q.id.replace('q', ''), 10);
+
+    // Only process from q311 and higher
+    if (isNaN(qNum) || qNum < 311) {
+      continue;
+    }
+
+    // Check if it already has complete French translations
+    const hasFrench = q.question?.fr && q.options?.fr && q.correctAnswer?.fr;
+    if (hasFrench) {
       console.log(`[${i + 1}/${questions.length}] Skipped (already translated): ${q.id}`);
       continue;
     }
 
+    console.log(`🔄 Translating ${q.id} (${i + 1}/${questions.length})...`);
+
     try {
-      // 1. Translate the question text from English ('en') to French ('fr')
       const translatedQuestion = await translate(q.question.en, { to: 'fr' });
       q.question.fr = translatedQuestion.text;
 
-      // 2. Translate each option in the options array
       q.options.fr = [];
       for (const opt of q.options.en) {
         const translatedOpt = await translate(opt, { to: 'fr' });
         q.options.fr.push(translatedOpt.text);
       }
 
-      // 3. Translate the correct answer string
       const translatedAnswer = await translate(q.correctAnswer.en, { to: 'fr' });
       q.correctAnswer.fr = translatedAnswer.text;
 
-      console.log(`[${i + 1}/${questions.length}] Successfully translated: ${q.id}`);
+      console.log(`✅ Successfully translated: ${q.id}`);
 
-      // Save progress to the file every 10 questions so you don't lose work if interrupted
-      if ((i + 1) % 10 === 0) {
+      // Save progress every 5 questions to be extra safe
+      if ((i + 1) % 5 === 0) {
         fs.writeFileSync(filePath, JSON.stringify(questions, null, 2), 'utf8');
         console.log('💾 Progress saved to questions.json');
       }
 
-      // Small delay to prevent hitting translation rate limits
-      await sleep(300);
+      // Safe delay to prevent server rate-limiting (429 errors)
+      await sleep(2500);
 
     } catch (error) {
       console.error(`❌ Error translating question ID ${q.id}:`, error.message);
-      // Save current progress before exiting on error
       fs.writeFileSync(filePath, JSON.stringify(questions, null, 2), 'utf8');
+      console.log('💾 Progress saved up to this point. You can re-run the script to resume.');
       break;
     }
   }
 
-  // Final save
   fs.writeFileSync(filePath, JSON.stringify(questions, null, 2), 'utf8');
   console.log('✨ All translations completed and saved successfully!');
 }
