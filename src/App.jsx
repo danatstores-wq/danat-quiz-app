@@ -21,11 +21,18 @@ import {
   updateDoc,
   increment,
   collection,
-  getDocs
+  getDocs,
+  query,
+  orderBy,
+  limit
 } from 'firebase/firestore';
 
 // --- LocalStorage Storage Keys ---
 const QUIZ_INDEX_KEY = 'danat_quiz_current_index';
+const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
+const QUESTIONS_CACHE_TTL = 24 * 60 * 60 * 1000;
+const LEADERBOARD_CACHE_KEY = 'danat_quiz_leaderboard_cache_v1';
+const LEADERBOARD_CACHE_TTL = 5 * 60 * 1000;
 
 // --- Google AdMob Unit Configuration (Prepared for Native Mobile Builds) ---
 const ADMOB_UNITS = {
@@ -404,8 +411,21 @@ export default function App() {
   const [leaderboardUsers, setLeaderboardUsers] = useState([]);
   const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
 
-  // Quiz Loop State with LocalStorage Persistence
-  const [questions, setQuestions] = useState(INITIAL_QUESTIONS);
+  // Load cached questions immediately; refresh from Firestore only when cache expires.
+  const [questions, setQuestions] = useState(() => {
+    try {
+      const cached = localStorage.getItem(QUESTIONS_CACHE_KEY);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed.questions) && parsed.questions.length > 0) {
+          return parsed.questions;
+        }
+      }
+    } catch (err) {
+      console.warn("Question cache could not be read:", err);
+    }
+    return INITIAL_QUESTIONS;
+  });
   
   const [currentQIndex, setCurrentQIndex] = useState(() => {
     const saved = localStorage.getItem(QUIZ_INDEX_KEY);
@@ -426,20 +446,39 @@ export default function App() {
     localStorage.setItem(QUIZ_INDEX_KEY, currentQIndex.toString());
   }, [currentQIndex]);
 
-  // Real-time Leaderboard Fetching from Firestore
+  // Fetch only the top 20 players and reuse a short-lived local cache.
   useEffect(() => {
     if (activeTab === 'leaderboard') {
       async function fetchLeaderboard() {
         setLoadingLeaderboard(true);
         try {
-          const querySnapshot = await getDocs(collection(db, "users"));
-          const usersList = [];
-          querySnapshot.forEach((docSnap) => {
-            usersList.push({ id: docSnap.id, ...docSnap.data() });
-          });
-          // Sort descending by points
-          usersList.sort((a, b) => (b.points || b.spirits || 0) - (a.points || a.spirits || 0));
+          const cached = localStorage.getItem(LEADERBOARD_CACHE_KEY);
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            if (Date.now() - parsed.timestamp < LEADERBOARD_CACHE_TTL && Array.isArray(parsed.users)) {
+              setLeaderboardUsers(parsed.users);
+              setLoadingLeaderboard(false);
+              return;
+            }
+          }
+
+          const topPlayersQuery = query(
+            collection(db, "users"),
+            orderBy("points", "desc"),
+            limit(20)
+          );
+          const querySnapshot = await getDocs(topPlayersQuery);
+          const usersList = querySnapshot.docs.map((docSnap) => ({
+            id: docSnap.id,
+            name: docSnap.data().name || 'لاعب',
+            avatar: docSnap.data().avatar || 'avatar-man-ghutra.png',
+            points: docSnap.data().points ?? docSnap.data().spirits ?? 0
+          }));
           setLeaderboardUsers(usersList);
+          localStorage.setItem(LEADERBOARD_CACHE_KEY, JSON.stringify({
+            timestamp: Date.now(),
+            users: usersList
+          }));
         } catch (err) {
           console.error("Failed to fetch leaderboard:", err);
         } finally {
@@ -468,23 +507,38 @@ export default function App() {
   // Fixed Asset Path Template Literal
   const assetPath = (filename) => `${import.meta.env.BASE_URL}assets/${filename}`;
 
-  // Fetch Questions from Firestore
+  // Questions are cached on this device for 24 hours to avoid downloading the full collection on every app launch.
   useEffect(() => {
     async function fetchFirestoreQuestions() {
       try {
+        const cached = localStorage.getItem(QUESTIONS_CACHE_KEY);
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          const cacheIsFresh = Date.now() - parsed.timestamp < QUESTIONS_CACHE_TTL;
+          if (cacheIsFresh && Array.isArray(parsed.questions) && parsed.questions.length > 0) {
+            setQuestions(parsed.questions);
+            setCurrentQIndex((prev) => (prev < parsed.questions.length ? prev : 0));
+            setLoadingQuestions(false);
+            return;
+          }
+        }
+
         const querySnapshot = await getDocs(collection(db, "questions"));
-        const docsList = [];
-        querySnapshot.forEach((docSnap) => {
-          docsList.push({ id: docSnap.id, ...docSnap.data() });
-        });
+        const docsList = querySnapshot.docs.map((docSnap) => ({
+          id: docSnap.id,
+          ...docSnap.data()
+        }));
 
         if (docsList.length > 0) {
           setQuestions(docsList);
-          // Safety check for out-of-bounds saved index
           setCurrentQIndex((prev) => (prev < docsList.length ? prev : 0));
+          localStorage.setItem(QUESTIONS_CACHE_KEY, JSON.stringify({
+            timestamp: Date.now(),
+            questions: docsList
+          }));
         }
       } catch (err) {
-        console.error("Firestore questions fetch failed, fallback used:", err);
+        console.error("Firestore questions fetch failed, cached/fallback questions used:", err);
       } finally {
         setLoadingQuestions(false);
       }
