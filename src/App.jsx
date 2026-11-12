@@ -365,7 +365,6 @@ export default function App() {
   const [authMessage, setAuthMessage] = useState('');
 
   const [activeTab, setActiveTab] = useState('home');
-  const [selectedMiniGame, setSelectedMiniGame] = useState(null);
 
   const [user, setUser] = useState({
     name: 'أحمد',
@@ -1368,7 +1367,7 @@ export default function App() {
                 ].map((item) => (
                   <button
                     key={item.game}
-                    onClick={() => { setSelectedMiniGame(item.game); setActiveTab('minigames'); }}
+                    onClick={() => setActiveTab(`minigame-${item.game}`)}
                     className="w-full h-36 bg-gradient-to-br from-[#32105c] to-[#170629] border border-yellow-500/40 rounded-2xl overflow-hidden shadow-lg active:scale-95 transition-transform flex flex-col items-center justify-center gap-3"
                   >
                     <span className="text-5xl">{item.icon}</span>
@@ -1380,8 +1379,8 @@ export default function App() {
           )}
 
           {/* MINI GAMES - scores stay separate from quiz points */}
-          {activeTab === 'minigames' && (
-            <MiniGames language={user.language} initialGame={selectedMiniGame} onBack={() => { setSelectedMiniGame(null); setActiveTab('home'); }} />
+          {activeTab.startsWith('minigame-') && (
+            <MiniGames key={activeTab} language={user.language} initialGame={activeTab.replace('minigame-', '')} onBack={() => setActiveTab('home')} />
           )}
 
           {/* SCREEN: STATISTICS */}
