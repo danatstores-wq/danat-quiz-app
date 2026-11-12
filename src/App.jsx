@@ -102,7 +102,7 @@ const TRANSLATIONS = {
   'العربية': {
     appName: 'دانات كويز',
     subtitle: 'اختبر معلوماتك .. واربح المكافآت',
-    startPlay: 'ابدأ اللعب',
+    startPlay: 'ابدأ الاختبار',
     rewards: 'المكافآت',
     leaderboard: 'لوحة المتصدرين',
     profile: 'ملفي الشخصي',
@@ -184,7 +184,7 @@ const TRANSLATIONS = {
   'English': {
     appName: 'Danat Quiz',
     subtitle: 'Test your knowledge & win rewards',
-    startPlay: 'Start Playing',
+    startPlay: 'Start Quiz',
     rewards: 'Rewards',
     leaderboard: 'Leaderboard',
     profile: 'My Profile',
@@ -266,7 +266,7 @@ const TRANSLATIONS = {
   'Français': {
     appName: "Danat Quiz",
     subtitle: "Testez vos connaissances et gagnez des récompenses",
-    startPlay: "Commencer à jouer",
+    startPlay: "Commencer le quiz",
     rewards: "Récompenses",
     leaderboard: "Classement",
     profile: "Mon Profil",
