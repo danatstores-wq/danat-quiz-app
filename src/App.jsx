@@ -1280,22 +1280,7 @@ export default function App() {
                 </button>
               </div>
 
-              <section
-                className="relative min-h-[285px] overflow-hidden rounded-[26px] bg-[#071329] shadow-[0_12px_34px_rgba(0,0,0,0.38)]"
-                style={{
-                  backgroundImage: `linear-gradient(90deg, rgba(5,13,31,.08), rgba(5,13,31,.2)), url(${assetPath('danat_quiz_hero.jpg')})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071329]/65 via-transparent to-[#071329]/10" />
-                <div className="relative flex min-h-[285px] items-end justify-end px-5 pb-6 text-right">
-                  <div className="max-w-[62%]">
-                    <h1 className="text-4xl font-black italic leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-yellow-100 via-amber-300 to-amber-600 drop-shadow-lg">Danat<br/>Quiz</h1>
-                    <p className="mt-3 text-xs font-bold text-white drop-shadow">{t.subtitle}</p>
-                  </div>
-                </div>
-              </section>
+
 
               <div className="grid grid-cols-2 gap-2 rounded-[24px] border border-amber-400/60 bg-gradient-to-r from-[#17213f] to-[#0c142b] p-3 shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
                 <div className="flex items-center gap-2 border-r border-white/10 pr-2">
