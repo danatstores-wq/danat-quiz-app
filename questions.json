@@ -6798,5 +6798,7005 @@
       "fr": "Cube"
     },
     "points": 10
+  },
+  {
+    "id": "q201",
+    "question": {
+      "en": "What year is associated with the signing of the Magna Carta?",
+      "ar": "ما السنة المرتبطة بـتوقيع وثيقة الماغنا كارتا؟",
+      "fr": "Quelle année est associée à la signature de la Magna Carta ?"
+    },
+    "options": {
+      "en": [
+        "1215",
+        "1216",
+        "1214",
+        "1217"
+      ],
+      "ar": [
+        "1215",
+        "1216",
+        "1214",
+        "1217"
+      ],
+      "fr": [
+        "1215",
+        "1216",
+        "1214",
+        "1217"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1215",
+      "ar": "1215",
+      "fr": "1215"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q202",
+    "question": {
+      "en": "What year is associated with the fall of Constantinople?",
+      "ar": "ما السنة المرتبطة بـسقوط القسطنطينية؟",
+      "fr": "Quelle année est associée à la chute de Constantinople ?"
+    },
+    "options": {
+      "en": [
+        "1454",
+        "1452",
+        "1455",
+        "1453"
+      ],
+      "ar": [
+        "1454",
+        "1452",
+        "1455",
+        "1453"
+      ],
+      "fr": [
+        "1454",
+        "1452",
+        "1455",
+        "1453"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1453",
+      "ar": "1453",
+      "fr": "1453"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q203",
+    "question": {
+      "en": "What year is associated with the beginning of the French Revolution?",
+      "ar": "ما السنة المرتبطة بـبداية الثورة الفرنسية؟",
+      "fr": "Quelle année est associée à le début de la Révolution française ?"
+    },
+    "options": {
+      "en": [
+        "1788",
+        "1791",
+        "1789",
+        "1790"
+      ],
+      "ar": [
+        "1788",
+        "1791",
+        "1789",
+        "1790"
+      ],
+      "fr": [
+        "1788",
+        "1791",
+        "1789",
+        "1790"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1789",
+      "ar": "1789",
+      "fr": "1789"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q204",
+    "question": {
+      "en": "What year is associated with the American Declaration of Independence?",
+      "ar": "ما السنة المرتبطة بـإعلان استقلال الولايات المتحدة؟",
+      "fr": "Quelle année est associée à la Déclaration d’indépendance américaine ?"
+    },
+    "options": {
+      "en": [
+        "1778",
+        "1776",
+        "1777",
+        "1775"
+      ],
+      "ar": [
+        "1778",
+        "1776",
+        "1777",
+        "1775"
+      ],
+      "fr": [
+        "1778",
+        "1776",
+        "1777",
+        "1775"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1776",
+      "ar": "1776",
+      "fr": "1776"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q205",
+    "question": {
+      "en": "What year is associated with the beginning of World War I?",
+      "ar": "ما السنة المرتبطة بـبداية الحرب العالمية الأولى؟",
+      "fr": "Quelle année est associée à le début de la Première Guerre mondiale ?"
+    },
+    "options": {
+      "en": [
+        "1914",
+        "1915",
+        "1913",
+        "1916"
+      ],
+      "ar": [
+        "1914",
+        "1915",
+        "1913",
+        "1916"
+      ],
+      "fr": [
+        "1914",
+        "1915",
+        "1913",
+        "1916"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1914",
+      "ar": "1914",
+      "fr": "1914"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q206",
+    "question": {
+      "en": "What year is associated with the beginning of World War II?",
+      "ar": "ما السنة المرتبطة بـبداية الحرب العالمية الثانية؟",
+      "fr": "Quelle année est associée à le début de la Seconde Guerre mondiale ?"
+    },
+    "options": {
+      "en": [
+        "1940",
+        "1938",
+        "1941",
+        "1939"
+      ],
+      "ar": [
+        "1940",
+        "1938",
+        "1941",
+        "1939"
+      ],
+      "fr": [
+        "1940",
+        "1938",
+        "1941",
+        "1939"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1939",
+      "ar": "1939",
+      "fr": "1939"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q207",
+    "question": {
+      "en": "What year is associated with the fall of the Berlin Wall?",
+      "ar": "ما السنة المرتبطة بـسقوط جدار برلين؟",
+      "fr": "Quelle année est associée à la chute du mur de Berlin ?"
+    },
+    "options": {
+      "en": [
+        "1988",
+        "1991",
+        "1989",
+        "1990"
+      ],
+      "ar": [
+        "1988",
+        "1991",
+        "1989",
+        "1990"
+      ],
+      "fr": [
+        "1988",
+        "1991",
+        "1989",
+        "1990"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1989",
+      "ar": "1989",
+      "fr": "1989"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q208",
+    "question": {
+      "en": "What year is associated with the first human Moon landing?",
+      "ar": "ما السنة المرتبطة بـأول هبوط بشري على القمر؟",
+      "fr": "Quelle année est associée à le premier alunissage habité ?"
+    },
+    "options": {
+      "en": [
+        "1971",
+        "1969",
+        "1970",
+        "1968"
+      ],
+      "ar": [
+        "1971",
+        "1969",
+        "1970",
+        "1968"
+      ],
+      "fr": [
+        "1971",
+        "1969",
+        "1970",
+        "1968"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1969",
+      "ar": "1969",
+      "fr": "1969"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q209",
+    "question": {
+      "en": "What year is associated with the founding of the United Nations?",
+      "ar": "ما السنة المرتبطة بـتأسيس الأمم المتحدة؟",
+      "fr": "Quelle année est associée à la fondation des Nations unies ?"
+    },
+    "options": {
+      "en": [
+        "1945",
+        "1946",
+        "1944",
+        "1947"
+      ],
+      "ar": [
+        "1945",
+        "1946",
+        "1944",
+        "1947"
+      ],
+      "fr": [
+        "1945",
+        "1946",
+        "1944",
+        "1947"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1945",
+      "ar": "1945",
+      "fr": "1945"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q210",
+    "question": {
+      "en": "What year is associated with the traditional start of the ancient Olympic Games?",
+      "ar": "ما السنة المرتبطة بـالبداية التقليدية للألعاب الأولمبية القديمة؟",
+      "fr": "Quelle année est associée à le début traditionnel des Jeux olympiques antiques ?"
+    },
+    "options": {
+      "en": [
+        "777",
+        "775",
+        "778",
+        "776"
+      ],
+      "ar": [
+        "777",
+        "775",
+        "778",
+        "776"
+      ],
+      "fr": [
+        "777",
+        "775",
+        "778",
+        "776"
+      ]
+    },
+    "correctAnswer": {
+      "en": "776",
+      "ar": "776",
+      "fr": "776"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q211",
+    "question": {
+      "en": "What year is associated with the Battle of Hastings?",
+      "ar": "ما السنة المرتبطة بـمعركة هاستينغز؟",
+      "fr": "Quelle année est associée à la bataille de Hastings ?"
+    },
+    "options": {
+      "en": [
+        "1065",
+        "1068",
+        "1066",
+        "1067"
+      ],
+      "ar": [
+        "1065",
+        "1068",
+        "1066",
+        "1067"
+      ],
+      "fr": [
+        "1065",
+        "1068",
+        "1066",
+        "1067"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1066",
+      "ar": "1066",
+      "fr": "1066"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q212",
+    "question": {
+      "en": "What year is associated with the beginning of the American Civil War?",
+      "ar": "ما السنة المرتبطة بـبداية الحرب الأهلية الأمريكية؟",
+      "fr": "Quelle année est associée à le début de la guerre de Sécession américaine ?"
+    },
+    "options": {
+      "en": [
+        "1863",
+        "1861",
+        "1862",
+        "1860"
+      ],
+      "ar": [
+        "1863",
+        "1861",
+        "1862",
+        "1860"
+      ],
+      "fr": [
+        "1863",
+        "1861",
+        "1862",
+        "1860"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1861",
+      "ar": "1861",
+      "fr": "1861"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q213",
+    "question": {
+      "en": "What year is associated with India’s independence from Britain?",
+      "ar": "ما السنة المرتبطة بـاستقلال الهند عن بريطانيا؟",
+      "fr": "Quelle année est associée à l’indépendance de l’Inde vis-à-vis du Royaume-Uni ?"
+    },
+    "options": {
+      "en": [
+        "1947",
+        "1948",
+        "1946",
+        "1949"
+      ],
+      "ar": [
+        "1947",
+        "1948",
+        "1946",
+        "1949"
+      ],
+      "fr": [
+        "1947",
+        "1948",
+        "1946",
+        "1949"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1947",
+      "ar": "1947",
+      "fr": "1947"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q214",
+    "question": {
+      "en": "What year is associated with the Russian Revolution?",
+      "ar": "ما السنة المرتبطة بـالثورة الروسية؟",
+      "fr": "Quelle année est associée à la révolution russe ?"
+    },
+    "options": {
+      "en": [
+        "1918",
+        "1916",
+        "1919",
+        "1917"
+      ],
+      "ar": [
+        "1918",
+        "1916",
+        "1919",
+        "1917"
+      ],
+      "fr": [
+        "1918",
+        "1916",
+        "1919",
+        "1917"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1917",
+      "ar": "1917",
+      "fr": "1917"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q215",
+    "question": {
+      "en": "What year is associated with the sinking of the Titanic?",
+      "ar": "ما السنة المرتبطة بـغرق سفينة تايتانيك؟",
+      "fr": "Quelle année est associée à le naufrage du Titanic ?"
+    },
+    "options": {
+      "en": [
+        "1911",
+        "1914",
+        "1912",
+        "1913"
+      ],
+      "ar": [
+        "1911",
+        "1914",
+        "1912",
+        "1913"
+      ],
+      "fr": [
+        "1911",
+        "1914",
+        "1912",
+        "1913"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1912",
+      "ar": "1912",
+      "fr": "1912"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q216",
+    "question": {
+      "en": "What year is associated with the first modern Olympic Games?",
+      "ar": "ما السنة المرتبطة بـأول دورة ألعاب أولمبية حديثة؟",
+      "fr": "Quelle année est associée à les premiers Jeux olympiques modernes ?"
+    },
+    "options": {
+      "en": [
+        "1898",
+        "1896",
+        "1897",
+        "1895"
+      ],
+      "ar": [
+        "1898",
+        "1896",
+        "1897",
+        "1895"
+      ],
+      "fr": [
+        "1898",
+        "1896",
+        "1897",
+        "1895"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1896",
+      "ar": "1896",
+      "fr": "1896"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q217",
+    "question": {
+      "en": "What year is associated with the opening of the Suez Canal?",
+      "ar": "ما السنة المرتبطة بـافتتاح قناة السويس؟",
+      "fr": "Quelle année est associée à l’ouverture du canal de Suez ?"
+    },
+    "options": {
+      "en": [
+        "1869",
+        "1870",
+        "1868",
+        "1871"
+      ],
+      "ar": [
+        "1869",
+        "1870",
+        "1868",
+        "1871"
+      ],
+      "fr": [
+        "1869",
+        "1870",
+        "1868",
+        "1871"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1869",
+      "ar": "1869",
+      "fr": "1869"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q218",
+    "question": {
+      "en": "What year is associated with the arrival of the Black Death in Europe?",
+      "ar": "ما السنة المرتبطة بـوصول الطاعون الأسود إلى أوروبا؟",
+      "fr": "Quelle année est associée à l’arrivée de la peste noire en Europe ?"
+    },
+    "options": {
+      "en": [
+        "1348",
+        "1346",
+        "1349",
+        "1347"
+      ],
+      "ar": [
+        "1348",
+        "1346",
+        "1349",
+        "1347"
+      ],
+      "fr": [
+        "1348",
+        "1346",
+        "1349",
+        "1347"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1347",
+      "ar": "1347",
+      "fr": "1347"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q219",
+    "question": {
+      "en": "What year is associated with the United States entering World War II?",
+      "ar": "ما السنة المرتبطة بـدخول الولايات المتحدة الحرب العالمية الثانية؟",
+      "fr": "Quelle année est associée à l’entrée des États-Unis dans la Seconde Guerre mondiale ?"
+    },
+    "options": {
+      "en": [
+        "1940",
+        "1943",
+        "1941",
+        "1942"
+      ],
+      "ar": [
+        "1940",
+        "1943",
+        "1941",
+        "1942"
+      ],
+      "fr": [
+        "1940",
+        "1943",
+        "1941",
+        "1942"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1941",
+      "ar": "1941",
+      "fr": "1941"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q220",
+    "question": {
+      "en": "What year is associated with the launch of the first iPhone?",
+      "ar": "ما السنة المرتبطة بـإطلاق أول هاتف آيفون؟",
+      "fr": "Quelle année est associée à le lancement du premier iPhone ?"
+    },
+    "options": {
+      "en": [
+        "2009",
+        "2007",
+        "2008",
+        "2006"
+      ],
+      "ar": [
+        "2009",
+        "2007",
+        "2008",
+        "2006"
+      ],
+      "fr": [
+        "2009",
+        "2007",
+        "2008",
+        "2006"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2007",
+      "ar": "2007",
+      "fr": "2007"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q221",
+    "question": {
+      "en": "What year is associated with Gutenberg’s printing press in Europe?",
+      "ar": "ما السنة المرتبطة بـانتشار مطبعة غوتنبرغ في أوروبا؟",
+      "fr": "Quelle année est associée à la diffusion de l’imprimerie de Gutenberg en Europe ?"
+    },
+    "options": {
+      "en": [
+        "1450",
+        "1451",
+        "1449",
+        "1452"
+      ],
+      "ar": [
+        "1450",
+        "1451",
+        "1449",
+        "1452"
+      ],
+      "fr": [
+        "1450",
+        "1451",
+        "1449",
+        "1452"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1450",
+      "ar": "1450",
+      "fr": "1450"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q222",
+    "question": {
+      "en": "What year is associated with the beginning of the Mexican War of Independence?",
+      "ar": "ما السنة المرتبطة بـبداية حرب استقلال المكسيك؟",
+      "fr": "Quelle année est associée à le début de la guerre d’indépendance du Mexique ?"
+    },
+    "options": {
+      "en": [
+        "1811",
+        "1809",
+        "1812",
+        "1810"
+      ],
+      "ar": [
+        "1811",
+        "1809",
+        "1812",
+        "1810"
+      ],
+      "fr": [
+        "1811",
+        "1809",
+        "1812",
+        "1810"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1810",
+      "ar": "1810",
+      "fr": "1810"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q223",
+    "question": {
+      "en": "What year is associated with the first powered airplane flight?",
+      "ar": "ما السنة المرتبطة بـأول رحلة طيران بطائرة تعمل بمحرك؟",
+      "fr": "Quelle année est associée à le premier vol d’un avion motorisé ?"
+    },
+    "options": {
+      "en": [
+        "1902",
+        "1905",
+        "1903",
+        "1904"
+      ],
+      "ar": [
+        "1902",
+        "1905",
+        "1903",
+        "1904"
+      ],
+      "fr": [
+        "1902",
+        "1905",
+        "1903",
+        "1904"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1903",
+      "ar": "1903",
+      "fr": "1903"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q224",
+    "question": {
+      "en": "What year is associated with the signing of the Treaty of Versailles?",
+      "ar": "ما السنة المرتبطة بـتوقيع معاهدة فرساي؟",
+      "fr": "Quelle année est associée à la signature du traité de Versailles ?"
+    },
+    "options": {
+      "en": [
+        "1921",
+        "1919",
+        "1920",
+        "1918"
+      ],
+      "ar": [
+        "1921",
+        "1919",
+        "1920",
+        "1918"
+      ],
+      "fr": [
+        "1921",
+        "1919",
+        "1920",
+        "1918"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1919",
+      "ar": "1919",
+      "fr": "1919"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q225",
+    "question": {
+      "en": "What year is associated with the beginning of the Korean War?",
+      "ar": "ما السنة المرتبطة بـبداية الحرب الكورية؟",
+      "fr": "Quelle année est associée à le début de la guerre de Corée ?"
+    },
+    "options": {
+      "en": [
+        "1950",
+        "1951",
+        "1949",
+        "1952"
+      ],
+      "ar": [
+        "1950",
+        "1951",
+        "1949",
+        "1952"
+      ],
+      "fr": [
+        "1950",
+        "1951",
+        "1949",
+        "1952"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1950",
+      "ar": "1950",
+      "fr": "1950"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q226",
+    "question": {
+      "en": "How many continents are in the seven-continent model?",
+      "ar": "كم القارات في النموذج الذي يقسم العالم إلى سبع قارات؟",
+      "fr": "Combien les continents du modèle à sept continents ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q227",
+    "question": {
+      "en": "How many oceans are commonly recognized today?",
+      "ar": "كم المحيطات المعترف بها شائعاً اليوم؟",
+      "fr": "Combien les océans généralement reconnus aujourd’hui ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "ar": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "fr": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q228",
+    "question": {
+      "en": "How many degrees of longitude circle the Earth?",
+      "ar": "كم درجات خطوط الطول التي تحيط بالأرض؟",
+      "fr": "Combien degrés de longitude font le tour de la Terre ?"
+    },
+    "options": {
+      "en": [
+        "362",
+        "360",
+        "361",
+        "359"
+      ],
+      "ar": [
+        "362",
+        "360",
+        "361",
+        "359"
+      ],
+      "fr": [
+        "362",
+        "360",
+        "361",
+        "359"
+      ]
+    },
+    "correctAnswer": {
+      "en": "360",
+      "ar": "360",
+      "fr": "360"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q229",
+    "question": {
+      "en": "How many degrees of latitude separate the Equator from either pole?",
+      "ar": "كم درجات العرض بين خط الاستواء وأي من القطبين؟",
+      "fr": "Combien degrés de latitude séparent l’équateur de chaque pôle ?"
+    },
+    "options": {
+      "en": [
+        "90",
+        "91",
+        "89",
+        "92"
+      ],
+      "ar": [
+        "90",
+        "91",
+        "89",
+        "92"
+      ],
+      "fr": [
+        "90",
+        "91",
+        "89",
+        "92"
+      ]
+    },
+    "correctAnswer": {
+      "en": "90",
+      "ar": "90",
+      "fr": "90"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q230",
+    "question": {
+      "en": "How many countries form the United Kingdom?",
+      "ar": "كم الدول التي يتكون منها المملكة المتحدة؟",
+      "fr": "Combien pays constituent le Royaume-Uni ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "ar": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "fr": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q231",
+    "question": {
+      "en": "How many Great Lakes lie between the United States and Canada?",
+      "ar": "كم البحيرات العظمى الواقعة بين الولايات المتحدة وكندا؟",
+      "fr": "Combien Grands Lacs se trouvent entre les États-Unis et le Canada ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "ar": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "fr": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q232",
+    "question": {
+      "en": "How many countries share a land border with Germany?",
+      "ar": "كم الدول التي تشترك بحدود برية مع ألمانيا؟",
+      "fr": "Combien pays partagent une frontière terrestre avec l’Allemagne ?"
+    },
+    "options": {
+      "en": [
+        "11",
+        "9",
+        "10",
+        "8"
+      ],
+      "ar": [
+        "11",
+        "9",
+        "10",
+        "8"
+      ],
+      "fr": [
+        "11",
+        "9",
+        "10",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "9",
+      "ar": "9",
+      "fr": "9"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q233",
+    "question": {
+      "en": "How many states make up the United States?",
+      "ar": "كم الولايات التي تتكون منها الولايات المتحدة؟",
+      "fr": "Combien États composent les États-Unis ?"
+    },
+    "options": {
+      "en": [
+        "50",
+        "51",
+        "49",
+        "52"
+      ],
+      "ar": [
+        "50",
+        "51",
+        "49",
+        "52"
+      ],
+      "fr": [
+        "50",
+        "51",
+        "49",
+        "52"
+      ]
+    },
+    "correctAnswer": {
+      "en": "50",
+      "ar": "50",
+      "fr": "50"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q234",
+    "question": {
+      "en": "How many emirates form the United Arab Emirates?",
+      "ar": "كم الإمارات التي تتكون منها دولة الإمارات العربية المتحدة؟",
+      "fr": "Combien émirats composent les Émirats arabes unis ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q235",
+    "question": {
+      "en": "How many countries make up the Benelux group?",
+      "ar": "كم الدول التي تتكون منها مجموعة البنلوكس؟",
+      "fr": "Combien pays composent le Benelux ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q236",
+    "question": {
+      "en": "How many sides does a hexagon have?",
+      "ar": "كم أضلاع للشكل السداسي؟",
+      "fr": "Combien côtés possède un hexagone ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "6",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q237",
+    "question": {
+      "en": "How many official time zones does China use?",
+      "ar": "كم مناطق زمنية تستخدمها الصين رسمياً؟",
+      "fr": "Combien fuseaux horaires la Chine utilise-t-elle officiellement ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "ar": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "fr": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q238",
+    "question": {
+      "en": "How many provinces does Canada have?",
+      "ar": "كم مقاطعات لدى كندا؟",
+      "fr": "Combien provinces compte le Canada ?"
+    },
+    "options": {
+      "en": [
+        "11",
+        "9",
+        "12",
+        "10"
+      ],
+      "ar": [
+        "11",
+        "9",
+        "12",
+        "10"
+      ],
+      "fr": [
+        "11",
+        "9",
+        "12",
+        "10"
+      ]
+    },
+    "correctAnswer": {
+      "en": "10",
+      "ar": "10",
+      "fr": "10"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q239",
+    "question": {
+      "en": "How many main islands make up Japan?",
+      "ar": "كم جزر رئيسية تتكون منها اليابان؟",
+      "fr": "Combien îles principales composent le Japon ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q240",
+    "question": {
+      "en": "How many countries are in South America?",
+      "ar": "كم دولة تقع في أمريكا الجنوبية؟",
+      "fr": "Combien pays se trouvent en Amérique du Sud ?"
+    },
+    "options": {
+      "en": [
+        "14",
+        "12",
+        "13",
+        "11"
+      ],
+      "ar": [
+        "14",
+        "12",
+        "13",
+        "11"
+      ],
+      "fr": [
+        "14",
+        "12",
+        "13",
+        "11"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q241",
+    "question": {
+      "en": "How many countries share the island of Hispaniola?",
+      "ar": "كم دول تتشارك جزيرة هيسبانيولا؟",
+      "fr": "Combien pays se partagent l’île d’Hispaniola ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q242",
+    "question": {
+      "en": "How many countries border the Caspian Sea?",
+      "ar": "كم دول تطل على بحر قزوين؟",
+      "fr": "Combien pays bordent la mer Caspienne ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q243",
+    "question": {
+      "en": "How many official languages does Switzerland have?",
+      "ar": "كم لغات رسمية لدى سويسرا؟",
+      "fr": "Combien langues officielles la Suisse possède-t-elle ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q244",
+    "question": {
+      "en": "How many countries border the Black Sea?",
+      "ar": "كم دول تطل على البحر الأسود؟",
+      "fr": "Combien pays bordent la mer Noire ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "6",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q245",
+    "question": {
+      "en": "How many countries border Portugal by land?",
+      "ar": "كم دول تشترك بحدود برية مع البرتغال؟",
+      "fr": "Combien pays ont une frontière terrestre avec le Portugal ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "ar": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "fr": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q246",
+    "question": {
+      "en": "How many countries are in the Nordic Council?",
+      "ar": "كم دول ذات سيادة تشارك في مجلس الشمال؟",
+      "fr": "Combien États souverains participent au Conseil nordique ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q247",
+    "question": {
+      "en": "How many countries are crossed by the Equator?",
+      "ar": "كم دولة يمر بها خط الاستواء؟",
+      "fr": "Combien pays l’équateur traverse-t-il ?"
+    },
+    "options": {
+      "en": [
+        "12",
+        "15",
+        "13",
+        "14"
+      ],
+      "ar": [
+        "12",
+        "15",
+        "13",
+        "14"
+      ],
+      "fr": [
+        "12",
+        "15",
+        "13",
+        "14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "13",
+      "ar": "13",
+      "fr": "13"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q248",
+    "question": {
+      "en": "How many countries make up Scandinavia in its narrow definition?",
+      "ar": "كم دول تضم إسكندنافيا وفق تعريفها الضيق؟",
+      "fr": "Combien pays comprend la Scandinavie au sens strict ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q249",
+    "question": {
+      "en": "How many countries border the Mediterranean Sea?",
+      "ar": "كم دول تطل على البحر المتوسط؟",
+      "fr": "Combien pays bordent la mer Méditerranée ?"
+    },
+    "options": {
+      "en": [
+        "21",
+        "22",
+        "20",
+        "23"
+      ],
+      "ar": [
+        "21",
+        "22",
+        "20",
+        "23"
+      ],
+      "fr": [
+        "21",
+        "22",
+        "20",
+        "23"
+      ]
+    },
+    "correctAnswer": {
+      "en": "21",
+      "ar": "21",
+      "fr": "21"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q250",
+    "question": {
+      "en": "How many countries make up the island of Ireland?",
+      "ar": "كم دول تتكون منها جزيرة أيرلندا؟",
+      "fr": "Combien pays composent l’île d’Irlande ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q251",
+    "question": {
+      "en": "What is the atomic number of hydrogen?",
+      "ar": "ما العدد الذري لعنصر الهيدروجين؟",
+      "fr": "Quel est le numéro atomique de l’hydrogène ?"
+    },
+    "options": {
+      "en": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "ar": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "fr": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q252",
+    "question": {
+      "en": "What is the atomic number of helium?",
+      "ar": "ما العدد الذري لعنصر الهيليوم؟",
+      "fr": "Quel est le numéro atomique de l’hélium ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q253",
+    "question": {
+      "en": "What is the atomic number of lithium?",
+      "ar": "ما العدد الذري لعنصر الليثيوم؟",
+      "fr": "Quel est le numéro atomique de le lithium ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q254",
+    "question": {
+      "en": "What is the atomic number of beryllium?",
+      "ar": "ما العدد الذري لعنصر البيريليوم؟",
+      "fr": "Quel est le numéro atomique de le béryllium ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "ar": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "fr": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q255",
+    "question": {
+      "en": "What is the atomic number of boron?",
+      "ar": "ما العدد الذري لعنصر البورون؟",
+      "fr": "Quel est le numéro atomique de le bore ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "ar": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ],
+      "fr": [
+        "4",
+        "7",
+        "5",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q256",
+    "question": {
+      "en": "What is the atomic number of carbon?",
+      "ar": "ما العدد الذري لعنصر الكربون؟",
+      "fr": "Quel est le numéro atomique de le carbone ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "6",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q257",
+    "question": {
+      "en": "What is the atomic number of nitrogen?",
+      "ar": "ما العدد الذري لعنصر النيتروجين؟",
+      "fr": "Quel est le numéro atomique de l’azote ?"
+    },
+    "options": {
+      "en": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "ar": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "fr": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q258",
+    "question": {
+      "en": "What is the atomic number of oxygen?",
+      "ar": "ما العدد الذري لعنصر الأكسجين؟",
+      "fr": "Quel est le numéro atomique de l’oxygène ?"
+    },
+    "options": {
+      "en": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "ar": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "fr": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q259",
+    "question": {
+      "en": "What is the atomic number of fluorine?",
+      "ar": "ما العدد الذري لعنصر الفلور؟",
+      "fr": "Quel est le numéro atomique de le fluor ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "11",
+        "9",
+        "10"
+      ],
+      "ar": [
+        "8",
+        "11",
+        "9",
+        "10"
+      ],
+      "fr": [
+        "8",
+        "11",
+        "9",
+        "10"
+      ]
+    },
+    "correctAnswer": {
+      "en": "9",
+      "ar": "9",
+      "fr": "9"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q260",
+    "question": {
+      "en": "What is the atomic number of neon?",
+      "ar": "ما العدد الذري لعنصر النيون؟",
+      "fr": "Quel est le numéro atomique de le néon ?"
+    },
+    "options": {
+      "en": [
+        "12",
+        "10",
+        "11",
+        "9"
+      ],
+      "ar": [
+        "12",
+        "10",
+        "11",
+        "9"
+      ],
+      "fr": [
+        "12",
+        "10",
+        "11",
+        "9"
+      ]
+    },
+    "correctAnswer": {
+      "en": "10",
+      "ar": "10",
+      "fr": "10"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q261",
+    "question": {
+      "en": "What is the atomic number of sodium?",
+      "ar": "ما العدد الذري لعنصر الصوديوم؟",
+      "fr": "Quel est le numéro atomique de le sodium ?"
+    },
+    "options": {
+      "en": [
+        "11",
+        "12",
+        "10",
+        "13"
+      ],
+      "ar": [
+        "11",
+        "12",
+        "10",
+        "13"
+      ],
+      "fr": [
+        "11",
+        "12",
+        "10",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "11",
+      "ar": "11",
+      "fr": "11"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q262",
+    "question": {
+      "en": "What is the atomic number of magnesium?",
+      "ar": "ما العدد الذري لعنصر المغنيسيوم؟",
+      "fr": "Quel est le numéro atomique de le magnésium ?"
+    },
+    "options": {
+      "en": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ],
+      "ar": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ],
+      "fr": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q263",
+    "question": {
+      "en": "What is the atomic number of aluminium?",
+      "ar": "ما العدد الذري لعنصر الألومنيوم؟",
+      "fr": "Quel est le numéro atomique de l’aluminium ?"
+    },
+    "options": {
+      "en": [
+        "12",
+        "15",
+        "13",
+        "14"
+      ],
+      "ar": [
+        "12",
+        "15",
+        "13",
+        "14"
+      ],
+      "fr": [
+        "12",
+        "15",
+        "13",
+        "14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "13",
+      "ar": "13",
+      "fr": "13"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q264",
+    "question": {
+      "en": "What is the atomic number of silicon?",
+      "ar": "ما العدد الذري لعنصر السيليكون؟",
+      "fr": "Quel est le numéro atomique de le silicium ?"
+    },
+    "options": {
+      "en": [
+        "16",
+        "14",
+        "15",
+        "13"
+      ],
+      "ar": [
+        "16",
+        "14",
+        "15",
+        "13"
+      ],
+      "fr": [
+        "16",
+        "14",
+        "15",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "14",
+      "ar": "14",
+      "fr": "14"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q265",
+    "question": {
+      "en": "What is the atomic number of phosphorus?",
+      "ar": "ما العدد الذري لعنصر الفوسفور؟",
+      "fr": "Quel est le numéro atomique de le phosphore ?"
+    },
+    "options": {
+      "en": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ],
+      "ar": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ],
+      "fr": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ]
+    },
+    "correctAnswer": {
+      "en": "15",
+      "ar": "15",
+      "fr": "15"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q266",
+    "question": {
+      "en": "What is the atomic number of sulfur?",
+      "ar": "ما العدد الذري لعنصر الكبريت؟",
+      "fr": "Quel est le numéro atomique de le soufre ?"
+    },
+    "options": {
+      "en": [
+        "17",
+        "15",
+        "18",
+        "16"
+      ],
+      "ar": [
+        "17",
+        "15",
+        "18",
+        "16"
+      ],
+      "fr": [
+        "17",
+        "15",
+        "18",
+        "16"
+      ]
+    },
+    "correctAnswer": {
+      "en": "16",
+      "ar": "16",
+      "fr": "16"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q267",
+    "question": {
+      "en": "What is the atomic number of chlorine?",
+      "ar": "ما العدد الذري لعنصر الكلور؟",
+      "fr": "Quel est le numéro atomique de le chlore ?"
+    },
+    "options": {
+      "en": [
+        "16",
+        "19",
+        "17",
+        "18"
+      ],
+      "ar": [
+        "16",
+        "19",
+        "17",
+        "18"
+      ],
+      "fr": [
+        "16",
+        "19",
+        "17",
+        "18"
+      ]
+    },
+    "correctAnswer": {
+      "en": "17",
+      "ar": "17",
+      "fr": "17"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q268",
+    "question": {
+      "en": "What is the atomic number of argon?",
+      "ar": "ما العدد الذري لعنصر الأرجون؟",
+      "fr": "Quel est le numéro atomique de l’argon ?"
+    },
+    "options": {
+      "en": [
+        "20",
+        "18",
+        "19",
+        "17"
+      ],
+      "ar": [
+        "20",
+        "18",
+        "19",
+        "17"
+      ],
+      "fr": [
+        "20",
+        "18",
+        "19",
+        "17"
+      ]
+    },
+    "correctAnswer": {
+      "en": "18",
+      "ar": "18",
+      "fr": "18"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q269",
+    "question": {
+      "en": "What is the atomic number of potassium?",
+      "ar": "ما العدد الذري لعنصر البوتاسيوم؟",
+      "fr": "Quel est le numéro atomique de le potassium ?"
+    },
+    "options": {
+      "en": [
+        "19",
+        "20",
+        "18",
+        "21"
+      ],
+      "ar": [
+        "19",
+        "20",
+        "18",
+        "21"
+      ],
+      "fr": [
+        "19",
+        "20",
+        "18",
+        "21"
+      ]
+    },
+    "correctAnswer": {
+      "en": "19",
+      "ar": "19",
+      "fr": "19"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q270",
+    "question": {
+      "en": "What is the atomic number of calcium?",
+      "ar": "ما العدد الذري لعنصر الكالسيوم؟",
+      "fr": "Quel est le numéro atomique de le calcium ?"
+    },
+    "options": {
+      "en": [
+        "21",
+        "19",
+        "22",
+        "20"
+      ],
+      "ar": [
+        "21",
+        "19",
+        "22",
+        "20"
+      ],
+      "fr": [
+        "21",
+        "19",
+        "22",
+        "20"
+      ]
+    },
+    "correctAnswer": {
+      "en": "20",
+      "ar": "20",
+      "fr": "20"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q271",
+    "question": {
+      "en": "What is the atomic number of iron?",
+      "ar": "ما العدد الذري لعنصر الحديد؟",
+      "fr": "Quel est le numéro atomique de le fer ?"
+    },
+    "options": {
+      "en": [
+        "25",
+        "28",
+        "26",
+        "27"
+      ],
+      "ar": [
+        "25",
+        "28",
+        "26",
+        "27"
+      ],
+      "fr": [
+        "25",
+        "28",
+        "26",
+        "27"
+      ]
+    },
+    "correctAnswer": {
+      "en": "26",
+      "ar": "26",
+      "fr": "26"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q272",
+    "question": {
+      "en": "What is the atomic number of copper?",
+      "ar": "ما العدد الذري لعنصر النحاس؟",
+      "fr": "Quel est le numéro atomique de le cuivre ?"
+    },
+    "options": {
+      "en": [
+        "31",
+        "29",
+        "30",
+        "28"
+      ],
+      "ar": [
+        "31",
+        "29",
+        "30",
+        "28"
+      ],
+      "fr": [
+        "31",
+        "29",
+        "30",
+        "28"
+      ]
+    },
+    "correctAnswer": {
+      "en": "29",
+      "ar": "29",
+      "fr": "29"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q273",
+    "question": {
+      "en": "What is the atomic number of silver?",
+      "ar": "ما العدد الذري لعنصر الفضة؟",
+      "fr": "Quel est le numéro atomique de l’argent ?"
+    },
+    "options": {
+      "en": [
+        "47",
+        "48",
+        "46",
+        "49"
+      ],
+      "ar": [
+        "47",
+        "48",
+        "46",
+        "49"
+      ],
+      "fr": [
+        "47",
+        "48",
+        "46",
+        "49"
+      ]
+    },
+    "correctAnswer": {
+      "en": "47",
+      "ar": "47",
+      "fr": "47"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q274",
+    "question": {
+      "en": "What is the atomic number of gold?",
+      "ar": "ما العدد الذري لعنصر الذهب؟",
+      "fr": "Quel est le numéro atomique de l’or ?"
+    },
+    "options": {
+      "en": [
+        "80",
+        "78",
+        "81",
+        "79"
+      ],
+      "ar": [
+        "80",
+        "78",
+        "81",
+        "79"
+      ],
+      "fr": [
+        "80",
+        "78",
+        "81",
+        "79"
+      ]
+    },
+    "correctAnswer": {
+      "en": "79",
+      "ar": "79",
+      "fr": "79"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q275",
+    "question": {
+      "en": "What is the atomic number of uranium?",
+      "ar": "ما العدد الذري لعنصر اليورانيوم؟",
+      "fr": "Quel est le numéro atomique de l’uranium ?"
+    },
+    "options": {
+      "en": [
+        "91",
+        "94",
+        "92",
+        "93"
+      ],
+      "ar": [
+        "91",
+        "94",
+        "92",
+        "93"
+      ],
+      "fr": [
+        "91",
+        "94",
+        "92",
+        "93"
+      ]
+    },
+    "correctAnswer": {
+      "en": "92",
+      "ar": "92",
+      "fr": "92"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q276",
+    "question": {
+      "en": "How many chambers does a human heart have?",
+      "ar": "كم حجرات يحتوي قلب الإنسان؟",
+      "fr": "Combien cavités possède le cœur humain ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ],
+      "fr": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q277",
+    "question": {
+      "en": "How many bones are in a typical adult human skeleton?",
+      "ar": "كم عظمة توجد في الهيكل العظمي للإنسان البالغ؟",
+      "fr": "Combien os compte généralement le squelette d’un adulte ?"
+    },
+    "options": {
+      "en": [
+        "206",
+        "207",
+        "205",
+        "208"
+      ],
+      "ar": [
+        "206",
+        "207",
+        "205",
+        "208"
+      ],
+      "fr": [
+        "206",
+        "207",
+        "205",
+        "208"
+      ]
+    },
+    "correctAnswer": {
+      "en": "206",
+      "ar": "206",
+      "fr": "206"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q278",
+    "question": {
+      "en": "How many pairs of cranial nerves do humans have?",
+      "ar": "كم زوجاً من الأعصاب القحفية لدى الإنسان؟",
+      "fr": "Combien paires de nerfs crâniens possède l’être humain ?"
+    },
+    "options": {
+      "en": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ],
+      "ar": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ],
+      "fr": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q279",
+    "question": {
+      "en": "How many permanent teeth does a typical adult have including wisdom teeth?",
+      "ar": "كم سناً دائماً لدى البالغ عادةً بما فيها أضراس العقل؟",
+      "fr": "Combien dents permanentes un adulte possède-t-il, dents de sagesse comprises ?"
+    },
+    "options": {
+      "en": [
+        "31",
+        "34",
+        "32",
+        "33"
+      ],
+      "ar": [
+        "31",
+        "34",
+        "32",
+        "33"
+      ],
+      "fr": [
+        "31",
+        "34",
+        "32",
+        "33"
+      ]
+    },
+    "correctAnswer": {
+      "en": "32",
+      "ar": "32",
+      "fr": "32"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q280",
+    "question": {
+      "en": "How many lungs does a healthy human normally have?",
+      "ar": "كم رئة لدى الإنسان السليم عادةً؟",
+      "fr": "Combien poumons une personne en bonne santé possède-t-elle normalement ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q281",
+    "question": {
+      "en": "How many lobes does the right human lung have?",
+      "ar": "كم فصوص في الرئة اليمنى للإنسان؟",
+      "fr": "Combien lobes possède le poumon droit humain ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q282",
+    "question": {
+      "en": "How many lobes does the left human lung have?",
+      "ar": "كم فصوص في الرئة اليسرى للإنسان؟",
+      "fr": "Combien lobes possède le poumon gauche humain ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q283",
+    "question": {
+      "en": "How many main groups are in the ABO blood group system?",
+      "ar": "كم فصائل رئيسية في نظام فصائل الدم ABO؟",
+      "fr": "Combien groupes principaux comprend le système sanguin ABO ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q284",
+    "question": {
+      "en": "How many main layers are commonly described in human skin?",
+      "ar": "كم طبقات رئيسية توصف عادةً في جلد الإنسان؟",
+      "fr": "Combien couches principales décrit-on généralement dans la peau humaine ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q285",
+    "question": {
+      "en": "How many kidneys does a typical human have?",
+      "ar": "كم كليتين لدى الإنسان عادةً؟",
+      "fr": "Combien reins un être humain possède-t-il généralement ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q286",
+    "question": {
+      "en": "How many semicircular canals are in each inner ear?",
+      "ar": "كم قنوات نصف دائرية في كل أذن داخلية؟",
+      "fr": "Combien canaux semi-circulaires se trouvent dans chaque oreille interne ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q287",
+    "question": {
+      "en": "How many bones are in the adult human skull in the common count?",
+      "ar": "كم عظمة في جمجمة الإنسان البالغ وفق العد الشائع؟",
+      "fr": "Combien os compte le crâne humain adulte selon le décompte courant ?"
+    },
+    "options": {
+      "en": [
+        "21",
+        "24",
+        "22",
+        "23"
+      ],
+      "ar": [
+        "21",
+        "24",
+        "22",
+        "23"
+      ],
+      "fr": [
+        "21",
+        "24",
+        "22",
+        "23"
+      ]
+    },
+    "correctAnswer": {
+      "en": "22",
+      "ar": "22",
+      "fr": "22"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q288",
+    "question": {
+      "en": "How many vertebrae are usually counted in the human spine?",
+      "ar": "كم فقرة تُعد عادةً في العمود الفقري للإنسان؟",
+      "fr": "Combien vertèbres compte-t-on généralement dans la colonne vertébrale humaine ?"
+    },
+    "options": {
+      "en": [
+        "35",
+        "33",
+        "34",
+        "32"
+      ],
+      "ar": [
+        "35",
+        "33",
+        "34",
+        "32"
+      ],
+      "fr": [
+        "35",
+        "33",
+        "34",
+        "32"
+      ]
+    },
+    "correctAnswer": {
+      "en": "33",
+      "ar": "33",
+      "fr": "33"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q289",
+    "question": {
+      "en": "How many valves does the human heart have?",
+      "ar": "كم صمامات في قلب الإنسان؟",
+      "fr": "Combien valves le cœur humain possède-t-il ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ],
+      "ar": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ],
+      "fr": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q290",
+    "question": {
+      "en": "How many pairs of ribs do most humans have?",
+      "ar": "كم زوجاً من الأضلاع لدى معظم البشر؟",
+      "fr": "Combien paires de côtes la plupart des humains possèdent-ils ?"
+    },
+    "options": {
+      "en": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ],
+      "ar": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ],
+      "fr": [
+        "13",
+        "11",
+        "14",
+        "12"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q291",
+    "question": {
+      "en": "How many bones are in one human hand including the wrist?",
+      "ar": "كم عظمة في يد الإنسان الواحدة بما فيها الرسغ؟",
+      "fr": "Combien os compte une main humaine, poignet compris ?"
+    },
+    "options": {
+      "en": [
+        "26",
+        "29",
+        "27",
+        "28"
+      ],
+      "ar": [
+        "26",
+        "29",
+        "27",
+        "28"
+      ],
+      "fr": [
+        "26",
+        "29",
+        "27",
+        "28"
+      ]
+    },
+    "correctAnswer": {
+      "en": "27",
+      "ar": "27",
+      "fr": "27"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q292",
+    "question": {
+      "en": "How many bones are in one human foot?",
+      "ar": "كم عظمة في قدم الإنسان الواحدة؟",
+      "fr": "Combien os compte un pied humain ?"
+    },
+    "options": {
+      "en": [
+        "28",
+        "26",
+        "27",
+        "25"
+      ],
+      "ar": [
+        "28",
+        "26",
+        "27",
+        "25"
+      ],
+      "fr": [
+        "28",
+        "26",
+        "27",
+        "25"
+      ]
+    },
+    "correctAnswer": {
+      "en": "26",
+      "ar": "26",
+      "fr": "26"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q293",
+    "question": {
+      "en": "How many lobes are described in the human liver anatomy?",
+      "ar": "كم فصوص رئيسية توصف في تشريح الكبد البشري؟",
+      "fr": "Combien lobes principaux décrit-on dans l’anatomie du foie humain ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q294",
+    "question": {
+      "en": "How many pairs of major salivary glands are commonly described?",
+      "ar": "كم زوجاً من الغدد اللعابية الرئيسية يوصف عادةً؟",
+      "fr": "Combien paires de glandes salivaires majeures décrit-on généralement ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q295",
+    "question": {
+      "en": "How many main types of blood cells are usually identified?",
+      "ar": "كم أنواع رئيسية من خلايا الدم تُميّز عادةً؟",
+      "fr": "Combien grands types de cellules sanguines distingue-t-on généralement ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q296",
+    "question": {
+      "en": "How many degrees Celsius is the commonly cited average body temperature?",
+      "ar": "كم درجة مئوية لدرجة حرارة الجسم المتوسطة الشائعة؟",
+      "fr": "Combien degrés Celsius correspond la température corporelle moyenne souvent citée ?"
+    },
+    "options": {
+      "en": [
+        "39",
+        "37",
+        "38",
+        "36"
+      ],
+      "ar": [
+        "39",
+        "37",
+        "38",
+        "36"
+      ],
+      "fr": [
+        "39",
+        "37",
+        "38",
+        "36"
+      ]
+    },
+    "correctAnswer": {
+      "en": "37",
+      "ar": "37",
+      "fr": "37"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q297",
+    "question": {
+      "en": "How many kidney filtering units are in a typical pair of kidneys, approximately one million per kidney?",
+      "ar": "كم وحدة ترشيح تقريباً في الكليتين معاً وفق التقدير الشائع؟",
+      "fr": "Combien unités de filtration rénale environ dans les deux reins selon l’estimation courante ?"
+    },
+    "options": {
+      "en": [
+        "2000000",
+        "2000001",
+        "1999999",
+        "2000002"
+      ],
+      "ar": [
+        "2000000",
+        "2000001",
+        "1999999",
+        "2000002"
+      ],
+      "fr": [
+        "2000000",
+        "2000001",
+        "1999999",
+        "2000002"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2000000",
+      "ar": "2000000",
+      "fr": "2000000"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q298",
+    "question": {
+      "en": "How many bones are in the adult human body in the standard count?",
+      "ar": "كم عظمة في جسم الإنسان البالغ وفق العدد القياسي؟",
+      "fr": "Combien os compte le corps humain adulte selon le décompte standard ?"
+    },
+    "options": {
+      "en": [
+        "207",
+        "205",
+        "208",
+        "206"
+      ],
+      "ar": [
+        "207",
+        "205",
+        "208",
+        "206"
+      ],
+      "fr": [
+        "207",
+        "205",
+        "208",
+        "206"
+      ]
+    },
+    "correctAnswer": {
+      "en": "206",
+      "ar": "206",
+      "fr": "206"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q299",
+    "question": {
+      "en": "How many pairs of vocal folds are in the human larynx?",
+      "ar": "كم زوجاً من الطيات الصوتية في حنجرة الإنسان؟",
+      "fr": "Combien paires de plis vocaux se trouvent dans le larynx humain ?"
+    },
+    "options": {
+      "en": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "ar": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "fr": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q300",
+    "question": {
+      "en": "How many main parts are commonly identified in the human brain: cerebrum, cerebellum and brainstem?",
+      "ar": "كم أجزاء رئيسية تُحدد عادةً في الدماغ: المخ والمخيخ وجذع الدماغ؟",
+      "fr": "Combien grandes parties distingue-t-on généralement dans le cerveau : cerveau, cervelet et tronc cérébral ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Medical knowledge"
+  },
+  {
+    "id": "q301",
+    "question": {
+      "en": "How many chromosomes are in a typical human body cell?",
+      "ar": "كم كروموسوماً في الخلية الجسدية البشرية النموذجية؟",
+      "fr": "Combien chromosomes contient une cellule somatique humaine typique ?"
+    },
+    "options": {
+      "en": [
+        "46",
+        "47",
+        "45",
+        "48"
+      ],
+      "ar": [
+        "46",
+        "47",
+        "45",
+        "48"
+      ],
+      "fr": [
+        "46",
+        "47",
+        "45",
+        "48"
+      ]
+    },
+    "correctAnswer": {
+      "en": "46",
+      "ar": "46",
+      "fr": "46"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q302",
+    "question": {
+      "en": "How many chromosomes are in a typical human sperm cell?",
+      "ar": "كم كروموسوماً في الحيوان المنوي البشري النموذجي؟",
+      "fr": "Combien chromosomes contient un spermatozoïde humain typique ?"
+    },
+    "options": {
+      "en": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ],
+      "ar": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ],
+      "fr": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ]
+    },
+    "correctAnswer": {
+      "en": "23",
+      "ar": "23",
+      "fr": "23"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q303",
+    "question": {
+      "en": "How many bases are used in the standard DNA genetic alphabet?",
+      "ar": "كم قواعد تُستخدم في الأبجدية الوراثية القياسية للحمض النووي؟",
+      "fr": "Combien bases composent l’alphabet génétique standard de l’ADN ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q304",
+    "question": {
+      "en": "How many standard amino acids are used to build proteins?",
+      "ar": "كم حمضاً أمينياً معيارياً يُستخدم لبناء البروتينات؟",
+      "fr": "Combien acides aminés standards servent à construire les protéines ?"
+    },
+    "options": {
+      "en": [
+        "22",
+        "20",
+        "21",
+        "19"
+      ],
+      "ar": [
+        "22",
+        "20",
+        "21",
+        "19"
+      ],
+      "fr": [
+        "22",
+        "20",
+        "21",
+        "19"
+      ]
+    },
+    "correctAnswer": {
+      "en": "20",
+      "ar": "20",
+      "fr": "20"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q305",
+    "question": {
+      "en": "How many nucleotides make up one codon?",
+      "ar": "كم نيوكليوتيدات يتكون منها الكودون الواحد؟",
+      "fr": "Combien nucléotides composent un codon ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q306",
+    "question": {
+      "en": "How many possible codons are in the standard genetic code?",
+      "ar": "كم كودوناً محتملاً في الشفرة الوراثية القياسية؟",
+      "fr": "Combien codons possibles existe-t-il dans le code génétique standard ?"
+    },
+    "options": {
+      "en": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ],
+      "ar": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ],
+      "fr": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ]
+    },
+    "correctAnswer": {
+      "en": "64",
+      "ar": "64",
+      "fr": "64"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q307",
+    "question": {
+      "en": "How many membranes surround a typical mitochondrion?",
+      "ar": "كم غشاء يحيطان بالميتوكوندريا النموذجية؟",
+      "fr": "Combien membranes entourent une mitochondrie typique ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "ar": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "fr": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q308",
+    "question": {
+      "en": "How many daughter cells result from mitosis of one cell?",
+      "ar": "كم خلية ناتجة عن الانقسام المتساوي لخلية واحدة؟",
+      "fr": "Combien cellules filles résultent de la mitose d’une cellule ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q309",
+    "question": {
+      "en": "How many daughter cells usually result from meiosis of one starting cell?",
+      "ar": "كم خلايا ناتجة عادةً من الانقسام المنصف لخلية واحدة؟",
+      "fr": "Combien cellules filles résultent généralement de la méiose d’une cellule initiale ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ],
+      "ar": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ],
+      "fr": [
+        "4",
+        "5",
+        "3",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q310",
+    "question": {
+      "en": "How many pairs of chromosomes are in a typical human body cell?",
+      "ar": "كم زوجاً من الكروموسومات في الخلية الجسدية البشرية النموذجية؟",
+      "fr": "Combien paires de chromosomes contient une cellule somatique humaine typique ?"
+    },
+    "options": {
+      "en": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ],
+      "ar": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ],
+      "fr": [
+        "24",
+        "22",
+        "25",
+        "23"
+      ]
+    },
+    "correctAnswer": {
+      "en": "23",
+      "ar": "23",
+      "fr": "23"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q311",
+    "question": {
+      "en": "How many cotyledon does a typical monocot seed have?",
+      "ar": "كم فلقة في بذرة النبات أحادي الفلقة؟",
+      "fr": "Combien cotylédon possède une graine typique de monocotylédone ?"
+    },
+    "options": {
+      "en": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "ar": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "fr": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q312",
+    "question": {
+      "en": "How many cotyledons does a typical dicot seed have?",
+      "ar": "كم فلقتين في بذرة النبات ثنائي الفلقة؟",
+      "fr": "Combien cotylédons possède une graine typique de dicotylédone ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q313",
+    "question": {
+      "en": "How many legs does an adult insect have?",
+      "ar": "كم أرجل للحشرة البالغة؟",
+      "fr": "Combien pattes possède un insecte adulte ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ],
+      "ar": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ],
+      "fr": [
+        "6",
+        "7",
+        "5",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "6",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q314",
+    "question": {
+      "en": "How many legs does a spider have?",
+      "ar": "كم أرجل للعنكبوت؟",
+      "fr": "Combien pattes possède une araignée ?"
+    },
+    "options": {
+      "en": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "ar": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "fr": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q315",
+    "question": {
+      "en": "How many pairs of wings do most butterflies have?",
+      "ar": "كم زوجاً من الأجنحة لدى معظم الفراشات؟",
+      "fr": "Combien paires d’ailes la plupart des papillons possèdent-ils ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "ar": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "fr": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q316",
+    "question": {
+      "en": "How many hearts does an octopus have?",
+      "ar": "كم قلوب للأخطبوط؟",
+      "fr": "Combien cœurs possède une pieuvre ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q317",
+    "question": {
+      "en": "How many arms does a typical octopus have?",
+      "ar": "كم أذرع للأخطبوط عادةً؟",
+      "fr": "Combien bras une pieuvre possède-t-elle généralement ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "ar": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "fr": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q318",
+    "question": {
+      "en": "How many chambers does a typical fish heart have?",
+      "ar": "كم حجرتين في قلب السمكة عادةً؟",
+      "fr": "Combien cavités le cœur d’un poisson possède-t-il généralement ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q319",
+    "question": {
+      "en": "How many chambers does an adult frog’s heart have?",
+      "ar": "كم حجرات في قلب الضفدع البالغ؟",
+      "fr": "Combien cavités le cœur d’une grenouille adulte possède-t-il ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q320",
+    "question": {
+      "en": "How many pairs of antennae do insects have?",
+      "ar": "كم زوجاً من قرون الاستشعار لدى الحشرات؟",
+      "fr": "Combien paires d’antennes les insectes possèdent-ils ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q321",
+    "question": {
+      "en": "How many pairs of antennae do crabs have?",
+      "ar": "كم زوجين من قرون الاستشعار لدى السلطعون؟",
+      "fr": "Combien paires d’antennes les crabes possèdent-ils ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q322",
+    "question": {
+      "en": "How many chromosomes are in a typical domestic dog body cell?",
+      "ar": "كم كروموسوماً في الخلية الجسدية النموذجية للكلب؟",
+      "fr": "Combien chromosomes contient une cellule somatique typique du chien ?"
+    },
+    "options": {
+      "en": [
+        "79",
+        "77",
+        "80",
+        "78"
+      ],
+      "ar": [
+        "79",
+        "77",
+        "80",
+        "78"
+      ],
+      "fr": [
+        "79",
+        "77",
+        "80",
+        "78"
+      ]
+    },
+    "correctAnswer": {
+      "en": "78",
+      "ar": "78",
+      "fr": "78"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q323",
+    "question": {
+      "en": "How many chromosomes are in a typical domestic cat body cell?",
+      "ar": "كم كروموسوماً في الخلية الجسدية النموذجية للقط؟",
+      "fr": "Combien chromosomes contient une cellule somatique typique du chat ?"
+    },
+    "options": {
+      "en": [
+        "37",
+        "40",
+        "38",
+        "39"
+      ],
+      "ar": [
+        "37",
+        "40",
+        "38",
+        "39"
+      ],
+      "fr": [
+        "37",
+        "40",
+        "38",
+        "39"
+      ]
+    },
+    "correctAnswer": {
+      "en": "38",
+      "ar": "38",
+      "fr": "38"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q324",
+    "question": {
+      "en": "How many chambers does a typical bird heart have?",
+      "ar": "كم حجرات في قلب الطائر عادةً؟",
+      "fr": "Combien cavités le cœur d’un oiseau possède-t-il généralement ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ],
+      "fr": [
+        "6",
+        "4",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q325",
+    "question": {
+      "en": "How many pairs of legs does a centipede have at minimum as a juvenile?",
+      "ar": "كم أزواج من الأرجل لدى الحريش في الحد الأدنى عند الفقس؟",
+      "fr": "Combien paires de pattes un centipède possède-t-il au minimum à l’éclosion ?"
+    },
+    "options": {
+      "en": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ],
+      "ar": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ],
+      "fr": [
+        "15",
+        "16",
+        "14",
+        "17"
+      ]
+    },
+    "correctAnswer": {
+      "en": "15",
+      "ar": "15",
+      "fr": "15"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q326",
+    "question": {
+      "en": "How many metres are in one kilometre?",
+      "ar": "كم متراً في الكيلومتر الواحد؟",
+      "fr": "Combien mètres y a-t-il dans un kilomètre ?"
+    },
+    "options": {
+      "en": [
+        "1001",
+        "999",
+        "1002",
+        "1000"
+      ],
+      "ar": [
+        "1001",
+        "999",
+        "1002",
+        "1000"
+      ],
+      "fr": [
+        "1001",
+        "999",
+        "1002",
+        "1000"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1000",
+      "ar": "1000",
+      "fr": "1000"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q327",
+    "question": {
+      "en": "How many centimetres are in one metre?",
+      "ar": "كم سنتيمتراً في المتر الواحد؟",
+      "fr": "Combien centimètres y a-t-il dans un mètre ?"
+    },
+    "options": {
+      "en": [
+        "99",
+        "102",
+        "100",
+        "101"
+      ],
+      "ar": [
+        "99",
+        "102",
+        "100",
+        "101"
+      ],
+      "fr": [
+        "99",
+        "102",
+        "100",
+        "101"
+      ]
+    },
+    "correctAnswer": {
+      "en": "100",
+      "ar": "100",
+      "fr": "100"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q328",
+    "question": {
+      "en": "How many millimetres are in one metre?",
+      "ar": "كم مليمتراً في المتر الواحد؟",
+      "fr": "Combien millimètres y a-t-il dans un mètre ?"
+    },
+    "options": {
+      "en": [
+        "1002",
+        "1000",
+        "1001",
+        "999"
+      ],
+      "ar": [
+        "1002",
+        "1000",
+        "1001",
+        "999"
+      ],
+      "fr": [
+        "1002",
+        "1000",
+        "1001",
+        "999"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1000",
+      "ar": "1000",
+      "fr": "1000"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q329",
+    "question": {
+      "en": "How many seconds are in one minute?",
+      "ar": "كم ثانية في الدقيقة الواحدة؟",
+      "fr": "Combien secondes y a-t-il dans une minute ?"
+    },
+    "options": {
+      "en": [
+        "60",
+        "61",
+        "59",
+        "62"
+      ],
+      "ar": [
+        "60",
+        "61",
+        "59",
+        "62"
+      ],
+      "fr": [
+        "60",
+        "61",
+        "59",
+        "62"
+      ]
+    },
+    "correctAnswer": {
+      "en": "60",
+      "ar": "60",
+      "fr": "60"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q330",
+    "question": {
+      "en": "How many seconds are in one hour?",
+      "ar": "كم ثانية في الساعة الواحدة؟",
+      "fr": "Combien secondes y a-t-il dans une heure ?"
+    },
+    "options": {
+      "en": [
+        "3601",
+        "3599",
+        "3602",
+        "3600"
+      ],
+      "ar": [
+        "3601",
+        "3599",
+        "3602",
+        "3600"
+      ],
+      "fr": [
+        "3601",
+        "3599",
+        "3602",
+        "3600"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3600",
+      "ar": "3600",
+      "fr": "3600"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q331",
+    "question": {
+      "en": "How many watts are in one kilowatt?",
+      "ar": "كم واطاً في الكيلوواط الواحد؟",
+      "fr": "Combien watts y a-t-il dans un kilowatt ?"
+    },
+    "options": {
+      "en": [
+        "999",
+        "1002",
+        "1000",
+        "1001"
+      ],
+      "ar": [
+        "999",
+        "1002",
+        "1000",
+        "1001"
+      ],
+      "fr": [
+        "999",
+        "1002",
+        "1000",
+        "1001"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1000",
+      "ar": "1000",
+      "fr": "1000"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q332",
+    "question": {
+      "en": "How many joules are in one kilojoule?",
+      "ar": "كم جولاً في الكيلوجول الواحد؟",
+      "fr": "Combien joules y a-t-il dans un kilojoule ?"
+    },
+    "options": {
+      "en": [
+        "1002",
+        "1000",
+        "1001",
+        "999"
+      ],
+      "ar": [
+        "1002",
+        "1000",
+        "1001",
+        "999"
+      ],
+      "fr": [
+        "1002",
+        "1000",
+        "1001",
+        "999"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1000",
+      "ar": "1000",
+      "fr": "1000"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q333",
+    "question": {
+      "en": "How many newtons are in one kilonewton?",
+      "ar": "كم نيوتن في الكيلونيوتن الواحد؟",
+      "fr": "Combien newtons y a-t-il dans un kilonewton ?"
+    },
+    "options": {
+      "en": [
+        "1000",
+        "1001",
+        "999",
+        "1002"
+      ],
+      "ar": [
+        "1000",
+        "1001",
+        "999",
+        "1002"
+      ],
+      "fr": [
+        "1000",
+        "1001",
+        "999",
+        "1002"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1000",
+      "ar": "1000",
+      "fr": "1000"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q334",
+    "question": {
+      "en": "How many degrees are in a right angle?",
+      "ar": "كم درجة في الزاوية القائمة؟",
+      "fr": "Combien degrés mesure un angle droit ?"
+    },
+    "options": {
+      "en": [
+        "91",
+        "89",
+        "92",
+        "90"
+      ],
+      "ar": [
+        "91",
+        "89",
+        "92",
+        "90"
+      ],
+      "fr": [
+        "91",
+        "89",
+        "92",
+        "90"
+      ]
+    },
+    "correctAnswer": {
+      "en": "90",
+      "ar": "90",
+      "fr": "90"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q335",
+    "question": {
+      "en": "How many fundamental SI base units are there?",
+      "ar": "كم وحدات أساسية في النظام الدولي للوحدات؟",
+      "fr": "Combien unités de base compte le Système international ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "9",
+        "7",
+        "8"
+      ],
+      "ar": [
+        "6",
+        "9",
+        "7",
+        "8"
+      ],
+      "fr": [
+        "6",
+        "9",
+        "7",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q336",
+    "question": {
+      "en": "How many basic types of electric charge are there?",
+      "ar": "كم نوعاً أساسياً للشحنة الكهربائية؟",
+      "fr": "Combien types fondamentaux de charge électrique existe-t-il ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "3",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q337",
+    "question": {
+      "en": "How many poles does a simple bar magnet have?",
+      "ar": "كم قطبين للمغناطيس القضبي البسيط؟",
+      "fr": "Combien pôles possède un aimant droit simple ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q338",
+    "question": {
+      "en": "How many electrons does a neutral hydrogen atom have?",
+      "ar": "كم إلكتروناً في ذرة هيدروجين متعادلة؟",
+      "fr": "Combien électrons possède un atome d’hydrogène neutre ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ],
+      "ar": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ],
+      "fr": [
+        "2",
+        "0",
+        "3",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q339",
+    "question": {
+      "en": "How many electrons does a neutral helium atom have?",
+      "ar": "كم إلكترونين في ذرة هيليوم متعادلة؟",
+      "fr": "Combien électrons possède un atome d’hélium neutre ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "ar": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "fr": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q340",
+    "question": {
+      "en": "How many kelvins are approximately equal to zero degrees Celsius?",
+      "ar": "كم كلفناً تساوي تقريباً صفر درجة مئوية؟",
+      "fr": "Combien kelvins correspondent approximativement à zéro degré Celsius ?"
+    },
+    "options": {
+      "en": [
+        "275",
+        "273",
+        "274",
+        "272"
+      ],
+      "ar": [
+        "275",
+        "273",
+        "274",
+        "272"
+      ],
+      "fr": [
+        "275",
+        "273",
+        "274",
+        "272"
+      ]
+    },
+    "correctAnswer": {
+      "en": "273",
+      "ar": "273",
+      "fr": "273"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q341",
+    "question": {
+      "en": "How many colours are traditionally named in a rainbow?",
+      "ar": "كم لوناً يُذكر تقليدياً في قوس قزح؟",
+      "fr": "Combien couleurs nomme-t-on traditionnellement dans un arc-en-ciel ?"
+    },
+    "options": {
+      "en": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "ar": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ],
+      "fr": [
+        "7",
+        "8",
+        "6",
+        "9"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q342",
+    "question": {
+      "en": "How many images are formed by two plane mirrors at 90 degrees with an object between them?",
+      "ar": "كم صور تتكون بمرآتين مستويتين بينهما زاوية 90 درجة عند وضع الجسم بينهما؟",
+      "fr": "Combien images forment deux miroirs plans placés à 90 degrés avec l’objet entre eux ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q343",
+    "question": {
+      "en": "How many phases of matter are commonly taught in basic science?",
+      "ar": "كم حالات للمادة تُدرّس عادةً في العلوم الأساسية؟",
+      "fr": "Combien états de la matière enseigne-t-on couramment en sciences fondamentales ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q344",
+    "question": {
+      "en": "How many joules are equivalent to one watt-second?",
+      "ar": "كم جولاً يعادل الواط-ثانية الواحدة؟",
+      "fr": "Combien joules équivalent à un watt-seconde ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q345",
+    "question": {
+      "en": "How many kilometres per second is the approximate speed of light in vacuum?",
+      "ar": "كم ألف كيلومتر في الثانية تقريباً لسرعة الضوء في الفراغ؟",
+      "fr": "Combien milliers de kilomètres par seconde représente approximativement la vitesse de la lumière dans le vide ?"
+    },
+    "options": {
+      "en": [
+        "300",
+        "301",
+        "299",
+        "302"
+      ],
+      "ar": [
+        "300",
+        "301",
+        "299",
+        "302"
+      ],
+      "fr": [
+        "300",
+        "301",
+        "299",
+        "302"
+      ]
+    },
+    "correctAnswer": {
+      "en": "300",
+      "ar": "300",
+      "fr": "300"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q346",
+    "question": {
+      "en": "How many metres per second squared is the approximate gravitational acceleration on Earth, rounded to one decimal?",
+      "ar": "كم متراً لكل ثانية مربعة تقريباً لتسارع الجاذبية على الأرض عند التقريب إلى منزلة عشرية؟",
+      "fr": "Combien mètres par seconde carrée représente l’accélération gravitationnelle terrestre arrondie à une décimale ?"
+    },
+    "options": {
+      "en": [
+        "10.8",
+        "8.8",
+        "11.8",
+        "9.8"
+      ],
+      "ar": [
+        "10.8",
+        "8.8",
+        "11.8",
+        "9.8"
+      ],
+      "fr": [
+        "10.8",
+        "8.8",
+        "11.8",
+        "9.8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "9.8",
+      "ar": "9.8",
+      "fr": "9.8"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q347",
+    "question": {
+      "en": "How many degrees Celsius separate zero and one hundred degrees Celsius?",
+      "ar": "كم درجة مئوية تفصل بين الصفر ومئة درجة مئوية؟",
+      "fr": "Combien degrés Celsius séparent zéro et cent degrés Celsius ?"
+    },
+    "options": {
+      "en": [
+        "99",
+        "102",
+        "100",
+        "101"
+      ],
+      "ar": [
+        "99",
+        "102",
+        "100",
+        "101"
+      ],
+      "fr": [
+        "99",
+        "102",
+        "100",
+        "101"
+      ]
+    },
+    "correctAnswer": {
+      "en": "100",
+      "ar": "100",
+      "fr": "100"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q348",
+    "question": {
+      "en": "How many minutes are in one day?",
+      "ar": "كم دقيقة في اليوم الواحد؟",
+      "fr": "Combien minutes y a-t-il dans une journée ?"
+    },
+    "options": {
+      "en": [
+        "1442",
+        "1440",
+        "1441",
+        "1439"
+      ],
+      "ar": [
+        "1442",
+        "1440",
+        "1441",
+        "1439"
+      ],
+      "fr": [
+        "1442",
+        "1440",
+        "1441",
+        "1439"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1440",
+      "ar": "1440",
+      "fr": "1440"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q349",
+    "question": {
+      "en": "How many hours are in one week?",
+      "ar": "كم ساعة في الأسبوع الواحد؟",
+      "fr": "Combien heures y a-t-il dans une semaine ?"
+    },
+    "options": {
+      "en": [
+        "168",
+        "169",
+        "167",
+        "170"
+      ],
+      "ar": [
+        "168",
+        "169",
+        "167",
+        "170"
+      ],
+      "fr": [
+        "168",
+        "169",
+        "167",
+        "170"
+      ]
+    },
+    "correctAnswer": {
+      "en": "168",
+      "ar": "168",
+      "fr": "168"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q350",
+    "question": {
+      "en": "How many days are in a standard non-leap year?",
+      "ar": "كم يوماً في السنة العادية غير الكبيسة؟",
+      "fr": "Combien jours compte une année ordinaire non bissextile ?"
+    },
+    "options": {
+      "en": [
+        "366",
+        "364",
+        "367",
+        "365"
+      ],
+      "ar": [
+        "366",
+        "364",
+        "367",
+        "365"
+      ],
+      "fr": [
+        "366",
+        "364",
+        "367",
+        "365"
+      ]
+    },
+    "correctAnswer": {
+      "en": "365",
+      "ar": "365",
+      "fr": "365"
+    },
+    "points": 10,
+    "category": "Physics"
+  },
+  {
+    "id": "q351",
+    "question": {
+      "en": "What is 17 multiplied by 6?",
+      "ar": "ما حاصل ضرب 17 في 6؟",
+      "fr": "Combien font 17 multiplié par 6 ?"
+    },
+    "options": {
+      "en": [
+        "101",
+        "104",
+        "102",
+        "103"
+      ],
+      "ar": [
+        "101",
+        "104",
+        "102",
+        "103"
+      ],
+      "fr": [
+        "101",
+        "104",
+        "102",
+        "103"
+      ]
+    },
+    "correctAnswer": {
+      "en": "102",
+      "ar": "102",
+      "fr": "102"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q352",
+    "question": {
+      "en": "What is 225 divided by 15?",
+      "ar": "ما ناتج قسمة 225 على 15؟",
+      "fr": "Combien font 225 divisé par 15 ?"
+    },
+    "options": {
+      "en": [
+        "17",
+        "15",
+        "16",
+        "14"
+      ],
+      "ar": [
+        "17",
+        "15",
+        "16",
+        "14"
+      ],
+      "fr": [
+        "17",
+        "15",
+        "16",
+        "14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "15",
+      "ar": "15",
+      "fr": "15"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q353",
+    "question": {
+      "en": "What is the square of 19?",
+      "ar": "ما مربع العدد 19؟",
+      "fr": "Quel est le carré de 19 ?"
+    },
+    "options": {
+      "en": [
+        "361",
+        "362",
+        "360",
+        "363"
+      ],
+      "ar": [
+        "361",
+        "362",
+        "360",
+        "363"
+      ],
+      "fr": [
+        "361",
+        "362",
+        "360",
+        "363"
+      ]
+    },
+    "correctAnswer": {
+      "en": "361",
+      "ar": "361",
+      "fr": "361"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q354",
+    "question": {
+      "en": "What is the cube of 4?",
+      "ar": "ما مكعب العدد 4؟",
+      "fr": "Quel est le cube de 4 ?"
+    },
+    "options": {
+      "en": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ],
+      "ar": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ],
+      "fr": [
+        "65",
+        "63",
+        "66",
+        "64"
+      ]
+    },
+    "correctAnswer": {
+      "en": "64",
+      "ar": "64",
+      "fr": "64"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q355",
+    "question": {
+      "en": "What is the square root of 289?",
+      "ar": "ما الجذر التربيعي للعدد 289؟",
+      "fr": "Quelle est la racine carrée de 289 ?"
+    },
+    "options": {
+      "en": [
+        "16",
+        "19",
+        "17",
+        "18"
+      ],
+      "ar": [
+        "16",
+        "19",
+        "17",
+        "18"
+      ],
+      "fr": [
+        "16",
+        "19",
+        "17",
+        "18"
+      ]
+    },
+    "correctAnswer": {
+      "en": "17",
+      "ar": "17",
+      "fr": "17"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q356",
+    "question": {
+      "en": "What is 15 percent of 200?",
+      "ar": "ما قيمة 15 بالمئة من 200؟",
+      "fr": "Combien représentent 15 % de 200 ?"
+    },
+    "options": {
+      "en": [
+        "32",
+        "30",
+        "31",
+        "29"
+      ],
+      "ar": [
+        "32",
+        "30",
+        "31",
+        "29"
+      ],
+      "fr": [
+        "32",
+        "30",
+        "31",
+        "29"
+      ]
+    },
+    "correctAnswer": {
+      "en": "30",
+      "ar": "30",
+      "fr": "30"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q357",
+    "question": {
+      "en": "What is the sum of the first 10 positive integers?",
+      "ar": "ما مجموع الأعداد الصحيحة الموجبة العشرة الأولى؟",
+      "fr": "Quelle est la somme des 10 premiers entiers positifs ?"
+    },
+    "options": {
+      "en": [
+        "55",
+        "56",
+        "54",
+        "57"
+      ],
+      "ar": [
+        "55",
+        "56",
+        "54",
+        "57"
+      ],
+      "fr": [
+        "55",
+        "56",
+        "54",
+        "57"
+      ]
+    },
+    "correctAnswer": {
+      "en": "55",
+      "ar": "55",
+      "fr": "55"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q358",
+    "question": {
+      "en": "What is 8 factorial divided by 7 factorial?",
+      "ar": "ما قيمة 8 عاملي مقسوماً على 7 عاملي؟",
+      "fr": "Combien vaut 8 factorielle divisé par 7 factorielle ?"
+    },
+    "options": {
+      "en": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "ar": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "fr": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q359",
+    "question": {
+      "en": "What is the least common multiple of 6 and 8?",
+      "ar": "ما المضاعف المشترك الأصغر للعددين 6 و8؟",
+      "fr": "Quel est le plus petit commun multiple de 6 et 8 ?"
+    },
+    "options": {
+      "en": [
+        "23",
+        "26",
+        "24",
+        "25"
+      ],
+      "ar": [
+        "23",
+        "26",
+        "24",
+        "25"
+      ],
+      "fr": [
+        "23",
+        "26",
+        "24",
+        "25"
+      ]
+    },
+    "correctAnswer": {
+      "en": "24",
+      "ar": "24",
+      "fr": "24"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q360",
+    "question": {
+      "en": "What is the greatest common divisor of 48 and 18?",
+      "ar": "ما القاسم المشترك الأكبر للعددين 48 و18؟",
+      "fr": "Quel est le plus grand commun diviseur de 48 et 18 ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "6",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q361",
+    "question": {
+      "en": "What is the sum of the interior angles of a triangle in degrees?",
+      "ar": "كم مجموع زوايا المثلث الداخلية بالدرجات؟",
+      "fr": "Quelle est la somme des angles intérieurs d’un triangle en degrés ?"
+    },
+    "options": {
+      "en": [
+        "180",
+        "181",
+        "179",
+        "182"
+      ],
+      "ar": [
+        "180",
+        "181",
+        "179",
+        "182"
+      ],
+      "fr": [
+        "180",
+        "181",
+        "179",
+        "182"
+      ]
+    },
+    "correctAnswer": {
+      "en": "180",
+      "ar": "180",
+      "fr": "180"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q362",
+    "question": {
+      "en": "What is the sum of the interior angles of a quadrilateral in degrees?",
+      "ar": "كم مجموع الزوايا الداخلية للشكل الرباعي بالدرجات؟",
+      "fr": "Quelle est la somme des angles intérieurs d’un quadrilatère en degrés ?"
+    },
+    "options": {
+      "en": [
+        "361",
+        "359",
+        "362",
+        "360"
+      ],
+      "ar": [
+        "361",
+        "359",
+        "362",
+        "360"
+      ],
+      "fr": [
+        "361",
+        "359",
+        "362",
+        "360"
+      ]
+    },
+    "correctAnswer": {
+      "en": "360",
+      "ar": "360",
+      "fr": "360"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q363",
+    "question": {
+      "en": "What is pi rounded to two decimal places and multiplied by 100?",
+      "ar": "ما قيمة π مقرباً إلى منزلتين عشريتين ومضروباً في 100؟",
+      "fr": "Combien vaut pi arrondi à deux décimales puis multiplié par 100 ?"
+    },
+    "options": {
+      "en": [
+        "313",
+        "316",
+        "314",
+        "315"
+      ],
+      "ar": [
+        "313",
+        "316",
+        "314",
+        "315"
+      ],
+      "fr": [
+        "313",
+        "316",
+        "314",
+        "315"
+      ]
+    },
+    "correctAnswer": {
+      "en": "314",
+      "ar": "314",
+      "fr": "314"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q364",
+    "question": {
+      "en": "What is 3 to the power of 5?",
+      "ar": "ما قيمة 3 مرفوعاً للقوة الخامسة؟",
+      "fr": "Combien vaut 3 puissance 5 ?"
+    },
+    "options": {
+      "en": [
+        "245",
+        "243",
+        "244",
+        "242"
+      ],
+      "ar": [
+        "245",
+        "243",
+        "244",
+        "242"
+      ],
+      "fr": [
+        "245",
+        "243",
+        "244",
+        "242"
+      ]
+    },
+    "correctAnswer": {
+      "en": "243",
+      "ar": "243",
+      "fr": "243"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q365",
+    "question": {
+      "en": "What is 144 divided by 12?",
+      "ar": "ما ناتج قسمة 144 على 12؟",
+      "fr": "Combien font 144 divisé par 12 ?"
+    },
+    "options": {
+      "en": [
+        "12",
+        "13",
+        "11",
+        "14"
+      ],
+      "ar": [
+        "12",
+        "13",
+        "11",
+        "14"
+      ],
+      "fr": [
+        "12",
+        "13",
+        "11",
+        "14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q366",
+    "question": {
+      "en": "What is 25 multiplied by 25?",
+      "ar": "ما حاصل ضرب 25 في 25؟",
+      "fr": "Combien font 25 multiplié par 25 ?"
+    },
+    "options": {
+      "en": [
+        "626",
+        "624",
+        "627",
+        "625"
+      ],
+      "ar": [
+        "626",
+        "624",
+        "627",
+        "625"
+      ],
+      "fr": [
+        "626",
+        "624",
+        "627",
+        "625"
+      ]
+    },
+    "correctAnswer": {
+      "en": "625",
+      "ar": "625",
+      "fr": "625"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q367",
+    "question": {
+      "en": "What is the perimeter of a square with side length 9 units?",
+      "ar": "ما محيط مربع طول ضلعه 9 وحدات؟",
+      "fr": "Quel est le périmètre d’un carré dont le côté mesure 9 unités ?"
+    },
+    "options": {
+      "en": [
+        "35",
+        "38",
+        "36",
+        "37"
+      ],
+      "ar": [
+        "35",
+        "38",
+        "36",
+        "37"
+      ],
+      "fr": [
+        "35",
+        "38",
+        "36",
+        "37"
+      ]
+    },
+    "correctAnswer": {
+      "en": "36",
+      "ar": "36",
+      "fr": "36"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q368",
+    "question": {
+      "en": "What is the area of a rectangle measuring 8 by 7 units?",
+      "ar": "ما مساحة مستطيل أبعاده 8 في 7 وحدات؟",
+      "fr": "Quelle est l’aire d’un rectangle de 8 sur 7 unités ?"
+    },
+    "options": {
+      "en": [
+        "58",
+        "56",
+        "57",
+        "55"
+      ],
+      "ar": [
+        "58",
+        "56",
+        "57",
+        "55"
+      ],
+      "fr": [
+        "58",
+        "56",
+        "57",
+        "55"
+      ]
+    },
+    "correctAnswer": {
+      "en": "56",
+      "ar": "56",
+      "fr": "56"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q369",
+    "question": {
+      "en": "What is the median of 3, 7, 9, 11, and 20?",
+      "ar": "ما وسيط الأعداد 3 و7 و9 و11 و20؟",
+      "fr": "Quelle est la médiane de 3, 7, 9, 11 et 20 ?"
+    },
+    "options": {
+      "en": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ],
+      "ar": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ],
+      "fr": [
+        "9",
+        "10",
+        "8",
+        "11"
+      ]
+    },
+    "correctAnswer": {
+      "en": "9",
+      "ar": "9",
+      "fr": "9"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q370",
+    "question": {
+      "en": "What is the mean of 4, 6, 8, and 10?",
+      "ar": "ما المتوسط الحسابي للأعداد 4 و6 و8 و10؟",
+      "fr": "Quelle est la moyenne de 4, 6, 8 et 10 ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "9",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q371",
+    "question": {
+      "en": "How many sides does a regular octagon have?",
+      "ar": "كم ضلعاً للمثمن المنتظم؟",
+      "fr": "Combien de côtés possède un octogone régulier ?"
+    },
+    "options": {
+      "en": [
+        "7",
+        "10",
+        "8",
+        "9"
+      ],
+      "ar": [
+        "7",
+        "10",
+        "8",
+        "9"
+      ],
+      "fr": [
+        "7",
+        "10",
+        "8",
+        "9"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q372",
+    "question": {
+      "en": "How many faces does a cube have?",
+      "ar": "كم وجهاً للمكعب؟",
+      "fr": "Combien de faces possède un cube ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "6",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q373",
+    "question": {
+      "en": "What is 2 to the power of 10?",
+      "ar": "ما قيمة 2 مرفوعاً للقوة العاشرة؟",
+      "fr": "Combien vaut 2 puissance 10 ?"
+    },
+    "options": {
+      "en": [
+        "1024",
+        "1025",
+        "1023",
+        "1026"
+      ],
+      "ar": [
+        "1024",
+        "1025",
+        "1023",
+        "1026"
+      ],
+      "fr": [
+        "1024",
+        "1025",
+        "1023",
+        "1026"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1024",
+      "ar": "1024",
+      "fr": "1024"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q374",
+    "question": {
+      "en": "What is 999 plus 1?",
+      "ar": "ما ناتج 999 زائد 1؟",
+      "fr": "Combien font 999 plus 1 ?"
+    },
+    "options": {
+      "en": [
+        "1001",
+        "999",
+        "1002",
+        "1000"
+      ],
+      "ar": [
+        "1001",
+        "999",
+        "1002",
+        "1000"
+      ],
+      "fr": [
+        "1001",
+        "999",
+        "1002",
+        "1000"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1000",
+      "ar": "1000",
+      "fr": "1000"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q375",
+    "question": {
+      "en": "What is the positive solution of x squared equals 400?",
+      "ar": "ما الحل الموجب للمعادلة س تربيع يساوي 400؟",
+      "fr": "Quelle est la solution positive de x au carré égal à 400 ?"
+    },
+    "options": {
+      "en": [
+        "19",
+        "22",
+        "20",
+        "21"
+      ],
+      "ar": [
+        "19",
+        "22",
+        "20",
+        "21"
+      ],
+      "fr": [
+        "19",
+        "22",
+        "20",
+        "21"
+      ]
+    },
+    "correctAnswer": {
+      "en": "20",
+      "ar": "20",
+      "fr": "20"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q376",
+    "question": {
+      "en": "How many planets are in the Solar System?",
+      "ar": "كم كوكباً في النظام الشمسي؟",
+      "fr": "Combien de planètes compte le Système solaire ?"
+    },
+    "options": {
+      "en": [
+        "10",
+        "8",
+        "9",
+        "7"
+      ],
+      "ar": [
+        "10",
+        "8",
+        "9",
+        "7"
+      ],
+      "fr": [
+        "10",
+        "8",
+        "9",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q377",
+    "question": {
+      "en": "How many natural moons does Earth have?",
+      "ar": "كم قمراً طبيعياً للأرض؟",
+      "fr": "Combien de satellites naturels la Terre possède-t-elle ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "ar": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "fr": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q378",
+    "question": {
+      "en": "How many dwarf planets are officially recognized by the IAU in the best-known list?",
+      "ar": "كم كوكباً قزماً معترفاً به في القائمة الأشهر لدى الاتحاد الفلكي الدولي؟",
+      "fr": "Combien de planètes naines figurent dans la liste la plus connue reconnue par l’UAI ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "ar": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ],
+      "fr": [
+        "6",
+        "4",
+        "7",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q379",
+    "question": {
+      "en": "How many Earth days does Mercury take to orbit the Sun, approximately?",
+      "ar": "كم يوماً أرضياً يستغرق عطارد تقريباً ليدور حول الشمس؟",
+      "fr": "Combien de jours terrestres Mercure met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "87",
+        "90",
+        "88",
+        "89"
+      ],
+      "ar": [
+        "87",
+        "90",
+        "88",
+        "89"
+      ],
+      "fr": [
+        "87",
+        "90",
+        "88",
+        "89"
+      ]
+    },
+    "correctAnswer": {
+      "en": "88",
+      "ar": "88",
+      "fr": "88"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q380",
+    "question": {
+      "en": "How many Earth days does Venus take to orbit the Sun, approximately?",
+      "ar": "كم يوماً أرضياً يستغرق الزهرة تقريباً ليدور حول الشمس؟",
+      "fr": "Combien de jours terrestres Vénus met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "227",
+        "225",
+        "226",
+        "224"
+      ],
+      "ar": [
+        "227",
+        "225",
+        "226",
+        "224"
+      ],
+      "fr": [
+        "227",
+        "225",
+        "226",
+        "224"
+      ]
+    },
+    "correctAnswer": {
+      "en": "225",
+      "ar": "225",
+      "fr": "225"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q381",
+    "question": {
+      "en": "How many days does Earth take to orbit the Sun, approximately?",
+      "ar": "كم يوماً تستغرق الأرض تقريباً للدوران حول الشمس؟",
+      "fr": "Combien de jours la Terre met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "365",
+        "366",
+        "364",
+        "367"
+      ],
+      "ar": [
+        "365",
+        "366",
+        "364",
+        "367"
+      ],
+      "fr": [
+        "365",
+        "366",
+        "364",
+        "367"
+      ]
+    },
+    "correctAnswer": {
+      "en": "365",
+      "ar": "365",
+      "fr": "365"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q382",
+    "question": {
+      "en": "How many Earth days does Mars take to orbit the Sun, approximately?",
+      "ar": "كم يوماً أرضياً يستغرق المريخ تقريباً ليدور حول الشمس؟",
+      "fr": "Combien de jours terrestres Mars met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "688",
+        "686",
+        "689",
+        "687"
+      ],
+      "ar": [
+        "688",
+        "686",
+        "689",
+        "687"
+      ],
+      "fr": [
+        "688",
+        "686",
+        "689",
+        "687"
+      ]
+    },
+    "correctAnswer": {
+      "en": "687",
+      "ar": "687",
+      "fr": "687"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q383",
+    "question": {
+      "en": "How many Earth years does Jupiter take to orbit the Sun, approximately?",
+      "ar": "كم سنة أرضية يستغرق المشتري تقريباً ليدور حول الشمس؟",
+      "fr": "Combien d’années terrestres Jupiter met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "11",
+        "14",
+        "12",
+        "13"
+      ],
+      "ar": [
+        "11",
+        "14",
+        "12",
+        "13"
+      ],
+      "fr": [
+        "11",
+        "14",
+        "12",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "12",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q384",
+    "question": {
+      "en": "How many Earth years does Saturn take to orbit the Sun, approximately?",
+      "ar": "كم سنة أرضية يستغرق زحل تقريباً ليدور حول الشمس؟",
+      "fr": "Combien d’années terrestres Saturne met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "31",
+        "29",
+        "30",
+        "28"
+      ],
+      "ar": [
+        "31",
+        "29",
+        "30",
+        "28"
+      ],
+      "fr": [
+        "31",
+        "29",
+        "30",
+        "28"
+      ]
+    },
+    "correctAnswer": {
+      "en": "29",
+      "ar": "29",
+      "fr": "29"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q385",
+    "question": {
+      "en": "How many Earth years does Uranus take to orbit the Sun, approximately?",
+      "ar": "كم سنة أرضية يستغرق أورانوس تقريباً ليدور حول الشمس؟",
+      "fr": "Combien d’années terrestres Uranus met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "84",
+        "85",
+        "83",
+        "86"
+      ],
+      "ar": [
+        "84",
+        "85",
+        "83",
+        "86"
+      ],
+      "fr": [
+        "84",
+        "85",
+        "83",
+        "86"
+      ]
+    },
+    "correctAnswer": {
+      "en": "84",
+      "ar": "84",
+      "fr": "84"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q386",
+    "question": {
+      "en": "How many Earth years does Neptune take to orbit the Sun, approximately?",
+      "ar": "كم سنة أرضية يستغرق نبتون تقريباً ليدور حول الشمس؟",
+      "fr": "Combien d’années terrestres Neptune met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "166",
+        "164",
+        "167",
+        "165"
+      ],
+      "ar": [
+        "166",
+        "164",
+        "167",
+        "165"
+      ],
+      "fr": [
+        "166",
+        "164",
+        "167",
+        "165"
+      ]
+    },
+    "correctAnswer": {
+      "en": "165",
+      "ar": "165",
+      "fr": "165"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q387",
+    "question": {
+      "en": "How many days are in the average lunar phase cycle, approximately?",
+      "ar": "كم يوماً تستغرق دورة أطوار القمر تقريباً؟",
+      "fr": "Combien de jours dure approximativement le cycle des phases lunaires ?"
+    },
+    "options": {
+      "en": [
+        "28",
+        "31",
+        "29",
+        "30"
+      ],
+      "ar": [
+        "28",
+        "31",
+        "29",
+        "30"
+      ],
+      "fr": [
+        "28",
+        "31",
+        "29",
+        "30"
+      ]
+    },
+    "correctAnswer": {
+      "en": "29",
+      "ar": "29",
+      "fr": "29"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q388",
+    "question": {
+      "en": "How many astronomical units separate Earth and the Sun on average?",
+      "ar": "كم وحدة فلكية تفصل الأرض عن الشمس في المتوسط؟",
+      "fr": "Combien d’unités astronomiques séparent en moyenne la Terre du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "2",
+        "0"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q389",
+    "question": {
+      "en": "How many main layers are commonly identified in Earth's atmosphere?",
+      "ar": "كم طبقة رئيسية تُحدد عادةً في الغلاف الجوي للأرض؟",
+      "fr": "Combien de couches principales distingue-t-on généralement dans l’atmosphère terrestre ?"
+    },
+    "options": {
+      "en": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "ar": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "fr": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "5",
+      "ar": "5",
+      "fr": "5"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q390",
+    "question": {
+      "en": "How many poles does Earth have geographically?",
+      "ar": "كم قطباً جغرافياً للأرض؟",
+      "fr": "Combien de pôles géographiques la Terre possède-t-elle ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "ar": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "fr": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "2",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q391",
+    "question": {
+      "en": "How many hours does Earth take to rotate once relative to the stars, approximately?",
+      "ar": "كم ساعة تستغرق الأرض تقريباً لتدور مرة واحدة بالنسبة إلى النجوم؟",
+      "fr": "Combien d’heures la Terre met-elle environ pour effectuer une rotation par rapport aux étoiles ?"
+    },
+    "options": {
+      "en": [
+        "23",
+        "26",
+        "24",
+        "25"
+      ],
+      "ar": [
+        "23",
+        "26",
+        "24",
+        "25"
+      ],
+      "fr": [
+        "23",
+        "26",
+        "24",
+        "25"
+      ]
+    },
+    "correctAnswer": {
+      "en": "24",
+      "ar": "24",
+      "fr": "24"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q392",
+    "question": {
+      "en": "How many minutes does sunlight take to reach Earth, approximately?",
+      "ar": "كم دقيقة يستغرق ضوء الشمس تقريباً للوصول إلى الأرض؟",
+      "fr": "Combien de minutes la lumière du Soleil met-elle environ pour atteindre la Terre ?"
+    },
+    "options": {
+      "en": [
+        "10",
+        "8",
+        "9",
+        "7"
+      ],
+      "ar": [
+        "10",
+        "8",
+        "9",
+        "7"
+      ],
+      "fr": [
+        "10",
+        "8",
+        "9",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q393",
+    "question": {
+      "en": "How many major phases are traditionally used to describe the Moon?",
+      "ar": "كم طوراً رئيسياً يُستخدم تقليدياً لوصف القمر؟",
+      "fr": "Combien de phases principales utilise-t-on traditionnellement pour décrire la Lune ?"
+    },
+    "options": {
+      "en": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "ar": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "fr": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ]
+    },
+    "correctAnswer": {
+      "en": "8",
+      "ar": "8",
+      "fr": "8"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q394",
+    "question": {
+      "en": "How many Earth days does Halley's Comet take to orbit the Sun, approximately in years?",
+      "ar": "كم سنة تقريباً تستغرق مذنّبة هالي لتدور حول الشمس؟",
+      "fr": "Combien d’années la comète de Halley met-elle environ pour orbiter autour du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "77",
+        "75",
+        "78",
+        "76"
+      ],
+      "ar": [
+        "77",
+        "75",
+        "78",
+        "76"
+      ],
+      "fr": [
+        "77",
+        "75",
+        "78",
+        "76"
+      ]
+    },
+    "correctAnswer": {
+      "en": "76",
+      "ar": "76",
+      "fr": "76"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q395",
+    "question": {
+      "en": "How many known terrestrial planets are in the Solar System?",
+      "ar": "كم كوكباً صخرياً معروفاً في النظام الشمسي؟",
+      "fr": "Combien de planètes telluriques connues compte le Système solaire ?"
+    },
+    "options": {
+      "en": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "ar": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "fr": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ]
+    },
+    "correctAnswer": {
+      "en": "4",
+      "ar": "4",
+      "fr": "4"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q396",
+    "question": {
+      "en": "How many rings are most prominently visible around Saturn?",
+      "ar": "كم حلقة رئيسية بارزة تُرى حول زحل؟",
+      "fr": "Combien d’anneaux principaux sont les plus visibles autour de Saturne ?"
+    },
+    "options": {
+      "en": [
+        "9",
+        "7",
+        "8",
+        "6"
+      ],
+      "ar": [
+        "9",
+        "7",
+        "8",
+        "6"
+      ],
+      "fr": [
+        "9",
+        "7",
+        "8",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "7",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q397",
+    "question": {
+      "en": "How many Earth days does the Moon take to orbit Earth relative to the stars, approximately?",
+      "ar": "كم يوماً تستغرق القمر تقريباً للدوران حول الأرض بالنسبة إلى النجوم؟",
+      "fr": "Combien de jours la Lune met-elle environ pour orbiter autour de la Terre par rapport aux étoiles ?"
+    },
+    "options": {
+      "en": [
+        "27",
+        "28",
+        "26",
+        "29"
+      ],
+      "ar": [
+        "27",
+        "28",
+        "26",
+        "29"
+      ],
+      "fr": [
+        "27",
+        "28",
+        "26",
+        "29"
+      ]
+    },
+    "correctAnswer": {
+      "en": "27",
+      "ar": "27",
+      "fr": "27"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q398",
+    "question": {
+      "en": "How many major types of solar eclipse are there?",
+      "ar": "كم نوعاً رئيسياً لكسوف الشمس؟",
+      "fr": "Combien de grands types d’éclipse solaire existe-t-il ?"
+    },
+    "options": {
+      "en": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "ar": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "fr": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q399",
+    "question": {
+      "en": "How many major types of lunar eclipse are there?",
+      "ar": "كم نوعاً رئيسياً لخسوف القمر؟",
+      "fr": "Combien de grands types d’éclipse lunaire existe-t-il ?"
+    },
+    "options": {
+      "en": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "ar": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
+      "fr": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3",
+      "ar": "3",
+      "fr": "3"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q400",
+    "question": {
+      "en": "How many Earth-sized planets could fit across the Sun's diameter approximately?",
+      "ar": "كم كرة أرضية تقريباً يمكن وضعها عبر قطر الشمس؟",
+      "fr": "Combien de diamètres terrestres peut-on aligner approximativement sur le diamètre du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "111",
+        "109",
+        "110",
+        "108"
+      ],
+      "ar": [
+        "111",
+        "109",
+        "110",
+        "108"
+      ],
+      "fr": [
+        "111",
+        "109",
+        "110",
+        "108"
+      ]
+    },
+    "correctAnswer": {
+      "en": "109",
+      "ar": "109",
+      "fr": "109"
+    },
+    "points": 10,
+    "category": "Astronomy and Earth science"
   }
 ]
