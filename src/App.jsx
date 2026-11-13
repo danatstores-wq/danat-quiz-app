@@ -1218,7 +1218,7 @@ export default function App() {
     <div className="min-h-screen bg-[#071329] text-white font-sans flex justify-center items-center p-0 md:p-4" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
       <div
         style={{
-          backgroundImage: `linear-gradient(rgba(3, 10, 27, 0.28), rgba(3, 10, 27, 0.52)), url(${assetPath("danat_quiz_hero.jpg")})`,
+          backgroundImage: `linear-gradient(rgba(3, 10, 27, 0.28), rgba(3, 10, 27, 0.52)), url(${assetPath("main_background.jpg")})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -1267,6 +1267,15 @@ export default function App() {
           {/* HOME — premium navy and gold Danat Quiz design */}
           {activeTab === 'home' && (
             <div className="flex flex-col gap-4 pb-2">
+              <section
+                aria-label="Danat Coin and Danat Quiz artwork"
+                className="w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
+                style={{
+                  backgroundImage: `url(${assetPath('main_background.jpg')})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
               <div className="w-full bg-gradient-to-r from-[#111b38] via-[#18264a] to-[#0c1530] rounded-2xl p-3 border border-amber-400/50 shadow-[0_0_24px_rgba(245,158,11,0.16)] flex items-center justify-between">
                 <button onClick={() => setShowAvatarModal(true)} className="flex items-center gap-3 text-left min-w-0">
                   <img src={assetPath(user.avatar)} alt="Player portrait" className="w-14 h-14 rounded-full border-2 border-amber-300 object-cover shadow-[0_0_14px_rgba(251,191,36,0.4)]" />
