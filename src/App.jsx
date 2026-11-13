@@ -550,6 +550,207 @@ function Game2048({ onBack, onAdComplete }) {
 }
 
 
+const MATCH3_CANDIES = [
+  { emoji: '🍓', tile: 'from-rose-400 to-red-600', glow: 'shadow-rose-500/40' },
+  { emoji: '🍋', tile: 'from-yellow-300 to-amber-500', glow: 'shadow-yellow-400/40' },
+  { emoji: '🍇', tile: 'from-violet-400 to-purple-700', glow: 'shadow-purple-500/40' },
+  { emoji: '🍏', tile: 'from-lime-300 to-green-600', glow: 'shadow-green-500/40' },
+  { emoji: '💎', tile: 'from-cyan-300 to-blue-600', glow: 'shadow-cyan-500/40' },
+  { emoji: '🍊', tile: 'from-orange-300 to-orange-600', glow: 'shadow-orange-500/40' }
+];
+
+const createMatch3Board = () => Array.from({ length: 64 }, () => Math.floor(Math.random() * MATCH3_CANDIES.length));
+
+const findMatch3Matches = (board) => {
+  const matched = new Set();
+  for (let row = 0; row < 8; row++) {
+    let run = 1;
+    for (let col = 1; col <= 8; col++) {
+      const same = col < 8 && board[row * 8 + col] !== null && board[row * 8 + col] === board[row * 8 + col - 1];
+      if (same) run++;
+      else {
+        if (run >= 3) for (let k = col - run; k < col; k++) matched.add(row * 8 + k);
+        run = 1;
+      }
+    }
+  }
+  for (let col = 0; col < 8; col++) {
+    let run = 1;
+    for (let row = 1; row <= 8; row++) {
+      const same = row < 8 && board[row * 8 + col] !== null && board[row * 8 + col] === board[(row - 1) * 8 + col];
+      if (same) run++;
+      else {
+        if (run >= 3) for (let k = row - run; k < row; k++) matched.add(k * 8 + col);
+        run = 1;
+      }
+    }
+  }
+  return matched;
+};
+
+function GameMatch3({ onBack, onAdComplete }) {
+  const [board, setBoard] = useState(createMatch3Board);
+  const [selected, setSelected] = useState(null);
+  const [score, setScore] = useState(0);
+  const [moves, setMoves] = useState(30);
+  const [busy, setBusy] = useState(false);
+  const [over, setOver] = useState(false);
+  const [adCountdown, setAdCountdown] = useState(5);
+
+  useEffect(() => {
+    if (!over) return undefined;
+    let remaining = 5;
+    setAdCountdown(remaining);
+    const timer = setInterval(() => {
+      remaining -= 1;
+      setAdCountdown(remaining);
+      if (remaining <= 0) {
+        clearInterval(timer);
+        onAdComplete?.();
+        onBack();
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [over, onAdComplete, onBack]);
+
+  const restart = () => {
+    setBoard(createMatch3Board());
+    setSelected(null);
+    setScore(0);
+    setMoves(30);
+    setBusy(false);
+    setOver(false);
+  };
+
+  const tapCandy = async (index) => {
+    if (busy || over) return;
+    if (selected === null) {
+      setSelected(index);
+      return;
+    }
+    if (selected === index) {
+      setSelected(null);
+      return;
+    }
+    const distance = Math.abs(selected - index);
+    if (!((distance === 1 && Math.floor(selected / 8) === Math.floor(index / 8)) || distance === 8)) {
+      setSelected(index);
+      return;
+    }
+
+    const swapped = [...board];
+    [swapped[selected], swapped[index]] = [swapped[index], swapped[selected]];
+    const firstMatches = findMatch3Matches(swapped);
+    if (!firstMatches.size) {
+      setSelected(index);
+      return;
+    }
+
+    setBusy(true);
+    setSelected(null);
+    const nextMoves = moves - 1;
+    setMoves(nextMoves);
+    let working = swapped;
+    let gained = 0;
+
+    while (true) {
+      const matches = findMatch3Matches(working);
+      if (!matches.size) break;
+      gained += matches.size * 10;
+      const cleared = [...working];
+      matches.forEach(cell => { cleared[cell] = null; });
+      setBoard(cleared);
+      setScore(prev => prev + matches.size * 10);
+      await new Promise(resolve => setTimeout(resolve, 180));
+
+      const dropped = Array(64).fill(null);
+      for (let col = 0; col < 8; col++) {
+        const remaining = [];
+        for (let row = 7; row >= 0; row--) {
+          const value = cleared[row * 8 + col];
+          if (value !== null) remaining.push(value);
+        }
+        for (let row = 7, k = 0; row >= 0; row--, k++) {
+          dropped[row * 8 + col] = k < remaining.length ? remaining[k] : Math.floor(Math.random() * MATCH3_CANDIES.length);
+        }
+      }
+      working = dropped;
+      setBoard(working);
+      await new Promise(resolve => setTimeout(resolve, 180));
+    }
+
+    setBoard(working);
+    setBusy(false);
+    if (nextMoves <= 0) setOver(true);
+  };
+
+  return (
+    <div className="mx-auto flex w-full max-w-[520px] flex-col gap-4 pb-5">
+      <div className="flex items-center justify-between">
+        <button onClick={onBack} className="rounded-xl border border-amber-300/40 bg-[#211735] px-4 py-2 text-sm font-bold text-amber-200">← Back</button>
+        <div className="text-right">
+          <div className="text-xs font-bold uppercase tracking-[.28em] text-amber-300">Danat Arcade</div>
+          <h2 className="text-3xl font-black tracking-tight text-white">Match 3</h2>
+        </div>
+      </div>
+
+      <div className="rounded-[28px] border border-fuchsia-300/40 bg-gradient-to-br from-[#3a145c] via-[#21133f] to-[#101a36] p-3 shadow-[0_18px_45px_rgba(0,0,0,.45)] sm:p-5">
+        <div className="mb-4 flex items-center justify-between gap-2">
+          <div className="rounded-xl border border-white/15 bg-black/25 px-3 py-2 text-center">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-fuchsia-200">Score</div>
+            <div className="text-xl font-black text-white">{score.toLocaleString()}</div>
+          </div>
+          <div className="text-center">
+            <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">Match the colors</div>
+            <div className="text-sm font-bold text-white">Swap 3 or more</div>
+          </div>
+          <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 px-3 py-2 text-center">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-amber-200">Moves</div>
+            <div className="text-xl font-black text-amber-300">{moves}</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-8 gap-1 rounded-2xl border border-white/15 bg-[#100d20]/90 p-1.5 shadow-inner sm:gap-1.5 sm:p-2">
+          {board.map((candy, index) => {
+            const item = MATCH3_CANDIES[candy];
+            return (
+              <button
+                key={index}
+                type="button"
+                onClick={() => tapCandy(index)}
+                disabled={busy || over}
+                aria-label={`Candy at row ${Math.floor(index / 8) + 1}, column ${(index % 8) + 1}`}
+                className={`flex aspect-square min-w-0 items-center justify-center rounded-lg border text-[clamp(15px,5vw,27px)] leading-none transition-all duration-150 sm:rounded-xl ${item ? `bg-gradient-to-br ${item.tile} border-white/35 shadow-lg ${item.glow}` : 'bg-slate-700'} ${selected === index ? 'scale-90 border-4 border-white ring-2 ring-yellow-300' : 'border-white/20'} ${busy ? 'cursor-wait' : 'active:scale-90'}`}
+              >
+                <span className="drop-shadow-md">{item?.emoji}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-4 flex gap-2">
+          <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
+          <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
+        </div>
+        <p className="mt-3 text-center text-xs text-purple-100">Tap one gem, then an adjacent gem to swap. Match 3 or more of the same color to score points.</p>
+      </div>
+
+      {over && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-6 backdrop-blur-md">
+          <div className="w-full max-w-sm rounded-3xl border-2 border-fuchsia-400 bg-[#240a47] p-7 text-center shadow-[0_0_50px_rgba(217,70,239,0.35)]">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-fuchsia-300 bg-fuchsia-400/15 text-4xl">💎</div>
+            <div className="mb-2 text-xs font-black uppercase tracking-[.3em] text-fuchsia-300">Advertisement</div>
+            <h3 className="text-xl font-black text-white">Great game!</h3>
+            <p className="mt-2 text-sm text-purple-200">Your score: {score.toLocaleString()}</p>
+            <div className="mt-5 rounded-2xl border border-purple-300/30 bg-[#0d031f] py-4 text-lg font-black text-yellow-300">Ad break ends in {adCountdown}s</div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authMode, setAuthMode] = useState('login');
@@ -1527,11 +1728,19 @@ export default function App() {
                   aria-label="Play 2048"
                   className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-amber-300/70 bg-[#211a38] shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/60"
                 >
-                  <img
-                    src={assetPath('2048.jpg')}
-                    alt="2048"
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
+                  <img src={assetPath('2048.jpg')} alt="2048" className="absolute inset-0 h-full w-full object-cover" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('gameMatch3')}
+                  aria-label="Play Match 3"
+                  className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-fuchsia-300/80 bg-gradient-to-br from-pink-500 via-purple-600 to-cyan-500 shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-300/60"
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[radial-gradient(circle_at_50%_35%,rgba(255,255,255,.24),transparent_55%)]">
+                    <div className="flex items-center justify-center gap-1 text-3xl drop-shadow-lg"><span>🍓</span><span>💎</span><span>🍇</span></div>
+                    <div className="rounded-full border border-white/50 bg-black/25 px-3 py-1 text-sm font-black tracking-wider text-white shadow-lg">MATCH 3</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[.2em] text-white/90">Color Puzzle</div>
+                  </div>
                 </button>
               </div>
 
@@ -1549,6 +1758,10 @@ export default function App() {
 
           {activeTab === 'game2048' && (
             <Game2048 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} />
+          )}
+
+          {activeTab === 'gameMatch3' && (
+            <GameMatch3 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} />
           )}
 
           {/* SCREEN: STATISTICS */}
