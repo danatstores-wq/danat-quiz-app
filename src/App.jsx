@@ -602,6 +602,65 @@ const createMatch3Board = () => {
   ];
 };
 
+const playQuizCelebrationSound = () => {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    const context = new AudioContextClass();
+    const now = context.currentTime;
+    const master = context.createGain();
+    master.gain.setValueAtTime(0.0001, now);
+    master.gain.exponentialRampToValueAtTime(0.32, now + 0.04);
+    master.gain.setValueAtTime(0.26, now + 1.05);
+    master.gain.exponentialRampToValueAtTime(0.0001, now + 1.45);
+    master.connect(context.destination);
+
+    // Short, layered noise bursts create a local applause effect.
+    const length = Math.floor(context.sampleRate * 1.5);
+    const noiseBuffer = context.createBuffer(1, length, context.sampleRate);
+    const samples = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < length; i++) samples[i] = (Math.random() * 2 - 1) * (Math.random() > 0.52 ? 1 : 0.25);
+    for (let clap = 0; clap < 18; clap++) {
+      const source = context.createBufferSource();
+      const filter = context.createBiquadFilter();
+      const volume = context.createGain();
+      source.buffer = noiseBuffer;
+      source.playbackRate.value = 0.85 + Math.random() * 0.5;
+      filter.type = 'highpass';
+      filter.frequency.value = 850 + Math.random() * 1700;
+      const start = now + Math.random() * 0.9;
+      volume.gain.setValueAtTime(0.0001, start);
+      volume.gain.exponentialRampToValueAtTime(0.16 + Math.random() * 0.12, start + 0.006);
+      volume.gain.exponentialRampToValueAtTime(0.0001, start + 0.075);
+      source.connect(filter);
+      filter.connect(volume);
+      volume.connect(master);
+      source.start(start);
+      source.stop(start + 0.08);
+    }
+
+    // Rising, soft harmonic tones add a cheerful crowd "woo" accent.
+    [523.25, 659.25, 783.99].forEach((frequency, index) => {
+      const oscillator = context.createOscillator();
+      const toneGain = context.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(frequency * 0.82, now + 0.08);
+      oscillator.frequency.exponentialRampToValueAtTime(frequency * 1.18, now + 0.55);
+      toneGain.gain.setValueAtTime(0.0001, now + 0.08);
+      toneGain.gain.exponentialRampToValueAtTime(0.045, now + 0.2);
+      toneGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.2);
+      oscillator.connect(toneGain);
+      toneGain.connect(master);
+      oscillator.start(now + 0.08 + index * 0.025);
+      oscillator.stop(now + 1.22);
+    });
+    window.setTimeout(() => context.close().catch(() => {}), 1700);
+    if (context.state === 'suspended') context.resume().catch(() => {});
+  } catch (error) {
+    // Audio is optional; never interrupt quiz answering if the browser blocks it.
+  }
+};
+
 const playGameMoveSound = (kind = 'match') => {
   try {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -918,6 +977,7 @@ export default function App() {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [showCorrectCelebration, setShowCorrectCelebration] = useState(false);
   const [score, setScore] = useState(0);
   const [loadingQuestions, setLoadingQuestions] = useState(true);
 
@@ -1281,6 +1341,8 @@ export default function App() {
     setQuestionsAnsweredCounter(newSessionCount);
 
     if (isCorrect) {
+      setShowCorrectCelebration(true);
+      playQuizCelebrationSound();
       const earned = currentQ.points || 10;
       setScore(prev => prev + earned);
       setUser(prev => ({
@@ -1327,6 +1389,7 @@ export default function App() {
   };
 
   const handleNextQuestion = async () => {
+    setShowCorrectCelebration(false);
     setSelectedOption(null);
     setIsAnswered(false);
 
@@ -1923,6 +1986,17 @@ export default function App() {
                       {getQuestionText(questions[currentQIndex])}
                     </h3>
                   </div>
+
+                  {showCorrectCelebration && (
+                    <div className="my-2 flex flex-col items-center justify-center rounded-2xl border-2 border-emerald-300/70 bg-gradient-to-r from-emerald-500/20 via-yellow-400/20 to-emerald-500/20 px-4 py-3 text-center shadow-[0_0_28px_rgba(52,211,153,0.28)] animate-in zoom-in duration-300" role="status" aria-live="polite">
+                      <div className="flex items-center justify-center gap-3 text-4xl sm:text-5xl">
+                        <span className="animate-bounce">👏</span>
+                        <span className="animate-pulse">🎉</span>
+                        <span className="animate-bounce [animation-delay:150ms]">👏</span>
+                      </div>
+                      <div className="mt-1 text-lg font-black tracking-wide text-emerald-200">Correct! Great job!</div>
+                    </div>
+                  )}
 
                   <div className="w-full space-y-3">
                     {getQuestionOptions(questions[currentQIndex]).map((optText, idx) => {
