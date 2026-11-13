@@ -1749,7 +1749,7 @@ export default function App() {
                   type="button"
                   onClick={() => setActiveTab('gameMatch3')}
                   aria-label="Play Match 3"
-                  className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-fuchsia-300/80 bg-gradient-to-br from-pink-500 via-purple-600 to-cyan-500 shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-300/60"
+                  className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-amber-300/70 bg-[#211a38] shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/60"
                 >
                   <img src={assetPath('3match.jpg')} alt="Match 3" className="absolute inset-0 h-full w-full object-cover" />
                 </button>
