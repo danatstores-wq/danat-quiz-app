@@ -630,6 +630,7 @@ export default function App() {
       };
 
       await setDoc(doc(db, "users", uid), initialProfile);
+      setUser(prev => ({ ...prev, ...initialProfile }));
       setEmailInput('');
       setPasswordInput('');
       setNameInput('');
