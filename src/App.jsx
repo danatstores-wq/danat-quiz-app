@@ -1751,11 +1751,7 @@ export default function App() {
                   aria-label="Play Match 3"
                   className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-fuchsia-300/80 bg-gradient-to-br from-pink-500 via-purple-600 to-cyan-500 shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-fuchsia-300/60"
                 >
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[radial-gradient(circle_at_50%_35%,rgba(255,255,255,.24),transparent_55%)]">
-                    <div className="flex items-center justify-center gap-1 text-3xl drop-shadow-lg"><span>🍓</span><span>💎</span><span>🍇</span></div>
-                    <div className="rounded-full border border-white/50 bg-black/25 px-3 py-1 text-sm font-black tracking-wider text-white shadow-lg">MATCH 3</div>
-                    <div className="text-[10px] font-bold uppercase tracking-[.2em] text-white/90">Color Puzzle</div>
-                  </div>
+                  <img src={assetPath('3match.jpg')} alt="Match 3" className="absolute inset-0 h-full w-full object-cover" />
                 </button>
               </div>
 
