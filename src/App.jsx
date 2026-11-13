@@ -1218,7 +1218,7 @@ export default function App() {
     <div className="min-h-screen bg-[#071329] text-white font-sans flex justify-center items-center p-0 md:p-4" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
       <div
         style={{
-          backgroundImage: `url(${assetPath("main_background.jpg")})`,
+          backgroundImage: `linear-gradient(rgba(3, 10, 27, 0.28), rgba(3, 10, 27, 0.52)), url(${assetPath("danat_quiz_hero.jpg")})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -1404,7 +1404,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="w-full bg-[#240a47]/90 rounded-2xl p-6 border border-purple-400/40 text-center shadow-xl my-2">
+                  <div className="w-full bg-transparent border-0 p-3 text-center shadow-none my-2">
                     <h3 className="text-lg font-bold text-white leading-relaxed">
                       {getQuestionText(questions[currentQIndex])}
                     </h3>
