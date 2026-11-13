@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
-  Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, Home, Gift
+  Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, EyeOff, Home, Gift
 } from 'lucide-react';
 
 // Firebase Imports
@@ -9,6 +9,8 @@ import { auth, db } from './firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  setPersistence,
+  browserLocalPersistence,
   signOut,
   sendPasswordResetEmail,
   onAuthStateChanged
@@ -363,12 +365,14 @@ export default function App() {
   const [nameInput, setNameInput] = useState('');
   const [authError, setAuthError] = useState('');
   const [authMessage, setAuthMessage] = useState('');
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [activeTab, setActiveTab] = useState('home');
 
   const [user, setUser] = useState({
-    name: 'أحمد',
-    email: 'ahmad.dnc@danatstores.com',
+    name: 'Guest',
+    email: '',
     language: 'English',
     level: 1,
     points: 0,
@@ -578,6 +582,20 @@ export default function App() {
         }
       } else {
         setCurrentUser(null);
+        setUser(prev => ({
+          ...prev,
+          name: 'Guest',
+          email: '',
+          points: 0,
+          dncBalance: 0,
+          level: 1,
+          totalGames: 0,
+          totalEarnedPoints: 0,
+          totalQuestionsAnswered: 0,
+          walletConnected: false,
+          walletAddress: '',
+          avatar: 'avatar-man-ghutra.png'
+        }));
       }
     });
     return () => unsubscribe();
@@ -588,6 +606,7 @@ export default function App() {
     setAuthError('');
     setAuthMessage('');
     try {
+      await setPersistence(auth, browserLocalPersistence);
       const userCred = await createUserWithEmailAndPassword(auth, emailInput, passwordInput);
       const uid = userCred.user.uid;
 
@@ -614,6 +633,7 @@ export default function App() {
       setEmailInput('');
       setPasswordInput('');
       setNameInput('');
+      setShowAuthModal(false);
     } catch (err) {
       setAuthError("فشل إنشاء الحساب: " + err.message);
     }
@@ -624,9 +644,11 @@ export default function App() {
     setAuthError('');
     setAuthMessage('');
     try {
+      await setPersistence(auth, browserLocalPersistence);
       await signInWithEmailAndPassword(auth, emailInput, passwordInput);
       setEmailInput('');
       setPasswordInput('');
+      setShowAuthModal(false);
     } catch (err) {
       setAuthError("فشل تسجيل الدخول: " + err.message);
     }
@@ -648,8 +670,13 @@ export default function App() {
     }
   };
 
-  const handleSignOut = () => {
-    signOut(auth);
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      setActiveTab('home');
+    } catch (err) {
+      setAuthError('Sign out failed: ' + err.message);
+    }
   };
 
   const handleLanguageChange = async (newLang) => {
@@ -1089,7 +1116,7 @@ export default function App() {
     setRedemptions(redemptions.map(r => r.id === id ? { ...r, status: 'APPROVED' } : r));
   };
 
-  if (!currentUser) {
+  if (showAuthModal) {
     return (
       <div className="min-h-screen bg-[#1a0833] text-white flex items-center justify-center p-4" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
         <div className="w-full max-w-sm bg-[#240a47]/90 border border-purple-500/40 rounded-3xl p-6 shadow-2xl space-y-4">
@@ -1168,13 +1195,16 @@ export default function App() {
               <div>
                 <label className="block text-xs text-slate-300 mb-1">{t.password}</label>
                 <input 
-                  type="password" 
+                  type={showPassword ? 'text' : 'password'}
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 text-xs text-white focus:border-yellow-400 outline-none"
+                  className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl px-4 py-3 pr-12 text-xs text-white focus:border-yellow-400 outline-none"
                 />
+                <button type="button" onClick={() => setShowPassword(v => !v)} className="mt-[-38px] mr-3 relative float-right text-slate-300 hover:text-yellow-300" aria-label={showPassword ? 'Hide password' : 'Show password'}>
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
 
               {authMode === 'login' && (
@@ -1198,6 +1228,8 @@ export default function App() {
               </button>
             </form>
           )}
+
+          <button type="button" onClick={() => { setShowAuthModal(false); setAuthError(''); setAuthMessage(''); }} className="w-full mt-3 py-2.5 rounded-xl border border-purple-300/40 text-slate-200 text-xs font-bold hover:bg-purple-500/10">Continue as Guest</button>
 
           {authMode !== 'forgot' && (
             <div className="text-center pt-2">
@@ -1237,13 +1269,13 @@ export default function App() {
             </button>
             <span className="text-purple-400/50">|</span>
             
-            <button 
+            {currentUser && <button
               onClick={handleSignOut}
               className="text-[10px] bg-red-500/20 text-red-300 px-2 py-1 rounded-lg border border-red-500/40 font-bold flex items-center gap-1 shadow"
               title={t.logout}
             >
               <LogOut className="w-3 h-3" /> {t.logout}
-            </button>
+            </button>}
             <span>📶 🔋</span>
           </div>
         </div>
@@ -1619,7 +1651,7 @@ export default function App() {
                 <div className="flex justify-between items-center border-b border-purple-500/30 pb-2.5">
                   <span className="text-slate-300">{t.emailLabel}</span>
                   <span className="font-mono text-yellow-400 flex items-center gap-1">
-                    {currentUser?.email} <Lock className="w-3 h-3 text-slate-400" />
+                    {currentUser?.email || 'Guest'} {currentUser && <Lock className="w-3 h-3 text-slate-400" />}
                   </span>
                 </div>
 
@@ -1635,6 +1667,18 @@ export default function App() {
                     <option value="Français">Français</option>
                   </select>
                 </div>
+              </div>
+
+              <div className="w-full space-y-2">
+                {!currentUser ? (
+                  <button onClick={() => { setAuthMode('login'); setShowAuthModal(true); setAuthError(''); setAuthMessage(''); }} className="w-full py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg">
+                    <LogIn className="w-4 h-4" /> Login
+                  </button>
+                ) : (
+                  <button onClick={handleSignOut} className="w-full py-3 rounded-xl border border-red-400/50 bg-red-500/15 text-red-200 font-bold text-sm flex items-center justify-center gap-2">
+                    <LogOut className="w-4 h-4" /> {t.logout}
+                  </button>
+                )}
               </div>
 
               <div className="w-full grid grid-cols-3 gap-2">
