@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import MiniGames from './MiniGames';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
   Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye
@@ -355,31 +354,6 @@ const TRANSLATIONS = {
   }
 };
 
-class MiniGamesErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
-  static getDerivedStateFromError(error) {
-    return { error };
-  }
-  componentDidCatch(error, info) {
-    console.error('Mini-games screen failed to render:', error, info);
-  }
-  render() {
-    if (this.state.error) {
-      return (
-        <div className="rounded-2xl border border-yellow-500/40 bg-[#160b28] p-6 text-center text-white">
-          <h2 className="text-lg font-black text-yellow-300">The game could not load</h2>
-          <p className="mt-2 text-sm text-purple-100">The game screen encountered an error. Your quiz account and quiz points are unchanged.</p>
-          <p className="mt-2 break-words text-xs text-rose-300">{this.state.error.message}</p>
-          <button onClick={this.props.onBack} className="mt-4 rounded-xl bg-yellow-400 px-5 py-3 font-black text-black">Back to Home</button>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -1383,35 +1357,7 @@ export default function App() {
                 {t.startPlay}
               </button>
 
-              {/* SIX MINI-GAME CARDS */}
-              <div className="w-full grid grid-cols-2 gap-3 mt-1">
-                {[
-                  { game: 'block', label: langKey === 'ar' ? 'تركيب المكعبات' : langKey === 'fr' ? 'Block Blast' : 'Block Blast', icon: '🧱' },
-                  { game: 'word', label: langKey === 'ar' ? 'لعبة الكلمات' : langKey === 'fr' ? 'Jeu de mots' : 'Word Puzzle', icon: '🔤' },
-                  { game: 'sudoku', label: 'Sudoku', icon: '🔢' },
-                  { game: 'jigsaw', label: langKey === 'ar' ? 'أحجية الصور' : langKey === 'fr' ? 'Puzzle' : 'Jigsaw Puzzle', icon: '🧩' },
-                  { game: 'dama', label: langKey === 'ar' ? 'داما' : langKey === 'fr' ? 'Dames' : 'Dama', icon: '🔴' },
-                  { game: 'chess', label: langKey === 'ar' ? 'الشطرنج' : langKey === 'fr' ? 'Échecs' : 'Chess', icon: '♟️' },
-                ].map((item) => (
-                  <button
-                    key={item.game}
-                    onClick={() => setActiveTab(`minigame-${item.game}`)}
-                    className="w-full h-36 bg-gradient-to-br from-[#32105c] to-[#170629] border border-yellow-500/40 rounded-2xl overflow-hidden shadow-lg active:scale-95 transition-transform flex flex-col items-center justify-center gap-3"
-                  >
-                    <span className="text-5xl">{item.icon}</span>
-                    <span className="text-sm font-black text-yellow-300 drop-shadow-md px-2 text-center">{item.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* MINI GAMES - scores stay separate from quiz points */}
-          {activeTab.startsWith('minigame-') && (
-            <MiniGamesErrorBoundary key={activeTab} onBack={() => setActiveTab('home')}>
-              <MiniGames language={user.language} initialGame={activeTab.replace('minigame-', '')} onBack={() => setActiveTab('home')} />
-            </MiniGamesErrorBoundary>
-          )}
+          {/* Mini-games removed: the home screen now leads only to the General Knowledge Quiz. */}
 
           {/* SCREEN: STATISTICS */}
           {activeTab === 'statistics' && (
