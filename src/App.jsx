@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
-  Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye
+  Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, Home, Gift
 } from 'lucide-react';
 
 // Firebase Imports
@@ -1275,7 +1275,7 @@ export default function App() {
                     <span className="block text-xs font-bold text-amber-300">★ {t.levelLabel} {user.level}</span>
                   </span>
                 </button>
-                <button onClick={() => setShowSettingsModal(true)} className="shrink-0 flex items-center gap-2 rounded-full border border-amber-400/60 bg-slate-950/80 px-3 py-2 text-sm font-black text-amber-300 shadow-lg">
+                <button onClick={() => setActiveTab('rewards')} className="shrink-0 flex items-center gap-2 rounded-full border border-amber-400/60 bg-slate-950/80 px-3 py-2 text-sm font-black text-amber-300 shadow-lg">
                   <span className="text-lg">◉</span><span>{user.points.toLocaleString()}</span><span className="text-xl leading-none">＋</span>
                 </button>
               </div>
@@ -1834,16 +1834,17 @@ export default function App() {
         {/* FIXED BOTTOM NAVIGATION BAR */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-[#101a36]/98 via-[#0b142c]/98 to-[#101a36]/98 border-t border-amber-400/50 px-5 py-3 flex justify-between items-center backdrop-blur-xl z-20 shadow-2xl">
           {[
-            { id: 'home', label: user.language === 'العربية' ? 'الرئيسية' : user.language === 'Français' ? 'Accueil' : 'Home', icon: '⌂' },
-            { id: 'statistics', label: t.statistics, icon: '▥' },
-            { id: 'rewards', label: t.rewards, icon: '♔' },
-            { id: 'profile', label: t.profile, icon: '◎' }
+            { id: 'home', label: user.language === 'العربية' ? 'الرئيسية' : user.language === 'Français' ? 'Accueil' : 'Home', icon: Home },
+            { id: 'statistics', label: t.statistics, icon: BarChart2 },
+            { id: 'rewards', label: t.rewards, icon: Gift },
+            { id: 'settings', label: t.settings, icon: Settings }
           ].map(tab => {
             const isActive = activeTab === tab.id;
+            const Icon = tab.icon;
             return (
-              <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex min-w-[58px] flex-col items-center gap-1 rounded-xl px-3 py-1 transition ${isActive ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                <span className={`text-3xl leading-none ${isActive ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'text-slate-300'}`}>{tab.icon}</span>
-                <span className={`text-[10px] font-bold ${isActive ? 'text-yellow-300' : 'text-slate-300'}`}>{tab.label}</span>
+              <button key={tab.id} onClick={() => tab.id === 'settings' ? setShowSettingsModal(true) : setActiveTab(tab.id)} className={`flex min-w-[58px] flex-col items-center gap-1 rounded-xl px-3 py-1 transition ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                <Icon className={`h-7 w-7 ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'text-slate-300'}`} />
+                <span className={`text-[10px] font-bold ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'text-yellow-300' : 'text-slate-300'}`}>{tab.label}</span>
               </button>
             );
           })}
