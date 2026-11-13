@@ -1315,7 +1315,7 @@ export default function App() {
               </div>
               <section
                 aria-label="Danat Coin and Danat Quiz artwork"
-                className="w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
+                className="w-full h-[273px] sm:h-[322px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
                 style={{
                   backgroundImage: `url(${assetPath('main_background.jpg')})`,
                   backgroundSize: 'cover',
