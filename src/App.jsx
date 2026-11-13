@@ -111,7 +111,7 @@ const TRANSLATIONS = {
   'العربية': {
     appName: 'دانات كويز',
     subtitle: 'اختبر معلوماتك .. واربح المكافآت',
-    startPlay: 'ابدأ الاختبار',
+    startPlay: 'إبدأ اللعب',
     rewards: 'المكافآت',
     leaderboard: 'لوحة المتصدرين',
     profile: 'ملفي الشخصي',
