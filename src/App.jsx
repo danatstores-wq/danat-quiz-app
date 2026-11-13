@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
   Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, EyeOff, Home, Gift, User
@@ -401,6 +401,23 @@ function Game2048({ onBack }) {
   const [previous, setPrevious] = useState(null);
   const [won, setWon] = useState(false);
   const [over, setOver] = useState(false);
+  const touchStart = useRef(null);
+
+  const handleBoardTouchStart = (event) => {
+    const touch = event.touches[0];
+    if (touch) touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleBoardTouchEnd = (event) => {
+    if (!touchStart.current || !event.changedTouches[0]) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - touchStart.current.x;
+    const dy = touch.clientY - touchStart.current.y;
+    touchStart.current = null;
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+    if (Math.abs(dx) > Math.abs(dy)) move(dx > 0 ? 'right' : 'left');
+    else move(dy > 0 ? 'down' : 'up');
+  };
 
   const move = (direction) => {
     if (over) return;
@@ -471,7 +488,13 @@ function Game2048({ onBack }) {
             </div>
           </div>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-[#100d20] p-2.5 shadow-inner sm:p-3">
+        <div
+          className="rounded-2xl border border-white/10 bg-[#100d20] p-2.5 shadow-inner sm:p-3 touch-none select-none"
+          onTouchStart={handleBoardTouchStart}
+          onTouchEnd={handleBoardTouchEnd}
+          onTouchCancel={() => { touchStart.current = null; }}
+          aria-label="2048 game board. Swipe in any direction to move the tiles."
+        >
           <div className="grid grid-cols-4 gap-2 sm:gap-3">
             {board.map((value, index) => (
               <div key={index} className={`flex aspect-square items-center justify-center rounded-xl text-2xl font-black shadow-sm transition-all duration-100 sm:rounded-2xl sm:text-3xl ${tileStyle(value)} `}>
@@ -486,19 +509,8 @@ function Game2048({ onBack }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-yellow-200 to-amber-500 py-3 font-black text-[#211735] shadow-lg">↻ New Game</button>
           <button onClick={() => { if (previous) { setBoard(previous.board); setScore(previous.score); setPrevious(null); setOver(false); } }} disabled={!previous} className="flex-1 rounded-xl border border-amber-300/40 bg-white/5 py-3 font-bold text-amber-100 disabled:opacity-35">↶ Undo</button>
         </div>
-        <div className="mt-5">
-          <div className="mb-2 text-center text-[10px] font-bold uppercase tracking-[.25em] text-purple-200">Move tiles</div>
-          <div className="mx-auto grid w-[174px] grid-cols-3 gap-2">
-            <span />
-            <button aria-label="Move up" onClick={() => move('up')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">↑</button>
-            <span />
-            <button aria-label="Move left" onClick={() => move('left')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">←</button>
-            <button aria-label="Move down" onClick={() => move('down')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">↓</button>
-            <button aria-label="Move right" onClick={() => move('right')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">→</button>
-          </div>
-        </div>
       </div>
-      <p className="text-center text-xs text-purple-200">Use your keyboard arrows or the controls above. Combine matching numbers to reach 2048.</p>
+      <p className="text-center text-xs text-purple-200">Swipe the board up, down, left, or right to move the tiles. On desktop, use your keyboard arrow keys. Combine matching numbers to reach 2048.</p>
     </div>
   );
 }
