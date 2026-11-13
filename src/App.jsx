@@ -595,10 +595,25 @@ function GameMatch3({ onBack, onAdComplete }) {
   const [moves, setMoves] = useState(30);
   const [busy, setBusy] = useState(false);
   const [over, setOver] = useState(false);
+  const [showAd, setShowAd] = useState(false);
   const [adCountdown, setAdCountdown] = useState(5);
 
+  // Match 3 has its own persistent counter: show an ad after every third completed game.
   useEffect(() => {
     if (!over) return undefined;
+    const storageKey = 'danat_match3_completed_games';
+    const completedGames = Number(localStorage.getItem(storageKey) || 0) + 1;
+    localStorage.setItem(storageKey, String(completedGames));
+    if (completedGames % 3 === 0) {
+      setShowAd(true);
+    } else {
+      onBack();
+    }
+    return undefined;
+  }, [over]);
+
+  useEffect(() => {
+    if (!showAd) return undefined;
     let remaining = 5;
     setAdCountdown(remaining);
     const timer = setInterval(() => {
@@ -611,7 +626,7 @@ function GameMatch3({ onBack, onAdComplete }) {
       }
     }, 1000);
     return () => clearInterval(timer);
-  }, [over, onAdComplete, onBack]);
+  }, [showAd]);
 
   const restart = () => {
     setBoard(createMatch3Board());
@@ -735,7 +750,7 @@ function GameMatch3({ onBack, onAdComplete }) {
         <p className="mt-3 text-center text-xs text-purple-100">Tap one gem, then an adjacent gem to swap. Match 3 or more of the same color to score points.</p>
       </div>
 
-      {over && (
+      {showAd && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-6 backdrop-blur-md">
           <div className="w-full max-w-sm rounded-3xl border-2 border-fuchsia-400 bg-[#240a47] p-7 text-center shadow-[0_0_50px_rgba(217,70,239,0.35)]">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-fuchsia-300 bg-fuchsia-400/15 text-4xl">💎</div>
