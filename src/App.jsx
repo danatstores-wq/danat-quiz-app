@@ -661,26 +661,59 @@ const playQuizCelebrationSound = () => {
   }
 };
 
-const playGameMoveSound = (kind = 'match') => {
+// Reuse one audio context for arcade sounds. Mobile browsers (especially iOS
+// Safari) may suspend newly-created contexts unless they are resumed directly
+// from a real touch/pointer interaction.
+let sharedGameAudioContext = null;
+
+const unlockGameAudio = () => {
   try {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) return;
-    const context = new AudioContextClass();
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    const now = context.currentTime;
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(kind === 'merge' ? 660 : 880, now);
-    oscillator.frequency.exponentialRampToValueAtTime(kind === 'merge' ? 990 : 1175, now + 0.09);
-    gain.gain.setValueAtTime(0.0001, now);
-    gain.gain.exponentialRampToValueAtTime(0.16, now + 0.015);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
-    oscillator.connect(gain);
-    gain.connect(context.destination);
-    oscillator.start(now);
-    oscillator.stop(now + 0.19);
-    oscillator.onended = () => context.close();
-    if (context.state === 'suspended') context.resume().catch(() => {});
+    if (!AudioContextClass) return null;
+    if (!sharedGameAudioContext || sharedGameAudioContext.state === 'closed') {
+      sharedGameAudioContext = new AudioContextClass();
+    }
+    if (sharedGameAudioContext.state === 'suspended') {
+      sharedGameAudioContext.resume().catch(() => {});
+    }
+    return sharedGameAudioContext;
+  } catch (error) {
+    return null;
+  }
+};
+
+const playGameMoveSound = (kind = 'match') => {
+  try {
+    const context = unlockGameAudio();
+    if (!context) return;
+
+    const playTone = () => {
+      if (context.state !== 'running') return;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const now = context.currentTime;
+      oscillator.type = 'sine';
+      oscillator.frequency.setValueAtTime(kind === 'merge' ? 660 : 880, now);
+      oscillator.frequency.exponentialRampToValueAtTime(kind === 'merge' ? 990 : 1175, now + 0.09);
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.16, now + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start(now);
+      oscillator.stop(now + 0.19);
+      oscillator.onended = () => {
+        try { oscillator.disconnect(); gain.disconnect(); } catch (error) {}
+      };
+    };
+
+    if (context.state === 'running') {
+      playTone();
+    } else {
+      // resume() is invoked synchronously by unlockGameAudio during the tap;
+      // schedule the tone as soon as the browser confirms the context is active.
+      context.resume().then(playTone).catch(() => {});
+    }
   } catch (error) {
     // Sound is optional; never interrupt gameplay if the browser blocks audio.
   }
@@ -858,7 +891,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-8 gap-1 rounded-2xl border border-white/15 bg-[#100d20]/90 p-1.5 shadow-inner sm:gap-1.5 sm:p-2">
+        <div onPointerDown={unlockGameAudio} className="grid grid-cols-8 gap-1 rounded-2xl border border-white/15 bg-[#100d20]/90 p-1.5 shadow-inner sm:gap-1.5 sm:p-2">
           {board.map((candy, index) => {
             const item = MATCH3_CANDIES[candy];
             return (
