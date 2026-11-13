@@ -1267,6 +1267,19 @@ export default function App() {
           {/* HOME — premium navy and gold Danat Quiz design */}
           {activeTab === 'home' && (
             <div className="flex flex-col gap-4 pb-2">
+              <div className="w-full flex items-center justify-between gap-2 rounded-2xl border border-amber-300/35 bg-transparent px-2 py-2 shadow-[0_4px_18px_rgba(0,0,0,0.12)]">
+                <button onClick={() => setShowAvatarModal(true)} className="flex min-w-0 items-center gap-2 text-left">
+                  <img src={assetPath(user.avatar)} alt="Player portrait" className="h-11 w-11 shrink-0 rounded-full border-2 border-amber-300 object-cover shadow-[0_0_14px_rgba(251,191,36,0.4)]" />
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-extrabold text-white drop-shadow">{user.name}</span>
+                    <span className="block text-[10px] font-bold text-amber-200 drop-shadow">★ {t.levelLabel} {user.level}</span>
+                  </span>
+                </button>
+                <button onClick={() => setActiveTab('rewards')} className="flex shrink-0 flex-col items-end rounded-xl border border-amber-300/35 bg-transparent px-3 py-1.5 text-right shadow-sm">
+                  <span className="text-xs font-black text-yellow-200">🏆 {user.points.toLocaleString()} {t.pts}</span>
+                  <span className="text-xs font-black text-amber-300">🪙 {user.dncBalance.toLocaleString()} DNC</span>
+                </button>
+              </div>
               <section
                 aria-label="Danat Coin and Danat Quiz artwork"
                 className="w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
@@ -1276,35 +1289,6 @@ export default function App() {
                   backgroundPosition: 'center',
                 }}
               />
-              <div className="w-full bg-gradient-to-r from-[#111b38] via-[#18264a] to-[#0c1530] rounded-2xl p-3 border border-amber-400/50 shadow-[0_0_24px_rgba(245,158,11,0.16)] flex items-center justify-between">
-                <button onClick={() => setShowAvatarModal(true)} className="flex items-center gap-3 text-left min-w-0">
-                  <img src={assetPath(user.avatar)} alt="Player portrait" className="w-14 h-14 rounded-full border-2 border-amber-300 object-cover shadow-[0_0_14px_rgba(251,191,36,0.4)]" />
-                  <span className="min-w-0">
-                    <span className="block text-base font-extrabold text-white truncate">{user.name}</span>
-                    <span className="block text-xs font-bold text-amber-300">★ {t.levelLabel} {user.level}</span>
-                  </span>
-                </button>
-                <button onClick={() => setActiveTab('rewards')} className="shrink-0 flex items-center gap-2 rounded-full border border-amber-400/60 bg-slate-950/80 px-3 py-2 text-sm font-black text-amber-300 shadow-lg">
-                  <span className="text-lg">◉</span><span>{user.points.toLocaleString()}</span><span className="text-xl leading-none">＋</span>
-                </button>
-              </div>
-
-
-
-              <div className="grid grid-cols-2 gap-2 rounded-[24px] border border-amber-400/60 bg-gradient-to-r from-[#17213f] to-[#0c142b] p-3 shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
-                <div className="flex items-center gap-2 border-r border-white/10 pr-2">
-                  <div className="text-3xl">🏆</div>
-                  <div className="min-w-0">
-                    <div className="text-xs text-slate-200">{t.points}</div>
-                    <div className="text-2xl font-black text-yellow-300">{user.points.toLocaleString()}</div>
-                  </div>
-                </div>
-                <button onClick={() => setActiveTab('rewards')} className="flex items-center justify-center gap-2 text-left">
-                  <span className="text-2xl">🪙</span>
-                  <span><span className="block text-xs text-slate-200">Danat Coins</span><span className="block text-xl font-black text-amber-300">{user.dncBalance.toLocaleString()} DNC</span></span>
-                  <span className="text-3xl text-amber-400">›</span>
-                </button>
-              </div>
 
               <button onClick={() => setActiveTab('quiz')} className="w-full rounded-full border-b-[5px] border-amber-700 bg-gradient-to-b from-yellow-200 via-amber-400 to-yellow-500 py-4 text-xl font-black text-[#171326] shadow-[0_8px_25px_rgba(245,158,11,0.32)] transition active:translate-y-1 flex items-center justify-center gap-3">
                 <Play className="h-7 w-7 fill-current" /> {t.startPlay}
