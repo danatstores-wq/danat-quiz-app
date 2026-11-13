@@ -394,13 +394,14 @@ const slide2048 = (board, direction) => {
   return { board: next, gained, changed: next.some((v, i) => v !== board[i]) };
 };
 
-function Game2048({ onBack }) {
+function Game2048({ onBack, onAdComplete }) {
   const [board, setBoard] = useState(create2048Board);
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(() => Number(localStorage.getItem('danat_2048_best') || 0));
   const [previous, setPrevious] = useState(null);
   const [won, setWon] = useState(false);
   const [over, setOver] = useState(false);
+  const [adCountdown, setAdCountdown] = useState(5);
   const touchStart = useRef(null);
 
   const handleBoardTouchStart = (event) => {
@@ -438,6 +439,24 @@ function Game2048({ onBack }) {
     const canMove = withTile.some(v => v === 0) || ['left','right','up','down'].some(d => slide2048(withTile, d).changed);
     setOver(!canMove);
   };
+
+  useEffect(() => {
+    if (!over) return undefined;
+
+    let remaining = 5;
+    setAdCountdown(remaining);
+    const interval = setInterval(() => {
+      remaining -= 1;
+      setAdCountdown(remaining);
+      if (remaining <= 0) {
+        clearInterval(interval);
+        onAdComplete?.();
+        onBack();
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [over, onAdComplete, onBack]);
 
   useEffect(() => {
     const onKey = (event) => {
@@ -511,6 +530,21 @@ function Game2048({ onBack }) {
         </div>
       </div>
       <p className="text-center text-xs text-purple-200">Swipe the board up, down, left, or right to move the tiles. On desktop, use your keyboard arrow keys. Combine matching numbers to reach 2048.</p>
+      {over && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-6 backdrop-blur-md">
+          <div className="w-full max-w-sm rounded-3xl border-2 border-amber-400 bg-[#240a47] p-7 text-center shadow-[0_0_50px_rgba(234,179,8,0.35)]">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-amber-300 bg-amber-400/15 text-amber-300">
+              <Tv className="h-8 w-8 animate-pulse" />
+            </div>
+            <div className="mb-2 text-xs font-black uppercase tracking-[.3em] text-amber-300">Advertisement</div>
+            <h3 className="text-xl font-black text-white">Thanks for playing!</h3>
+            <p className="mt-2 text-sm text-purple-200">Your next game will be ready in a moment.</p>
+            <div className="mt-5 rounded-2xl border border-purple-300/30 bg-[#0d031f] py-4 text-lg font-black text-yellow-300">
+              Ad break ends in {adCountdown}s
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -1514,7 +1548,7 @@ export default function App() {
           {/* Mini-games removed: the home screen now leads only to the General Knowledge Quiz. */}
 
           {activeTab === 'game2048' && (
-            <Game2048 onBack={() => setActiveTab('home')} />
+            <Game2048 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} />
           )}
 
           {/* SCREEN: STATISTICS */}
