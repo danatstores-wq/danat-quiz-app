@@ -1415,8 +1415,8 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="w-full bg-transparent border-0 p-3 text-center shadow-none my-2">
-                    <h3 className="text-lg font-bold text-white leading-relaxed">
+                  <div className="w-full bg-[#17152f]/95 border-2 border-amber-400/70 rounded-2xl px-5 py-5 text-center shadow-[0_8px_28px_rgba(0,0,0,0.55)] my-2">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-white leading-relaxed drop-shadow-md">
                       {getQuestionText(questions[currentQIndex])}
                     </h3>
                   </div>
@@ -1484,7 +1484,6 @@ export default function App() {
           {activeTab === 'rewards' && (
             <div className="flex flex-col gap-5">
               <div className="text-center my-2 flex flex-col items-center">
-                <img src={assetPath('dnc_coin.png')} alt="Logo" className="w-24 h-24 object-contain mb-2 drop-shadow-lg" />
                 <h2 className="text-2xl font-black text-yellow-400 bg-amber-500/20 px-6 py-1.5 rounded-full border border-amber-400/40 shadow">{t.rewards}</h2>
               </div>
 
@@ -1859,7 +1858,7 @@ export default function App() {
         )}
 
         {/* FIXED BOTTOM NAVIGATION BAR */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-[#101a36]/98 via-[#0b142c]/98 to-[#101a36]/98 border-t border-amber-400/50 px-5 py-3 flex justify-between items-center backdrop-blur-xl z-20 shadow-2xl">
+        <div className="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-r from-[#101a36]/[0.99] via-[#0b142c]/[0.99] to-[#101a36]/[0.99] border-t-2 border-amber-400 px-1.5 sm:px-3 py-2.5 flex justify-around items-center backdrop-blur-xl z-30 shadow-2xl">
           {[
             { id: 'home', label: user.language === 'العربية' ? 'الرئيسية' : user.language === 'Français' ? 'Accueil' : 'Home', icon: Home },
             { id: 'statistics', label: t.statistics, icon: BarChart2 },
@@ -1870,9 +1869,9 @@ export default function App() {
             const isActive = activeTab === tab.id;
             const Icon = tab.icon;
             return (
-              <button key={tab.id} onClick={() => tab.id === 'settings' ? setShowSettingsModal(true) : setActiveTab(tab.id)} className={`flex min-w-[58px] flex-col items-center gap-1 rounded-xl px-3 py-1 transition ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                <Icon className={`h-7 w-7 ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'text-slate-300'}`} />
-                <span className={`text-[10px] font-bold ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'text-yellow-300' : 'text-slate-300'}`}>{tab.label}</span>
+              <button key={tab.id} onClick={() => tab.id === 'settings' ? setShowSettingsModal(true) : setActiveTab(tab.id)} className={`flex flex-1 min-w-0 max-w-[110px] flex-col items-center justify-center gap-1 rounded-xl px-1 py-1.5 transition ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}>
+                <Icon className={`h-6 w-6 shrink-0 ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'text-slate-300'}`} />
+                <span className={`text-[9px] sm:text-[10px] font-bold leading-tight text-center whitespace-nowrap ${isActive || (tab.id === 'settings' && showSettingsModal) ? 'text-yellow-300' : 'text-slate-300'}`}>{tab.label}</span>
               </button>
             );
           })}
