@@ -1215,14 +1215,14 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#1a0833] text-white font-sans flex justify-center items-center p-0 md:p-4" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-[#071329] text-white font-sans flex justify-center items-center p-0 md:p-4" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
       <div
         style={{
           backgroundImage: `url(${assetPath("main_background.jpg")})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        className="w-full max-w-md bg-[#1a0833] border-0 md:border-4 md:border-yellow-500/40 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative"
+        className="w-full max-w-md bg-[#08142d] border-0 md:border-4 md:border-amber-400/50 rounded-none md:rounded-[40px] shadow-[0_0_50px_rgba(147,51,234,0.3)] overflow-hidden min-h-screen md:min-h-[844px] flex flex-col justify-between relative"
       >
 
         {/* TOP STATUS BAR */}
@@ -1251,111 +1251,74 @@ export default function App() {
         {/* MAIN DISPLAY AREA */}
         <div className="flex-1 overflow-y-auto pb-36 px-4 pt-4 relative z-10">
 
-          {/* GLOBAL REAL-TIME PLAYER STATS BAR */}
-          <div className="w-full bg-[#240a47]/95 rounded-2xl p-3 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md mb-4">
-            <div className="flex items-center gap-2">
-              {/* Lives Counter */}
-              <div className="bg-rose-950/80 border border-rose-500/50 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-rose-300">
-                ❤️ <span>{lives}</span>
+          {/* GLOBAL PLAYER STATS — shown on quiz and inner screens */}
+          {activeTab !== 'home' && (
+            <div className="w-full bg-[#101a36]/95 rounded-2xl p-3 border border-amber-400/40 flex justify-between items-center shadow-lg mb-4">
+              <div className="flex items-center gap-2">
+                <div className="bg-rose-950/80 border border-rose-500/50 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-rose-300">❤️ <span>{lives}</span></div>
+                <div className="bg-slate-950/80 border border-amber-400/40 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-amber-200">🪙 <span>{user.points.toLocaleString()}</span></div>
               </div>
-
-              {/* Points Counter */}
-              <div className="bg-purple-950/80 border border-purple-400/50 px-2.5 py-1 rounded-xl flex items-center gap-1 text-xs font-bold text-purple-200">
-                🪙 <span>{user.points.toLocaleString()}</span>
+              <div className="bg-slate-950/90 px-3 py-1 rounded-xl border border-amber-500/40 text-xs font-black text-yellow-400 flex items-center gap-1">
+                <span>{user.dncBalance}</span> <span className="text-[10px] text-slate-300">DNC</span>
               </div>
             </div>
+          )}
 
-            {/* DNC Token Balance */}
-            <div className="bg-[#0f041d]/90 px-3 py-1 rounded-xl border border-yellow-500/40 text-xs font-black text-yellow-400 flex items-center gap-1">
-              <span>{user.dncBalance}</span> <span className="text-[10px] text-slate-300">DNC</span>
-            </div>
-          </div>
-
-          {/* SCREEN 1: HOME */}
+          {/* HOME — premium navy and gold Danat Quiz design */}
           {activeTab === 'home' && (
-            <div className="flex flex-col gap-4">
-              
-              <div className="relative w-full h-60 rounded-3xl p-4 border-2 border-yellow-500/50 text-center shadow-[0_0_30px_rgba(234,179,8,0.25)] overflow-hidden flex flex-col justify-between">
-                <img 
-                  src={assetPath('dnc_coin.png')} 
-                  alt="Danat Coin Background" 
-                  className="absolute inset-0 w-full h-full object-fill z-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0833]/90 via-[#1a0833]/40 to-transparent z-0" />
-
-                <div className="w-full flex justify-start items-center relative z-10">
-                  <button 
-                    onClick={() => setShowSettingsModal(true)}
-                    className="p-2.5 bg-[#2a0c52]/90 hover:bg-[#3b1275] rounded-full text-yellow-400 border border-yellow-500/50 shadow-lg backdrop-blur-md"
-                    title={t.settings}
-                  >
-                    <Settings className="w-4 h-4" />
-                  </button>
-                </div>
-
-                <div className="relative z-10 flex flex-col items-center pb-1">
-                  <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                    {t.appName}
-                  </h1>
-                  <p className="text-xs text-yellow-100 mt-0.5 font-bold drop-shadow-[0_1px_5px_rgba(0,0,0,0.8)]">
-                    {t.subtitle}
-                  </p>
-                </div>
+            <div className="flex flex-col gap-4 pb-2">
+              <div className="w-full bg-gradient-to-r from-[#111b38] via-[#18264a] to-[#0c1530] rounded-2xl p-3 border border-amber-400/50 shadow-[0_0_24px_rgba(245,158,11,0.16)] flex items-center justify-between">
+                <button onClick={() => setShowAvatarModal(true)} className="flex items-center gap-3 text-left min-w-0">
+                  <img src={assetPath(user.avatar)} alt="Player portrait" className="w-14 h-14 rounded-full border-2 border-amber-300 object-cover shadow-[0_0_14px_rgba(251,191,36,0.4)]" />
+                  <span className="min-w-0">
+                    <span className="block text-base font-extrabold text-white truncate">{user.name}</span>
+                    <span className="block text-xs font-bold text-amber-300">★ {t.levelLabel} {user.level}</span>
+                  </span>
+                </button>
+                <button onClick={() => setShowSettingsModal(true)} className="shrink-0 flex items-center gap-2 rounded-full border border-amber-400/60 bg-slate-950/80 px-3 py-2 text-sm font-black text-amber-300 shadow-lg">
+                  <span className="text-lg">◉</span><span>{user.points.toLocaleString()}</span><span className="text-xl leading-none">＋</span>
+                </button>
               </div>
 
-              {/* User Info Bar */}
-              <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-yellow-500/40 flex justify-between items-center shadow-lg backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <div className="relative cursor-pointer group" onClick={() => setShowAvatarModal(true)}>
-                    <img 
-                      src={assetPath(user.avatar)} 
-                      alt="Player Portrait" 
-                      className="w-12 h-12 rounded-full border-2 border-yellow-400 object-cover shadow-xl group-hover:scale-105 transition"
-                    />
-                    <span className="absolute -bottom-1 -right-1 bg-yellow-500 text-slate-950 text-[10px] font-black px-1.5 py-0.2 rounded-full shadow">
-                      ★ {user.level}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-bold text-white text-base">{user.name}</div>
-                    <div className="text-xs text-yellow-400 font-bold">{t.levelLabel} {user.level}</div>
+              <section className="relative isolate min-h-[260px] overflow-hidden rounded-[28px] border-2 border-amber-400/70 bg-[#101a36] shadow-[0_0_32px_rgba(245,158,11,0.25)]">
+                <img src={assetPath('dnc_coin.png')} alt="Danat Coin" className="absolute inset-0 -z-20 h-full w-full object-contain p-3" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#071329]/95 via-[#071329]/45 to-[#071329]/20" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#071329]/85 via-transparent to-[#071329]/15" />
+                <div className="relative flex min-h-[260px] flex-col items-end justify-center px-5 py-6 text-right">
+                  <div className="max-w-[62%]">
+                    <div className="text-[11px] font-black tracking-[0.22em] text-amber-200">DANAT COIN</div>
+                    <h1 className="mt-1 text-4xl font-black italic leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-yellow-100 via-amber-300 to-amber-600 drop-shadow-lg">Danat<br/>Quiz</h1>
+                    <p className="mt-3 text-xs font-bold text-white drop-shadow">{t.subtitle}</p>
                   </div>
                 </div>
+              </section>
 
-                <div className="text-left bg-[#0f041d]/90 px-3.5 py-2 rounded-xl border border-yellow-500/40 shadow-inner">
-                  <div className="text-[10px] text-slate-300">{t.dncBalance}</div>
-                  <div className="text-sm font-black text-yellow-400 flex items-center gap-1">
-                    {user.dncBalance.toLocaleString()} <span className="text-xs">D</span>
+              <div className="grid grid-cols-2 gap-2 rounded-[24px] border border-amber-400/60 bg-gradient-to-r from-[#17213f] to-[#0c142b] p-3 shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+                <div className="flex items-center gap-2 border-r border-white/10 pr-2">
+                  <div className="text-3xl">🏆</div>
+                  <div className="min-w-0">
+                    <div className="text-xs text-slate-200">{t.points}</div>
+                    <div className="text-2xl font-black text-yellow-300">{user.points.toLocaleString()}</div>
                   </div>
                 </div>
+                <button onClick={() => setActiveTab('rewards')} className="flex items-center justify-center gap-2 text-left">
+                  <span className="text-2xl">🪙</span>
+                  <span><span className="block text-xs text-slate-200">Danat Coins</span><span className="block text-xl font-black text-amber-300">{user.dncBalance.toLocaleString()} DNC</span></span>
+                  <span className="text-3xl text-amber-400">›</span>
+                </button>
               </div>
 
-              {/* REWARDED AD ACTION BAR */}
-              <div className="w-full bg-[#240a47]/90 rounded-2xl p-3.5 border border-purple-400/40 text-center shadow-lg">
-                <div className="text-xs font-bold text-yellow-300 mb-2">📺 {t.watchForLife.split('(')[0]}</div>
-                <div className="flex gap-2 justify-center">
-                  <button 
-                    onClick={handleWatchForLife}
-                    className="flex-1 py-2 bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs rounded-xl shadow border border-rose-400/40"
-                  >
-                    +1 ❤️
-                  </button>
-                  <button 
-                    onClick={handleWatchForPoints}
-                    className="flex-1 py-2 bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs rounded-xl shadow border border-sky-400/40"
-                  >
-                    +10 🪙
-                  </button>
-                </div>
-              </div>
-
-              {/* START GAME BUTTON */}
-              <button 
-                onClick={() => setActiveTab('quiz')} 
-                className="w-full py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-slate-950 font-black text-xl rounded-2xl shadow-xl shadow-yellow-500/30 border-b-4 border-amber-700 active:translate-y-1 transition flex items-center justify-center gap-3"
-              >
-                {t.startPlay}
+              <button onClick={() => setActiveTab('quiz')} className="w-full rounded-full border-b-[5px] border-amber-700 bg-gradient-to-b from-yellow-200 via-amber-400 to-yellow-500 py-4 text-xl font-black text-[#171326] shadow-[0_8px_25px_rgba(245,158,11,0.32)] transition active:translate-y-1 flex items-center justify-center gap-3">
+                <Play className="h-7 w-7 fill-current" /> {t.startPlay}
               </button>
+
+              <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
+                <div className="mb-2 text-xs font-bold text-amber-200">📺 {t.watchForLife.split('(')[0]}</div>
+                <div className="flex gap-2">
+                  <button onClick={handleWatchForLife} className="flex-1 rounded-xl border border-rose-400/40 bg-rose-700/80 py-2 text-xs font-bold text-white">+1 ❤️</button>
+                  <button onClick={handleWatchForPoints} className="flex-1 rounded-xl border border-sky-400/40 bg-sky-700/80 py-2 text-xs font-bold text-white">+10 🪙</button>
+                </div>
+              </div>
             </div>
           )}
 
@@ -1869,30 +1832,18 @@ export default function App() {
         )}
 
         {/* FIXED BOTTOM NAVIGATION BAR */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#0d031f]/95 border-t border-purple-400/30 px-4 py-2 flex justify-between items-center backdrop-blur-md z-20 shadow-2xl">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-[#101a36]/98 via-[#0b142c]/98 to-[#101a36]/98 border-t border-amber-400/50 px-5 py-3 flex justify-between items-center backdrop-blur-xl z-20 shadow-2xl">
           {[
-            { id: 'home', label: t.appName, icon: 'dnc_coin.png', type: 'image' },
-            { id: 'quiz', label: t.startPlay, icon: 'dnc_coin.png', type: 'image' },
-            { id: 'rewards', label: t.rewards, icon: 'nav_rewards.png', type: 'image' },
-            { id: 'leaderboard', label: t.leaderboard, icon: 'nav_leaderboard.png', type: 'image' },
-            { id: 'profile', label: t.profile, icon: user.avatar, type: 'dynamic_avatar' }
+            { id: 'home', label: user.language === 'العربية' ? 'الرئيسية' : user.language === 'Français' ? 'Accueil' : 'Home', icon: '⌂' },
+            { id: 'statistics', label: t.statistics, icon: '▥' },
+            { id: 'rewards', label: t.rewards, icon: '♔' },
+            { id: 'profile', label: t.profile, icon: '◎' }
           ].map(tab => {
             const isActive = activeTab === tab.id;
-            const isAvatar = tab.type === 'dynamic_avatar';
             return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex flex-col items-center gap-1 px-3 py-1 rounded-xl transition ${
-                  isActive ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'
-                }`}
-              >
-                {isAvatar ? (
-                  <img src={assetPath(tab.icon)} alt="Profile" className="w-7 h-7 rounded-full object-cover border border-purple-400" />
-                ) : (
-                  <img src={assetPath(tab.icon)} alt={tab.label} className="w-7 h-7 object-contain" />
-                )}
-                <span className={`text-[10px] font-bold ${isActive ? 'text-yellow-400' : 'text-slate-300'}`}>{tab.label}</span>
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex min-w-[58px] flex-col items-center gap-1 rounded-xl px-3 py-1 transition ${isActive ? 'scale-110 opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                <span className={`text-3xl leading-none ${isActive ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'text-slate-300'}`}>{tab.icon}</span>
+                <span className={`text-[10px] font-bold ${isActive ? 'text-yellow-300' : 'text-slate-300'}`}>{tab.label}</span>
               </button>
             );
           })}
