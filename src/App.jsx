@@ -1486,9 +1486,20 @@ export default function App() {
                 <Play className="h-7 w-7 fill-current" /> {t.startPlay}
               </button>
 
-              <button onClick={() => setActiveTab('game2048')} className="w-full rounded-full border border-amber-300/60 bg-gradient-to-r from-[#33204f] via-[#4b2d70] to-[#33204f] py-3.5 text-lg font-black text-amber-100 shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition active:translate-y-1 flex items-center justify-center gap-3">
-                <img src={assetPath('2048.jpg')} alt="2048" width="50" height="50" className="h-[50px] w-[50px] shrink-0 rounded-lg object-contain" /> Play 2048
-              </button>
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('game2048')}
+                  aria-label="Play 2048"
+                  className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-amber-300/70 bg-[#211a38] shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/60"
+                >
+                  <img
+                    src={assetPath('2048.jpg')}
+                    alt="2048"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </button>
+              </div>
 
               <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
                 <div className="mb-2 text-xs font-bold text-amber-200">📺 {t.watchForLife.split('(')[0]}</div>
