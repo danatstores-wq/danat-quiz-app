@@ -782,7 +782,9 @@ function GameMatch3({ onBack, onAdComplete }) {
     [swapped[selected], swapped[index]] = [swapped[index], swapped[selected]];
     const firstMatches = findMatch3Matches(swapped);
     if (!firstMatches.size) {
-      setSelected(index);
+      // An adjacent swap that makes no match is rejected; return the gems to
+      // their original positions and clear the selection.
+      setSelected(null);
       return;
     }
 
@@ -820,6 +822,11 @@ function GameMatch3({ onBack, onAdComplete }) {
       await new Promise(resolve => setTimeout(resolve, 180));
     }
 
+    // A cascade can leave the board with no legal swaps. Refresh it
+    // automatically so the player is never trapped on an unplayable board.
+    if (!hasPossibleMatch3Move(working)) {
+      working = createMatch3Board();
+    }
     setBoard(working);
     setBusy(false);
     if (nextMoves <= 0) setOver(true);
@@ -1879,9 +1886,11 @@ export default function App() {
                   type="button"
                   onClick={() => setActiveTab('gameMatch3')}
                   aria-label="Play Match 3"
-                  className="relative aspect-square w-full overflow-hidden rounded-2xl border-2 border-amber-300/70 bg-[#211a38] shadow-[0_8px_24px_rgba(0,0,0,0.38)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/60"
+                  className="group relative aspect-square w-full rounded-2xl border-[4px] border-amber-300 bg-gradient-to-br from-yellow-200 via-amber-500 to-yellow-700 p-[3px] shadow-[0_0_0_2px_rgba(120,75,12,0.9),0_0_24px_rgba(251,191,36,0.55)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200"
                 >
-                  <img src={assetPath('3match.jpg')} alt="Match 3" className="absolute inset-0 h-full w-full object-cover" />
+                  <span className="block h-full w-full overflow-hidden rounded-[10px] bg-[#211a38]">
+                    <img src={assetPath('3match.jpg')} alt="Match 3" className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.03]" />
+                  </span>
                 </button>
               </div>
 
