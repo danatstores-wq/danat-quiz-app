@@ -424,6 +424,7 @@ function Game2048({ onBack, onAdComplete }) {
     if (over) return;
     const result = slide2048(board, direction);
     if (!result.changed) return;
+    playGameMoveSound(result.gained > 0 ? 'merge' : 'move');
     const withTile = [...result.board];
     const empty = withTile.map((v, i) => v === 0 ? i : -1).filter(i => i >= 0);
     if (empty.length) withTile[empty[Math.floor(Math.random() * empty.length)]] = Math.random() < 0.9 ? 2 : 4;
@@ -559,7 +560,72 @@ const MATCH3_CANDIES = [
   { emoji: '🍊', tile: 'from-orange-300 to-orange-600', glow: 'shadow-orange-500/40' }
 ];
 
-const createMatch3Board = () => Array.from({ length: 64 }, () => Math.floor(Math.random() * MATCH3_CANDIES.length));
+const hasPossibleMatch3Move = (board) => {
+  for (let index = 0; index < 64; index++) {
+    const neighbors = [];
+    if (index % 8 < 7) neighbors.push(index + 1);
+    if (index < 56) neighbors.push(index + 8);
+    for (const neighbor of neighbors) {
+      const swapped = [...board];
+      [swapped[index], swapped[neighbor]] = [swapped[neighbor], swapped[index]];
+      if (findMatch3Matches(swapped).size) return true;
+    }
+  }
+  return false;
+};
+
+// Start with a clean board (no automatic matches) and guarantee at least one valid move.
+const createMatch3Board = () => {
+  for (let attempt = 0; attempt < 100; attempt++) {
+    const board = Array(64).fill(null);
+    for (let row = 0; row < 8; row++) {
+      for (let col = 0; col < 8; col++) {
+        const choices = MATCH3_CANDIES.map((_, index) => index).filter((candy) =>
+          !(col >= 2 && board[row * 8 + col - 1] === candy && board[row * 8 + col - 2] === candy) &&
+          !(row >= 2 && board[(row - 1) * 8 + col] === candy && board[(row - 2) * 8 + col] === candy)
+        );
+        board[row * 8 + col] = choices[Math.floor(Math.random() * choices.length)];
+      }
+    }
+    if (hasPossibleMatch3Move(board)) return board;
+  }
+  // Extremely unlikely fallback: a simple board with an obvious horizontal match after one swap.
+  return [
+    0,1,0,2,3,4,1,2,
+    1,0,2,3,4,1,2,3,
+    2,3,4,1,2,3,4,0,
+    3,4,1,2,3,4,0,1,
+    4,1,2,3,4,0,1,2,
+    0,2,3,4,1,2,3,4,
+    1,3,4,0,2,3,4,1,
+    2,4,0,1,3,4,1,2
+  ];
+};
+
+const playGameMoveSound = (kind = 'match') => {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    const context = new AudioContextClass();
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    const now = context.currentTime;
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(kind === 'merge' ? 660 : 880, now);
+    oscillator.frequency.exponentialRampToValueAtTime(kind === 'merge' ? 990 : 1175, now + 0.09);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.16, now + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.start(now);
+    oscillator.stop(now + 0.19);
+    oscillator.onended = () => context.close();
+    if (context.state === 'suspended') context.resume().catch(() => {});
+  } catch (error) {
+    // Sound is optional; never interrupt gameplay if the browser blocks audio.
+  }
+};
 
 const findMatch3Matches = (board) => {
   const matched = new Set();
@@ -592,7 +658,7 @@ function GameMatch3({ onBack, onAdComplete }) {
   const [board, setBoard] = useState(createMatch3Board);
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
-  const [moves, setMoves] = useState(30);
+  const [moves, setMoves] = useState(40);
   const [busy, setBusy] = useState(false);
   const [over, setOver] = useState(false);
   const [showAd, setShowAd] = useState(false);
@@ -632,7 +698,7 @@ function GameMatch3({ onBack, onAdComplete }) {
     setBoard(createMatch3Board());
     setSelected(null);
     setScore(0);
-    setMoves(30);
+    setMoves(40);
     setBusy(false);
     setOver(false);
   };
@@ -661,6 +727,7 @@ function GameMatch3({ onBack, onAdComplete }) {
       return;
     }
 
+    playGameMoveSound('match');
     setBusy(true);
     setSelected(null);
     const nextMoves = moves - 1;
@@ -735,7 +802,7 @@ function GameMatch3({ onBack, onAdComplete }) {
                 onClick={() => tapCandy(index)}
                 disabled={busy || over}
                 aria-label={`Candy at row ${Math.floor(index / 8) + 1}, column ${(index % 8) + 1}`}
-                className={`flex aspect-square min-w-0 items-center justify-center rounded-lg border text-[clamp(15px,5vw,27px)] leading-none transition-all duration-150 sm:rounded-xl ${item ? `bg-gradient-to-br ${item.tile} border-white/35 shadow-lg ${item.glow}` : 'bg-slate-700'} ${selected === index ? 'scale-90 border-4 border-white ring-2 ring-yellow-300' : 'border-white/20'} ${busy ? 'cursor-wait' : 'active:scale-90'}`}
+                className={`flex aspect-square min-w-0 items-center justify-center rounded-lg border text-[clamp(15px,5vw,27px)] leading-none transition-all duration-150 sm:rounded-xl ${item ? `bg-gradient-to-br ${item.tile} border-white/35 shadow-lg ${item.glow}` : 'bg-slate-700'} ${selected === index ? 'scale-90 border-4 border-white ring-2 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.95)]' : 'border-white/20'} ${busy ? 'cursor-wait' : 'active:scale-90'}`}
               >
                 <span className="drop-shadow-md">{item?.emoji}</span>
               </button>
@@ -747,7 +814,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
           <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
         </div>
-        <p className="mt-3 text-center text-xs text-purple-100">Tap one gem, then an adjacent gem to swap. Match 3 or more of the same color to score points.</p>
+        <p className="mt-3 text-center text-xs text-purple-100">Easy start: 5 gem colors and 40 moves. Tap one gem, then an adjacent gem to swap. Match 3 or more to score points.</p>
       </div>
 
       {showAd && (
