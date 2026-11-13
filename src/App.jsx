@@ -1487,7 +1487,7 @@ export default function App() {
               </button>
 
               <button onClick={() => setActiveTab('game2048')} className="w-full rounded-full border border-amber-300/60 bg-gradient-to-r from-[#33204f] via-[#4b2d70] to-[#33204f] py-3.5 text-lg font-black text-amber-100 shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition active:translate-y-1 flex items-center justify-center gap-3">
-                <span className="text-2xl leading-none">⬇</span> Play 2048
+                <img src={assetPath('2048.jpg')} alt="2048" width="50" height="50" className="h-[50px] w-[50px] shrink-0 rounded-lg object-contain" /> Play 2048
               </button>
 
               <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
