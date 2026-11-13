@@ -1315,17 +1315,22 @@ export default function App() {
               </div>
               <section
                 aria-label="Danat Coin and Danat Quiz artwork"
-                className="w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
+                className="relative w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
                 style={{
                   backgroundImage: `url(${assetPath('main_background.jpg')})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
-              />
-
-              <button onClick={() => setActiveTab('quiz')} className="w-full rounded-full border-b-[5px] border-amber-700 bg-gradient-to-b from-yellow-200 via-amber-400 to-yellow-500 py-4 text-xl font-black text-[#171326] shadow-[0_8px_25px_rgba(245,158,11,0.32)] transition active:translate-y-1 flex items-center justify-center gap-3">
-                <Play className="h-7 w-7 fill-current" /> {t.startPlay}
-              </button>
+              >
+                <button
+                  onClick={() => setActiveTab('quiz')}
+                  aria-label={t.startPlay}
+                  className="absolute bottom-4 left-1/2 z-10 flex h-28 w-28 -translate-x-1/2 flex-col items-center justify-center gap-1 rounded-full border-[5px] border-amber-700 bg-gradient-to-b from-yellow-200 via-amber-400 to-yellow-500 px-2 text-center text-sm font-black leading-tight text-[#171326] shadow-[0_8px_25px_rgba(245,158,11,0.55)] transition hover:scale-105 active:translate-y-1 sm:bottom-5 sm:h-32 sm:w-32 sm:text-base"
+                >
+                  <Play className="h-7 w-7 shrink-0 fill-current" />
+                  <span>{t.startPlay}</span>
+                </button>
+              </section>
 
               <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
                 <div className="mb-2 text-xs font-bold text-amber-200">📺 {t.watchForLife.split('(')[0]}</div>
