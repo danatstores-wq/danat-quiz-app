@@ -1356,6 +1356,8 @@ export default function App() {
               >
                 {t.startPlay}
               </button>
+            </div>
+          )}
 
           {/* Mini-games removed: the home screen now leads only to the General Knowledge Quiz. */}
 
