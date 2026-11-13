@@ -357,6 +357,153 @@ const TRANSLATIONS = {
 };
 
 
+
+const create2048Board = () => {
+  const board = Array(16).fill(0);
+  const addTile = (cells) => {
+    const empty = cells.map((v, i) => v === 0 ? i : -1).filter(i => i >= 0);
+    if (!empty.length) return cells;
+    const next = [...cells];
+    next[empty[Math.floor(Math.random() * empty.length)]] = Math.random() < 0.9 ? 2 : 4;
+    return next;
+  };
+  return addTile(addTile(board));
+};
+
+const slide2048 = (board, direction) => {
+  const next = [...board];
+  const lines = [];
+  for (let n = 0; n < 4; n++) {
+    const ids = direction === 'left' ? [0,1,2,3].map(c => n*4+c)
+      : direction === 'right' ? [3,2,1,0].map(c => n*4+c)
+      : direction === 'up' ? [0,1,2,3].map(r => r*4+n)
+      : [3,2,1,0].map(r => r*4+n);
+    lines.push(ids);
+  }
+  let gained = 0;
+  lines.forEach(ids => {
+    const values = ids.map(i => board[i]).filter(Boolean);
+    const merged = [];
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] === values[i+1]) {
+        merged.push(values[i] * 2); gained += values[i] * 2; i++;
+      } else merged.push(values[i]);
+    }
+    ids.forEach((id, i) => { next[id] = merged[i] || 0; });
+  });
+  return { board: next, gained, changed: next.some((v, i) => v !== board[i]) };
+};
+
+function Game2048({ onBack }) {
+  const [board, setBoard] = useState(create2048Board);
+  const [score, setScore] = useState(0);
+  const [best, setBest] = useState(() => Number(localStorage.getItem('danat_2048_best') || 0));
+  const [previous, setPrevious] = useState(null);
+  const [won, setWon] = useState(false);
+  const [over, setOver] = useState(false);
+
+  const move = (direction) => {
+    if (over) return;
+    const result = slide2048(board, direction);
+    if (!result.changed) return;
+    const withTile = [...result.board];
+    const empty = withTile.map((v, i) => v === 0 ? i : -1).filter(i => i >= 0);
+    if (empty.length) withTile[empty[Math.floor(Math.random() * empty.length)]] = Math.random() < 0.9 ? 2 : 4;
+    setPrevious({ board, score });
+    setBoard(withTile);
+    const nextScore = score + result.gained;
+    setScore(nextScore);
+    if (nextScore > best) {
+      setBest(nextScore);
+      localStorage.setItem('danat_2048_best', String(nextScore));
+    }
+    if (!won && withTile.includes(2048)) setWon(true);
+    const canMove = withTile.some(v => v === 0) || ['left','right','up','down'].some(d => slide2048(withTile, d).changed);
+    setOver(!canMove);
+  };
+
+  useEffect(() => {
+    const onKey = (event) => {
+      const map = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down' };
+      if (map[event.key]) { event.preventDefault(); move(map[event.key]); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
+  const restart = () => { setBoard(create2048Board()); setScore(0); setPrevious(null); setWon(false); setOver(false); };
+  const tileStyle = (value) => {
+    const styles = {
+      0: 'bg-[#211a38] border border-white/5 text-transparent',
+      2: 'bg-[#eee7dc] text-[#443b52]', 4: 'bg-[#ead7b6] text-[#443b52]',
+      8: 'bg-[#f3b46b] text-[#fffaf2]', 16: 'bg-[#f29a55] text-white',
+      32: 'bg-[#ed784f] text-white', 64: 'bg-[#e85c42] text-white',
+      128: 'bg-[#e8c85d] text-white', 256: 'bg-[#e5bd43] text-white',
+      512: 'bg-[#dcae2e] text-white', 1024: 'bg-[#c99520] text-white',
+      2048: 'bg-gradient-to-br from-yellow-200 via-amber-400 to-yellow-600 text-[#39250b] shadow-[0_0_22px_rgba(251,191,36,.65)]'
+    };
+    return styles[value] || 'bg-[#8f6ac4] text-white';
+  };
+
+  return (
+    <div className="mx-auto flex w-full max-w-[520px] flex-col gap-4 pb-5">
+      <div className="flex items-center justify-between">
+        <button onClick={onBack} className="rounded-xl border border-amber-300/40 bg-[#211735] px-4 py-2 text-sm font-bold text-amber-200">← Back</button>
+        <div className="text-right">
+          <div className="text-xs font-bold uppercase tracking-[.28em] text-amber-300">Danat Arcade</div>
+          <h2 className="text-3xl font-black tracking-tight text-white">2048</h2>
+        </div>
+      </div>
+      <div className="rounded-[28px] border border-amber-300/35 bg-gradient-to-br from-[#2b1b49] via-[#1b1630] to-[#11182f] p-4 shadow-[0_18px_45px_rgba(0,0,0,.4)] sm:p-6">
+        <div className="mb-5 flex items-center justify-between gap-3">
+          <div>
+            <div className="text-xs font-semibold text-purple-200">Join the tiles. Reach</div>
+            <div className="text-2xl font-black text-amber-300">2048 <span className="text-white">✦</span></div>
+          </div>
+          <div className="flex gap-2 text-center">
+            <div className="min-w-[72px] rounded-xl border border-white/10 bg-black/25 px-3 py-2">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-purple-200">Score</div>
+              <div className="text-xl font-black text-white">{score}</div>
+            </div>
+            <div className="min-w-[72px] rounded-xl border border-amber-300/30 bg-amber-400/10 px-3 py-2">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-amber-200">Best</div>
+              <div className="text-xl font-black text-amber-300">{best}</div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-white/10 bg-[#100d20] p-2.5 shadow-inner sm:p-3">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+            {board.map((value, index) => (
+              <div key={index} className={`flex aspect-square items-center justify-center rounded-xl text-2xl font-black shadow-sm transition-all duration-100 sm:rounded-2xl sm:text-3xl ${tileStyle(value)} `}>
+                {value || ''}
+              </div>
+            ))}
+          </div>
+        </div>
+        {won && <div className="mt-4 rounded-xl border border-amber-300/50 bg-amber-300/10 p-3 text-center font-black text-amber-200">✨ You reached 2048! Keep playing or start a new game.</div>}
+        {over && <div className="mt-4 rounded-xl border border-rose-300/40 bg-rose-500/10 p-3 text-center font-black text-rose-200">No more moves — game over.</div>}
+        <div className="mt-4 flex gap-2">
+          <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-yellow-200 to-amber-500 py-3 font-black text-[#211735] shadow-lg">↻ New Game</button>
+          <button onClick={() => { if (previous) { setBoard(previous.board); setScore(previous.score); setPrevious(null); setOver(false); } }} disabled={!previous} className="flex-1 rounded-xl border border-amber-300/40 bg-white/5 py-3 font-bold text-amber-100 disabled:opacity-35">↶ Undo</button>
+        </div>
+        <div className="mt-5">
+          <div className="mb-2 text-center text-[10px] font-bold uppercase tracking-[.25em] text-purple-200">Move tiles</div>
+          <div className="mx-auto grid w-[174px] grid-cols-3 gap-2">
+            <span />
+            <button aria-label="Move up" onClick={() => move('up')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">↑</button>
+            <span />
+            <button aria-label="Move left" onClick={() => move('left')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">←</button>
+            <button aria-label="Move down" onClick={() => move('down')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">↓</button>
+            <button aria-label="Move right" onClick={() => move('right')} className="rounded-xl border border-amber-200/30 bg-[#34244f] py-3 text-xl font-black text-amber-200">→</button>
+          </div>
+        </div>
+      </div>
+      <p className="text-center text-xs text-purple-200">Use your keyboard arrows or the controls above. Combine matching numbers to reach 2048.</p>
+    </div>
+  );
+}
+
+
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authMode, setAuthMode] = useState('login');
@@ -1327,6 +1474,10 @@ export default function App() {
                 <Play className="h-7 w-7 fill-current" /> {t.startPlay}
               </button>
 
+              <button onClick={() => setActiveTab('game2048')} className="w-full rounded-full border border-amber-300/60 bg-gradient-to-r from-[#33204f] via-[#4b2d70] to-[#33204f] py-3.5 text-lg font-black text-amber-100 shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition active:translate-y-1 flex items-center justify-center gap-3">
+                <span className="text-2xl leading-none">⬇</span> Play 2048
+              </button>
+
               <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
                 <div className="mb-2 text-xs font-bold text-amber-200">📺 {t.watchForLife.split('(')[0]}</div>
                 <div className="flex gap-2">
@@ -1338,6 +1489,10 @@ export default function App() {
           )}
 
           {/* Mini-games removed: the home screen now leads only to the General Knowledge Quiz. */}
+
+          {activeTab === 'game2048' && (
+            <Game2048 onBack={() => setActiveTab('home')} />
+          )}
 
           {/* SCREEN: STATISTICS */}
           {activeTab === 'statistics' && (
