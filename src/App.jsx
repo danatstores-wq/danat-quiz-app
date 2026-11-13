@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
-  Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, EyeOff, Home, Gift, UserRound
+  Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, EyeOff, Home, Gift, User
 } from 'lucide-react';
 
 // Firebase Imports
@@ -1863,7 +1863,7 @@ export default function App() {
             { id: 'home', label: user.language === 'العربية' ? 'الرئيسية' : user.language === 'Français' ? 'Accueil' : 'Home', icon: Home },
             { id: 'statistics', label: t.statistics, icon: BarChart2 },
             { id: 'rewards', label: t.rewards, icon: Gift },
-            { id: 'profile', label: t.profile, icon: UserRound },
+            { id: 'profile', label: t.profile, icon: User },
             { id: 'settings', label: t.settings, icon: Settings }
           ].map(tab => {
             const isActive = activeTab === tab.id;
