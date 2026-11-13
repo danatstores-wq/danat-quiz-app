@@ -1280,14 +1280,18 @@ export default function App() {
                 </button>
               </div>
 
-              <section className="relative isolate min-h-[260px] overflow-hidden rounded-[28px] border-2 border-amber-400/70 bg-[#101a36] shadow-[0_0_32px_rgba(245,158,11,0.25)]">
-                <img src={assetPath('dnc_coin.png')} alt="Danat Coin" className="absolute inset-0 -z-20 h-full w-full object-contain p-3" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#071329]/95 via-[#071329]/45 to-[#071329]/20" />
-                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#071329]/85 via-transparent to-[#071329]/15" />
-                <div className="relative flex min-h-[260px] flex-col items-end justify-center px-5 py-6 text-right">
+              <section
+                className="relative min-h-[285px] overflow-hidden rounded-[26px] bg-[#071329] shadow-[0_12px_34px_rgba(0,0,0,0.38)]"
+                style={{
+                  backgroundImage: `linear-gradient(90deg, rgba(5,13,31,.08), rgba(5,13,31,.2)), url(${assetPath('main_background.jpg')})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071329]/65 via-transparent to-[#071329]/10" />
+                <div className="relative flex min-h-[285px] items-end justify-end px-5 pb-6 text-right">
                   <div className="max-w-[62%]">
-                    <div className="text-[11px] font-black tracking-[0.22em] text-amber-200">DANAT COIN</div>
-                    <h1 className="mt-1 text-4xl font-black italic leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-yellow-100 via-amber-300 to-amber-600 drop-shadow-lg">Danat<br/>Quiz</h1>
+                    <h1 className="text-4xl font-black italic leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-yellow-100 via-amber-300 to-amber-600 drop-shadow-lg">Danat<br/>Quiz</h1>
                     <p className="mt-3 text-xs font-bold text-white drop-shadow">{t.subtitle}</p>
                   </div>
                 </div>
