@@ -1315,7 +1315,7 @@ export default function App() {
               </div>
               <section
                 aria-label="Danat Coin and Danat Quiz artwork"
-                className="relative w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
+                className="relative w-full h-[273px] sm:h-[322px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
                 style={{
                   backgroundImage: `url(${assetPath('main_background.jpg')})`,
                   backgroundSize: 'cover',
@@ -1325,7 +1325,7 @@ export default function App() {
                 <button
                   onClick={() => setActiveTab('quiz')}
                   aria-label={t.startPlay}
-                  className="absolute bottom-4 left-1/2 z-10 flex h-28 w-28 -translate-x-1/2 flex-col items-center justify-center gap-1 rounded-full border-[5px] border-amber-700 bg-gradient-to-b from-yellow-200 via-amber-400 to-yellow-500 px-2 text-center text-sm font-black leading-tight text-[#171326] shadow-[0_8px_25px_rgba(245,158,11,0.55)] transition hover:scale-105 active:translate-y-1 sm:bottom-5 sm:h-32 sm:w-32 sm:text-base"
+                  className="absolute bottom-4 left-1/2 z-10 flex h-28 w-28 -translate-x-1/2 flex-col items-center justify-center gap-1 rounded-full border-[5px] border-[#80601b] bg-gradient-to-b from-[#f1d58a] via-[#c49a3a] to-[#8f681d] px-2 text-center text-sm font-black leading-tight text-[#171326] shadow-[0_8px_25px_rgba(184,134,11,0.55)] transition hover:scale-105 active:translate-y-1 sm:bottom-5 sm:h-32 sm:w-32 sm:text-base"
                 >
                   <Play className="h-7 w-7 shrink-0 fill-current" />
                   <span>{t.startPlay}</span>
