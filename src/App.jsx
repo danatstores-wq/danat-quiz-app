@@ -1283,7 +1283,7 @@ export default function App() {
               <section
                 className="relative min-h-[285px] overflow-hidden rounded-[26px] bg-[#071329] shadow-[0_12px_34px_rgba(0,0,0,0.38)]"
                 style={{
-                  backgroundImage: `linear-gradient(90deg, rgba(5,13,31,.08), rgba(5,13,31,.2)), url(${assetPath('main_background.jpg')})`,
+                  backgroundImage: `linear-gradient(90deg, rgba(5,13,31,.08), rgba(5,13,31,.2)), url(${assetPath('danat_quiz_hero.jpg')})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
