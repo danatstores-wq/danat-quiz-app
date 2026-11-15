@@ -1134,8 +1134,6 @@ export default function App() {
     lastSpiritClaimTime: 0,
     dailyClaimedLives: 0,
     lastDailyResetTime: 0,
-    walletConnected: false,
-    walletAddress: '',
     avatar: 'avatar-man-ghutra.png',
   });
 
@@ -1152,10 +1150,8 @@ export default function App() {
 
   const [levelsPlayed, setLevelsPlayed] = useState(0);
 
-  const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
-  const [customWallet, setCustomWallet] = useState('');
 
   // 10-Questions Milestone Ad State
 
@@ -1194,11 +1190,6 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem(QUIZ_INDEX_KEY, currentQIndex.toString());
   }, [currentQIndex]);
-
-  const [redemptions, setRedemptions] = useState([
-    { id: '1', user: 'أحمد', points: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
-    { id: '2', user: 'محمد علي', points: 5000, dnc: 5, wallet: '0x38B...12F', status: 'APPROVED', date: '2026-11-01' },
-  ]);
 
   const availableAvatars = [
     { id: 'avatar-man-ghutra.png' },
@@ -1276,8 +1267,6 @@ export default function App() {
             lastSpiritClaimTime: data.lastSpiritClaimTime || 0,
             dailyClaimedLives: data.dailyClaimedLives || 0,
             lastDailyResetTime: data.lastDailyResetTime || 0,
-            walletConnected: data.walletConnected ?? prev.walletConnected,
-            walletAddress: data.walletAddress ?? prev.walletAddress,
             avatar: data.avatar ?? prev.avatar,
             language: data.language ?? prev.language,
           }));
@@ -1388,37 +1377,6 @@ export default function App() {
       await updateDoc(doc(db, "users", currentUser.uid), {
         language: newLang
       });
-    }
-  };
-
-  const fetchAllPlayersAndExportCSV = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, "users"));
-      let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += "Name,Email,Points,DNC Balance,Total Games,Wallet Address\n";
-
-      querySnapshot.forEach((docSnap) => {
-        const p = docSnap.data();
-        const row = [
-          '"' + (p.name || '') + '"',
-          '"' + (p.email || '') + '"',
-          p.points || p.spirits || 0,
-          p.dncBalance || 0,
-          p.totalGames || 0,
-          '"' + (p.walletAddress || 'Not Connected') + '"'
-        ].join(",");
-        csvContent += row + "\n";
-      });
-
-      const encodedUri = encodeURI(csvContent);
-      const link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", `danat_quiz_players_${new Date().toISOString().split('T')[0]}.csv`);
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (err) {
-      alert("خطأ أثناء تصدير البيانات: " + err.message);
     }
   };
 
@@ -1682,25 +1640,6 @@ export default function App() {
       : '🎉 Congrats! You claimed 5 free lives (+5 ❤️).');
   };
 
-  const handleConnectWallet = async (address) => {
-    const finalAddress = address || '0x71C7656EC7ab88b098defB751B7401B5f6d8939A';
-    setUser(prev => ({
-      ...prev,
-      walletConnected: true,
-      walletAddress: finalAddress
-    }));
-    setShowWalletModal(false);
-
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        walletConnected: true,
-        walletAddress: finalAddress
-      });
-    }
-  };
-
-
-
   const handleUpdateAvatar = async (newAvatarId) => {
     setUser(prev => ({ ...prev, avatar: newAvatarId }));
     setShowAvatarModal(false);
@@ -1710,51 +1649,6 @@ export default function App() {
         avatar: newAvatarId
       });
     }
-  };
-
-  const handleRedeemDnc = async () => {
-    if (!user.walletConnected) {
-      alert(user.language === 'العربية' ? 'يرجى ربط محفظتك أولاً من صفحة الملف الشخصي!' : user.language === 'Français' ? "Veuillez d'abord connecter votre portefeuille dans le profil !" : 'Please connect your wallet first from the profile page!');
-      setActiveTab('profile');
-      return;
-    }
-    if (user.points < 1000) {
-      alert(user.language === 'العربية' ? 'رصيدك غير كافٍ. الحد الأدنى للتحويل هو 1,000 نقطة.' : user.language === 'Français' ? 'Solde insuffisant. Le transfert minimum est de 1 000 points.' : 'Insufficient balance. Minimum transfer is 1,000 points.');
-      return;
-    }
-
-    const updatedPoints = user.points - 1000;
-    const updatedDnc = user.dncBalance + 1;
-
-    setUser(prev => ({
-      ...prev,
-      points: updatedPoints,
-      dncBalance: updatedDnc
-    }));
-
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        points: increment(-1000),
-        dncBalance: increment(1)
-      });
-    }
-
-    const newReq = {
-      id: Date.now().toString(),
-      user: user.name,
-      points: 1000,
-      dnc: 1,
-      wallet: user.walletAddress,
-      status: 'PENDING',
-      date: new Date().toISOString().split('T')[0]
-    };
-
-    setRedemptions([newReq, ...redemptions]);
-    alert(user.language === 'العربية' ? 'تم تقديم طلب الاستبدال بنجاح! بانتظار موافقة المسؤول.' : user.language === 'Français' ? "Demande d'échange soumise avec succès ! En attente d'approbation." : 'Redemption request submitted successfully! Awaiting admin approval.');
-  };
-
-  const handleAdminApprove = (id) => {
-    setRedemptions(redemptions.map(r => r.id === id ? { ...r, status: 'APPROVED' } : r));
   };
 
   if (showAuthModal) {
@@ -2383,76 +2277,6 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="w-full space-y-3 mt-1">
-                <button 
-                  onClick={() => setShowWalletModal(true)}
-                  className={`w-full py-4 px-4 rounded-2xl border font-bold text-sm flex items-center justify-between transition shadow ${
-                    user.walletConnected 
-                      ? 'bg-emerald-950/50 border-emerald-500/60 text-emerald-300' 
-                      : 'bg-[#240a47] border-purple-400/40 text-purple-200 hover:bg-[#320d63]'
-                  }`}
-                >
-                  <div className="flex items-center gap-2">
-                    <img src={assetPath('dnc_coin.png')} alt="Wallet" className="w-6 h-6 object-contain" />
-                    <span>{user.walletConnected ? t.walletConnected : t.connectWallet}</span>
-                  </div>
-                  <span className="text-xs bg-purple-500/20 px-3 py-1 rounded-lg">
-                    {user.walletConnected ? `${user.walletAddress.substring(0,6)}...` : t.connectBtn}
-                  </span>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* ADMIN PANEL */}
-          {activeTab === 'admin' && (
-            <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center border-b border-purple-400/40 pb-3">
-                <h2 className="text-base font-bold text-yellow-400 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5" /> {t.adminPanel}
-                </h2>
-                <button onClick={() => setActiveTab('home')} className="text-xs bg-[#240a47] px-3 py-1 rounded-lg text-slate-200 border border-purple-400/40">{t.close}</button>
-              </div>
-
-              <button 
-                onClick={fetchAllPlayersAndExportCSV}
-                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition text-xs"
-              >
-                <Download className="w-4 h-4" /> {t.downloadCsvReport}
-              </button>
-
-              <p className="text-xs text-slate-300 mt-2">{t.adminRedeemNotice}</p>
-
-              <div className="space-y-3">
-                {redemptions.map(req => (
-                  <div key={req.id} className="bg-[#240a47]/90 p-4 rounded-xl border border-purple-400/40 text-xs space-y-2.5 shadow">
-                    <div className="flex justify-between font-bold">
-                      <span className="text-white">{req.user}</span>
-                      <span className={req.status === 'APPROVED' ? 'text-emerald-400' : 'text-amber-400'}>
-                        {req.status === 'APPROVED' ? t.approved : t.pending}
-                      </span>
-                    </div>
-
-                    <div className="text-slate-300 flex justify-between">
-                      <span>{t.pts}: {req.points}</span>
-                      <span className="text-yellow-400 font-bold">{req.dnc} DNC</span>
-                    </div>
-
-                    <div className="text-[10px] text-slate-300 font-mono break-all bg-[#0d031f] p-2 rounded border border-purple-400/30">
-                      {t.walletLabel} {req.wallet}
-                    </div>
-
-                    {req.status === 'PENDING' && (
-                      <button 
-                        onClick={() => handleAdminApprove(req.id)}
-                        className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold mt-1 transition shadow"
-                      >
-                        {t.approveAndSend}
-                      </button>
-                    )}
-                  </div>
-                ))}
-              </div>
             </div>
           )}
 
@@ -2515,39 +2339,6 @@ export default function App() {
             );
           })}
         </div>
-
-        {/* WALLETCONNECT MODAL */}
-        {showWalletModal && (
-          <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="w-full bg-[#240a47] border border-yellow-500/50 rounded-3xl p-5 text-right space-y-4 shadow-2xl" dir={user.language === 'العربية' ? 'rtl' : 'ltr'}>
-              <div className="flex justify-between items-center">
-                <h3 className="font-bold text-white text-base">{t.connectWeb3Title}</h3>
-                <button onClick={() => setShowWalletModal(false)} className="text-slate-300 p-1">
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <p className="text-xs text-slate-300 leading-relaxed">
-                {t.connectWeb3Desc}
-              </p>
-
-              <input 
-                type="text" 
-                placeholder="0x71C7656EC7ab88b098defB751B7401B5f6d8939A"
-                value={customWallet}
-                onChange={(e) => setCustomWallet(e.target.value)}
-                className="w-full bg-[#0d031f] border border-purple-400/40 rounded-xl p-3 text-xs text-white font-mono dir-ltr focus:border-yellow-500 outline-none shadow-inner"
-              />
-
-              <button 
-                onClick={() => handleConnectWallet(customWallet)}
-                className="w-full py-3.5 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg"
-              >
-                {t.confirmConnectBtn}
-              </button>
-            </div>
-          </div>
-        )}
 
         {/* AVATAR SELECTOR MODAL */}
         {showAvatarModal && (
