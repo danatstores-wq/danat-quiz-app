@@ -394,7 +394,8 @@ const slide2048 = (board, direction) => {
   return { board: next, gained, changed: next.some((v, i) => v !== board[i]) };
 };
 
-function Game2048({ onBack, onAdComplete }) {
+function Game2048({ onBack, onAdComplete, language = 'English' }) {
+  const tr = (en, fr, ar) => language === 'العربية' ? ar : language === 'Français' ? fr : en;
   const [board, setBoard] = useState(create2048Board);
   const [score, setScore] = useState(0);
   const [best, setBest] = useState(() => Number(localStorage.getItem('danat_2048_best') || 0));
@@ -485,7 +486,7 @@ function Game2048({ onBack, onAdComplete }) {
   return (
     <div className="mx-auto flex w-full max-w-[520px] flex-col gap-4 pb-5">
       <div className="flex items-center justify-between">
-        <button onClick={onBack} className="rounded-xl border border-amber-300/40 bg-[#211735] px-4 py-2 text-sm font-bold text-amber-200">← Back</button>
+        <button onClick={onBack} className="rounded-xl border border-amber-300/40 bg-[#211735] px-4 py-2 text-sm font-bold text-amber-200">{`← ${tr('Back', 'Retour', 'رجوع')}`}</button>
         <div className="text-right">
           <div className="text-xs font-bold uppercase tracking-[.28em] text-amber-300">Danat Arcade</div>
           <h2 className="text-3xl font-black tracking-tight text-white">2048</h2>
@@ -494,7 +495,7 @@ function Game2048({ onBack, onAdComplete }) {
       <div className="rounded-[28px] border border-amber-300/35 bg-gradient-to-br from-[#2b1b49] via-[#1b1630] to-[#11182f] p-4 shadow-[0_18px_45px_rgba(0,0,0,.4)] sm:p-6">
         <div className="mb-5 flex items-center justify-between gap-3">
           <div>
-            <div className="text-xs font-semibold text-purple-200">Join the tiles. Reach</div>
+            <div className="text-xs font-semibold text-purple-200">{tr('Join the tiles. Reach', 'Fusionnez les tuiles. Atteignez', 'ادمج المربعات للوصول إلى')}</div>
             <div className="text-2xl font-black text-amber-300">2048 <span className="text-white">✦</span></div>
           </div>
           <div className="flex gap-2 text-center">
@@ -513,7 +514,7 @@ function Game2048({ onBack, onAdComplete }) {
           onTouchStart={handleBoardTouchStart}
           onTouchEnd={handleBoardTouchEnd}
           onTouchCancel={() => { touchStart.current = null; }}
-          aria-label="2048 game board. Swipe in any direction to move the tiles."
+          aria-label={tr('2048 game board. Swipe in any direction to move the tiles.', 'Plateau 2048. Faites glisser dans n’importe quelle direction pour déplacer les tuiles.', 'لوحة لعبة 2048. اسحب في أي اتجاه لتحريك المربعات.')}
         >
           <div className="grid grid-cols-4 gap-2 sm:gap-3">
             {board.map((value, index) => (
@@ -530,7 +531,7 @@ function Game2048({ onBack, onAdComplete }) {
           <button onClick={() => { if (previous) { setBoard(previous.board); setScore(previous.score); setPrevious(null); setOver(false); } }} disabled={!previous} className="flex-1 rounded-xl border border-amber-300/40 bg-white/5 py-3 font-bold text-amber-100 disabled:opacity-35">↶ Undo</button>
         </div>
       </div>
-      <p className="text-center text-xs text-purple-200">Swipe the board up, down, left, or right to move the tiles. On desktop, use your keyboard arrow keys. Combine matching numbers to reach 2048.</p>
+      <p className="text-center text-xs text-purple-200">{tr('Swipe the board up, down, left, or right to move the tiles. On desktop, use your keyboard arrow keys. Combine matching numbers to reach 2048.', 'Faites glisser le plateau vers le haut, le bas, la gauche ou la droite pour déplacer les tuiles. Sur ordinateur, utilisez les touches fléchées du clavier. Fusionnez les mêmes nombres pour atteindre 2048.', 'اسحب اللوحة إلى الأعلى أو الأسفل أو اليمين أو اليسار لتحريك المربعات. على الكمبيوتر، استخدم مفاتيح الأسهم في لوحة المفاتيح. ادمج الأرقام المتطابقة للوصول إلى 2048.')}</p>
       {over && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-6 backdrop-blur-md">
           <div className="w-full max-w-sm rounded-3xl border-2 border-amber-400 bg-[#240a47] p-7 text-center shadow-[0_0_50px_rgba(234,179,8,0.35)]">
@@ -835,7 +836,8 @@ const dropMatch3Board = (cleared, colorCount) => {
   return dropped;
 };
 
-function GameMatch3({ onBack, onAdComplete }) {
+function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
+  const tr = (en, fr, ar) => language === 'العربية' ? ar : language === 'Français' ? fr : en;
   const [levelId, setLevelId] = useState('easy');
   const isEndless = levelId === 'endless';
   const level = MATCH3_LEVELS.find(item => item.id === levelId) || { id: 'endless', name: 'Endless', subtitle: 'Play without limits', colors: 5, moves: Infinity, target: Infinity, stars: '∞' };
@@ -1014,7 +1016,7 @@ function GameMatch3({ onBack, onAdComplete }) {
   return (
     <div className="mx-auto flex w-full max-w-[520px] flex-col gap-4 pb-5">
       <div className="flex items-center justify-between">
-        <button onClick={onBack} className="rounded-xl border border-amber-300/40 bg-[#211735] px-4 py-2 text-sm font-bold text-amber-200">← Back</button>
+        <button onClick={onBack} className="rounded-xl border border-amber-300/40 bg-[#211735] px-4 py-2 text-sm font-bold text-amber-200">{`← ${tr('Back', 'Retour', 'رجوع')}`}</button>
         <div className="text-right">
           <div className="text-xs font-bold uppercase tracking-[.28em] text-amber-300">Danat Arcade</div>
           <h2 className="text-3xl font-black tracking-tight text-white">Match 3</h2>
@@ -1072,7 +1074,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
           <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
         </div>
-        <p className="mt-3 text-center text-xs text-purple-100">{isEndless ? "Endless mode: unlimited moves and no score target. A five-second ad break appears every 2 minutes." : `${level.name}: ${level.colors} fruit types · ${level.moves} moves · reach ${level.target.toLocaleString()} points.`} Match 4 fruits to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).</p>
+        <p className="mt-3 text-center text-xs text-purple-100">{isEndless ? tr('Endless mode: unlimited moves and no score target. A five-second ad break appears every 2 minutes.', 'Mode sans fin : mouvements illimités et aucun objectif de score. Une pause publicitaire de cinq secondes apparaît toutes les 2 minutes.', 'الوضع اللانهائي: حركات بلا حدود وبدون هدف للنقاط. تظهر استراحة إعلانية لمدة خمس ثوانٍ كل دقيقتين.') : `${tr(level.name, level.id === 'easy' ? 'Facile' : level.id === 'medium' ? 'Moyen' : 'Difficile', level.id === 'easy' ? 'سهل' : level.id === 'medium' ? 'متوسط' : 'صعب')}: ${level.colors} ${tr('fruit types', 'types de fruits', 'أنواع من الفاكهة')} · ${level.moves} ${tr('moves', 'coups', 'حركة')} · ${tr('reach', 'atteignez', 'للوصول إلى')} ${level.target.toLocaleString()} ${tr('points', 'points', 'نقطة')}.`} {tr('Match 4 fruits to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).', 'Alignez 4 fruits pour créer une petite bombe (touchez-la pour faire exploser 3 gemmes), ou alignez-en 5 pour créer une grande bombe (touchez-la pour faire exploser 5 gemmes).', 'طابق 4 حبات فاكهة لإنشاء قنبلة صغيرة (اضغط عليها لتفجير 3 جواهر)، أو طابق 5 لإنشاء قنبلة كبيرة (اضغط عليها لتفجير 5 جواهر).')}</p>
       </div>
 
       {showAd && (
@@ -2101,11 +2103,11 @@ export default function App() {
           {/* Mini-games removed: the home screen now leads only to the General Knowledge Quiz. */}
 
           {activeTab === 'game2048' && (
-            <Game2048 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} />
+            <Game2048 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} language={user.language} />
           )}
 
           {activeTab === 'gameMatch3' && (
-            <GameMatch3 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} />
+            <GameMatch3 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} language={user.language} />
           )}
 
           {/* SCREEN: STATISTICS */}
