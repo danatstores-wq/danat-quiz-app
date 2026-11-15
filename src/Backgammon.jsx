@@ -89,7 +89,7 @@ const legalSteps = (board, bars, borne, side, die) => {
   const direction = side === 1 ? -1 : 1;
   if (bars[side] > 0) {
     const destination = side === 1 ? 24 - die : die - 1;
-    if (destination >= 0 && destination < 24 && board[destination] >= -side) {
+    if (destination >= 0 && destination < 24 && board[destination] * side > -2) {
       steps.push({ from: -1, to: destination, die });
     }
     return steps;
@@ -99,7 +99,7 @@ const legalSteps = (board, bars, borne, side, die) => {
     if (board[from] * side <= 0) continue;
     const to = from + direction * die;
     if (to >= 0 && to < 24) {
-      if (board[to] >= -side) steps.push({ from, to, die });
+      if (board[to] * side > -2) steps.push({ from, to, die });
       continue;
     }
     if (!canBearOff) continue;
@@ -149,7 +149,7 @@ const scoreComputerPath = (path, board, bars, borne) => {
   let state = { board, bars, borne };
   let score = 0;
   path.forEach(step => {
-    const before = state.board[step.to] ===  -1 ? 1 : 0;
+    const before = state.board[step.to] === 1 ? 1 : 0;
     state = applyStep(state.board, state.bars, state.borne, -1, step);
     if (before) score += 28;
     if (step.to === 24) score += 18;
@@ -270,17 +270,20 @@ export default function Backgammon({ onBack, language = 'English' }) {
       }
       const bestScore = Math.max(...paths.map(path => scoreComputerPath(path, board, bars, borne)));
       const best = paths.filter(path => scoreComputerPath(path, board, bars, borne) === bestScore);
-      const chosen = best[Math.floor(Math.random() * best.length)];
+      const chosen = best[0];
       let state = { board, bars, borne };
-      chosen.forEach((step, index) => {
+      const snapshots = chosen.map(step => {
         state = applyStep(state.board, state.bars, state.borne, -1, step);
+        return { board: [...state.board], bars: { ...state.bars }, borne: { ...state.borne } };
+      });
+      snapshots.forEach((snapshot, index) => {
         window.setTimeout(() => {
-          setBoard(state.board); setBars(state.bars); setBorne(state.borne);
-          if (state.bars[1] > bars[1]) setNotice(t.hit);
-          if (index === chosen.length - 1) {
+          setBoard(snapshot.board); setBars(snapshot.bars); setBorne(snapshot.borne);
+          if (snapshot.bars[1] > bars[1]) setNotice(t.hit);
+          if (index === snapshots.length - 1) {
             setBusy(false);
-            if (state.borne[-1] >= 15) { setWinner(-1); setDice([]); setCandidates([]); }
-            else finishTurn(state.board, state.bars, state.borne, -1);
+            if (snapshot.borne[-1] >= 15) { setWinner(-1); setDice([]); setCandidates([]); }
+            else finishTurn(snapshot.board, snapshot.bars, snapshot.borne, -1);
           }
         }, 550 * (index + 1));
       });
@@ -300,7 +303,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
     return <button key={point} type="button" onClick={() => active ? moveTo(point) : choosePoint(point)}
       disabled={turn !== 1 || busy || rolling || !dice.length || winner || (!active && !selectable)}
       aria-label={`Point ${point + 1}, ${count} ${side === 1 ? 'your' : 'computer'} checkers`}
-      className={`relative flex min-w-0 flex-1 flex-col items-center justify-${top ? 'start' : 'end'} overflow-hidden rounded-sm border-x border-black/20 ${top ? 'h-[170px]' : 'h-[170px]'} ${active ? 'bg-amber-300/25 ring-2 ring-inset ring-yellow-300' : selectable ? 'bg-white/10' : ''} `}>
+      className={`relative flex min-w-0 flex-1 flex-col items-center ${top ? 'justify-start' : 'justify-end'} overflow-hidden rounded-sm border-x border-black/20 h-[170px] ${active ? 'bg-amber-300/25 ring-2 ring-inset ring-yellow-300' : selectable ? 'bg-white/10' : ''} `}>
       <span className={`absolute left-1/2 z-0 h-[82%] w-[88%] -translate-x-1/2 ${top ? 'top-0' : 'bottom-0'} ${point % 2 === 0 ? 'bg-gradient-to-b from-[#c75b36] to-[#7d2c22]' : 'bg-gradient-to-b from-[#f1d6a0] to-[#b58b50]'}`}
         style={{ clipPath: top ? 'polygon(0 0,100% 0,50% 100%)' : 'polygon(0 100%,100% 100%,50% 0)' }} />
       {top && <span className="relative z-10 mt-1 text-[9px] font-black text-white/70">{point + 1}</span>}
