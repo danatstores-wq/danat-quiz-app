@@ -1039,9 +1039,9 @@ function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
           {['easy', 'medium', 'hard', 'endless'].map((id, index) => {
             const option = MATCH3_LEVELS.find(item => item.id === id) || { name: 'Endless' };
             const levelLabel = tr(option.name, id === 'easy' ? 'Facile' : id === 'medium' ? 'Moyen' : id === 'hard' ? 'Difficile' : 'Sans fin', id === 'easy' ? 'سهل' : id === 'medium' ? 'متوسط' : id === 'hard' ? 'صعب' : 'لا نهائي');
-            const statusLabel = levelId === id ? tr('Current', 'Actuel', 'الحالي') : unlocked ? tr('Unlocked', 'Débloqué', 'مفتوح') : tr('Locked', 'Verrouillé', 'مغلق');
             const currentIndex = ['easy', 'medium', 'hard', 'endless'].indexOf(levelId);
             const unlocked = index <= currentIndex;
+            const statusLabel = levelId === id ? tr('Current', 'Actuel', 'الحالي') : unlocked ? tr('Unlocked', 'Débloqué', 'مفتوح') : tr('Locked', 'Verrouillé', 'مغلق');
             return <div key={id} className={`rounded-xl border px-1.5 py-2 text-center ${levelId === id ? 'border-amber-300 bg-amber-300/20 text-amber-100' : unlocked ? 'border-white/15 bg-black/20 text-purple-100' : 'border-white/10 bg-black/10 text-purple-300/40'}`}><span className="block text-xs font-black">{levelLabel}</span><span className="mt-0.5 block text-[9px] font-semibold opacity-80">{statusLabel}</span></div>;
           })}
         </div>
