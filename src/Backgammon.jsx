@@ -358,6 +358,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </div>
     </div>
 
+    {history.length > 0 && <div className="rounded-xl border border-slate-700 bg-slate-900/70 p-3"><div className="mb-2 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Recent dice rolls</div><div className="flex flex-wrap justify-center gap-2">{history.slice(0, 6).map((entry, index) => <span key={entry.at + index} className={`rounded-lg border px-3 py-1.5 text-xs font-bold ${entry.side === 1 ? 'border-amber-400/40 text-amber-200' : 'border-rose-400/40 text-rose-200'}`}>{entry.side === 1 ? t.you : t.computer}: {entry.dice[0]} + {entry.dice[1]}</span>)}</div></div>}
     <div className="rounded-xl border border-emerald-400/25 bg-emerald-950/30 px-4 py-3 text-center text-xs text-emerald-100"><span className="font-bold">{t.fair}</span><div className="mt-1 text-[10px] text-emerald-100/70">Each die uses an independent secure random draw. Rejection sampling removes modulo bias.</div></div>
     <p className="rounded-xl bg-slate-900/70 p-3 text-xs leading-relaxed text-slate-300">{t.rules}</p>
     {winner !== 0 && <button onClick={reset} className="rounded-xl bg-gradient-to-r from-amber-300 to-yellow-600 px-5 py-3 font-black text-slate-950 shadow-lg">{t.playAgain}</button>}
