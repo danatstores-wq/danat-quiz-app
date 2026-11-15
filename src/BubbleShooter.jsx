@@ -136,6 +136,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
       setAdReason('level');
       setShowAd(true);
       setPaused(true);
+    }
   };
 
   const handleGridPointer = (event) => {
