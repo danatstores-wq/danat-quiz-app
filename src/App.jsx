@@ -1758,8 +1758,7 @@ export default function App() {
 
     setUser(prev => ({
       ...prev,
-      livesBalance: (prev.livesBalance ?? lives) + livesToAdd, 
-      ...prev,
+      livesBalance: (prev.livesBalance ?? lives) + livesToAdd,
       lastSpiritClaimTime: now,
       dailyClaimedLives: updatedDailyClaimed,
       lastDailyResetTime: newResetTime
