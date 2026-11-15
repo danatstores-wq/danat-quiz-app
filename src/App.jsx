@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import BubbleShooter from './BubbleShooter';
+import Backgammon from './Backgammon';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
   Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, EyeOff, Home, Gift, User
@@ -2109,6 +2110,19 @@ export default function App() {
                 </button>
                 <button
                   type="button"
+                  onClick={() => setActiveTab('gameBackgammon')}
+                  aria-label="Play Backgammon"
+                  className="group relative aspect-square w-full rounded-2xl border-[4px] border-amber-300 bg-gradient-to-br from-yellow-200 via-amber-500 to-yellow-700 p-[3px] shadow-[0_0_0_2px_rgba(120,75,12,0.9),0_0_24px_rgba(251,191,36,0.55)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_0_0_2px_rgba(120,75,12,0.95),0_0_30px_rgba(251,191,36,0.75)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200"
+                >
+                  <span className="flex h-full w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-[10px] bg-gradient-to-br from-[#60351f] via-[#241a16] to-[#8b542b] p-3">
+                    <span className="grid w-full max-w-[120px] grid-cols-6 gap-1 rounded-md border-2 border-amber-300/80 bg-[#b77a3d] p-2 shadow-[inset_0_0_12px_rgba(0,0,0,.55)]">
+                      {Array.from({ length: 12 }, (_, i) => <span key={i} className={`h-5 rounded-sm ${i % 2 ? 'bg-gradient-to-b from-rose-400 to-rose-900' : 'bg-gradient-to-b from-amber-100 to-amber-600'}`} />)}
+                    </span>
+                    <span className="text-xs font-black tracking-wider text-amber-100 drop-shadow">BACKGAMMON</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
                   onClick={() => setActiveTab('gameBubbleShooter')}
                   aria-label="Play Bubble Shooter"
                   className="group relative aspect-square w-full rounded-2xl border-[4px] border-amber-300 bg-gradient-to-br from-yellow-200 via-amber-500 to-yellow-700 p-[3px] shadow-[0_0_0_2px_rgba(120,75,12,0.9),0_0_24px_rgba(251,191,36,0.55)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_0_0_2px_rgba(120,75,12,0.95),0_0_30px_rgba(251,191,36,0.75)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200"
@@ -2141,6 +2155,10 @@ export default function App() {
 
           {activeTab === 'gameBubbleShooter' && (
             <BubbleShooter onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} language={user.language} />
+          )}
+
+          {activeTab === 'gameBackgammon' && (
+            <Backgammon onBack={() => setActiveTab('home')} language={user.language} />
           )}
 
           {/* SCREEN: STATISTICS */}
