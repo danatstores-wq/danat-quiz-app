@@ -1111,6 +1111,13 @@ function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [dncHistory, setDncHistory] = useState([]);
+  const [adminPlayers, setAdminPlayers] = useState([]);
+  const [adminSearch, setAdminSearch] = useState('');
+  const [adminSelectedUid, setAdminSelectedUid] = useState('');
+  const [adminAmount, setAdminAmount] = useState('');
+  const [adminNote, setAdminNote] = useState('');
+  const [adminStatus, setAdminStatus] = useState('');
+  const [adminLoading, setAdminLoading] = useState(false);
   const [authMode, setAuthMode] = useState('login');
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
@@ -1138,6 +1145,65 @@ export default function App() {
     lastDailyResetTime: 0,
     avatar: 'avatar-man-ghutra.png',
   });
+
+
+  const isDncAdmin = currentUser?.uid === '4ZOJfbUjq8MYKb0fgOcoQAbEUOl';
+
+  const loadAdminPlayers = async () => {
+    if (!isDncAdmin) return;
+    setAdminLoading(true);
+    setAdminStatus('');
+    try {
+      const snapshot = await getDocs(collection(db, 'users'));
+      const players = snapshot.docs.map((item) => ({
+        uid: item.id,
+        name: item.data().name || 'Unnamed player',
+        email: item.data().email || '',
+        dncBalance: Number(item.data().dncBalance || 0)
+      })).sort((a, b) => a.name.localeCompare(b.name));
+      setAdminPlayers(players);
+      setAdminStatus(`Loaded ${players.length} registered accounts.`);
+    } catch (error) {
+      console.error('Could not load admin player list:', error);
+      setAdminStatus('Could not load players. Check administrator Firestore permissions.');
+    } finally {
+      setAdminLoading(false);
+    }
+  };
+
+  const submitDncAdjustment = async () => {
+    if (!isDncAdmin || !adminSelectedUid) {
+      setAdminStatus('Select a player first.');
+      return;
+    }
+    const amount = Number(adminAmount);
+    if (!Number.isFinite(amount) || amount === 0) {
+      setAdminStatus('Enter a valid non-zero DNC amount. Use a negative value for a correction.');
+      return;
+    }
+    setAdminLoading(true);
+    setAdminStatus('');
+    try {
+      const adjustBalance = httpsCallable(functions, 'adminAdjustDncBalance');
+      const result = await adjustBalance({
+        playerUid: adminSelectedUid,
+        amount,
+        note: adminNote.trim()
+      });
+      const data = result.data;
+      setAdminPlayers((items) => items.map((player) => player.uid === adminSelectedUid
+        ? { ...player, dncBalance: data.newBalance }
+        : player));
+      setAdminAmount('');
+      setAdminNote('');
+      setAdminStatus(`Saved successfully. New balance: ${data.newBalance} DNC.`);
+    } catch (error) {
+      console.error('DNC adjustment failed:', error);
+      setAdminStatus(error?.message || 'The adjustment failed. No balance change was confirmed.');
+    } finally {
+      setAdminLoading(false);
+    }
+  };
 
   const langKey = user.language === 'العربية' ? 'ar' : user.language === 'Français' ? 'fr' : 'en';
   const t = TRANSLATIONS[user.language] || TRANSLATIONS['English'];
@@ -2310,6 +2376,38 @@ export default function App() {
                   );
                 })}
               </div>
+
+              {isDncAdmin && (
+                <div className="w-full bg-[#17102b] rounded-2xl p-4 border border-amber-400/50 shadow space-y-3">
+                  <div className="flex items-center justify-between border-b border-amber-400/30 pb-2">
+                    <h3 className="text-sm font-black text-amber-300">Administrator · DNC Credits</h3>
+                    <span className="text-[10px] text-slate-400">Private admin tool</span>
+                  </div>
+                  <p className="text-[11px] text-slate-300">Load registered accounts, select a player, then enter a positive credit or a negative correction. Every successful change is recorded in the player's DNC history.</p>
+                  <button type="button" onClick={loadAdminPlayers} disabled={adminLoading} className="w-full rounded-xl bg-amber-400 px-4 py-2.5 text-xs font-black text-slate-950 disabled:opacity-50">
+                    {adminLoading ? 'Please wait…' : 'Load registered players'}
+                  </button>
+                  {adminPlayers.length > 0 && (
+                    <>
+                      <input value={adminSearch} onChange={(event) => setAdminSearch(event.target.value)} placeholder="Search by player name, email or UID" className="w-full rounded-xl border border-purple-400/40 bg-[#0d031f] px-3 py-2.5 text-xs text-white outline-none" />
+                      <select value={adminSelectedUid} onChange={(event) => setAdminSelectedUid(event.target.value)} className="w-full rounded-xl border border-purple-400/40 bg-[#0d031f] px-3 py-2.5 text-xs text-white outline-none">
+                        <option value="">Select a player</option>
+                        {adminPlayers.filter((player) => `${player.name} ${player.email} ${player.uid}`.toLowerCase().includes(adminSearch.toLowerCase())).map((player) => (
+                          <option key={player.uid} value={player.uid}>
+                            {player.name}{player.email ? ` · ${player.email}` : ''} · Balance: {player.dncBalance} DNC
+                          </option>
+                        ))}
+                      </select>
+                      <input type="number" step="0.00000001" value={adminAmount} onChange={(event) => setAdminAmount(event.target.value)} placeholder="DNC amount (e.g. 25 or -2)" className="w-full rounded-xl border border-purple-400/40 bg-[#0d031f] px-3 py-2.5 text-xs text-white outline-none" />
+                      <input value={adminNote} onChange={(event) => setAdminNote(event.target.value)} maxLength={240} placeholder="Reason / note (optional)" className="w-full rounded-xl border border-purple-400/40 bg-[#0d031f] px-3 py-2.5 text-xs text-white outline-none" />
+                      <button type="button" onClick={submitDncAdjustment} disabled={adminLoading || !adminSelectedUid || !adminAmount} className="w-full rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-black text-slate-950 disabled:opacity-50">
+                        {adminLoading ? 'Saving…' : 'Confirm DNC adjustment'}
+                      </button>
+                    </>
+                  )}
+                  {adminStatus && <p className="text-[11px] text-amber-200 break-words">{adminStatus}</p>}
+                </div>
+              )}
 
             </div>
           )}
