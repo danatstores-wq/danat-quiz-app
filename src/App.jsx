@@ -38,6 +38,7 @@ import {
 const QUIZ_INDEX_KEY = 'danat_quiz_current_index';
 const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
 const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change; cache for 7 days per device.
+const REWARD_API_URL = 'https://danat-quiz-api.danatcoin.workers.dev';
 
 // --- Sample Initial Questions (Fallback) ---
 const INITIAL_QUESTIONS = [
@@ -1700,16 +1701,25 @@ export default function App() {
 
     try {
       if (!currentUser?.uid) throw new Error('AUTH_REQUIRED');
-      const reward = await showRewardedAd('life', currentUser.uid);
+      const idToken = await currentUser.getIdToken();
+      const sessionResponse = await fetch(`${REWARD_API_URL}/v1/ad-session`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ placement: 'life' })
+      });
+      if (!sessionResponse.ok) throw new Error('REWARD_SESSION_FAILED');
+      const rewardSession = await sessionResponse.json();
+      const reward = await showRewardedAd('life', currentUser.uid, rewardSession.customData);
       if (!reward) {
         alert(rewardAdMessage('unavailable'));
         return;
       }
 
-      // A client-side AdMob callback is not proof of a valid reward.
-      // Do not change lives, Firestore balances, or ad counters here.
-      // The trusted balance will be updated only after the signed AdMob SSV
-      // callback has been verified and processed by the backend.
+      // The client callback only tells us the ad UI finished. The app waits for
+      // the signed AdMob SSV callback before the server changes the life balance.
       alert(rewardAdMessage('pending'));
     } catch (error) {
       console.warn('Rewarded life ad was not completed:', error);
