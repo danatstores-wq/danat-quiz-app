@@ -1049,7 +1049,8 @@ function GameMatch3({ onBack, onAdComplete }) {
             const unlocked = index <= currentIndex;
             return <div key={id} className={`rounded-xl border px-1.5 py-2 text-center ${levelId === id ? 'border-amber-300 bg-amber-300/20 text-amber-100' : unlocked ? 'border-white/15 bg-black/20 text-purple-100' : 'border-white/10 bg-black/10 text-purple-300/40'}`}><span className="block text-xs font-black">{option.name}</span><span className="mt-0.5 block text-[9px] font-semibold opacity-80">{levelId === id ? 'Current' : unlocked ? 'Unlocked' : 'Locked'}</span></div>;
           })}
-        </div>        <div className="mb-4 flex items-center justify-between gap-2">
+        </div>
+        <div className="mb-4 flex items-center justify-between gap-2">
           <div className="rounded-xl border border-white/15 bg-black/25 px-3 py-2 text-center">
             <div className="text-[10px] font-bold uppercase tracking-wider text-fuchsia-200">Score</div>
             <div className="text-xl font-black text-white">{score.toLocaleString()}</div>
