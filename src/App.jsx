@@ -29,6 +29,8 @@ import {
   query,
   where,
   onSnapshot,
+  runTransaction,
+  serverTimestamp,
 } from 'firebase/firestore';
 
 // --- LocalStorage Storage Keys ---
@@ -1184,19 +1186,42 @@ export default function App() {
     setAdminLoading(true);
     setAdminStatus('');
     try {
-      const adjustBalance = httpsCallable(functions, 'adminAdjustDncBalance');
-      const result = await adjustBalance({
-        playerUid: adminSelectedUid,
-        amount,
-        note: adminNote.trim()
+      if (Math.abs(amount) > 1000000 || !Number.isSafeInteger(Math.round(amount * 100000000))) {
+        throw new Error('Amount must be within 1,000,000 DNC and have at most 8 decimal places.');
+      }
+      const playerRef = doc(db, 'users', adminSelectedUid);
+      const ledgerRef = doc(collection(db, 'dncLedger'));
+      const result = await runTransaction(db, async (transaction) => {
+        const playerSnapshot = await transaction.get(playerRef);
+        if (!playerSnapshot.exists()) {
+          throw new Error('The selected player account no longer exists.');
+        }
+        const currentBalance = Number(playerSnapshot.data().dncBalance ?? 0);
+        if (!Number.isFinite(currentBalance) || currentBalance < 0) {
+          throw new Error('The stored DNC balance is invalid.');
+        }
+        const normalizedAmount = Math.round(amount * 100000000) / 100000000;
+        const newBalance = Math.round((currentBalance + normalizedAmount) * 100000000) / 100000000;
+        if (newBalance < 0) {
+          throw new Error('This correction would make the DNC balance negative.');
+        }
+        transaction.update(playerRef, { dncBalance: newBalance });
+        transaction.set(ledgerRef, {
+          playerUid: adminSelectedUid,
+          amount: normalizedAmount,
+          type: normalizedAmount > 0 ? 'manual_credit' : 'manual_adjustment',
+          createdAt: serverTimestamp(),
+          adminUid: currentUser.uid,
+          note: adminNote.trim()
+        });
+        return newBalance;
       });
-      const data = result.data;
       setAdminPlayers((items) => items.map((player) => player.uid === adminSelectedUid
-        ? { ...player, dncBalance: data.newBalance }
+        ? { ...player, dncBalance: result }
         : player));
       setAdminAmount('');
       setAdminNote('');
-      setAdminStatus(`Saved successfully. New balance: ${data.newBalance} DNC.`);
+      setAdminStatus(`Saved successfully. New balance: ${result} DNC.`);
     } catch (error) {
       console.error('DNC adjustment failed:', error);
       setAdminStatus(error?.message || 'The adjustment failed. No balance change was confirmed.');
