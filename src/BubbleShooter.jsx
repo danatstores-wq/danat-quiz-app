@@ -179,7 +179,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         </div>
       </div>
 
-      <div className="rounded-[28px] border border-sky-300/50 bg-[#0b3445] bg-cover bg-center p-3 shadow-[0_24px_70px_rgba(0,0,0,.58),inset_0_1px_0_rgba(255,255,255,.18)] sm:p-5" style={{ backgroundImage: "linear-gradient(180deg,rgba(5,30,48,.18),rgba(4,28,42,.58)),url(${BUBBLE_ASSET}background.png)" }}>
+      <div className="rounded-[28px] border border-sky-300/50 bg-[#0b3445] bg-cover bg-center p-3 shadow-[0_24px_70px_rgba(0,0,0,.58),inset_0_1px_0_rgba(255,255,255,.18)] sm:p-5" style={{ backgroundImage: `linear-gradient(180deg,rgba(5,30,48,.18),rgba(4,28,42,.58)),url("${BUBBLE_ASSET}background.png")` }}>
         <div className="mb-4 grid grid-cols-4 gap-2">
           {levelIds.map((id, index) => {
             const unlocked = index <= currentIndex;
