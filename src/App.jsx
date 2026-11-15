@@ -37,11 +37,21 @@ const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change;
 const LEADERBOARD_CACHE_KEY = 'danat_quiz_leaderboard_cache_v1';
 const LEADERBOARD_CACHE_TTL = 15 * 60 * 1000; // Refresh leaderboard at most every 15 minutes per device.
 
-// --- Google AdMob Unit Configuration (Prepared for Native Mobile Builds) ---
-const ADMOB_UNITS = {
-  BOTTOM_BANNER: 'ca-app-pub-1622329571366129/722852979',
-  REWARDED_POINTS: 'ca-app-pub-1622329571366129/4581162153',
-  REWARDED_LIFE: 'ca-app-pub-1622329571366129/5894243820'
+// --- Google AdMob Configuration (Native Android and iOS builds) ---
+// These IDs are for native mobile apps only. They do not serve ads in a normal web browser.
+const ADMOB_CONFIG = {
+  android: {
+    appId: 'ca-app-pub-1622329571366129~8541634640',
+    banner: 'ca-app-pub-1622329571366129/7228552979',
+    rewardedLife: 'ca-app-pub-1622329571366129/5894243820',
+    rewardedPoints: 'ca-app-pub-1622329571366129/4581162153'
+  },
+  ios: {
+    appId: 'ca-app-pub-1622329571366129~6382375164',
+    banner: 'ca-app-pub-1622329571366129/7352676051',
+    rewardedLife: 'ca-app-pub-1622329571366129/9787267701',
+    rewardedPoints: 'ca-app-pub-1622329571366129/8282614340'
+  }
 };
 
 // --- Sample Initial Questions (Fallback) ---
