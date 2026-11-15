@@ -13798,5 +13798,6970 @@
     },
     "points": 10,
     "category": "Astronomy and Earth science"
+  },
+  {
+    "id": "q401",
+    "question": {
+      "en": "What is the main function of mitochondria?",
+      "ar": "ما الوظيفة الرئيسية لـالميتوكوندريا؟",
+      "fr": "Quelle est la fonction principale de mitochondries ?"
+    },
+    "options": {
+      "en": [
+        "produce usable energy",
+        "make proteins",
+        "carry out photosynthesis",
+        "control movement into and out of a cell"
+      ],
+      "ar": [
+        "إنتاج الطاقة",
+        "تصنيع البروتينات",
+        "إجراء البناء الضوئي",
+        "تنظيم دخول المواد إلى الخلية وخروجها"
+      ],
+      "fr": [
+        "produire de l’énergie utilisable",
+        "fabriquer les protéines",
+        "réaliser la photosynthèse",
+        "contrôler les échanges de la cellule"
+      ]
+    },
+    "correctAnswer": {
+      "en": "produce usable energy",
+      "ar": "إنتاج الطاقة",
+      "fr": "produire de l’énergie utilisable"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q402",
+    "question": {
+      "en": "What is the main function of ribosomes?",
+      "ar": "ما الوظيفة الرئيسية لـالريبوسومات؟",
+      "fr": "Quelle est la fonction principale de ribosomes ?"
+    },
+    "options": {
+      "en": [
+        "control movement into and out of a cell",
+        "contain most of a cell’s DNA",
+        "make proteins",
+        "carry out photosynthesis"
+      ],
+      "ar": [
+        "تنظيم دخول المواد إلى الخلية وخروجها",
+        "احتواء معظم الحمض النووي للخلية",
+        "تصنيع البروتينات",
+        "إجراء البناء الضوئي"
+      ],
+      "fr": [
+        "contrôler les échanges de la cellule",
+        "contenir la majeure partie de l’ADN cellulaire",
+        "fabriquer les protéines",
+        "réaliser la photosynthèse"
+      ]
+    },
+    "correctAnswer": {
+      "en": "make proteins",
+      "ar": "تصنيع البروتينات",
+      "fr": "fabriquer les protéines"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q403",
+    "question": {
+      "en": "What is the main function of chloroplasts?",
+      "ar": "ما الوظيفة الرئيسية لـالبلاستيدات الخضراء؟",
+      "fr": "Quelle est la fonction principale de chloroplastes ?"
+    },
+    "options": {
+      "en": [
+        "carry out photosynthesis",
+        "control movement into and out of a cell",
+        "contain most of a cell’s DNA",
+        "transport oxygen"
+      ],
+      "ar": [
+        "إجراء البناء الضوئي",
+        "تنظيم دخول المواد إلى الخلية وخروجها",
+        "احتواء معظم الحمض النووي للخلية",
+        "نقل الأكسجين"
+      ],
+      "fr": [
+        "réaliser la photosynthèse",
+        "contrôler les échanges de la cellule",
+        "contenir la majeure partie de l’ADN cellulaire",
+        "transporter l’oxygène"
+      ]
+    },
+    "correctAnswer": {
+      "en": "carry out photosynthesis",
+      "ar": "إجراء البناء الضوئي",
+      "fr": "réaliser la photosynthèse"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q404",
+    "question": {
+      "en": "What is the main function of cell membrane?",
+      "ar": "ما الوظيفة الرئيسية لـغشاء الخلية؟",
+      "fr": "Quelle est la fonction principale de membrane cellulaire ?"
+    },
+    "options": {
+      "en": [
+        "transport oxygen",
+        "defend the body against infection",
+        "control movement into and out of a cell",
+        "contain most of a cell’s DNA"
+      ],
+      "ar": [
+        "نقل الأكسجين",
+        "الدفاع عن الجسم ضد العدوى",
+        "تنظيم دخول المواد إلى الخلية وخروجها",
+        "احتواء معظم الحمض النووي للخلية"
+      ],
+      "fr": [
+        "transporter l’oxygène",
+        "défendre le corps contre les infections",
+        "contrôler les échanges de la cellule",
+        "contenir la majeure partie de l’ADN cellulaire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "control movement into and out of a cell",
+      "ar": "تنظيم دخول المواد إلى الخلية وخروجها",
+      "fr": "contrôler les échanges de la cellule"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q405",
+    "question": {
+      "en": "What is the main function of nucleus?",
+      "ar": "ما الوظيفة الرئيسية لـالنواة؟",
+      "fr": "Quelle est la fonction principale de noyau ?"
+    },
+    "options": {
+      "en": [
+        "contain most of a cell’s DNA",
+        "transport oxygen",
+        "defend the body against infection",
+        "help blood clot"
+      ],
+      "ar": [
+        "احتواء معظم الحمض النووي للخلية",
+        "نقل الأكسجين",
+        "الدفاع عن الجسم ضد العدوى",
+        "المساعدة على تخثر الدم"
+      ],
+      "fr": [
+        "contenir la majeure partie de l’ADN cellulaire",
+        "transporter l’oxygène",
+        "défendre le corps contre les infections",
+        "aider à la coagulation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "contain most of a cell’s DNA",
+      "ar": "احتواء معظم الحمض النووي للخلية",
+      "fr": "contenir la majeure partie de l’ADN cellulaire"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q406",
+    "question": {
+      "en": "What is the main function of red blood cells?",
+      "ar": "ما الوظيفة الرئيسية لـخلايا الدم الحمراء؟",
+      "fr": "Quelle est la fonction principale de globules rouges ?"
+    },
+    "options": {
+      "en": [
+        "help blood clot",
+        "exchange gases in the lungs",
+        "transport oxygen",
+        "defend the body against infection"
+      ],
+      "ar": [
+        "المساعدة على تخثر الدم",
+        "تبادل الغازات في الرئتين",
+        "نقل الأكسجين",
+        "الدفاع عن الجسم ضد العدوى"
+      ],
+      "fr": [
+        "aider à la coagulation",
+        "échanger les gaz dans les poumons",
+        "transporter l’oxygène",
+        "défendre le corps contre les infections"
+      ]
+    },
+    "correctAnswer": {
+      "en": "transport oxygen",
+      "ar": "نقل الأكسجين",
+      "fr": "transporter l’oxygène"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q407",
+    "question": {
+      "en": "What is the main function of white blood cells?",
+      "ar": "ما الوظيفة الرئيسية لـخلايا الدم البيضاء؟",
+      "fr": "Quelle est la fonction principale de globules blancs ?"
+    },
+    "options": {
+      "en": [
+        "defend the body against infection",
+        "help blood clot",
+        "exchange gases in the lungs",
+        "produce insulin"
+      ],
+      "ar": [
+        "الدفاع عن الجسم ضد العدوى",
+        "المساعدة على تخثر الدم",
+        "تبادل الغازات في الرئتين",
+        "إنتاج الإنسولين"
+      ],
+      "fr": [
+        "défendre le corps contre les infections",
+        "aider à la coagulation",
+        "échanger les gaz dans les poumons",
+        "produire l’insuline"
+      ]
+    },
+    "correctAnswer": {
+      "en": "defend the body against infection",
+      "ar": "الدفاع عن الجسم ضد العدوى",
+      "fr": "défendre le corps contre les infections"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q408",
+    "question": {
+      "en": "What is the main function of platelets?",
+      "ar": "ما الوظيفة الرئيسية لـالصفائح الدموية؟",
+      "fr": "Quelle est la fonction principale de plaquettes ?"
+    },
+    "options": {
+      "en": [
+        "produce insulin",
+        "process nutrients and detoxify substances",
+        "help blood clot",
+        "exchange gases in the lungs"
+      ],
+      "ar": [
+        "إنتاج الإنسولين",
+        "معالجة المغذيات وتنقية المواد",
+        "المساعدة على تخثر الدم",
+        "تبادل الغازات في الرئتين"
+      ],
+      "fr": [
+        "produire l’insuline",
+        "traiter les nutriments et détoxifier des substances",
+        "aider à la coagulation",
+        "échanger les gaz dans les poumons"
+      ]
+    },
+    "correctAnswer": {
+      "en": "help blood clot",
+      "ar": "المساعدة على تخثر الدم",
+      "fr": "aider à la coagulation"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q409",
+    "question": {
+      "en": "What is the main function of alveoli?",
+      "ar": "ما الوظيفة الرئيسية لـالحويصلات الهوائية؟",
+      "fr": "Quelle est la fonction principale de alvéoles ?"
+    },
+    "options": {
+      "en": [
+        "exchange gases in the lungs",
+        "produce insulin",
+        "process nutrients and detoxify substances",
+        "filter blood and make urine"
+      ],
+      "ar": [
+        "تبادل الغازات في الرئتين",
+        "إنتاج الإنسولين",
+        "معالجة المغذيات وتنقية المواد",
+        "ترشيح الدم وإنتاج البول"
+      ],
+      "fr": [
+        "échanger les gaz dans les poumons",
+        "produire l’insuline",
+        "traiter les nutriments et détoxifier des substances",
+        "filtrer le sang et produire l’urine"
+      ]
+    },
+    "correctAnswer": {
+      "en": "exchange gases in the lungs",
+      "ar": "تبادل الغازات في الرئتين",
+      "fr": "échanger les gaz dans les poumons"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q410",
+    "question": {
+      "en": "What is the main function of pancreas?",
+      "ar": "ما الوظيفة الرئيسية لـالبنكرياس؟",
+      "fr": "Quelle est la fonction principale de pancréas ?"
+    },
+    "options": {
+      "en": [
+        "filter blood and make urine",
+        "transmit nerve signals",
+        "produce insulin",
+        "process nutrients and detoxify substances"
+      ],
+      "ar": [
+        "ترشيح الدم وإنتاج البول",
+        "نقل الإشارات العصبية",
+        "إنتاج الإنسولين",
+        "معالجة المغذيات وتنقية المواد"
+      ],
+      "fr": [
+        "filtrer le sang et produire l’urine",
+        "transmettre les signaux nerveux",
+        "produire l’insuline",
+        "traiter les nutriments et détoxifier des substances"
+      ]
+    },
+    "correctAnswer": {
+      "en": "produce insulin",
+      "ar": "إنتاج الإنسولين",
+      "fr": "produire l’insuline"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q411",
+    "question": {
+      "en": "What is the main function of liver?",
+      "ar": "ما الوظيفة الرئيسية لـالكبد؟",
+      "fr": "Quelle est la fonction principale de foie ?"
+    },
+    "options": {
+      "en": [
+        "process nutrients and detoxify substances",
+        "filter blood and make urine",
+        "transmit nerve signals",
+        "store hereditary information"
+      ],
+      "ar": [
+        "معالجة المغذيات وتنقية المواد",
+        "ترشيح الدم وإنتاج البول",
+        "نقل الإشارات العصبية",
+        "تخزين المعلومات الوراثية"
+      ],
+      "fr": [
+        "traiter les nutriments et détoxifier des substances",
+        "filtrer le sang et produire l’urine",
+        "transmettre les signaux nerveux",
+        "stocker l’information héréditaire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "process nutrients and detoxify substances",
+      "ar": "معالجة المغذيات وتنقية المواد",
+      "fr": "traiter les nutriments et détoxifier des substances"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q412",
+    "question": {
+      "en": "What is the main function of kidneys?",
+      "ar": "ما الوظيفة الرئيسية لـالكليتان؟",
+      "fr": "Quelle est la fonction principale de reins ?"
+    },
+    "options": {
+      "en": [
+        "store hereditary information",
+        "speed up chemical reactions",
+        "filter blood and make urine",
+        "transmit nerve signals"
+      ],
+      "ar": [
+        "تخزين المعلومات الوراثية",
+        "تسريع التفاعلات الكيميائية",
+        "ترشيح الدم وإنتاج البول",
+        "نقل الإشارات العصبية"
+      ],
+      "fr": [
+        "stocker l’information héréditaire",
+        "accélérer les réactions chimiques",
+        "filtrer le sang et produire l’urine",
+        "transmettre les signaux nerveux"
+      ]
+    },
+    "correctAnswer": {
+      "en": "filter blood and make urine",
+      "ar": "ترشيح الدم وإنتاج البول",
+      "fr": "filtrer le sang et produire l’urine"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q413",
+    "question": {
+      "en": "What is the main function of neurons?",
+      "ar": "ما الوظيفة الرئيسية لـالخلايا العصبية؟",
+      "fr": "Quelle est la fonction principale de neurones ?"
+    },
+    "options": {
+      "en": [
+        "transmit nerve signals",
+        "store hereditary information",
+        "speed up chemical reactions",
+        "bind oxygen in red blood cells"
+      ],
+      "ar": [
+        "نقل الإشارات العصبية",
+        "تخزين المعلومات الوراثية",
+        "تسريع التفاعلات الكيميائية",
+        "الارتباط بالأكسجين في خلايا الدم الحمراء"
+      ],
+      "fr": [
+        "transmettre les signaux nerveux",
+        "stocker l’information héréditaire",
+        "accélérer les réactions chimiques",
+        "fixer l’oxygène dans les globules rouges"
+      ]
+    },
+    "correctAnswer": {
+      "en": "transmit nerve signals",
+      "ar": "نقل الإشارات العصبية",
+      "fr": "transmettre les signaux nerveux"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q414",
+    "question": {
+      "en": "What is the main function of DNA?",
+      "ar": "ما الوظيفة الرئيسية لـالحمض النووي DNA؟",
+      "fr": "Quelle est la fonction principale de ADN ?"
+    },
+    "options": {
+      "en": [
+        "bind oxygen in red blood cells",
+        "lower blood glucose",
+        "store hereditary information",
+        "speed up chemical reactions"
+      ],
+      "ar": [
+        "الارتباط بالأكسجين في خلايا الدم الحمراء",
+        "خفض سكر الدم",
+        "تخزين المعلومات الوراثية",
+        "تسريع التفاعلات الكيميائية"
+      ],
+      "fr": [
+        "fixer l’oxygène dans les globules rouges",
+        "réduire la glycémie",
+        "stocker l’information héréditaire",
+        "accélérer les réactions chimiques"
+      ]
+    },
+    "correctAnswer": {
+      "en": "store hereditary information",
+      "ar": "تخزين المعلومات الوراثية",
+      "fr": "stocker l’information héréditaire"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q415",
+    "question": {
+      "en": "What is the main function of enzymes?",
+      "ar": "ما الوظيفة الرئيسية لـالإنزيمات؟",
+      "fr": "Quelle est la fonction principale de enzymes ?"
+    },
+    "options": {
+      "en": [
+        "speed up chemical reactions",
+        "bind oxygen in red blood cells",
+        "lower blood glucose",
+        "coordinate balance and movement"
+      ],
+      "ar": [
+        "تسريع التفاعلات الكيميائية",
+        "الارتباط بالأكسجين في خلايا الدم الحمراء",
+        "خفض سكر الدم",
+        "تنسيق التوازن والحركة"
+      ],
+      "fr": [
+        "accélérer les réactions chimiques",
+        "fixer l’oxygène dans les globules rouges",
+        "réduire la glycémie",
+        "coordonner l’équilibre et les mouvements"
+      ]
+    },
+    "correctAnswer": {
+      "en": "speed up chemical reactions",
+      "ar": "تسريع التفاعلات الكيميائية",
+      "fr": "accélérer les réactions chimiques"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q416",
+    "question": {
+      "en": "What is the main function of hemoglobin?",
+      "ar": "ما الوظيفة الرئيسية لـالهيموغلوبين؟",
+      "fr": "Quelle est la fonction principale de hémoglobine ?"
+    },
+    "options": {
+      "en": [
+        "coordinate balance and movement",
+        "help form memories",
+        "bind oxygen in red blood cells",
+        "lower blood glucose"
+      ],
+      "ar": [
+        "تنسيق التوازن والحركة",
+        "المساعدة في تكوين الذكريات",
+        "الارتباط بالأكسجين في خلايا الدم الحمراء",
+        "خفض سكر الدم"
+      ],
+      "fr": [
+        "coordonner l’équilibre et les mouvements",
+        "aider à former les souvenirs",
+        "fixer l’oxygène dans les globules rouges",
+        "réduire la glycémie"
+      ]
+    },
+    "correctAnswer": {
+      "en": "bind oxygen in red blood cells",
+      "ar": "الارتباط بالأكسجين في خلايا الدم الحمراء",
+      "fr": "fixer l’oxygène dans les globules rouges"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q417",
+    "question": {
+      "en": "What is the main function of insulin?",
+      "ar": "ما الوظيفة الرئيسية لـالإنسولين؟",
+      "fr": "Quelle est la fonction principale de insuline ?"
+    },
+    "options": {
+      "en": [
+        "lower blood glucose",
+        "coordinate balance and movement",
+        "help form memories",
+        "detect light"
+      ],
+      "ar": [
+        "خفض سكر الدم",
+        "تنسيق التوازن والحركة",
+        "المساعدة في تكوين الذكريات",
+        "اكتشاف الضوء"
+      ],
+      "fr": [
+        "réduire la glycémie",
+        "coordonner l’équilibre et les mouvements",
+        "aider à former les souvenirs",
+        "détecter la lumière"
+      ]
+    },
+    "correctAnswer": {
+      "en": "lower blood glucose",
+      "ar": "خفض سكر الدم",
+      "fr": "réduire la glycémie"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q418",
+    "question": {
+      "en": "What is the main function of cerebellum?",
+      "ar": "ما الوظيفة الرئيسية لـالمخيخ؟",
+      "fr": "Quelle est la fonction principale de cervelet ?"
+    },
+    "options": {
+      "en": [
+        "detect light",
+        "control pupil size",
+        "coordinate balance and movement",
+        "help form memories"
+      ],
+      "ar": [
+        "اكتشاف الضوء",
+        "التحكم في حجم الحدقة",
+        "تنسيق التوازن والحركة",
+        "المساعدة في تكوين الذكريات"
+      ],
+      "fr": [
+        "détecter la lumière",
+        "contrôler la taille de la pupille",
+        "coordonner l’équilibre et les mouvements",
+        "aider à former les souvenirs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "coordinate balance and movement",
+      "ar": "تنسيق التوازن والحركة",
+      "fr": "coordonner l’équilibre et les mouvements"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q419",
+    "question": {
+      "en": "What is the main function of hippocampus?",
+      "ar": "ما الوظيفة الرئيسية لـالحُصين؟",
+      "fr": "Quelle est la fonction principale de hippocampe ?"
+    },
+    "options": {
+      "en": [
+        "help form memories",
+        "detect light",
+        "control pupil size",
+        "convert sound vibrations into nerve signals"
+      ],
+      "ar": [
+        "المساعدة في تكوين الذكريات",
+        "اكتشاف الضوء",
+        "التحكم في حجم الحدقة",
+        "تحويل اهتزازات الصوت إلى إشارات عصبية"
+      ],
+      "fr": [
+        "aider à former les souvenirs",
+        "détecter la lumière",
+        "contrôler la taille de la pupille",
+        "convertir les vibrations sonores en signaux nerveux"
+      ]
+    },
+    "correctAnswer": {
+      "en": "help form memories",
+      "ar": "المساعدة في تكوين الذكريات",
+      "fr": "aider à former les souvenirs"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q420",
+    "question": {
+      "en": "What is the main function of retina?",
+      "ar": "ما الوظيفة الرئيسية لـشبكية العين؟",
+      "fr": "Quelle est la fonction principale de rétine ?"
+    },
+    "options": {
+      "en": [
+        "convert sound vibrations into nerve signals",
+        "absorb most nutrients",
+        "detect light",
+        "control pupil size"
+      ],
+      "ar": [
+        "تحويل اهتزازات الصوت إلى إشارات عصبية",
+        "امتصاص معظم المغذيات",
+        "اكتشاف الضوء",
+        "التحكم في حجم الحدقة"
+      ],
+      "fr": [
+        "convertir les vibrations sonores en signaux nerveux",
+        "absorber la plupart des nutriments",
+        "détecter la lumière",
+        "contrôler la taille de la pupille"
+      ]
+    },
+    "correctAnswer": {
+      "en": "detect light",
+      "ar": "اكتشاف الضوء",
+      "fr": "détecter la lumière"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q421",
+    "question": {
+      "en": "What is the main function of iris?",
+      "ar": "ما الوظيفة الرئيسية لـقزحية العين؟",
+      "fr": "Quelle est la fonction principale de iris ?"
+    },
+    "options": {
+      "en": [
+        "control pupil size",
+        "convert sound vibrations into nerve signals",
+        "absorb most nutrients",
+        "absorb water"
+      ],
+      "ar": [
+        "التحكم في حجم الحدقة",
+        "تحويل اهتزازات الصوت إلى إشارات عصبية",
+        "امتصاص معظم المغذيات",
+        "امتصاص الماء"
+      ],
+      "fr": [
+        "contrôler la taille de la pupille",
+        "convertir les vibrations sonores en signaux nerveux",
+        "absorber la plupart des nutriments",
+        "absorber l’eau"
+      ]
+    },
+    "correctAnswer": {
+      "en": "control pupil size",
+      "ar": "التحكم في حجم الحدقة",
+      "fr": "contrôler la taille de la pupille"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q422",
+    "question": {
+      "en": "What is the main function of cochlea?",
+      "ar": "ما الوظيفة الرئيسية لـالقوقعة؟",
+      "fr": "Quelle est la fonction principale de cochlée ?"
+    },
+    "options": {
+      "en": [
+        "absorb water",
+        "help breathing by changing chest volume",
+        "convert sound vibrations into nerve signals",
+        "absorb most nutrients"
+      ],
+      "ar": [
+        "امتصاص الماء",
+        "المساعدة في التنفس بتغيير حجم الصدر",
+        "تحويل اهتزازات الصوت إلى إشارات عصبية",
+        "امتصاص معظم المغذيات"
+      ],
+      "fr": [
+        "absorber l’eau",
+        "aider à respirer en modifiant le volume thoracique",
+        "convertir les vibrations sonores en signaux nerveux",
+        "absorber la plupart des nutriments"
+      ]
+    },
+    "correctAnswer": {
+      "en": "convert sound vibrations into nerve signals",
+      "ar": "تحويل اهتزازات الصوت إلى إشارات عصبية",
+      "fr": "convertir les vibrations sonores en signaux nerveux"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q423",
+    "question": {
+      "en": "What is the main function of small intestine?",
+      "ar": "ما الوظيفة الرئيسية لـالأمعاء الدقيقة؟",
+      "fr": "Quelle est la fonction principale de intestin grêle ?"
+    },
+    "options": {
+      "en": [
+        "absorb most nutrients",
+        "absorb water",
+        "help breathing by changing chest volume",
+        "produce hormones regulating metabolism"
+      ],
+      "ar": [
+        "امتصاص معظم المغذيات",
+        "امتصاص الماء",
+        "المساعدة في التنفس بتغيير حجم الصدر",
+        "إنتاج هرمونات تنظم الأيض"
+      ],
+      "fr": [
+        "absorber la plupart des nutriments",
+        "absorber l’eau",
+        "aider à respirer en modifiant le volume thoracique",
+        "produire des hormones qui régulent le métabolisme"
+      ]
+    },
+    "correctAnswer": {
+      "en": "absorb most nutrients",
+      "ar": "امتصاص معظم المغذيات",
+      "fr": "absorber la plupart des nutriments"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q424",
+    "question": {
+      "en": "What is the main function of large intestine?",
+      "ar": "ما الوظيفة الرئيسية لـالأمعاء الغليظة؟",
+      "fr": "Quelle est la fonction principale de gros intestin ?"
+    },
+    "options": {
+      "en": [
+        "produce hormones regulating metabolism",
+        "produce adrenaline and other hormones",
+        "absorb water",
+        "help breathing by changing chest volume"
+      ],
+      "ar": [
+        "إنتاج هرمونات تنظم الأيض",
+        "إنتاج الأدرينالين وهرمونات أخرى",
+        "امتصاص الماء",
+        "المساعدة في التنفس بتغيير حجم الصدر"
+      ],
+      "fr": [
+        "produire des hormones qui régulent le métabolisme",
+        "produire l’adrénaline et d’autres hormones",
+        "absorber l’eau",
+        "aider à respirer en modifiant le volume thoracique"
+      ]
+    },
+    "correctAnswer": {
+      "en": "absorb water",
+      "ar": "امتصاص الماء",
+      "fr": "absorber l’eau"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q425",
+    "question": {
+      "en": "What is the main function of diaphragm?",
+      "ar": "ما الوظيفة الرئيسية لـالحجاب الحاجز؟",
+      "fr": "Quelle est la fonction principale de diaphragme ?"
+    },
+    "options": {
+      "en": [
+        "help breathing by changing chest volume",
+        "produce hormones regulating metabolism",
+        "produce adrenaline and other hormones",
+        "produce egg cells"
+      ],
+      "ar": [
+        "المساعدة في التنفس بتغيير حجم الصدر",
+        "إنتاج هرمونات تنظم الأيض",
+        "إنتاج الأدرينالين وهرمونات أخرى",
+        "إنتاج البويضات"
+      ],
+      "fr": [
+        "aider à respirer en modifiant le volume thoracique",
+        "produire des hormones qui régulent le métabolisme",
+        "produire l’adrénaline et d’autres hormones",
+        "produire les ovules"
+      ]
+    },
+    "correctAnswer": {
+      "en": "help breathing by changing chest volume",
+      "ar": "المساعدة في التنفس بتغيير حجم الصدر",
+      "fr": "aider à respirer en modifiant le volume thoracique"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q426",
+    "question": {
+      "en": "What is the main function of thyroid gland?",
+      "ar": "ما الوظيفة الرئيسية لـالغدة الدرقية؟",
+      "fr": "Quelle est la fonction principale de glande thyroïde ?"
+    },
+    "options": {
+      "en": [
+        "produce egg cells",
+        "produce sperm cells",
+        "produce hormones regulating metabolism",
+        "produce adrenaline and other hormones"
+      ],
+      "ar": [
+        "إنتاج البويضات",
+        "إنتاج الحيوانات المنوية",
+        "إنتاج هرمونات تنظم الأيض",
+        "إنتاج الأدرينالين وهرمونات أخرى"
+      ],
+      "fr": [
+        "produire les ovules",
+        "produire les spermatozoïdes",
+        "produire des hormones qui régulent le métabolisme",
+        "produire l’adrénaline et d’autres hormones"
+      ]
+    },
+    "correctAnswer": {
+      "en": "produce hormones regulating metabolism",
+      "ar": "إنتاج هرمونات تنظم الأيض",
+      "fr": "produire des hormones qui régulent le métabolisme"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q427",
+    "question": {
+      "en": "What is the main function of adrenal glands?",
+      "ar": "ما الوظيفة الرئيسية لـالغدتان الكظريتان؟",
+      "fr": "Quelle est la fonction principale de glandes surrénales ?"
+    },
+    "options": {
+      "en": [
+        "produce adrenaline and other hormones",
+        "produce egg cells",
+        "produce sperm cells",
+        "exchange materials between mother and fetus"
+      ],
+      "ar": [
+        "إنتاج الأدرينالين وهرمونات أخرى",
+        "إنتاج البويضات",
+        "إنتاج الحيوانات المنوية",
+        "تبادل المواد بين الأم والجنين"
+      ],
+      "fr": [
+        "produire l’adrénaline et d’autres hormones",
+        "produire les ovules",
+        "produire les spermatozoïdes",
+        "échanger des substances entre la mère et le fœtus"
+      ]
+    },
+    "correctAnswer": {
+      "en": "produce adrenaline and other hormones",
+      "ar": "إنتاج الأدرينالين وهرمونات أخرى",
+      "fr": "produire l’adrénaline et d’autres hormones"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q428",
+    "question": {
+      "en": "What is the main function of ovaries?",
+      "ar": "ما الوظيفة الرئيسية لـالمبيضان؟",
+      "fr": "Quelle est la fonction principale de ovaires ?"
+    },
+    "options": {
+      "en": [
+        "exchange materials between mother and fetus",
+        "absorb nutrients from organic matter",
+        "produce egg cells",
+        "produce sperm cells"
+      ],
+      "ar": [
+        "تبادل المواد بين الأم والجنين",
+        "امتصاص المغذيات من المواد العضوية",
+        "إنتاج البويضات",
+        "إنتاج الحيوانات المنوية"
+      ],
+      "fr": [
+        "échanger des substances entre la mère et le fœtus",
+        "absorber les nutriments de matière organique",
+        "produire les ovules",
+        "produire les spermatozoïdes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "produce egg cells",
+      "ar": "إنتاج البويضات",
+      "fr": "produire les ovules"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q429",
+    "question": {
+      "en": "What is the main function of testes?",
+      "ar": "ما الوظيفة الرئيسية لـالخصيتان؟",
+      "fr": "Quelle est la fonction principale de testicules ?"
+    },
+    "options": {
+      "en": [
+        "produce sperm cells",
+        "exchange materials between mother and fetus",
+        "absorb nutrients from organic matter",
+        "are single-celled prokaryotes"
+      ],
+      "ar": [
+        "إنتاج الحيوانات المنوية",
+        "تبادل المواد بين الأم والجنين",
+        "امتصاص المغذيات من المواد العضوية",
+        "كائنات بدائية النوى وحيدة الخلية"
+      ],
+      "fr": [
+        "produire les spermatozoïdes",
+        "échanger des substances entre la mère et le fœtus",
+        "absorber les nutriments de matière organique",
+        "être des procaryotes unicellulaires"
+      ]
+    },
+    "correctAnswer": {
+      "en": "produce sperm cells",
+      "ar": "إنتاج الحيوانات المنوية",
+      "fr": "produire les spermatozoïdes"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q430",
+    "question": {
+      "en": "What is the main function of placenta?",
+      "ar": "ما الوظيفة الرئيسية لـالمشيمة؟",
+      "fr": "Quelle est la fonction principale de placenta ?"
+    },
+    "options": {
+      "en": [
+        "are single-celled prokaryotes",
+        "replicate inside host cells",
+        "exchange materials between mother and fetus",
+        "absorb nutrients from organic matter"
+      ],
+      "ar": [
+        "كائنات بدائية النوى وحيدة الخلية",
+        "التكاثر داخل خلايا العائل",
+        "تبادل المواد بين الأم والجنين",
+        "امتصاص المغذيات من المواد العضوية"
+      ],
+      "fr": [
+        "être des procaryotes unicellulaires",
+        "se répliquer dans les cellules hôtes",
+        "échanger des substances entre la mère et le fœtus",
+        "absorber les nutriments de matière organique"
+      ]
+    },
+    "correctAnswer": {
+      "en": "exchange materials between mother and fetus",
+      "ar": "تبادل المواد بين الأم والجنين",
+      "fr": "échanger des substances entre la mère et le fœtus"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q431",
+    "question": {
+      "en": "What is the main function of fungi?",
+      "ar": "ما الوظيفة الرئيسية لـالفطريات؟",
+      "fr": "Quelle est la fonction principale de champignons ?"
+    },
+    "options": {
+      "en": [
+        "absorb nutrients from organic matter",
+        "are single-celled prokaryotes",
+        "replicate inside host cells",
+        "carry male reproductive cells in plants"
+      ],
+      "ar": [
+        "امتصاص المغذيات من المواد العضوية",
+        "كائنات بدائية النوى وحيدة الخلية",
+        "التكاثر داخل خلايا العائل",
+        "حمل الخلايا التناسلية الذكرية في النباتات"
+      ],
+      "fr": [
+        "absorber les nutriments de matière organique",
+        "être des procaryotes unicellulaires",
+        "se répliquer dans les cellules hôtes",
+        "transporter les cellules reproductrices mâles des plantes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "absorb nutrients from organic matter",
+      "ar": "امتصاص المغذيات من المواد العضوية",
+      "fr": "absorber les nutriments de matière organique"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q432",
+    "question": {
+      "en": "What is the main function of bacteria?",
+      "ar": "ما الوظيفة الرئيسية لـالبكتيريا؟",
+      "fr": "Quelle est la fonction principale de bactéries ?"
+    },
+    "options": {
+      "en": [
+        "carry male reproductive cells in plants",
+        "allow gas exchange in leaves",
+        "are single-celled prokaryotes",
+        "replicate inside host cells"
+      ],
+      "ar": [
+        "حمل الخلايا التناسلية الذكرية في النباتات",
+        "السماح بتبادل الغازات في الأوراق",
+        "كائنات بدائية النوى وحيدة الخلية",
+        "التكاثر داخل خلايا العائل"
+      ],
+      "fr": [
+        "transporter les cellules reproductrices mâles des plantes",
+        "permettre les échanges gazeux dans les feuilles",
+        "être des procaryotes unicellulaires",
+        "se répliquer dans les cellules hôtes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "are single-celled prokaryotes",
+      "ar": "كائنات بدائية النوى وحيدة الخلية",
+      "fr": "être des procaryotes unicellulaires"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q433",
+    "question": {
+      "en": "What is the main function of viruses?",
+      "ar": "ما الوظيفة الرئيسية لـالفيروسات؟",
+      "fr": "Quelle est la fonction principale de virus ?"
+    },
+    "options": {
+      "en": [
+        "replicate inside host cells",
+        "carry male reproductive cells in plants",
+        "allow gas exchange in leaves",
+        "transport water in plants"
+      ],
+      "ar": [
+        "التكاثر داخل خلايا العائل",
+        "حمل الخلايا التناسلية الذكرية في النباتات",
+        "السماح بتبادل الغازات في الأوراق",
+        "نقل الماء في النباتات"
+      ],
+      "fr": [
+        "se répliquer dans les cellules hôtes",
+        "transporter les cellules reproductrices mâles des plantes",
+        "permettre les échanges gazeux dans les feuilles",
+        "transporter l’eau dans les plantes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "replicate inside host cells",
+      "ar": "التكاثر داخل خلايا العائل",
+      "fr": "se répliquer dans les cellules hôtes"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q434",
+    "question": {
+      "en": "What is the main function of pollen?",
+      "ar": "ما الوظيفة الرئيسية لـحبوب اللقاح؟",
+      "fr": "Quelle est la fonction principale de pollen ?"
+    },
+    "options": {
+      "en": [
+        "transport water in plants",
+        "transport sugars in plants",
+        "carry male reproductive cells in plants",
+        "allow gas exchange in leaves"
+      ],
+      "ar": [
+        "نقل الماء في النباتات",
+        "نقل السكريات في النباتات",
+        "حمل الخلايا التناسلية الذكرية في النباتات",
+        "السماح بتبادل الغازات في الأوراق"
+      ],
+      "fr": [
+        "transporter l’eau dans les plantes",
+        "transporter les sucres dans les plantes",
+        "transporter les cellules reproductrices mâles des plantes",
+        "permettre les échanges gazeux dans les feuilles"
+      ]
+    },
+    "correctAnswer": {
+      "en": "carry male reproductive cells in plants",
+      "ar": "حمل الخلايا التناسلية الذكرية في النباتات",
+      "fr": "transporter les cellules reproductrices mâles des plantes"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q435",
+    "question": {
+      "en": "What is the main function of stomata?",
+      "ar": "ما الوظيفة الرئيسية لـالثغور؟",
+      "fr": "Quelle est la fonction principale de stomates ?"
+    },
+    "options": {
+      "en": [
+        "allow gas exchange in leaves",
+        "transport water in plants",
+        "transport sugars in plants",
+        "increase the absorptive surface of the small intestine"
+      ],
+      "ar": [
+        "السماح بتبادل الغازات في الأوراق",
+        "نقل الماء في النباتات",
+        "نقل السكريات في النباتات",
+        "زيادة مساحة الامتصاص في الأمعاء الدقيقة"
+      ],
+      "fr": [
+        "permettre les échanges gazeux dans les feuilles",
+        "transporter l’eau dans les plantes",
+        "transporter les sucres dans les plantes",
+        "augmenter la surface d’absorption de l’intestin grêle"
+      ]
+    },
+    "correctAnswer": {
+      "en": "allow gas exchange in leaves",
+      "ar": "السماح بتبادل الغازات في الأوراق",
+      "fr": "permettre les échanges gazeux dans les feuilles"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q436",
+    "question": {
+      "en": "What is the main function of xylem?",
+      "ar": "ما الوظيفة الرئيسية لـنسيج الخشب؟",
+      "fr": "Quelle est la fonction principale de xylème ?"
+    },
+    "options": {
+      "en": [
+        "increase the absorptive surface of the small intestine",
+        "cushion joints and support body structures",
+        "transport water in plants",
+        "transport sugars in plants"
+      ],
+      "ar": [
+        "زيادة مساحة الامتصاص في الأمعاء الدقيقة",
+        "توسيد المفاصل ودعم أجزاء الجسم",
+        "نقل الماء في النباتات",
+        "نقل السكريات في النباتات"
+      ],
+      "fr": [
+        "augmenter la surface d’absorption de l’intestin grêle",
+        "amortir les articulations et soutenir les structures du corps",
+        "transporter l’eau dans les plantes",
+        "transporter les sucres dans les plantes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "transport water in plants",
+      "ar": "نقل الماء في النباتات",
+      "fr": "transporter l’eau dans les plantes"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q437",
+    "question": {
+      "en": "What is the main function of phloem?",
+      "ar": "ما الوظيفة الرئيسية لـنسيج اللحاء؟",
+      "fr": "Quelle est la fonction principale de phloème ?"
+    },
+    "options": {
+      "en": [
+        "transport sugars in plants",
+        "increase the absorptive surface of the small intestine",
+        "cushion joints and support body structures",
+        "connect muscles to bones"
+      ],
+      "ar": [
+        "نقل السكريات في النباتات",
+        "زيادة مساحة الامتصاص في الأمعاء الدقيقة",
+        "توسيد المفاصل ودعم أجزاء الجسم",
+        "ربط العضلات بالعظام"
+      ],
+      "fr": [
+        "transporter les sucres dans les plantes",
+        "augmenter la surface d’absorption de l’intestin grêle",
+        "amortir les articulations et soutenir les structures du corps",
+        "relier les muscles aux os"
+      ]
+    },
+    "correctAnswer": {
+      "en": "transport sugars in plants",
+      "ar": "نقل السكريات في النباتات",
+      "fr": "transporter les sucres dans les plantes"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q438",
+    "question": {
+      "en": "What is the main function of villi?",
+      "ar": "ما الوظيفة الرئيسية لـالزغابات المعوية؟",
+      "fr": "Quelle est la fonction principale de villosités intestinales ?"
+    },
+    "options": {
+      "en": [
+        "connect muscles to bones",
+        "produce usable energy",
+        "increase the absorptive surface of the small intestine",
+        "cushion joints and support body structures"
+      ],
+      "ar": [
+        "ربط العضلات بالعظام",
+        "إنتاج الطاقة",
+        "زيادة مساحة الامتصاص في الأمعاء الدقيقة",
+        "توسيد المفاصل ودعم أجزاء الجسم"
+      ],
+      "fr": [
+        "relier les muscles aux os",
+        "produire de l’énergie utilisable",
+        "augmenter la surface d’absorption de l’intestin grêle",
+        "amortir les articulations et soutenir les structures du corps"
+      ]
+    },
+    "correctAnswer": {
+      "en": "increase the absorptive surface of the small intestine",
+      "ar": "زيادة مساحة الامتصاص في الأمعاء الدقيقة",
+      "fr": "augmenter la surface d’absorption de l’intestin grêle"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q439",
+    "question": {
+      "en": "What is the main function of cartilage?",
+      "ar": "ما الوظيفة الرئيسية لـالغضروف؟",
+      "fr": "Quelle est la fonction principale de cartilage ?"
+    },
+    "options": {
+      "en": [
+        "cushion joints and support body structures",
+        "connect muscles to bones",
+        "produce usable energy",
+        "make proteins"
+      ],
+      "ar": [
+        "توسيد المفاصل ودعم أجزاء الجسم",
+        "ربط العضلات بالعظام",
+        "إنتاج الطاقة",
+        "تصنيع البروتينات"
+      ],
+      "fr": [
+        "amortir les articulations et soutenir les structures du corps",
+        "relier les muscles aux os",
+        "produire de l’énergie utilisable",
+        "fabriquer les protéines"
+      ]
+    },
+    "correctAnswer": {
+      "en": "cushion joints and support body structures",
+      "ar": "توسيد المفاصل ودعم أجزاء الجسم",
+      "fr": "amortir les articulations et soutenir les structures du corps"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q440",
+    "question": {
+      "en": "What is the main function of tendons?",
+      "ar": "ما الوظيفة الرئيسية لـالأوتار؟",
+      "fr": "Quelle est la fonction principale de tendons ?"
+    },
+    "options": {
+      "en": [
+        "make proteins",
+        "carry out photosynthesis",
+        "connect muscles to bones",
+        "produce usable energy"
+      ],
+      "ar": [
+        "تصنيع البروتينات",
+        "إجراء البناء الضوئي",
+        "ربط العضلات بالعظام",
+        "إنتاج الطاقة"
+      ],
+      "fr": [
+        "fabriquer les protéines",
+        "réaliser la photosynthèse",
+        "relier les muscles aux os",
+        "produire de l’énergie utilisable"
+      ]
+    },
+    "correctAnswer": {
+      "en": "connect muscles to bones",
+      "ar": "ربط العضلات بالعظام",
+      "fr": "relier les muscles aux os"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q441",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with force?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالقوة؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à force ?"
+    },
+    "options": {
+      "en": [
+        "newton",
+        "ampere",
+        "watt",
+        "hertz"
+      ],
+      "ar": [
+        "نيوتن",
+        "أمبير",
+        "واط",
+        "هرتز"
+      ],
+      "fr": [
+        "newton",
+        "ampère",
+        "watt",
+        "hertz"
+      ]
+    },
+    "correctAnswer": {
+      "en": "newton",
+      "ar": "نيوتن",
+      "fr": "newton"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q442",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with electric current?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالتيار الكهربائي؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à courant électrique ?"
+    },
+    "options": {
+      "en": [
+        "hertz",
+        "pascal",
+        "ampere",
+        "watt"
+      ],
+      "ar": [
+        "هرتز",
+        "باسكال",
+        "أمبير",
+        "واط"
+      ],
+      "fr": [
+        "hertz",
+        "pascal",
+        "ampère",
+        "watt"
+      ]
+    },
+    "correctAnswer": {
+      "en": "ampere",
+      "ar": "أمبير",
+      "fr": "ampère"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q443",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with power?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالقدرة؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à puissance ?"
+    },
+    "options": {
+      "en": [
+        "watt",
+        "hertz",
+        "pascal",
+        "joule"
+      ],
+      "ar": [
+        "واط",
+        "هرتز",
+        "باسكال",
+        "جول"
+      ],
+      "fr": [
+        "watt",
+        "hertz",
+        "pascal",
+        "joule"
+      ]
+    },
+    "correctAnswer": {
+      "en": "watt",
+      "ar": "واط",
+      "fr": "watt"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q444",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with frequency?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالتردد؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à fréquence ?"
+    },
+    "options": {
+      "en": [
+        "joule",
+        "coulomb",
+        "hertz",
+        "pascal"
+      ],
+      "ar": [
+        "جول",
+        "كولوم",
+        "هرتز",
+        "باسكال"
+      ],
+      "fr": [
+        "joule",
+        "coulomb",
+        "hertz",
+        "pascal"
+      ]
+    },
+    "correctAnswer": {
+      "en": "hertz",
+      "ar": "هرتز",
+      "fr": "hertz"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q445",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with pressure?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالضغط؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à pression ?"
+    },
+    "options": {
+      "en": [
+        "pascal",
+        "joule",
+        "coulomb",
+        "volt"
+      ],
+      "ar": [
+        "باسكال",
+        "جول",
+        "كولوم",
+        "فولت"
+      ],
+      "fr": [
+        "pascal",
+        "joule",
+        "coulomb",
+        "volt"
+      ]
+    },
+    "correctAnswer": {
+      "en": "pascal",
+      "ar": "باسكال",
+      "fr": "pascal"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q446",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with energy?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالطاقة؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à énergie ?"
+    },
+    "options": {
+      "en": [
+        "volt",
+        "ohm",
+        "joule",
+        "coulomb"
+      ],
+      "ar": [
+        "فولت",
+        "أوم",
+        "جول",
+        "كولوم"
+      ],
+      "fr": [
+        "volt",
+        "ohm",
+        "joule",
+        "coulomb"
+      ]
+    },
+    "correctAnswer": {
+      "en": "joule",
+      "ar": "جول",
+      "fr": "joule"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q447",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with electric charge?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالشحنة الكهربائية؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à charge électrique ?"
+    },
+    "options": {
+      "en": [
+        "coulomb",
+        "volt",
+        "ohm",
+        "tesla"
+      ],
+      "ar": [
+        "كولوم",
+        "فولت",
+        "أوم",
+        "تسلا"
+      ],
+      "fr": [
+        "coulomb",
+        "volt",
+        "ohm",
+        "tesla"
+      ]
+    },
+    "correctAnswer": {
+      "en": "coulomb",
+      "ar": "كولوم",
+      "fr": "coulomb"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q448",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with potential difference?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـفرق الجهد؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à différence de potentiel ?"
+    },
+    "options": {
+      "en": [
+        "tesla",
+        "Na",
+        "volt",
+        "ohm"
+      ],
+      "ar": [
+        "تسلا",
+        "Na",
+        "فولت",
+        "أوم"
+      ],
+      "fr": [
+        "tesla",
+        "Na",
+        "volt",
+        "ohm"
+      ]
+    },
+    "correctAnswer": {
+      "en": "volt",
+      "ar": "فولت",
+      "fr": "volt"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q449",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with resistance?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالمقاومة الكهربائية؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à résistance électrique ?"
+    },
+    "options": {
+      "en": [
+        "ohm",
+        "tesla",
+        "Na",
+        "K"
+      ],
+      "ar": [
+        "أوم",
+        "تسلا",
+        "Na",
+        "K"
+      ],
+      "fr": [
+        "ohm",
+        "tesla",
+        "Na",
+        "K"
+      ]
+    },
+    "correctAnswer": {
+      "en": "ohm",
+      "ar": "أوم",
+      "fr": "ohm"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q450",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with magnetic flux density?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـكثافة الفيض المغناطيسي؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à induction magnétique ?"
+    },
+    "options": {
+      "en": [
+        "K",
+        "Fe",
+        "tesla",
+        "Na"
+      ],
+      "ar": [
+        "K",
+        "Fe",
+        "تسلا",
+        "Na"
+      ],
+      "fr": [
+        "K",
+        "Fe",
+        "tesla",
+        "Na"
+      ]
+    },
+    "correctAnswer": {
+      "en": "tesla",
+      "ar": "تسلا",
+      "fr": "tesla"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q451",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with sodium?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالصوديوم؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à sodium ?"
+    },
+    "options": {
+      "en": [
+        "Na",
+        "K",
+        "Fe",
+        "Ag"
+      ],
+      "ar": [
+        "Na",
+        "K",
+        "Fe",
+        "Ag"
+      ],
+      "fr": [
+        "Na",
+        "K",
+        "Fe",
+        "Ag"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Na",
+      "ar": "Na",
+      "fr": "Na"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q452",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with potassium?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالبوتاسيوم؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à potassium ?"
+    },
+    "options": {
+      "en": [
+        "Ag",
+        "Au",
+        "K",
+        "Fe"
+      ],
+      "ar": [
+        "Ag",
+        "Au",
+        "K",
+        "Fe"
+      ],
+      "fr": [
+        "Ag",
+        "Au",
+        "K",
+        "Fe"
+      ]
+    },
+    "correctAnswer": {
+      "en": "K",
+      "ar": "K",
+      "fr": "K"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q453",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with iron?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالحديد؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à fer ?"
+    },
+    "options": {
+      "en": [
+        "Fe",
+        "Ag",
+        "Au",
+        "Sn"
+      ],
+      "ar": [
+        "Fe",
+        "Ag",
+        "Au",
+        "Sn"
+      ],
+      "fr": [
+        "Fe",
+        "Ag",
+        "Au",
+        "Sn"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Fe",
+      "ar": "Fe",
+      "fr": "Fe"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q454",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with silver?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالفضة؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à argent ?"
+    },
+    "options": {
+      "en": [
+        "Sn",
+        "Pb",
+        "Ag",
+        "Au"
+      ],
+      "ar": [
+        "Sn",
+        "Pb",
+        "Ag",
+        "Au"
+      ],
+      "fr": [
+        "Sn",
+        "Pb",
+        "Ag",
+        "Au"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ag",
+      "ar": "Ag",
+      "fr": "Ag"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q455",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with gold?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالذهب؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à or ?"
+    },
+    "options": {
+      "en": [
+        "Au",
+        "Sn",
+        "Pb",
+        "Cu"
+      ],
+      "ar": [
+        "Au",
+        "Sn",
+        "Pb",
+        "Cu"
+      ],
+      "fr": [
+        "Au",
+        "Sn",
+        "Pb",
+        "Cu"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Au",
+      "ar": "Au",
+      "fr": "Au"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q456",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with tin?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالقصدير؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à étain ?"
+    },
+    "options": {
+      "en": [
+        "Cu",
+        "Hg",
+        "Sn",
+        "Pb"
+      ],
+      "ar": [
+        "Cu",
+        "Hg",
+        "Sn",
+        "Pb"
+      ],
+      "fr": [
+        "Cu",
+        "Hg",
+        "Sn",
+        "Pb"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sn",
+      "ar": "Sn",
+      "fr": "Sn"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q457",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with lead?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالرصاص؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à plomb ?"
+    },
+    "options": {
+      "en": [
+        "Pb",
+        "Cu",
+        "Hg",
+        "W"
+      ],
+      "ar": [
+        "Pb",
+        "Cu",
+        "Hg",
+        "W"
+      ],
+      "fr": [
+        "Pb",
+        "Cu",
+        "Hg",
+        "W"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pb",
+      "ar": "Pb",
+      "fr": "Pb"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q458",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with copper?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالنحاس؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à cuivre ?"
+    },
+    "options": {
+      "en": [
+        "W",
+        "negative charge",
+        "Cu",
+        "Hg"
+      ],
+      "ar": [
+        "W",
+        "شحنة سالبة",
+        "Cu",
+        "Hg"
+      ],
+      "fr": [
+        "W",
+        "charge négative",
+        "Cu",
+        "Hg"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cu",
+      "ar": "Cu",
+      "fr": "Cu"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q459",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with mercury?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالزئبق؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à mercure ?"
+    },
+    "options": {
+      "en": [
+        "Hg",
+        "W",
+        "negative charge",
+        "positive charge"
+      ],
+      "ar": [
+        "Hg",
+        "W",
+        "شحنة سالبة",
+        "شحنة موجبة"
+      ],
+      "fr": [
+        "Hg",
+        "W",
+        "charge négative",
+        "charge positive"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Hg",
+      "ar": "Hg",
+      "fr": "Hg"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q460",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with tungsten?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالتنغستن؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à tungstène ?"
+    },
+    "options": {
+      "en": [
+        "positive charge",
+        "no electric charge",
+        "W",
+        "negative charge"
+      ],
+      "ar": [
+        "شحنة موجبة",
+        "لا يحمل شحنة كهربائية",
+        "W",
+        "شحنة سالبة"
+      ],
+      "fr": [
+        "charge positive",
+        "aucune charge électrique",
+        "W",
+        "charge négative"
+      ]
+    },
+    "correctAnswer": {
+      "en": "W",
+      "ar": "W",
+      "fr": "W"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q461",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with the electron?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالإلكترون؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à électron ?"
+    },
+    "options": {
+      "en": [
+        "negative charge",
+        "positive charge",
+        "no electric charge",
+        "about 78 percent"
+      ],
+      "ar": [
+        "شحنة سالبة",
+        "شحنة موجبة",
+        "لا يحمل شحنة كهربائية",
+        "نحو 78 بالمئة"
+      ],
+      "fr": [
+        "charge négative",
+        "charge positive",
+        "aucune charge électrique",
+        "environ 78 pour cent"
+      ]
+    },
+    "correctAnswer": {
+      "en": "negative charge",
+      "ar": "شحنة سالبة",
+      "fr": "charge négative"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q462",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with the proton?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالبروتون؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à proton ?"
+    },
+    "options": {
+      "en": [
+        "about 78 percent",
+        "about 21 percent",
+        "positive charge",
+        "no electric charge"
+      ],
+      "ar": [
+        "نحو 78 بالمئة",
+        "نحو 21 بالمئة",
+        "شحنة موجبة",
+        "لا يحمل شحنة كهربائية"
+      ],
+      "fr": [
+        "environ 78 pour cent",
+        "environ 21 pour cent",
+        "charge positive",
+        "aucune charge électrique"
+      ]
+    },
+    "correctAnswer": {
+      "en": "positive charge",
+      "ar": "شحنة موجبة",
+      "fr": "charge positive"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q463",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with the neutron?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالنيوترون؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à neutron ?"
+    },
+    "options": {
+      "en": [
+        "no electric charge",
+        "about 78 percent",
+        "about 21 percent",
+        "pH 7"
+      ],
+      "ar": [
+        "لا يحمل شحنة كهربائية",
+        "نحو 78 بالمئة",
+        "نحو 21 بالمئة",
+        "رقم هيدروجيني 7"
+      ],
+      "fr": [
+        "aucune charge électrique",
+        "environ 78 pour cent",
+        "environ 21 pour cent",
+        "pH 7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "no electric charge",
+      "ar": "لا يحمل شحنة كهربائية",
+      "fr": "aucune charge électrique"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q464",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with nitrogen in air?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالنيتروجين في الهواء؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à azote dans l’air ?"
+    },
+    "options": {
+      "en": [
+        "pH 7",
+        "about 300,000 km/s",
+        "about 78 percent",
+        "about 21 percent"
+      ],
+      "ar": [
+        "رقم هيدروجيني 7",
+        "نحو 300 ألف كم/ثانية",
+        "نحو 78 بالمئة",
+        "نحو 21 بالمئة"
+      ],
+      "fr": [
+        "pH 7",
+        "environ 300 000 km/s",
+        "environ 78 pour cent",
+        "environ 21 pour cent"
+      ]
+    },
+    "correctAnswer": {
+      "en": "about 78 percent",
+      "ar": "نحو 78 بالمئة",
+      "fr": "environ 78 pour cent"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q465",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with oxygen in air?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالأكسجين في الهواء؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à oxygène dans l’air ?"
+    },
+    "options": {
+      "en": [
+        "about 21 percent",
+        "pH 7",
+        "about 300,000 km/s",
+        "0 kelvin"
+      ],
+      "ar": [
+        "نحو 21 بالمئة",
+        "رقم هيدروجيني 7",
+        "نحو 300 ألف كم/ثانية",
+        "صفر كلفن"
+      ],
+      "fr": [
+        "environ 21 pour cent",
+        "pH 7",
+        "environ 300 000 km/s",
+        "0 kelvin"
+      ]
+    },
+    "correctAnswer": {
+      "en": "about 21 percent",
+      "ar": "نحو 21 بالمئة",
+      "fr": "environ 21 pour cent"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q466",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with pure water at 25°C?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالماء النقي عند 25 درجة مئوية؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à eau pure à 25 °C ?"
+    },
+    "options": {
+      "en": [
+        "0 kelvin",
+        "0°C",
+        "pH 7",
+        "about 300,000 km/s"
+      ],
+      "ar": [
+        "صفر كلفن",
+        "صفر مئوية",
+        "رقم هيدروجيني 7",
+        "نحو 300 ألف كم/ثانية"
+      ],
+      "fr": [
+        "0 kelvin",
+        "0 °C",
+        "pH 7",
+        "environ 300 000 km/s"
+      ]
+    },
+    "correctAnswer": {
+      "en": "pH 7",
+      "ar": "رقم هيدروجيني 7",
+      "fr": "pH 7"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q467",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with light in a vacuum?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالضوء في الفراغ؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à lumière dans le vide ?"
+    },
+    "options": {
+      "en": [
+        "about 300,000 km/s",
+        "0 kelvin",
+        "0°C",
+        "100°C"
+      ],
+      "ar": [
+        "نحو 300 ألف كم/ثانية",
+        "صفر كلفن",
+        "صفر مئوية",
+        "100 مئوية"
+      ],
+      "fr": [
+        "environ 300 000 km/s",
+        "0 kelvin",
+        "0 °C",
+        "100 °C"
+      ]
+    },
+    "correctAnswer": {
+      "en": "about 300,000 km/s",
+      "ar": "نحو 300 ألف كم/ثانية",
+      "fr": "environ 300 000 km/s"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q468",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with absolute zero?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالصفر المطلق؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à zéro absolu ?"
+    },
+    "options": {
+      "en": [
+        "100°C",
+        "liquid changing into gas at its surface",
+        "0 kelvin",
+        "0°C"
+      ],
+      "ar": [
+        "100 مئوية",
+        "تحول السائل إلى غاز عند سطحه",
+        "صفر كلفن",
+        "صفر مئوية"
+      ],
+      "fr": [
+        "100 °C",
+        "passage du liquide au gaz à sa surface",
+        "0 kelvin",
+        "0 °C"
+      ]
+    },
+    "correctAnswer": {
+      "en": "0 kelvin",
+      "ar": "صفر كلفن",
+      "fr": "0 kelvin"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q469",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with water freezing at standard pressure?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـتجمد الماء عند الضغط القياسي؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à congélation de l’eau à pression normale ?"
+    },
+    "options": {
+      "en": [
+        "0°C",
+        "100°C",
+        "liquid changing into gas at its surface",
+        "gas changing into liquid"
+      ],
+      "ar": [
+        "صفر مئوية",
+        "100 مئوية",
+        "تحول السائل إلى غاز عند سطحه",
+        "تحول الغاز إلى سائل"
+      ],
+      "fr": [
+        "0 °C",
+        "100 °C",
+        "passage du liquide au gaz à sa surface",
+        "passage du gaz au liquide"
+      ]
+    },
+    "correctAnswer": {
+      "en": "0°C",
+      "ar": "صفر مئوية",
+      "fr": "0 °C"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q470",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with water boiling at standard pressure?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـغليان الماء عند الضغط القياسي؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à ébullition de l’eau à pression normale ?"
+    },
+    "options": {
+      "en": [
+        "gas changing into liquid",
+        "bending of light between media",
+        "100°C",
+        "liquid changing into gas at its surface"
+      ],
+      "ar": [
+        "تحول الغاز إلى سائل",
+        "انحناء الضوء بين الأوساط",
+        "100 مئوية",
+        "تحول السائل إلى غاز عند سطحه"
+      ],
+      "fr": [
+        "passage du gaz au liquide",
+        "déviation de la lumière entre milieux",
+        "100 °C",
+        "passage du liquide au gaz à sa surface"
+      ]
+    },
+    "correctAnswer": {
+      "en": "100°C",
+      "ar": "100 مئوية",
+      "fr": "100 °C"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q471",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with evaporation?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالتبخر؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à évaporation ?"
+    },
+    "options": {
+      "en": [
+        "liquid changing into gas at its surface",
+        "gas changing into liquid",
+        "bending of light between media",
+        "bouncing of light from a surface"
+      ],
+      "ar": [
+        "تحول السائل إلى غاز عند سطحه",
+        "تحول الغاز إلى سائل",
+        "انحناء الضوء بين الأوساط",
+        "ارتداد الضوء عن سطح"
+      ],
+      "fr": [
+        "passage du liquide au gaz à sa surface",
+        "passage du gaz au liquide",
+        "déviation de la lumière entre milieux",
+        "renvoi de la lumière par une surface"
+      ]
+    },
+    "correctAnswer": {
+      "en": "liquid changing into gas at its surface",
+      "ar": "تحول السائل إلى غاز عند سطحه",
+      "fr": "passage du liquide au gaz à sa surface"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q472",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with condensation?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـالتكاثف؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à condensation ?"
+    },
+    "options": {
+      "en": [
+        "bouncing of light from a surface",
+        "separation of white light into colors",
+        "gas changing into liquid",
+        "bending of light between media"
+      ],
+      "ar": [
+        "ارتداد الضوء عن سطح",
+        "تحلل الضوء الأبيض إلى ألوان",
+        "تحول الغاز إلى سائل",
+        "انحناء الضوء بين الأوساط"
+      ],
+      "fr": [
+        "renvoi de la lumière par une surface",
+        "séparation de la lumière blanche en couleurs",
+        "passage du gaz au liquide",
+        "déviation de la lumière entre milieux"
+      ]
+    },
+    "correctAnswer": {
+      "en": "gas changing into liquid",
+      "ar": "تحول الغاز إلى سائل",
+      "fr": "passage du gaz au liquide"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q473",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with refraction?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـانكسار الضوء؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à réfraction ?"
+    },
+    "options": {
+      "en": [
+        "bending of light between media",
+        "bouncing of light from a surface",
+        "separation of white light into colors",
+        "measure atmospheric pressure"
+      ],
+      "ar": [
+        "انحناء الضوء بين الأوساط",
+        "ارتداد الضوء عن سطح",
+        "تحلل الضوء الأبيض إلى ألوان",
+        "قياس الضغط الجوي"
+      ],
+      "fr": [
+        "déviation de la lumière entre milieux",
+        "renvoi de la lumière par une surface",
+        "séparation de la lumière blanche en couleurs",
+        "mesurer la pression atmosphérique"
+      ]
+    },
+    "correctAnswer": {
+      "en": "bending of light between media",
+      "ar": "انحناء الضوء بين الأوساط",
+      "fr": "déviation de la lumière entre milieux"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q474",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with reflection?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـانعكاس الضوء؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à réflexion ?"
+    },
+    "options": {
+      "en": [
+        "measure atmospheric pressure",
+        "measure humidity",
+        "bouncing of light from a surface",
+        "separation of white light into colors"
+      ],
+      "ar": [
+        "قياس الضغط الجوي",
+        "قياس الرطوبة",
+        "ارتداد الضوء عن سطح",
+        "تحلل الضوء الأبيض إلى ألوان"
+      ],
+      "fr": [
+        "mesurer la pression atmosphérique",
+        "mesurer l’humidité",
+        "renvoi de la lumière par une surface",
+        "séparation de la lumière blanche en couleurs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "bouncing of light from a surface",
+      "ar": "ارتداد الضوء عن سطح",
+      "fr": "renvoi de la lumière par une surface"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q475",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with dispersion?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـتشتت الضوء؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à dispersion ?"
+    },
+    "options": {
+      "en": [
+        "separation of white light into colors",
+        "measure atmospheric pressure",
+        "measure humidity",
+        "measure wind speed"
+      ],
+      "ar": [
+        "تحلل الضوء الأبيض إلى ألوان",
+        "قياس الضغط الجوي",
+        "قياس الرطوبة",
+        "قياس سرعة الرياح"
+      ],
+      "fr": [
+        "séparation de la lumière blanche en couleurs",
+        "mesurer la pression atmosphérique",
+        "mesurer l’humidité",
+        "mesurer la vitesse du vent"
+      ]
+    },
+    "correctAnswer": {
+      "en": "separation of white light into colors",
+      "ar": "تحلل الضوء الأبيض إلى ألوان",
+      "fr": "séparation de la lumière blanche en couleurs"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q476",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with barometer?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـمقياس الضغط الجوي؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à baromètre ?"
+    },
+    "options": {
+      "en": [
+        "measure wind speed",
+        "record seismic waves",
+        "measure atmospheric pressure",
+        "measure humidity"
+      ],
+      "ar": [
+        "قياس سرعة الرياح",
+        "تسجيل الموجات الزلزالية",
+        "قياس الضغط الجوي",
+        "قياس الرطوبة"
+      ],
+      "fr": [
+        "mesurer la vitesse du vent",
+        "enregistrer les ondes sismiques",
+        "mesurer la pression atmosphérique",
+        "mesurer l’humidité"
+      ]
+    },
+    "correctAnswer": {
+      "en": "measure atmospheric pressure",
+      "ar": "قياس الضغط الجوي",
+      "fr": "mesurer la pression atmosphérique"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q477",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with hygrometer?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـمقياس الرطوبة؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à hygromètre ?"
+    },
+    "options": {
+      "en": [
+        "measure humidity",
+        "measure wind speed",
+        "record seismic waves",
+        "measure mineral hardness"
+      ],
+      "ar": [
+        "قياس الرطوبة",
+        "قياس سرعة الرياح",
+        "تسجيل الموجات الزلزالية",
+        "قياس صلادة المعادن"
+      ],
+      "fr": [
+        "mesurer l’humidité",
+        "mesurer la vitesse du vent",
+        "enregistrer les ondes sismiques",
+        "mesurer la dureté des minéraux"
+      ]
+    },
+    "correctAnswer": {
+      "en": "measure humidity",
+      "ar": "قياس الرطوبة",
+      "fr": "mesurer l’humidité"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q478",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with anemometer?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـمقياس سرعة الرياح؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à anémomètre ?"
+    },
+    "options": {
+      "en": [
+        "measure mineral hardness",
+        "newton",
+        "measure wind speed",
+        "record seismic waves"
+      ],
+      "ar": [
+        "قياس صلادة المعادن",
+        "نيوتن",
+        "قياس سرعة الرياح",
+        "تسجيل الموجات الزلزالية"
+      ],
+      "fr": [
+        "mesurer la dureté des minéraux",
+        "newton",
+        "mesurer la vitesse du vent",
+        "enregistrer les ondes sismiques"
+      ]
+    },
+    "correctAnswer": {
+      "en": "measure wind speed",
+      "ar": "قياس سرعة الرياح",
+      "fr": "mesurer la vitesse du vent"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q479",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with seismograph?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـمقياس الزلازل؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à sismographe ?"
+    },
+    "options": {
+      "en": [
+        "record seismic waves",
+        "measure mineral hardness",
+        "newton",
+        "ampere"
+      ],
+      "ar": [
+        "تسجيل الموجات الزلزالية",
+        "قياس صلادة المعادن",
+        "نيوتن",
+        "أمبير"
+      ],
+      "fr": [
+        "enregistrer les ondes sismiques",
+        "mesurer la dureté des minéraux",
+        "newton",
+        "ampère"
+      ]
+    },
+    "correctAnswer": {
+      "en": "record seismic waves",
+      "ar": "تسجيل الموجات الزلزالية",
+      "fr": "enregistrer les ondes sismiques"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q480",
+    "question": {
+      "en": "What is the scientific unit, property, or fact associated with Mohs scale?",
+      "ar": "ما الوحدة أو الخاصية أو الحقيقة العلمية المرتبطة بـمقياس موس؟",
+      "fr": "Quelle unité, propriété ou donnée scientifique est associée à échelle de Mohs ?"
+    },
+    "options": {
+      "en": [
+        "ampere",
+        "watt",
+        "measure mineral hardness",
+        "newton"
+      ],
+      "ar": [
+        "أمبير",
+        "واط",
+        "قياس صلادة المعادن",
+        "نيوتن"
+      ],
+      "fr": [
+        "ampère",
+        "watt",
+        "mesurer la dureté des minéraux",
+        "newton"
+      ]
+    },
+    "correctAnswer": {
+      "en": "measure mineral hardness",
+      "ar": "قياس صلادة المعادن",
+      "fr": "mesurer la dureté des minéraux"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q481",
+    "question": {
+      "en": "Which historical person or people are associated with the building of Petra?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـبناء مدينة البتراء؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à construction de Pétra ?"
+    },
+    "options": {
+      "en": [
+        "Nabataeans",
+        "Sumerians",
+        "Narmer",
+        "Hannibal"
+      ],
+      "ar": [
+        "الأنباط",
+        "السومريون",
+        "نارمر",
+        "حنبعل"
+      ],
+      "fr": [
+        "Nabatéens",
+        "Sumériens",
+        "Narmer",
+        "Hannibal"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nabataeans",
+      "ar": "الأنباط",
+      "fr": "Nabatéens"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q482",
+    "question": {
+      "en": "Which historical person or people are associated with the development of cuneiform in Mesopotamia?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـتطوير الكتابة المسمارية في بلاد الرافدين؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à développement du cunéiforme en Mésopotamie ?"
+    },
+    "options": {
+      "en": [
+        "Hannibal",
+        "Alexander the Great",
+        "Sumerians",
+        "Narmer"
+      ],
+      "ar": [
+        "حنبعل",
+        "الإسكندر الأكبر",
+        "السومريون",
+        "نارمر"
+      ],
+      "fr": [
+        "Hannibal",
+        "Alexandre le Grand",
+        "Sumériens",
+        "Narmer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sumerians",
+      "ar": "السومريون",
+      "fr": "Sumériens"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q483",
+    "question": {
+      "en": "Which historical person or people are associated with the traditional unification of Upper and Lower Egypt?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـتوحيد مصر العليا والسفلى وفق الرواية التقليدية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à unification traditionnelle de la Haute et Basse-Égypte ?"
+    },
+    "options": {
+      "en": [
+        "Narmer",
+        "Hannibal",
+        "Alexander the Great",
+        "Julius Caesar"
+      ],
+      "ar": [
+        "نارمر",
+        "حنبعل",
+        "الإسكندر الأكبر",
+        "يوليوس قيصر"
+      ],
+      "fr": [
+        "Narmer",
+        "Hannibal",
+        "Alexandre le Grand",
+        "Jules César"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Narmer",
+      "ar": "نارمر",
+      "fr": "Narmer"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q484",
+    "question": {
+      "en": "Which historical person or people are associated with the crossing of the Alps in the Second Punic War?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـعبور جبال الألب في الحرب البونيقية الثانية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à franchissement des Alpes pendant la deuxième guerre punique ?"
+    },
+    "options": {
+      "en": [
+        "Julius Caesar",
+        "Justinian I",
+        "Hannibal",
+        "Alexander the Great"
+      ],
+      "ar": [
+        "يوليوس قيصر",
+        "جستنيان الأول",
+        "حنبعل",
+        "الإسكندر الأكبر"
+      ],
+      "fr": [
+        "Jules César",
+        "Justinien Ier",
+        "Hannibal",
+        "Alexandre le Grand"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Hannibal",
+      "ar": "حنبعل",
+      "fr": "Hannibal"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q485",
+    "question": {
+      "en": "Which historical person or people are associated with the Macedonian empire reaching India?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالإمبراطورية المقدونية التي وصلت إلى الهند؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à empire macédonien arrivé jusqu’en Inde ?"
+    },
+    "options": {
+      "en": [
+        "Alexander the Great",
+        "Julius Caesar",
+        "Justinian I",
+        "Charlemagne"
+      ],
+      "ar": [
+        "الإسكندر الأكبر",
+        "يوليوس قيصر",
+        "جستنيان الأول",
+        "شارلمان"
+      ],
+      "fr": [
+        "Alexandre le Grand",
+        "Jules César",
+        "Justinien Ier",
+        "Charlemagne"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alexander the Great",
+      "ar": "الإسكندر الأكبر",
+      "fr": "Alexandre le Grand"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q486",
+    "question": {
+      "en": "Which historical person or people are associated with the Roman assassination on the Ides of March in 44 BCE?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالاغتيال الروماني في الخامس عشر من مارس سنة 44 ق.م؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à assassinat romain aux ides de mars en 44 av. J.-C. ?"
+    },
+    "options": {
+      "en": [
+        "Charlemagne",
+        "King John of England",
+        "Julius Caesar",
+        "Justinian I"
+      ],
+      "ar": [
+        "شارلمان",
+        "الملك جون ملك إنجلترا",
+        "يوليوس قيصر",
+        "جستنيان الأول"
+      ],
+      "fr": [
+        "Charlemagne",
+        "Jean d’Angleterre",
+        "Jules César",
+        "Justinien Ier"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Julius Caesar",
+      "ar": "يوليوس قيصر",
+      "fr": "Jules César"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q487",
+    "question": {
+      "en": "Which historical person or people are associated with the sixth-century Hagia Sophia?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـآيا صوفيا في صورتها بالقرن السادس؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à Sainte-Sophie du sixième siècle ?"
+    },
+    "options": {
+      "en": [
+        "Justinian I",
+        "Charlemagne",
+        "King John of England",
+        "Joan of Arc"
+      ],
+      "ar": [
+        "جستنيان الأول",
+        "شارلمان",
+        "الملك جون ملك إنجلترا",
+        "جان دارك"
+      ],
+      "fr": [
+        "Justinien Ier",
+        "Charlemagne",
+        "Jean d’Angleterre",
+        "Jeanne d’Arc"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Justinian I",
+      "ar": "جستنيان الأول",
+      "fr": "Justinien Ier"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q488",
+    "question": {
+      "en": "Which historical person or people are associated with the Frankish emperor crowned in 800?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـإمبراطور الفرنجة المتوج عام 800؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à empereur des Francs couronné en 800 ?"
+    },
+    "options": {
+      "en": [
+        "Joan of Arc",
+        "Mehmed II",
+        "Charlemagne",
+        "King John of England"
+      ],
+      "ar": [
+        "جان دارك",
+        "محمد الثاني",
+        "شارلمان",
+        "الملك جون ملك إنجلترا"
+      ],
+      "fr": [
+        "Jeanne d’Arc",
+        "Mehmed II",
+        "Charlemagne",
+        "Jean d’Angleterre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Charlemagne",
+      "ar": "شارلمان",
+      "fr": "Charlemagne"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q489",
+    "question": {
+      "en": "Which historical person or people are associated with the Magna Carta of 1215?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالميثاق الأعظم لعام 1215؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à Magna Carta de 1215 ?"
+    },
+    "options": {
+      "en": [
+        "King John of England",
+        "Joan of Arc",
+        "Mehmed II",
+        "Christopher Columbus"
+      ],
+      "ar": [
+        "الملك جون ملك إنجلترا",
+        "جان دارك",
+        "محمد الثاني",
+        "كريستوفر كولومبوس"
+      ],
+      "fr": [
+        "Jean d’Angleterre",
+        "Jeanne d’Arc",
+        "Mehmed II",
+        "Christophe Colomb"
+      ]
+    },
+    "correctAnswer": {
+      "en": "King John of England",
+      "ar": "الملك جون ملك إنجلترا",
+      "fr": "Jean d’Angleterre"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q490",
+    "question": {
+      "en": "Which historical person or people are associated with the French heroine of the siege of Orléans?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالبطلة الفرنسية في حصار أورليان؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à héroïne française du siège d’Orléans ?"
+    },
+    "options": {
+      "en": [
+        "Christopher Columbus",
+        "Vasco da Gama",
+        "Joan of Arc",
+        "Mehmed II"
+      ],
+      "ar": [
+        "كريستوفر كولومبوس",
+        "فاسكو دا غاما",
+        "جان دارك",
+        "محمد الثاني"
+      ],
+      "fr": [
+        "Christophe Colomb",
+        "Vasco de Gama",
+        "Jeanne d’Arc",
+        "Mehmed II"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Joan of Arc",
+      "ar": "جان دارك",
+      "fr": "Jeanne d’Arc"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q491",
+    "question": {
+      "en": "Which historical person or people are associated with the Ottoman conquest of Constantinople in 1453?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـفتح العثمانيين للقسطنطينية عام 1453؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à conquête ottomane de Constantinople en 1453 ?"
+    },
+    "options": {
+      "en": [
+        "Mehmed II",
+        "Christopher Columbus",
+        "Vasco da Gama",
+        "Nicolaus Copernicus"
+      ],
+      "ar": [
+        "محمد الثاني",
+        "كريستوفر كولومبوس",
+        "فاسكو دا غاما",
+        "نيكولاس كوبرنيكوس"
+      ],
+      "fr": [
+        "Mehmed II",
+        "Christophe Colomb",
+        "Vasco de Gama",
+        "Nicolas Copernic"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mehmed II",
+      "ar": "محمد الثاني",
+      "fr": "Mehmed II"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q492",
+    "question": {
+      "en": "Which historical person or people are associated with the 1492 Spanish-sponsored Atlantic voyage?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالرحلة عبر الأطلسي برعاية إسبانية عام 1492؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à voyage transatlantique financé par l’Espagne en 1492 ?"
+    },
+    "options": {
+      "en": [
+        "Nicolaus Copernicus",
+        "Elizabeth I",
+        "Christopher Columbus",
+        "Vasco da Gama"
+      ],
+      "ar": [
+        "نيكولاس كوبرنيكوس",
+        "إليزابيث الأولى",
+        "كريستوفر كولومبوس",
+        "فاسكو دا غاما"
+      ],
+      "fr": [
+        "Nicolas Copernic",
+        "Élisabeth Ire",
+        "Christophe Colomb",
+        "Vasco de Gama"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Christopher Columbus",
+      "ar": "كريستوفر كولومبوس",
+      "fr": "Christophe Colomb"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q493",
+    "question": {
+      "en": "Which historical person or people are associated with the sea route to India reached in 1498?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالوصول إلى الهند عبر البحر عام 1498؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à route maritime vers l’Inde atteinte en 1498 ?"
+    },
+    "options": {
+      "en": [
+        "Vasco da Gama",
+        "Nicolaus Copernicus",
+        "Elizabeth I",
+        "Shah Jahan"
+      ],
+      "ar": [
+        "فاسكو دا غاما",
+        "نيكولاس كوبرنيكوس",
+        "إليزابيث الأولى",
+        "شاه جهان"
+      ],
+      "fr": [
+        "Vasco de Gama",
+        "Nicolas Copernic",
+        "Élisabeth Ire",
+        "Shah Jahan"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vasco da Gama",
+      "ar": "فاسكو دا غاما",
+      "fr": "Vasco de Gama"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q494",
+    "question": {
+      "en": "Which historical person or people are associated with the heliocentric book published in 1543?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـكتاب مركزية الشمس المنشور عام 1543؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à ouvrage héliocentrique publié en 1543 ?"
+    },
+    "options": {
+      "en": [
+        "Shah Jahan",
+        "Peter the Great",
+        "Nicolaus Copernicus",
+        "Elizabeth I"
+      ],
+      "ar": [
+        "شاه جهان",
+        "بطرس الأكبر",
+        "نيكولاس كوبرنيكوس",
+        "إليزابيث الأولى"
+      ],
+      "fr": [
+        "Shah Jahan",
+        "Pierre le Grand",
+        "Nicolas Copernic",
+        "Élisabeth Ire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nicolaus Copernicus",
+      "ar": "نيكولاس كوبرنيكوس",
+      "fr": "Nicolas Copernic"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q495",
+    "question": {
+      "en": "Which historical person or people are associated with the English reign during the 1588 Armada campaign?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالحكم الإنجليزي خلال حملة الأرمادا عام 1588؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à règne anglais pendant l’expédition de l’Armada en 1588 ?"
+    },
+    "options": {
+      "en": [
+        "Elizabeth I",
+        "Shah Jahan",
+        "Peter the Great",
+        "Napoleon Bonaparte"
+      ],
+      "ar": [
+        "إليزابيث الأولى",
+        "شاه جهان",
+        "بطرس الأكبر",
+        "نابليون بونابرت"
+      ],
+      "fr": [
+        "Élisabeth Ire",
+        "Shah Jahan",
+        "Pierre le Grand",
+        "Napoléon Bonaparte"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Elizabeth I",
+      "ar": "إليزابيث الأولى",
+      "fr": "Élisabeth Ire"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q496",
+    "question": {
+      "en": "Which historical person or people are associated with the commissioning of the Taj Mahal?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالأمر ببناء تاج محل؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à commande du Taj Mahal ?"
+    },
+    "options": {
+      "en": [
+        "Napoleon Bonaparte",
+        "Toussaint Louverture",
+        "Shah Jahan",
+        "Peter the Great"
+      ],
+      "ar": [
+        "نابليون بونابرت",
+        "توسان لوفرتور",
+        "شاه جهان",
+        "بطرس الأكبر"
+      ],
+      "fr": [
+        "Napoléon Bonaparte",
+        "Toussaint Louverture",
+        "Shah Jahan",
+        "Pierre le Grand"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Shah Jahan",
+      "ar": "شاه جهان",
+      "fr": "Shah Jahan"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q497",
+    "question": {
+      "en": "Which historical person or people are associated with the founding of Saint Petersburg?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـتأسيس سانت بطرسبرغ؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à fondation de Saint-Pétersbourg ?"
+    },
+    "options": {
+      "en": [
+        "Peter the Great",
+        "Napoleon Bonaparte",
+        "Toussaint Louverture",
+        "Simón Bolívar"
+      ],
+      "ar": [
+        "بطرس الأكبر",
+        "نابليون بونابرت",
+        "توسان لوفرتور",
+        "سيمون بوليفار"
+      ],
+      "fr": [
+        "Pierre le Grand",
+        "Napoléon Bonaparte",
+        "Toussaint Louverture",
+        "Simón Bolívar"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Peter the Great",
+      "ar": "بطرس الأكبر",
+      "fr": "Pierre le Grand"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q498",
+    "question": {
+      "en": "Which historical person or people are associated with the French defeat at Waterloo in 1815?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالهزيمة الفرنسية في واترلو عام 1815؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à défaite française à Waterloo en 1815 ?"
+    },
+    "options": {
+      "en": [
+        "Simón Bolívar",
+        "Florence Nightingale",
+        "Napoleon Bonaparte",
+        "Toussaint Louverture"
+      ],
+      "ar": [
+        "سيمون بوليفار",
+        "فلورنس نايتنغيل",
+        "نابليون بونابرت",
+        "توسان لوفرتور"
+      ],
+      "fr": [
+        "Simón Bolívar",
+        "Florence Nightingale",
+        "Napoléon Bonaparte",
+        "Toussaint Louverture"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Napoleon Bonaparte",
+      "ar": "نابليون بونابرت",
+      "fr": "Napoléon Bonaparte"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q499",
+    "question": {
+      "en": "Which historical person or people are associated with the Haitian Revolution in Saint-Domingue?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالثورة الهايتية في سان دومينغ؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à révolution haïtienne à Saint-Domingue ?"
+    },
+    "options": {
+      "en": [
+        "Toussaint Louverture",
+        "Simón Bolívar",
+        "Florence Nightingale",
+        "Mahatma Gandhi"
+      ],
+      "ar": [
+        "توسان لوفرتور",
+        "سيمون بوليفار",
+        "فلورنس نايتنغيل",
+        "المهاتما غاندي"
+      ],
+      "fr": [
+        "Toussaint Louverture",
+        "Simón Bolívar",
+        "Florence Nightingale",
+        "Mahatma Gandhi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Toussaint Louverture",
+      "ar": "توسان لوفرتور",
+      "fr": "Toussaint Louverture"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q500",
+    "question": {
+      "en": "Which historical person or people are associated with the liberation campaigns in northern South America?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـحملات التحرير في شمال أمريكا الجنوبية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à campagnes de libération dans le nord de l’Amérique du Sud ?"
+    },
+    "options": {
+      "en": [
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Simón Bolívar",
+        "Florence Nightingale"
+      ],
+      "ar": [
+        "المهاتما غاندي",
+        "نيلسون مانديلا",
+        "سيمون بوليفار",
+        "فلورنس نايتنغيل"
+      ],
+      "fr": [
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Simón Bolívar",
+        "Florence Nightingale"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Simón Bolívar",
+      "ar": "سيمون بوليفار",
+      "fr": "Simón Bolívar"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q501",
+    "question": {
+      "en": "Which historical person or people are associated with the Crimean War nursing reforms?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـإصلاحات التمريض خلال حرب القرم؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à réformes des soins infirmiers pendant la guerre de Crimée ?"
+    },
+    "options": {
+      "en": [
+        "Florence Nightingale",
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Marie Curie"
+      ],
+      "ar": [
+        "فلورنس نايتنغيل",
+        "المهاتما غاندي",
+        "نيلسون مانديلا",
+        "ماري كوري"
+      ],
+      "fr": [
+        "Florence Nightingale",
+        "Mahatma Gandhi",
+        "Nelson Mandela",
+        "Marie Curie"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Florence Nightingale",
+      "ar": "فلورنس نايتنغيل",
+      "fr": "Florence Nightingale"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q502",
+    "question": {
+      "en": "Which historical person or people are associated with the Indian nonviolent independence movement?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـحركة استقلال الهند السلمية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à mouvement indépendantiste non violent indien ?"
+    },
+    "options": {
+      "en": [
+        "Marie Curie",
+        "Abraham Lincoln",
+        "Mahatma Gandhi",
+        "Nelson Mandela"
+      ],
+      "ar": [
+        "ماري كوري",
+        "أبراهام لينكولن",
+        "المهاتما غاندي",
+        "نيلسون مانديلا"
+      ],
+      "fr": [
+        "Marie Curie",
+        "Abraham Lincoln",
+        "Mahatma Gandhi",
+        "Nelson Mandela"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mahatma Gandhi",
+      "ar": "المهاتما غاندي",
+      "fr": "Mahatma Gandhi"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q503",
+    "question": {
+      "en": "Which historical person or people are associated with the end of apartheid in South Africa?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـنهاية الفصل العنصري في جنوب أفريقيا؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à fin de l’apartheid en Afrique du Sud ?"
+    },
+    "options": {
+      "en": [
+        "Nelson Mandela",
+        "Marie Curie",
+        "Abraham Lincoln",
+        "Winston Churchill"
+      ],
+      "ar": [
+        "نيلسون مانديلا",
+        "ماري كوري",
+        "أبراهام لينكولن",
+        "ونستون تشرشل"
+      ],
+      "fr": [
+        "Nelson Mandela",
+        "Marie Curie",
+        "Abraham Lincoln",
+        "Winston Churchill"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nelson Mandela",
+      "ar": "نيلسون مانديلا",
+      "fr": "Nelson Mandela"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q504",
+    "question": {
+      "en": "Which historical person or people are associated with pioneering research on radioactivity?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالأبحاث الرائدة في النشاط الإشعاعي؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à recherches pionnières sur la radioactivité ?"
+    },
+    "options": {
+      "en": [
+        "Winston Churchill",
+        "Nikita Khrushchev",
+        "Marie Curie",
+        "Abraham Lincoln"
+      ],
+      "ar": [
+        "ونستون تشرشل",
+        "نيكيتا خروتشوف",
+        "ماري كوري",
+        "أبراهام لينكولن"
+      ],
+      "fr": [
+        "Winston Churchill",
+        "Nikita Khrouchtchev",
+        "Marie Curie",
+        "Abraham Lincoln"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Marie Curie",
+      "ar": "ماري كوري",
+      "fr": "Marie Curie"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q505",
+    "question": {
+      "en": "Which historical person or people are associated with the Emancipation Proclamation?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـإعلان تحرير العبيد؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à proclamation d’émancipation ?"
+    },
+    "options": {
+      "en": [
+        "Abraham Lincoln",
+        "Winston Churchill",
+        "Nikita Khrushchev",
+        "Rosa Parks"
+      ],
+      "ar": [
+        "أبراهام لينكولن",
+        "ونستون تشرشل",
+        "نيكيتا خروتشوف",
+        "روزا باركس"
+      ],
+      "fr": [
+        "Abraham Lincoln",
+        "Winston Churchill",
+        "Nikita Khrouchtchev",
+        "Rosa Parks"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Abraham Lincoln",
+      "ar": "أبراهام لينكولن",
+      "fr": "Abraham Lincoln"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q506",
+    "question": {
+      "en": "Which historical person or people are associated with British leadership during most of World War II?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالقيادة البريطانية خلال معظم الحرب العالمية الثانية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à direction britannique pendant la majeure partie de la Seconde Guerre mondiale ?"
+    },
+    "options": {
+      "en": [
+        "Rosa Parks",
+        "Gamal Abdel Nasser",
+        "Winston Churchill",
+        "Nikita Khrushchev"
+      ],
+      "ar": [
+        "روزا باركس",
+        "جمال عبد الناصر",
+        "ونستون تشرشل",
+        "نيكيتا خروتشوف"
+      ],
+      "fr": [
+        "Rosa Parks",
+        "Gamal Abdel Nasser",
+        "Winston Churchill",
+        "Nikita Khrouchtchev"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Winston Churchill",
+      "ar": "ونستون تشرشل",
+      "fr": "Winston Churchill"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q507",
+    "question": {
+      "en": "Which historical person or people are associated with the Soviet leadership during the Cuban Missile Crisis?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالقيادة السوفيتية خلال أزمة الصواريخ الكوبية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à direction soviétique pendant la crise des missiles de Cuba ?"
+    },
+    "options": {
+      "en": [
+        "Nikita Khrushchev",
+        "Rosa Parks",
+        "Gamal Abdel Nasser",
+        "Yuri Gagarin"
+      ],
+      "ar": [
+        "نيكيتا خروتشوف",
+        "روزا باركس",
+        "جمال عبد الناصر",
+        "يوري غاغارين"
+      ],
+      "fr": [
+        "Nikita Khrouchtchev",
+        "Rosa Parks",
+        "Gamal Abdel Nasser",
+        "Youri Gagarine"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nikita Khrushchev",
+      "ar": "نيكيتا خروتشوف",
+      "fr": "Nikita Khrouchtchev"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q508",
+    "question": {
+      "en": "Which historical person or people are associated with the Montgomery bus boycott?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـمقاطعة حافلات مونتغمري؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à boycott des bus de Montgomery ?"
+    },
+    "options": {
+      "en": [
+        "Yuri Gagarin",
+        "Valentina Tereshkova",
+        "Rosa Parks",
+        "Gamal Abdel Nasser"
+      ],
+      "ar": [
+        "يوري غاغارين",
+        "فالنتينا تيريشكوفا",
+        "روزا باركس",
+        "جمال عبد الناصر"
+      ],
+      "fr": [
+        "Youri Gagarine",
+        "Valentina Terechkova",
+        "Rosa Parks",
+        "Gamal Abdel Nasser"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rosa Parks",
+      "ar": "روزا باركس",
+      "fr": "Rosa Parks"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q509",
+    "question": {
+      "en": "Which historical person or people are associated with the nationalization of the Suez Canal in 1956?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـتأميم قناة السويس عام 1956؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à nationalisation du canal de Suez en 1956 ?"
+    },
+    "options": {
+      "en": [
+        "Gamal Abdel Nasser",
+        "Yuri Gagarin",
+        "Valentina Tereshkova",
+        "Lech Wałęsa"
+      ],
+      "ar": [
+        "جمال عبد الناصر",
+        "يوري غاغارين",
+        "فالنتينا تيريشكوفا",
+        "ليش فاونسا"
+      ],
+      "fr": [
+        "Gamal Abdel Nasser",
+        "Youri Gagarine",
+        "Valentina Terechkova",
+        "Lech Wałęsa"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gamal Abdel Nasser",
+      "ar": "جمال عبد الناصر",
+      "fr": "Gamal Abdel Nasser"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q510",
+    "question": {
+      "en": "Which historical person or people are associated with the first human spaceflight?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـأول رحلة فضائية بشرية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à premier vol spatial habité ?"
+    },
+    "options": {
+      "en": [
+        "Lech Wałęsa",
+        "Václav Havel",
+        "Yuri Gagarin",
+        "Valentina Tereshkova"
+      ],
+      "ar": [
+        "ليش فاونسا",
+        "فاتسلاف هافيل",
+        "يوري غاغارين",
+        "فالنتينا تيريشكوفا"
+      ],
+      "fr": [
+        "Lech Wałęsa",
+        "Václav Havel",
+        "Youri Gagarine",
+        "Valentina Terechkova"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Yuri Gagarin",
+      "ar": "يوري غاغارين",
+      "fr": "Youri Gagarine"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q511",
+    "question": {
+      "en": "Which historical person or people are associated with the first woman in space?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـأول امرأة في الفضاء؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à première femme dans l’espace ?"
+    },
+    "options": {
+      "en": [
+        "Valentina Tereshkova",
+        "Lech Wałęsa",
+        "Václav Havel",
+        "Pericles"
+      ],
+      "ar": [
+        "فالنتينا تيريشكوفا",
+        "ليش فاونسا",
+        "فاتسلاف هافيل",
+        "بريكليس"
+      ],
+      "fr": [
+        "Valentina Terechkova",
+        "Lech Wałęsa",
+        "Václav Havel",
+        "Périclès"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Valentina Tereshkova",
+      "ar": "فالنتينا تيريشكوفا",
+      "fr": "Valentina Terechkova"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q512",
+    "question": {
+      "en": "Which historical person or people are associated with the Polish Solidarity movement?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـحركة تضامن البولندية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à mouvement polonais Solidarność ?"
+    },
+    "options": {
+      "en": [
+        "Pericles",
+        "Dido",
+        "Lech Wałęsa",
+        "Václav Havel"
+      ],
+      "ar": [
+        "بريكليس",
+        "عليسة",
+        "ليش فاونسا",
+        "فاتسلاف هافيل"
+      ],
+      "fr": [
+        "Périclès",
+        "Didon",
+        "Lech Wałęsa",
+        "Václav Havel"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Lech Wałęsa",
+      "ar": "ليش فاونسا",
+      "fr": "Lech Wałęsa"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q513",
+    "question": {
+      "en": "Which historical person or people are associated with the Velvet Revolution in Czechoslovakia?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالثورة المخملية في تشيكوسلوفاكيا؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à révolution de Velours en Tchécoslovaquie ?"
+    },
+    "options": {
+      "en": [
+        "Václav Havel",
+        "Pericles",
+        "Dido",
+        "Cyrus the Great"
+      ],
+      "ar": [
+        "فاتسلاف هافيل",
+        "بريكليس",
+        "عليسة",
+        "كورش الكبير"
+      ],
+      "fr": [
+        "Václav Havel",
+        "Périclès",
+        "Didon",
+        "Cyrus le Grand"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Václav Havel",
+      "ar": "فاتسلاف هافيل",
+      "fr": "Václav Havel"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q514",
+    "question": {
+      "en": "Which historical person or people are associated with the ancient Athenian Golden Age?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالعصر الذهبي لأثينا القديمة؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à âge d’or de l’Athènes antique ?"
+    },
+    "options": {
+      "en": [
+        "Cyrus the Great",
+        "Genghis Khan",
+        "Pericles",
+        "Dido"
+      ],
+      "ar": [
+        "كورش الكبير",
+        "جنكيز خان",
+        "بريكليس",
+        "عليسة"
+      ],
+      "fr": [
+        "Cyrus le Grand",
+        "Gengis Khan",
+        "Périclès",
+        "Didon"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pericles",
+      "ar": "بريكليس",
+      "fr": "Périclès"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q515",
+    "question": {
+      "en": "Which historical person or people are associated with the traditional founding of Carthage?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالتأسيس التقليدي لقرطاج؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à fondation traditionnelle de Carthage ?"
+    },
+    "options": {
+      "en": [
+        "Dido",
+        "Cyrus the Great",
+        "Genghis Khan",
+        "Ferdinand Magellan"
+      ],
+      "ar": [
+        "عليسة",
+        "كورش الكبير",
+        "جنكيز خان",
+        "فرديناند ماجلان"
+      ],
+      "fr": [
+        "Didon",
+        "Cyrus le Grand",
+        "Gengis Khan",
+        "Fernand de Magellan"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dido",
+      "ar": "عليسة",
+      "fr": "Didon"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q516",
+    "question": {
+      "en": "Which historical person or people are associated with the Persian policy allowing exiles to return?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالسياسة الفارسية التي سمحت للمنفيين بالعودة؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à politique perse autorisant le retour des exilés ?"
+    },
+    "options": {
+      "en": [
+        "Ferdinand Magellan",
+        "Johannes Gutenberg",
+        "Cyrus the Great",
+        "Genghis Khan"
+      ],
+      "ar": [
+        "فرديناند ماجلان",
+        "يوهان غوتنبرغ",
+        "كورش الكبير",
+        "جنكيز خان"
+      ],
+      "fr": [
+        "Fernand de Magellan",
+        "Johannes Gutenberg",
+        "Cyrus le Grand",
+        "Gengis Khan"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cyrus the Great",
+      "ar": "كورش الكبير",
+      "fr": "Cyrus le Grand"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q517",
+    "question": {
+      "en": "Which historical person or people are associated with the Mongol empire’s founding?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـتأسيس الإمبراطورية المغولية؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à fondation de l’empire mongol ?"
+    },
+    "options": {
+      "en": [
+        "Genghis Khan",
+        "Ferdinand Magellan",
+        "Johannes Gutenberg",
+        "Martin Luther"
+      ],
+      "ar": [
+        "جنكيز خان",
+        "فرديناند ماجلان",
+        "يوهان غوتنبرغ",
+        "مارتن لوثر"
+      ],
+      "fr": [
+        "Gengis Khan",
+        "Fernand de Magellan",
+        "Johannes Gutenberg",
+        "Martin Luther"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Genghis Khan",
+      "ar": "جنكيز خان",
+      "fr": "Gengis Khan"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q518",
+    "question": {
+      "en": "Which historical person or people are associated with the first voyage around the world expedition?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـأول حملة دارت حول العالم؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à première expédition à avoir fait le tour du monde ?"
+    },
+    "options": {
+      "en": [
+        "Martin Luther",
+        "Nabataeans",
+        "Ferdinand Magellan",
+        "Johannes Gutenberg"
+      ],
+      "ar": [
+        "مارتن لوثر",
+        "الأنباط",
+        "فرديناند ماجلان",
+        "يوهان غوتنبرغ"
+      ],
+      "fr": [
+        "Martin Luther",
+        "Nabatéens",
+        "Fernand de Magellan",
+        "Johannes Gutenberg"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ferdinand Magellan",
+      "ar": "فرديناند ماجلان",
+      "fr": "Fernand de Magellan"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q519",
+    "question": {
+      "en": "Which historical person or people are associated with the first successful movable-type printing in Europe?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالطباعة الأوروبية الناجحة بالحروف المتحركة؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à impression européenne réussie à caractères mobiles ?"
+    },
+    "options": {
+      "en": [
+        "Johannes Gutenberg",
+        "Martin Luther",
+        "Nabataeans",
+        "Sumerians"
+      ],
+      "ar": [
+        "يوهان غوتنبرغ",
+        "مارتن لوثر",
+        "الأنباط",
+        "السومريون"
+      ],
+      "fr": [
+        "Johannes Gutenberg",
+        "Martin Luther",
+        "Nabatéens",
+        "Sumériens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Johannes Gutenberg",
+      "ar": "يوهان غوتنبرغ",
+      "fr": "Johannes Gutenberg"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q520",
+    "question": {
+      "en": "Which historical person or people are associated with the Protestant Reformation’s Ninety-five Theses?",
+      "ar": "أي شخصية أو شعب تاريخي ارتبط بـالأطروحات الخمس والتسعون للإصلاح البروتستانتي؟",
+      "fr": "Quelle personnalité ou quel peuple historique est associé à 95 thèses de la Réforme protestante ?"
+    },
+    "options": {
+      "en": [
+        "Sumerians",
+        "Narmer",
+        "Martin Luther",
+        "Nabataeans"
+      ],
+      "ar": [
+        "السومريون",
+        "نارمر",
+        "مارتن لوثر",
+        "الأنباط"
+      ],
+      "fr": [
+        "Sumériens",
+        "Narmer",
+        "Martin Luther",
+        "Nabatéens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Martin Luther",
+      "ar": "مارتن لوثر",
+      "fr": "Martin Luther"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q521",
+    "question": {
+      "en": "What is the capital of Bhutan?",
+      "ar": "ما عاصمة بوتان؟",
+      "fr": "Quelle est la capitale de Bhoutan ?"
+    },
+    "options": {
+      "en": [
+        "Thimphu",
+        "Ulaanbaatar",
+        "Astana",
+        "Kathmandu"
+      ],
+      "ar": [
+        "تيمفو",
+        "أولان باتور",
+        "أستانا",
+        "كاتماندو"
+      ],
+      "fr": [
+        "Thimphou",
+        "Oulan-Bator",
+        "Astana",
+        "Katmandou"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thimphu",
+      "ar": "تيمفو",
+      "fr": "Thimphou"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q522",
+    "question": {
+      "en": "What is the capital of Mongolia?",
+      "ar": "ما عاصمة منغوليا؟",
+      "fr": "Quelle est la capitale de Mongolie ?"
+    },
+    "options": {
+      "en": [
+        "Kathmandu",
+        "Vientiane",
+        "Ulaanbaatar",
+        "Astana"
+      ],
+      "ar": [
+        "كاتماندو",
+        "فيينتيان",
+        "أولان باتور",
+        "أستانا"
+      ],
+      "fr": [
+        "Katmandou",
+        "Vientiane",
+        "Oulan-Bator",
+        "Astana"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ulaanbaatar",
+      "ar": "أولان باتور",
+      "fr": "Oulan-Bator"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q523",
+    "question": {
+      "en": "What is the capital of Kazakhstan?",
+      "ar": "ما عاصمة كازاخستان؟",
+      "fr": "Quelle est la capitale de Kazakhstan ?"
+    },
+    "options": {
+      "en": [
+        "Astana",
+        "Kathmandu",
+        "Vientiane",
+        "Phnom Penh"
+      ],
+      "ar": [
+        "أستانا",
+        "كاتماندو",
+        "فيينتيان",
+        "بنوم بنه"
+      ],
+      "fr": [
+        "Astana",
+        "Katmandou",
+        "Vientiane",
+        "Phnom Penh"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Astana",
+      "ar": "أستانا",
+      "fr": "Astana"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q524",
+    "question": {
+      "en": "What is the capital of Nepal?",
+      "ar": "ما عاصمة نيبال؟",
+      "fr": "Quelle est la capitale de Népal ?"
+    },
+    "options": {
+      "en": [
+        "Phnom Penh",
+        "Naypyidaw",
+        "Kathmandu",
+        "Vientiane"
+      ],
+      "ar": [
+        "بنوم بنه",
+        "نايبيداو",
+        "كاتماندو",
+        "فيينتيان"
+      ],
+      "fr": [
+        "Phnom Penh",
+        "Naypyidaw",
+        "Katmandou",
+        "Vientiane"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Kathmandu",
+      "ar": "كاتماندو",
+      "fr": "Katmandou"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q525",
+    "question": {
+      "en": "What is the capital of Laos?",
+      "ar": "ما عاصمة لاوس؟",
+      "fr": "Quelle est la capitale de Laos ?"
+    },
+    "options": {
+      "en": [
+        "Vientiane",
+        "Phnom Penh",
+        "Naypyidaw",
+        "Bishkek"
+      ],
+      "ar": [
+        "فيينتيان",
+        "بنوم بنه",
+        "نايبيداو",
+        "بيشكيك"
+      ],
+      "fr": [
+        "Vientiane",
+        "Phnom Penh",
+        "Naypyidaw",
+        "Bichkek"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vientiane",
+      "ar": "فيينتيان",
+      "fr": "Vientiane"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q526",
+    "question": {
+      "en": "What is the capital of Cambodia?",
+      "ar": "ما عاصمة كمبوديا؟",
+      "fr": "Quelle est la capitale de Cambodge ?"
+    },
+    "options": {
+      "en": [
+        "Bishkek",
+        "Dushanbe",
+        "Phnom Penh",
+        "Naypyidaw"
+      ],
+      "ar": [
+        "بيشكيك",
+        "دوشنبه",
+        "بنوم بنه",
+        "نايبيداو"
+      ],
+      "fr": [
+        "Bichkek",
+        "Douchanbé",
+        "Phnom Penh",
+        "Naypyidaw"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Phnom Penh",
+      "ar": "بنوم بنه",
+      "fr": "Phnom Penh"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q527",
+    "question": {
+      "en": "What is the capital of Myanmar?",
+      "ar": "ما عاصمة ميانمار؟",
+      "fr": "Quelle est la capitale de Myanmar ?"
+    },
+    "options": {
+      "en": [
+        "Naypyidaw",
+        "Bishkek",
+        "Dushanbe",
+        "Tashkent"
+      ],
+      "ar": [
+        "نايبيداو",
+        "بيشكيك",
+        "دوشنبه",
+        "طشقند"
+      ],
+      "fr": [
+        "Naypyidaw",
+        "Bichkek",
+        "Douchanbé",
+        "Tachkent"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Naypyidaw",
+      "ar": "نايبيداو",
+      "fr": "Naypyidaw"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q528",
+    "question": {
+      "en": "What is the capital of Kyrgyzstan?",
+      "ar": "ما عاصمة قيرغيزستان؟",
+      "fr": "Quelle est la capitale de Kirghizistan ?"
+    },
+    "options": {
+      "en": [
+        "Tashkent",
+        "Ashgabat",
+        "Bishkek",
+        "Dushanbe"
+      ],
+      "ar": [
+        "طشقند",
+        "عشق آباد",
+        "بيشكيك",
+        "دوشنبه"
+      ],
+      "fr": [
+        "Tachkent",
+        "Achgabat",
+        "Bichkek",
+        "Douchanbé"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bishkek",
+      "ar": "بيشكيك",
+      "fr": "Bichkek"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q529",
+    "question": {
+      "en": "What is the capital of Tajikistan?",
+      "ar": "ما عاصمة طاجيكستان؟",
+      "fr": "Quelle est la capitale de Tadjikistan ?"
+    },
+    "options": {
+      "en": [
+        "Dushanbe",
+        "Tashkent",
+        "Ashgabat",
+        "Tbilisi"
+      ],
+      "ar": [
+        "دوشنبه",
+        "طشقند",
+        "عشق آباد",
+        "تبليسي"
+      ],
+      "fr": [
+        "Douchanbé",
+        "Tachkent",
+        "Achgabat",
+        "Tbilissi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dushanbe",
+      "ar": "دوشنبه",
+      "fr": "Douchanbé"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q530",
+    "question": {
+      "en": "What is the capital of Uzbekistan?",
+      "ar": "ما عاصمة أوزبكستان؟",
+      "fr": "Quelle est la capitale de Ouzbékistan ?"
+    },
+    "options": {
+      "en": [
+        "Tbilisi",
+        "Yerevan",
+        "Tashkent",
+        "Ashgabat"
+      ],
+      "ar": [
+        "تبليسي",
+        "يريفان",
+        "طشقند",
+        "عشق آباد"
+      ],
+      "fr": [
+        "Tbilissi",
+        "Erevan",
+        "Tachkent",
+        "Achgabat"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tashkent",
+      "ar": "طشقند",
+      "fr": "Tachkent"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q531",
+    "question": {
+      "en": "What is the capital of Turkmenistan?",
+      "ar": "ما عاصمة تركمانستان؟",
+      "fr": "Quelle est la capitale de Turkménistan ?"
+    },
+    "options": {
+      "en": [
+        "Ashgabat",
+        "Tbilisi",
+        "Yerevan",
+        "Baku"
+      ],
+      "ar": [
+        "عشق آباد",
+        "تبليسي",
+        "يريفان",
+        "باكو"
+      ],
+      "fr": [
+        "Achgabat",
+        "Tbilissi",
+        "Erevan",
+        "Bakou"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ashgabat",
+      "ar": "عشق آباد",
+      "fr": "Achgabat"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q532",
+    "question": {
+      "en": "What is the capital of Georgia?",
+      "ar": "ما عاصمة جورجيا؟",
+      "fr": "Quelle est la capitale de Géorgie ?"
+    },
+    "options": {
+      "en": [
+        "Baku",
+        "Chișinău",
+        "Tbilisi",
+        "Yerevan"
+      ],
+      "ar": [
+        "باكو",
+        "كيشيناو",
+        "تبليسي",
+        "يريفان"
+      ],
+      "fr": [
+        "Bakou",
+        "Chișinău",
+        "Tbilissi",
+        "Erevan"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tbilisi",
+      "ar": "تبليسي",
+      "fr": "Tbilissi"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q533",
+    "question": {
+      "en": "What is the capital of Armenia?",
+      "ar": "ما عاصمة أرمينيا؟",
+      "fr": "Quelle est la capitale de Arménie ?"
+    },
+    "options": {
+      "en": [
+        "Yerevan",
+        "Baku",
+        "Chișinău",
+        "Ljubljana"
+      ],
+      "ar": [
+        "يريفان",
+        "باكو",
+        "كيشيناو",
+        "ليوبليانا"
+      ],
+      "fr": [
+        "Erevan",
+        "Bakou",
+        "Chișinău",
+        "Ljubljana"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Yerevan",
+      "ar": "يريفان",
+      "fr": "Erevan"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q534",
+    "question": {
+      "en": "What is the capital of Azerbaijan?",
+      "ar": "ما عاصمة أذربيجان؟",
+      "fr": "Quelle est la capitale de Azerbaïdjan ?"
+    },
+    "options": {
+      "en": [
+        "Ljubljana",
+        "Bratislava",
+        "Baku",
+        "Chișinău"
+      ],
+      "ar": [
+        "ليوبليانا",
+        "براتيسلافا",
+        "باكو",
+        "كيشيناو"
+      ],
+      "fr": [
+        "Ljubljana",
+        "Bratislava",
+        "Bakou",
+        "Chișinău"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Baku",
+      "ar": "باكو",
+      "fr": "Bakou"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q535",
+    "question": {
+      "en": "What is the capital of Moldova?",
+      "ar": "ما عاصمة مولدوفا؟",
+      "fr": "Quelle est la capitale de Moldavie ?"
+    },
+    "options": {
+      "en": [
+        "Chișinău",
+        "Ljubljana",
+        "Bratislava",
+        "Tirana"
+      ],
+      "ar": [
+        "كيشيناو",
+        "ليوبليانا",
+        "براتيسلافا",
+        "تيرانا"
+      ],
+      "fr": [
+        "Chișinău",
+        "Ljubljana",
+        "Bratislava",
+        "Tirana"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Chișinău",
+      "ar": "كيشيناو",
+      "fr": "Chișinău"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q536",
+    "question": {
+      "en": "What is the capital of Slovenia?",
+      "ar": "ما عاصمة سلوفينيا؟",
+      "fr": "Quelle est la capitale de Slovénie ?"
+    },
+    "options": {
+      "en": [
+        "Tirana",
+        "Skopje",
+        "Ljubljana",
+        "Bratislava"
+      ],
+      "ar": [
+        "تيرانا",
+        "سكوبيه",
+        "ليوبليانا",
+        "براتيسلافا"
+      ],
+      "fr": [
+        "Tirana",
+        "Skopje",
+        "Ljubljana",
+        "Bratislava"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ljubljana",
+      "ar": "ليوبليانا",
+      "fr": "Ljubljana"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q537",
+    "question": {
+      "en": "What is the capital of Slovakia?",
+      "ar": "ما عاصمة سلوفاكيا؟",
+      "fr": "Quelle est la capitale de Slovaquie ?"
+    },
+    "options": {
+      "en": [
+        "Bratislava",
+        "Tirana",
+        "Skopje",
+        "Podgorica"
+      ],
+      "ar": [
+        "براتيسلافا",
+        "تيرانا",
+        "سكوبيه",
+        "بودغوريتسا"
+      ],
+      "fr": [
+        "Bratislava",
+        "Tirana",
+        "Skopje",
+        "Podgorica"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bratislava",
+      "ar": "براتيسلافا",
+      "fr": "Bratislava"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q538",
+    "question": {
+      "en": "What is the capital of Albania?",
+      "ar": "ما عاصمة ألبانيا؟",
+      "fr": "Quelle est la capitale de Albanie ?"
+    },
+    "options": {
+      "en": [
+        "Podgorica",
+        "Dakar",
+        "Tirana",
+        "Skopje"
+      ],
+      "ar": [
+        "بودغوريتسا",
+        "داكار",
+        "تيرانا",
+        "سكوبيه"
+      ],
+      "fr": [
+        "Podgorica",
+        "Dakar",
+        "Tirana",
+        "Skopje"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tirana",
+      "ar": "تيرانا",
+      "fr": "Tirana"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q539",
+    "question": {
+      "en": "What is the capital of North Macedonia?",
+      "ar": "ما عاصمة مقدونيا الشمالية؟",
+      "fr": "Quelle est la capitale de Macédoine du Nord ?"
+    },
+    "options": {
+      "en": [
+        "Skopje",
+        "Podgorica",
+        "Dakar",
+        "Accra"
+      ],
+      "ar": [
+        "سكوبيه",
+        "بودغوريتسا",
+        "داكار",
+        "أكرا"
+      ],
+      "fr": [
+        "Skopje",
+        "Podgorica",
+        "Dakar",
+        "Accra"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Skopje",
+      "ar": "سكوبيه",
+      "fr": "Skopje"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q540",
+    "question": {
+      "en": "What is the capital of Montenegro?",
+      "ar": "ما عاصمة الجبل الأسود؟",
+      "fr": "Quelle est la capitale de Monténégro ?"
+    },
+    "options": {
+      "en": [
+        "Accra",
+        "Kigali",
+        "Podgorica",
+        "Dakar"
+      ],
+      "ar": [
+        "أكرا",
+        "كيغالي",
+        "بودغوريتسا",
+        "داكار"
+      ],
+      "fr": [
+        "Accra",
+        "Kigali",
+        "Podgorica",
+        "Dakar"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Podgorica",
+      "ar": "بودغوريتسا",
+      "fr": "Podgorica"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q541",
+    "question": {
+      "en": "What is the capital of Senegal?",
+      "ar": "ما عاصمة السنغال؟",
+      "fr": "Quelle est la capitale de Sénégal ?"
+    },
+    "options": {
+      "en": [
+        "Dakar",
+        "Accra",
+        "Kigali",
+        "Kampala"
+      ],
+      "ar": [
+        "داكار",
+        "أكرا",
+        "كيغالي",
+        "كمبالا"
+      ],
+      "fr": [
+        "Dakar",
+        "Accra",
+        "Kigali",
+        "Kampala"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dakar",
+      "ar": "داكار",
+      "fr": "Dakar"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q542",
+    "question": {
+      "en": "What is the capital of Ghana?",
+      "ar": "ما عاصمة غانا؟",
+      "fr": "Quelle est la capitale de Ghana ?"
+    },
+    "options": {
+      "en": [
+        "Kampala",
+        "Lusaka",
+        "Accra",
+        "Kigali"
+      ],
+      "ar": [
+        "كمبالا",
+        "لوساكا",
+        "أكرا",
+        "كيغالي"
+      ],
+      "fr": [
+        "Kampala",
+        "Lusaka",
+        "Accra",
+        "Kigali"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Accra",
+      "ar": "أكرا",
+      "fr": "Accra"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q543",
+    "question": {
+      "en": "What is the capital of Rwanda?",
+      "ar": "ما عاصمة رواندا؟",
+      "fr": "Quelle est la capitale de Rwanda ?"
+    },
+    "options": {
+      "en": [
+        "Kigali",
+        "Kampala",
+        "Lusaka",
+        "Windhoek"
+      ],
+      "ar": [
+        "كيغالي",
+        "كمبالا",
+        "لوساكا",
+        "ويندهوك"
+      ],
+      "fr": [
+        "Kigali",
+        "Kampala",
+        "Lusaka",
+        "Windhoek"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Kigali",
+      "ar": "كيغالي",
+      "fr": "Kigali"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q544",
+    "question": {
+      "en": "What is the capital of Uganda?",
+      "ar": "ما عاصمة أوغندا؟",
+      "fr": "Quelle est la capitale de Ouganda ?"
+    },
+    "options": {
+      "en": [
+        "Windhoek",
+        "Gaborone",
+        "Kampala",
+        "Lusaka"
+      ],
+      "ar": [
+        "ويندهوك",
+        "غابورون",
+        "كمبالا",
+        "لوساكا"
+      ],
+      "fr": [
+        "Windhoek",
+        "Gaborone",
+        "Kampala",
+        "Lusaka"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Kampala",
+      "ar": "كمبالا",
+      "fr": "Kampala"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q545",
+    "question": {
+      "en": "What is the capital of Zambia?",
+      "ar": "ما عاصمة زامبيا؟",
+      "fr": "Quelle est la capitale de Zambie ?"
+    },
+    "options": {
+      "en": [
+        "Lusaka",
+        "Windhoek",
+        "Gaborone",
+        "Antananarivo"
+      ],
+      "ar": [
+        "لوساكا",
+        "ويندهوك",
+        "غابورون",
+        "أنتاناناريفو"
+      ],
+      "fr": [
+        "Lusaka",
+        "Windhoek",
+        "Gaborone",
+        "Antananarivo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Lusaka",
+      "ar": "لوساكا",
+      "fr": "Lusaka"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q546",
+    "question": {
+      "en": "What is the capital of Namibia?",
+      "ar": "ما عاصمة ناميبيا؟",
+      "fr": "Quelle est la capitale de Namibie ?"
+    },
+    "options": {
+      "en": [
+        "Antananarivo",
+        "Port Louis",
+        "Windhoek",
+        "Gaborone"
+      ],
+      "ar": [
+        "أنتاناناريفو",
+        "بورت لويس",
+        "ويندهوك",
+        "غابورون"
+      ],
+      "fr": [
+        "Antananarivo",
+        "Port-Louis",
+        "Windhoek",
+        "Gaborone"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Windhoek",
+      "ar": "ويندهوك",
+      "fr": "Windhoek"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q547",
+    "question": {
+      "en": "What is the capital of Botswana?",
+      "ar": "ما عاصمة بوتسوانا؟",
+      "fr": "Quelle est la capitale de Botswana ?"
+    },
+    "options": {
+      "en": [
+        "Gaborone",
+        "Antananarivo",
+        "Port Louis",
+        "Suva"
+      ],
+      "ar": [
+        "غابورون",
+        "أنتاناناريفو",
+        "بورت لويس",
+        "سوفا"
+      ],
+      "fr": [
+        "Gaborone",
+        "Antananarivo",
+        "Port-Louis",
+        "Suva"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gaborone",
+      "ar": "غابورون",
+      "fr": "Gaborone"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q548",
+    "question": {
+      "en": "What is the capital of Madagascar?",
+      "ar": "ما عاصمة مدغشقر؟",
+      "fr": "Quelle est la capitale de Madagascar ?"
+    },
+    "options": {
+      "en": [
+        "Suva",
+        "Apia",
+        "Antananarivo",
+        "Port Louis"
+      ],
+      "ar": [
+        "سوفا",
+        "آبيا",
+        "أنتاناناريفو",
+        "بورت لويس"
+      ],
+      "fr": [
+        "Suva",
+        "Apia",
+        "Antananarivo",
+        "Port-Louis"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antananarivo",
+      "ar": "أنتاناناريفو",
+      "fr": "Antananarivo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q549",
+    "question": {
+      "en": "What is the capital of Mauritius?",
+      "ar": "ما عاصمة موريشيوس؟",
+      "fr": "Quelle est la capitale de Maurice ?"
+    },
+    "options": {
+      "en": [
+        "Port Louis",
+        "Suva",
+        "Apia",
+        "Nukuʻalofa"
+      ],
+      "ar": [
+        "بورت لويس",
+        "سوفا",
+        "آبيا",
+        "نوكو ألوفا"
+      ],
+      "fr": [
+        "Port-Louis",
+        "Suva",
+        "Apia",
+        "Nukuʻalofa"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Port Louis",
+      "ar": "بورت لويس",
+      "fr": "Port-Louis"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q550",
+    "question": {
+      "en": "What is the capital of Fiji?",
+      "ar": "ما عاصمة فيجي؟",
+      "fr": "Quelle est la capitale de Fidji ?"
+    },
+    "options": {
+      "en": [
+        "Nukuʻalofa",
+        "Port Vila",
+        "Suva",
+        "Apia"
+      ],
+      "ar": [
+        "نوكو ألوفا",
+        "بورت فيلا",
+        "سوفا",
+        "آبيا"
+      ],
+      "fr": [
+        "Nukuʻalofa",
+        "Port-Vila",
+        "Suva",
+        "Apia"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Suva",
+      "ar": "سوفا",
+      "fr": "Suva"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q551",
+    "question": {
+      "en": "What is the capital of Samoa?",
+      "ar": "ما عاصمة ساموا؟",
+      "fr": "Quelle est la capitale de Samoa ?"
+    },
+    "options": {
+      "en": [
+        "Apia",
+        "Nukuʻalofa",
+        "Port Vila",
+        "Belmopan"
+      ],
+      "ar": [
+        "آبيا",
+        "نوكو ألوفا",
+        "بورت فيلا",
+        "بلموبان"
+      ],
+      "fr": [
+        "Apia",
+        "Nukuʻalofa",
+        "Port-Vila",
+        "Belmopan"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Apia",
+      "ar": "آبيا",
+      "fr": "Apia"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q552",
+    "question": {
+      "en": "What is the capital of Tonga?",
+      "ar": "ما عاصمة تونغا؟",
+      "fr": "Quelle est la capitale de Tonga ?"
+    },
+    "options": {
+      "en": [
+        "Belmopan",
+        "Georgetown",
+        "Nukuʻalofa",
+        "Port Vila"
+      ],
+      "ar": [
+        "بلموبان",
+        "جورج تاون",
+        "نوكو ألوفا",
+        "بورت فيلا"
+      ],
+      "fr": [
+        "Belmopan",
+        "Georgetown",
+        "Nukuʻalofa",
+        "Port-Vila"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nukuʻalofa",
+      "ar": "نوكو ألوفا",
+      "fr": "Nukuʻalofa"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q553",
+    "question": {
+      "en": "What is the capital of Vanuatu?",
+      "ar": "ما عاصمة فانواتو؟",
+      "fr": "Quelle est la capitale de Vanuatu ?"
+    },
+    "options": {
+      "en": [
+        "Port Vila",
+        "Belmopan",
+        "Georgetown",
+        "Paramaribo"
+      ],
+      "ar": [
+        "بورت فيلا",
+        "بلموبان",
+        "جورج تاون",
+        "باراماريبو"
+      ],
+      "fr": [
+        "Port-Vila",
+        "Belmopan",
+        "Georgetown",
+        "Paramaribo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Port Vila",
+      "ar": "بورت فيلا",
+      "fr": "Port-Vila"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q554",
+    "question": {
+      "en": "What is the capital of Belize?",
+      "ar": "ما عاصمة بليز؟",
+      "fr": "Quelle est la capitale de Belize ?"
+    },
+    "options": {
+      "en": [
+        "Paramaribo",
+        "Asunción",
+        "Belmopan",
+        "Georgetown"
+      ],
+      "ar": [
+        "باراماريبو",
+        "أسونسيون",
+        "بلموبان",
+        "جورج تاون"
+      ],
+      "fr": [
+        "Paramaribo",
+        "Asunción",
+        "Belmopan",
+        "Georgetown"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Belmopan",
+      "ar": "بلموبان",
+      "fr": "Belmopan"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q555",
+    "question": {
+      "en": "What is the capital of Guyana?",
+      "ar": "ما عاصمة غيانا؟",
+      "fr": "Quelle est la capitale de Guyana ?"
+    },
+    "options": {
+      "en": [
+        "Georgetown",
+        "Paramaribo",
+        "Asunción",
+        "Montevideo"
+      ],
+      "ar": [
+        "جورج تاون",
+        "باراماريبو",
+        "أسونسيون",
+        "مونتيفيديو"
+      ],
+      "fr": [
+        "Georgetown",
+        "Paramaribo",
+        "Asunción",
+        "Montevideo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Georgetown",
+      "ar": "جورج تاون",
+      "fr": "Georgetown"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q556",
+    "question": {
+      "en": "What is the capital of Suriname?",
+      "ar": "ما عاصمة سورينام؟",
+      "fr": "Quelle est la capitale de Suriname ?"
+    },
+    "options": {
+      "en": [
+        "Montevideo",
+        "Quito",
+        "Paramaribo",
+        "Asunción"
+      ],
+      "ar": [
+        "مونتيفيديو",
+        "كيتو",
+        "باراماريبو",
+        "أسونسيون"
+      ],
+      "fr": [
+        "Montevideo",
+        "Quito",
+        "Paramaribo",
+        "Asunción"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Paramaribo",
+      "ar": "باراماريبو",
+      "fr": "Paramaribo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q557",
+    "question": {
+      "en": "What is the capital of Paraguay?",
+      "ar": "ما عاصمة باراغواي؟",
+      "fr": "Quelle est la capitale de Paraguay ?"
+    },
+    "options": {
+      "en": [
+        "Asunción",
+        "Montevideo",
+        "Quito",
+        "Sucre"
+      ],
+      "ar": [
+        "أسونسيون",
+        "مونتيفيديو",
+        "كيتو",
+        "سوكري"
+      ],
+      "fr": [
+        "Asunción",
+        "Montevideo",
+        "Quito",
+        "Sucre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Asunción",
+      "ar": "أسونسيون",
+      "fr": "Asunción"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q558",
+    "question": {
+      "en": "What is the capital of Uruguay?",
+      "ar": "ما عاصمة أوروغواي؟",
+      "fr": "Quelle est la capitale de Uruguay ?"
+    },
+    "options": {
+      "en": [
+        "Sucre",
+        "Thimphu",
+        "Montevideo",
+        "Quito"
+      ],
+      "ar": [
+        "سوكري",
+        "تيمفو",
+        "مونتيفيديو",
+        "كيتو"
+      ],
+      "fr": [
+        "Sucre",
+        "Thimphou",
+        "Montevideo",
+        "Quito"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Montevideo",
+      "ar": "مونتيفيديو",
+      "fr": "Montevideo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q559",
+    "question": {
+      "en": "What is the capital of Ecuador?",
+      "ar": "ما عاصمة الإكوادور؟",
+      "fr": "Quelle est la capitale de Équateur ?"
+    },
+    "options": {
+      "en": [
+        "Quito",
+        "Sucre",
+        "Thimphu",
+        "Ulaanbaatar"
+      ],
+      "ar": [
+        "كيتو",
+        "سوكري",
+        "تيمفو",
+        "أولان باتور"
+      ],
+      "fr": [
+        "Quito",
+        "Sucre",
+        "Thimphou",
+        "Oulan-Bator"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Quito",
+      "ar": "كيتو",
+      "fr": "Quito"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q560",
+    "question": {
+      "en": "What is the capital of Bolivia?",
+      "ar": "ما عاصمة بوليفيا؟",
+      "fr": "Quelle est la capitale de Bolivie ?"
+    },
+    "options": {
+      "en": [
+        "Ulaanbaatar",
+        "Astana",
+        "Sucre",
+        "Thimphu"
+      ],
+      "ar": [
+        "أولان باتور",
+        "أستانا",
+        "سوكري",
+        "تيمفو"
+      ],
+      "fr": [
+        "Oulan-Bator",
+        "Astana",
+        "Sucre",
+        "Thimphou"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sucre",
+      "ar": "سوكري",
+      "fr": "Sucre"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q561",
+    "question": {
+      "en": "Who wrote “The Road Not Taken”?",
+      "ar": "من كتب «الطريق غير المسلوك»؟",
+      "fr": "Qui a écrit « The Road Not Taken » ?"
+    },
+    "options": {
+      "en": [
+        "Robert Frost",
+        "John Keats",
+        "William Wordsworth",
+        "Edgar Allan Poe"
+      ],
+      "ar": [
+        "روبرت فروست",
+        "جون كيتس",
+        "ويليام ووردزورث",
+        "إدغار آلان بو"
+      ],
+      "fr": [
+        "Robert Frost",
+        "John Keats",
+        "William Wordsworth",
+        "Edgar Allan Poe"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Robert Frost",
+      "ar": "روبرت فروست",
+      "fr": "Robert Frost"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q562",
+    "question": {
+      "en": "Who wrote “Ode to a Nightingale”?",
+      "ar": "من كتب «نشيد إلى العندليب»؟",
+      "fr": "Qui a écrit « Ode to a Nightingale » ?"
+    },
+    "options": {
+      "en": [
+        "Edgar Allan Poe",
+        "John Milton",
+        "John Keats",
+        "William Wordsworth"
+      ],
+      "ar": [
+        "إدغار آلان بو",
+        "جون ميلتون",
+        "جون كيتس",
+        "ويليام ووردزورث"
+      ],
+      "fr": [
+        "Edgar Allan Poe",
+        "John Milton",
+        "John Keats",
+        "William Wordsworth"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Keats",
+      "ar": "جون كيتس",
+      "fr": "John Keats"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q563",
+    "question": {
+      "en": "Who wrote “I Wandered Lonely as a Cloud”?",
+      "ar": "من كتب «تجولت وحيداً كسحابة»؟",
+      "fr": "Qui a écrit « I Wandered Lonely as a Cloud » ?"
+    },
+    "options": {
+      "en": [
+        "William Wordsworth",
+        "Edgar Allan Poe",
+        "John Milton",
+        "Percy Bysshe Shelley"
+      ],
+      "ar": [
+        "ويليام ووردزورث",
+        "إدغار آلان بو",
+        "جون ميلتون",
+        "بيرسي بيش شيلي"
+      ],
+      "fr": [
+        "William Wordsworth",
+        "Edgar Allan Poe",
+        "John Milton",
+        "Percy Bysshe Shelley"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Wordsworth",
+      "ar": "ويليام ووردزورث",
+      "fr": "William Wordsworth"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q564",
+    "question": {
+      "en": "Who wrote “The Raven”?",
+      "ar": "من كتب «الغراب»؟",
+      "fr": "Qui a écrit « The Raven » ?"
+    },
+    "options": {
+      "en": [
+        "Percy Bysshe Shelley",
+        "William Blake",
+        "Edgar Allan Poe",
+        "John Milton"
+      ],
+      "ar": [
+        "بيرسي بيش شيلي",
+        "ويليام بليك",
+        "إدغار آلان بو",
+        "جون ميلتون"
+      ],
+      "fr": [
+        "Percy Bysshe Shelley",
+        "William Blake",
+        "Edgar Allan Poe",
+        "John Milton"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Edgar Allan Poe",
+      "ar": "إدغار آلان بو",
+      "fr": "Edgar Allan Poe"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q565",
+    "question": {
+      "en": "Who wrote “Paradise Lost”?",
+      "ar": "من كتب «الفردوس المفقود»؟",
+      "fr": "Qui a écrit « Paradise Lost » ?"
+    },
+    "options": {
+      "en": [
+        "John Milton",
+        "Percy Bysshe Shelley",
+        "William Blake",
+        "Emily Dickinson"
+      ],
+      "ar": [
+        "جون ميلتون",
+        "بيرسي بيش شيلي",
+        "ويليام بليك",
+        "إميلي ديكنسون"
+      ],
+      "fr": [
+        "John Milton",
+        "Percy Bysshe Shelley",
+        "William Blake",
+        "Emily Dickinson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Milton",
+      "ar": "جون ميلتون",
+      "fr": "John Milton"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q566",
+    "question": {
+      "en": "Who wrote “Ozymandias”?",
+      "ar": "من كتب «أوزيماندياس»؟",
+      "fr": "Qui a écrit « Ozymandias » ?"
+    },
+    "options": {
+      "en": [
+        "Emily Dickinson",
+        "Maya Angelou",
+        "Percy Bysshe Shelley",
+        "William Blake"
+      ],
+      "ar": [
+        "إميلي ديكنسون",
+        "مايا أنجيلو",
+        "بيرسي بيش شيلي",
+        "ويليام بليك"
+      ],
+      "fr": [
+        "Emily Dickinson",
+        "Maya Angelou",
+        "Percy Bysshe Shelley",
+        "William Blake"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Percy Bysshe Shelley",
+      "ar": "بيرسي بيش شيلي",
+      "fr": "Percy Bysshe Shelley"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q567",
+    "question": {
+      "en": "Who wrote “The Tyger”?",
+      "ar": "من كتب «النمر»؟",
+      "fr": "Qui a écrit « The Tyger » ?"
+    },
+    "options": {
+      "en": [
+        "William Blake",
+        "Emily Dickinson",
+        "Maya Angelou",
+        "Samuel Taylor Coleridge"
+      ],
+      "ar": [
+        "ويليام بليك",
+        "إميلي ديكنسون",
+        "مايا أنجيلو",
+        "صمويل تايلور كوليردج"
+      ],
+      "fr": [
+        "William Blake",
+        "Emily Dickinson",
+        "Maya Angelou",
+        "Samuel Taylor Coleridge"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Blake",
+      "ar": "ويليام بليك",
+      "fr": "William Blake"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q568",
+    "question": {
+      "en": "Who wrote “Because I could not stop for Death”?",
+      "ar": "من كتب «لأنني لم أستطع التوقف للموت»؟",
+      "fr": "Qui a écrit « Because I could not stop for Death » ?"
+    },
+    "options": {
+      "en": [
+        "Samuel Taylor Coleridge",
+        "Lord Byron",
+        "Emily Dickinson",
+        "Maya Angelou"
+      ],
+      "ar": [
+        "صمويل تايلور كوليردج",
+        "اللورد بايرون",
+        "إميلي ديكنسون",
+        "مايا أنجيلو"
+      ],
+      "fr": [
+        "Samuel Taylor Coleridge",
+        "Lord Byron",
+        "Emily Dickinson",
+        "Maya Angelou"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Emily Dickinson",
+      "ar": "إميلي ديكنسون",
+      "fr": "Emily Dickinson"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q569",
+    "question": {
+      "en": "Who wrote “Still I Rise”?",
+      "ar": "من كتب «ما زلت أنهض»؟",
+      "fr": "Qui a écrit « Still I Rise » ?"
+    },
+    "options": {
+      "en": [
+        "Maya Angelou",
+        "Samuel Taylor Coleridge",
+        "Lord Byron",
+        "John Keats"
+      ],
+      "ar": [
+        "مايا أنجيلو",
+        "صمويل تايلور كوليردج",
+        "اللورد بايرون",
+        "جون كيتس"
+      ],
+      "fr": [
+        "Maya Angelou",
+        "Samuel Taylor Coleridge",
+        "Lord Byron",
+        "John Keats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Maya Angelou",
+      "ar": "مايا أنجيلو",
+      "fr": "Maya Angelou"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q570",
+    "question": {
+      "en": "Who wrote “Kubla Khan”?",
+      "ar": "من كتب «كوبلا خان»؟",
+      "fr": "Qui a écrit « Kubla Khan » ?"
+    },
+    "options": {
+      "en": [
+        "John Keats",
+        "T. S. Eliot",
+        "Samuel Taylor Coleridge",
+        "Lord Byron"
+      ],
+      "ar": [
+        "جون كيتس",
+        "ت. س. إليوت",
+        "صمويل تايلور كوليردج",
+        "اللورد بايرون"
+      ],
+      "fr": [
+        "John Keats",
+        "T. S. Eliot",
+        "Samuel Taylor Coleridge",
+        "Lord Byron"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Samuel Taylor Coleridge",
+      "ar": "صمويل تايلور كوليردج",
+      "fr": "Samuel Taylor Coleridge"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q571",
+    "question": {
+      "en": "Who wrote “She Walks in Beauty”?",
+      "ar": "من كتب «تمشي في الجمال»؟",
+      "fr": "Qui a écrit « She Walks in Beauty » ?"
+    },
+    "options": {
+      "en": [
+        "Lord Byron",
+        "John Keats",
+        "T. S. Eliot",
+        "Dylan Thomas"
+      ],
+      "ar": [
+        "اللورد بايرون",
+        "جون كيتس",
+        "ت. س. إليوت",
+        "ديلان توماس"
+      ],
+      "fr": [
+        "Lord Byron",
+        "John Keats",
+        "T. S. Eliot",
+        "Dylan Thomas"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Lord Byron",
+      "ar": "اللورد بايرون",
+      "fr": "Lord Byron"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q572",
+    "question": {
+      "en": "Who wrote “To Autumn”?",
+      "ar": "من كتب «إلى الخريف»؟",
+      "fr": "Qui a écrit « To Autumn » ?"
+    },
+    "options": {
+      "en": [
+        "Dylan Thomas",
+        "Edgar Allan Poe",
+        "John Keats",
+        "T. S. Eliot"
+      ],
+      "ar": [
+        "ديلان توماس",
+        "إدغار آلان بو",
+        "جون كيتس",
+        "ت. س. إليوت"
+      ],
+      "fr": [
+        "Dylan Thomas",
+        "Edgar Allan Poe",
+        "John Keats",
+        "T. S. Eliot"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Keats",
+      "ar": "جون كيتس",
+      "fr": "John Keats"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q573",
+    "question": {
+      "en": "Who wrote “The Waste Land”?",
+      "ar": "من كتب «الأرض اليباب»؟",
+      "fr": "Qui a écrit « The Waste Land » ?"
+    },
+    "options": {
+      "en": [
+        "T. S. Eliot",
+        "Dylan Thomas",
+        "Edgar Allan Poe",
+        "Rudyard Kipling"
+      ],
+      "ar": [
+        "ت. س. إليوت",
+        "ديلان توماس",
+        "إدغار آلان بو",
+        "روديارد كيبلينغ"
+      ],
+      "fr": [
+        "T. S. Eliot",
+        "Dylan Thomas",
+        "Edgar Allan Poe",
+        "Rudyard Kipling"
+      ]
+    },
+    "correctAnswer": {
+      "en": "T. S. Eliot",
+      "ar": "ت. س. إليوت",
+      "fr": "T. S. Eliot"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q574",
+    "question": {
+      "en": "Who wrote “Do Not Go Gentle into That Good Night”?",
+      "ar": "من كتب «لا ترحل هادئاً إلى تلك الليلة الطيبة»؟",
+      "fr": "Qui a écrit « Do Not Go Gentle into That Good Night » ?"
+    },
+    "options": {
+      "en": [
+        "Rudyard Kipling",
+        "Sylvia Plath",
+        "Dylan Thomas",
+        "Edgar Allan Poe"
+      ],
+      "ar": [
+        "روديارد كيبلينغ",
+        "سيلفيا بلاث",
+        "ديلان توماس",
+        "إدغار آلان بو"
+      ],
+      "fr": [
+        "Rudyard Kipling",
+        "Sylvia Plath",
+        "Dylan Thomas",
+        "Edgar Allan Poe"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dylan Thomas",
+      "ar": "ديلان توماس",
+      "fr": "Dylan Thomas"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q575",
+    "question": {
+      "en": "Who wrote “Annabel Lee”?",
+      "ar": "من كتب «أنابيل لي»؟",
+      "fr": "Qui a écrit « Annabel Lee » ?"
+    },
+    "options": {
+      "en": [
+        "Edgar Allan Poe",
+        "Rudyard Kipling",
+        "Sylvia Plath",
+        "T. S. Eliot"
+      ],
+      "ar": [
+        "إدغار آلان بو",
+        "روديارد كيبلينغ",
+        "سيلفيا بلاث",
+        "ت. س. إليوت"
+      ],
+      "fr": [
+        "Edgar Allan Poe",
+        "Rudyard Kipling",
+        "Sylvia Plath",
+        "T. S. Eliot"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Edgar Allan Poe",
+      "ar": "إدغار آلان بو",
+      "fr": "Edgar Allan Poe"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q576",
+    "question": {
+      "en": "Who wrote “If—”?",
+      "ar": "من كتب «إذا»؟",
+      "fr": "Qui a écrit « If— » ?"
+    },
+    "options": {
+      "en": [
+        "T. S. Eliot",
+        "Badr Shakir al-Sayyab",
+        "Rudyard Kipling",
+        "Sylvia Plath"
+      ],
+      "ar": [
+        "ت. س. إليوت",
+        "بدر شاكر السياب",
+        "روديارد كيبلينغ",
+        "سيلفيا بلاث"
+      ],
+      "fr": [
+        "T. S. Eliot",
+        "Badr Shakir al-Sayyab",
+        "Rudyard Kipling",
+        "Sylvia Plath"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rudyard Kipling",
+      "ar": "روديارد كيبلينغ",
+      "fr": "Rudyard Kipling"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q577",
+    "question": {
+      "en": "Who wrote “Ariel”?",
+      "ar": "من كتب «أرييل»؟",
+      "fr": "Qui a écrit « Ariel » ?"
+    },
+    "options": {
+      "en": [
+        "Sylvia Plath",
+        "T. S. Eliot",
+        "Badr Shakir al-Sayyab",
+        "Mahmoud Darwish"
+      ],
+      "ar": [
+        "سيلفيا بلاث",
+        "ت. س. إليوت",
+        "بدر شاكر السياب",
+        "محمود درويش"
+      ],
+      "fr": [
+        "Sylvia Plath",
+        "T. S. Eliot",
+        "Badr Shakir al-Sayyab",
+        "Mahmoud Darwish"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sylvia Plath",
+      "ar": "سيلفيا بلاث",
+      "fr": "Sylvia Plath"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q578",
+    "question": {
+      "en": "Who wrote “The Love Song of J. Alfred Prufrock”?",
+      "ar": "من كتب «أغنية حب ج. ألفرد بروفروك»؟",
+      "fr": "Qui a écrit « The Love Song of J. Alfred Prufrock » ?"
+    },
+    "options": {
+      "en": [
+        "Mahmoud Darwish",
+        "Aboul-Qacem Echebbi",
+        "T. S. Eliot",
+        "Badr Shakir al-Sayyab"
+      ],
+      "ar": [
+        "محمود درويش",
+        "أبو القاسم الشابي",
+        "ت. س. إليوت",
+        "بدر شاكر السياب"
+      ],
+      "fr": [
+        "Mahmoud Darwish",
+        "Aboul-Qacem Echebbi",
+        "T. S. Eliot",
+        "Badr Shakir al-Sayyab"
+      ]
+    },
+    "correctAnswer": {
+      "en": "T. S. Eliot",
+      "ar": "ت. س. إليوت",
+      "fr": "T. S. Eliot"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q579",
+    "question": {
+      "en": "Who wrote “أنشودة المطر”?",
+      "ar": "من كتب «أنشودة المطر»؟",
+      "fr": "Qui a écrit « أنشودة المطر » ?"
+    },
+    "options": {
+      "en": [
+        "Badr Shakir al-Sayyab",
+        "Mahmoud Darwish",
+        "Aboul-Qacem Echebbi",
+        "Ilya Abu Madi"
+      ],
+      "ar": [
+        "بدر شاكر السياب",
+        "محمود درويش",
+        "أبو القاسم الشابي",
+        "إيليا أبو ماضي"
+      ],
+      "fr": [
+        "Badr Shakir al-Sayyab",
+        "Mahmoud Darwish",
+        "Aboul-Qacem Echebbi",
+        "Ilya Abu Madi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Badr Shakir al-Sayyab",
+      "ar": "بدر شاكر السياب",
+      "fr": "Badr Shakir al-Sayyab"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q580",
+    "question": {
+      "en": "Who wrote “سجل أنا عربي”?",
+      "ar": "من كتب «سجل أنا عربي»؟",
+      "fr": "Qui a écrit « سجل أنا عربي » ?"
+    },
+    "options": {
+      "en": [
+        "Ilya Abu Madi",
+        "Ibrahim Tuqan",
+        "Mahmoud Darwish",
+        "Aboul-Qacem Echebbi"
+      ],
+      "ar": [
+        "إيليا أبو ماضي",
+        "إبراهيم طوقان",
+        "محمود درويش",
+        "أبو القاسم الشابي"
+      ],
+      "fr": [
+        "Ilya Abu Madi",
+        "Ibrahim Tuqan",
+        "Mahmoud Darwish",
+        "Aboul-Qacem Echebbi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mahmoud Darwish",
+      "ar": "محمود درويش",
+      "fr": "Mahmoud Darwish"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q581",
+    "question": {
+      "en": "Who wrote “إرادة الحياة”?",
+      "ar": "من كتب «إرادة الحياة»؟",
+      "fr": "Qui a écrit « إرادة الحياة » ?"
+    },
+    "options": {
+      "en": [
+        "Aboul-Qacem Echebbi",
+        "Ilya Abu Madi",
+        "Ibrahim Tuqan",
+        "Nizar Qabbani"
+      ],
+      "ar": [
+        "أبو القاسم الشابي",
+        "إيليا أبو ماضي",
+        "إبراهيم طوقان",
+        "نزار قباني"
+      ],
+      "fr": [
+        "Aboul-Qacem Echebbi",
+        "Ilya Abu Madi",
+        "Ibrahim Tuqan",
+        "Nizar Qabbani"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Aboul-Qacem Echebbi",
+      "ar": "أبو القاسم الشابي",
+      "fr": "Aboul-Qacem Echebbi"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q582",
+    "question": {
+      "en": "Who wrote “الطلاسم”?",
+      "ar": "من كتب «الطلاسم»؟",
+      "fr": "Qui a écrit « الطلاسم » ?"
+    },
+    "options": {
+      "en": [
+        "Nizar Qabbani",
+        "Khalil Mutran",
+        "Ilya Abu Madi",
+        "Ibrahim Tuqan"
+      ],
+      "ar": [
+        "نزار قباني",
+        "خليل مطران",
+        "إيليا أبو ماضي",
+        "إبراهيم طوقان"
+      ],
+      "fr": [
+        "Nizar Qabbani",
+        "Khalil Mutran",
+        "Ilya Abu Madi",
+        "Ibrahim Tuqan"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ilya Abu Madi",
+      "ar": "إيليا أبو ماضي",
+      "fr": "Ilya Abu Madi"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q583",
+    "question": {
+      "en": "Who wrote “موطني”?",
+      "ar": "من كتب «موطني»؟",
+      "fr": "Qui a écrit « موطني » ?"
+    },
+    "options": {
+      "en": [
+        "Ibrahim Tuqan",
+        "Nizar Qabbani",
+        "Khalil Mutran",
+        "Nazik al-Malaika"
+      ],
+      "ar": [
+        "إبراهيم طوقان",
+        "نزار قباني",
+        "خليل مطران",
+        "نازك الملائكة"
+      ],
+      "fr": [
+        "Ibrahim Tuqan",
+        "Nizar Qabbani",
+        "Khalil Mutran",
+        "Nazik al-Malaika"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ibrahim Tuqan",
+      "ar": "إبراهيم طوقان",
+      "fr": "Ibrahim Tuqan"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q584",
+    "question": {
+      "en": "Who wrote “خبز وحشيش وقمر”?",
+      "ar": "من كتب «خبز وحشيش وقمر»؟",
+      "fr": "Qui a écrit « خبز وحشيش وقمر » ?"
+    },
+    "options": {
+      "en": [
+        "Nazik al-Malaika",
+        "Arthur Rimbaud",
+        "Nizar Qabbani",
+        "Khalil Mutran"
+      ],
+      "ar": [
+        "نازك الملائكة",
+        "آرثر رامبو",
+        "نزار قباني",
+        "خليل مطران"
+      ],
+      "fr": [
+        "Nazik al-Malaika",
+        "Arthur Rimbaud",
+        "Nizar Qabbani",
+        "Khalil Mutran"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nizar Qabbani",
+      "ar": "نزار قباني",
+      "fr": "Nizar Qabbani"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q585",
+    "question": {
+      "en": "Who wrote “المساء”?",
+      "ar": "من كتب «المساء»؟",
+      "fr": "Qui a écrit « المساء » ?"
+    },
+    "options": {
+      "en": [
+        "Khalil Mutran",
+        "Nazik al-Malaika",
+        "Nizar Qabbani",
+        "Arthur Rimbaud"
+      ],
+      "ar": [
+        "خليل مطران",
+        "نازك الملائكة",
+        "نزار قباني",
+        "آرثر رامبو"
+      ],
+      "fr": [
+        "Khalil Mutran",
+        "Nazik al-Malaika",
+        "Nizar Qabbani",
+        "Arthur Rimbaud"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Khalil Mutran",
+      "ar": "خليل مطران",
+      "fr": "Khalil Mutran"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q586",
+    "question": {
+      "en": "Who wrote “الكوليرا”?",
+      "ar": "من كتب «الكوليرا»؟",
+      "fr": "Qui a écrit « الكوليرا » ?"
+    },
+    "options": {
+      "en": [
+        "Arthur Rimbaud",
+        "Victor Hugo",
+        "Nazik al-Malaika",
+        "Nizar Qabbani"
+      ],
+      "ar": [
+        "آرثر رامبو",
+        "فيكتور هوغو",
+        "نازك الملائكة",
+        "نزار قباني"
+      ],
+      "fr": [
+        "Arthur Rimbaud",
+        "Victor Hugo",
+        "Nazik al-Malaika",
+        "Nizar Qabbani"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nazik al-Malaika",
+      "ar": "نازك الملائكة",
+      "fr": "Nazik al-Malaika"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q587",
+    "question": {
+      "en": "Who wrote “قارئة الفنجان”?",
+      "ar": "من كتب «قارئة الفنجان»؟",
+      "fr": "Qui a écrit « قارئة الفنجان » ?"
+    },
+    "options": {
+      "en": [
+        "Nizar Qabbani",
+        "Arthur Rimbaud",
+        "Victor Hugo",
+        "Charles Baudelaire"
+      ],
+      "ar": [
+        "نزار قباني",
+        "آرثر رامبو",
+        "فيكتور هوغو",
+        "شارل بودلير"
+      ],
+      "fr": [
+        "Nizar Qabbani",
+        "Arthur Rimbaud",
+        "Victor Hugo",
+        "Charles Baudelaire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nizar Qabbani",
+      "ar": "نزار قباني",
+      "fr": "Nizar Qabbani"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q588",
+    "question": {
+      "en": "Who wrote “Le Dormeur du val”?",
+      "ar": "من كتب «Le Dormeur du val»؟",
+      "fr": "Qui a écrit « Le Dormeur du val » ?"
+    },
+    "options": {
+      "en": [
+        "Charles Baudelaire",
+        "Alphonse de Lamartine",
+        "Arthur Rimbaud",
+        "Victor Hugo"
+      ],
+      "ar": [
+        "شارل بودلير",
+        "ألفونس دو لامارتين",
+        "آرثر رامبو",
+        "فيكتور هوغو"
+      ],
+      "fr": [
+        "Charles Baudelaire",
+        "Alphonse de Lamartine",
+        "Arthur Rimbaud",
+        "Victor Hugo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Arthur Rimbaud",
+      "ar": "آرثر رامبو",
+      "fr": "Arthur Rimbaud"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q589",
+    "question": {
+      "en": "Who wrote “Demain, dès l’aube”?",
+      "ar": "من كتب «Demain, dès l’aube»؟",
+      "fr": "Qui a écrit « Demain, dès l’aube » ?"
+    },
+    "options": {
+      "en": [
+        "Victor Hugo",
+        "Charles Baudelaire",
+        "Alphonse de Lamartine",
+        "Pierre de Ronsard"
+      ],
+      "ar": [
+        "فيكتور هوغو",
+        "شارل بودلير",
+        "ألفونس دو لامارتين",
+        "بيير دو رونسار"
+      ],
+      "fr": [
+        "Victor Hugo",
+        "Charles Baudelaire",
+        "Alphonse de Lamartine",
+        "Pierre de Ronsard"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Victor Hugo",
+      "ar": "فيكتور هوغو",
+      "fr": "Victor Hugo"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q590",
+    "question": {
+      "en": "Who wrote “L’Albatros”?",
+      "ar": "من كتب «L’Albatros»؟",
+      "fr": "Qui a écrit « L’Albatros » ?"
+    },
+    "options": {
+      "en": [
+        "Pierre de Ronsard",
+        "Paul Éluard",
+        "Charles Baudelaire",
+        "Alphonse de Lamartine"
+      ],
+      "ar": [
+        "بيير دو رونسار",
+        "بول إيلوار",
+        "شارل بودلير",
+        "ألفونس دو لامارتين"
+      ],
+      "fr": [
+        "Pierre de Ronsard",
+        "Paul Éluard",
+        "Charles Baudelaire",
+        "Alphonse de Lamartine"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Charles Baudelaire",
+      "ar": "شارل بودلير",
+      "fr": "Charles Baudelaire"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q591",
+    "question": {
+      "en": "Who wrote “Le Lac”?",
+      "ar": "من كتب «Le Lac»؟",
+      "fr": "Qui a écrit « Le Lac » ?"
+    },
+    "options": {
+      "en": [
+        "Alphonse de Lamartine",
+        "Pierre de Ronsard",
+        "Paul Éluard",
+        "Paul Verlaine"
+      ],
+      "ar": [
+        "ألفونس دو لامارتين",
+        "بيير دو رونسار",
+        "بول إيلوار",
+        "بول فيرلين"
+      ],
+      "fr": [
+        "Alphonse de Lamartine",
+        "Pierre de Ronsard",
+        "Paul Éluard",
+        "Paul Verlaine"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alphonse de Lamartine",
+      "ar": "ألفونس دو لامارتين",
+      "fr": "Alphonse de Lamartine"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q592",
+    "question": {
+      "en": "Who wrote “Mignonne, allons voir si la rose”?",
+      "ar": "من كتب «Mignonne, allons voir si la rose»؟",
+      "fr": "Qui a écrit « Mignonne, allons voir si la rose » ?"
+    },
+    "options": {
+      "en": [
+        "Paul Verlaine",
+        "Guillaume Apollinaire",
+        "Pierre de Ronsard",
+        "Paul Éluard"
+      ],
+      "ar": [
+        "بول فيرلين",
+        "غيوم أبولينير",
+        "بيير دو رونسار",
+        "بول إيلوار"
+      ],
+      "fr": [
+        "Paul Verlaine",
+        "Guillaume Apollinaire",
+        "Pierre de Ronsard",
+        "Paul Éluard"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pierre de Ronsard",
+      "ar": "بيير دو رونسار",
+      "fr": "Pierre de Ronsard"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q593",
+    "question": {
+      "en": "Who wrote “Liberté”?",
+      "ar": "من كتب «Liberté»؟",
+      "fr": "Qui a écrit « Liberté » ?"
+    },
+    "options": {
+      "en": [
+        "Paul Éluard",
+        "Paul Verlaine",
+        "Guillaume Apollinaire",
+        "Paul Valéry"
+      ],
+      "ar": [
+        "بول إيلوار",
+        "بول فيرلين",
+        "غيوم أبولينير",
+        "بول فاليري"
+      ],
+      "fr": [
+        "Paul Éluard",
+        "Paul Verlaine",
+        "Guillaume Apollinaire",
+        "Paul Valéry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Paul Éluard",
+      "ar": "بول إيلوار",
+      "fr": "Paul Éluard"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q594",
+    "question": {
+      "en": "Who wrote “Chanson d’automne”?",
+      "ar": "من كتب «Chanson d’automne»؟",
+      "fr": "Qui a écrit « Chanson d’automne » ?"
+    },
+    "options": {
+      "en": [
+        "Paul Valéry",
+        "Victor Hugo",
+        "Paul Verlaine",
+        "Guillaume Apollinaire"
+      ],
+      "ar": [
+        "بول فاليري",
+        "فيكتور هوغو",
+        "بول فيرلين",
+        "غيوم أبولينير"
+      ],
+      "fr": [
+        "Paul Valéry",
+        "Victor Hugo",
+        "Paul Verlaine",
+        "Guillaume Apollinaire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Paul Verlaine",
+      "ar": "بول فيرلين",
+      "fr": "Paul Verlaine"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q595",
+    "question": {
+      "en": "Who wrote “Zone”?",
+      "ar": "من كتب «Zone»؟",
+      "fr": "Qui a écrit « Zone » ?"
+    },
+    "options": {
+      "en": [
+        "Guillaume Apollinaire",
+        "Paul Valéry",
+        "Victor Hugo",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "غيوم أبولينير",
+        "بول فاليري",
+        "فيكتور هوغو",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "Guillaume Apollinaire",
+        "Paul Valéry",
+        "Victor Hugo",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Guillaume Apollinaire",
+      "ar": "غيوم أبولينير",
+      "fr": "Guillaume Apollinaire"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q596",
+    "question": {
+      "en": "Who wrote “Le Cimetière marin”?",
+      "ar": "من كتب «Le Cimetière marin»؟",
+      "fr": "Qui a écrit « Le Cimetière marin » ?"
+    },
+    "options": {
+      "en": [
+        "Alfred, Lord Tennyson",
+        "William Wordsworth",
+        "Paul Valéry",
+        "Victor Hugo"
+      ],
+      "ar": [
+        "ألفريد تينيسون",
+        "ويليام ووردزورث",
+        "بول فاليري",
+        "فيكتور هوغو"
+      ],
+      "fr": [
+        "Alfred, Lord Tennyson",
+        "William Wordsworth",
+        "Paul Valéry",
+        "Victor Hugo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Paul Valéry",
+      "ar": "بول فاليري",
+      "fr": "Paul Valéry"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q597",
+    "question": {
+      "en": "Who wrote “Les Contemplations”?",
+      "ar": "من كتب «Les Contemplations»؟",
+      "fr": "Qui a écrit « Les Contemplations » ?"
+    },
+    "options": {
+      "en": [
+        "Victor Hugo",
+        "Alfred, Lord Tennyson",
+        "William Wordsworth",
+        "Robert Frost"
+      ],
+      "ar": [
+        "فيكتور هوغو",
+        "ألفريد تينيسون",
+        "ويليام ووردزورث",
+        "روبرت فروست"
+      ],
+      "fr": [
+        "Victor Hugo",
+        "Alfred, Lord Tennyson",
+        "William Wordsworth",
+        "Robert Frost"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Victor Hugo",
+      "ar": "فيكتور هوغو",
+      "fr": "Victor Hugo"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q598",
+    "question": {
+      "en": "Who wrote “The Charge of the Light Brigade”?",
+      "ar": "من كتب «هجوم لواء الفرسان الخفيفة»؟",
+      "fr": "Qui a écrit « The Charge of the Light Brigade » ?"
+    },
+    "options": {
+      "en": [
+        "Robert Frost",
+        "John Keats",
+        "Alfred, Lord Tennyson",
+        "William Wordsworth"
+      ],
+      "ar": [
+        "روبرت فروست",
+        "جون كيتس",
+        "ألفريد تينيسون",
+        "ويليام ووردزورث"
+      ],
+      "fr": [
+        "Robert Frost",
+        "John Keats",
+        "Alfred, Lord Tennyson",
+        "William Wordsworth"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alfred, Lord Tennyson",
+      "ar": "ألفريد تينيسون",
+      "fr": "Alfred, Lord Tennyson"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q599",
+    "question": {
+      "en": "Who wrote “Daffodils”?",
+      "ar": "من كتب «أزهار النرجس»؟",
+      "fr": "Qui a écrit « Daffodils » ?"
+    },
+    "options": {
+      "en": [
+        "William Wordsworth",
+        "Robert Frost",
+        "John Keats",
+        "Edgar Allan Poe"
+      ],
+      "ar": [
+        "ويليام ووردزورث",
+        "روبرت فروست",
+        "جون كيتس",
+        "إدغار آلان بو"
+      ],
+      "fr": [
+        "William Wordsworth",
+        "Robert Frost",
+        "John Keats",
+        "Edgar Allan Poe"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Wordsworth",
+      "ar": "ويليام ووردزورث",
+      "fr": "William Wordsworth"
+    },
+    "points": 10,
+    "category": "Poetry"
   }
 ]
