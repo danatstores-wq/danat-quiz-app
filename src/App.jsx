@@ -552,13 +552,13 @@ function Game2048({ onBack, onAdComplete }) {
 
 
 const MATCH3_CANDIES = [
-  { light: '#ff9bb7', main: '#f43f78', dark: '#9f174d', glow: 'shadow-rose-500/50' },
-  { light: '#fff08a', main: '#facc15', dark: '#a16207', glow: 'shadow-yellow-400/50' },
-  { light: '#d8a4ff', main: '#9333ea', dark: '#581c87', glow: 'shadow-purple-500/50' },
-  { light: '#c5ff8a', main: '#65a30d', dark: '#365314', glow: 'shadow-lime-500/50' },
-  { light: '#8cecff', main: '#0891b2', dark: '#164e63', glow: 'shadow-cyan-500/50' },
-  { light: '#ffc18a', main: '#ea580c', dark: '#7c2d12', glow: 'shadow-orange-500/50' },
-  { light: '#ffb0f4', main: '#db2777', dark: '#831843', glow: 'shadow-pink-500/50' }
+  { light: '#f8e1e5', main: '#d99aaa', dark: '#986775', glow: 'shadow-rose-200/20' },
+  { light: '#f6edcf', main: '#d7c17c', dark: '#95834d', glow: 'shadow-amber-100/20' },
+  { light: '#eee5f5', main: '#b9a4ce', dark: '#7d688f', glow: 'shadow-violet-200/20' },
+  { light: '#e5efe1', main: '#a6c39d', dark: '#6f8b68', glow: 'shadow-green-100/20' },
+  { light: '#e2eef2', main: '#9dbdca', dark: '#668895', glow: 'shadow-sky-100/20' },
+  { light: '#f5e8dc', main: '#d8b294', dark: '#98775d', glow: 'shadow-orange-100/20' },
+  { light: '#f1e3ed', main: '#c9a5be', dark: '#89677f', glow: 'shadow-pink-100/20' }
 ];
 
 const MATCH3_LEVELS = [
@@ -571,43 +571,23 @@ function Match3Gem({ gem, selected }) {
   const item = MATCH3_CANDIES[gem];
   if (!item) return null;
   return (
-    <svg viewBox="0 0 72 72" className={`h-[91%] w-[91%] overflow-visible transition-transform duration-150 ${selected ? 'scale-90 -rotate-3' : 'hover:scale-105'}`} aria-hidden="true">
+    <svg viewBox="0 0 72 72" className={`h-[88%] w-[88%] overflow-visible transition-transform duration-150 ${selected ? 'scale-90' : 'hover:scale-[1.03]'}`} aria-hidden="true">
       <defs>
-        <linearGradient id={`jewel-body-${gem}`} x1="0" y1="0" x2="0.92" y2="1">
+        <radialGradient id={`orb-fill-${gem}`} cx="30%" cy="24%" r="78%">
           <stop offset="0%" stopColor={item.light} />
-          <stop offset="38%" stopColor={item.main} />
+          <stop offset="58%" stopColor={item.main} />
           <stop offset="100%" stopColor={item.dark} />
+        </radialGradient>
+        <linearGradient id={`orb-gloss-${gem}`} x1="0" y1="0" x2="0.9" y2="1">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity=".78" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
         </linearGradient>
-        <linearGradient id={`jewel-top-${gem}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity=".95" />
-          <stop offset="55%" stopColor={item.light} stopOpacity=".62" />
-          <stop offset="100%" stopColor={item.main} stopOpacity=".12" />
-        </linearGradient>
-        <linearGradient id={`jewel-side-${gem}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={item.main} />
-          <stop offset="100%" stopColor={item.dark} />
-        </linearGradient>
-        <filter id={`jewel-shadow-${gem}`} x="-40%" y="-40%" width="180%" height="190%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" />
-          <feOffset dy="3" />
-          <feComponentTransfer><feFuncA type="linear" slope=".42" /></feComponentTransfer>
-          <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
       </defs>
-      <g filter={`url(#jewel-shadow-${gem})`}>
-        <path d="M36 5 56 13 66 31 60 53 36 67 12 53 6 31 16 13Z" fill={item.dark} stroke="#ffffff" strokeOpacity=".55" strokeWidth="1.6" />
-        <path d="M36 7 55 15 36 29 17 15Z" fill={`url(#jewel-top-${gem})`} />
-        <path d="M17 15 36 29 36 64 13 51 8 31Z" fill={`url(#jewel-body-${gem})`} />
-        <path d="M55 15 36 29 36 64 59 51 64 31Z" fill={`url(#jewel-side-${gem})`} />
-        <path d="M17 15 36 29 55 15 48 8 24 8Z" fill="#ffffff" opacity=".16" />
-        <path d="M17 15 36 29 26 39 8 31Z" fill="#ffffff" opacity=".22" />
-        <path d="M55 15 36 29 46 39 64 31Z" fill="#000000" opacity=".12" />
-        <path d="M26 39 36 29 46 39 36 64Z" fill="#ffffff" opacity=".13" />
-        <path d="M13 27 20 16 29 12" fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" opacity=".72" />
-        <path d="M16 34 18 29" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" opacity=".48" />
-        <path d="M49 10 53 13" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" opacity=".7" />
-      </g>
-      <path d="M53 5 54.8 9.2 59 11 54.8 12.8 53 17 51.2 12.8 47 11 51.2 9.2Z" fill="#ffffff" opacity=".9" />
+      <circle cx="36" cy="38" r="27" fill="#080615" opacity=".22" />
+      <circle cx="36" cy="34" r="27" fill={`url(#orb-fill-${gem})`} stroke="#ffffff" strokeOpacity=".34" strokeWidth="1.5" />
+      <path d="M17 29c2-11 11-18 21-18 8 0 14 4 18 10-9-4-22-3-31 5-3 2-5 5-7 8Z" fill={`url(#orb-gloss-${gem})`} />
+      <ellipse cx="26" cy="22" rx="8" ry="4" transform="rotate(-32 26 22)" fill="#ffffff" opacity=".42" />
+      <circle cx="49" cy="47" r="4" fill="#ffffff" opacity=".13" />
     </svg>
   );
 }
@@ -741,9 +721,37 @@ const playGameMoveSound = (kind = 'match') => {
 
     const playTone = () => {
       if (context.state !== 'running') return;
+      const now = context.currentTime;
+      if (kind === 'bomb') {
+        // Short low boom followed by a bright, descending blast tail.
+        const boom = context.createOscillator();
+        const boomGain = context.createGain();
+        boom.type = 'triangle';
+        boom.frequency.setValueAtTime(145, now);
+        boom.frequency.exponentialRampToValueAtTime(42, now + 0.32);
+        boomGain.gain.setValueAtTime(0.0001, now);
+        boomGain.gain.exponentialRampToValueAtTime(0.32, now + 0.012);
+        boomGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.38);
+        boom.connect(boomGain);
+        boomGain.connect(context.destination);
+        boom.start(now);
+        boom.stop(now + 0.4);
+        const tail = context.createOscillator();
+        const tailGain = context.createGain();
+        tail.type = 'sawtooth';
+        tail.frequency.setValueAtTime(520, now + 0.015);
+        tail.frequency.exponentialRampToValueAtTime(95, now + 0.24);
+        tailGain.gain.setValueAtTime(0.0001, now);
+        tailGain.gain.exponentialRampToValueAtTime(0.075, now + 0.025);
+        tailGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.26);
+        tail.connect(tailGain);
+        tailGain.connect(context.destination);
+        tail.start(now);
+        tail.stop(now + 0.28);
+        return;
+      }
       const oscillator = context.createOscillator();
       const gain = context.createGain();
-      const now = context.currentTime;
       oscillator.type = 'sine';
       oscillator.frequency.setValueAtTime(kind === 'merge' ? 660 : 880, now);
       oscillator.frequency.exponentialRampToValueAtTime(kind === 'merge' ? 990 : 1175, now + 0.09);
@@ -902,7 +910,7 @@ function GameMatch3({ onBack, onAdComplete }) {
     if (busy || over) return;
     const bomb = board[index];
     if (!bomb || bomb.type !== 'bomb') return;
-    playGameMoveSound('merge');
+    playGameMoveSound('bomb');
     setBusy(true);
     setSelected(null);
     const targetCount = bomb.size === 'big' ? 5 : 3;
