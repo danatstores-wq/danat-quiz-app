@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { startNativeBanner, showRewardedAd } from './services/admob';
 import BubbleShooter from './BubbleShooter';
 import Backgammon from './Backgammon';
 import {
@@ -36,23 +37,6 @@ const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
 const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change; cache for 7 days per device.
 const LEADERBOARD_CACHE_KEY = 'danat_quiz_leaderboard_cache_v1';
 const LEADERBOARD_CACHE_TTL = 15 * 60 * 1000; // Refresh leaderboard at most every 15 minutes per device.
-
-// --- Google AdMob Configuration (Native Android and iOS builds) ---
-// These IDs are for native mobile apps only. They do not serve ads in a normal web browser.
-const ADMOB_CONFIG = {
-  android: {
-    appId: 'ca-app-pub-1622329571366129~8541634640',
-    banner: 'ca-app-pub-1622329571366129/7228552979',
-    rewardedLife: 'ca-app-pub-1622329571366129/5894243820',
-    rewardedPoints: 'ca-app-pub-1622329571366129/4581162153'
-  },
-  ios: {
-    appId: 'ca-app-pub-1622329571366129~6382375164',
-    banner: 'ca-app-pub-1622329571366129/7352676051',
-    rewardedLife: 'ca-app-pub-1622329571366129/9787267701',
-    rewardedPoints: 'ca-app-pub-1622329571366129/8282614340'
-  }
-};
 
 // --- Sample Initial Questions (Fallback) ---
 const INITIAL_QUESTIONS = [
@@ -1136,6 +1120,7 @@ export default function App() {
   const [authMessage, setAuthMessage] = useState('');
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [isRewardAdLoading, setIsRewardAdLoading] = useState(false);
 
   const [activeTab, setActiveTab] = useState('home');
 
@@ -1159,6 +1144,9 @@ export default function App() {
 
   const langKey = user.language === 'العربية' ? 'ar' : user.language === 'Français' ? 'fr' : 'en';
   const t = TRANSLATIONS[user.language] || TRANSLATIONS['English'];
+
+  // Native banner runs only inside Capacitor Android/iOS builds; the website remains ad-free.
+  useEffect(() => startNativeBanner(), []);
 
   const [lives, setLives] = useState(3);
   const [videosWatched, setVideosWatched] = useState(() => {
@@ -1688,39 +1676,108 @@ export default function App() {
     localStorage.setItem('videosWatched', newCount.toString());
   };
 
-  // Rewarded Video: Extra Life (AdMob Unit: REWARDED_LIFE)
-  const handleWatchForLife = async () => {
-    incrementVideoCount();
-    setLives(prev => prev + 1);
-
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        rewardedAdsWatched: increment(1)
-      });
-    }
-
-    alert(user.language === 'العربية' ? 'حصلت على حياة إضافية! ❤️' : user.language === 'Français' ? 'Vous avez gagné 1 vie supplémentaire ! ❤️' : 'You earned 1 Extra Life! ❤️');
+  const rewardAdMessage = (kind) => {
+    const messages = {
+      'العربية': {
+        mobileOnly: 'الإعلانات بالمكافآت متاحة فقط داخل تطبيق دانات كويز على الهاتف.',
+        unavailable: 'لا يتوفر إعلان للمكافأة حالياً. يرجى المحاولة لاحقاً.',
+        saveFailed: 'انتهى الإعلان، لكن تعذر حفظ المكافأة. يرجى التواصل مع الدعم.',
+        lifeEarned: 'حصلت على حياة إضافية! ❤️',
+        pointsEarned: 'حصلت على 10 نقاط إضافية! 🪙'
+      },
+      'Français': {
+        mobileOnly: 'Les publicités récompensées sont disponibles uniquement dans l’application mobile Danat Quiz.',
+        unavailable: 'Aucune publicité récompensée n’est disponible pour le moment. Réessayez plus tard.',
+        saveFailed: 'La publicité est terminée, mais la récompense n’a pas pu être enregistrée. Contactez le support.',
+        lifeEarned: 'Vous avez gagné 1 vie supplémentaire ! ❤️',
+        pointsEarned: 'Vous avez gagné 10 points bonus ! 🪙'
+      },
+      English: {
+        mobileOnly: 'Rewarded ads are available only in the Danat Quiz mobile app.',
+        unavailable: 'No rewarded ad is available right now. Please try again later.',
+        saveFailed: 'The ad finished, but we could not save your reward. Please contact support.',
+        lifeEarned: 'You earned 1 Extra Life! ❤️',
+        pointsEarned: 'You earned 10 Bonus Points! 🪙'
+      }
+    };
+    return (messages[user.language] || messages.English)[kind];
   };
 
-  // Rewarded Video: Bonus Points (AdMob Unit: REWARDED_POINTS)
-  const handleWatchForPoints = async () => {
-    incrementVideoCount();
-    setScore(prev => prev + 10);
-    setUser(prev => ({
-      ...prev,
-      points: prev.points + 10,
-      totalEarnedPoints: prev.totalEarnedPoints + 10
-    }));
+  // Grant an extra life only after the native AdMob SDK confirms the reward.
+  const handleWatchForLife = async () => {
+    if (isRewardAdLoading) return;
+    setIsRewardAdLoading(true);
 
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        points: increment(10),
-        totalEarnedPoints: increment(10),
-        rewardedAdsWatched: increment(1)
-      });
+    try {
+      const reward = await showRewardedAd('life');
+      if (!reward) {
+        alert(rewardAdMessage('unavailable'));
+        return;
+      }
+
+      if (currentUser) {
+        try {
+          await updateDoc(doc(db, "users", currentUser.uid), {
+            rewardedAdsWatched: increment(1)
+          });
+        } catch (error) {
+          console.error('Could not save rewarded-ad life:', error);
+          alert(rewardAdMessage('saveFailed'));
+          return;
+        }
+      }
+
+      setLives(prev => prev + 1);
+      incrementVideoCount();
+      alert(rewardAdMessage('lifeEarned'));
+    } catch (error) {
+      console.warn('Rewarded life ad was not completed:', error);
+      alert(error?.code === 'MOBILE_ONLY' ? rewardAdMessage('mobileOnly') : rewardAdMessage('unavailable'));
+    } finally {
+      setIsRewardAdLoading(false);
     }
+  };
 
-    alert(user.language === 'العربية' ? 'حصلت على 10 نقاط إضافية! 🪙' : user.language === 'Français' ? 'Vous avez gagné 10 points bonus ! 🪙' : 'You earned 10 Bonus Points! 🪙');
+  // Grant bonus points only after the native AdMob SDK confirms the reward.
+  const handleWatchForPoints = async () => {
+    if (isRewardAdLoading) return;
+    setIsRewardAdLoading(true);
+
+    try {
+      const reward = await showRewardedAd('points');
+      if (!reward) {
+        alert(rewardAdMessage('unavailable'));
+        return;
+      }
+
+      if (currentUser) {
+        try {
+          await updateDoc(doc(db, "users", currentUser.uid), {
+            points: increment(10),
+            totalEarnedPoints: increment(10),
+            rewardedAdsWatched: increment(1)
+          });
+        } catch (error) {
+          console.error('Could not save rewarded-ad points:', error);
+          alert(rewardAdMessage('saveFailed'));
+          return;
+        }
+      }
+
+      incrementVideoCount();
+      setScore(prev => prev + 10);
+      setUser(prev => ({
+        ...prev,
+        points: prev.points + 10,
+        totalEarnedPoints: prev.totalEarnedPoints + 10
+      }));
+      alert(rewardAdMessage('pointsEarned'));
+    } catch (error) {
+      console.warn('Rewarded points ad was not completed:', error);
+      alert(error?.code === 'MOBILE_ONLY' ? rewardAdMessage('mobileOnly') : rewardAdMessage('unavailable'));
+    } finally {
+      setIsRewardAdLoading(false);
+    }
   };
 
   // 3-Hour Timed Lives Bonus (+5 Lives every 3 hrs, max 10 lives per 24 hours)
@@ -2157,6 +2214,7 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-2.5">
                   <button
                     onClick={handleWatchForLife}
+                    disabled={isRewardAdLoading}
                     className="flex min-h-[54px] flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-300 bg-gradient-to-b from-[#713b46] to-[#421f35] px-2 py-2 text-xs font-black text-amber-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_3px_10px_rgba(0,0,0,0.28)] transition hover:border-yellow-200 hover:from-[#854653] hover:to-[#51243b] active:scale-[0.98]"
                   >
                     <span className="text-base leading-none">❤️ +1</span>
@@ -2164,6 +2222,7 @@ export default function App() {
                   </button>
                   <button
                     onClick={handleWatchForPoints}
+                    disabled={isRewardAdLoading}
                     className="flex min-h-[54px] flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-300 bg-gradient-to-b from-[#315b68] to-[#193b4b] px-2 py-2 text-xs font-black text-amber-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_3px_10px_rgba(0,0,0,0.28)] transition hover:border-yellow-200 hover:from-[#3b6e7c] hover:to-[#20495a] active:scale-[0.98]"
                   >
                     <span className="text-base leading-none">+10 🪙</span>
@@ -2255,6 +2314,7 @@ export default function App() {
                   <p className="text-xs text-slate-200 leading-relaxed">{t.outOfLivesDesc}</p>
                   <button 
                     onClick={handleWatchForLife}
+                    disabled={isRewardAdLoading}
                     className="w-full py-3.5 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-white font-black text-sm rounded-xl shadow-lg transition"
                   >
                     {t.watchForLife}
@@ -2722,7 +2782,7 @@ export default function App() {
         )}
 
         {/* FIXED BOTTOM NAVIGATION BAR */}
-        <div className="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-r from-[#101a36]/[0.99] via-[#0b142c]/[0.99] to-[#101a36]/[0.99] border-t-2 border-amber-400 px-1.5 sm:px-3 py-2.5 flex justify-around items-center backdrop-blur-xl z-30 shadow-2xl">
+        <div style={{ bottom: 'var(--native-ad-banner-height, 0px)' }} className="absolute left-0 right-0 w-full bg-gradient-to-r from-[#101a36]/[0.99] via-[#0b142c]/[0.99] to-[#101a36]/[0.99] border-t-2 border-amber-400 px-1.5 sm:px-3 py-2.5 flex justify-around items-center backdrop-blur-xl z-30 shadow-2xl">
           {[
             { id: 'home', label: user.language === 'العربية' ? 'الرئيسية' : user.language === 'Français' ? 'Accueil' : 'Home', icon: Home },
             { id: 'statistics', label: t.statistics, icon: BarChart2 },
