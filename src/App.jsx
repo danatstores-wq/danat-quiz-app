@@ -31,9 +31,9 @@ import {
 // --- LocalStorage Storage Keys ---
 const QUIZ_INDEX_KEY = 'danat_quiz_current_index';
 const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
-const QUESTIONS_CACHE_TTL = 24 * 60 * 60 * 1000;
+const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change; cache for 7 days per device.
 const LEADERBOARD_CACHE_KEY = 'danat_quiz_leaderboard_cache_v1';
-const LEADERBOARD_CACHE_TTL = 5 * 60 * 1000;
+const LEADERBOARD_CACHE_TTL = 15 * 60 * 1000; // Refresh leaderboard at most every 15 minutes per device.
 
 // --- Google AdMob Unit Configuration (Prepared for Native Mobile Builds) ---
 const ADMOB_UNITS = {
@@ -686,6 +686,9 @@ const playQuizCelebrationSound = () => {
   }
 };
 
+// Reuse the real bomb sound locally; Vite includes this file in web and native builds.
+let sharedBombAudio = null;
+
 // Reuse one audio context for arcade sounds. Mobile browsers (especially iOS
 // Safari) may suspend newly-created contexts unless they are resumed directly
 // from a real touch/pointer interaction.
@@ -709,40 +712,24 @@ const unlockGameAudio = () => {
 
 const playGameMoveSound = (kind = 'match') => {
   try {
+    if (kind === 'bomb') {
+      if (typeof window === 'undefined') return;
+      if (!sharedBombAudio) {
+        sharedBombAudio = new Audio(`${import.meta.env.BASE_URL}sounds/bomb-explosion.mp3`);
+        sharedBombAudio.preload = 'auto';
+        sharedBombAudio.volume = 0.85;
+      }
+      sharedBombAudio.currentTime = 0;
+      const playback = sharedBombAudio.play();
+      if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+      return;
+    }
     const context = unlockGameAudio();
     if (!context) return;
 
     const playTone = () => {
       if (context.state !== 'running') return;
       const now = context.currentTime;
-      if (kind === 'bomb') {
-        // Short low boom followed by a bright, descending blast tail.
-        const boom = context.createOscillator();
-        const boomGain = context.createGain();
-        boom.type = 'triangle';
-        boom.frequency.setValueAtTime(145, now);
-        boom.frequency.exponentialRampToValueAtTime(42, now + 0.32);
-        boomGain.gain.setValueAtTime(0.0001, now);
-        boomGain.gain.exponentialRampToValueAtTime(0.32, now + 0.012);
-        boomGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.38);
-        boom.connect(boomGain);
-        boomGain.connect(context.destination);
-        boom.start(now);
-        boom.stop(now + 0.4);
-        const tail = context.createOscillator();
-        const tailGain = context.createGain();
-        tail.type = 'sawtooth';
-        tail.frequency.setValueAtTime(520, now + 0.015);
-        tail.frequency.exponentialRampToValueAtTime(95, now + 0.24);
-        tailGain.gain.setValueAtTime(0.0001, now);
-        tailGain.gain.exponentialRampToValueAtTime(0.075, now + 0.025);
-        tailGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.26);
-        tail.connect(tailGain);
-        tailGain.connect(context.destination);
-        tail.start(now);
-        tail.stop(now + 0.28);
-        return;
-      }
       const oscillator = context.createOscillator();
       const gain = context.createGain();
       oscillator.type = 'sine';
