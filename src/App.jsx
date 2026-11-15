@@ -1145,6 +1145,7 @@ export default function App() {
     lastSpiritClaimTime: 0,
     dailyClaimedLives: 0,
     lastDailyResetTime: 0,
+    livesBalance: 3,
     avatar: 'avatar-man-ghutra.png',
   });
 
@@ -1344,6 +1345,11 @@ export default function App() {
         const userSnap = await getDoc(userDocRef);
         if (userSnap.exists()) {
           const data = userSnap.data();
+          const savedLives = Number.isInteger(data.livesBalance) && data.livesBalance >= 0 ? data.livesBalance : 3;
+          if (data.livesBalance !== savedLives) {
+            await updateDoc(userDocRef, { livesBalance: savedLives });
+          }
+          setLives(savedLives);
           const answeredCount = data.totalQuestionsAnswered || 0;
           const calculatedLevel = Math.floor(answeredCount / 50) + 1;
 
@@ -1360,12 +1366,14 @@ export default function App() {
             lastSpiritClaimTime: data.lastSpiritClaimTime || 0,
             dailyClaimedLives: data.dailyClaimedLives || 0,
             lastDailyResetTime: data.lastDailyResetTime || 0,
+            livesBalance: savedLives,
             avatar: data.avatar ?? prev.avatar,
             language: data.language ?? prev.language,
           }));
         }
       } else {
         setCurrentUser(null);
+        setLives(3);
         setUser(prev => ({
           ...prev,
           name: 'Guest',
@@ -1439,6 +1447,7 @@ export default function App() {
         lastSpiritClaimTime: 0,
         dailyClaimedLives: 0,
         lastDailyResetTime: 0,
+        livesBalance: 3,
         avatar: 'avatar-man-ghutra.png',
         language: 'English',
         createdAt: new Date().toISOString()
@@ -1578,7 +1587,9 @@ export default function App() {
     } else {
       // Incorrect answer: Deduct 1 life and 5 points penalty (floor at 0)
       const pointPenalty = 5;
-      setLives(prev => Math.max(0, prev - 1));
+      const newLivesBalance = Math.max(0, lives - 1);
+      setLives(newLivesBalance);
+      setUser(prev => ({ ...prev, livesBalance: newLivesBalance }));
       setUser(prev => ({
         ...prev,
         points: Math.max(0, prev.points - pointPenalty),
@@ -1589,6 +1600,7 @@ export default function App() {
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
           points: increment(-pointPenalty),
+          livesBalance: increment(-1),
           totalQuestionsAnswered: increment(1),
           level: newLevel
         });
@@ -1678,7 +1690,8 @@ export default function App() {
       if (currentUser) {
         try {
           await updateDoc(doc(db, "users", currentUser.uid), {
-            rewardedAdsWatched: increment(1)
+            rewardedAdsWatched: increment(1),
+            livesBalance: increment(1)
           });
         } catch (error) {
           console.error('Could not save rewarded-ad life:', error);
@@ -1688,6 +1701,7 @@ export default function App() {
       }
 
       setLives(prev => prev + 1);
+      setUser(prev => ({ ...prev, livesBalance: (prev.livesBalance ?? lives) + 1 }));
       incrementVideoCount();
       alert(rewardAdMessage('lifeEarned'));
     } catch (error) {
@@ -1744,6 +1758,8 @@ export default function App() {
 
     setUser(prev => ({
       ...prev,
+      livesBalance: (prev.livesBalance ?? lives) + livesToAdd, 
+      ...prev,
       lastSpiritClaimTime: now,
       dailyClaimedLives: updatedDailyClaimed,
       lastDailyResetTime: newResetTime
@@ -1753,7 +1769,8 @@ export default function App() {
       await updateDoc(doc(db, "users", currentUser.uid), {
         lastSpiritClaimTime: now,
         dailyClaimedLives: updatedDailyClaimed,
-        lastDailyResetTime: newResetTime
+        lastDailyResetTime: newResetTime,
+        livesBalance: increment(livesToAdd)
       });
     }
 
