@@ -1,57 +1,65 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-// Debug check to see if dotenv is actually reading the .env file
-console.log("🔍 Checking .env load -> API Key found:", process.env.VITE_FIREBASE_API_KEY ? "YES (Length: " + process.env.VITE_FIREBASE_API_KEY.length + ")" : "NO (Undefined)");
-
 import { db } from "./src/firebase.js";
-import { collection, doc, writeBatch } from "firebase/firestore";
-import fs from "fs";
+import { collection, doc, getDocs, writeBatch } from "firebase/firestore";
+import fs from "node:fs";
 
-// CONFIGURATION FOR UPLOAD
-const START_INDEX = 0; 
-const DAILY_LIMIT = null; // Set to null to process all items to the end
+// Safe append-only uploader:
+// - Reads the current question IDs once.
+// - Creates only IDs that do not already exist.
+// - Never overwrites an existing question document.
+const BATCH_SIZE = 400;
 
 async function uploadQuestions() {
-  try {
-    const rawData = fs.readFileSync("./questions.json", "utf8");
-    const questions = JSON.parse(rawData);
+  const rawData = fs.readFileSync("./questions.json", "utf8");
+  const questions = JSON.parse(rawData);
 
-    // Slice the array starting from START_INDEX to the end (or limit if set)
-    const chunkToUpload = DAILY_LIMIT 
-      ? questions.slice(START_INDEX, START_INDEX + DAILY_LIMIT)
-      : questions.slice(START_INDEX);
-
-    if (chunkToUpload.length === 0) {
-      console.log("⚠️ All questions have been uploaded! No items left in this range.");
-      process.exit(0);
-    }
-
-    console.log(`Starting upload of chunk: ${chunkToUpload.length} total items to Firestore...`);
-
-    // Firestore batch writes have a hard limit of 500 operations per batch.
-    const batchSize = 400;
-    
-    for (let i = 0; i < chunkToUpload.length; i += batchSize) {
-      const batch = writeBatch(db);
-      const subChunk = chunkToUpload.slice(i, i + batchSize);
-
-      subChunk.forEach((q) => {
-        // Use q.id directly (e.g., "q311") as the document key in Firestore
-        const docRef = doc(db, "questions", q.id);
-        batch.set(docRef, q);
-      });
-
-      await batch.commit();
-      console.log(`Uploaded sub-batch ${Math.floor(i / batchSize) + 1} (processed up to item index ${START_INDEX + i + subChunk.length})`);
-    }
-
-    console.log("✅ All remaining questions successfully uploaded to Firestore!");
-    process.exit(0);
-  } catch (error) {
-    console.error("❌ Error uploading questions:", error);
-    process.exit(1);
+  if (!Array.isArray(questions)) {
+    throw new Error("questions.json must contain an array.");
   }
+
+  const seenIds = new Set();
+  for (const question of questions) {
+    if (!question || typeof question.id !== "string" || !question.id.trim()) {
+      throw new Error("Every question must have a non-empty string id.");
+    }
+    if (seenIds.has(question.id)) {
+      throw new Error(`Duplicate question ID in questions.json: ${question.id}`);
+    }
+    seenIds.add(question.id);
+  }
+
+  console.log(`Checking existing Firestore question IDs for ${questions.length} local questions...`);
+  const existingSnapshot = await getDocs(collection(db, "questions"));
+  const existingIds = new Set(existingSnapshot.docs.map((item) => item.id));
+
+  const newQuestions = questions.filter((question) => !existingIds.has(question.id));
+
+  if (newQuestions.length === 0) {
+    console.log("No new questions to add. Existing Firestore questions were left unchanged.");
+    return;
+  }
+
+  console.log(`Appending ${newQuestions.length} new questions; skipping ${questions.length - newQuestions.length} existing IDs.`);
+
+  for (let start = 0; start < newQuestions.length; start += BATCH_SIZE) {
+    const batch = writeBatch(db);
+    const chunk = newQuestions.slice(start, start + BATCH_SIZE);
+
+    for (const question of chunk) {
+      // IDs were checked above; only missing IDs are written.
+      batch.set(doc(db, "questions", question.id), question);
+    }
+
+    await batch.commit();
+    console.log(`Created ${Math.min(start + chunk.length, newQuestions.length)} of ${newQuestions.length} new questions.`);
+  }
+
+  console.log("Append-only upload complete. Existing question documents were not modified.");
 }
 
-uploadQuestions();
+uploadQuestions().catch((error) => {
+  console.error("Question upload failed:", error);
+  process.exitCode = 1;
+});
