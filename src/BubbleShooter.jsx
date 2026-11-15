@@ -77,7 +77,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
       setPaused(true);
     }, 120000);
     return () => window.clearTimeout(timer);
-  }, [endless, showAd, paused, score, moves]);
+  }, [endless, showAd, paused]);
 
   useEffect(() => {
     if (!showAd) return undefined;
@@ -136,11 +136,6 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
       setAdReason('level');
       setShowAd(true);
       setPaused(true);
-    } else if (false) {
-      setAdReason('gameover');
-      setShowAd(true);
-      setPaused(true);
-    }
   };
 
   const handleGridPointer = (event) => {
