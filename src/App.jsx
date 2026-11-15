@@ -1737,19 +1737,22 @@ export default function App() {
         return;
       }
 
-      // The client callback is not proof. Wait briefly for the server-verified
-      // Firestore balance update; otherwise leave the reward pending.
-      const livesBeforeAd = Number(user.livesBalance ?? lives);
-      for (let attempt = 0; attempt < 15; attempt += 1) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        const profileSnapshot = await getDoc(doc(db, 'users', currentUser.uid));
-        if (!profileSnapshot.exists()) continue;
-        const verifiedLives = Number(profileSnapshot.data().livesBalance ?? livesBeforeAd);
-        if (verifiedLives > livesBeforeAd) {
-          setLives(verifiedLives);
-          setUser(prev => ({ ...prev, livesBalance: verifiedLives }));
-          alert(rewardAdMessage('lifeEarned'));
-          return;
+      // The client callback is not proof. Ask the Worker whether Google's
+      // signed callback has been verified and the reward has been committed.
+      for (let attempt = 0; attempt < 20; attempt += 1) {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+          const status = await callTrustedApi(currentUser, '/v1/ad-status', {
+            sessionId: rewardSession.sessionId
+          });
+          if (status.status === 'completed' && Number.isInteger(status.livesBalance)) {
+            setLives(status.livesBalance);
+            setUser(prev => ({ ...prev, livesBalance: status.livesBalance }));
+            alert(rewardAdMessage('lifeEarned'));
+            return;
+          }
+        } catch (statusError) {
+          console.warn('Waiting for verified ad reward:', statusError);
         }
       }
       alert(rewardAdMessage('pending'));
