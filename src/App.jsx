@@ -16,7 +16,8 @@ import {
   browserLocalPersistence,
   signOut,
   sendPasswordResetEmail,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signInAnonymously
 } from 'firebase/auth';
 import {
   doc,
@@ -1649,6 +1650,19 @@ export default function App() {
     localStorage.setItem('videosWatched', newCount.toString());
   };
 
+  const handleContinueAsGuest = async () => {
+    setAuthError('');
+    setAuthMessage('');
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+      await signInAnonymously(auth);
+      setShowAuthModal(false);
+    } catch (error) {
+      console.error('Anonymous guest sign-in failed:', error);
+      setAuthError('Guest play is temporarily unavailable. Please try again.');
+    }
+  };
+
   const rewardAdMessage = (kind) => {
     const messages = {
       'العربية': {
@@ -1682,7 +1696,8 @@ export default function App() {
     setIsRewardAdLoading(true);
 
     try {
-      const reward = await showRewardedAd('life');
+      if (!currentUser?.uid) throw new Error('AUTH_REQUIRED');
+      const reward = await showRewardedAd('life', currentUser.uid);
       if (!reward) {
         alert(rewardAdMessage('unavailable'));
         return;
@@ -1905,7 +1920,7 @@ export default function App() {
             </form>
           )}
 
-          <button type="button" onClick={() => { setShowAuthModal(false); setAuthError(''); setAuthMessage(''); }} className="w-full mt-3 py-2.5 rounded-xl border border-purple-300/40 text-slate-200 text-xs font-bold hover:bg-purple-500/10">Continue as Guest</button>
+          <button type="button" onClick={handleContinueAsGuest} className="w-full mt-3 py-2.5 rounded-xl border border-purple-300/40 text-slate-200 text-xs font-bold hover:bg-purple-500/10">Continue as Guest</button>
 
           {authMode !== 'forgot' && (
             <div className="text-center pt-2">
