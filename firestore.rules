@@ -1,0 +1,64 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && request.auth.uid == '4ZOJfbUjq8MYKb0fgOcoQAbEUOl1';
+    }
+
+    function ownsUser(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    // Private player profiles. Players may update their own game/profile fields,
+    // but only the administrator may change dncBalance.
+    match /users/{userId} {
+      allow read: if isAdmin() || ownsUser(userId);
+
+      allow create: if isAdmin()
+        || (ownsUser(userId)
+          && request.resource.data.dncBalance == 0);
+
+      allow update: if isAdmin()
+        || (ownsUser(userId)
+          && !request.resource.data.diff(resource.data)
+            .affectedKeys().hasAny(['dncBalance']));
+
+      allow delete: if isAdmin();
+    }
+
+    // Questions are needed by guest players as well as signed-in players.
+    // Only the administrator can modify the question bank.
+    match /questions/{questionId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Immutable audit entries: only the administrator can create them.
+    // Each player can read only entries belonging to their own UID.
+    match /dncLedger/{entryId} {
+      allow read: if isAdmin()
+        || (signedIn() && resource.data.playerUid == request.auth.uid);
+      allow create: if isAdmin()
+        && request.resource.data.keys().hasAll([
+          'playerUid', 'amount', 'type', 'createdAt', 'adminUid', 'note'
+        ])
+        && request.resource.data.adminUid == request.auth.uid
+        && request.resource.data.amount is number
+        && request.resource.data.amount != 0
+        && request.resource.data.type in ['manual_credit', 'manual_adjustment'];
+      allow update, delete: if false;
+    }
+
+    // Deny access to every collection not explicitly listed above.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
