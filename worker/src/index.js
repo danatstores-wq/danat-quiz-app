@@ -250,6 +250,23 @@ async function readFirestoreDocument(env, collection, id) {
   return response.json();
 }
 
+async function getAdSessionStatus(env, uid, sessionId) {
+  if (typeof sessionId !== "string" || !/^[a-f0-9]{32}$/i.test(sessionId)) {
+    throw Object.assign(new Error("Invalid session ID"), { status: 400 });
+  }
+  const session = await readFirestoreDocument(env, "adRewardSessions", sessionId);
+  if (!session || session.fields?.uid?.stringValue !== uid) {
+    throw Object.assign(new Error("Ad session not found"), { status: 404 });
+  }
+  const status = session.fields?.status?.stringValue;
+  if (status !== "completed") return { status: "pending" };
+  const player = await readFirestoreDocument(env, "users", uid);
+  if (!player) throw Object.assign(new Error("Player profile unavailable"), { status: 503 });
+  const livesValue = player.fields?.livesBalance;
+  const livesBalance = Number(livesValue?.integerValue ?? livesValue?.doubleValue ?? 0);
+  return { status: "completed", livesBalance: Number.isFinite(livesBalance) ? livesBalance : 0 };
+}
+
 async function processAdMobReward(request, env) {
   const params = await verifyAdMobSignature(request);
   const adUnit = params.get("ad_unit");
@@ -478,6 +495,16 @@ export default {
         return json({ sessionId, customData: sessionId }, 201, cors);
       } catch (error) {
         return json({ error: "ad_session_unavailable" }, 503, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/ad-status" && request.method === "POST") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        const body = await request.json();
+        return json(await getAdSessionStatus(env, user.uid, body?.sessionId), 200, cors);
+      } catch (error) {
+        return json({ error: "ad_status_unavailable" }, error?.status || 503, cors);
       }
     }
 
