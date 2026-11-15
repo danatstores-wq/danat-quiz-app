@@ -2105,11 +2105,10 @@ export default function App() {
                   type="button"
                   onClick={() => setActiveTab('gameBubbleShooter')}
                   aria-label="Play Bubble Shooter"
-                  className="group relative aspect-square w-full rounded-2xl border-[4px] border-sky-300 bg-gradient-to-br from-sky-200 via-blue-500 to-indigo-800 p-[3px] shadow-[0_0_0_2px_rgba(30,64,120,0.9),0_0_24px_rgba(56,189,248,0.45)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-200"
+                  className="group relative aspect-square w-full rounded-2xl border-[4px] border-amber-300 bg-gradient-to-br from-yellow-200 via-amber-500 to-yellow-700 p-[3px] shadow-[0_0_0_2px_rgba(120,75,12,0.9),0_0_24px_rgba(251,191,36,0.55)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_0_0_2px_rgba(120,75,12,0.95),0_0_30px_rgba(251,191,36,0.75)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200"
                 >
-                  <span className="flex h-full w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-[10px] bg-gradient-to-br from-[#102746] to-[#071329]">
-                    <span className="text-6xl drop-shadow-[0_4px_12px_rgba(56,189,248,.7)]">🫧</span>
-                    <span className="text-sm font-black text-white">Bubble Shooter</span>
+                  <span className="block h-full w-full overflow-hidden rounded-[10px] bg-[#211a38]">
+                    <img src={assetPath('bubble_shooter.png')} alt="Bubble Shooter" className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.06]" />
                   </span>
                 </button>
               </div>
