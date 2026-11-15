@@ -19,7 +19,7 @@ const TEXT = {
     win: 'You win!', lose: 'Computer wins!', playAgain: 'Play again',
     hit: 'A blot was hit!', double: 'Double roll — four moves available.',
     rules: 'Move all 15 checkers into your home board, then bear them off. Hit single opposing checkers to send them to the bar. A point with two or more opposing checkers is blocked.',
-    selected: 'Selected', remaining: 'Moves left', computerRolled: 'Computer rolled'
+    selected: 'Selected', remaining: 'Moves left', computerRolled: 'Computer rolled', computerMoved: 'Computer moved', point: 'Point', from: 'FROM', to: 'TO', moveLegend: '{t.moveLegend}'
   },
   'Français': {
     title: 'Backgammon', subtitle: 'Stratégie classique. Dés équitables. Sans triche.', opening: 'Lancer initial',
@@ -32,7 +32,7 @@ const TEXT = {
     win: 'Vous avez gagné !', lose: "L'ordinateur gagne !", playAgain: 'Rejouer',
     hit: 'Un pion isolé a été frappé !', double: 'Double ! Quatre déplacements disponibles.',
     rules: 'Déplacez vos 15 pions dans votre jan intérieur, puis sortez-les. Frappez les pions isolés adverses pour les envoyer à la barre. Une flèche occupée par deux pions adverses ou plus est bloquée.',
-    selected: 'Sélectionné', remaining: 'Coups restants', computerRolled: 'L’ordinateur a obtenu'
+    selected: 'Sélectionné', remaining: 'Coups restants', computerRolled: 'L’ordinateur a obtenu', computerMoved: 'Déplacement de l’ordinateur', point: 'Case', from: 'DÉPART', to: 'ARRIVÉE', moveLegend: 'Bleu = départ · Vert = arrivée'
   },
   'العربية': {
     title: 'طاولة الزهر', subtitle: 'استراتيجية كلاسيكية ونرد عادل بلا تلاعب.', opening: 'الرمي الافتتاحي',
@@ -45,7 +45,7 @@ const TEXT = {
     win: 'لقد فزت!', lose: 'الكمبيوتر فاز!', playAgain: 'العب مجدداً',
     hit: 'تم ضرب قطعة منفردة!', double: 'دبل! لديك أربع حركات.',
     rules: 'حرّك قطعك الخمس عشرة إلى منطقتك الداخلية ثم أخرجها. اضرب قطع الخصم المنفردة لإرسالها إلى البار. لا يمكن الوقوف على خانة فيها قطعتان أو أكثر للخصم.',
-    selected: 'محدد', remaining: 'الحركات المتبقية', computerRolled: 'نتيجة نرد الكمبيوتر'
+    selected: 'محدد', remaining: 'الحركات المتبقية', computerRolled: 'نتيجة نرد الكمبيوتر', computerMoved: 'حركة الكمبيوتر', point: 'الخانة', from: 'من', to: 'إلى', moveLegend: 'الأزرق = نقطة الانطلاق · الأخضر = الوجهة'
   }
 };
 
@@ -347,8 +347,8 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </span>
       {!top && <span className="relative z-10 mb-1 text-[9px] font-black text-white/70">{point + 1}</span>}
       {active && <span className={`absolute inset-x-0 z-20 text-center text-[9px] font-black text-yellow-100 ${top ? 'bottom-1' : 'top-1'}`}>MOVE</span>}
-      {computerFrom && <span className={`absolute inset-x-0 z-30 text-center text-[9px] font-black text-sky-100 ${top ? 'bottom-1' : 'top-1'}`}>FROM</span>}
-      {computerTo && <span className={`absolute inset-x-0 z-30 text-center text-[9px] font-black text-emerald-100 ${top ? 'bottom-1' : 'top-1'}`}>TO</span>}
+      {computerFrom && <span className={`absolute inset-x-0 z-30 text-center text-[9px] font-black text-sky-100 ${top ? 'bottom-1' : 'top-1'}`}>{t.from}</span>}
+      {computerTo && <span className={`absolute inset-x-0 z-30 text-center text-[9px] font-black text-emerald-100 ${top ? 'bottom-1' : 'top-1'}`}>{t.to}</span>}
     </button>;
   };
 
@@ -400,7 +400,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </div>
     </div>
 
-    {computerMove && <div dir="ltr" className="rounded-xl border border-sky-300/50 bg-sky-950/50 px-4 py-2 text-center"><div className="text-xs font-black text-sky-200">{t.computer} moved</div><div className="mt-1 text-sm font-bold text-white">{computerMove.from === -1 ? t.bar : `Point ${computerMove.from + 1}`} → {computerMove.to === 24 ? t.borneOff : `Point ${computerMove.to + 1}`} <span className="text-sky-200">({computerMove.die})</span></div><div className="mt-1 text-[10px] text-sky-100/70">Blue = starting point · Green = destination</div></div>}
+    {computerMove && <div dir="ltr" className="rounded-xl border border-sky-300/50 bg-sky-950/50 px-4 py-2 text-center"><div className="text-xs font-black text-sky-200">{t.computerMoved}</div><div className="mt-1 text-sm font-bold text-white">{computerMove.from === -1 ? t.bar : `${t.point} ${computerMove.from + 1}`} → {computerMove.to === 24 ? t.borneOff : `${t.point} ${computerMove.to + 1}`} <span className="text-sky-200">({computerMove.die})</span></div><div className="mt-1 text-[10px] text-sky-100/70">Blue = starting point · Green = destination</div></div>}
     {computerDice.length === 2 && <div dir={language === 'العربية' ? 'rtl' : 'ltr'} className="rounded-xl border border-rose-300/40 bg-rose-950/40 px-4 py-3 text-center"><div className="text-xs font-black text-rose-200">{t.computerRolled}</div><div className="mt-2 flex items-center justify-center gap-3"><span className="rounded-lg border border-rose-200/50 bg-white px-3 py-1.5 text-xl font-black text-slate-900">{computerDice[0]}</span><span className="text-rose-100 font-black">+</span><span className="rounded-lg border border-rose-200/50 bg-white px-3 py-1.5 text-xl font-black text-slate-900">{computerDice[1]}</span></div></div>}
     {history.length > 0 && <div className="rounded-xl border border-slate-700 bg-slate-900/70 p-3"><div className="mb-2 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Recent dice rolls</div><div className="flex flex-wrap justify-center gap-2">{history.slice(0, 6).map((entry, index) => <span key={entry.at + index} className={`rounded-lg border px-3 py-1.5 text-xs font-bold ${entry.side === 1 ? 'border-amber-400/40 text-amber-200' : 'border-rose-400/40 text-rose-200'}`}>{entry.opening ? `${t.opening}: ${t.you} ${entry.dice[0]} · ${t.computer} ${entry.dice[1]} → ${entry.side === 1 ? t.you : t.computer}` : `${entry.side === 1 ? t.you : t.computer}: ${entry.dice[0]} + ${entry.dice[1]}`}</span>)}</div></div>}
     <div className="rounded-xl border border-emerald-400/25 bg-emerald-950/30 px-4 py-3 text-center text-xs text-emerald-100"><span className="font-bold">{t.fair}</span><div className="mt-1 text-[10px] text-emerald-100/70">Each die uses an independent secure random draw. Rejection sampling removes modulo bias.</div></div>
