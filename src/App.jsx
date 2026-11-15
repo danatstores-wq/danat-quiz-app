@@ -889,7 +889,7 @@ function GameMatch3({ onBack, onAdComplete }) {
       }
       working = dropped;
       setBoard(working);
-      await new Promise(resolve => setTimeout(resolve, 180));
+      await new Promise(resolve => setTimeout(resolve, 65));
     }
 
     // A cascade can leave the board with no legal swaps. Refresh it
