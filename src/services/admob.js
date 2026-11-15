@@ -86,6 +86,9 @@ export function startNativeBanner() {
     const units = getPlatformUnits();
     if (!units) return;
 
+    // Reserve the native banner area immediately so it never covers the bottom navigation.
+    document.documentElement.style.setProperty('--native-ad-banner-height', '56px');
+
     await AdMob.showBanner({
       adId: units.banner,
       adSize: BannerAdSize.ADAPTIVE_BANNER,
