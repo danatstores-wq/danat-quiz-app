@@ -38,8 +38,9 @@ async function verifyFirebaseIdToken(request) {
   if (!match) throw new Error("Missing bearer token");
 
   const token = match[1];
+  if (token.length > 8192) throw new Error("Token too large");
   const parts = token.split(".");
-  if (parts.length !== 3) throw new Error("Malformed token");
+  if (parts.length !== 3 || parts.some((part) => !part)) throw new Error("Malformed token");
 
   const header = decodeJsonPart(parts[0]);
   const claims = decodeJsonPart(parts[1]);
@@ -52,7 +53,11 @@ async function verifyFirebaseIdToken(request) {
       claims.sub.length > 128 ||
       typeof claims.exp !== "number" || claims.exp <= now ||
       typeof claims.iat !== "number" || claims.iat > now + 60 ||
-      typeof claims.auth_time !== "number" || claims.auth_time > now + 60) {
+      claims.iat < now - 3600 - 60 ||
+      claims.exp - claims.iat > 3600 + 60 ||
+      typeof claims.auth_time !== "number" ||
+      claims.auth_time > now + 60 ||
+      claims.auth_time > claims.iat + 60) {
     throw new Error("Invalid token claims");
   }
 
@@ -90,7 +95,7 @@ export default {
     }
 
     if (url.pathname === "/health" && request.method === "GET") {
-      return json({ status: "ok", service: "danat-quiz-api", version: 1 });
+      return json({ status: "ok", service: "danat-quiz-api", version: 1 }, 200, cors);
     }
 
     if (url.pathname === "/v1/session" && request.method === "GET") {
