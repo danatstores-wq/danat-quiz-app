@@ -145,22 +145,59 @@ const allTurnSequences = (board, bars, borne, side, dice) => {
   });
 };
 
+const evaluateComputerPosition = ({ board, bars, borne }) => {
+  let computerPips = 0;
+  let playerPips = 0;
+  let madePoints = 0;
+  let playerMadePoints = 0;
+  let exposedBlotPenalty = 0;
+  let primeBonus = 0;
+  let consecutiveMade = 0;
+
+  for (let point = 0; point < 24; point++) {
+    const count = board[point];
+    if (count < 0) {
+      const checkers = -count;
+      computerPips += (24 - point) * checkers;
+      if (checkers >= 2) {
+        madePoints++;
+        consecutiveMade++;
+        if (point >= 18) madePoints += 0.35;
+      } else {
+        consecutiveMade = 0;
+        let reachableDice = 0;
+        for (let die = 1; die <= 6; die++) {
+          const source = point + die;
+          if (source < 24 && board[source] > 0) reachableDice++;
+        }
+        const hitChance = 1 - ((6 - reachableDice) / 6) ** 2;
+        exposedBlotPenalty += hitChance * (point >= 18 ? 10 : 7);
+      }
+      if (consecutiveMade >= 2) primeBonus += consecutiveMade === 2 ? 1.5 : 2.5;
+    } else if (count > 0) {
+      playerPips += (point + 1) * count;
+      if (count >= 2) playerMadePoints++;
+    } else {
+      consecutiveMade = 0;
+    }
+  }
+
+  return (playerPips - computerPips) * 0.2
+    + (borne[-1] - borne[1]) * 13
+    + madePoints * 5
+    - playerMadePoints * 3.5
+    + primeBonus
+    + bars[1] * 19
+    - bars[-1] * 22
+    - exposedBlotPenalty;
+};
+
 const scoreComputerPath = (path, board, bars, borne) => {
   let state = { board, bars, borne };
-  let score = 0;
   path.forEach(step => {
-    const before = state.board[step.to] === 1 ? 1 : 0;
     state = applyStep(state.board, state.bars, state.borne, -1, step);
-    if (before) score += 28;
-    if (step.to === 24) score += 18;
-    if (step.from === -1) score += 12;
-    if (step.to !== 24) {
-      const count = Math.abs(state.board[step.to]);
-      if (count >= 2) score += 2;
-      score += step.to * 0.12;
-    }
   });
-  return score;
+  return evaluateComputerPosition(state);
 };
 
 function Die({ value, rolling }) {
