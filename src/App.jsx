@@ -571,26 +571,43 @@ function Match3Gem({ gem, selected }) {
   const item = MATCH3_CANDIES[gem];
   if (!item) return null;
   return (
-    <svg viewBox="0 0 64 64" className={`h-[82%] w-[82%] overflow-visible drop-shadow-lg transition-transform duration-100 ${selected ? 'scale-90' : ''}`} aria-hidden="true">
+    <svg viewBox="0 0 72 72" className={`h-[91%] w-[91%] overflow-visible transition-transform duration-150 ${selected ? 'scale-90 -rotate-3' : 'hover:scale-105'}`} aria-hidden="true">
       <defs>
-        <linearGradient id={`gem-main-${gem}`} x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={`jewel-body-${gem}`} x1="0" y1="0" x2="0.92" y2="1">
           <stop offset="0%" stopColor={item.light} />
-          <stop offset="52%" stopColor={item.main} />
+          <stop offset="38%" stopColor={item.main} />
           <stop offset="100%" stopColor={item.dark} />
         </linearGradient>
-        <linearGradient id={`gem-shine-${gem}`} x1="0" y1="0" x2="0.9" y2="1">
+        <linearGradient id={`jewel-top-${gem}`} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#ffffff" stopOpacity=".95" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="55%" stopColor={item.light} stopOpacity=".62" />
+          <stop offset="100%" stopColor={item.main} stopOpacity=".12" />
         </linearGradient>
+        <linearGradient id={`jewel-side-${gem}`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={item.main} />
+          <stop offset="100%" stopColor={item.dark} />
+        </linearGradient>
+        <filter id={`jewel-shadow-${gem}`} x="-40%" y="-40%" width="180%" height="190%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" />
+          <feOffset dy="3" />
+          <feComponentTransfer><feFuncA type="linear" slope=".42" /></feComponentTransfer>
+          <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
       </defs>
-      <path d="M32 4 54 19 59 43 32 61 5 43 10 19Z" fill={item.dark} opacity=".8" />
-      <path d="M32 4 54 19 32 28 10 19Z" fill={item.light} />
-      <path d="M10 19 32 28 32 61 5 43Z" fill={`url(#gem-main-${gem})`} />
-      <path d="M54 19 32 28 32 61 59 43Z" fill={item.dark} />
-      <path d="M32 4 54 19 32 28 10 19Z" fill={`url(#gem-shine-${gem})`} opacity=".42" />
-      <path d="M17 21 29 9 23 24 12 20Z" fill="#fff" opacity=".45" />
-      <path d="M32 31 32 55 11 42Z" fill="#fff" opacity=".12" />
-      <path d="M36 31 53 22 55 41 36 54Z" fill="#000" opacity=".10" />
+      <g filter={`url(#jewel-shadow-${gem})`}>
+        <path d="M36 5 56 13 66 31 60 53 36 67 12 53 6 31 16 13Z" fill={item.dark} stroke="#ffffff" strokeOpacity=".55" strokeWidth="1.6" />
+        <path d="M36 7 55 15 36 29 17 15Z" fill={`url(#jewel-top-${gem})`} />
+        <path d="M17 15 36 29 36 64 13 51 8 31Z" fill={`url(#jewel-body-${gem})`} />
+        <path d="M55 15 36 29 36 64 59 51 64 31Z" fill={`url(#jewel-side-${gem})`} />
+        <path d="M17 15 36 29 55 15 48 8 24 8Z" fill="#ffffff" opacity=".16" />
+        <path d="M17 15 36 29 26 39 8 31Z" fill="#ffffff" opacity=".22" />
+        <path d="M55 15 36 29 46 39 64 31Z" fill="#000000" opacity=".12" />
+        <path d="M26 39 36 29 46 39 36 64Z" fill="#ffffff" opacity=".13" />
+        <path d="M13 27 20 16 29 12" fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" opacity=".72" />
+        <path d="M16 34 18 29" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" opacity=".48" />
+        <path d="M49 10 53 13" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" opacity=".7" />
+      </g>
+      <path d="M53 5 54.8 9.2 59 11 54.8 12.8 53 17 51.2 12.8 47 11 51.2 9.2Z" fill="#ffffff" opacity=".9" />
     </svg>
   );
 }
