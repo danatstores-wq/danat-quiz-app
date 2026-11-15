@@ -131,7 +131,7 @@ const TRANSLATIONS = {
     watchForPoints: '📺 شاهد فيديو لـ 10 نقاط (+10 🪙)',
     rewardPanelTitle: 'شاهد فيديو للحصول على مكافأة إضافية',
     lifeRewardLabel: 'حياة إضافية',
-    pointsRewardLabel: 'نقاط إضافية',
+    pointsRewardLabel: 'إعلانات النقاط متوقفة مؤقتاً لأن هذه النقاط قابلة للتحويل إلى DNC.',
     outOfLivesTitle: 'انتهت الأرواح! 💔',
     outOfLivesDesc: 'شاهد فيديو إعلاني للحصول على حياة إضافية ومتابعة اللعب.',
     adsWatched: 'الإعلانات المشاهدة',
@@ -216,7 +216,7 @@ const TRANSLATIONS = {
     watchForPoints: '📺 Watch Ad for +10 Points (+10 🪙)',
     rewardPanelTitle: 'Watch a video for an extra reward',
     lifeRewardLabel: 'Extra life',
-    pointsRewardLabel: 'Bonus points',
+    pointsRewardLabel: 'Bonus-point ads are paused because these points can be converted to DNC.',
     outOfLivesTitle: 'Out of Lives! 💔',
     outOfLivesDesc: 'Watch a video ad to get an extra life and continue playing.',
     adsWatched: 'Ads Watched',
@@ -301,7 +301,7 @@ const TRANSLATIONS = {
     watchForPoints: "📺 Regarder une pub pour +10 Points (+10 🪙)",
     rewardPanelTitle: "Regardez une vidéo pour une récompense",
     lifeRewardLabel: "Vie supplémentaire",
-    pointsRewardLabel: "Points bonus",
+    pointsRewardLabel: "Les publicités de points sont suspendues car ces points peuvent être convertis en DNC.",
     outOfLivesTitle: "Plus de vies ! 💔",
     outOfLivesDesc: "Regardez une vidéo publicitaire pour obtenir une vie supplémentaire et continuer à jouer.",
     adsWatched: "Publicités regardées",
@@ -1154,7 +1154,6 @@ export default function App() {
   });
 
   const [levelsPlayed, setLevelsPlayed] = useState(0);
-  const [showForcedAd, setShowForcedAd] = useState(false);
 
   const [showWalletModal, setShowWalletModal] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
@@ -1162,7 +1161,6 @@ export default function App() {
   const [customWallet, setCustomWallet] = useState('');
 
   // 10-Questions Milestone Ad State
-  const [showMilestoneAd, setShowMilestoneAd] = useState(false);
 
   // Leaderboard State
   const [leaderboardUsers, setLeaderboardUsers] = useState([]);
@@ -1499,8 +1497,7 @@ export default function App() {
     return q.category;
   };
 
-  // Offer the milestone reward as an optional, user-initiated rewarded ad.
-  const triggerMilestoneVideoAd = () => setShowMilestoneAd(true);
+
 
   const handleAnswerSubmit = async () => {
     if (selectedOption === null || lives <= 0) return;
@@ -1567,10 +1564,6 @@ export default function App() {
     }
     setIsAnswered(true);
 
-    // Trigger video ad after every 10 questions answered
-    if (newSessionCount % 10 === 0) {
-      triggerMilestoneVideoAd();
-    }
   };
 
   const handleNextQuestion = async () => {
@@ -1596,15 +1589,14 @@ export default function App() {
       setCurrentQIndex(0);
       if (nextLevelCount >= 4) {
         setLevelsPlayed(0);
-        triggerForcedGoogleAd();
+        setActiveTab('home');
       } else {
         setActiveTab('home');
       }
     }
   };
 
-  // After four levels, offer (but never force) an optional 50-point rewarded ad.
-  const triggerForcedGoogleAd = () => setShowForcedAd(true);
+
 
   const incrementVideoCount = () => {
     const newCount = videosWatched + 1;
@@ -1674,62 +1666,7 @@ export default function App() {
     }
   };
 
-  // Shared points reward flow for the home panel, rewards page and quiz milestones.
-  const awardPointsAfterRewardedAd = async (amount, { updateQuizScore = false, extraFirestoreFields = {} } = {}) => {
-    if (isRewardAdLoading) return false;
-    setIsRewardAdLoading(true);
 
-    try {
-      const reward = await showRewardedAd('points');
-      if (!reward) {
-        alert(rewardAdMessage('unavailable'));
-        return false;
-      }
-
-      if (currentUser) {
-        await updateDoc(doc(db, "users", currentUser.uid), {
-          points: increment(amount),
-          totalEarnedPoints: increment(amount),
-          rewardedAdsWatched: increment(1),
-          ...extraFirestoreFields
-        });
-      }
-
-      incrementVideoCount();
-      if (updateQuizScore) setScore(prev => prev + amount);
-      setUser(prev => ({
-        ...prev,
-        points: prev.points + amount,
-        totalEarnedPoints: prev.totalEarnedPoints + amount
-      }));
-      alert(user.language === 'العربية'
-        ? 'حصلت على ' + amount + ' نقطة إضافية! 🪙'
-        : user.language === 'Français'
-        ? 'Vous avez gagné ' + amount + ' points bonus ! 🪙'
-        : 'You earned ' + amount + ' bonus points! 🪙');
-      return true;
-    } catch (error) {
-      console.warn('Rewarded points ad was not completed or saved:', error);
-      alert(error?.code === 'MOBILE_ONLY' ? rewardAdMessage('mobileOnly') : rewardAdMessage('unavailable'));
-      return false;
-    } finally {
-      setIsRewardAdLoading(false);
-    }
-  };
-
-  const handleWatchForPoints = () => awardPointsAfterRewardedAd(10, { updateQuizScore: true });
-  const handleWatchMilestoneReward = async () => {
-    if (await awardPointsAfterRewardedAd(10)) setShowMilestoneAd(false);
-  };
-  const handleWatchForcedReward = async () => {
-    const earned = await awardPointsAfterRewardedAd(50, {
-      extraFirestoreFields: { forcedAdsWatched: increment(1) }
-    });
-    if (earned) {
-      setShowForcedAd(false);
-      setActiveTab('home');
-    }
-  };
 
   // 3-Hour Timed Lives Bonus (+5 Lives every 3 hrs, max 10 lives per 24 hours)
   const handleClaimTimedSpirits = async () => {
@@ -1812,7 +1749,7 @@ export default function App() {
     }
   };
 
-  const handleWatchAd = () => awardPointsAfterRewardedAd(10);
+
 
   const handleUpdateAvatar = async (newAvatarId) => {
     setUser(prev => ({ ...prev, avatar: newAvatarId }));
@@ -2144,12 +2081,12 @@ export default function App() {
                     <span className="text-[10px] font-bold text-amber-100/90">{t.lifeRewardLabel}</span>
                   </button>
                   <button
-                    onClick={handleWatchForPoints}
-                    disabled={isRewardAdLoading}
+                    disabled={true}
+                    aria-label={t.pointsRewardLabel}
                     className="flex min-h-[54px] flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-300 bg-gradient-to-b from-[#315b68] to-[#193b4b] px-2 py-2 text-xs font-black text-amber-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_3px_10px_rgba(0,0,0,0.28)] transition hover:border-yellow-200 hover:from-[#3b6e7c] hover:to-[#20495a] active:scale-[0.98]"
                   >
                     <span className="text-base leading-none">+10 🪙</span>
-                    <span className="text-[10px] font-bold text-amber-100/90">{t.pointsRewardLabel}</span>
+                    <span className="text-[9px] font-bold leading-tight text-amber-100/90">{t.pointsRewardLabel}</span>
                   </button>
                 </div>
               </div>
@@ -2364,7 +2301,7 @@ export default function App() {
                     <div className="text-2xl font-black text-purple-300">{user.points.toLocaleString()}</div>
                   </div>
                 </div>
-                <button onClick={handleWatchAd} disabled={isRewardAdLoading} className="bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white w-9 h-9 rounded-full font-bold text-xl flex items-center justify-center shadow">
+                <button disabled aria-label={t.pointsRewardLabel} className="bg-purple-950 text-slate-400 w-9 h-9 rounded-full font-bold text-xl flex items-center justify-center shadow cursor-not-allowed">
                   +
                 </button>
               </div>
@@ -2401,11 +2338,11 @@ export default function App() {
                 </div>
 
                 <button 
-                  onClick={handleWatchAd}
-                  disabled={isRewardAdLoading}
-                  className="bg-purple-600 hover:bg-purple-500 disabled:bg-purple-950 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center gap-1.5 shadow"
+                  disabled
+                  title={t.pointsRewardLabel}
+                  className="bg-purple-950 text-slate-400 font-bold px-4 py-2.5 rounded-xl text-xs cursor-not-allowed flex items-center gap-1.5 shadow"
                 >
-                  {isRewardAdLoading ? t.pleaseWait : t.watchBtn}
+                  {user.language === 'العربية' ? 'متوقف مؤقتاً' : user.language === 'Français' ? 'Suspendu' : 'Paused'}
                 </button>
               </div>
             </div>
@@ -2620,57 +2557,7 @@ export default function App() {
 
         </div>
 
-        {/* 10-QUESTIONS MILESTONE VIDEO AD MODAL */}
-        {showMilestoneAd && (
-          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
-            <div className="w-full bg-[#240a47] border-2 border-yellow-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(234,179,8,0.5)]">
-              <div className="w-14 h-14 bg-yellow-500/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto text-yellow-400">
-                <Tv className="w-7 h-7 animate-pulse" />
-              </div>
-              <h3 className="text-lg font-black text-yellow-400">
-                {t.milestoneAdTitle}
-              </h3>
-              <p className="text-xs text-slate-200 leading-relaxed">
-                {t.milestoneAdDesc}
-              </p>
-              
-              <div className="text-[10px] text-purple-300">
-                {t.autoRewardNotice}
-              </div>
-              <button onClick={handleWatchMilestoneReward} disabled={isRewardAdLoading} className="w-full rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 py-3 font-black text-slate-950 disabled:opacity-50">
-                {isRewardAdLoading ? t.pleaseWait : t.watchBtn + ' (+10)'}
-              </button>
-              <button onClick={() => setShowMilestoneAd(false)} disabled={isRewardAdLoading} className="w-full rounded-xl border border-purple-300/40 py-2.5 text-xs font-bold text-purple-100 disabled:opacity-50">
-                {user.language === 'العربية' ? 'المتابعة دون إعلان' : user.language === 'Français' ? 'Continuer sans publicité' : 'Continue without ad'}
-              </button>
-            </div>
-          </div>
-        )}
 
-        {/* FORCED GOOGLE REWARDED VIDEO AD MODAL */}
-        {showForcedAd && (
-          <div className="absolute inset-0 bg-slate-950/95 backdrop-blur-md z-50 flex items-center justify-center p-6">
-            <div className="w-full bg-[#240a47] border-2 border-yellow-500 rounded-3xl p-6 text-center space-y-4 shadow-[0_0_50px_rgba(234,179,8,0.5)]">
-              <div className="w-14 h-14 bg-yellow-500/20 border border-yellow-400 rounded-full flex items-center justify-center mx-auto text-yellow-400">
-                <Tv className="w-7 h-7 animate-pulse" />
-              </div>
-              <h3 className="text-lg font-black text-yellow-400">{t.forcedAdTitle}</h3>
-              <p className="text-xs text-slate-200 leading-relaxed">
-                {t.forcedAdDesc}
-              </p>
-              
-              <div className="text-[10px] text-purple-300">
-                {t.forcedAdRewardNotice}
-              </div>
-              <button onClick={handleWatchForcedReward} disabled={isRewardAdLoading} className="w-full rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 py-3 font-black text-slate-950 disabled:opacity-50">
-                {isRewardAdLoading ? t.pleaseWait : t.watchBtn + ' (+50)'}
-              </button>
-              <button onClick={() => { setShowForcedAd(false); setActiveTab('home'); }} disabled={isRewardAdLoading} className="w-full rounded-xl border border-purple-300/40 py-2.5 text-xs font-bold text-purple-100 disabled:opacity-50">
-                {user.language === 'العربية' ? 'المتابعة دون إعلان' : user.language === 'Français' ? 'Continuer sans publicité' : 'Continue without ad'}
-              </button>
-            </div>
-          </div>
-        )}
 
         {/* SETTINGS MODAL */}
         {showSettingsModal && (
