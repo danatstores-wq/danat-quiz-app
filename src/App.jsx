@@ -781,6 +781,55 @@ const findMatch3Matches = (board) => {
   return matched;
 };
 
+const getMatch3BombReward = (board) => {
+  let reward = null;
+  const considerRun = (cells) => {
+    if (cells.length >= 5 && (!reward || reward.size < 5)) {
+      reward = { size: 5, index: cells[Math.floor(cells.length / 2)] };
+    } else if (cells.length === 4 && !reward) {
+      reward = { size: 3, index: cells[1] };
+    }
+  };
+  for (let row = 0; row < 8; row++) {
+    let run = [];
+    for (let col = 0; col <= 8; col++) {
+      const value = col < 8 ? board[row * 8 + col] : null;
+      if (typeof value === 'number' && (run.length === 0 || value === board[run[0]])) run.push(row * 8 + col);
+      else {
+        if (run.length >= 4) considerRun(run);
+        run = typeof value === 'number' ? [row * 8 + col] : [];
+      }
+    }
+  }
+  for (let col = 0; col < 8; col++) {
+    let run = [];
+    for (let row = 0; row <= 8; row++) {
+      const value = row < 8 ? board[row * 8 + col] : null;
+      if (typeof value === 'number' && (run.length === 0 || value === board[run[0]])) run.push(row * 8 + col);
+      else {
+        if (run.length >= 4) considerRun(run);
+        run = typeof value === 'number' ? [row * 8 + col] : [];
+      }
+    }
+  }
+  return reward;
+};
+
+const dropMatch3Board = (cleared, colorCount) => {
+  const dropped = Array(64).fill(null);
+  for (let col = 0; col < 8; col++) {
+    const remaining = [];
+    for (let row = 7; row >= 0; row--) {
+      const value = cleared[row * 8 + col];
+      if (value !== null) remaining.push(value);
+    }
+    for (let row = 7, k = 0; row >= 0; row--, k++) {
+      dropped[row * 8 + col] = k < remaining.length ? remaining[k] : Math.floor(Math.random() * colorCount);
+    }
+  }
+  return dropped;
+};
+
 function GameMatch3({ onBack, onAdComplete }) {
   const [levelId, setLevelId] = useState('easy');
   const level = MATCH3_LEVELS.find(item => item.id === levelId) || MATCH3_LEVELS[0];
@@ -832,8 +881,60 @@ function GameMatch3({ onBack, onAdComplete }) {
     setOver(false);
   };
 
+  const detonateBomb = async (index) => {
+    if (busy || over) return;
+    const bomb = board[index];
+    if (!bomb || bomb.type !== 'bomb') return;
+    playGameMoveSound('merge');
+    setBusy(true);
+    setSelected(null);
+    const targetCount = bomb.size === 'big' ? 5 : 3;
+    const row = Math.floor(index / 8);
+    const col = index % 8;
+    const targets = board
+      .map((value, cell) => ({ value, cell, distance: Math.abs(Math.floor(cell / 8) - row) + Math.abs((cell % 8) - col) }))
+      .filter(item => item.cell !== index && typeof item.value === 'number')
+      .sort((a, b) => a.distance - b.distance || a.cell - b.cell)
+      .slice(0, targetCount)
+      .map(item => item.cell);
+    let cleared = [...board];
+    cleared[index] = null;
+    targets.forEach(cell => { cleared[cell] = null; });
+    setScore(prev => prev + targets.length * 10);
+    setBoard(cleared);
+    await new Promise(resolve => setTimeout(resolve, 70));
+    let working = dropMatch3Board(cleared, level.colors);
+    setBoard(working);
+    await new Promise(resolve => setTimeout(resolve, 70));
+
+    // Resolve any new matches caused by the blast and award another bomb when appropriate.
+    while (true) {
+      const matches = findMatch3Matches(working);
+      if (!matches.size) break;
+      const reward = getMatch3BombReward(working);
+      const nextBoard = [...working];
+      matches.forEach(cell => { nextBoard[cell] = null; });
+      if (reward && matches.has(reward.index)) {
+        nextBoard[reward.index] = { type: 'bomb', size: reward.size === 5 ? 'big' : 'small' };
+      }
+      setScore(prev => prev + matches.size * 10);
+      setBoard(nextBoard);
+      await new Promise(resolve => setTimeout(resolve, 60));
+      working = dropMatch3Board(nextBoard, level.colors);
+      setBoard(working);
+      await new Promise(resolve => setTimeout(resolve, 60));
+    }
+    if (!hasPossibleMatch3Move(working, level.colors)) working = createMatch3Board(level.colors);
+    setBoard(working);
+    setBusy(false);
+  };
+
   const tapCandy = async (index) => {
     if (busy || over) return;
+    if (board[index]?.type === 'bomb') {
+      await detonateBomb(index);
+      return;
+    }
     if (selected === null) {
       setSelected(index);
       return;
@@ -870,24 +971,17 @@ function GameMatch3({ onBack, onAdComplete }) {
       const matches = findMatch3Matches(working);
       if (!matches.size) break;
       gained += matches.size * 10;
+      const reward = getMatch3BombReward(working);
       const cleared = [...working];
       matches.forEach(cell => { cleared[cell] = null; });
+      if (reward && matches.has(reward.index)) {
+        cleared[reward.index] = { type: 'bomb', size: reward.size === 5 ? 'big' : 'small' };
+      }
       setBoard(cleared);
       setScore(prev => prev + matches.size * 10);
       await new Promise(resolve => setTimeout(resolve, 65));
 
-      const dropped = Array(64).fill(null);
-      for (let col = 0; col < 8; col++) {
-        const remaining = [];
-        for (let row = 7; row >= 0; row--) {
-          const value = cleared[row * 8 + col];
-          if (value !== null) remaining.push(value);
-        }
-        for (let row = 7, k = 0; row >= 0; row--, k++) {
-          dropped[row * 8 + col] = k < remaining.length ? remaining[k] : Math.floor(Math.random() * level.colors);
-        }
-      }
-      working = dropped;
+      working = dropMatch3Board(cleared, level.colors);
       setBoard(working);
       await new Promise(resolve => setTimeout(resolve, 65));
     }
@@ -956,7 +1050,12 @@ function GameMatch3({ onBack, onAdComplete }) {
                 aria-label={`Candy at row ${Math.floor(index / 8) + 1}, column ${(index % 8) + 1}`}
                 className={`flex aspect-square min-w-0 items-center justify-center rounded-xl border bg-gradient-to-br from-white/15 to-black/20 transition-[transform,box-shadow,border-color] duration-100 sm:rounded-2xl ${item ? `border-white/35 shadow-lg ${item.glow}` : 'bg-slate-700'} ${selected === index ? 'scale-90 border-4 border-white ring-2 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.95)]' : 'border-white/20'} ${busy ? 'cursor-wait' : 'active:scale-90'}`}
               >
-                <Match3Gem gem={candy} selected={selected === index} />
+                {candy?.type === 'bomb' ? (
+                  <span className={`relative flex items-center justify-center rounded-full border-2 border-slate-300/80 bg-gradient-to-br from-slate-100 via-slate-700 to-black shadow-[0_0_16px_rgba(251,191,36,.55)] ${candy.size === 'big' ? 'h-[88%] w-[88%]' : 'h-[72%] w-[72%]'} animate-pulse`}>
+                    <span className={`font-black leading-none text-amber-300 drop-shadow-[0_0_5px_rgba(251,191,36,.9)] ${candy.size === 'big' ? 'text-2xl' : 'text-lg'}`}>✹</span>
+                    <span className="absolute -top-1 right-0 h-2 w-2 rounded-full bg-orange-300 shadow-[0_0_9px_3px_rgba(251,146,60,.9)]" />
+                  </span>
+                ) : <Match3Gem gem={candy} selected={selected === index} />}
               </button>
             );
           })}
@@ -966,7 +1065,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
           <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
         </div>
-        <p className="mt-3 text-center text-xs text-purple-100">{level.name}: {level.colors} gem colors · {level.moves} moves · reach {level.target.toLocaleString()} points. Tap two adjacent gems to match 3 or more.</p>
+        <p className="mt-3 text-center text-xs text-purple-100">{level.name}: {level.colors} gem colors · {level.moves} moves · reach {level.target.toLocaleString()} points. Match 4 gems to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).</p>
       </div>
 
       {showAd && (
