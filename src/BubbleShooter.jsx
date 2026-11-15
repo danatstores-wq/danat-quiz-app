@@ -211,21 +211,37 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         >
           <svg aria-hidden="true" viewBox="0 0 360 420" preserveAspectRatio="xMidYMid slice" className="pointer-events-none absolute inset-0 h-full w-full">
             <defs>
-              <linearGradient id="jungleSky" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#8ce7e1"/><stop offset="1" stopColor="#278b9b"/></linearGradient>
-              <linearGradient id="jungleWater" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#b8fff4"/><stop offset=".45" stopColor="#42d5e7"/><stop offset="1" stopColor="#d7fff5"/></linearGradient>
-              <linearGradient id="templeStone" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#e5c88a"/><stop offset="1" stopColor="#8c7047"/></linearGradient>
+              <linearGradient id="canopySky" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#123d55"/><stop offset=".48" stopColor="#36a6a0"/><stop offset="1" stopColor="#b6d78a"/></linearGradient>
+              <linearGradient id="falls" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#9af7ed"/><stop offset=".45" stopColor="#e4fff2"/><stop offset="1" stopColor="#42c9d5"/></linearGradient>
+              <linearGradient id="ruin" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#e9d19a"/><stop offset=".55" stopColor="#b48a55"/><stop offset="1" stopColor="#6b563c"/></linearGradient>
+              <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#56b86b"/><stop offset="1" stopColor="#073f35"/></linearGradient>
+              <radialGradient id="sunGlow"><stop stopColor="#fff6bd" stopOpacity=".8"/><stop offset="1" stopColor="#fff6bd" stopOpacity="0"/></radialGradient>
             </defs>
-            <rect width="360" height="420" fill="url(#jungleSky)"/>
-            <circle cx="282" cy="105" r="42" fill="#fff5b2" opacity=".45"/>
-            <path d="M0 230 Q60 185 115 225 T230 215 T360 220 V420 H0Z" fill="#2f936c"/>
-            <path d="M0 270 Q55 230 110 270 T225 255 T360 265 V420 H0Z" fill="#17634e"/>
-            <path d="M130 175 L130 235 L157 235 L157 175Z M203 168 L203 236 L226 236 L226 168Z" fill="url(#jungleWater)" opacity=".9"/>
-            <path d="M126 232 Q145 260 157 232 M198 232 Q214 260 229 232" fill="none" stroke="#d7fff5" strokeWidth="7" opacity=".8"/>
-            <path d="M22 238 L22 174 L40 150 L58 174 L58 238Z M10 176 L40 132 L70 176Z M280 245 L280 180 L300 153 L320 180 L320 245Z M268 182 L300 137 L332 182Z" fill="url(#templeStone)" stroke="#715a3c" strokeWidth="3"/>
-            <path d="M28 191 H52 M286 198 H314 M31 213 H49 M289 220 H311" stroke="#6b563b" strokeWidth="5"/>
-            <path d="M0 0 Q38 30 12 85 Q44 70 57 22 Q55 80 82 103 Q18 110 0 150Z M360 0 Q322 28 347 86 Q313 70 302 20 Q303 80 278 105 Q340 111 360 150Z" fill="#145b3d"/>
-            <path d="M0 300 Q34 252 63 294 Q30 285 14 333 Q51 308 76 330 Q38 355 0 348Z M360 295 Q325 248 296 291 Q330 284 347 332 Q309 306 284 330 Q323 355 360 348Z" fill="#0d5538"/>
-            <path d="M0 390 Q45 340 80 385 Q43 370 22 420 H0Z M360 390 Q315 340 280 385 Q317 370 338 420 H360Z" fill="#0a432f"/>
+            <rect width="360" height="420" fill="url(#canopySky)"/>
+            <circle cx="275" cy="95" r="88" fill="url(#sunGlow)"/>
+            <path d="M0 180 Q45 125 92 170 T190 158 T360 165 V420 H0Z" fill="#1d755a"/>
+            <path d="M0 220 Q58 168 112 218 T226 205 T360 214 V420 H0Z" fill="#145640"/>
+            <g opacity=".9">
+              <path d="M105 110 H255 V145 H105Z" fill="url(#ruin)" stroke="#705638" strokeWidth="4"/>
+              <path d="M119 145 V245 H145 V145 M215 145 V245 H241 V145" fill="url(#ruin)" stroke="#765b3b" strokeWidth="4"/>
+              <path d="M96 108 L180 63 L264 108Z" fill="#d4b77e" stroke="#705638" strokeWidth="5"/>
+              <path d="M158 80 L180 54 L202 80Z" fill="#f0d8a1"/>
+              <path d="M148 160 V230 M180 160 V230 M212 160 V230" stroke="#765b3b" strokeWidth="5" opacity=".65"/>
+              <path d="M88 245 H272 L288 265 H72Z" fill="#8c7049"/>
+            </g>
+            <path d="M142 145 Q145 205 129 270 Q126 300 151 316 Q169 298 166 270 L165 145Z" fill="url(#falls)" opacity=".92"/>
+            <path d="M192 145 Q193 207 180 272 Q178 300 201 317 Q220 296 215 268 L214 145Z" fill="url(#falls)" opacity=".82"/>
+            <path d="M151 155 Q155 235 145 290 M202 155 Q205 235 194 290" stroke="#fff" strokeWidth="5" opacity=".75" fill="none"/>
+            <path d="M0 290 Q52 250 100 290 T205 285 T360 278 V420 H0Z" fill="#0e5143"/>
+            <path d="M0 330 Q60 285 116 328 T238 322 T360 315 V420 H0Z" fill="#0a4038"/>
+            <path d="M0 370 Q72 320 125 367 T250 360 T360 352 V420 H0Z" fill="#082f30"/>
+            <g fill="url(#leaf)" stroke="#073d32" strokeWidth="2">
+              <path d="M0 0 Q65 24 43 105 Q25 74 0 82Z"/><path d="M0 70 Q66 53 78 137 Q39 119 0 151Z"/>
+              <path d="M360 0 Q295 20 318 105 Q337 72 360 83Z"/><path d="M360 68 Q294 54 282 139 Q322 119 360 153Z"/>
+              <path d="M12 270 Q63 229 89 295 Q47 275 18 322Z"/><path d="M348 266 Q298 229 270 296 Q313 276 343 324Z"/>
+            </g>
+            <g fill="#f3c65e" opacity=".9"><circle cx="44" cy="185" r="5"/><circle cx="62" cy="202" r="3"/><circle cx="300" cy="180" r="4"/><circle cx="285" cy="199" r="3"/></g>
+            <path d="M0 405 Q50 365 95 405 M265 405 Q310 365 360 405" stroke="#7acb75" strokeWidth="9" fill="none" opacity=".65"/>
           </svg>
           {board.flatMap((line, row) => line.map((bubble, col) => (
             <div key={row + '-' + col} className="relative z-[1] aspect-square rounded-full">
@@ -234,22 +250,53 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
           )))}
         </div>
 
-        <div className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between rounded-b-[22px] border-x border-b border-emerald-100/20 bg-gradient-to-b from-[#1b7658]/80 to-[#123b37]/95 px-4 pb-3 pt-1 shadow-[0_12px_22px_rgba(0,0,0,.35)]">
-          <svg viewBox="0 0 112 94" role="img" aria-label="Toucan game mascot" className="h-[88px] w-[104px] drop-shadow-lg">
-            <path d="M29 75 Q13 58 20 38 Q27 15 51 21 Q73 26 70 49 Q67 71 48 78Z" fill="#111827" stroke="#07111d" strokeWidth="3"/>
-            <path d="M27 43 Q42 30 59 43 Q64 58 48 69 Q30 65 27 43Z" fill="#f8fafc"/>
-            <path d="M53 29 Q82 15 104 33 Q91 51 61 50Z" fill="#f6b91b" stroke="#a85c16" strokeWidth="3"/>
-            <path d="M72 31 Q92 24 103 34 Q89 43 69 43Z" fill="#f97316"/>
-            <path d="M37 28 Q41 13 54 19" fill="none" stroke="#facc15" strokeWidth="6" strokeLinecap="round"/>
-            <circle cx="54" cy="34" r="4" fill="white"/><circle cx="55" cy="34" r="2" fill="#111827"/>
-            <path d="M31 74 L25 89 M48 76 L52 90" stroke="#e7a62e" strokeWidth="4" strokeLinecap="round"/>
-            <path d="M20 49 Q6 42 7 28 Q22 34 27 45" fill="#0ea5e9"/>
+        <div className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between overflow-hidden rounded-b-[24px] border-x border-b border-amber-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(100,190,130,.45),transparent_65%),linear-gradient(180deg,#174f42,#092d2b)] px-3 pb-3 pt-2 shadow-[0_16px_30px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.18)]">
+          <svg viewBox="0 0 132 118" role="img" aria-label="Colourful toucan mascot" className="h-[112px] w-[124px] shrink-0 drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]">
+            <defs>
+              <linearGradient id="toucanBeak" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff27a"/><stop offset=".38" stopColor="#ffb52e"/><stop offset=".72" stopColor="#f36a22"/><stop offset="1" stopColor="#b82f27"/></linearGradient>
+              <linearGradient id="toucanWing" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#243f70"/><stop offset="1" stopColor="#071b36"/></linearGradient>
+              <linearGradient id="toucanChest" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#fffef0"/><stop offset="1" stopColor="#c8d9d0"/></linearGradient>
+            </defs>
+            <ellipse cx="60" cy="104" rx="34" ry="7" fill="#031d1b" opacity=".45"/>
+            <path d="M38 91 Q19 75 27 47 Q34 18 63 22 Q91 27 89 61 Q86 91 62 98 Q46 99 38 91Z" fill="#07121f" stroke="#020b12" strokeWidth="3"/>
+            <path d="M39 57 Q53 40 74 52 Q83 68 67 88 Q48 90 39 75Z" fill="url(#toucanChest)"/>
+            <path d="M34 59 Q22 58 16 77 Q32 74 43 67Z" fill="#1b78a6" stroke="#0b4268" strokeWidth="2"/>
+            <path d="M44 78 Q55 63 77 71 Q70 91 51 94Z" fill="url(#toucanWing)" stroke="#020b12" strokeWidth="2"/>
+            <path d="M52 80 Q63 72 73 76" stroke="#4c83ad" strokeWidth="3" fill="none" opacity=".8"/>
+            <path d="M59 31 Q83 5 122 26 Q111 57 75 59 Q60 52 59 31Z" fill="url(#toucanBeak)" stroke="#9b3f20" strokeWidth="3"/>
+            <path d="M74 26 Q101 16 119 28 Q104 37 77 42Z" fill="#fff0a0" opacity=".65"/>
+            <path d="M71 49 Q97 50 116 31" stroke="#9b3f20" strokeWidth="2" fill="none"/>
+            <path d="M48 30 Q54 13 69 19" stroke="#f5c63c" strokeWidth="7" strokeLinecap="round" fill="none"/>
+            <circle cx="67" cy="39" r="7" fill="#fff"/><circle cx="69" cy="39" r="3.5" fill="#101827"/><circle cx="70" cy="38" r="1.2" fill="#fff"/>
+            <path d="M45 96 L40 111 M63 97 L67 111" stroke="#e5a52e" strokeWidth="4" strokeLinecap="round"/>
+            <path d="M33 111 H45 M60 111 H73" stroke="#f6c24a" strokeWidth="4" strokeLinecap="round"/>
+            <path d="M31 45 Q21 34 24 22 Q39 26 45 39" fill="#0d5c8d" stroke="#062b4b" strokeWidth="2"/>
           </svg>
-          <div className="relative mb-1 flex h-[76px] w-[132px] items-end justify-center">
-            <div className="absolute bottom-0 h-7 w-full rounded-xl border-2 border-[#8a572b] bg-gradient-to-b from-[#c78a48] to-[#75401f] shadow-[inset_0_3px_5px_rgba(255,255,255,.3),0_5px_8px_rgba(0,0,0,.4)]"/>
-            <div className="absolute bottom-5 h-12 w-16 rounded-t-[28px] border-[5px] border-[#9b612d] bg-gradient-to-b from-[#e2b46a] to-[#895025] shadow-lg"/>
-            <div className="absolute bottom-[42px] h-9 w-9 rounded-full border-[3px] border-white/90 shadow-[0_0_18px_rgba(255,255,255,.5)]" style={{ background: `radial-gradient(circle at 28% 20%,#fff 0%,${COLORS[shotColor]} 34%,${COLORS[shotColor]} 72%,#162238 125%)` }}/>
-            <div className="absolute bottom-0 left-2 rounded-full bg-black/30 px-2 py-1 text-[9px] font-black tracking-widest text-amber-100">{tr('AIM', 'VISER', 'صوّب')}</div>
+          <div className="relative flex h-[112px] w-[190px] shrink-0 items-end justify-center">
+            <svg viewBox="0 0 190 120" role="img" aria-label="Ornate wooden bubble cannon" className="h-full w-full overflow-visible drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]">
+              <defs>
+                <linearGradient id="cannonWood" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#e4b66c"/><stop offset=".45" stopColor="#a76532"/><stop offset="1" stopColor="#542b20"/></linearGradient>
+                <linearGradient id="cannonGold" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff1a8"/><stop offset=".45" stopColor="#d99a32"/><stop offset="1" stopColor="#80501c"/></linearGradient>
+                <linearGradient id="cannonBarrel" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#f2d08b"/><stop offset=".35" stopColor="#a96b35"/><stop offset="1" stopColor="#4b2b22"/></linearGradient>
+              </defs>
+              <ellipse cx="99" cy="109" rx="82" ry="8" fill="#031a18" opacity=".5"/>
+              <path d="M27 88 Q94 66 162 88 L171 105 Q94 119 19 105Z" fill="url(#cannonWood)" stroke="#4d291b" strokeWidth="4"/>
+              <path d="M38 90 Q95 76 151 90" stroke="#f1c477" strokeWidth="3" fill="none" opacity=".8"/>
+              <circle cx="42" cy="99" r="5" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="2"/><circle cx="148" cy="99" r="5" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="2"/>
+              <path d="M70 87 Q69 68 82 57 L112 57 Q126 69 124 88Z" fill="url(#cannonWood)" stroke="#542b20" strokeWidth="4"/>
+              <g transform="rotate(-12 96 62)">
+                <path d="M72 70 L76 30 Q96 20 116 30 L120 70Z" fill="url(#cannonBarrel)" stroke="#5b321f" strokeWidth="4"/>
+                <path d="M75 39 Q96 32 117 39 L117 48 Q96 41 75 48Z" fill="url(#cannonGold)" stroke="#80501c" strokeWidth="2"/>
+                <path d="M73 27 Q96 15 119 27 L123 38 Q96 28 69 38Z" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="3"/>
+                <ellipse cx="96" cy="27" rx="22" ry="9" fill="#241b24" stroke="#ffe6a0" strokeWidth="4"/>
+                <ellipse cx="96" cy="27" rx="13" ry="5" fill="#091b25"/>
+                <path d="M82 55 Q96 50 112 55" stroke="#f7d18b" strokeWidth="3" fill="none" opacity=".8"/>
+              </g>
+              <path d="M83 78 Q96 72 109 78" stroke="#f7d18b" strokeWidth="3" fill="none"/>
+              <circle cx="96" cy="78" r="5" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="2"/>
+            </svg>
+            <div className="absolute right-1 top-0 rounded-full border border-amber-200/60 bg-[#102d2b]/90 px-2 py-1 text-[9px] font-black tracking-widest text-amber-100 shadow-lg">{tr('AIM', 'VISER', 'صوّب')}</div>
+            <div className="absolute left-[78px] top-[5px] h-8 w-8 rounded-full border-[3px] border-white/90 shadow-[0_0_18px_rgba(255,255,255,.7)]" style={{ background: `radial-gradient(circle at 28% 20%,#fff 0%,${COLORS[shotColor]} 34%,${COLORS[shotColor]} 72%,#162238 125%)` }}/>
           </div>
         </div>
         <div className="mt-14 flex items-center justify-center gap-3 rounded-2xl border border-emerald-100/25 bg-[#092d2d]/90 px-3 py-3 shadow-inner"><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-sky-200">{tr('NEXT', 'SUIVANT', 'التالي')}</span><button type="button" onClick={swapBubbles} disabled={!canSwap || showAd || paused} aria-label={tr('Swap bubbles', 'Échanger les bulles', 'تبديل الفقاعتين')} className="relative h-10 w-10 rounded-full border-2 border-white/70 shadow-[0_0_14px_rgba(255,255,255,.18)] transition hover:scale-110 disabled:opacity-45" style={{ background: COLORS[nextColor] }}><span className="absolute -bottom-1 -right-2 rounded-full border border-sky-100/60 bg-slate-950 px-1 text-[10px] font-black text-white">↔</span></button></div><div className="text-center"><div className="text-[10px] font-black uppercase tracking-[.2em] text-amber-200">{tr('READY TO FIRE', 'PRÊT À TIRER', 'جاهزة للإطلاق')}</div><div className="text-xs font-semibold text-sky-100">{tr('Tap next bubble to swap once per shot', 'Touchez la bulle suivante pour échanger une fois par tir', 'اضغط على الفقاعة التالية للتبديل مرة واحدة قبل كل طلقة')}</div></div><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-amber-200">{tr('SHOOT', 'TIRER', 'إطلاق')}</span><span className="h-12 w-12 rounded-full border-2 border-white shadow-[0_0_18px_rgba(255,255,255,.28)]" style={{ background: COLORS[shotColor] }} /></div></div><div className="mt-3 text-center text-xs text-sky-100">{tr('Aim at a column and release to shoot. Match 3 or more connected bubbles of the same color.', 'Visez une colonne puis relâchez pour tirer. Associez au moins 3 bulles connectées de la même couleur.', 'وجّه نحو العمود ثم ارفع إصبعك للإطلاق. طابق 3 فقاعات متصلة أو أكثر من اللون نفسه.')}</div>
