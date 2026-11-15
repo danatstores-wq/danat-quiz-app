@@ -220,7 +220,8 @@ async function verifyAdMobSignature(request) {
   const params = new URLSearchParams(signedQuery);
   const required = ["ad_unit", "custom_data", "reward_amount", "reward_item", "timestamp", "transaction_id", "user_id"];
   for (const name of required) if (!params.has(name)) throw new Error(`Missing SSV field: ${name}`);
-  const timestamp = Number(params.get("timestamp"));
+  let timestamp = Number(params.get("timestamp"));
+  if (timestamp > 1e14) timestamp /= 1000;
   if (!Number.isFinite(timestamp) || Math.abs(Date.now() - timestamp) > 10 * 60 * 1000) throw new Error("Stale SSV callback");
 
   const keyResponse = await fetch(ADMOB_KEYS_URL, { cf: { cacheTtl: 3600, cacheEverything: true } });
@@ -286,6 +287,10 @@ async function processAdMobReward(request, env) {
     throw new Error("Ad reward session is invalid or already used");
   }
 
+  const playerProfile = await readFirestoreDocument(env, "users", uid);
+  if (!playerProfile) throw new Error("Player profile does not exist");
+  if (!session.updateTime) throw new Error("Ad session update time is missing");
+
   const now = new Date();
   const ledgerFields = firestoreFields({
     playerUid: uid,
@@ -321,7 +326,7 @@ async function processAdMobReward(request, env) {
             fields: firestoreFields({ status: "completed", transactionId, completedAt: now })
           },
           updateMask: { fieldPaths: ["status", "transactionId", "completedAt"] },
-          currentDocument: { exists: true }
+          currentDocument: { updateTime: session.updateTime }
         }
       ]
     })
