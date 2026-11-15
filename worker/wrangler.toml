@@ -4,4 +4,4 @@ compatibility_date = "2026-11-15"
 
 [vars]
 FIREBASE_PROJECT_ID = "danat-quiz-app"
-# Set APP_ORIGIN in the Cloudflare dashboard to the exact deployed app origin.
+APP_ORIGIN = "https://danatstores-wq.github.io"
