@@ -1752,7 +1752,7 @@ export default function App() {
 
 
 
-  //   // Timed free lives are awarded by the trusted server, not the client.
+  // Timed free lives are awarded by the trusted server, not the client.
   const handleClaimTimedSpirits = async () => {
     try {
       const result = await callTrustedApi(currentUser, '/v1/timed-lives');
@@ -1797,7 +1797,7 @@ export default function App() {
     }
   };
 
-handleUpdateAvatar = async (newAvatarId) => {
+  const handleUpdateAvatar = async (newAvatarId) => {
     setUser(prev => ({ ...prev, avatar: newAvatarId }));
     setShowAvatarModal(false);
 
