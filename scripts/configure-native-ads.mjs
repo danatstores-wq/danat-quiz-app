@@ -24,19 +24,20 @@ if (manifest !== null) {
   let next = manifest;
   if (!next.includes('com.google.android.gms.ads.APPLICATION_ID')) {
     next = next.replace(
-      /(<application\\b[^>]*>)/,
-      `$1\\n        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="@string/admob_app_id" />`
+      /(<application\b[^>]*>)/,
+      '$1\n        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="@string/admob_app_id" />'
     );
   }
   await writeUpdated(manifestPath, next);
 
   const stringsPath = 'android/app/src/main/res/values/strings.xml';
   let strings = await readIfPresent(stringsPath);
-  if (strings === null) strings = '<?xml version="1.0" encoding="utf-8"?>\\n<resources>\\n</resources>\\n';
+  if (strings === null) strings = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n</resources>\n';
+  const androidString = '<string name="admob_app_id">' + ANDROID_APP_ID + '</string>';
   if (strings.includes('<string name="admob_app_id">')) {
-    strings = strings.replace(/<string name="admob_app_id">[^<]*<\\/string>/, `<string name="admob_app_id">${ANDROID_APP_ID}</string>`);
+    strings = strings.replace(/<string name="admob_app_id">[^<]*<\/string>/, androidString);
   } else {
-    strings = strings.replace('</resources>', `    <string name="admob_app_id">${ANDROID_APP_ID}</string>\\n</resources>`);
+    strings = strings.replace('</resources>', '    ' + androidString + '\n</resources>');
   }
   await writeUpdated(stringsPath, strings);
 }
@@ -44,15 +45,20 @@ if (manifest !== null) {
 const plistPath = 'ios/App/App/Info.plist';
 let plist = await readIfPresent(plistPath);
 if (plist !== null) {
+  const iosAppIdEntry = '<key>GADApplicationIdentifier</key>\n\t<string>' + IOS_APP_ID + '</string>';
   if (plist.includes('<key>GADApplicationIdentifier</key>')) {
     plist = plist.replace(
-      /<key>GADApplicationIdentifier<\\/key>\\s*<string>[^<]*<\\/string>/,
-      `<key>GADApplicationIdentifier</key>\\n\\t<string>${IOS_APP_ID}</string>`
+      /<key>GADApplicationIdentifier<\/key>\s*<string>[^<]*<\/string>/,
+      iosAppIdEntry
     );
   } else {
+    plist = plist.replace('</dict>', '\t' + iosAppIdEntry + '\n</dict>');
+  }
+
+  if (!plist.includes('<key>SKAdNetworkItems</key>')) {
     plist = plist.replace(
       '</dict>',
-      `\\t<key>GADApplicationIdentifier</key>\\n\\t<string>${IOS_APP_ID}</string>\\n\\t<key>SKAdNetworkItems</key>\\n\\t<array>\\n\\t\\t<dict>\\n\\t\\t\\t<key>SKAdNetworkIdentifier</key>\\n\\t\\t\\t<string>cstr6suwn9.skadnetwork</string>\\n\\t\\t</dict>\\n\\t</array>\\n</dict>`
+      '\t<key>SKAdNetworkItems</key>\n\t<array>\n\t\t<dict>\n\t\t\t<key>SKAdNetworkIdentifier</key>\n\t\t\t<string>cstr6suwn9.skadnetwork</string>\n\t\t</dict>\n\t</array>\n</dict>'
     );
   }
   await writeUpdated(plistPath, plist);
