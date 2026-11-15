@@ -343,6 +343,86 @@ async function processAdMobReward(request, env) {
   return { duplicate: false };
 }
 
+async function updatePlayerLifeLoss(env, uid) {
+  const player = await readFirestoreDocument(env, "users", uid);
+  if (!player?.updateTime) throw Object.assign(new Error("Player profile unavailable"), { status: 404 });
+  const storedLives = player.fields?.livesBalance;
+  const lives = Number(storedLives?.integerValue ?? storedLives?.doubleValue ?? 3);
+  if (!Number.isInteger(lives) || lives <= 0) throw Object.assign(new Error("No lives remaining"), { status: 409 });
+
+  const write = storedLives
+    ? {
+        update: { name: documentPath("users", uid), fields: {} },
+        updateMask: { fieldPaths: [] },
+        updateTransforms: [{ fieldPath: "livesBalance", increment: { integerValue: "-1" } }],
+        currentDocument: { updateTime: player.updateTime }
+      }
+    : {
+        update: { name: documentPath("users", uid), fields: firestoreFields({ livesBalance: lives - 1 }) },
+        updateMask: { fieldPaths: ["livesBalance"] },
+        currentDocument: { updateTime: player.updateTime }
+      };
+
+  const response = await firestoreRequest(env, "projects/" + FIREBASE_PROJECT_ID + "/databases/(default)/documents:commit", {
+    method: "POST",
+    body: JSON.stringify({ writes: [write] })
+  });
+  if (!response.ok) throw Object.assign(new Error("Life update conflict"), { status: 409 });
+  return { livesBalance: lives - 1 };
+}
+
+async function claimTimedLives(env, uid) {
+  const player = await readFirestoreDocument(env, "users", uid);
+  if (!player?.updateTime) throw Object.assign(new Error("Player profile unavailable"), { status: 404 });
+  const fields = player.fields || {};
+  const now = Date.now();
+  const lastClaim = Number(fields.lastSpiritClaimTime?.integerValue || 0);
+  const lastReset = Number(fields.lastDailyResetTime?.integerValue || 0);
+  let claimedToday = Number(fields.dailyClaimedLives?.integerValue || 0);
+  let resetTime = lastReset;
+
+  if (now - lastReset >= 24 * 60 * 60 * 1000) {
+    claimedToday = 0;
+    resetTime = now;
+  }
+
+  const cooldownRemaining = 3 * 60 * 60 * 1000 - (now - lastClaim);
+  if (cooldownRemaining > 0) return { claimed: false, reason: "cooldown", retryAfterMs: cooldownRemaining };
+  if (claimedToday >= 10) return { claimed: false, reason: "daily_limit" };
+
+  const livesToAdd = Math.min(5, 10 - claimedToday);
+  const newClaimed = claimedToday + livesToAdd;
+  const currentLives = Number(fields.livesBalance?.integerValue ?? fields.livesBalance?.doubleValue ?? 3);
+  const response = await firestoreRequest(env, "projects/" + FIREBASE_PROJECT_ID + "/databases/(default)/documents:commit", {
+    method: "POST",
+    body: JSON.stringify({
+      writes: [{
+        update: {
+          name: documentPath("users", uid),
+          fields: firestoreFields({
+            livesBalance: currentLives + livesToAdd,
+            lastSpiritClaimTime: now,
+            dailyClaimedLives: newClaimed,
+            lastDailyResetTime: resetTime
+          })
+        },
+        updateMask: { fieldPaths: ["livesBalance", "lastSpiritClaimTime", "dailyClaimedLives", "lastDailyResetTime"] },
+        currentDocument: { updateTime: player.updateTime }
+      }]
+    })
+  });
+  if (!response.ok) throw Object.assign(new Error("Timed life claim conflict"), { status: 409 });
+
+  return {
+    claimed: true,
+    livesGranted: livesToAdd,
+    livesBalance: currentLives + livesToAdd,
+    lastSpiritClaimTime: now,
+    dailyClaimedLives: newClaimed,
+    lastDailyResetTime: resetTime
+  };
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
