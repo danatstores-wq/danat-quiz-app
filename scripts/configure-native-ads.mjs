@@ -18,6 +18,12 @@ async function writeUpdated(path, content) {
   await writeFile(path, content, 'utf8');
 }
 
+function insertBeforeOutermostDictClose(plistText, addition) {
+  const index = plistText.lastIndexOf('</dict>');
+  if (index < 0) throw new Error('Could not find the outer Info.plist dictionary closing tag.');
+  return plistText.slice(0, index) + addition + plistText.slice(index);
+}
+
 const manifestPath = 'android/app/src/main/AndroidManifest.xml';
 const manifest = await readIfPresent(manifestPath);
 if (manifest !== null) {
@@ -52,13 +58,13 @@ if (plist !== null) {
       iosAppIdEntry
     );
   } else {
-    plist = plist.replace('</dict>', '\t' + iosAppIdEntry + '\n</dict>');
+    plist = insertBeforeOutermostDictClose(plist, '\t' + iosAppIdEntry + '\n');
   }
 
   if (!plist.includes('<key>SKAdNetworkItems</key>')) {
-    plist = plist.replace(
-      '</dict>',
-      '\t<key>SKAdNetworkItems</key>\n\t<array>\n\t\t<dict>\n\t\t\t<key>SKAdNetworkIdentifier</key>\n\t\t\t<string>cstr6suwn9.skadnetwork</string>\n\t\t</dict>\n\t</array>\n</dict>'
+    plist = insertBeforeOutermostDictClose(
+      plist,
+      '\t<key>SKAdNetworkItems</key>\n\t<array>\n\t\t<dict>\n\t\t\t<key>SKAdNetworkIdentifier</key>\n\t\t\t<string>cstr6suwn9.skadnetwork</string>\n\t\t</dict>\n\t</array>\n'
     );
   }
   await writeUpdated(plistPath, plist);
