@@ -366,7 +366,25 @@ export default {
       }
     }
 
-    if (url.pathname === "/v1/life-loss" && request.method === "POST") {\n      try {\n        const user = await verifyFirebaseIdToken(request);\n        return json(await updatePlayerLifeLoss(env, user.uid), 200, cors);\n      } catch (error) {\n        return json({ error: "life_update_failed" }, error?.status || 503, cors);\n      }\n    }\n\n    if (url.pathname === "/v1/timed-lives" && request.method === "POST") {\n      try {\n        const user = await verifyFirebaseIdToken(request);\n        return json(await claimTimedLives(env, user.uid), 200, cors);\n      } catch (error) {\n        return json({ error: "timed_life_claim_failed" }, error?.status || 503, cors);\n      }\n    }\n\n    if (url.pathname === "/v1/ad-session" && request.method === "POST") {
+    if (url.pathname === "/v1/life-loss" && request.method === "POST") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        return json(await updatePlayerLifeLoss(env, user.uid), 200, cors);
+      } catch (error) {
+        return json({ error: "life_update_failed" }, error?.status || 503, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/timed-lives" && request.method === "POST") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        return json(await claimTimedLives(env, user.uid), 200, cors);
+      } catch (error) {
+        return json({ error: "timed_life_claim_failed" }, error?.status || 503, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/ad-session" && request.method === "POST") {
       try {
         const user = await verifyFirebaseIdToken(request);
         const body = await request.json();
