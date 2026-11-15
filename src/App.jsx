@@ -585,9 +585,9 @@ function Match3Gem({ gem, selected }) {
       </defs>
       <path d="M32 4 54 19 59 43 32 61 5 43 10 19Z" fill={item.dark} opacity=".8" />
       <path d="M32 4 54 19 32 28 10 19Z" fill={item.light} />
-      <path d="M10 19 32 28 32 61 5 43Z" fill={item.main} />
+      <path d="M10 19 32 28 32 61 5 43Z" fill={`url(#gem-main-${gem})`} />
       <path d="M54 19 32 28 32 61 59 43Z" fill={item.dark} />
-      <path d="M32 4 54 19 32 28 10 19Z" fill="url(#gem-shine)" opacity=".42" />
+      <path d="M32 4 54 19 32 28 10 19Z" fill={`url(#gem-shine-${gem})`} opacity=".42" />
       <path d="M17 21 29 9 23 24 12 20Z" fill="#fff" opacity=".45" />
       <path d="M32 31 32 55 11 42Z" fill="#fff" opacity=".12" />
       <path d="M36 31 53 22 55 41 36 54Z" fill="#000" opacity=".10" />
