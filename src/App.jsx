@@ -1655,7 +1655,8 @@ export default function App() {
     setAuthMessage('');
     try {
       await setPersistence(auth, browserLocalPersistence);
-      await signInAnonymously(auth);
+      const guestCredential = await signInAnonymously(auth);
+      setCurrentUser(guestCredential.user);
       setShowAuthModal(false);
     } catch (error) {
       console.error('Anonymous guest sign-in failed:', error);
