@@ -857,7 +857,8 @@ const dropMatch3Board = (cleared, colorCount) => {
 
 function GameMatch3({ onBack, onAdComplete }) {
   const [levelId, setLevelId] = useState('easy');
-  const level = MATCH3_LEVELS.find(item => item.id === levelId) || MATCH3_LEVELS[0];
+  const isEndless = levelId === 'endless';
+  const level = MATCH3_LEVELS.find(item => item.id === levelId) || { id: 'endless', name: 'Endless', subtitle: 'Play without limits', colors: 7, moves: Infinity, target: Infinity, stars: '∞' };
   const [board, setBoard] = useState(() => createMatch3Board(5));
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
@@ -866,20 +867,20 @@ function GameMatch3({ onBack, onAdComplete }) {
   const [over, setOver] = useState(false);
   const [showAd, setShowAd] = useState(false);
   const [adCountdown, setAdCountdown] = useState(5);
+  const [adReason, setAdReason] = useState('level');
 
-  // Match 3 has its own persistent counter: show an ad after every third completed game.
   useEffect(() => {
-    if (!over) return undefined;
-    const storageKey = 'danat_match3_completed_games';
-    const completedGames = Number(localStorage.getItem(storageKey) || 0) + 1;
-    localStorage.setItem(storageKey, String(completedGames));
-    if (completedGames % 3 === 0) {
-      setShowAd(true);
-    } else {
-      onBack();
-    }
+    if (!over || isEndless) return undefined;
+    setAdReason('level');
+    setShowAd(true);
     return undefined;
-  }, [over]);
+  }, [over, isEndless]);
+
+  useEffect(() => {
+    if (!isEndless || showAd) return undefined;
+    const timer = setTimeout(() => { setAdReason('endless'); setShowAd(true); }, 120000);
+    return () => clearTimeout(timer);
+  }, [isEndless, showAd]);
 
   useEffect(() => {
     if (!showAd) return undefined;
@@ -891,11 +892,21 @@ function GameMatch3({ onBack, onAdComplete }) {
       if (remaining <= 0) {
         clearInterval(timer);
         onAdComplete?.();
-        onBack();
+        setShowAd(false);
+        if (adReason === 'endless') return;
+        const nextLevel = levelId === 'easy' ? 'medium' : levelId === 'medium' ? 'hard' : 'endless';
+        setLevelId(nextLevel);
+        const nextConfig = MATCH3_LEVELS.find(item => item.id === nextLevel);
+        setBoard(createMatch3Board(nextConfig?.colors || 7));
+        setSelected(null);
+        setScore(0);
+        setMoves(nextConfig?.moves ?? Infinity);
+        setBusy(false);
+        setOver(false);
       }
     }, 1000);
     return () => clearInterval(timer);
-  }, [showAd]);
+  }, [showAd, adReason, levelId, onAdComplete]);
 
   const restart = () => {
     setBoard(createMatch3Board(level.colors));
@@ -905,7 +916,6 @@ function GameMatch3({ onBack, onAdComplete }) {
     setBusy(false);
     setOver(false);
   };
-
   const detonateBomb = async (index) => {
     if (busy || over) return;
     const bomb = board[index];
@@ -987,8 +997,8 @@ function GameMatch3({ onBack, onAdComplete }) {
     playGameMoveSound('match');
     setBusy(true);
     setSelected(null);
-    const nextMoves = moves - 1;
-    setMoves(nextMoves);
+    const nextMoves = isEndless ? moves : moves - 1;
+    if (!isEndless) setMoves(nextMoves);
     let working = swapped;
     let gained = 0;
 
@@ -1018,7 +1028,7 @@ function GameMatch3({ onBack, onAdComplete }) {
     }
     setBoard(working);
     setBusy(false);
-    if (nextMoves <= 0 || score + gained >= level.target) setOver(true);
+    if (!isEndless && (nextMoves <= 0 || score + gained >= level.target)) setOver(true);
   };
 
   return (
@@ -1032,34 +1042,25 @@ function GameMatch3({ onBack, onAdComplete }) {
       </div>
 
       <div className="rounded-[28px] border border-fuchsia-300/40 bg-gradient-to-br from-[#3a145c] via-[#21133f] to-[#101a36] p-3 shadow-[0_18px_45px_rgba(0,0,0,.45)] sm:p-5">
-        <div className="mb-4 grid grid-cols-3 gap-2">
-          {MATCH3_LEVELS.map(option => (
-            <button key={option.id} type="button" onClick={() => {
-              setLevelId(option.id);
-              setBoard(createMatch3Board(option.colors));
-              setSelected(null);
-              setScore(0);
-              setMoves(option.moves);
-              setBusy(false);
-              setOver(false);
-            }} className={`rounded-xl border px-2 py-2 text-center transition-all ${levelId === option.id ? 'border-amber-300 bg-amber-300/20 text-amber-100 shadow-[0_0_18px_rgba(251,191,36,.2)]' : 'border-white/15 bg-black/20 text-purple-100 hover:bg-white/10'}`}>
-              <span className="block text-sm font-black">{option.name}</span>
-              <span className="mt-0.5 block text-[10px] font-semibold opacity-80">{option.subtitle}</span>
-            </button>
-          ))}
-        </div>
-        <div className="mb-4 flex items-center justify-between gap-2">
+        <div className="mb-4 grid grid-cols-4 gap-2">
+          {['easy', 'medium', 'hard', 'endless'].map((id, index) => {
+            const option = MATCH3_LEVELS.find(item => item.id === id) || { name: 'Endless' };
+            const currentIndex = ['easy', 'medium', 'hard', 'endless'].indexOf(levelId);
+            const unlocked = index <= currentIndex;
+            return <div key={id} className={`rounded-xl border px-1.5 py-2 text-center ${levelId === id ? 'border-amber-300 bg-amber-300/20 text-amber-100' : unlocked ? 'border-white/15 bg-black/20 text-purple-100' : 'border-white/10 bg-black/10 text-purple-300/40'}`}><span className="block text-xs font-black">{option.name}</span><span className="mt-0.5 block text-[9px] font-semibold opacity-80">{levelId === id ? 'Current' : unlocked ? 'Unlocked' : 'Locked'}</span></div>;
+          })}
+        </div>        <div className="mb-4 flex items-center justify-between gap-2">
           <div className="rounded-xl border border-white/15 bg-black/25 px-3 py-2 text-center">
             <div className="text-[10px] font-bold uppercase tracking-wider text-fuchsia-200">Score</div>
             <div className="text-xl font-black text-white">{score.toLocaleString()}</div>
           </div>
           <div className="text-center">
             <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">Match the colors</div>
-            <div className="text-sm font-bold text-white">Target: {level.target.toLocaleString()}</div>
+            <div className="text-sm font-bold text-white">{isEndless ? "No score limit" : `Target: ${level.target.toLocaleString()}`}</div>
           </div>
           <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 px-3 py-2 text-center">
             <div className="text-[10px] font-bold uppercase tracking-wider text-amber-200">Moves</div>
-            <div className="text-xl font-black text-amber-300">{moves}</div>
+            <div className="text-xl font-black text-amber-300">{isEndless ? "∞" : moves}</div>
           </div>
         </div>
 
@@ -1090,7 +1091,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
           <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
         </div>
-        <p className="mt-3 text-center text-xs text-purple-100">{level.name}: {level.colors} gem colors · {level.moves} moves · reach {level.target.toLocaleString()} points. Match 4 gems to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).</p>
+        <p className="mt-3 text-center text-xs text-purple-100">{isEndless ? "Endless mode: unlimited moves and no score target. A five-second ad break appears every 2 minutes." : `${level.name}: ${level.colors} gem colors · ${level.moves} moves · reach ${level.target.toLocaleString()} points.`} Match 4 gems to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).</p>
       </div>
 
       {showAd && (
@@ -1098,8 +1099,8 @@ function GameMatch3({ onBack, onAdComplete }) {
           <div className="w-full max-w-sm rounded-3xl border-2 border-fuchsia-400 bg-[#240a47] p-7 text-center shadow-[0_0_50px_rgba(217,70,239,0.35)]">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-fuchsia-300 bg-fuchsia-400/15 text-4xl">💎</div>
             <div className="mb-2 text-xs font-black uppercase tracking-[.3em] text-fuchsia-300">Advertisement</div>
-            <h3 className="text-xl font-black text-white">Great game!</h3>
-            <p className="mt-2 text-sm text-purple-200">Your score: {score.toLocaleString()}</p>
+            <h3 className="text-xl font-black text-white">{adReason === 'endless' ? 'Take a short break!' : 'Level completed!'}</h3>
+            <p className="mt-2 text-sm text-purple-200">{adReason === 'endless' ? `Endless score: ${score.toLocaleString()} · Your game will resume.` : `Completed ${level.name}! Score: ${score.toLocaleString()}`}</p>
             <div className="mt-5 rounded-2xl border border-purple-300/30 bg-[#0d031f] py-4 text-lg font-black text-yellow-300">Ad break ends in {adCountdown}s</div>
           </div>
         </div>
