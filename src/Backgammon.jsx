@@ -312,7 +312,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
         {count > 5 && <span className="rounded-full bg-black/75 px-1 text-[10px] font-bold text-white">{count}</span>}
       </span>
       {!top && <span className="relative z-10 mb-1 text-[9px] font-black text-white/70">{point + 1}</span>}
-      {active && <span className="absolute inset-x-0 z-20 text-center text-[9px] font-black text-yellow-100 ${top ? 'bottom-1' : 'top-1'}">MOVE</span>}
+      {active && <span className={`absolute inset-x-0 z-20 text-center text-[9px] font-black text-yellow-100 ${top ? 'bottom-1' : 'top-1'}`}>MOVE</span>}
     </button>;
   };
 
