@@ -9,6 +9,7 @@ This Worker is the trusted backend for Firebase-authenticated app requests and A
 - `POST /v1/life-loss` — deducts one life using a server-side Firestore precondition.
 - `POST /v1/timed-lives` — enforces the three-hour cooldown and ten-life daily free-claim cap on the server.
 - `POST /v1/ad-session` — creates a one-time, ten-minute life-ad session for the authenticated player.
+- `POST /v1/ad-status` — returns pending/completed status for that player's ad session; the app uses this to display the server-confirmed life.
 - `GET /v1/admob/ssv` — AdMob's signed server-side verification callback.
 
 ## Reward security flow
@@ -19,7 +20,7 @@ This Worker is the trusted backend for Firebase-authenticated app requests and A
 4. The native AdMob SDK sends the Firebase UID and session ID as SSV user/custom data.
 5. The Worker verifies the original signed query string using Google's current AdMob public key.
 6. The Worker validates the approved Android/iOS life ad-unit IDs, reward item/amount, UID, and unused/unexpired session.
-7. A single atomic Firestore commit increments `users/{uid}.livesBalance` and `rewardedAdsWatched`, creates an immutable `adRewardLedger/{transactionId}` record, and marks the session complete. The unique transaction document prevents a repeated callback from granting twice.
+7. A single atomic Firestore commit increments `users/{uid}.livesBalance` and `rewardedAdsWatched`, creates an immutable `adRewardLedger/{transactionId}` record, and marks the session complete using the session's `updateTime` as a compare-and-set precondition. The unique transaction document prevents a repeated callback from granting twice, and the session precondition prevents two distinct callbacks from consuming one session.
 
 Client-side ad callbacks never grant lives. AdMob callbacks that encounter temporary Firestore failures receive HTTP 503 so Google can retry. Invalid callbacks are rejected.
 
@@ -50,4 +51,4 @@ AdMob production callbacks are required for the real SSV flow; test ads do not s
 
 This code is on the `security/cloudflare-api` branch only. It has not been deployed or merged. Before enabling the production ad units, configure the Cloudflare secret, deploy the Worker, verify `/health`, and configure/verify both AdMob callback URLs. Then test with a real production ad and confirm exactly one life and one ledger record are added.
 
-The app currently fails closed: a client ad callback alone does not grant a life.
+The app currently fails closed: a client ad callback alone does not grant a life. After the ad finishes, the app polls `/v1/ad-status`; it updates the displayed life count only when the Worker reports a completed verified session.
