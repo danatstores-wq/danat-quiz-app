@@ -99,7 +99,7 @@ function pemToBytes(pem) {
 async function getFirebaseAccessToken(env) {
   const now = Math.floor(Date.now() / 1000);
   if (firebaseAccessTokenCache && firebaseAccessTokenCache.exp > now + 60) return firebaseAccessTokenCache.token;
-  if (!env.FIREBASE_SERVICE_ACCOUNT_JSON) throw new Error("Firebase service account secret is not configured");
+  if (!env.FIREBASE_SERVICE_ACCOUNT_JSON) throw Object.assign(new Error("Firebase service account secret is not configured"), { status: 503 });
 
   const account = JSON.parse(env.FIREBASE_SERVICE_ACCOUNT_JSON);
   if (!account.client_email || !account.private_key || !account.token_uri) throw new Error("Invalid Firebase service account secret");
@@ -127,7 +127,7 @@ async function getFirebaseAccessToken(env) {
       assertion
     })
   });
-  if (!response.ok) throw new Error("Google OAuth token exchange failed");
+  if (!response.ok) throw Object.assign(new Error("Google OAuth token exchange failed"), { status: 503 });
   const data = await response.json();
   firebaseAccessTokenCache = { token: data.access_token, exp: now + Number(data.expires_in || 3600) };
   return data.access_token;
@@ -225,7 +225,7 @@ async function verifyAdMobSignature(request) {
   if (!Number.isFinite(timestamp) || Math.abs(Date.now() - timestamp) > 10 * 60 * 1000) throw new Error("Stale SSV callback");
 
   const keyResponse = await fetch(ADMOB_KEYS_URL, { cf: { cacheTtl: 3600, cacheEverything: true } });
-  if (!keyResponse.ok) throw new Error("Unable to retrieve AdMob verification keys");
+  if (!keyResponse.ok) throw Object.assign(new Error("Unable to retrieve AdMob verification keys"), { status: 503 });
   const keyData = await keyResponse.json();
   const key = keyData.keys?.find((entry) => String(entry.keyId) === keyId);
   if (!key?.base64) throw new Error("Unknown AdMob key ID");
@@ -304,7 +304,12 @@ async function processAdMobReward(request, env) {
     throw new Error("Ad reward session is invalid or already used");
   }
 
-  const playerProfile = await readFirestoreDocument(env, "users", uid);
+  let playerProfile;
+  try {
+    playerProfile = await readFirestoreDocument(env, "users", uid);
+  } catch {
+    throw Object.assign(new Error("Player profile lookup failed"), { status: 503 });
+  }
   if (!playerProfile) throw new Error("Player profile does not exist");
   if (!session.updateTime) throw new Error("Ad session update time is missing");
 
