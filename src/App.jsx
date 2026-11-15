@@ -1677,6 +1677,7 @@ export default function App() {
         mobileOnly: 'Les publicités récompensées sont disponibles uniquement dans l’application mobile Danat Quiz.',
         unavailable: 'Aucune publicité récompensée n’est disponible pour le moment. Réessayez plus tard.',
         saveFailed: 'La publicité est terminée, mais la récompense n’a pas pu être enregistrée. Contactez le support.',
+        pending: 'Publicité terminée. Votre récompense sera ajoutée après vérification du serveur.',
         lifeEarned: 'Vous avez gagné 1 vie supplémentaire ! ❤️',
         pointsEarned: 'Vous avez gagné 10 points bonus ! 🪙'
       },
@@ -1684,6 +1685,7 @@ export default function App() {
         mobileOnly: 'Rewarded ads are available only in the Danat Quiz mobile app.',
         unavailable: 'No rewarded ad is available right now. Please try again later.',
         saveFailed: 'The ad finished, but we could not save your reward. Please contact support.',
+        pending: 'Ad completed. Your reward will be added after server verification.',
         lifeEarned: 'You earned 1 Extra Life! ❤️',
         pointsEarned: 'You earned 10 Bonus Points! 🪙'
       }
@@ -1704,23 +1706,11 @@ export default function App() {
         return;
       }
 
-      if (currentUser) {
-        try {
-          await updateDoc(doc(db, "users", currentUser.uid), {
-            rewardedAdsWatched: increment(1),
-            livesBalance: increment(1)
-          });
-        } catch (error) {
-          console.error('Could not save rewarded-ad life:', error);
-          alert(rewardAdMessage('saveFailed'));
-          return;
-        }
-      }
-
-      setLives(prev => prev + 1);
-      setUser(prev => ({ ...prev, livesBalance: (prev.livesBalance ?? lives) + 1 }));
-      incrementVideoCount();
-      alert(rewardAdMessage('lifeEarned'));
+      // A client-side AdMob callback is not proof of a valid reward.
+      // Do not change lives, Firestore balances, or ad counters here.
+      // The trusted balance will be updated only after the signed AdMob SSV
+      // callback has been verified and processed by the backend.
+      alert(rewardAdMessage('pending'));
     } catch (error) {
       console.warn('Rewarded life ad was not completed:', error);
       alert(error?.code === 'MOBILE_ONLY' ? rewardAdMessage('mobileOnly') : rewardAdMessage('unavailable'));
