@@ -1037,22 +1037,24 @@ function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
         <div className="mb-4 grid grid-cols-4 gap-2">
           {['easy', 'medium', 'hard', 'endless'].map((id, index) => {
             const option = MATCH3_LEVELS.find(item => item.id === id) || { name: 'Endless' };
+            const levelLabel = tr(option.name, id === 'easy' ? 'Facile' : id === 'medium' ? 'Moyen' : id === 'hard' ? 'Difficile' : 'Sans fin', id === 'easy' ? 'سهل' : id === 'medium' ? 'متوسط' : id === 'hard' ? 'صعب' : 'لا نهائي');
+            const statusLabel = levelId === id ? tr('Current', 'Actuel', 'الحالي') : unlocked ? tr('Unlocked', 'Débloqué', 'مفتوح') : tr('Locked', 'Verrouillé', 'مغلق');
             const currentIndex = ['easy', 'medium', 'hard', 'endless'].indexOf(levelId);
             const unlocked = index <= currentIndex;
-            return <div key={id} className={`rounded-xl border px-1.5 py-2 text-center ${levelId === id ? 'border-amber-300 bg-amber-300/20 text-amber-100' : unlocked ? 'border-white/15 bg-black/20 text-purple-100' : 'border-white/10 bg-black/10 text-purple-300/40'}`}><span className="block text-xs font-black">{option.name}</span><span className="mt-0.5 block text-[9px] font-semibold opacity-80">{levelId === id ? 'Current' : unlocked ? 'Unlocked' : 'Locked'}</span></div>;
+            return <div key={id} className={`rounded-xl border px-1.5 py-2 text-center ${levelId === id ? 'border-amber-300 bg-amber-300/20 text-amber-100' : unlocked ? 'border-white/15 bg-black/20 text-purple-100' : 'border-white/10 bg-black/10 text-purple-300/40'}`}><span className="block text-xs font-black">{levelLabel}</span><span className="mt-0.5 block text-[9px] font-semibold opacity-80">{statusLabel}</span></div>;
           })}
         </div>
         <div className="mb-4 flex items-center justify-between gap-2">
           <div className="rounded-xl border border-white/15 bg-black/25 px-3 py-2 text-center">
-            <div className="text-[10px] font-bold uppercase tracking-wider text-fuchsia-200">Score</div>
+            <div className="text-[10px] font-bold uppercase tracking-wider text-fuchsia-200">{tr('Score', 'Score', 'النقاط')}</div>
             <div className="text-xl font-black text-white">{score.toLocaleString()}</div>
           </div>
           <div className="text-center">
-            <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">Match the fruits</div>
-            <div className="text-sm font-bold text-white">{isEndless ? "No score limit" : `Target: ${level.target.toLocaleString()}`}</div>
+            <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">{tr('Match the fruits', 'Associez les fruits', 'طابق الفواكه')}</div>
+            <div className="text-sm font-bold text-white">{isEndless ? tr('No score limit', 'Sans limite de score', 'بدون حد للنقاط') : `${tr('Target', 'Objectif', 'الهدف')}: ${level.target.toLocaleString()}`}</div>
           </div>
           <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 px-3 py-2 text-center">
-            <div className="text-[10px] font-bold uppercase tracking-wider text-amber-200">Moves</div>
+            <div className="text-[10px] font-bold uppercase tracking-wider text-amber-200">{tr('Moves', 'Coups', 'الحركات')}</div>
             <div className="text-xl font-black text-amber-300">{isEndless ? "∞" : moves}</div>
           </div>
         </div>
@@ -1081,8 +1083,8 @@ function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
         </div>
 
         <div className="mt-4 flex gap-2">
-          <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
-          <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
+          <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ {tr('New Game', 'Nouvelle partie', 'لعبة جديدة')}</button>
+          <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">{tr('Deselect', 'Désélectionner', 'إلغاء التحديد')}</button>
         </div>
         <p className="mt-3 text-center text-xs text-purple-100">{isEndless ? tr('Endless mode: unlimited moves and no score target. A five-second ad break appears every 2 minutes.', 'Mode sans fin : mouvements illimités et aucun objectif de score. Une pause publicitaire de cinq secondes apparaît toutes les 2 minutes.', 'الوضع اللانهائي: حركات بلا حدود وبدون هدف للنقاط. تظهر استراحة إعلانية لمدة خمس ثوانٍ كل دقيقتين.') : `${tr(level.name, level.id === 'easy' ? 'Facile' : level.id === 'medium' ? 'Moyen' : 'Difficile', level.id === 'easy' ? 'سهل' : level.id === 'medium' ? 'متوسط' : 'صعب')}: ${level.colors} ${tr('fruit types', 'types de fruits', 'أنواع من الفاكهة')} · ${level.moves} ${tr('moves', 'coups', 'حركة')} · ${tr('reach', 'atteignez', 'للوصول إلى')} ${level.target.toLocaleString()} ${tr('points', 'points', 'نقطة')}.`} {tr('Match 4 fruits to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).', 'Alignez 4 fruits pour créer une petite bombe (touchez-la pour faire exploser 3 gemmes), ou alignez-en 5 pour créer une grande bombe (touchez-la pour faire exploser 5 gemmes).', 'طابق 4 حبات فاكهة لإنشاء قنبلة صغيرة (اضغط عليها لتفجير 3 جواهر)، أو طابق 5 لإنشاء قنبلة كبيرة (اضغط عليها لتفجير 5 جواهر).')}</p>
       </div>
@@ -1091,10 +1093,10 @@ function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-6 backdrop-blur-md">
           <div className="w-full max-w-sm rounded-3xl border-2 border-fuchsia-400 bg-[#240a47] p-7 text-center shadow-[0_0_50px_rgba(217,70,239,0.35)]">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-fuchsia-300 bg-fuchsia-400/15 text-4xl">💎</div>
-            <div className="mb-2 text-xs font-black uppercase tracking-[.3em] text-fuchsia-300">Advertisement</div>
-            <h3 className="text-xl font-black text-white">{adReason === 'endless' ? 'Take a short break!' : 'Level completed!'}</h3>
-            <p className="mt-2 text-sm text-purple-200">{adReason === 'endless' ? `Endless score: ${score.toLocaleString()} · Your game will resume.` : `Completed ${level.name}! Score: ${score.toLocaleString()}`}</p>
-            <div className="mt-5 rounded-2xl border border-purple-300/30 bg-[#0d031f] py-4 text-lg font-black text-yellow-300">Ad break ends in {adCountdown}s</div>
+            <div className="mb-2 text-xs font-black uppercase tracking-[.3em] text-fuchsia-300">{tr('Advertisement', 'Publicité', 'إعلان')}</div>
+            <h3 className="text-xl font-black text-white">{adReason === 'endless' ? tr('Take a short break!', 'Petite pause !', 'استراحة قصيرة!') : tr('Level completed!', 'Niveau terminé !', 'اكتمل المستوى!')}</h3>
+            <p className="mt-2 text-sm text-purple-200">{adReason === 'endless' ? `${tr('Endless score', 'Score sans fin', 'نقاط الوضع اللانهائي')}: ${score.toLocaleString()} · ${tr('Your game will resume.', 'Votre partie va reprendre.', 'ستُستأنف لعبتك.')}` : `${tr('Completed', 'Terminé', 'اكتمل')} ${tr(level.name, levelId === 'easy' ? 'Facile' : levelId === 'medium' ? 'Moyen' : 'Difficile', levelId === 'easy' ? 'سهل' : levelId === 'medium' ? 'متوسط' : 'صعب')}! ${tr('Score', 'Score', 'النقاط')}: ${score.toLocaleString()}`}</p>
+            <div className="mt-5 rounded-2xl border border-purple-300/30 bg-[#0d031f] py-4 text-lg font-black text-yellow-300">{tr('Ad break ends in', 'La pause publicitaire se termine dans', 'تنتهي الاستراحة الإعلانية خلال')} {adCountdown} {tr('seconds', 'secondes', 'ثوانٍ')}</div>
           </div>
         </div>
       )}
