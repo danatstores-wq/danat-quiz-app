@@ -363,7 +363,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </div>
     </div>
 
-    <div className="rounded-[28px] border-[9px] border-[#d6a45b] bg-[linear-gradient(135deg,#f4d59b_0%,#8a4b25_18%,#3b1d12_50%,#a76532_82%,#f0c77e_100%)] p-2 shadow-[inset_0_0_0_3px_#4a2414,inset_0_0_18px_rgba(0,0,0,.75),0_18px_42px_rgba(0,0,0,.6)] sm:p-4">
+    <div dir="ltr" className="rounded-[28px] border-[9px] border-[#d6a45b] bg-[linear-gradient(135deg,#f4d59b_0%,#8a4b25_18%,#3b1d12_50%,#a76532_82%,#f0c77e_100%)] p-2 shadow-[inset_0_0_0_3px_#4a2414,inset_0_0_18px_rgba(0,0,0,.75),0_18px_42px_rgba(0,0,0,.6)] sm:p-4">
       <div className="rounded-xl border-[3px] border-[#e8c27d] bg-[linear-gradient(135deg,#6b3a20,#29160f_55%,#754322)] p-2 shadow-[inset_0_0_22px_rgba(0,0,0,.85)]">
         <div className="grid grid-cols-[repeat(6,minmax(0,1fr))_18px_repeat(6,minmax(0,1fr))] gap-[2px] border-b-2 border-[#c08b4d] pb-2">{topPoints.map((point, index) => <React.Fragment key={point}>{index === 6 && <div aria-hidden="true" className="row-span-1 rounded-sm border-x-2 border-[#e2b66f] bg-gradient-to-r from-[#2b160f] via-[#8b542c] to-[#2b160f] shadow-[inset_0_0_8px_rgba(0,0,0,.8)]" />}{renderPoint(point, true)}</React.Fragment>)}</div>
         <div className="my-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border-y border-[#d0a366]/40 bg-black/25 px-2 py-2 text-[10px] font-black tracking-wide text-amber-100/80">
