@@ -687,8 +687,18 @@ const playQuizCelebrationSound = () => {
   }
 };
 
-// Reuse the real bomb sound locally; Vite includes this file in web and native builds.
+// Start loading the bomb sound as soon as Match 3 opens, not on the first detonation.
 let sharedBombAudio = null;
+const preloadBombSound = () => {
+  if (typeof window === 'undefined') return null;
+  if (!sharedBombAudio) {
+    sharedBombAudio = new Audio(`${import.meta.env.BASE_URL}sounds/bomb-explosion.mp3`);
+    sharedBombAudio.preload = 'auto';
+    sharedBombAudio.volume = 0.85;
+  }
+  if (sharedBombAudio.readyState === 0) sharedBombAudio.load();
+  return sharedBombAudio;
+};
 
 // Reuse one audio context for arcade sounds. Mobile browsers (especially iOS
 // Safari) may suspend newly-created contexts unless they are resumed directly
@@ -714,14 +724,11 @@ const unlockGameAudio = () => {
 const playGameMoveSound = (kind = 'match') => {
   try {
     if (kind === 'bomb') {
-      if (typeof window === 'undefined') return;
-      if (!sharedBombAudio) {
-        sharedBombAudio = new Audio(`${import.meta.env.BASE_URL}sounds/bomb-explosion.mp3`);
-        sharedBombAudio.preload = 'auto';
-        sharedBombAudio.volume = 0.85;
-      }
-      sharedBombAudio.currentTime = 0;
-      const playback = sharedBombAudio.play();
+      const audio = preloadBombSound();
+      if (!audio) return;
+      // Play immediately from the already-preloaded file; don't wait for a fetch here.
+      try { audio.currentTime = 0; } catch (error) {}
+      const playback = audio.play();
       if (playback && typeof playback.catch === 'function') playback.catch(() => {});
       return;
     }
@@ -838,6 +845,9 @@ const dropMatch3Board = (cleared, colorCount) => {
 
 function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
   const tr = (en, fr, ar) => language === 'العربية' ? ar : language === 'Français' ? fr : en;
+  useEffect(() => {
+    preloadBombSound();
+  }, []);
   const [levelId, setLevelId] = useState('easy');
   const isEndless = levelId === 'endless';
   const level = MATCH3_LEVELS.find(item => item.id === levelId) || { id: 'endless', name: 'Endless', subtitle: 'Play without limits', colors: 5, moves: Infinity, target: Infinity, stars: '∞' };
