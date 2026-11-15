@@ -279,8 +279,8 @@ export default function Backgammon({ onBack, language = 'English' }) {
 
   useEffect(() => {
     if (turn !== -1 || winner || busy || rolling) return;
-    setBusy(true);
     const timer = window.setTimeout(() => {
+      setBusy(true);
       let first, second;
       let rolled = dice;
       if (!rolled.length) {
@@ -361,9 +361,9 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </div>
     </div>
 
-    <div className="rounded-[28px] border-[7px] border-[#8a4c22] bg-gradient-to-br from-[#e6bd7c] via-[#8d4b25] to-[#542b19] p-2 shadow-[inset_0_0_0_3px_#e4b76f,0_14px_35px_rgba(0,0,0,.45)] sm:p-4">
-      <div className="rounded-xl border-2 border-[#e6c58e] bg-gradient-to-br from-[#63351f] via-[#3b241d] to-[#704126] p-2 shadow-inner">
-        <div className="grid grid-cols-12 gap-[2px] border-b-2 border-[#c08b4d] pb-2">{topPoints.map(point => renderPoint(point, true))}</div>
+    <div className="rounded-[28px] border-[9px] border-[#d6a45b] bg-[linear-gradient(135deg,#f4d59b_0%,#8a4b25_18%,#3b1d12_50%,#a76532_82%,#f0c77e_100%)] p-2 shadow-[inset_0_0_0_3px_#4a2414,inset_0_0_18px_rgba(0,0,0,.75),0_18px_42px_rgba(0,0,0,.6)] sm:p-4">
+      <div className="rounded-xl border-[3px] border-[#e8c27d] bg-[linear-gradient(135deg,#6b3a20,#29160f_55%,#754322)] p-2 shadow-[inset_0_0_22px_rgba(0,0,0,.85)]">
+        <div className="grid grid-cols-[repeat(6,minmax(0,1fr))_18px_repeat(6,minmax(0,1fr))] gap-[2px] border-b-2 border-[#c08b4d] pb-2">{topPoints.map((point, index) => <React.Fragment key={point}>{index === 6 && <div aria-hidden="true" className="row-span-1 rounded-sm border-x-2 border-[#e2b66f] bg-gradient-to-r from-[#2b160f] via-[#8b542c] to-[#2b160f] shadow-[inset_0_0_8px_rgba(0,0,0,.8)]" />}{renderPoint(point, true)}</React.Fragment>)}</div>
         <div className="my-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border-y border-[#d0a366]/40 bg-black/25 px-2 py-2 text-[10px] font-black tracking-wide text-amber-100/80">
           <button type="button" onClick={() => choosePoint(-1)} disabled={turn !== 1 || busy || rolling || !dice.length || bars[1] === 0 || !canClickPoint(-1)} className="rounded-lg border border-amber-300/50 bg-amber-900/60 px-2 py-2 disabled:opacity-40">{t.bar}: <b className="text-white">{bars[1]}</b></button>
           <span className="text-center font-black tracking-widest text-amber-300">DANAT BACKGAMMON</span>
@@ -371,7 +371,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
           <span className="rounded-lg border border-rose-300/30 bg-rose-950/50 px-2 py-2">{t.computer} {t.bar}: <b className="text-white">{bars[-1]}</b></span>
           <span className="rounded-lg border border-rose-300/30 bg-rose-950/50 px-2 py-2">{t.computer} {t.borneOff}: <b className="text-white">{borne[-1]}</b></span>
         </div>
-        <div className="grid grid-cols-12 gap-[2px] border-t-2 border-[#c08b4d] pt-2">{bottomPoints.map(point => renderPoint(point, false))}</div>
+        <div className="grid grid-cols-[repeat(6,minmax(0,1fr))_18px_repeat(6,minmax(0,1fr))] gap-[2px] border-t-2 border-[#c08b4d] pt-2">{bottomPoints.map((point, index) => <React.Fragment key={point}>{index === 6 && <div aria-hidden="true" className="row-span-1 rounded-sm border-x-2 border-[#e2b66f] bg-gradient-to-r from-[#2b160f] via-[#8b542c] to-[#2b160f] shadow-[inset_0_0_8px_rgba(0,0,0,.8)]" />}{renderPoint(point, false)}</React.Fragment>)}</div>
       </div>
     </div>
 
