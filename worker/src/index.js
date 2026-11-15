@@ -304,6 +304,7 @@ async function processAdMobReward(request, env) {
       writes: [
         {
           update: { name: documentPath("users", uid), fields: {} },
+          updateMask: { fieldPaths: [] },
           updateTransforms: [
             { fieldPath: "livesBalance", increment: { integerValue: "1" } },
             { fieldPath: "rewardedAdsWatched", increment: { integerValue: "1" } }
