@@ -182,6 +182,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
   const [started, setStarted] = useState(false);
   const [dice, setDice] = useState([]);
   const [computerDice, setComputerDice] = useState([]);
+  const [computerMove, setComputerMove] = useState(null);
   const [candidates, setCandidates] = useState([]);
   const [selected, setSelected] = useState(null);
   const [rolling, setRolling] = useState(false);
@@ -193,7 +194,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
 
   const reset = useCallback(() => {
     setBoard(initialBoard()); setBars({ 1: 0, '-1': 0 }); setBorne({ 1: 0, '-1': 0 });
-    setTurn(1); setStarted(false); setDice([]); setComputerDice([]); setCandidates([]); setSelected(null);
+    setTurn(1); setStarted(false); setDice([]); setComputerDice([]); setComputerMove(null); setCandidates([]); setSelected(null);
     setRolling(false); setBusy(false); setWinner(0); setError(''); setNotice(''); setHistory([]);
   }, []);
 
@@ -304,11 +305,12 @@ export default function Backgammon({ onBack, language = 'English' }) {
       let state = { board, bars, borne };
       const snapshots = chosen.map(step => {
         state = applyStep(state.board, state.bars, state.borne, -1, step);
-        return { board: [...state.board], bars: { ...state.bars }, borne: { ...state.borne } };
+        return { board: [...state.board], bars: { ...state.bars }, borne: { ...state.borne }, move: { from: step.from, to: step.to, die: step.die } };
       });
       snapshots.forEach((snapshot, index) => {
         window.setTimeout(() => {
           setBoard(snapshot.board); setBars(snapshot.bars); setBorne(snapshot.borne);
+          setComputerMove({ ...snapshot.move, at: Date.now() });
           if (snapshot.bars[1] > bars[1]) setNotice(t.hit);
           if (index === snapshots.length - 1) {
             setBusy(false);
@@ -330,10 +332,12 @@ export default function Backgammon({ onBack, language = 'English' }) {
     const active = destinations.includes(point);
     const selectable = canClickPoint(point);
     const checkers = Math.min(count, 5);
+    const computerFrom = computerMove?.from === point;
+    const computerTo = computerMove?.to === point;
     return <button key={point} type="button" onClick={() => active ? moveTo(point) : choosePoint(point)}
       disabled={turn !== 1 || busy || rolling || !dice.length || winner || (!active && !selectable)}
       aria-label={`Point ${point + 1}, ${count} ${side === 1 ? 'your' : 'computer'} checkers`}
-      className={`relative flex min-w-0 flex-1 flex-col items-center ${top ? 'justify-start' : 'justify-end'} overflow-hidden rounded-sm border-x border-black/20 h-[170px] ${active ? 'bg-amber-300/25 ring-2 ring-inset ring-yellow-300' : selectable ? 'bg-white/10' : ''} `}>
+      className={`relative flex min-w-0 flex-1 flex-col items-center ${top ? 'justify-start' : 'justify-end'} overflow-hidden rounded-sm border-x border-black/20 h-[170px] ${active ? 'bg-amber-300/25 ring-2 ring-inset ring-yellow-300' : selectable ? 'bg-white/10' : ''} ${computerFrom ? 'ring-4 ring-inset ring-sky-300 bg-sky-400/30' : ''} ${computerTo ? 'ring-4 ring-inset ring-emerald-300 bg-emerald-400/30' : ''} `}>
       <span className={`absolute left-1/2 z-0 h-[82%] w-[88%] -translate-x-1/2 ${top ? 'top-0' : 'bottom-0'} ${point % 2 === 0 ? 'bg-gradient-to-b from-[#c75b36] to-[#7d2c22]' : 'bg-gradient-to-b from-[#f1d6a0] to-[#b58b50]'}`}
         style={{ clipPath: top ? 'polygon(0 0,100% 0,50% 100%)' : 'polygon(0 100%,100% 100%,50% 0)' }} />
       {top && <span className="relative z-10 mt-1 text-[9px] font-black text-white/70">{point + 1}</span>}
@@ -343,6 +347,8 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </span>
       {!top && <span className="relative z-10 mb-1 text-[9px] font-black text-white/70">{point + 1}</span>}
       {active && <span className={`absolute inset-x-0 z-20 text-center text-[9px] font-black text-yellow-100 ${top ? 'bottom-1' : 'top-1'}`}>MOVE</span>}
+      {computerFrom && <span className={`absolute inset-x-0 z-30 text-center text-[9px] font-black text-sky-100 ${top ? 'bottom-1' : 'top-1'}`}>FROM</span>}
+      {computerTo && <span className={`absolute inset-x-0 z-30 text-center text-[9px] font-black text-emerald-100 ${top ? 'bottom-1' : 'top-1'}`}>TO</span>}
     </button>;
   };
 
@@ -367,10 +373,16 @@ export default function Backgammon({ onBack, language = 'English' }) {
       <div className="rounded-xl border-[3px] border-[#e8c27d] bg-[linear-gradient(135deg,#6b3a20,#29160f_55%,#754322)] p-2 shadow-[inset_0_0_22px_rgba(0,0,0,.85)]">
         <div className="grid grid-cols-[repeat(6,minmax(0,1fr))_18px_repeat(6,minmax(0,1fr))] gap-[2px] border-b-2 border-[#c08b4d] pb-2">{topPoints.map((point, index) => <React.Fragment key={point}>{index === 6 && <div aria-hidden="true" className="row-span-1 rounded-sm border-x-2 border-[#e2b66f] bg-gradient-to-r from-[#2b160f] via-[#8b542c] to-[#2b160f] shadow-[inset_0_0_8px_rgba(0,0,0,.8)]" />}{renderPoint(point, true)}</React.Fragment>)}</div>
         <div className="my-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border-y border-[#d0a366]/40 bg-black/25 px-2 py-2 text-[10px] font-black tracking-wide text-amber-100/80">
-          <button type="button" onClick={() => choosePoint(-1)} disabled={turn !== 1 || busy || rolling || !dice.length || bars[1] === 0 || !canClickPoint(-1)} className="rounded-lg border border-amber-300/50 bg-amber-900/60 px-2 py-2 disabled:opacity-40">{t.bar}: <b className="text-white">{bars[1]}</b></button>
+          <div className="flex items-center gap-2 rounded-lg border border-amber-300/50 bg-amber-950/70 px-2 py-1.5">
+            <button type="button" onClick={() => choosePoint(-1)} disabled={turn !== 1 || busy || rolling || !dice.length || bars[1] === 0 || !canClickPoint(-1)} className="text-left text-amber-100 disabled:opacity-50">{t.you} {t.bar}: <b className="text-white">{bars[1]}</b></button>
+            <div className="flex -space-x-2">{Array.from({ length: Math.min(bars[1], 5) }, (_, i) => <span key={i} className="h-5 w-5 rounded-full border-2 border-amber-100 bg-gradient-to-br from-[#fff5d5] to-[#98764a] shadow" />)}</div>
+          </div>
           <span className="text-center font-black tracking-widest text-amber-300">DANAT BACKGAMMON</span>
           <button type="button" onClick={() => moveTo(24)} disabled={turn !== 1 || busy || rolling || !dice.length || !destinations.includes(24)} className="rounded-lg border border-emerald-300/50 bg-emerald-900/60 px-2 py-2 disabled:opacity-40">{t.borneOff}: <b className="text-white">{borne[1]}</b></button>
-          <span className="rounded-lg border border-rose-300/30 bg-rose-950/50 px-2 py-2">{t.computer} {t.bar}: <b className="text-white">{bars[-1]}</b></span>
+          <div className="flex items-center gap-2 rounded-lg border border-rose-300/50 bg-rose-950/70 px-2 py-1.5">
+            <span className="text-rose-100">{t.computer} {t.bar}: <b className="text-white">{bars[-1]}</b></span>
+            <div className="flex -space-x-2">{Array.from({ length: Math.min(bars[-1], 5) }, (_, i) => <span key={i} className="h-5 w-5 rounded-full border-2 border-slate-400 bg-gradient-to-br from-slate-100 via-slate-500 to-slate-950 shadow" />)}</div>
+          </div>
           <span className="rounded-lg border border-rose-300/30 bg-rose-950/50 px-2 py-2">{t.computer} {t.borneOff}: <b className="text-white">{borne[-1]}</b></span>
         </div>
         <div className="grid grid-cols-[repeat(6,minmax(0,1fr))_18px_repeat(6,minmax(0,1fr))] gap-[2px] border-t-2 border-[#c08b4d] pt-2">{bottomPoints.map((point, index) => <React.Fragment key={point}>{index === 6 && <div aria-hidden="true" className="row-span-1 rounded-sm border-x-2 border-[#e2b66f] bg-gradient-to-r from-[#2b160f] via-[#8b542c] to-[#2b160f] shadow-[inset_0_0_8px_rgba(0,0,0,.8)]" />}{renderPoint(point, false)}</React.Fragment>)}</div>
@@ -388,6 +400,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
       </div>
     </div>
 
+    {computerMove && <div dir="ltr" className="rounded-xl border border-sky-300/50 bg-sky-950/50 px-4 py-2 text-center"><div className="text-xs font-black text-sky-200">{t.computer} moved</div><div className="mt-1 text-sm font-bold text-white">{computerMove.from === -1 ? t.bar : `Point ${computerMove.from + 1}`} → {computerMove.to === 24 ? t.borneOff : `Point ${computerMove.to + 1}`} <span className="text-sky-200">({computerMove.die})</span></div><div className="mt-1 text-[10px] text-sky-100/70">Blue = starting point · Green = destination</div></div>}
     {computerDice.length === 2 && <div dir={language === 'العربية' ? 'rtl' : 'ltr'} className="rounded-xl border border-rose-300/40 bg-rose-950/40 px-4 py-3 text-center"><div className="text-xs font-black text-rose-200">{t.computerRolled}</div><div className="mt-2 flex items-center justify-center gap-3"><span className="rounded-lg border border-rose-200/50 bg-white px-3 py-1.5 text-xl font-black text-slate-900">{computerDice[0]}</span><span className="text-rose-100 font-black">+</span><span className="rounded-lg border border-rose-200/50 bg-white px-3 py-1.5 text-xl font-black text-slate-900">{computerDice[1]}</span></div></div>}
     {history.length > 0 && <div className="rounded-xl border border-slate-700 bg-slate-900/70 p-3"><div className="mb-2 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Recent dice rolls</div><div className="flex flex-wrap justify-center gap-2">{history.slice(0, 6).map((entry, index) => <span key={entry.at + index} className={`rounded-lg border px-3 py-1.5 text-xs font-bold ${entry.side === 1 ? 'border-amber-400/40 text-amber-200' : 'border-rose-400/40 text-rose-200'}`}>{entry.opening ? `${t.opening}: ${t.you} ${entry.dice[0]} · ${t.computer} ${entry.dice[1]} → ${entry.side === 1 ? t.you : t.computer}` : `${entry.side === 1 ? t.you : t.computer}: ${entry.dice[0]} + ${entry.dice[1]}`}</span>)}</div></div>}
     <div className="rounded-xl border border-emerald-400/25 bg-emerald-950/30 px-4 py-3 text-center text-xs text-emerald-100"><span className="font-bold">{t.fair}</span><div className="mt-1 text-[10px] text-emerald-100/70">Each die uses an independent secure random draw. Rejection sampling removes modulo bias.</div></div>
