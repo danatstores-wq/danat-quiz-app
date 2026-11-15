@@ -336,10 +336,12 @@ export default function Backgammon({ onBack, language = 'English' }) {
     <div className="rounded-[28px] border-[7px] border-[#8a4c22] bg-gradient-to-br from-[#e6bd7c] via-[#8d4b25] to-[#542b19] p-2 shadow-[inset_0_0_0_3px_#e4b76f,0_14px_35px_rgba(0,0,0,.45)] sm:p-4">
       <div className="rounded-xl border-2 border-[#e6c58e] bg-gradient-to-br from-[#63351f] via-[#3b241d] to-[#704126] p-2 shadow-inner">
         <div className="grid grid-cols-12 gap-[2px] border-b-2 border-[#c08b4d] pb-2">{topPoints.map(point => renderPoint(point, true))}</div>
-        <div className="my-2 flex items-center justify-between gap-2 rounded-lg border-y border-[#d0a366]/40 bg-black/25 px-3 py-2 text-[10px] font-black tracking-widest text-amber-100/80">
-          <span>{t.bar}: <b className="text-white">{bars[1]} / {bars[-1]}</b></span>
-          <span className="text-amber-300">DANAT BACKGAMMON</span>
-          <span>{t.borneOff}: <b className="text-white">{borne[1]} / {borne[-1]}</b></span>
+        <div className="my-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border-y border-[#d0a366]/40 bg-black/25 px-2 py-2 text-[10px] font-black tracking-wide text-amber-100/80">
+          <button type="button" onClick={() => choosePoint(-1)} disabled={turn !== 1 || busy || rolling || !dice.length || bars[1] === 0 || !canClickPoint(-1)} className="rounded-lg border border-amber-300/50 bg-amber-900/60 px-2 py-2 disabled:opacity-40">{t.bar}: <b className="text-white">{bars[1]}</b></button>
+          <span className="text-center font-black tracking-widest text-amber-300">DANAT BACKGAMMON</span>
+          <button type="button" onClick={() => moveTo(24)} disabled={turn !== 1 || busy || rolling || !dice.length || !destinations.includes(24)} className="rounded-lg border border-emerald-300/50 bg-emerald-900/60 px-2 py-2 disabled:opacity-40">{t.borneOff}: <b className="text-white">{borne[1]}</b></button>
+          <span className="rounded-lg border border-rose-300/30 bg-rose-950/50 px-2 py-2">{t.computer} {t.bar}: <b className="text-white">{bars[-1]}</b></span>
+          <span className="rounded-lg border border-rose-300/30 bg-rose-950/50 px-2 py-2">{t.computer} {t.borneOff}: <b className="text-white">{borne[-1]}</b></span>
         </div>
         <div className="grid grid-cols-12 gap-[2px] border-t-2 border-[#c08b4d] pt-2">{bottomPoints.map(point => renderPoint(point, false))}</div>
       </div>
