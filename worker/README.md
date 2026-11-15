@@ -6,6 +6,8 @@ This Worker is the trusted backend for Firebase-authenticated app requests and A
 
 - `GET /health` — basic service health.
 - `GET /v1/session` — validates a Firebase ID token.
+- `POST /v1/life-loss` — deducts one life using a server-side Firestore precondition.
+- `POST /v1/timed-lives` — enforces the three-hour cooldown and ten-life daily free-claim cap on the server.
 - `POST /v1/ad-session` — creates a one-time, ten-minute life-ad session for the authenticated player.
 - `GET /v1/admob/ssv` — AdMob's signed server-side verification callback.
 
