@@ -211,37 +211,37 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         >
           <svg aria-hidden="true" viewBox="0 0 360 420" preserveAspectRatio="xMidYMid slice" className="pointer-events-none absolute inset-0 h-full w-full">
             <defs>
-              <linearGradient id="canopySky" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#123d55"/><stop offset=".48" stopColor="#36a6a0"/><stop offset="1" stopColor="#b6d78a"/></linearGradient>
-              <linearGradient id="falls" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#9af7ed"/><stop offset=".45" stopColor="#e4fff2"/><stop offset="1" stopColor="#42c9d5"/></linearGradient>
-              <linearGradient id="ruin" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#e9d19a"/><stop offset=".55" stopColor="#b48a55"/><stop offset="1" stopColor="#6b563c"/></linearGradient>
-              <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#56b86b"/><stop offset="1" stopColor="#073f35"/></linearGradient>
-              <radialGradient id="sunGlow"><stop stopColor="#fff6bd" stopOpacity=".8"/><stop offset="1" stopColor="#fff6bd" stopOpacity="0"/></radialGradient>
+              <linearGradient id="oceanSky" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#48a9e8"/><stop offset=".58" stopColor="#a8e4f5"/><stop offset="1" stopColor="#f8e6b4"/></linearGradient>
+              <linearGradient id="oceanSea" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#24b8c7"/><stop offset=".45" stopColor="#087d9c"/><stop offset="1" stopColor="#064b70"/></linearGradient>
+              <linearGradient id="treeLeaf" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#7bd45c"/><stop offset=".48" stopColor="#27884b"/><stop offset="1" stopColor="#0b493d"/></linearGradient>
+              <linearGradient id="treeTrunk" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#59351e"/><stop offset=".5" stopColor="#a56a35"/><stop offset="1" stopColor="#422619"/></linearGradient>
+              <radialGradient id="coastSun"><stop stopColor="#fff9d5" stopOpacity=".95"/><stop offset="1" stopColor="#fff9d5" stopOpacity="0"/></radialGradient>
             </defs>
-            <rect width="360" height="420" fill="url(#canopySky)"/>
-            <circle cx="275" cy="95" r="88" fill="url(#sunGlow)"/>
-            <path d="M0 180 Q45 125 92 170 T190 158 T360 165 V420 H0Z" fill="#1d755a"/>
-            <path d="M0 220 Q58 168 112 218 T226 205 T360 214 V420 H0Z" fill="#145640"/>
-            <g opacity=".9">
-              <path d="M105 110 H255 V145 H105Z" fill="url(#ruin)" stroke="#705638" strokeWidth="4"/>
-              <path d="M119 145 V245 H145 V145 M215 145 V245 H241 V145" fill="url(#ruin)" stroke="#765b3b" strokeWidth="4"/>
-              <path d="M96 108 L180 63 L264 108Z" fill="#d4b77e" stroke="#705638" strokeWidth="5"/>
-              <path d="M158 80 L180 54 L202 80Z" fill="#f0d8a1"/>
-              <path d="M148 160 V230 M180 160 V230 M212 160 V230" stroke="#765b3b" strokeWidth="5" opacity=".65"/>
-              <path d="M88 245 H272 L288 265 H72Z" fill="#8c7049"/>
+            <rect width="360" height="420" fill="url(#oceanSky)"/>
+            <circle cx="278" cy="74" r="75" fill="url(#coastSun)"/>
+            <circle cx="278" cy="74" r="24" fill="#fff5c4" opacity=".9"/>
+            <g fill="#fff" opacity=".68"><path d="M75 83 Q87 65 106 77 Q119 55 141 70 Q159 69 164 87Z"/><path d="M198 126 Q210 109 226 120 Q239 102 258 117 Q276 116 282 132Z"/><path d="M36 155 Q46 143 59 151 Q71 137 84 151 Q98 150 102 162Z"/></g>
+            <path d="M0 215 Q42 189 84 210 T166 207 T250 211 T360 198 V420 H0Z" fill="#d5c18c" opacity=".55"/>
+            <path d="M0 250 Q64 222 122 244 T245 237 T360 230 V420 H0Z" fill="url(#oceanSea)"/>
+            <path d="M0 271 Q48 256 94 270 T188 269 T282 264 T360 258" stroke="#b9f5ee" strokeWidth="4" opacity=".65" fill="none"/>
+            <path d="M0 304 Q55 290 110 303 T220 300 T360 292" stroke="#73dce0" strokeWidth="3" opacity=".65" fill="none"/>
+            <path d="M0 345 Q48 332 96 344 T192 340 T288 335 T360 329" stroke="#b6f2ed" strokeWidth="2" opacity=".5" fill="none"/>
+            <path d="M0 385 Q52 373 104 385 T208 381 T312 375 T360 370 V420 H0Z" fill="#053d62" opacity=".45"/>
+            <g>
+              <path d="M19 0 Q35 76 25 180 Q21 222 7 260 L0 260 V0Z" fill="url(#treeTrunk)"/>
+              <path d="M8 118 Q50 89 79 122 M19 83 Q48 48 73 57" stroke="#59351e" strokeWidth="9" fill="none" strokeLinecap="round"/>
+              <g fill="url(#treeLeaf)" stroke="#145b3c" strokeWidth="2">
+                <ellipse cx="12" cy="34" rx="45" ry="35"/><ellipse cx="51" cy="48" rx="43" ry="34"/><ellipse cx="2" cy="83" rx="42" ry="38"/><ellipse cx="53" cy="105" rx="42" ry="36"/><ellipse cx="5" cy="145" rx="42" ry="38"/>
+                <path d="M0 28 Q49 -2 64 45 Q26 40 0 68Z"/><path d="M0 90 Q53 53 83 99 Q38 91 0 126Z"/>
+              </g>
+              <path d="M341 0 Q325 80 337 180 Q341 222 354 260 L360 260 V0Z" fill="url(#treeTrunk)"/>
+              <path d="M350 118 Q310 89 281 122 M341 83 Q312 48 287 57" stroke="#59351e" strokeWidth="9" fill="none" strokeLinecap="round"/>
+              <g fill="url(#treeLeaf)" stroke="#145b3c" strokeWidth="2">
+                <ellipse cx="348" cy="34" rx="45" ry="35"/><ellipse cx="309" cy="48" rx="43" ry="34"/><ellipse cx="358" cy="83" rx="42" ry="38"/><ellipse cx="307" cy="105" rx="42" ry="36"/><ellipse cx="355" cy="145" rx="42" ry="38"/>
+                <path d="M360 28 Q311 -2 296 45 Q334 40 360 68Z"/><path d="M360 90 Q307 53 277 99 Q322 91 360 126Z"/>
+              </g>
             </g>
-            <path d="M142 145 Q145 205 129 270 Q126 300 151 316 Q169 298 166 270 L165 145Z" fill="url(#falls)" opacity=".92"/>
-            <path d="M192 145 Q193 207 180 272 Q178 300 201 317 Q220 296 215 268 L214 145Z" fill="url(#falls)" opacity=".82"/>
-            <path d="M151 155 Q155 235 145 290 M202 155 Q205 235 194 290" stroke="#fff" strokeWidth="5" opacity=".75" fill="none"/>
-            <path d="M0 290 Q52 250 100 290 T205 285 T360 278 V420 H0Z" fill="#0e5143"/>
-            <path d="M0 330 Q60 285 116 328 T238 322 T360 315 V420 H0Z" fill="#0a4038"/>
-            <path d="M0 370 Q72 320 125 367 T250 360 T360 352 V420 H0Z" fill="#082f30"/>
-            <g fill="url(#leaf)" stroke="#073d32" strokeWidth="2">
-              <path d="M0 0 Q65 24 43 105 Q25 74 0 82Z"/><path d="M0 70 Q66 53 78 137 Q39 119 0 151Z"/>
-              <path d="M360 0 Q295 20 318 105 Q337 72 360 83Z"/><path d="M360 68 Q294 54 282 139 Q322 119 360 153Z"/>
-              <path d="M12 270 Q63 229 89 295 Q47 275 18 322Z"/><path d="M348 266 Q298 229 270 296 Q313 276 343 324Z"/>
-            </g>
-            <g fill="#f3c65e" opacity=".9"><circle cx="44" cy="185" r="5"/><circle cx="62" cy="202" r="3"/><circle cx="300" cy="180" r="4"/><circle cx="285" cy="199" r="3"/></g>
-            <path d="M0 405 Q50 365 95 405 M265 405 Q310 365 360 405" stroke="#7acb75" strokeWidth="9" fill="none" opacity=".65"/>
+            <g fill="#f8d46d" opacity=".9"><circle cx="55" cy="210" r="3"/><circle cx="305" cy="204" r="3"/><circle cx="280" cy="222" r="2"/></g>
           </svg>
           {board.flatMap((line, row) => line.map((bubble, col) => (
             <div key={row + '-' + col} className="relative z-[1] aspect-square rounded-full">
@@ -251,49 +251,62 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         </div>
 
         <div className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between overflow-hidden rounded-b-[24px] border-x border-b border-amber-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(100,190,130,.45),transparent_65%),linear-gradient(180deg,#174f42,#092d2b)] px-3 pb-3 pt-2 shadow-[0_16px_30px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.18)]">
-          <svg viewBox="0 0 132 118" role="img" aria-label="Colourful toucan mascot" className="h-[112px] w-[124px] shrink-0 drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]">
+          <svg viewBox="0 0 150 126" role="img" aria-label="Colourful tropical macaw parrot" className="h-[116px] w-[132px] shrink-0 drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]">
             <defs>
-              <linearGradient id="toucanBeak" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff27a"/><stop offset=".38" stopColor="#ffb52e"/><stop offset=".72" stopColor="#f36a22"/><stop offset="1" stopColor="#b82f27"/></linearGradient>
-              <linearGradient id="toucanWing" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#243f70"/><stop offset="1" stopColor="#071b36"/></linearGradient>
-              <linearGradient id="toucanChest" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#fffef0"/><stop offset="1" stopColor="#c8d9d0"/></linearGradient>
+              <linearGradient id="macawBody" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#21c5d5"/><stop offset=".42" stopColor="#0875b9"/><stop offset="1" stopColor="#082c69"/></linearGradient>
+              <linearGradient id="macawWing" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#ffdc35"/><stop offset=".35" stopColor="#ef7c24"/><stop offset=".7" stopColor="#d52d36"/><stop offset="1" stopColor="#6d1c57"/></linearGradient>
+              <linearGradient id="macawHead" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#ff4a36"/><stop offset=".6" stopColor="#d51e48"/><stop offset="1" stopColor="#7c174e"/></linearGradient>
+              <linearGradient id="macawBeak" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#343b45"/><stop offset=".55" stopColor="#101923"/><stop offset="1" stopColor="#050b12"/></linearGradient>
             </defs>
-            <ellipse cx="60" cy="104" rx="34" ry="7" fill="#031d1b" opacity=".45"/>
-            <path d="M38 91 Q19 75 27 47 Q34 18 63 22 Q91 27 89 61 Q86 91 62 98 Q46 99 38 91Z" fill="#07121f" stroke="#020b12" strokeWidth="3"/>
-            <path d="M39 57 Q53 40 74 52 Q83 68 67 88 Q48 90 39 75Z" fill="url(#toucanChest)"/>
-            <path d="M34 59 Q22 58 16 77 Q32 74 43 67Z" fill="#1b78a6" stroke="#0b4268" strokeWidth="2"/>
-            <path d="M44 78 Q55 63 77 71 Q70 91 51 94Z" fill="url(#toucanWing)" stroke="#020b12" strokeWidth="2"/>
-            <path d="M52 80 Q63 72 73 76" stroke="#4c83ad" strokeWidth="3" fill="none" opacity=".8"/>
-            <path d="M59 31 Q83 5 122 26 Q111 57 75 59 Q60 52 59 31Z" fill="url(#toucanBeak)" stroke="#9b3f20" strokeWidth="3"/>
-            <path d="M74 26 Q101 16 119 28 Q104 37 77 42Z" fill="#fff0a0" opacity=".65"/>
-            <path d="M71 49 Q97 50 116 31" stroke="#9b3f20" strokeWidth="2" fill="none"/>
-            <path d="M48 30 Q54 13 69 19" stroke="#f5c63c" strokeWidth="7" strokeLinecap="round" fill="none"/>
-            <circle cx="67" cy="39" r="7" fill="#fff"/><circle cx="69" cy="39" r="3.5" fill="#101827"/><circle cx="70" cy="38" r="1.2" fill="#fff"/>
-            <path d="M45 96 L40 111 M63 97 L67 111" stroke="#e5a52e" strokeWidth="4" strokeLinecap="round"/>
-            <path d="M33 111 H45 M60 111 H73" stroke="#f6c24a" strokeWidth="4" strokeLinecap="round"/>
-            <path d="M31 45 Q21 34 24 22 Q39 26 45 39" fill="#0d5c8d" stroke="#062b4b" strokeWidth="2"/>
+            <ellipse cx="70" cy="116" rx="42" ry="6" fill="#031a18" opacity=".5"/>
+            <path d="M46 80 Q13 94 10 117 Q37 108 65 92Z" fill="#0875ad" stroke="#062c5b" strokeWidth="2"/>
+            <path d="M57 83 Q34 100 34 116 Q58 108 76 91Z" fill="#f1c52c" stroke="#9e6a17" strokeWidth="2"/>
+            <path d="M65 86 Q56 105 60 119 Q81 107 87 91Z" fill="#e74335" stroke="#8d1e34" strokeWidth="2"/>
+            <path d="M42 88 Q29 65 40 43 Q50 21 77 27 Q105 32 107 63 Q107 94 81 102 Q56 104 42 88Z" fill="url(#macawBody)" stroke="#062d59" strokeWidth="3"/>
+            <path d="M47 60 Q65 42 91 56 Q105 73 85 94 Q61 99 47 80Z" fill="url(#macawWing)" stroke="#8c2b38" strokeWidth="2"/>
+            <path d="M52 67 Q68 52 91 65 M49 77 Q68 63 89 76 M54 87 Q69 77 83 86" stroke="#ffd64a" strokeWidth="3" fill="none" opacity=".9"/>
+            <path d="M43 48 Q34 23 57 12 Q83 -1 103 19 Q113 31 103 48 Q85 63 59 56Z" fill="url(#macawHead)" stroke="#761b43" strokeWidth="2"/>
+            <path d="M54 23 Q72 8 93 20" stroke="#ffb2a0" strokeWidth="4" fill="none" opacity=".65"/>
+            <path d="M94 43 Q119 35 135 53 Q128 78 105 81 Q91 72 94 43Z" fill="url(#macawBeak)" stroke="#050b12" strokeWidth="3"/>
+            <path d="M102 53 Q119 47 132 55" stroke="#7d8992" strokeWidth="2" fill="none" opacity=".8"/>
+            <path d="M98 66 Q113 69 127 59" stroke="#050b12" strokeWidth="3" fill="none"/>
+            <path d="M52 38 Q63 28 80 35" stroke="#fff" strokeWidth="5" strokeLinecap="round" fill="none"/>
+            <circle cx="79" cy="37" r="8" fill="#fff"/><circle cx="81" cy="37" r="4.5" fill="#111827"/><circle cx="82" cy="35" r="1.6" fill="#fff"/>
+            <path d="M72 101 L68 116 M88 99 L91 115" stroke="#d89a25" strokeWidth="4" strokeLinecap="round"/>
+            <path d="M61 116 Q68 110 75 116 M84 115 Q92 109 99 115" stroke="#f4bd35" strokeWidth="4" fill="none" strokeLinecap="round"/>
+            <path d="M39 46 Q23 36 24 20 Q41 25 49 39" fill="#ffcf32" stroke="#9d6c19" strokeWidth="2"/>
           </svg>
           <div className="relative flex h-[112px] w-[190px] shrink-0 items-end justify-center">
-            <svg viewBox="0 0 190 120" role="img" aria-label="Ornate wooden bubble cannon" className="h-full w-full overflow-visible drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]">
+            <svg viewBox="0 0 190 120" role="img" aria-label="Realistic iron bubble cannon on wooden carriage" className="h-full w-full overflow-visible drop-shadow-[0_8px_8px_rgba(0,0,0,.6)]">
               <defs>
-                <linearGradient id="cannonWood" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#e4b66c"/><stop offset=".45" stopColor="#a76532"/><stop offset="1" stopColor="#542b20"/></linearGradient>
-                <linearGradient id="cannonGold" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff1a8"/><stop offset=".45" stopColor="#d99a32"/><stop offset="1" stopColor="#80501c"/></linearGradient>
-                <linearGradient id="cannonBarrel" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#f2d08b"/><stop offset=".35" stopColor="#a96b35"/><stop offset="1" stopColor="#4b2b22"/></linearGradient>
+                <linearGradient id="ironBarrel" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#dce5e9"/><stop offset=".18" stopColor="#667783"/><stop offset=".42" stopColor="#263744"/><stop offset=".7" stopColor="#101c28"/><stop offset="1" stopColor="#050d16"/></linearGradient>
+                <linearGradient id="ironRim" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#f5fbff"/><stop offset=".3" stopColor="#879ba5"/><stop offset=".7" stopColor="#394b57"/><stop offset="1" stopColor="#17232d"/></linearGradient>
+                <linearGradient id="carriageWood" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#c98a4c"/><stop offset=".35" stopColor="#85502e"/><stop offset="1" stopColor="#3c241c"/></linearGradient>
+                <radialGradient id="wheelMetal"><stop stopColor="#8b9aa1"/><stop offset=".65" stopColor="#35444e"/><stop offset="1" stopColor="#111c25"/></radialGradient>
               </defs>
-              <ellipse cx="99" cy="109" rx="82" ry="8" fill="#031a18" opacity=".5"/>
-              <path d="M27 88 Q94 66 162 88 L171 105 Q94 119 19 105Z" fill="url(#cannonWood)" stroke="#4d291b" strokeWidth="4"/>
-              <path d="M38 90 Q95 76 151 90" stroke="#f1c477" strokeWidth="3" fill="none" opacity=".8"/>
-              <circle cx="42" cy="99" r="5" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="2"/><circle cx="148" cy="99" r="5" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="2"/>
-              <path d="M70 87 Q69 68 82 57 L112 57 Q126 69 124 88Z" fill="url(#cannonWood)" stroke="#542b20" strokeWidth="4"/>
-              <g transform="rotate(-12 96 62)">
-                <path d="M72 70 L76 30 Q96 20 116 30 L120 70Z" fill="url(#cannonBarrel)" stroke="#5b321f" strokeWidth="4"/>
-                <path d="M75 39 Q96 32 117 39 L117 48 Q96 41 75 48Z" fill="url(#cannonGold)" stroke="#80501c" strokeWidth="2"/>
-                <path d="M73 27 Q96 15 119 27 L123 38 Q96 28 69 38Z" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="3"/>
-                <ellipse cx="96" cy="27" rx="22" ry="9" fill="#241b24" stroke="#ffe6a0" strokeWidth="4"/>
-                <ellipse cx="96" cy="27" rx="13" ry="5" fill="#091b25"/>
-                <path d="M82 55 Q96 50 112 55" stroke="#f7d18b" strokeWidth="3" fill="none" opacity=".8"/>
+              <ellipse cx="96" cy="111" rx="84" ry="7" fill="#031a18" opacity=".55"/>
+              <g>
+                <circle cx="48" cy="91" r="20" fill="url(#wheelMetal)" stroke="#111b23" strokeWidth="4"/>
+                <circle cx="48" cy="91" r="12" fill="none" stroke="#b4c0c5" strokeWidth="3"/>
+                <circle cx="48" cy="91" r="5" fill="#d8e0e3" stroke="#273640" strokeWidth="2"/>
+                <circle cx="145" cy="91" r="20" fill="url(#wheelMetal)" stroke="#111b23" strokeWidth="4"/>
+                <circle cx="145" cy="91" r="12" fill="none" stroke="#b4c0c5" strokeWidth="3"/>
+                <circle cx="145" cy="91" r="5" fill="#d8e0e3" stroke="#273640" strokeWidth="2"/>
+                <path d="M24 72 Q93 57 169 72 L166 94 Q95 108 28 94Z" fill="url(#carriageWood)" stroke="#402619" strokeWidth="4"/>
+                <path d="M31 77 Q96 65 161 77 M33 88 Q96 101 159 88" stroke="#e0a66a" strokeWidth="2" fill="none" opacity=".7"/>
+                <path d="M61 75 L67 58 Q96 48 126 58 L132 75Z" fill="url(#carriageWood)" stroke="#42291e" strokeWidth="3"/>
+                <g transform="rotate(-13 98 56)">
+                  <path d="M67 64 L70 27 Q96 15 122 27 L126 64 Q97 76 67 64Z" fill="url(#ironBarrel)" stroke="#101a23" strokeWidth="4"/>
+                  <path d="M71 38 Q97 28 122 38 L122 47 Q97 38 71 47Z" fill="url(#ironRim)" stroke="#263743" strokeWidth="2"/>
+                  <path d="M68 24 Q96 10 124 24 L130 38 Q97 28 63 38Z" fill="url(#ironRim)" stroke="#17232d" strokeWidth="3"/>
+                  <ellipse cx="96" cy="25" rx="29" ry="12" fill="#050b12" stroke="#d5e0e5" strokeWidth="5"/>
+                  <ellipse cx="96" cy="25" rx="20" ry="7" fill="#02070d"/>
+                  <path d="M76 54 Q97 47 119 54" stroke="#d6e0e4" strokeWidth="2" fill="none" opacity=".7"/>
+                  <circle cx="77" cy="31" r="2.5" fill="#dce5e9"/><circle cx="115" cy="31" r="2.5" fill="#dce5e9"/>
+                </g>
+                <path d="M79 72 Q96 64 115 72" stroke="#e0a66a" strokeWidth="3" fill="none"/>
+                <circle cx="96" cy="72" r="4" fill="#d9e1e5" stroke="#263743" strokeWidth="2"/>
               </g>
-              <path d="M83 78 Q96 72 109 78" stroke="#f7d18b" strokeWidth="3" fill="none"/>
-              <circle cx="96" cy="78" r="5" fill="url(#cannonGold)" stroke="#70451d" strokeWidth="2"/>
             </svg>
             <div className="absolute right-1 top-0 rounded-full border border-amber-200/60 bg-[#102d2b]/90 px-2 py-1 text-[9px] font-black tracking-widest text-amber-100 shadow-lg">{tr('AIM', 'VISER', 'صوّب')}</div>
             <div className="absolute left-[78px] top-[5px] h-8 w-8 rounded-full border-[3px] border-white/90 shadow-[0_0_18px_rgba(255,255,255,.7)]" style={{ background: `radial-gradient(circle at 28% 20%,#fff 0%,${COLORS[shotColor]} 34%,${COLORS[shotColor]} 72%,#162238 125%)` }}/>
