@@ -53,9 +53,7 @@ service cloud.firestore {
             'lastSpiritClaimTime', 'dailyClaimedLives', 'lastDailyResetTime',
             'avatar'
           ])
-          && request.resource.data.dncBalance == resource.data.dncBalance
-          && request.resource.data.livesBalance == resource.data.livesBalance
-          && request.resource.data.rewardedAdsWatched == resource.data.rewardedAdsWatched);
+          && request.resource.data.dncBalance == resource.data.dncBalance);
 
       allow delete: if isAdmin();
     }
