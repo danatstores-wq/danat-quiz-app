@@ -40,6 +40,24 @@ const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
 const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change; cache for 7 days per device.
 const REWARD_API_URL = 'https://danat-quiz-api.danatcoin.workers.dev';
 
+async function callTrustedApi(user, path, body = {}) {
+  if (!user?.uid) throw new Error('AUTH_REQUIRED');
+  const token = await user.getIdToken();
+  const response = await fetch(`${REWARD_API_URL}${path}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = new Error(data.error || 'TRUSTED_API_FAILED');
+    error.status = response.status;
+    error.data = data;
+    throw error;
+  }
+  return data;
+}
+
 // --- Sample Initial Questions (Fallback) ---
 const INITIAL_QUESTIONS = [
   {
@@ -1590,11 +1608,25 @@ export default function App() {
     } else {
       // Incorrect answer: Deduct 1 life and 5 points penalty (floor at 0)
       const pointPenalty = 5;
-      const newLivesBalance = Math.max(0, lives - 1);
+      let newLivesBalance = Math.max(0, lives - 1);
+      if (currentUser) {
+        try {
+          const lifeResult = await callTrustedApi(currentUser, '/v1/life-loss');
+          newLivesBalance = lifeResult.livesBalance;
+        } catch (error) {
+          console.warn('Server could not record the life deduction:', error);
+          alert(user.language === 'العربية'
+            ? 'تعذر الاتصال بالخادم. تحقق من اتصال الإنترنت وحاول مرة أخرى.'
+            : user.language === 'Français'
+            ? 'Impossible de contacter le serveur. Vérifiez votre connexion et réessayez.'
+            : 'Could not reach the secure server. Check your internet connection and try again.');
+          return;
+        }
+      }
       setLives(newLivesBalance);
-      setUser(prev => ({ ...prev, livesBalance: newLivesBalance }));
       setUser(prev => ({
         ...prev,
+        livesBalance: newLivesBalance,
         points: Math.max(0, prev.points - pointPenalty),
         totalQuestionsAnswered: newAnsweredCount,
         level: newLevel
@@ -1603,7 +1635,6 @@ export default function App() {
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
           points: increment(-pointPenalty),
-          livesBalance: increment(-1),
           totalQuestionsAnswered: increment(1),
           level: newLevel
         });
@@ -1701,17 +1732,7 @@ export default function App() {
 
     try {
       if (!currentUser?.uid) throw new Error('AUTH_REQUIRED');
-      const idToken = await currentUser.getIdToken();
-      const sessionResponse = await fetch(`${REWARD_API_URL}/v1/ad-session`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${idToken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ placement: 'life' })
-      });
-      if (!sessionResponse.ok) throw new Error('REWARD_SESSION_FAILED');
-      const rewardSession = await sessionResponse.json();
+      const rewardSession = await callTrustedApi(currentUser, '/v1/ad-session', { placement: 'life' });
       const reward = await showRewardedAd('life', currentUser.uid, rewardSession.customData);
       if (!reward) {
         alert(rewardAdMessage('unavailable'));
@@ -1731,73 +1752,52 @@ export default function App() {
 
 
 
-  // 3-Hour Timed Lives Bonus (+5 Lives every 3 hrs, max 10 lives per 24 hours)
+  //   // Timed free lives are awarded by the trusted server, not the client.
   const handleClaimTimedSpirits = async () => {
-    const now = Date.now();
-    const lastClaim = user.lastSpiritClaimTime || 0;
-    const hoursElapsed = (now - lastClaim) / (1000 * 60 * 60);
+    try {
+      const result = await callTrustedApi(currentUser, '/v1/timed-lives');
+      if (!result.claimed) {
+        if (result.reason === 'cooldown') {
+          const hoursLeft = (result.retryAfterMs / (60 * 60 * 1000)).toFixed(1);
+          alert(user.language === 'العربية'
+            ? `يرجى الانتظار ${hoursLeft} ساعة للحصول على الأرواح المجانية القادمة.`
+            : user.language === 'Français'
+            ? `Veuillez patienter ${hoursLeft} heures avant de réclamer vos prochaines vies gratuites.`
+            : `Please wait ${hoursLeft} hours before claiming your next free lives.`);
+        } else {
+          alert(user.language === 'العربية'
+            ? 'وصلت إلى الحد الأقصى للأرواح المجانية خلال 24 ساعة.'
+            : user.language === 'Français'
+            ? 'Vous avez atteint la limite de vies gratuites sur 24 heures.'
+            : 'You reached the free-life limit for this 24-hour period.');
+        }
+        return;
+      }
 
-    if (hoursElapsed < 3) {
-      const hoursLeft = (3 - hoursElapsed).toFixed(1);
-      alert(user.language === 'العربية' 
-        ? `يرجى الانتظار ${hoursLeft} ساعة لقطف الأرواح المجانية القادمة!` 
+      setLives(result.livesBalance);
+      setUser(prev => ({
+        ...prev,
+        livesBalance: result.livesBalance,
+        lastSpiritClaimTime: result.lastSpiritClaimTime,
+        dailyClaimedLives: result.dailyClaimedLives,
+        lastDailyResetTime: result.lastDailyResetTime
+      }));
+      alert(user.language === 'العربية'
+        ? `تهانينا! حصلت على ${result.livesGranted} أرواح مجانية.`
         : user.language === 'Français'
-        ? `Veuillez patienter ${hoursLeft} heures pour réclamer vos prochaines vies gratuites !`
-        : `Please wait ${hoursLeft} hours to claim your next free lives!`);
-      return;
-    }
-
-    // Check 24-hour window reset
-    const lastReset = user.lastDailyResetTime || 0;
-    const resetElapsedHours = (now - lastReset) / (1000 * 60 * 60);
-    
-    let currentDailyClaimed = user.dailyClaimedLives || 0;
-    let newResetTime = lastReset;
-
-    if (resetElapsedHours >= 24) {
-      currentDailyClaimed = 0;
-      newResetTime = now;
-    }
-
-    if (currentDailyClaimed >= 10) {
-      alert(user.language === 'العربية' 
-        ? '⚠️ وصلت إلى الحد الأقصى للأرواح المجانية (10 أرواح في 24 ساعة).' 
+        ? `Félicitations ! Vous avez reçu ${result.livesGranted} vies gratuites.`
+        : `Congrats! You received ${result.livesGranted} free lives.`);
+    } catch (error) {
+      console.warn('Timed lives claim failed:', error);
+      alert(user.language === 'العربية'
+        ? 'تعذر الاتصال بالخادم. حاول مرة أخرى عند توفر الإنترنت.'
         : user.language === 'Français'
-        ? '⚠️ Vous avez atteint la limite maximale de vies gratuites (10 vies par 24 heures).'
-        : '⚠️ You reached the max limit for free lives (10 lives per 24 hours).');
-      return;
+        ? 'Impossible de contacter le serveur. Réessayez lorsque vous serez en ligne.'
+        : 'Could not reach the secure server. Please try again when online.');
     }
-
-    const livesToAdd = 5;
-    const updatedDailyClaimed = currentDailyClaimed + livesToAdd;
-
-    setLives(prev => prev + livesToAdd);
-
-    setUser(prev => ({
-      ...prev,
-      livesBalance: (prev.livesBalance ?? lives) + livesToAdd,
-      lastSpiritClaimTime: now,
-      dailyClaimedLives: updatedDailyClaimed,
-      lastDailyResetTime: newResetTime
-    }));
-
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        lastSpiritClaimTime: now,
-        dailyClaimedLives: updatedDailyClaimed,
-        lastDailyResetTime: newResetTime,
-        livesBalance: increment(livesToAdd)
-      });
-    }
-
-    alert(user.language === 'العربية' 
-      ? '🎉 تهانينا! حصلت على 5 أرواح مجانية (+5 ❤️).' 
-      : user.language === 'Français'
-      ? '🎉 Félicitations ! Vous avez réclamé 5 vies gratuites (+5 ❤️).'
-      : '🎉 Congrats! You claimed 5 free lives (+5 ❤️).');
   };
 
-  const handleUpdateAvatar = async (newAvatarId) => {
+handleUpdateAvatar = async (newAvatarId) => {
     setUser(prev => ({ ...prev, avatar: newAvatarId }));
     setShowAvatarModal(false);
 
