@@ -224,7 +224,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
           const moves = allTurnSequences(board, bars, borne, openingTurn, openingDice);
           setCandidates(moves);
           setRolling(false);
-          if (!moves.some(path => path.length)) {
+          if (!moves.some(path => path.length) && openingTurn === 1) {
             setNotice(t.noMoves);
             window.setTimeout(() => finishTurn(board, bars, borne, openingTurn), 900);
           }
