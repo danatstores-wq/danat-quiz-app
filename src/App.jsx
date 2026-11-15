@@ -135,6 +135,9 @@ const TRANSLATIONS = {
     emptyLeaderboard: 'لا يوجد لاعبون بعد',
     watchForLife: '📺 شاهد فيديو لحياة إضافية (+1 ❤️)',
     watchForPoints: '📺 شاهد فيديو لـ 10 نقاط (+10 🪙)',
+    rewardPanelTitle: 'شاهد فيديو للحصول على مكافأة إضافية',
+    lifeRewardLabel: 'حياة إضافية',
+    pointsRewardLabel: 'نقاط إضافية',
     outOfLivesTitle: 'انتهت الأرواح! 💔',
     outOfLivesDesc: 'شاهد فيديو إعلاني للحصول على حياة إضافية ومتابعة اللعب.',
     adsWatched: 'الإعلانات المشاهدة',
@@ -217,6 +220,9 @@ const TRANSLATIONS = {
     emptyLeaderboard: 'Empty',
     watchForLife: '📺 Watch Ad for +1 Life (+1 ❤️)',
     watchForPoints: '📺 Watch Ad for +10 Points (+10 🪙)',
+    rewardPanelTitle: 'Watch a video for an extra reward',
+    lifeRewardLabel: 'Extra life',
+    pointsRewardLabel: 'Bonus points',
     outOfLivesTitle: 'Out of Lives! 💔',
     outOfLivesDesc: 'Watch a video ad to get an extra life and continue playing.',
     adsWatched: 'Ads Watched',
@@ -299,6 +305,9 @@ const TRANSLATIONS = {
     emptyLeaderboard: "Aucun joueur pour le moment",
     watchForLife: "📺 Regarder une pub pour +1 Vie (+1 ❤️)",
     watchForPoints: "📺 Regarder une pub pour +10 Points (+10 🪙)",
+    rewardPanelTitle: "Regardez une vidéo pour une récompense",
+    lifeRewardLabel: "Vie supplémentaire",
+    pointsRewardLabel: "Points bonus",
     outOfLivesTitle: "Plus de vies ! 💔",
     outOfLivesDesc: "Regardez une vidéo publicitaire pour obtenir une vie supplémentaire et continuer à jouer.",
     adsWatched: "Publicités regardées",
@@ -2130,11 +2139,26 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
-                <div className="mb-2 text-xs font-bold text-amber-200">📺 {t.watchForLife.split('(')[0]}</div>
-                <div className="flex gap-2">
-                  <button onClick={handleWatchForLife} className="flex-1 rounded-xl border border-rose-400/40 bg-rose-700/80 py-2 text-xs font-bold text-white">+1 ❤️</button>
-                  <button onClick={handleWatchForPoints} className="flex-1 rounded-xl border border-sky-400/40 bg-sky-700/80 py-2 text-xs font-bold text-white">+10 🪙</button>
+              <div className="relative overflow-hidden rounded-2xl border-2 border-amber-300 bg-gradient-to-br from-[#18213a] via-[#111a33] to-[#251b35] p-3.5 text-center shadow-[0_0_0_1px_rgba(120,75,12,0.9),0_0_22px_rgba(251,191,36,0.22)]">
+                <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-yellow-200 to-transparent" />
+                <div className="mb-3 text-sm font-extrabold tracking-wide text-amber-100 drop-shadow-[0_1px_8px_rgba(251,191,36,0.3)]">
+                  {t.rewardPanelTitle}
+                </div>
+                <div className="grid grid-cols-2 gap-2.5">
+                  <button
+                    onClick={handleWatchForLife}
+                    className="flex min-h-[54px] flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-300 bg-gradient-to-b from-[#713b46] to-[#421f35] px-2 py-2 text-xs font-black text-amber-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_3px_10px_rgba(0,0,0,0.28)] transition hover:border-yellow-200 hover:from-[#854653] hover:to-[#51243b] active:scale-[0.98]"
+                  >
+                    <span className="text-base leading-none">❤️ +1</span>
+                    <span className="text-[10px] font-bold text-amber-100/90">{t.lifeRewardLabel}</span>
+                  </button>
+                  <button
+                    onClick={handleWatchForPoints}
+                    className="flex min-h-[54px] flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-300 bg-gradient-to-b from-[#315b68] to-[#193b4b] px-2 py-2 text-xs font-black text-amber-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_3px_10px_rgba(0,0,0,0.28)] transition hover:border-yellow-200 hover:from-[#3b6e7c] hover:to-[#20495a] active:scale-[0.98]"
+                  >
+                    <span className="text-base leading-none">+10 🪙</span>
+                    <span className="text-[10px] font-bold text-amber-100/90">{t.pointsRewardLabel}</span>
+                  </button>
                 </div>
               </div>
             </div>
