@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const COLORS = ['#ff5b75', '#38bdf8', '#facc15', '#a78bfa', '#34d399', '#fb923c', '#f472b6'];
 const LEVELS = [
@@ -92,6 +92,8 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         setShowAd(false);
         if (adReason === 'endless') {
           setPaused(false);
+        } else if (adReason === 'gameover') {
+          resetBoard(levelId);
         } else {
           const next = levelId === 'easy' ? 'medium' : levelId === 'medium' ? 'hard' : 'endless';
           resetBoard(next);
@@ -104,8 +106,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
   const shootAt = (column) => {
     if (showAd || paused) return;
     const col = Math.max(0, Math.min(7, column));
-    const row = [...board].map((line, index) => ({ line, index })).reverse()
-      .find(item => item.line[col] === null)?.index;
+    const row = [...board].map((line, index) => ({ line, index })).find(item => item.line[col] === null)?.index;
     if (row === undefined) {
       setAdReason('gameover');
       setShowAd(true);
@@ -131,12 +132,11 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
 
     const targetReached = !endless && nextScore >= level.target;
     const movesFinished = !endless && remaining <= 0;
-    const topReached = nextBoard[0].some(value => value !== null);
     if (targetReached || movesFinished) {
       setAdReason('level');
       setShowAd(true);
       setPaused(true);
-    } else if (topReached && nextBoard[0].filter(value => value !== null).length >= 8) {
+    } else if (false) {
       setAdReason('gameover');
       setShowAd(true);
       setPaused(true);
