@@ -34,6 +34,13 @@ The service account must belong to Firebase project `danat-quiz-app` and have th
 
 The service-account JSON must contain `client_email`, `private_key`, and `token_uri`. The Worker exchanges a short-lived signed assertion for a Google OAuth access token and uses the Firestore REST API. Access tokens are cached only in Worker memory.
 
+### Add the secret before deployment
+
+1. In Firebase Console, open **Project settings → Service accounts** and generate a private key for the `danat-quiz-app` project. Keep the downloaded JSON private.
+2. In Cloudflare, open **Workers & Pages → danat-quiz-api → Settings → Variables and Secrets**.
+3. Add a variable of type **Secret** named `FIREBASE_SERVICE_ACCOUNT_JSON`, and paste the complete JSON file contents as its value. Save it. Never send the JSON or private key in chat or commit it to GitHub.
+4. Deploy the Worker only after the secret is saved. The Worker cannot write verified rewards to Firestore without it.
+
 ## AdMob configuration required
 
 For both rewarded-life ad units below, enable Server-side verification and set the callback URL to:
