@@ -37,4 +37,3 @@ if (typeof window !== "undefined") {
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const functions = getFunctions(app, "us-central1");
