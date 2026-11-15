@@ -50,14 +50,12 @@ service cloud.firestore {
           && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
             'language', 'points', 'totalEarnedPoints',
             'totalQuestionsAnswered', 'level', 'totalGames',
-            'rewardedAdsWatched', 'lastSpiritClaimTime',
-            'dailyClaimedLives', 'lastDailyResetTime',
-            'avatar', 'livesBalance'
+            'lastSpiritClaimTime', 'dailyClaimedLives', 'lastDailyResetTime',
+            'avatar'
           ])
           && request.resource.data.dncBalance == resource.data.dncBalance
-          && request.resource.data.livesBalance is int
-          && request.resource.data.livesBalance >= 0
-          && request.resource.data.livesBalance <= 100);
+          && request.resource.data.livesBalance == resource.data.livesBalance
+          && request.resource.data.rewardedAdsWatched == resource.data.rewardedAdsWatched);
 
       allow delete: if isAdmin();
     }
