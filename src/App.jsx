@@ -1366,9 +1366,6 @@ export default function App() {
         if (userSnap.exists()) {
           const data = userSnap.data();
           const savedLives = Number.isInteger(data.livesBalance) && data.livesBalance >= 0 ? data.livesBalance : 3;
-          if (data.livesBalance !== savedLives) {
-            await updateDoc(userDocRef, { livesBalance: savedLives });
-          }
           setLives(savedLives);
           const answeredCount = data.totalQuestionsAnswered || 0;
           const calculatedLevel = Math.floor(answeredCount / 50) + 1;
@@ -1701,6 +1698,7 @@ export default function App() {
       'العربية': {
         mobileOnly: 'الإعلانات بالمكافآت متاحة فقط داخل تطبيق دانات كويز على الهاتف.',
         unavailable: 'لا يتوفر إعلان للمكافأة حالياً. يرجى المحاولة لاحقاً.',
+        pending: 'اكتمل الإعلان. ستُضاف المكافأة بعد التحقق من الخادم.',
         saveFailed: 'انتهى الإعلان، لكن تعذر حفظ المكافأة. يرجى التواصل مع الدعم.',
         lifeEarned: 'حصلت على حياة إضافية! ❤️',
         pointsEarned: 'حصلت على 10 نقاط إضافية! 🪙'
@@ -1725,7 +1723,7 @@ export default function App() {
     return (messages[user.language] || messages.English)[kind];
   };
 
-  // Grant an extra life only after the native AdMob SDK confirms the reward.
+  // The server grants the extra life only after AdMob SSV verification.
   const handleWatchForLife = async () => {
     if (isRewardAdLoading) return;
     setIsRewardAdLoading(true);
@@ -1739,8 +1737,21 @@ export default function App() {
         return;
       }
 
-      // The client callback only tells us the ad UI finished. The app waits for
-      // the signed AdMob SSV callback before the server changes the life balance.
+      // The client callback is not proof. Wait briefly for the server-verified
+      // Firestore balance update; otherwise leave the reward pending.
+      const livesBeforeAd = Number(user.livesBalance ?? lives);
+      for (let attempt = 0; attempt < 15; attempt += 1) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        const profileSnapshot = await getDoc(doc(db, 'users', currentUser.uid));
+        if (!profileSnapshot.exists()) continue;
+        const verifiedLives = Number(profileSnapshot.data().livesBalance ?? livesBeforeAd);
+        if (verifiedLives > livesBeforeAd) {
+          setLives(verifiedLives);
+          setUser(prev => ({ ...prev, livesBalance: verifiedLives }));
+          alert(rewardAdMessage('lifeEarned'));
+          return;
+        }
+      }
       alert(rewardAdMessage('pending'));
     } catch (error) {
       console.warn('Rewarded life ad was not completed:', error);
