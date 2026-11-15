@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import BubbleShooter from './BubbleShooter';
 import {
   ShieldCheck, Check, Tv, X, Settings, Clock, Lock,
   Play, BarChart2, Download, LogIn, UserPlus, LogOut, Coins, Volume2, VolumeX, Eye, EyeOff, Home, Gift, User
@@ -2100,6 +2101,17 @@ export default function App() {
                     <img src={assetPath('3match.jpg')} alt="Match 3" className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.03]" />
                   </span>
                 </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('gameBubbleShooter')}
+                  aria-label="Play Bubble Shooter"
+                  className="group relative aspect-square w-full rounded-2xl border-[4px] border-sky-300 bg-gradient-to-br from-sky-200 via-blue-500 to-indigo-800 p-[3px] shadow-[0_0_0_2px_rgba(30,64,120,0.9),0_0_24px_rgba(56,189,248,0.45)] transition active:scale-[0.97] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-200"
+                >
+                  <span className="flex h-full w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-[10px] bg-gradient-to-br from-[#102746] to-[#071329]">
+                    <span className="text-6xl drop-shadow-[0_4px_12px_rgba(56,189,248,.7)]">🫧</span>
+                    <span className="text-sm font-black text-white">Bubble Shooter</span>
+                  </span>
+                </button>
               </div>
 
               <div className="rounded-2xl border border-amber-400/30 bg-[#111a33]/85 p-3 text-center">
@@ -2120,6 +2132,10 @@ export default function App() {
 
           {activeTab === 'gameMatch3' && (
             <GameMatch3 onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} language={user.language} />
+          )}
+
+          {activeTab === 'gameBubbleShooter' && (
+            <BubbleShooter onBack={() => setActiveTab('home')} onAdComplete={incrementVideoCount} language={user.language} />
           )}
 
           {/* SCREEN: STATISTICS */}
