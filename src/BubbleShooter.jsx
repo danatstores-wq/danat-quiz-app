@@ -221,7 +221,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         <div className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between overflow-hidden rounded-b-[24px] border-x border-b border-amber-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(100,190,130,.45),transparent_65%),linear-gradient(180deg,#174f42,#092d2b)] px-3 pb-3 pt-2 shadow-[0_16px_30px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.18)]">
           <img src={`${BUBBLE_ASSET}parrot.png`} alt="Tropical parrot" draggable="false" className="h-[116px] w-[132px] shrink-0 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]" />
           <div className="relative flex h-[112px] w-[190px] shrink-0 items-end justify-center">
-            <img src={`${BUBBLE_ASSET}cannon.png`} alt="Cannon pointing straight up" draggable="false" className="h-full w-full object-contain" />
+            <img src={`${BUBBLE_ASSET}cannon.png`} alt="Aiming cannon" draggable="false" className="h-full w-full object-contain transition-transform duration-100 ease-out" style={{ transform: `rotate(${(aimCol - 3.5) * 6}deg)`, transformOrigin: "50% 88%" }} />
             <div className="absolute right-1 top-0 rounded-full border border-amber-200/60 bg-[#102d2b]/90 px-2 py-1 text-[9px] font-black tracking-widest text-amber-100 shadow-lg">{tr('AIM', 'VISER', 'صوّب')}</div>
             <div className="absolute left-[78px] top-[5px] h-8 w-8 rounded-full border-[3px] border-white/90 shadow-[0_0_18px_rgba(255,255,255,.7)]" style={{ background: COLORS[shotColor] }}/>
           </div>
