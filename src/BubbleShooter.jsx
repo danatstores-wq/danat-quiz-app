@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+const BUBBLE_ASSET = `${import.meta.env.BASE_URL}images/bubble/`;
 const BUBBLE_FILES = ['red', 'blue', 'yellow', 'purpple', 'green', 'orange', 'pink', 'cyan', 'deep'];
 const COLORS = ['#ff334f', '#2498ef', '#ffd52e', '#8b55d9', '#21bd65', '#ff8a24', '#f35aa8', '#20cbd3', '#3949ab'];
 const LEVELS = [
@@ -178,7 +179,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         </div>
       </div>
 
-      <div className="rounded-[28px] border border-sky-300/50 bg-[#0b3445] bg-cover bg-center p-3 shadow-[0_24px_70px_rgba(0,0,0,.58),inset_0_1px_0_rgba(255,255,255,.18)] sm:p-5" style={{ backgroundImage: "linear-gradient(180deg,rgba(5,30,48,.18),rgba(4,28,42,.58)),url(/images/bubble/background.png)" }}>
+      <div className="rounded-[28px] border border-sky-300/50 bg-[#0b3445] bg-cover bg-center p-3 shadow-[0_24px_70px_rgba(0,0,0,.58),inset_0_1px_0_rgba(255,255,255,.18)] sm:p-5" style={{ backgroundImage: "linear-gradient(180deg,rgba(5,30,48,.18),rgba(4,28,42,.58)),url(${BUBBLE_ASSET}background.png)" }}>
         <div className="mb-4 grid grid-cols-4 gap-2">
           {levelIds.map((id, index) => {
             const unlocked = index <= currentIndex;
@@ -212,20 +213,20 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         >
           {board.flatMap((line, row) => line.map((bubble, col) => (
             <div key={row + '-' + col} className="relative z-[1] aspect-square rounded-full">
-              {bubble !== null && <img src={`/images/bubble/${BUBBLE_FILES[bubble]}.png`} alt="" draggable="false" className="absolute inset-0 h-full w-full select-none object-contain drop-shadow-[0_3px_5px_rgba(0,0,0,.38)]" />}
+              {bubble !== null && <img src={`${BUBBLE_ASSET}${BUBBLE_FILES[bubble]}.png`} alt="" draggable="false" className="absolute inset-0 h-full w-full select-none object-contain drop-shadow-[0_3px_5px_rgba(0,0,0,.38)]" />}
             </div>
           )))}
         </div>
 
         <div className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between overflow-hidden rounded-b-[24px] border-x border-b border-amber-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(100,190,130,.45),transparent_65%),linear-gradient(180deg,#174f42,#092d2b)] px-3 pb-3 pt-2 shadow-[0_16px_30px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.18)]">
-          <img src="/images/bubble/parrot.png" alt="Tropical parrot" draggable="false" className="h-[116px] w-[132px] shrink-0 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]" />
+          <img src={`${BUBBLE_ASSET}parrot.png`} alt="Tropical parrot" draggable="false" className="h-[116px] w-[132px] shrink-0 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]" />
           <div className="relative flex h-[112px] w-[190px] shrink-0 items-end justify-center">
-            <img src="/images/bubble/cannon.png" alt="Cannon pointing straight up" draggable="false" className="h-full w-full object-contain" />
+            <img src={`${BUBBLE_ASSET}cannon.png`} alt="Cannon pointing straight up" draggable="false" className="h-full w-full object-contain" />
             <div className="absolute right-1 top-0 rounded-full border border-amber-200/60 bg-[#102d2b]/90 px-2 py-1 text-[9px] font-black tracking-widest text-amber-100 shadow-lg">{tr('AIM', 'VISER', 'صوّب')}</div>
             <div className="absolute left-[78px] top-[5px] h-8 w-8 rounded-full border-[3px] border-white/90 shadow-[0_0_18px_rgba(255,255,255,.7)]" style={{ background: COLORS[shotColor] }}/>
           </div>
         </div>
-        <div className="mt-14 flex items-center justify-center gap-3 rounded-2xl border border-emerald-100/25 bg-[#092d2d]/90 px-3 py-3 shadow-inner"><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-sky-200">{tr('NEXT', 'SUIVANT', 'التالي')}</span><button type="button" onClick={swapBubbles} disabled={!canSwap || showAd || paused} aria-label={tr('Swap bubbles', 'Échanger les bulles', 'تبديل الفقاعتين')} className="relative h-10 w-10 rounded-full border-2 border-white/70 bg-white/10 shadow-[0_0_14px_rgba(255,255,255,.18)] transition hover:scale-110 disabled:opacity-45"><img src={`/images/bubble/${BUBBLE_FILES[nextColor]}.png`} alt="" className="h-full w-full object-contain" /><span className="absolute -bottom-1 -right-2 rounded-full border border-sky-100/60 bg-slate-950 px-1 text-[10px] font-black text-white">↔</span></button></div><div className="text-center"><div className="text-[10px] font-black uppercase tracking-[.2em] text-amber-200">{tr('READY TO FIRE', 'PRÊT À TIRER', 'جاهزة للإطلاق')}</div><div className="text-xs font-semibold text-sky-100">{tr('Tap next bubble to swap once per shot', 'Touchez la bulle suivante pour échanger une fois par tir', 'اضغط على الفقاعة التالية للتبديل مرة واحدة قبل كل طلقة')}</div></div><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-amber-200">{tr('SHOOT', 'TIRER', 'إطلاق')}</span><span className="h-12 w-12"><img src={`/images/bubble/${BUBBLE_FILES[shotColor]}.png`} alt="" className="h-full w-full object-contain drop-shadow-lg" /></span></div></div><div className="mt-3 text-center text-xs text-sky-100">{tr('Aim at a column and release to shoot. Match 3 or more connected bubbles of the same color.', 'Visez une colonne puis relâchez pour tirer. Associez au moins 3 bulles connectées de la même couleur.', 'وجّه نحو العمود ثم ارفع إصبعك للإطلاق. طابق 3 فقاعات متصلة أو أكثر من اللون نفسه.')}</div>
+        <div className="mt-14 flex items-center justify-center gap-3 rounded-2xl border border-emerald-100/25 bg-[#092d2d]/90 px-3 py-3 shadow-inner"><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-sky-200">{tr('NEXT', 'SUIVANT', 'التالي')}</span><button type="button" onClick={swapBubbles} disabled={!canSwap || showAd || paused} aria-label={tr('Swap bubbles', 'Échanger les bulles', 'تبديل الفقاعتين')} className="relative h-10 w-10 rounded-full border-2 border-white/70 bg-white/10 shadow-[0_0_14px_rgba(255,255,255,.18)] transition hover:scale-110 disabled:opacity-45"><img src={`${BUBBLE_ASSET}${BUBBLE_FILES[nextColor]}.png`} alt="" className="h-full w-full object-contain" /><span className="absolute -bottom-1 -right-2 rounded-full border border-sky-100/60 bg-slate-950 px-1 text-[10px] font-black text-white">↔</span></button></div><div className="text-center"><div className="text-[10px] font-black uppercase tracking-[.2em] text-amber-200">{tr('READY TO FIRE', 'PRÊT À TIRER', 'جاهزة للإطلاق')}</div><div className="text-xs font-semibold text-sky-100">{tr('Tap next bubble to swap once per shot', 'Touchez la bulle suivante pour échanger une fois par tir', 'اضغط على الفقاعة التالية للتبديل مرة واحدة قبل كل طلقة')}</div></div><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-amber-200">{tr('SHOOT', 'TIRER', 'إطلاق')}</span><span className="h-12 w-12"><img src={`${BUBBLE_ASSET}${BUBBLE_FILES[shotColor]}.png`} alt="" className="h-full w-full object-contain drop-shadow-lg" /></span></div></div><div className="mt-3 text-center text-xs text-sky-100">{tr('Aim at a column and release to shoot. Match 3 or more connected bubbles of the same color.', 'Visez une colonne puis relâchez pour tirer. Associez au moins 3 bulles connectées de la même couleur.', 'وجّه نحو العمود ثم ارفع إصبعك للإطلاق. طابق 3 فقاعات متصلة أو أكثر من اللون نفسه.')}</div>
         <div className="mt-3 flex gap-2">
           <button onClick={() => resetBoard(levelId)} className="flex-1 rounded-xl bg-gradient-to-b from-sky-300 to-blue-600 py-3 font-black text-white shadow-lg">↻ {tr('New Game', 'Nouvelle partie', 'لعبة جديدة')}</button>
           <button onClick={onBack} className="flex-1 rounded-xl border border-sky-300/40 bg-white/5 py-3 font-bold text-sky-100">{tr('Back to Games', 'Retour aux jeux', 'العودة إلى الألعاب')}</button>
