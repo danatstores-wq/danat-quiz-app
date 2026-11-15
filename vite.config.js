@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/danat-quiz-app/',
+  base: process.env.VITE_BUILD_TARGET === 'mobile' ? './' : '/danat-quiz-app/',
   optimizeDeps: {
     // This forces Vite to skip pre-bundling dependencies with esbuild
     noDiscovery: true,
