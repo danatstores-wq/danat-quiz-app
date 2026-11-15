@@ -1372,7 +1372,7 @@ export default function App() {
 
           setUser(prev => ({
             ...prev,
-            name: data.name || authUser.email.split('@')[0],
+            name: data.name || authUser.email?.split('@')[0] || 'Guest',
             email: authUser.email,
             points: data.points ?? data.spirits ?? prev.points,
             dncBalance: data.dncBalance ?? prev.dncBalance,
