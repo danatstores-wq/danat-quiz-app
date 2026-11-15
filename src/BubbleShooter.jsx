@@ -207,6 +207,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
 
         <div
           ref={gridRef}
+          dir="ltr"
           onPointerMove={handleGridPointer}
           onPointerUp={aimAndShoot}
           className="relative mx-auto grid w-full max-w-[360px] grid-cols-8 gap-1 rounded-[24px] border-[3px] border-white/45 bg-sky-900/25 p-2 pb-5 shadow-[inset_0_5px_18px_rgba(255,255,255,.25),0_10px_28px_rgba(0,0,0,.4)] touch-pan-y"
@@ -218,7 +219,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
           )))}
         </div>
 
-        <div className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between overflow-hidden rounded-b-[24px] border-x border-b border-amber-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(100,190,130,.45),transparent_65%),linear-gradient(180deg,#174f42,#092d2b)] px-3 pb-3 pt-2 shadow-[0_16px_30px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.18)]">
+        <div dir="ltr" className="relative mx-auto -mt-1 flex w-full max-w-[360px] items-end justify-between overflow-hidden rounded-b-[24px] border-x border-b border-amber-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(100,190,130,.45),transparent_65%),linear-gradient(180deg,#174f42,#092d2b)] px-3 pb-3 pt-2 shadow-[0_16px_30px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.18)]">
           <img src={`${BUBBLE_ASSET}parrot.png`} alt="Tropical parrot" draggable="false" className="h-[116px] w-[132px] shrink-0 object-contain drop-shadow-[0_8px_8px_rgba(0,0,0,.55)]" />
           <div className="relative flex h-[112px] w-[190px] shrink-0 items-end justify-center">
             <img src={`${BUBBLE_ASSET}cannon.png`} alt="Aiming cannon" draggable="false" className="h-full w-full object-contain transition-transform duration-100 ease-out" style={{ transform: `rotate(${(aimCol - 3.5) * 6}deg)`, transformOrigin: "50% 88%" }} />
