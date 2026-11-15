@@ -562,9 +562,9 @@ const MATCH3_CANDIES = [
 ];
 
 const MATCH3_LEVELS = [
-  { id: 'easy', name: 'Easy', subtitle: 'Warm up', colors: 5, moves: 40, target: 700, stars: '⭐' },
-  { id: 'medium', name: 'Medium', subtitle: 'More fruit, fewer moves', colors: 5, moves: 32, target: 1200, stars: '⭐⭐' },
-  { id: 'hard', name: 'Hard', subtitle: 'For fruit masters', colors: 5, moves: 25, target: 1800, stars: '⭐⭐⭐' }
+  { id: 'easy', name: 'Easy', subtitle: 'Warm up', colors: 5, moves: 40, target: 3000, stars: '⭐' },
+  { id: 'medium', name: 'Medium', subtitle: 'More fruit, fewer moves', colors: 5, moves: 32, target: 6000, stars: '⭐⭐' },
+  { id: 'hard', name: 'Hard', subtitle: 'For fruit masters', colors: 5, moves: 25, target: 10000, stars: '⭐⭐⭐' }
 ];
 
 function Match3Gem({ gem, selected }) {
