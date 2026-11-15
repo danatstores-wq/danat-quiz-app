@@ -552,43 +552,31 @@ function Game2048({ onBack, onAdComplete }) {
 
 
 const MATCH3_CANDIES = [
-  { light: '#f8e1e5', main: '#d99aaa', dark: '#986775', glow: 'shadow-rose-200/20' },
-  { light: '#f6edcf', main: '#d7c17c', dark: '#95834d', glow: 'shadow-amber-100/20' },
-  { light: '#eee5f5', main: '#b9a4ce', dark: '#7d688f', glow: 'shadow-violet-200/20' },
-  { light: '#e5efe1', main: '#a6c39d', dark: '#6f8b68', glow: 'shadow-green-100/20' },
-  { light: '#e2eef2', main: '#9dbdca', dark: '#668895', glow: 'shadow-sky-100/20' },
-  { light: '#f5e8dc', main: '#d8b294', dark: '#98775d', glow: 'shadow-orange-100/20' },
-  { light: '#f1e3ed', main: '#c9a5be', dark: '#89677f', glow: 'shadow-pink-100/20' }
+  { fruit: '🍌', name: 'Banana', glow: 'shadow-yellow-300/35' },
+  { fruit: '🍉', name: 'Watermelon', glow: 'shadow-rose-300/35' },
+  { fruit: '🍓', name: 'Strawberry', glow: 'shadow-red-300/35' },
+  { fruit: '🍎', name: 'Apple', glow: 'shadow-red-300/35' },
+  { fruit: '🥭', name: 'Mango', glow: 'shadow-orange-300/35' }
 ];
 
 const MATCH3_LEVELS = [
   { id: 'easy', name: 'Easy', subtitle: 'Warm up', colors: 5, moves: 40, target: 700, stars: '⭐' },
-  { id: 'medium', name: 'Medium', subtitle: 'More gems, fewer moves', colors: 6, moves: 32, target: 1200, stars: '⭐⭐' },
-  { id: 'hard', name: 'Hard', subtitle: 'For gem masters', colors: 7, moves: 25, target: 1800, stars: '⭐⭐⭐' }
+  { id: 'medium', name: 'Medium', subtitle: 'More fruit, fewer moves', colors: 5, moves: 32, target: 1200, stars: '⭐⭐' },
+  { id: 'hard', name: 'Hard', subtitle: 'For fruit masters', colors: 5, moves: 25, target: 1800, stars: '⭐⭐⭐' }
 ];
 
 function Match3Gem({ gem, selected }) {
   const item = MATCH3_CANDIES[gem];
   if (!item) return null;
   return (
-    <svg viewBox="0 0 72 72" className={`h-[88%] w-[88%] overflow-visible transition-transform duration-150 ${selected ? 'scale-90' : 'hover:scale-[1.03]'}`} aria-hidden="true">
-      <defs>
-        <radialGradient id={`orb-fill-${gem}`} cx="30%" cy="24%" r="78%">
-          <stop offset="0%" stopColor={item.light} />
-          <stop offset="58%" stopColor={item.main} />
-          <stop offset="100%" stopColor={item.dark} />
-        </radialGradient>
-        <linearGradient id={`orb-gloss-${gem}`} x1="0" y1="0" x2="0.9" y2="1">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity=".78" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <circle cx="36" cy="38" r="27" fill="#080615" opacity=".22" />
-      <circle cx="36" cy="34" r="27" fill={`url(#orb-fill-${gem})`} stroke="#ffffff" strokeOpacity=".34" strokeWidth="1.5" />
-      <path d="M17 29c2-11 11-18 21-18 8 0 14 4 18 10-9-4-22-3-31 5-3 2-5 5-7 8Z" fill={`url(#orb-gloss-${gem})`} />
-      <ellipse cx="26" cy="22" rx="8" ry="4" transform="rotate(-32 26 22)" fill="#ffffff" opacity=".42" />
-      <circle cx="49" cy="47" r="4" fill="#ffffff" opacity=".13" />
-    </svg>
+    <span
+      role="img"
+      aria-label={item.name}
+      className={`select-none text-[clamp(1.65rem,7vw,2.65rem)] leading-none drop-shadow-[0_5px_4px_rgba(0,0,0,.5)] transition-transform duration-150 ${selected ? 'scale-90' : 'hover:scale-110'}`}
+      style={{ filter: 'saturate(1.12) drop-shadow(0 0 5px rgba(255,255,255,.12))' }}
+    >
+      {item.fruit}
+    </span>
   );
 }
 
@@ -1056,7 +1044,7 @@ function GameMatch3({ onBack, onAdComplete }) {
             <div className="text-xl font-black text-white">{score.toLocaleString()}</div>
           </div>
           <div className="text-center">
-            <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">Match the colors</div>
+            <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">Match the fruits</div>
             <div className="text-sm font-bold text-white">{isEndless ? "No score limit" : `Target: ${level.target.toLocaleString()}`}</div>
           </div>
           <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 px-3 py-2 text-center">
@@ -1092,7 +1080,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
           <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
         </div>
-        <p className="mt-3 text-center text-xs text-purple-100">{isEndless ? "Endless mode: unlimited moves and no score target. A five-second ad break appears every 2 minutes." : `${level.name}: ${level.colors} gem colors · ${level.moves} moves · reach ${level.target.toLocaleString()} points.`} Match 4 gems to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).</p>
+        <p className="mt-3 text-center text-xs text-purple-100">{isEndless ? "Endless mode: unlimited moves and no score target. A five-second ad break appears every 2 minutes." : `${level.name}: ${level.colors} fruit types · ${level.moves} moves · reach ${level.target.toLocaleString()} points.`} Match 4 fruits to create a small bomb (tap it to blast 3 gems), or match 5 to create a big bomb (tap it to blast 5 gems).</p>
       </div>
 
       {showAd && (
