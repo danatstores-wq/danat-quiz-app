@@ -211,7 +211,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         >
           {board.flatMap((line, row) => line.map((bubble, col) => (
             <div key={row + '-' + col} className="relative aspect-square rounded-full">
-              {bubble !== null && <div className="absolute inset-[1px] overflow-hidden rounded-full border border-white/80 shadow-[inset_-5px_-7px_10px_rgba(0,0,0,.35),inset_2px_3px_5px_rgba(255,255,255,.5),0_4px_8px_rgba(0,0,0,.55)]" style={{ background: `radial-gradient(circle at 28% 20%, #fff 0%, ${COLORS[bubble]} 28%, ${COLORS[bubble]} 68%, #10182c 125%)`, boxShadow: `inset -5px -7px 10px rgba(0,0,0,.35), 0 0 10px ${COLORS[bubble]}66` }}><span className="absolute left-[18%] top-[13%] h-[24%] w-[38%] rounded-full bg-white/65 blur-[1px]" /> />}
+              {bubble !== null && <div className="absolute inset-[1px] overflow-hidden rounded-full border border-white/80 shadow-[inset_-5px_-7px_10px_rgba(0,0,0,.35),inset_2px_3px_5px_rgba(255,255,255,.5),0_4px_8px_rgba(0,0,0,.55)]" style={{ background: `radial-gradient(circle at 28% 20%, #fff 0%, ${COLORS[bubble]} 28%, ${COLORS[bubble]} 68%, #10182c 125%)`, boxShadow: `inset -5px -7px 10px rgba(0,0,0,.35), 0 0 10px ${COLORS[bubble]}66` }}><span className="absolute left-[18%] top-[13%] h-[24%] w-[38%] rounded-full bg-white/65 blur-[1px]" /></div>}
             </div>
           )))}
           <div className="pointer-events-none absolute bottom-[-44px] left-1/2 flex -translate-x-1/2 items-center gap-3">
