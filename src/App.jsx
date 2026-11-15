@@ -1384,6 +1384,7 @@ export default function App() {
           totalGames: 0,
           totalEarnedPoints: 0,
           totalQuestionsAnswered: 0,
+          livesBalance: 3,
           avatar: 'avatar-man-ghutra.png'
         }));
       }
@@ -2365,7 +2366,11 @@ export default function App() {
                 )}
               </div>
 
-              <div className="w-full grid grid-cols-3 gap-2">
+              <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <div className="bg-[#240a47] p-3 rounded-2xl border border-rose-400/40 text-center shadow">
+                  <div className="text-[10px] text-slate-300 mb-1">❤️ Lives</div>
+                  <div className="text-base font-black text-rose-300">{lives}</div>
+                </div>
                 <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
                   <div className="text-[10px] text-slate-300 mb-1">{t.gamesPlayed}</div>
                   <div className="text-base font-black text-white">{user.totalGames}</div>
