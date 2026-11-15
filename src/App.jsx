@@ -552,15 +552,50 @@ function Game2048({ onBack, onAdComplete }) {
 
 
 const MATCH3_CANDIES = [
-  { emoji: '🍓', tile: 'from-rose-400 to-red-600', glow: 'shadow-rose-500/40' },
-  { emoji: '🍋', tile: 'from-yellow-300 to-amber-500', glow: 'shadow-yellow-400/40' },
-  { emoji: '🍇', tile: 'from-violet-400 to-purple-700', glow: 'shadow-purple-500/40' },
-  { emoji: '🍏', tile: 'from-lime-300 to-green-600', glow: 'shadow-green-500/40' },
-  { emoji: '💎', tile: 'from-cyan-300 to-blue-600', glow: 'shadow-cyan-500/40' },
-  { emoji: '🍊', tile: 'from-orange-300 to-orange-600', glow: 'shadow-orange-500/40' }
+  { light: '#ff9bb7', main: '#f43f78', dark: '#9f174d', glow: 'shadow-rose-500/50' },
+  { light: '#fff08a', main: '#facc15', dark: '#a16207', glow: 'shadow-yellow-400/50' },
+  { light: '#d8a4ff', main: '#9333ea', dark: '#581c87', glow: 'shadow-purple-500/50' },
+  { light: '#c5ff8a', main: '#65a30d', dark: '#365314', glow: 'shadow-lime-500/50' },
+  { light: '#8cecff', main: '#0891b2', dark: '#164e63', glow: 'shadow-cyan-500/50' },
+  { light: '#ffc18a', main: '#ea580c', dark: '#7c2d12', glow: 'shadow-orange-500/50' },
+  { light: '#ffb0f4', main: '#db2777', dark: '#831843', glow: 'shadow-pink-500/50' }
 ];
 
-const hasPossibleMatch3Move = (board) => {
+const MATCH3_LEVELS = [
+  { id: 'easy', name: 'Easy', subtitle: 'Warm up', colors: 5, moves: 40, target: 700, stars: '⭐' },
+  { id: 'medium', name: 'Medium', subtitle: 'More gems, fewer moves', colors: 6, moves: 32, target: 1200, stars: '⭐⭐' },
+  { id: 'hard', name: 'Hard', subtitle: 'For gem masters', colors: 7, moves: 25, target: 1800, stars: '⭐⭐⭐' }
+];
+
+function Match3Gem({ gem, selected }) {
+  const item = MATCH3_CANDIES[gem];
+  if (!item) return null;
+  return (
+    <svg viewBox="0 0 64 64" className={`h-[82%] w-[82%] overflow-visible drop-shadow-lg transition-transform duration-100 ${selected ? 'scale-90' : ''}`} aria-hidden="true">
+      <defs>
+        <linearGradient id={`gem-main-${gem}`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={item.light} />
+          <stop offset="52%" stopColor={item.main} />
+          <stop offset="100%" stopColor={item.dark} />
+        </linearGradient>
+        <linearGradient id={`gem-shine-${gem}`} x1="0" y1="0" x2="0.9" y2="1">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity=".95" />
+          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <path d="M32 4 54 19 59 43 32 61 5 43 10 19Z" fill={item.dark} opacity=".8" />
+      <path d="M32 4 54 19 32 28 10 19Z" fill={item.light} />
+      <path d="M10 19 32 28 32 61 5 43Z" fill={item.main} />
+      <path d="M54 19 32 28 32 61 59 43Z" fill={item.dark} />
+      <path d="M32 4 54 19 32 28 10 19Z" fill="url(#gem-shine)" opacity=".42" />
+      <path d="M17 21 29 9 23 24 12 20Z" fill="#fff" opacity=".45" />
+      <path d="M32 31 32 55 11 42Z" fill="#fff" opacity=".12" />
+      <path d="M36 31 53 22 55 41 36 54Z" fill="#000" opacity=".10" />
+    </svg>
+  );
+}
+
+const hasPossibleMatch3Move = (board, colorCount = MATCH3_CANDIES.length) => {
   for (let index = 0; index < 64; index++) {
     const neighbors = [];
     if (index % 8 < 7) neighbors.push(index + 1);
@@ -575,19 +610,19 @@ const hasPossibleMatch3Move = (board) => {
 };
 
 // Start with a clean board (no automatic matches) and guarantee at least one valid move.
-const createMatch3Board = () => {
+const createMatch3Board = (colorCount = 5) => {
   for (let attempt = 0; attempt < 100; attempt++) {
     const board = Array(64).fill(null);
     for (let row = 0; row < 8; row++) {
       for (let col = 0; col < 8; col++) {
-        const choices = MATCH3_CANDIES.map((_, index) => index).filter((candy) =>
+        const choices = MATCH3_CANDIES.slice(0, colorCount).map((_, index) => index).filter((candy) =>
           !(col >= 2 && board[row * 8 + col - 1] === candy && board[row * 8 + col - 2] === candy) &&
           !(row >= 2 && board[(row - 1) * 8 + col] === candy && board[(row - 2) * 8 + col] === candy)
         );
         board[row * 8 + col] = choices[Math.floor(Math.random() * choices.length)];
       }
     }
-    if (hasPossibleMatch3Move(board)) return board;
+    if (hasPossibleMatch3Move(board, colorCount)) return board;
   }
   // Extremely unlikely fallback: a simple board with an obvious horizontal match after one swap.
   return [
@@ -747,7 +782,9 @@ const findMatch3Matches = (board) => {
 };
 
 function GameMatch3({ onBack, onAdComplete }) {
-  const [board, setBoard] = useState(createMatch3Board);
+  const [levelId, setLevelId] = useState('easy');
+  const level = MATCH3_LEVELS.find(item => item.id === levelId) || MATCH3_LEVELS[0];
+  const [board, setBoard] = useState(() => createMatch3Board(5));
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
   const [moves, setMoves] = useState(40);
@@ -787,10 +824,10 @@ function GameMatch3({ onBack, onAdComplete }) {
   }, [showAd]);
 
   const restart = () => {
-    setBoard(createMatch3Board());
+    setBoard(createMatch3Board(level.colors));
     setSelected(null);
     setScore(0);
-    setMoves(40);
+    setMoves(level.moves);
     setBusy(false);
     setOver(false);
   };
@@ -837,7 +874,7 @@ function GameMatch3({ onBack, onAdComplete }) {
       matches.forEach(cell => { cleared[cell] = null; });
       setBoard(cleared);
       setScore(prev => prev + matches.size * 10);
-      await new Promise(resolve => setTimeout(resolve, 180));
+      await new Promise(resolve => setTimeout(resolve, 65));
 
       const dropped = Array(64).fill(null);
       for (let col = 0; col < 8; col++) {
@@ -847,7 +884,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           if (value !== null) remaining.push(value);
         }
         for (let row = 7, k = 0; row >= 0; row--, k++) {
-          dropped[row * 8 + col] = k < remaining.length ? remaining[k] : Math.floor(Math.random() * MATCH3_CANDIES.length);
+          dropped[row * 8 + col] = k < remaining.length ? remaining[k] : Math.floor(Math.random() * level.colors);
         }
       }
       working = dropped;
@@ -857,12 +894,12 @@ function GameMatch3({ onBack, onAdComplete }) {
 
     // A cascade can leave the board with no legal swaps. Refresh it
     // automatically so the player is never trapped on an unplayable board.
-    if (!hasPossibleMatch3Move(working)) {
-      working = createMatch3Board();
+    if (!hasPossibleMatch3Move(working, level.colors)) {
+      working = createMatch3Board(level.colors);
     }
     setBoard(working);
     setBusy(false);
-    if (nextMoves <= 0) setOver(true);
+    if (nextMoves <= 0 || score + gained >= level.target) setOver(true);
   };
 
   return (
@@ -876,6 +913,22 @@ function GameMatch3({ onBack, onAdComplete }) {
       </div>
 
       <div className="rounded-[28px] border border-fuchsia-300/40 bg-gradient-to-br from-[#3a145c] via-[#21133f] to-[#101a36] p-3 shadow-[0_18px_45px_rgba(0,0,0,.45)] sm:p-5">
+        <div className="mb-4 grid grid-cols-3 gap-2">
+          {MATCH3_LEVELS.map(option => (
+            <button key={option.id} type="button" onClick={() => {
+              setLevelId(option.id);
+              setBoard(createMatch3Board(option.colors));
+              setSelected(null);
+              setScore(0);
+              setMoves(option.moves);
+              setBusy(false);
+              setOver(false);
+            }} className={`rounded-xl border px-2 py-2 text-center transition-all ${levelId === option.id ? 'border-amber-300 bg-amber-300/20 text-amber-100 shadow-[0_0_18px_rgba(251,191,36,.2)]' : 'border-white/15 bg-black/20 text-purple-100 hover:bg-white/10'}`}>
+              <span className="block text-sm font-black">{option.name}</span>
+              <span className="mt-0.5 block text-[10px] font-semibold opacity-80">{option.subtitle}</span>
+            </button>
+          ))}
+        </div>
         <div className="mb-4 flex items-center justify-between gap-2">
           <div className="rounded-xl border border-white/15 bg-black/25 px-3 py-2 text-center">
             <div className="text-[10px] font-bold uppercase tracking-wider text-fuchsia-200">Score</div>
@@ -883,7 +936,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           </div>
           <div className="text-center">
             <div className="text-xs font-black uppercase tracking-[.18em] text-fuchsia-200">Match the colors</div>
-            <div className="text-sm font-bold text-white">Swap 3 or more</div>
+            <div className="text-sm font-bold text-white">Target: {level.target.toLocaleString()}</div>
           </div>
           <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 px-3 py-2 text-center">
             <div className="text-[10px] font-bold uppercase tracking-wider text-amber-200">Moves</div>
@@ -901,9 +954,9 @@ function GameMatch3({ onBack, onAdComplete }) {
                 onClick={() => tapCandy(index)}
                 disabled={busy || over}
                 aria-label={`Candy at row ${Math.floor(index / 8) + 1}, column ${(index % 8) + 1}`}
-                className={`flex aspect-square min-w-0 items-center justify-center rounded-lg border text-[clamp(15px,5vw,27px)] leading-none transition-all duration-150 sm:rounded-xl ${item ? `bg-gradient-to-br ${item.tile} border-white/35 shadow-lg ${item.glow}` : 'bg-slate-700'} ${selected === index ? 'scale-90 border-4 border-white ring-2 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.95)]' : 'border-white/20'} ${busy ? 'cursor-wait' : 'active:scale-90'}`}
+                className={`flex aspect-square min-w-0 items-center justify-center rounded-xl border bg-gradient-to-br from-white/15 to-black/20 transition-[transform,box-shadow,border-color] duration-100 sm:rounded-2xl ${item ? `border-white/35 shadow-lg ${item.glow}` : 'bg-slate-700'} ${selected === index ? 'scale-90 border-4 border-white ring-2 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.95)]' : 'border-white/20'} ${busy ? 'cursor-wait' : 'active:scale-90'}`}
               >
-                <span className="drop-shadow-md">{item?.emoji}</span>
+                <Match3Gem gem={candy} selected={selected === index} />
               </button>
             );
           })}
@@ -913,7 +966,7 @@ function GameMatch3({ onBack, onAdComplete }) {
           <button onClick={restart} className="flex-1 rounded-xl bg-gradient-to-b from-fuchsia-300 to-purple-500 py-3 font-black text-white shadow-lg">↻ New Game</button>
           <button onClick={() => setSelected(null)} disabled={selected === null || busy} className="flex-1 rounded-xl border border-fuchsia-300/40 bg-white/5 py-3 font-bold text-fuchsia-100 disabled:opacity-40">Deselect</button>
         </div>
-        <p className="mt-3 text-center text-xs text-purple-100">Easy start: 5 gem colors and 40 moves. Tap one gem, then an adjacent gem to swap. Match 3 or more to score points.</p>
+        <p className="mt-3 text-center text-xs text-purple-100">{level.name}: {level.colors} gem colors · {level.moves} moves · reach {level.target.toLocaleString()} points. Tap two adjacent gems to match 3 or more.</p>
       </div>
 
       {showAd && (
