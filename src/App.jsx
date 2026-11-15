@@ -27,16 +27,13 @@ import {
   collection,
   getDocs,
   query,
-  orderBy,
-  limit
+  
 } from 'firebase/firestore';
 
 // --- LocalStorage Storage Keys ---
 const QUIZ_INDEX_KEY = 'danat_quiz_current_index';
 const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
 const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change; cache for 7 days per device.
-const LEADERBOARD_CACHE_KEY = 'danat_quiz_leaderboard_cache_v1';
-const LEADERBOARD_CACHE_TTL = 15 * 60 * 1000; // Refresh leaderboard at most every 15 minutes per device.
 
 // --- Sample Initial Questions (Fallback) ---
 const INITIAL_QUESTIONS = [
@@ -1162,10 +1159,6 @@ export default function App() {
 
   // 10-Questions Milestone Ad State
 
-  // Leaderboard State
-  const [leaderboardUsers, setLeaderboardUsers] = useState([]);
-  const [loadingLeaderboard, setLoadingLeaderboard] = useState(false);
-
   // Load cached questions immediately; refresh from Firestore only when cache expires.
   const [questions, setQuestions] = useState(() => {
     try {
@@ -1201,49 +1194,6 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem(QUIZ_INDEX_KEY, currentQIndex.toString());
   }, [currentQIndex]);
-
-  // Fetch only the top 20 players and reuse a short-lived local cache.
-  useEffect(() => {
-    if (activeTab === 'leaderboard') {
-      async function fetchLeaderboard() {
-        setLoadingLeaderboard(true);
-        try {
-          const cached = localStorage.getItem(LEADERBOARD_CACHE_KEY);
-          if (cached) {
-            const parsed = JSON.parse(cached);
-            if (Date.now() - parsed.timestamp < LEADERBOARD_CACHE_TTL && Array.isArray(parsed.users)) {
-              setLeaderboardUsers(parsed.users);
-              setLoadingLeaderboard(false);
-              return;
-            }
-          }
-
-          const topPlayersQuery = query(
-            collection(db, "users"),
-            orderBy("points", "desc"),
-            limit(20)
-          );
-          const querySnapshot = await getDocs(topPlayersQuery);
-          const usersList = querySnapshot.docs.map((docSnap) => ({
-            id: docSnap.id,
-            name: docSnap.data().name || 'لاعب',
-            avatar: docSnap.data().avatar || 'avatar-man-ghutra.png',
-            points: docSnap.data().points ?? docSnap.data().spirits ?? 0
-          }));
-          setLeaderboardUsers(usersList);
-          localStorage.setItem(LEADERBOARD_CACHE_KEY, JSON.stringify({
-            timestamp: Date.now(),
-            users: usersList
-          }));
-        } catch (err) {
-          console.error("Failed to fetch leaderboard:", err);
-        } finally {
-          setLoadingLeaderboard(false);
-        }
-      }
-      fetchLeaderboard();
-    }
-  }, [activeTab]);
 
   const [redemptions, setRedemptions] = useState([
     { id: '1', user: 'أحمد', points: 1000, dnc: 1, wallet: '0x71C...39A', status: 'PENDING', date: '2026-11-02' },
@@ -2344,55 +2294,6 @@ export default function App() {
                 >
                   {user.language === 'العربية' ? 'متوقف مؤقتاً' : user.language === 'Français' ? 'Suspendu' : 'Paused'}
                 </button>
-              </div>
-            </div>
-          )}
-
-          {/* SCREEN 4: LEADERBOARD */}
-          {activeTab === 'leaderboard' && (
-            <div className="flex flex-col gap-4">
-              <div className="text-center my-2">
-                <img src={assetPath('trophy_large.png')} alt="Trophy" className="w-14 h-14 mx-auto mb-1 object-contain" />
-                <h2 className="text-2xl font-black text-yellow-400">{t.leaderboard}</h2>
-              </div>
-
-              <div className="w-full bg-[#240a47] p-1 rounded-xl flex gap-1 border border-purple-400/40 text-xs font-bold shadow">
-                <button className="flex-1 py-2.5 bg-yellow-500 text-slate-950 rounded-lg shadow">
-                  {t.topPlayers}
-                </button>
-              </div>
-
-              <div className="w-full bg-[#0d031f] px-4 py-2.5 rounded-lg flex text-[11px] text-slate-300 font-bold border border-purple-400/30 shadow">
-                <span className="w-12">{t.rank}</span>
-                <span className="flex-1 text-right">{t.player}</span>
-                <span className="w-20 text-left">{t.pts}</span>
-              </div>
-
-              <div className="w-full space-y-2.5">
-                {loadingLeaderboard ? (
-                  <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
-                    {t.loading}
-                  </div>
-                ) : leaderboardUsers.length === 0 ? (
-                  <div className="w-full bg-[#240a47]/80 p-6 rounded-xl border border-purple-400/30 text-center text-xs text-slate-300 shadow">
-                    {t.emptyLeaderboard}
-                  </div>
-                ) : (
-                  leaderboardUsers.map((player, index) => (
-                    <div key={player.id} className="w-full bg-[#240a47]/90 px-4 py-3 rounded-xl border border-purple-400/40 flex items-center justify-between text-xs shadow">
-                      <div className="w-12 font-black text-yellow-400 flex items-center gap-1">
-                        {index === 0 ? '👑 1' : index === 1 ? '🥈 2' : index === 2 ? '🥉 3' : `#${index + 1}`}
-                      </div>
-                      <div className="flex-1 flex items-center gap-2.5 text-right">
-                        <img src={assetPath(player.avatar || 'avatar-man-ghutra.png')} alt="Avatar" className="w-8 h-8 rounded-full border border-yellow-400 object-cover" />
-                        <span className="font-bold text-white truncate max-w-[120px]">{player.name || 'لاعب'}</span>
-                      </div>
-                      <div className="w-20 text-left font-black text-purple-300">
-                        {(player.points || player.spirits || 0).toLocaleString()} 🪙
-                      </div>
-                    </div>
-                  ))
-                )}
               </div>
             </div>
           )}
