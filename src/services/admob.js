@@ -110,16 +110,21 @@ export function startNativeBanner() {
   };
 }
 
-export async function showRewardedAd(placement) {
+export async function showRewardedAd(placement, userId) {
   await ensureAdMobReady();
 
   const units = getPlatformUnits();
   const adId = placement === 'life' ? units?.rewardedLife : units?.rewardedPoints;
   if (!adId) throw new Error('UNSUPPORTED_AD_PLACEMENT');
 
+  if (typeof userId !== 'string' || !userId.trim()) {
+    throw new Error('AUTH_REQUIRED');
+  }
+
   const preparedAd = await AdMob.prepareRewardVideoAd({
     adId,
-    isTesting: import.meta.env.VITE_ADMOB_TEST_MODE === 'true'
+    isTesting: import.meta.env.VITE_ADMOB_TEST_MODE === 'true',
+    ssv: { userId }
   });
 
   const reward = await AdMob.showRewardVideoAd({
