@@ -1311,8 +1311,6 @@ export default function App() {
         lastSpiritClaimTime: 0,
         dailyClaimedLives: 0,
         lastDailyResetTime: 0,
-        walletConnected: false,
-        walletAddress: '',
         avatar: 'avatar-man-ghutra.png',
         language: 'English',
         createdAt: new Date().toISOString()
