@@ -552,11 +552,11 @@ function Game2048({ onBack, onAdComplete }) {
 
 
 const MATCH3_CANDIES = [
-  { fruit: '🍌', name: 'Banana', glow: 'shadow-yellow-300/35' },
-  { fruit: '🍉', name: 'Watermelon', glow: 'shadow-rose-300/35' },
-  { fruit: '🍓', name: 'Strawberry', glow: 'shadow-red-300/35' },
-  { fruit: '🍎', name: 'Apple', glow: 'shadow-red-300/35' },
-  { fruit: '🥭', name: 'Mango', glow: 'shadow-orange-300/35' }
+  { file: 'banana.png', name: 'Banana', glow: 'shadow-yellow-300/35' },
+  { file: 'watermelon.png', name: 'Watermelon', glow: 'shadow-rose-300/35' },
+  { file: 'strawberry.png', name: 'Strawberry', glow: 'shadow-red-300/35' },
+  { file: 'apple.png', name: 'Apple', glow: 'shadow-red-300/35' },
+  { file: 'mango.png', name: 'Mango', glow: 'shadow-orange-300/35' }
 ];
 
 const MATCH3_LEVELS = [
@@ -572,10 +572,15 @@ function Match3Gem({ gem, selected }) {
     <span
       role="img"
       aria-label={item.name}
-      className={`select-none text-[clamp(1.65rem,7vw,2.65rem)] leading-none drop-shadow-[0_5px_4px_rgba(0,0,0,.5)] transition-transform duration-150 ${selected ? 'scale-90' : 'hover:scale-110'}`}
-      style={{ filter: 'saturate(1.12) drop-shadow(0 0 5px rgba(255,255,255,.12))' }}
+      className={`flex h-full w-full select-none items-center justify-center transition-transform duration-150 ${selected ? 'scale-90' : 'hover:scale-110'}`}
     >
-      {item.fruit}
+      <img
+        src={`/images/match3/${item.file}`}
+        alt={item.name}
+        draggable="false"
+        className="h-[88%] w-[88%] select-none object-contain drop-shadow-[0_5px_4px_rgba(0,0,0,.5)]"
+        style={{ filter: 'saturate(1.08) drop-shadow(0 0 5px rgba(255,255,255,.12))' }}
+      />
     </span>
   );
 }
@@ -846,7 +851,7 @@ const dropMatch3Board = (cleared, colorCount) => {
 function GameMatch3({ onBack, onAdComplete }) {
   const [levelId, setLevelId] = useState('easy');
   const isEndless = levelId === 'endless';
-  const level = MATCH3_LEVELS.find(item => item.id === levelId) || { id: 'endless', name: 'Endless', subtitle: 'Play without limits', colors: 7, moves: Infinity, target: Infinity, stars: '∞' };
+  const level = MATCH3_LEVELS.find(item => item.id === levelId) || { id: 'endless', name: 'Endless', subtitle: 'Play without limits', colors: 5, moves: Infinity, target: Infinity, stars: '∞' };
   const [board, setBoard] = useState(() => createMatch3Board(5));
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
