@@ -27,7 +27,8 @@ import {
   collection,
   getDocs,
   query,
-  
+  where,
+  onSnapshot,
 } from 'firebase/firestore';
 
 // --- LocalStorage Storage Keys ---
@@ -1109,6 +1110,7 @@ function GameMatch3({ onBack, onAdComplete, language = 'English' }) {
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [dncHistory, setDncHistory] = useState([]);
   const [authMode, setAuthMode] = useState('login');
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
@@ -1289,6 +1291,41 @@ export default function App() {
     });
     return () => unsubscribe();
   }, []);
+
+  // Load only the signed-in player's own DNC credit history.
+  useEffect(() => {
+    if (!currentUser) {
+      setDncHistory([]);
+      return undefined;
+    }
+
+    const ledgerQuery = query(
+      collection(db, 'dncLedger'),
+      where('playerUid', '==', currentUser.uid)
+    );
+
+    const unsubscribe = onSnapshot(
+      ledgerQuery,
+      (snapshot) => {
+        const entries = snapshot.docs.map((entryDoc) => ({
+          id: entryDoc.id,
+          ...entryDoc.data()
+        }));
+        entries.sort((a, b) => {
+          const dateA = a.createdAt?.toMillis ? a.createdAt.toMillis() : 0;
+          const dateB = b.createdAt?.toMillis ? b.createdAt.toMillis() : 0;
+          return dateB - dateA;
+        });
+        setDncHistory(entries.slice(0, 10));
+      },
+      (error) => {
+        console.error('DNC credit history could not be loaded:', error);
+        setDncHistory([]);
+      }
+    );
+
+    return () => unsubscribe();
+  }, [currentUser]);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -2236,6 +2273,42 @@ export default function App() {
                   <div className="text-[10px] text-slate-300 mb-1">DNC</div>
                   <div className="text-base font-black text-yellow-400">{user.dncBalance}</div>
                 </div>
+              </div>
+              <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-yellow-500/30 shadow space-y-3">
+                <div className="flex items-center justify-between border-b border-purple-400/30 pb-2">
+                  <h3 className="text-sm font-black text-yellow-400">
+                    {user.language === 'العربية' ? 'سجل رصيد DNC' : user.language === 'Français' ? 'Historique du solde DNC' : 'DNC Credit History'}
+                  </h3>
+                  <span className="text-[10px] text-slate-400">
+                    {user.language === 'العربية' ? 'آخر 10 عمليات' : user.language === 'Français' ? '10 dernières opérations' : 'Last 10 entries'}
+                  </span>
+                </div>
+                {!currentUser ? (
+                  <p className="text-xs text-slate-400 text-center py-2">
+                    {user.language === 'العربية' ? 'سجل الرصيد متاح بعد تسجيل الدخول.' : user.language === 'Français' ? 'Connectez-vous pour consulter votre historique.' : 'Sign in to view your credit history.'}
+                  </p>
+                ) : dncHistory.length === 0 ? (
+                  <p className="text-xs text-slate-400 text-center py-2">
+                    {user.language === 'العربية' ? 'لا توجد إضافات رصيد حتى الآن.' : user.language === 'Français' ? 'Aucun crédit pour le moment.' : 'No DNC credits yet.'}
+                  </p>
+                ) : dncHistory.map((entry) => {
+                  const entryDate = entry.createdAt?.toDate ? entry.createdAt.toDate() : null;
+                  return (
+                    <div key={entry.id} className="flex items-center justify-between gap-3 bg-[#0d031f]/70 rounded-xl p-3">
+                      <div className="min-w-0">
+                        <div className="text-xs font-bold text-white">
+                          {entry.note || (user.language === 'العربية' ? 'إضافة رصيد يدوية' : user.language === 'Français' ? 'Crédit manuel' : 'Manual credit')}
+                        </div>
+                        <div className="text-[10px] text-slate-400">
+                          {entryDate ? entryDate.toLocaleDateString(user.language === 'العربية' ? 'ar' : user.language === 'Français' ? 'fr' : 'en') : '—'}
+                        </div>
+                      </div>
+                      <div className={`text-sm font-black whitespace-nowrap ${Number(entry.amount) >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                        {Number(entry.amount) > 0 ? '+' : ''}{Number(entry.amount).toLocaleString()} DNC
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
             </div>
