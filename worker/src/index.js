@@ -264,14 +264,24 @@ async function processAdMobReward(request, env) {
     throw new Error("SSV reward does not match the configured life reward");
   }
 
-  const session = await readFirestoreDocument(env, "adRewardSessions", sessionId);
+  let session;
+  try {
+    session = await readFirestoreDocument(env, "adRewardSessions", sessionId);
+  } catch {
+    throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
+  }
   if (!session) throw new Error("Unknown ad reward session");
   const fields = session.fields || {};
   const sessionCreatedAt = Date.parse(fields.createdAt?.timestampValue || "");
   if (fields.uid?.stringValue !== uid || fields.placement?.stringValue !== "life" ||
       fields.status?.stringValue !== "pending" || !Number.isFinite(sessionCreatedAt) ||
       Date.now() - sessionCreatedAt > 10 * 60 * 1000 || sessionCreatedAt > Date.now() + 60 * 1000) {
-    const existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
+    let existing;
+    try {
+      existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
+    } catch {
+      throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
+    }
     if (existing) return { duplicate: true };
     throw new Error("Ad reward session is invalid or already used");
   }
@@ -286,7 +296,9 @@ async function processAdMobReward(request, env) {
     placement: "life",
     createdAt: now
   });
-  const commitResponse = await firestoreRequest(env, `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
+  let commitResponse;
+  try {
+    commitResponse = await firestoreRequest(env, `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
     method: "POST",
     body: JSON.stringify({
       writes: [
@@ -312,12 +324,20 @@ async function processAdMobReward(request, env) {
         }
       ]
     })
-  });
+    });
+  } catch {
+    throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
+  }
 
   if (!commitResponse.ok) {
-    const existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
+    let existing;
+    try {
+      existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
+    } catch {
+      throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
+    }
     if (existing) return { duplicate: true };
-    throw new Error("Firestore reward commit failed");
+    throw Object.assign(new Error("Firestore reward commit failed"), { status: 503 });
   }
   return { duplicate: false };
 }
@@ -362,7 +382,7 @@ export default {
         const result = await processAdMobReward(request, env);
         return json({ received: true, duplicate: result.duplicate }, 200);
       } catch (error) {
-        return json({ error: "invalid_or_unprocessed_reward" }, 400);
+        return json({ error: "invalid_or_unprocessed_reward" }, error?.status || 400);
       }
     }
 
