@@ -575,7 +575,7 @@ function Match3Gem({ gem, selected }) {
       className={`flex h-full w-full select-none items-center justify-center transition-transform duration-150 ${selected ? 'scale-90' : 'hover:scale-110'}`}
     >
       <img
-        src={`/images/match3/${item.file}`}
+        src={`${import.meta.env.BASE_URL}images/match3/${item.file}`}
         alt={item.name}
         draggable="false"
         className="h-[88%] w-[88%] select-none object-contain drop-shadow-[0_5px_4px_rgba(0,0,0,.5)]"
