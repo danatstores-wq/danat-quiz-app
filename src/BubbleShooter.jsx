@@ -42,6 +42,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
   const [moves, setMoves] = useState(40);
   const [shotColor, setShotColor] = useState(() => randomBubble(5));
   const [nextColor, setNextColor] = useState(() => randomBubble(5));
+  const [canSwap, setCanSwap] = useState(true);
   const [aimCol, setAimCol] = useState(4);
   const [showAd, setShowAd] = useState(false);
   const [adReason, setAdReason] = useState('level');
@@ -64,6 +65,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
     setMoves(config?.moves ?? Infinity);
     setShotColor(randomBubble(count));
     setNextColor(randomBubble(count));
+    setCanSwap(true);
     setLevelId(id);
     setShowAd(false);
     setPaused(false);
@@ -103,6 +105,13 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
     return () => window.clearInterval(timer);
   }, [showAd, adReason, levelId, onAdComplete]);
 
+  const swapBubbles = () => {
+    if (!canSwap || showAd || paused) return;
+    setShotColor(nextColor);
+    setNextColor(shotColor);
+    setCanSwap(false);
+  };
+
   const shootAt = (column) => {
     if (showAd || paused) return;
     const col = Math.max(0, Math.min(7, column));
@@ -127,6 +136,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
     setScore(nextScore);
     setShotColor(nextColor);
     setNextColor(randomBubble(colorCount));
+    setCanSwap(true);
     const remaining = endless ? Infinity : moves - 1;
     if (!endless) setMoves(remaining);
 
@@ -167,7 +177,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
         </div>
       </div>
 
-      <div className="rounded-[28px] border border-sky-300/40 bg-gradient-to-br from-[#123d68] via-[#21133f] to-[#101a36] p-3 shadow-[0_18px_45px_rgba(0,0,0,.45)] sm:p-5">
+      <div className="rounded-[28px] border border-sky-300/40 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,.28),transparent_45%),linear-gradient(145deg,#102f55_0%,#17143b_48%,#080f25_100%)] p-3 shadow-[0_22px_60px_rgba(0,0,0,.55),inset_0_1px_0_rgba(255,255,255,.16)] sm:p-5">
         <div className="mb-4 grid grid-cols-4 gap-2">
           {levelIds.map((id, index) => {
             const unlocked = index <= currentIndex;
@@ -197,11 +207,11 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
           ref={gridRef}
           onPointerMove={handleGridPointer}
           onPointerUp={aimAndShoot}
-          className="relative mx-auto grid w-full max-w-[360px] grid-cols-8 gap-1 rounded-2xl border border-white/20 bg-[#071329]/90 p-2 shadow-inner touch-pan-y"
+          className="relative mx-auto grid w-full max-w-[360px] grid-cols-8 gap-1 rounded-[24px] border border-sky-200/30 bg-[radial-gradient(ellipse_at_50%_0%,rgba(56,189,248,.18),transparent_65%),linear-gradient(180deg,#071a35,#050b1b)] p-2 pb-5 shadow-[inset_0_8px_24px_rgba(0,0,0,.7),0_8px_24px_rgba(0,0,0,.3)] touch-pan-y"
         >
           {board.flatMap((line, row) => line.map((bubble, col) => (
             <div key={row + '-' + col} className="relative aspect-square rounded-full">
-              {bubble !== null && <div className="absolute inset-[2px] rounded-full border-2 border-white/60 shadow-[inset_-4px_-5px_8px_rgba(0,0,0,.28),0_3px_7px_rgba(0,0,0,.4)]" style={{ background: `radial-gradient(circle at 30% 25%, white 0%, ${COLORS[bubble]} 35%, ${COLORS[bubble]} 70%, #172033 130%)` }} />}
+              {bubble !== null && <div className="absolute inset-[1px] overflow-hidden rounded-full border border-white/80 shadow-[inset_-5px_-7px_10px_rgba(0,0,0,.35),inset_2px_3px_5px_rgba(255,255,255,.5),0_4px_8px_rgba(0,0,0,.55)]" style={{ background: `radial-gradient(circle at 28% 20%, #fff 0%, ${COLORS[bubble]} 28%, ${COLORS[bubble]} 68%, #10182c 125%)`, boxShadow: `inset -5px -7px 10px rgba(0,0,0,.35), 0 0 10px ${COLORS[bubble]}66` }}><span className="absolute left-[18%] top-[13%] h-[24%] w-[38%] rounded-full bg-white/65 blur-[1px]" /> />}
             </div>
           )))}
           <div className="pointer-events-none absolute bottom-[-44px] left-1/2 flex -translate-x-1/2 items-center gap-3">
@@ -212,7 +222,7 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
           <div className="pointer-events-none absolute bottom-[-22px] left-1/2 h-5 w-1 -translate-x-1/2 bg-white/70" style={{ transform: `translateX(${(aimCol - 3.5) * 18}px) rotate(${(aimCol - 3.5) * 4}deg)` }} />
         </div>
 
-        <div className="mt-14 text-center text-xs text-sky-100">{tr('Tap or aim at a column to shoot. Match 3 or more connected bubbles of the same color.', 'Touchez une colonne ou visez-la pour tirer. Associez au moins 3 bulles connectées de la même couleur.', 'اضغط على عمود أو وجّه التصويب نحوه لإطلاق الفقاعة. طابق 3 فقاعات متصلة أو أكثر من اللون نفسه.')}</div>
+        <div className="mt-14 flex items-center justify-center gap-3 rounded-2xl border border-sky-200/20 bg-slate-950/45 px-3 py-3 shadow-inner"><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-sky-200">{tr('NEXT', 'SUIVANT', 'التالي')}</span><button type="button" onClick={swapBubbles} disabled={!canSwap || showAd || paused} aria-label={tr('Swap bubbles', 'Échanger les bulles', 'تبديل الفقاعتين')} className="relative h-10 w-10 rounded-full border-2 border-white/70 shadow-[0_0_14px_rgba(255,255,255,.18)] transition hover:scale-110 disabled:opacity-45" style={{ background: COLORS[nextColor] }}><span className="absolute -bottom-1 -right-2 rounded-full border border-sky-100/60 bg-slate-950 px-1 text-[10px] font-black text-white">↔</span></button></div><div className="text-center"><div className="text-[10px] font-black uppercase tracking-[.2em] text-amber-200">{tr('READY TO FIRE', 'PRÊT À TIRER', 'جاهزة للإطلاق')}</div><div className="text-xs font-semibold text-sky-100">{tr('Tap next bubble to swap once per shot', 'Touchez la bulle suivante pour échanger une fois par tir', 'اضغط على الفقاعة التالية للتبديل مرة واحدة قبل كل طلقة')}</div></div><div className="flex flex-col items-center gap-1"><span className="text-[9px] font-black tracking-[.18em] text-amber-200">{tr('SHOOT', 'TIRER', 'إطلاق')}</span><span className="h-12 w-12 rounded-full border-2 border-white shadow-[0_0_18px_rgba(255,255,255,.28)]" style={{ background: COLORS[shotColor] }} /></div></div><div className="mt-3 text-center text-xs text-sky-100">{tr('Aim at a column and release to shoot. Match 3 or more connected bubbles of the same color.', 'Visez une colonne puis relâchez pour tirer. Associez au moins 3 bulles connectées de la même couleur.', 'وجّه نحو العمود ثم ارفع إصبعك للإطلاق. طابق 3 فقاعات متصلة أو أكثر من اللون نفسه.')}</div>
         <div className="mt-3 flex gap-2">
           <button onClick={() => resetBoard(levelId)} className="flex-1 rounded-xl bg-gradient-to-b from-sky-300 to-blue-600 py-3 font-black text-white shadow-lg">↻ {tr('New Game', 'Nouvelle partie', 'لعبة جديدة')}</button>
           <button onClick={onBack} className="flex-1 rounded-xl border border-sky-300/40 bg-white/5 py-3 font-bold text-sky-100">{tr('Back to Games', 'Retour aux jeux', 'العودة إلى الألعاب')}</button>
