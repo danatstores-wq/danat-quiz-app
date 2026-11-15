@@ -2068,17 +2068,23 @@ export default function App() {
               </div>
               <section
                 aria-label="Danat Coin and Danat Quiz artwork"
-                className="w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
+                className="relative w-full h-[390px] sm:h-[460px] rounded-2xl overflow-hidden border border-amber-400/40 shadow-[0_12px_34px_rgba(0,0,0,0.45)]"
                 style={{
                   backgroundImage: `url(${assetPath('main_background.jpg')})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
-              />
-
-              <button onClick={() => setActiveTab('quiz')} className="w-full rounded-full border-b-[5px] border-amber-700 bg-gradient-to-b from-yellow-200 via-amber-400 to-yellow-500 py-4 text-xl font-black text-[#171326] shadow-[0_8px_25px_rgba(245,158,11,0.32)] transition active:translate-y-1 flex items-center justify-center gap-3">
-                <Play className="h-7 w-7 fill-current" /> {t.startPlay}
-              </button>
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('quiz')}
+                  aria-label={t.startPlay}
+                  className="absolute bottom-5 left-1/2 z-10 flex h-24 w-24 -translate-x-1/2 flex-col items-center justify-center gap-1 rounded-full border-[3px] border-amber-300 bg-slate-950/20 text-amber-100 shadow-[0_0_0_4px_rgba(251,191,36,0.16),0_8px_28px_rgba(0,0,0,0.45)] backdrop-blur-[2px] transition hover:scale-105 hover:bg-slate-950/35 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-200/70"
+                >
+                  <Play className="h-8 w-8 fill-current drop-shadow" />
+                  <span className="max-w-[78px] text-center text-[10px] font-black leading-tight drop-shadow">{t.startPlay}</span>
+                </button>
+              </section>
 
               <div className="grid grid-cols-2 gap-3">
                 <button
