@@ -209,7 +209,7 @@ async function verifyAdMobSignature(request) {
   const rawQuery = new URL(request.url).search.slice(1);
   const signatureMarker = "&signature=";
   const signatureIndex = rawQuery.lastIndexOf(signatureMarker);
-  if (signatureIndex < 0 || !rawQuery.endsWith(/&key_id=[^&]+$/)) throw new Error("Malformed SSV query");
+  if (signatureIndex < 0 || !/&key_id=[^&]+$/.test(rawQuery)) throw new Error("Malformed SSV query");
   const signedQuery = rawQuery.slice(0, signatureIndex);
   const tail = rawQuery.slice(signatureIndex + 1);
   const tailParams = new URLSearchParams(tail);
@@ -267,8 +267,10 @@ async function processAdMobReward(request, env) {
   const session = await readFirestoreDocument(env, "adRewardSessions", sessionId);
   if (!session) throw new Error("Unknown ad reward session");
   const fields = session.fields || {};
+  const sessionCreatedAt = Date.parse(fields.createdAt?.timestampValue || "");
   if (fields.uid?.stringValue !== uid || fields.placement?.stringValue !== "life" ||
-      fields.status?.stringValue !== "pending") {
+      fields.status?.stringValue !== "pending" || !Number.isFinite(sessionCreatedAt) ||
+      Date.now() - sessionCreatedAt > 10 * 60 * 1000 || sessionCreatedAt > Date.now() + 60 * 1000) {
     const existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
     if (existing) return { duplicate: true };
     throw new Error("Ad reward session is invalid or already used");
