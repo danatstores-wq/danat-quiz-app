@@ -1283,8 +1283,6 @@ export default function App() {
           totalGames: 0,
           totalEarnedPoints: 0,
           totalQuestionsAnswered: 0,
-          walletConnected: false,
-          walletAddress: '',
           avatar: 'avatar-man-ghutra.png'
         }));
       }
@@ -1796,21 +1794,6 @@ export default function App() {
         <div className="bg-[#120524]/90 px-6 py-2.5 flex justify-between items-center text-xs text-slate-200 border-b border-purple-500/30 z-10">
           <span className="font-bold text-white">9:41</span>
           <div className="flex items-center gap-2">
-            <button 
-              onClick={() => setActiveTab('admin')} 
-              className="text-[10px] bg-yellow-500/20 text-yellow-400 px-2.5 py-1 rounded-lg border border-yellow-500/40 font-bold flex items-center gap-1 shadow"
-            >
-              <ShieldCheck className="w-3.5 h-3.5" /> {t.adminPanel}
-            </button>
-            <span className="text-purple-400/50">|</span>
-            
-            {currentUser && <button
-              onClick={handleSignOut}
-              className="text-[10px] bg-red-500/20 text-red-300 px-2 py-1 rounded-lg border border-red-500/40 font-bold flex items-center gap-1 shadow"
-              title={t.logout}
-            >
-              <LogOut className="w-3 h-3" /> {t.logout}
-            </button>}
             <span>📶 🔋</span>
           </div>
         </div>
@@ -2148,26 +2131,6 @@ export default function App() {
                 <button disabled aria-label={t.pointsRewardLabel} className="bg-purple-950 text-slate-400 w-9 h-9 rounded-full font-bold text-xl flex items-center justify-center shadow cursor-not-allowed">
                   +
                 </button>
-              </div>
-
-              <div className="w-full bg-[#240a47]/90 rounded-2xl p-5 border border-yellow-500/40 flex justify-between items-center shadow-lg">
-                <div className="flex items-center gap-3">
-                  <img src={assetPath('dnc_coin.png')} alt="Logo" className="w-10 h-10 object-contain" />
-                  <div>
-                    <div className="text-xs text-slate-300">{t.dncBalance}</div>
-                    <div className="text-2xl font-black text-yellow-400">{user.dncBalance.toLocaleString()}</div>
-                  </div>
-                </div>
-                <button 
-                  onClick={handleRedeemDnc}
-                  className="bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow"
-                >
-                  {t.redeemReq}
-                </button>
-              </div>
-
-              <div className="w-full bg-[#0d031f]/80 rounded-xl p-3.5 border border-purple-400/30 text-center text-xs text-slate-200 shadow">
-                <span className="font-bold text-yellow-400">{t.conversionRate}</span> 1,000 {t.points} = 1 DNC
               </div>
 
               <div className="w-full bg-gradient-to-br from-purple-900/50 to-[#240a47] rounded-2xl p-4 border border-purple-500/40 flex items-center justify-between gap-3 shadow-lg">
