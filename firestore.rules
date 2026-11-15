@@ -16,47 +16,90 @@ service cloud.firestore {
       return signedIn() && request.auth.uid == userId;
     }
 
-    // Private player profiles. Players may update their own game/profile fields,
-    // but only the administrator may change dncBalance.
+    function validPlayerProfile() {
+      return request.resource.data.dncBalance is number
+        && request.resource.data.dncBalance == 0
+        && request.resource.data.livesBalance is int
+        && request.resource.data.livesBalance == 3;
+    }
+
+    // Player profiles: private to the owner and administrator.
     match /users/{userId} {
       allow read: if isAdmin() || ownsUser(userId);
 
       allow create: if isAdmin()
         || (ownsUser(userId)
-          && request.resource.data.dncBalance == 0);
+          && request.resource.data.keys().hasAll([
+            'name', 'email', 'points', 'dncBalance', 'level',
+            'totalGames', 'totalEarnedPoints', 'totalQuestionsAnswered',
+            'lastSpiritClaimTime', 'dailyClaimedLives', 'lastDailyResetTime',
+            'livesBalance', 'avatar', 'language', 'createdAt'
+          ])
+          && request.resource.data.keys().hasOnly([
+            'name', 'email', 'points', 'dncBalance', 'level',
+            'totalGames', 'totalEarnedPoints', 'totalQuestionsAnswered',
+            'lastSpiritClaimTime', 'dailyClaimedLives', 'lastDailyResetTime',
+            'livesBalance', 'avatar', 'language', 'createdAt'
+          ])
+          && validPlayerProfile());
 
+      // DNC can only be changed by the administrator. Player updates are
+      // limited to fields the current app actually writes.
       allow update: if isAdmin()
         || (ownsUser(userId)
-          && !request.resource.data.diff(resource.data)
-            .affectedKeys().hasAny(['dncBalance']));
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'language', 'points', 'totalEarnedPoints',
+            'totalQuestionsAnswered', 'level', 'totalGames',
+            'rewardedAdsWatched', 'lastSpiritClaimTime',
+            'dailyClaimedLives', 'lastDailyResetTime',
+            'avatar', 'livesBalance'
+          ])
+          && request.resource.data.dncBalance == resource.data.dncBalance
+          && request.resource.data.livesBalance is int
+          && request.resource.data.livesBalance >= 0
+          && request.resource.data.livesBalance <= 100);
 
       allow delete: if isAdmin();
     }
 
-    // Questions are needed by guest players as well as signed-in players.
-    // Only the administrator can modify the question bank.
+    // Questions are public to read so guest players can play.
+    // Only the administrator can change the question bank.
     match /questions/{questionId} {
       allow read: if true;
       allow create, update, delete: if isAdmin();
     }
 
-    // Immutable audit entries: only the administrator can create them.
-    // Each player can read only entries belonging to their own UID.
+    // DNC audit history is immutable. Players can read only their own entries.
     match /dncLedger/{entryId} {
       allow read: if isAdmin()
         || (signedIn() && resource.data.playerUid == request.auth.uid);
+
       allow create: if isAdmin()
         && request.resource.data.keys().hasAll([
           'playerUid', 'amount', 'type', 'createdAt', 'adminUid', 'note'
         ])
-        && request.resource.data.adminUid == request.auth.uid
+        && request.resource.data.keys().hasOnly([
+          'playerUid', 'amount', 'type', 'createdAt', 'adminUid', 'note'
+        ])
+        && request.resource.data.playerUid is string
         && request.resource.data.amount is number
+        && request.resource.data.amount > -1000000
+        && request.resource.data.amount < 1000000
         && request.resource.data.amount != 0
-        && request.resource.data.type in ['manual_credit', 'manual_adjustment'];
+        && request.resource.data.type in ['manual_credit', 'manual_adjustment']
+        && ((request.resource.data.type == 'manual_credit'
+              && request.resource.data.amount > 0)
+            || (request.resource.data.type == 'manual_adjustment'
+              && request.resource.data.amount < 0))
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.adminUid == request.auth.uid
+        && request.resource.data.note is string
+        && request.resource.data.note.size() <= 300;
+
       allow update, delete: if false;
     }
 
-    // Deny access to every collection not explicitly listed above.
+    // All other collections and documents are denied by default.
     match /{document=**} {
       allow read, write: if false;
     }
