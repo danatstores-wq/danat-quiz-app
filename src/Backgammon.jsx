@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { playDiceRoll, primeGameAudio } from './gameAudio';
 
 const initialBoard = () => {
   const board = Array(24).fill(0);
@@ -246,6 +247,8 @@ export default function Backgammon({ onBack, language = 'English' }) {
 
   const roll = useCallback(() => {
     if (turn !== 1 || dice.length || rolling || busy || winner) return;
+    primeGameAudio();
+    playDiceRoll();
     setError(''); setNotice(''); setRolling(true);
     try {
       if (!started) {
