@@ -110,7 +110,7 @@ export function startNativeBanner() {
   };
 }
 
-export async function showRewardedAd(placement) {
+export async function showRewardedAd(placement, userId) {
   await ensureAdMobReady();
 
   const units = getPlatformUnits();
@@ -119,7 +119,13 @@ export async function showRewardedAd(placement) {
 
   const preparedAd = await AdMob.prepareRewardVideoAd({
     adId,
-    isTesting: import.meta.env.VITE_ADMOB_TEST_MODE === 'true'
+    isTesting: import.meta.env.VITE_ADMOB_TEST_MODE === 'true',
+    ...(userId ? {
+      ssv: {
+        userId,
+        customData: JSON.stringify({ placement })
+      }
+    } : {})
   });
 
   const reward = await AdMob.showRewardVideoAd({
