@@ -1190,6 +1190,7 @@ export default function App() {
       if (!response.ok) {
         const error = new Error(data.error || `HTTP_${response.status}`);
         error.status = response.status;
+        error.diagnosticStage = data.diagnosticStage || '';
         throw error;
       }
       setAdmobTestResult({ ok: true, data });
@@ -1198,7 +1199,9 @@ export default function App() {
         ? 'This account is not authorized in ADMOB_ADMIN_UIDS.'
         : error.status === 401
           ? 'Your login session could not be verified. Please sign out and sign in again.'
-          : error.message || 'AdMob connection test failed.';
+          : error.diagnosticStage
+            ? `${error.message} (step: ${error.diagnosticStage})`
+            : error.message || 'AdMob connection test failed.';
       setAdmobTestResult({ ok: false, message });
     } finally {
       setAdmobTestLoading(false);
