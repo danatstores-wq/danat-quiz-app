@@ -348,6 +348,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
         try { first = secureDie(); second = secureDie(); }
         catch { setError(t.diceError); setBusy(false); return; }
         rolled = first === second ? [first, first, first, first] : [first, second];
+        playDiceRoll();
         setHistory(prev => [{ side: -1, dice: [first, second], at: new Date().toISOString() }, ...prev].slice(0, 8));
         setComputerDice([first, second]);
         setDice(rolled);
