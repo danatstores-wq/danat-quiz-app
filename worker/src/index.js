@@ -465,6 +465,60 @@ async function createAdMobReconciliationPreview(request, env, uid) {
   };
 }
 
+async function stageAdMobReconciliation(request, env, uid) {
+  const preview = await createAdMobReconciliationPreview(request, env, uid);
+  if (preview.rows.length > 400) {
+    throw Object.assign(new Error("Report contains too many rows to stage safely"), { status: 413 });
+  }
+  let created = 0;
+  let alreadyStaged = 0;
+  const staged = [];
+  for (const row of preview.rows) {
+    const safeAdUnit = row.adUnit.replace(/[^A-Za-z0-9_-]/g, "_");
+    const reportId = `report-${row.date}-${safeAdUnit}`;
+    const fields = firestoreFields({
+      date: row.date,
+      adUnit: row.adUnit,
+      publisherId: preview.publisherId,
+      currencyCode: "USD",
+      earningsType: "estimated",
+      earningsMicros: row.earningsMicros,
+      playerPoolMicros: row.playerPoolMicros,
+      danatShareMicros: row.danatShareMicros,
+      totalVerifiedAds: row.totalVerifiedAds,
+      allocationsJson: JSON.stringify(row.allocations),
+      status: "pending_review",
+      creditsIssued: false,
+      reportingTimeZone: preview.reportingTimeZone,
+      createdAt: new Date()
+    });
+    const response = await firestoreRequest(env,
+      `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
+        method: "POST",
+        body: JSON.stringify({ writes: [{
+          update: { name: documentPath("adMobDailyReconciliations", reportId), fields },
+          currentDocument: { exists: false }
+        }] })
+      });
+    if (response.ok) {
+      created++;
+      staged.push({ reportId, date: row.date, adUnit: row.adUnit, status: "pending_review" });
+    } else {
+      const existing = await readFirestoreDocument(env, "adMobDailyReconciliations", reportId);
+      if (!existing) throw Object.assign(new Error("Could not stage reconciliation row"), { status: 503 });
+      alreadyStaged++;
+      staged.push({ reportId, date: row.date, adUnit: row.adUnit, status: existing.fields?.status?.stringValue || "pending_review" });
+    }
+  }
+  return {
+    status: "staged_for_manual_review",
+    creditingEnabled: false,
+    created,
+    alreadyStaged,
+    staged
+  };
+}
+
 async function updatePlayerLifeLoss(env, uid) {
   const player = await readFirestoreDocument(env, "users", uid);
   if (!player?.updateTime) throw Object.assign(new Error("Player profile unavailable"), { status: 404 });
@@ -606,6 +660,17 @@ export default {
         return json(await getAdSessionStatus(env, user.uid, body?.sessionId), 200, cors);
       } catch (error) {
         return json({ error: "ad_status_unavailable" }, error?.status || 503, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/admin/admob/reconciliation-stage" && request.method === "POST") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        return json(await stageAdMobReconciliation(request, env, user.uid), 200, cors);
+      } catch (error) {
+        const status = error?.status || 503;
+        return json({ error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
+          status === 413 ? "report_too_large" : "reconciliation_stage_failed" }, status, cors);
       }
     }
 
