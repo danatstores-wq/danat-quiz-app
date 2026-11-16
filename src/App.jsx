@@ -1682,7 +1682,7 @@ export default function App() {
     setIsRewardAdLoading(true);
 
     try {
-      const reward = await showRewardedAd('life');
+      const reward = await showRewardedAd('life', currentUser?.uid);
       if (!reward) {
         alert(rewardAdMessage('unavailable'));
         return;
