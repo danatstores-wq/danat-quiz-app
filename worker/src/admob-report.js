@@ -46,6 +46,18 @@ export async function getAdMobAccessToken(env, fetchImpl = fetch) {
       grant_type: "refresh_token"
     })
   });
+  if (!response.ok) {
+    let oauthError = "unknown_oauth_error";
+    try {
+      const body = await response.json();
+      const candidate = typeof body?.error === "string" ? body.error : "";
+      if (/^[a-z_]{2,48}$/.test(candidate)) oauthError = candidate;
+    } catch {}
+    throw Object.assign(new Error("Google OAuth refresh failed"), {
+      status: response.status === 401 ? 401 : 503,
+      diagnosticCode: oauthError
+    });
+  }
   const data = await readJsonResponse(response, "Google OAuth refresh");
   if (typeof data.access_token !== "string" || !data.access_token || !Number.isFinite(Number(data.expires_in))) {
     throw Object.assign(new Error("Google OAuth returned an incomplete token response"), { status: 502 });
