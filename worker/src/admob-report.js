@@ -22,15 +22,27 @@ function parseIsoDate(value, name) {
 }
 
 async function readJsonResponse(response, label) {
-  if (!response.ok) {
-    // Do not surface provider response bodies: they may contain sensitive diagnostics.
-    throw Object.assign(new Error(`${label} request failed`), { status: response.status === 401 ? 401 : 503 });
-  }
+  let data;
   try {
-    return await response.json();
+    data = await response.json();
   } catch {
+    if (!response.ok) {
+      throw Object.assign(new Error(`${label} request failed`), { status: response.status === 401 ? 401 : 503 });
+    }
     throw Object.assign(new Error(`${label} returned invalid JSON`), { status: 502 });
   }
+  if (!response.ok) {
+    // Surface only a sanitized Google error identifier, never its message or response body.
+    const rawCode = data?.error?.status || data?.error?.errors?.[0]?.reason || data?.error;
+    const diagnosticCode = typeof rawCode === "string"
+      ? rawCode.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 64)
+      : undefined;
+    throw Object.assign(new Error(`${label} request failed`), {
+      status: response.status === 401 ? 401 : 503,
+      diagnosticCode
+    });
+  }
+  return data;
 }
 
 export async function getAdMobAccessToken(env, fetchImpl = fetch) {
