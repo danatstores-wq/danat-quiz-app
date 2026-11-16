@@ -10,9 +10,11 @@ function loadAdminApp() {
 
   let serviceAccount;
   try {
-    serviceAccount = JSON.parse(rawCredentials);
+    // Trim surrounding whitespace and tolerate a UTF-8 BOM from downloaded JSON files.
+    const normalizedCredentials = rawCredentials.replace(/^\\uFEFF/, "").trim();
+    serviceAccount = JSON.parse(normalizedCredentials);
   } catch {
-    throw new Error("FIREBASE_SERVICE_ACCOUNT_JSON is not valid JSON.");
+    throw new Error("FIREBASE_SERVICE_ACCOUNT_JSON is not valid JSON. Paste the complete contents of the downloaded service-account .json file into the GitHub secret, without code fences or extra quotation marks.");
   }
 
   if (!serviceAccount.project_id || !serviceAccount.client_email || !serviceAccount.private_key) {
