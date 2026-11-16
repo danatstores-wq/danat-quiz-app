@@ -16,7 +16,7 @@ test("groups verified SSV records by AdMob reporting date and ad unit", () => {
       { fields: { verification: { stringValue: "admob_ssv" }, playerUid: { stringValue: "playerA" },
         adUnit: { stringValue: "ca-app-pub-123/456" }, createdAt: { timestampValue: "2026-11-15T08:30:00.000Z" } } },
       { fields: { verification: { stringValue: "admob_ssv" }, playerUid: { stringValue: "playerB" },
-        adUnit: { stringValue: "ca-app-pub-123/456" }, createdAt: { timestampValue: "2026-11-15T08:30:00.000Z" } } },
+        adUnit: { stringValue: "ca-app-pub-123/456" }, createdAt: { timestampValue: "2026-11-15T09:30:00.000Z" } } },
       { fields: { verification: { stringValue: "client_callback" }, playerUid: { stringValue: "fake" },
         adUnit: { stringValue: "ca-app-pub-123/456" }, createdAt: { timestampValue: "2026-11-15T08:30:00.000Z" } } }
     ]
