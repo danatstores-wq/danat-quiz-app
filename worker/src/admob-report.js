@@ -3,7 +3,8 @@ const ADMOB_API = "https://admob.googleapis.com/v1";
 
 function requireSecret(value, name) {
   if (typeof value !== "string" || !value.trim()) {
-    throw Object.assign(new Error(`Missing ${name}`), { status: 503 });
+    const diagnosticCode = `missing_${name.toLowerCase()}`;
+    throw Object.assign(new Error(`Missing ${name}`), { status: 503, diagnosticCode });
   }
   return value.trim();
 }
