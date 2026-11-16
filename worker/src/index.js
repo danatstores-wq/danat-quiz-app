@@ -471,7 +471,7 @@ export default {
     }
 
     if (url.pathname === "/health" && request.method === "GET") {
-      return json({ status: "ok", service: "danat-quiz-api", version: 2 }, 200, cors);
+      return json({ status: "ok", service: "danat-quiz-api", version: 3 }, 200, cors);
     }
 
     if (url.pathname === "/v1/session" && request.method === "GET") {
