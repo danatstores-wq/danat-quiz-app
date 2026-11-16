@@ -94,7 +94,7 @@ export async function listAdMobAccounts(accessToken, fetchImpl = fetch) {
       headers: { authorization: `Bearer ${accessToken}` }
     });
     const data = await readJsonResponse(response, "AdMob account listing");
-    if (Array.isArray(data.accounts)) accounts.push(...data.accounts);
+    if (Array.isArray(data.account)) accounts.push(...data.account);
     pageToken = typeof data.nextPageToken === "string" ? data.nextPageToken : "";
   } while (pageToken);
   return accounts;
