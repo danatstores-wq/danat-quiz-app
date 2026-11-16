@@ -1159,6 +1159,8 @@ export default function App() {
     level: 1,
     points: 0,
     dncBalance: 0.0,
+    verifiedRewardedAdsTotal: 0,
+    verifiedRewardedAdsWeek: 0,
     totalGames: 0,
     totalEarnedPoints: 0,
     totalQuestionsAnswered: 0,
@@ -1182,7 +1184,9 @@ export default function App() {
         uid: item.id,
         name: item.data().name || 'Unnamed player',
         email: item.data().email || '',
-        dncBalance: Number(item.data().dncBalance || 0)
+        dncBalance: Number(item.data().dncBalance || 0),
+        verifiedRewardedAdsTotal: Number(item.data().verifiedRewardedAdsTotal || 0),
+        verifiedRewardedAdsWeek: Number(item.data().verifiedRewardedAdsWeek || 0)
       })).sort((a, b) => a.name.localeCompare(b.name));
       setAdminPlayers(players);
       setAdminStatus(`Loaded ${players.length} registered accounts.`);
@@ -1376,6 +1380,8 @@ export default function App() {
             email: authUser.email,
             points: data.points ?? data.spirits ?? prev.points,
             dncBalance: data.dncBalance ?? prev.dncBalance,
+            verifiedRewardedAdsTotal: data.verifiedRewardedAdsTotal ?? 0,
+            verifiedRewardedAdsWeek: data.verifiedRewardedAdsWeek ?? 0,
             level: data.level ?? calculatedLevel,
             totalGames: data.totalGames ?? prev.totalGames,
             totalEarnedPoints: data.totalEarnedPoints ?? data.totalEarnedSpirits ?? prev.totalEarnedPoints,
@@ -1747,7 +1753,12 @@ export default function App() {
           });
           if (status.status === 'completed' && Number.isInteger(status.livesBalance)) {
             setLives(status.livesBalance);
-            setUser(prev => ({ ...prev, livesBalance: status.livesBalance }));
+            setUser(prev => ({
+              ...prev,
+              livesBalance: status.livesBalance,
+              verifiedRewardedAdsTotal: status.verifiedRewardedAdsTotal ?? prev.verifiedRewardedAdsTotal,
+              verifiedRewardedAdsWeek: status.verifiedRewardedAdsWeek ?? prev.verifiedRewardedAdsWeek
+            }));
             alert(rewardAdMessage('lifeEarned'));
             return;
           }
@@ -2396,7 +2407,7 @@ export default function App() {
                 )}
               </div>
 
-              <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <div className="w-full grid grid-cols-2 sm:grid-cols-5 gap-2">
                 <div className="bg-[#240a47] p-3 rounded-2xl border border-rose-400/40 text-center shadow">
                   <div className="text-[10px] text-slate-300 mb-1">❤️ Lives</div>
                   <div className="text-base font-black text-rose-300">{lives}</div>
@@ -2414,6 +2425,11 @@ export default function App() {
                 <div className="bg-[#240a47] p-3 rounded-2xl border border-purple-400/40 text-center shadow">
                   <div className="text-[10px] text-slate-300 mb-1">DNC</div>
                   <div className="text-base font-black text-yellow-400">{user.dncBalance}</div>
+                </div>
+                <div className="bg-[#240a47] p-3 rounded-2xl border border-emerald-400/40 text-center shadow">
+                  <div className="text-[10px] text-slate-300 mb-1">Verified Ads (week)</div>
+                  <div className="text-base font-black text-emerald-300">{user.verifiedRewardedAdsWeek.toLocaleString()}</div>
+                  <div className="text-[9px] text-slate-400">Total: {user.verifiedRewardedAdsTotal.toLocaleString()}</div>
                 </div>
               </div>
               <div className="w-full bg-[#240a47]/90 rounded-2xl p-4 border border-yellow-500/30 shadow space-y-3">
