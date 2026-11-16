@@ -4,23 +4,44 @@ import { getFirestore } from "firebase-admin/firestore";
 
 const BATCH_SIZE = 400;
 
+function parseServiceAccount(rawCredentials) {
+  let candidate = rawCredentials.replace(/^\uFEFF/, "").trim();
+
+  // Remove common Markdown fences if the entire secret was copied from a code block.
+  candidate = candidate.replace(/^\x60{3}(?:json)?\s*/i, "").replace(/\s*\x60{3}$/i, "").trim();
+
+  // Accept a raw JSON object, a JSON-encoded string, or raw JSON accidentally
+  // surrounded by one extra pair of quote characters.
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      const parsed = JSON.parse(candidate);
+      if (typeof parsed === "string") {
+        candidate = parsed.trim();
+        continue;
+      }
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed;
+      throw new Error("The parsed value is not a JSON object.");
+    } catch (error) {
+      // Handle an extra pair of literal quotes around a multiline JSON object.
+      if (candidate.length >= 2 && candidate[0] === '"' && candidate[candidate.length - 1] === '"') {
+        candidate = candidate.slice(1, -1).trim();
+        continue;
+      }
+      const detail = error instanceof SyntaxError ? error.message : error.message;
+      throw new Error(
+        `FIREBASE_SERVICE_ACCOUNT_JSON could not be parsed (${detail}). The secret must contain the complete service-account JSON object, without surrounding quote marks or Markdown fences.`
+      );
+    }
+  }
+
+  throw new Error("FIREBASE_SERVICE_ACCOUNT_JSON has too many nested encoding layers. Store the raw JSON file contents as the GitHub secret.");
+}
+
 function loadAdminApp() {
   const rawCredentials = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
   if (!rawCredentials) throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_JSON GitHub Actions secret.");
 
-  let serviceAccount;
-  const normalizedCredentials = rawCredentials.replace(/^\uFEFF/, "").trim();
-  try {
-    serviceAccount = JSON.parse(normalizedCredentials);
-    // Also accept a JSON string containing the serialized service-account object.
-    if (typeof serviceAccount === "string") {
-      serviceAccount = JSON.parse(serviceAccount);
-    }
-  } catch (error) {
-    const detail = error instanceof SyntaxError ? error.message : "unknown parse error";
-    throw new Error(`FIREBASE_SERVICE_ACCOUNT_JSON could not be parsed (${detail}). The secret must contain the raw service-account JSON object, or a JSON-encoded string containing that object.`);
-  }
-
+  const serviceAccount = parseServiceAccount(rawCredentials);
   if (!serviceAccount.project_id || !serviceAccount.client_email || !serviceAccount.private_key) {
     throw new Error("The service-account JSON is missing project_id, client_email, or private_key.");
   }
