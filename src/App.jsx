@@ -16,7 +16,8 @@ import {
   browserLocalPersistence,
   signOut,
   sendPasswordResetEmail,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signInAnonymously
 } from 'firebase/auth';
 import {
   doc,
@@ -37,6 +38,25 @@ import {
 const QUIZ_INDEX_KEY = 'danat_quiz_current_index';
 const QUESTIONS_CACHE_KEY = 'danat_quiz_questions_cache_v1';
 const QUESTIONS_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // Questions rarely change; cache for 7 days per device.
+const REWARD_API_URL = 'https://danat-quiz-api.danatcoin.workers.dev';
+
+async function callTrustedApi(user, path, body = {}) {
+  if (!user?.uid) throw new Error('AUTH_REQUIRED');
+  const token = await user.getIdToken();
+  const response = await fetch(`${REWARD_API_URL}${path}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = new Error(data.error || 'TRUSTED_API_FAILED');
+    error.status = response.status;
+    error.data = data;
+    throw error;
+  }
+  return data;
+}
 
 // --- Sample Initial Questions (Fallback) ---
 const INITIAL_QUESTIONS = [
@@ -1346,16 +1366,13 @@ export default function App() {
         if (userSnap.exists()) {
           const data = userSnap.data();
           const savedLives = Number.isInteger(data.livesBalance) && data.livesBalance >= 0 ? data.livesBalance : 3;
-          if (data.livesBalance !== savedLives) {
-            await updateDoc(userDocRef, { livesBalance: savedLives });
-          }
           setLives(savedLives);
           const answeredCount = data.totalQuestionsAnswered || 0;
           const calculatedLevel = Math.floor(answeredCount / 50) + 1;
 
           setUser(prev => ({
             ...prev,
-            name: data.name || authUser.email.split('@')[0],
+            name: data.name || authUser.email?.split('@')[0] || 'Guest',
             email: authUser.email,
             points: data.points ?? data.spirits ?? prev.points,
             dncBalance: data.dncBalance ?? prev.dncBalance,
@@ -1588,11 +1605,25 @@ export default function App() {
     } else {
       // Incorrect answer: Deduct 1 life and 5 points penalty (floor at 0)
       const pointPenalty = 5;
-      const newLivesBalance = Math.max(0, lives - 1);
+      let newLivesBalance = Math.max(0, lives - 1);
+      if (currentUser) {
+        try {
+          const lifeResult = await callTrustedApi(currentUser, '/v1/life-loss');
+          newLivesBalance = lifeResult.livesBalance;
+        } catch (error) {
+          console.warn('Server could not record the life deduction:', error);
+          alert(user.language === 'العربية'
+            ? 'تعذر الاتصال بالخادم. تحقق من اتصال الإنترنت وحاول مرة أخرى.'
+            : user.language === 'Français'
+            ? 'Impossible de contacter le serveur. Vérifiez votre connexion et réessayez.'
+            : 'Could not reach the secure server. Check your internet connection and try again.');
+          return;
+        }
+      }
       setLives(newLivesBalance);
-      setUser(prev => ({ ...prev, livesBalance: newLivesBalance }));
       setUser(prev => ({
         ...prev,
+        livesBalance: newLivesBalance,
         points: Math.max(0, prev.points - pointPenalty),
         totalQuestionsAnswered: newAnsweredCount,
         level: newLevel
@@ -1601,7 +1632,6 @@ export default function App() {
       if (currentUser) {
         await updateDoc(doc(db, "users", currentUser.uid), {
           points: increment(-pointPenalty),
-          livesBalance: increment(-1),
           totalQuestionsAnswered: increment(1),
           level: newLevel
         });
@@ -1649,11 +1679,26 @@ export default function App() {
     localStorage.setItem('videosWatched', newCount.toString());
   };
 
+  const handleContinueAsGuest = async () => {
+    setAuthError('');
+    setAuthMessage('');
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+      const guestCredential = await signInAnonymously(auth);
+      setCurrentUser(guestCredential.user);
+      setShowAuthModal(false);
+    } catch (error) {
+      console.error('Anonymous guest sign-in failed:', error);
+      setAuthError('Guest play is temporarily unavailable. Please try again.');
+    }
+  };
+
   const rewardAdMessage = (kind) => {
     const messages = {
       'العربية': {
         mobileOnly: 'الإعلانات بالمكافآت متاحة فقط داخل تطبيق دانات كويز على الهاتف.',
         unavailable: 'لا يتوفر إعلان للمكافأة حالياً. يرجى المحاولة لاحقاً.',
+        pending: 'اكتمل الإعلان. ستُضاف المكافأة بعد التحقق من الخادم.',
         saveFailed: 'انتهى الإعلان، لكن تعذر حفظ المكافأة. يرجى التواصل مع الدعم.',
         lifeEarned: 'حصلت على حياة إضافية! ❤️',
         pointsEarned: 'حصلت على 10 نقاط إضافية! 🪙'
@@ -1662,6 +1707,7 @@ export default function App() {
         mobileOnly: 'Les publicités récompensées sont disponibles uniquement dans l’application mobile Danat Quiz.',
         unavailable: 'Aucune publicité récompensée n’est disponible pour le moment. Réessayez plus tard.',
         saveFailed: 'La publicité est terminée, mais la récompense n’a pas pu être enregistrée. Contactez le support.',
+        pending: 'Publicité terminée. Votre récompense sera ajoutée après vérification du serveur.',
         lifeEarned: 'Vous avez gagné 1 vie supplémentaire ! ❤️',
         pointsEarned: 'Vous avez gagné 10 points bonus ! 🪙'
       },
@@ -1669,6 +1715,7 @@ export default function App() {
         mobileOnly: 'Rewarded ads are available only in the Danat Quiz mobile app.',
         unavailable: 'No rewarded ad is available right now. Please try again later.',
         saveFailed: 'The ad finished, but we could not save your reward. Please contact support.',
+        pending: 'Ad completed. Your reward will be added after server verification.',
         lifeEarned: 'You earned 1 Extra Life! ❤️',
         pointsEarned: 'You earned 10 Bonus Points! 🪙'
       }
@@ -1676,35 +1723,39 @@ export default function App() {
     return (messages[user.language] || messages.English)[kind];
   };
 
-  // Grant an extra life only after the native AdMob SDK confirms the reward.
+  // The server grants the extra life only after AdMob SSV verification.
   const handleWatchForLife = async () => {
     if (isRewardAdLoading) return;
     setIsRewardAdLoading(true);
 
     try {
-      const reward = await showRewardedAd('life', currentUser?.uid);
+      if (!currentUser?.uid) throw new Error('AUTH_REQUIRED');
+      const rewardSession = await callTrustedApi(currentUser, '/v1/ad-session', { placement: 'life' });
+      const reward = await showRewardedAd('life', currentUser.uid, rewardSession.customData);
       if (!reward) {
         alert(rewardAdMessage('unavailable'));
         return;
       }
 
-      if (currentUser) {
+      // The client callback is not proof. Ask the Worker whether Google's
+      // signed callback has been verified and the reward has been committed.
+      for (let attempt = 0; attempt < 20; attempt += 1) {
+        await new Promise(resolve => setTimeout(resolve, 1500));
         try {
-          await updateDoc(doc(db, "users", currentUser.uid), {
-            rewardedAdsWatched: increment(1),
-            livesBalance: increment(1)
+          const status = await callTrustedApi(currentUser, '/v1/ad-status', {
+            sessionId: rewardSession.sessionId
           });
-        } catch (error) {
-          console.error('Could not save rewarded-ad life:', error);
-          alert(rewardAdMessage('saveFailed'));
-          return;
+          if (status.status === 'completed' && Number.isInteger(status.livesBalance)) {
+            setLives(status.livesBalance);
+            setUser(prev => ({ ...prev, livesBalance: status.livesBalance }));
+            alert(rewardAdMessage('lifeEarned'));
+            return;
+          }
+        } catch (statusError) {
+          console.warn('Waiting for verified ad reward:', statusError);
         }
       }
-
-      setLives(prev => prev + 1);
-      setUser(prev => ({ ...prev, livesBalance: (prev.livesBalance ?? lives) + 1 }));
-      incrementVideoCount();
-      alert(rewardAdMessage('lifeEarned'));
+      alert(rewardAdMessage('pending'));
     } catch (error) {
       console.warn('Rewarded life ad was not completed:', error);
       alert(error?.code === 'MOBILE_ONLY' ? rewardAdMessage('mobileOnly') : rewardAdMessage('unavailable'));
@@ -1715,70 +1766,49 @@ export default function App() {
 
 
 
-  // 3-Hour Timed Lives Bonus (+5 Lives every 3 hrs, max 10 lives per 24 hours)
+  // Timed free lives are awarded by the trusted server, not the client.
   const handleClaimTimedSpirits = async () => {
-    const now = Date.now();
-    const lastClaim = user.lastSpiritClaimTime || 0;
-    const hoursElapsed = (now - lastClaim) / (1000 * 60 * 60);
+    try {
+      const result = await callTrustedApi(currentUser, '/v1/timed-lives');
+      if (!result.claimed) {
+        if (result.reason === 'cooldown') {
+          const hoursLeft = (result.retryAfterMs / (60 * 60 * 1000)).toFixed(1);
+          alert(user.language === 'العربية'
+            ? `يرجى الانتظار ${hoursLeft} ساعة للحصول على الأرواح المجانية القادمة.`
+            : user.language === 'Français'
+            ? `Veuillez patienter ${hoursLeft} heures avant de réclamer vos prochaines vies gratuites.`
+            : `Please wait ${hoursLeft} hours before claiming your next free lives.`);
+        } else {
+          alert(user.language === 'العربية'
+            ? 'وصلت إلى الحد الأقصى للأرواح المجانية خلال 24 ساعة.'
+            : user.language === 'Français'
+            ? 'Vous avez atteint la limite de vies gratuites sur 24 heures.'
+            : 'You reached the free-life limit for this 24-hour period.');
+        }
+        return;
+      }
 
-    if (hoursElapsed < 3) {
-      const hoursLeft = (3 - hoursElapsed).toFixed(1);
-      alert(user.language === 'العربية' 
-        ? `يرجى الانتظار ${hoursLeft} ساعة لقطف الأرواح المجانية القادمة!` 
+      setLives(result.livesBalance);
+      setUser(prev => ({
+        ...prev,
+        livesBalance: result.livesBalance,
+        lastSpiritClaimTime: result.lastSpiritClaimTime,
+        dailyClaimedLives: result.dailyClaimedLives,
+        lastDailyResetTime: result.lastDailyResetTime
+      }));
+      alert(user.language === 'العربية'
+        ? `تهانينا! حصلت على ${result.livesGranted} أرواح مجانية.`
         : user.language === 'Français'
-        ? `Veuillez patienter ${hoursLeft} heures pour réclamer vos prochaines vies gratuites !`
-        : `Please wait ${hoursLeft} hours to claim your next free lives!`);
-      return;
-    }
-
-    // Check 24-hour window reset
-    const lastReset = user.lastDailyResetTime || 0;
-    const resetElapsedHours = (now - lastReset) / (1000 * 60 * 60);
-    
-    let currentDailyClaimed = user.dailyClaimedLives || 0;
-    let newResetTime = lastReset;
-
-    if (resetElapsedHours >= 24) {
-      currentDailyClaimed = 0;
-      newResetTime = now;
-    }
-
-    if (currentDailyClaimed >= 10) {
-      alert(user.language === 'العربية' 
-        ? '⚠️ وصلت إلى الحد الأقصى للأرواح المجانية (10 أرواح في 24 ساعة).' 
+        ? `Félicitations ! Vous avez reçu ${result.livesGranted} vies gratuites.`
+        : `Congrats! You received ${result.livesGranted} free lives.`);
+    } catch (error) {
+      console.warn('Timed lives claim failed:', error);
+      alert(user.language === 'العربية'
+        ? 'تعذر الاتصال بالخادم. حاول مرة أخرى عند توفر الإنترنت.'
         : user.language === 'Français'
-        ? '⚠️ Vous avez atteint la limite maximale de vies gratuites (10 vies par 24 heures).'
-        : '⚠️ You reached the max limit for free lives (10 lives per 24 hours).');
-      return;
+        ? 'Impossible de contacter le serveur. Réessayez lorsque vous serez en ligne.'
+        : 'Could not reach the secure server. Please try again when online.');
     }
-
-    const livesToAdd = 5;
-    const updatedDailyClaimed = currentDailyClaimed + livesToAdd;
-
-    setLives(prev => prev + livesToAdd);
-
-    setUser(prev => ({
-      ...prev,
-      livesBalance: (prev.livesBalance ?? lives) + livesToAdd,
-      lastSpiritClaimTime: now,
-      dailyClaimedLives: updatedDailyClaimed,
-      lastDailyResetTime: newResetTime
-    }));
-
-    if (currentUser) {
-      await updateDoc(doc(db, "users", currentUser.uid), {
-        lastSpiritClaimTime: now,
-        dailyClaimedLives: updatedDailyClaimed,
-        lastDailyResetTime: newResetTime,
-        livesBalance: increment(livesToAdd)
-      });
-    }
-
-    alert(user.language === 'العربية' 
-      ? '🎉 تهانينا! حصلت على 5 أرواح مجانية (+5 ❤️).' 
-      : user.language === 'Français'
-      ? '🎉 Félicitations ! Vous avez réclamé 5 vies gratuites (+5 ❤️).'
-      : '🎉 Congrats! You claimed 5 free lives (+5 ❤️).');
   };
 
   const handleUpdateAvatar = async (newAvatarId) => {
@@ -1905,7 +1935,7 @@ export default function App() {
             </form>
           )}
 
-          <button type="button" onClick={() => { setShowAuthModal(false); setAuthError(''); setAuthMessage(''); }} className="w-full mt-3 py-2.5 rounded-xl border border-purple-300/40 text-slate-200 text-xs font-bold hover:bg-purple-500/10">Continue as Guest</button>
+          <button type="button" onClick={handleContinueAsGuest} className="w-full mt-3 py-2.5 rounded-xl border border-purple-300/40 text-slate-200 text-xs font-bold hover:bg-purple-500/10">Continue as Guest</button>
 
           {authMode !== 'forgot' && (
             <div className="text-center pt-2">

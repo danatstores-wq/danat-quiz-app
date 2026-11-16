@@ -1,0 +1,24 @@
+name: Deploy Danat Quiz API Worker
+
+on:
+  push:
+    branches:
+      - security/cloudflare-api
+    paths:
+      - "worker/**"
+      - ".github/workflows/deploy-worker.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Deploy Worker to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: "6c56ca0e1a16cce5780f453b926aca15"
+          command: deploy --config worker/wrangler.toml
