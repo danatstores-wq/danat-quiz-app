@@ -474,8 +474,14 @@ async function stageAdMobReconciliation(request, env, uid) {
   let alreadyStaged = 0;
   const staged = [];
   for (const row of preview.rows) {
-    const safeAdUnit = row.adUnit.replace(/[^A-Za-z0-9_-]/g, "_");
-    const reportId = `report-${row.date}-${safeAdUnit}`;
+    const fingerprintInput = JSON.stringify({
+      date: row.date, adUnit: row.adUnit, earningsMicros: row.earningsMicros,
+      playerPoolMicros: row.playerPoolMicros, danatShareMicros: row.danatShareMicros,
+      totalVerifiedAds: row.totalVerifiedAds, allocations: row.allocations
+    });
+    const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", encoder.encode(fingerprintInput)));
+    const fingerprint = [...digest].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+    const reportId = `report-${row.date}-${fingerprint}`;
     const fields = firestoreFields({
       date: row.date,
       adUnit: row.adUnit,
