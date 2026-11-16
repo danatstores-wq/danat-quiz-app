@@ -5,7 +5,7 @@ export const DANAT_SHARE_BPS = 7000;
 export const MICROS_PER_DNC = 1_000_000;
 
 function validDateParts(value) {
-  if (!/^\\d{8}$/.test(String(value || ""))) return false;
+  if (!/^\d{8}$/.test(String(value || ""))) return false;
   const y = Number(value.slice(0, 4));
   const m = Number(value.slice(4, 6));
   const d = Number(value.slice(6, 8));
@@ -23,7 +23,7 @@ export function parseAdMobNetworkReport(payload) {
     const adUnit = row.dimensionValues?.AD_UNIT?.value;
     const micros = row.metricValues?.ESTIMATED_EARNINGS?.microsValue;
     if (!validDateParts(date)) throw new Error("AdMob report row has an invalid DATE");
-    if (typeof adUnit !== "string" || !/^ca-app-pub-\\d+\\/\\d+$/.test(adUnit)) {
+    if (typeof adUnit !== "string" || !/^ca-app-pub-\d+\/\d+$/.test(adUnit)) {
       throw new Error("AdMob report row has an invalid AD_UNIT");
     }
     const earningsMicros = Number(micros);
@@ -39,7 +39,7 @@ export function parseAdMobNetworkReport(payload) {
 // BigInt arithmetic avoids floating-point loss; largest-remainder rounding makes
 // player allocations sum exactly to the 30% pool.
 export function allocateRevenueRow({ date, adUnit, earningsMicros, verifiedCounts }) {
-  if (typeof date !== "string" || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) throw new Error("Invalid report date");
+  if (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Invalid report date");
   const [year, month, day] = date.split("-").map(Number);
   const checkDate = new Date(Date.UTC(year, month - 1, day));
   if (checkDate.getUTCFullYear() !== year || checkDate.getUTCMonth() !== month - 1 || checkDate.getUTCDate() !== day) {
