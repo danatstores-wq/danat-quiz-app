@@ -9,12 +9,16 @@ function loadAdminApp() {
   if (!rawCredentials) throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_JSON GitHub Actions secret.");
 
   let serviceAccount;
+  const normalizedCredentials = rawCredentials.replace(/^\uFEFF/, "").trim();
   try {
-    // Trim surrounding whitespace and tolerate a UTF-8 BOM from downloaded JSON files.
-    const normalizedCredentials = rawCredentials.replace(/^\\uFEFF/, "").trim();
     serviceAccount = JSON.parse(normalizedCredentials);
-  } catch {
-    throw new Error("FIREBASE_SERVICE_ACCOUNT_JSON is not valid JSON. Paste the complete contents of the downloaded service-account .json file into the GitHub secret, without code fences or extra quotation marks.");
+    // Also accept a JSON string containing the serialized service-account object.
+    if (typeof serviceAccount === "string") {
+      serviceAccount = JSON.parse(serviceAccount);
+    }
+  } catch (error) {
+    const detail = error instanceof SyntaxError ? error.message : "unknown parse error";
+    throw new Error(`FIREBASE_SERVICE_ACCOUNT_JSON could not be parsed (${detail}). The secret must contain the raw service-account JSON object, or a JSON-encoded string containing that object.`);
   }
 
   if (!serviceAccount.project_id || !serviceAccount.client_email || !serviceAccount.private_key) {
