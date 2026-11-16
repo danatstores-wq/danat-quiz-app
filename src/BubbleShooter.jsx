@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { playCannonShot, primeGameAudio } from './gameAudio';
 
 const BUBBLE_ASSET = `${import.meta.env.BASE_URL}images/bubble/`;
 const BUBBLE_FILES = ['red', 'blue', 'yellow', 'purpple', 'green', 'orange', 'pink', 'cyan', 'deep'];
@@ -116,6 +117,8 @@ export default function BubbleShooter({ onBack, onAdComplete, language = 'Englis
 
   const shootAt = (column) => {
     if (showAd || paused) return;
+    primeGameAudio();
+    playCannonShot();
     const col = Math.max(0, Math.min(7, column));
     const row = [...board].map((line, index) => ({ line, index })).find(item => item.line[col] === null)?.index;
     if (row === undefined) {
