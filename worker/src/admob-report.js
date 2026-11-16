@@ -34,9 +34,10 @@ async function readJsonResponse(response, label) {
   if (!response.ok) {
     // Surface only a sanitized Google error identifier, never its message or response body.
     const rawCode = data?.error?.status || data?.error?.errors?.[0]?.reason || data?.error;
-    const diagnosticCode = typeof rawCode === "string"
-      ? rawCode.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 64)
-      : undefined;
+    const safeCode = typeof rawCode === "string"
+      ? rawCode.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 48)
+      : "";
+    const diagnosticCode = safeCode ? `http_${response.status}_${safeCode}` : `http_${response.status}`;
     throw Object.assign(new Error(`${label} request failed`), {
       status: response.status === 401 ? 401 : 503,
       diagnosticCode
