@@ -7,6 +7,7 @@ on:
     paths:
       - 'questions.json'
       - 'uploadQuestions.mjs'
+      - '.github/workflows/upload-questions.yml'
   workflow_dispatch:
 
 jobs:
@@ -19,12 +20,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Upload Script
+      - name: Install Firebase Admin SDK
+        run: npm install --no-save firebase-admin
+
+      - name: Run Append-Only Upload Script
         env:
-          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: node uploadQuestions.mjs
