@@ -396,21 +396,31 @@ async function queryVerifiedAdLedger(env, startDate, endDate) {
   // surrounding UTC window, then bucket every event using reportingTimeZone.
   start.setUTCDate(start.getUTCDate() - 2);
   end.setUTCDate(end.getUTCDate() + 3);
-  const response = await firestoreRequest(env,
-    `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:runQuery`, {
-      method: "POST",
-      body: JSON.stringify({
-        structuredQuery: {
-          from: [{ collectionId: "adRewardLedger" }],
-          where: { compositeFilter: { op: "AND", filters: [
-            { fieldFilter: { field: { fieldPath: "createdAt" }, op: "GREATER_THAN_OR_EQUAL", value: { timestampValue: start.toISOString() } } },
-            { fieldFilter: { field: { fieldPath: "createdAt" }, op: "LESS_THAN", value: { timestampValue: end.toISOString() } } }
-          ] } },
-          orderBy: [{ field: { fieldPath: "createdAt" }, direction: "ASCENDING" }],
-          limit: 10000
-        }
-      })
+  let response;
+  try {
+    response = await firestoreRequest(env,
+      `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:runQuery`, {
+        method: "POST",
+        body: JSON.stringify({
+          structuredQuery: {
+            from: [{ collectionId: "adRewardLedger" }],
+            where: { compositeFilter: { op: "AND", filters: [
+              { fieldFilter: { field: { fieldPath: "createdAt" }, op: "GREATER_THAN_OR_EQUAL", value: { timestampValue: start.toISOString() } } },
+              { fieldFilter: { field: { fieldPath: "createdAt" }, op: "LESS_THAN", value: { timestampValue: end.toISOString() } } }
+            ] } },
+            orderBy: [{ field: { fieldPath: "createdAt" }, direction: "ASCENDING" }],
+            limit: 10000
+          }
+        })
+      });
+  } catch (error) {
+    const detail = String(error?.message || error?.name || "unknown")
+      .toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 48);
+    throw Object.assign(new Error("Firestore ledger request could not be completed"), {
+      status: 503,
+      diagnosticCode: "firestore_request_" + (detail || "unknown")
     });
+  }
   if (!response.ok) {
     let diagnosticCode = "firestore_http_" + response.status;
     try {
