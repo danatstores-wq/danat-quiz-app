@@ -452,7 +452,17 @@ async function createAdMobReconciliationPreview(request, env, uid) {
   try {
   const { accessToken } = await getAdMobAccessToken(env);
   diagnosticStage = "admob_account_listing";
-  const accounts = await listAdMobAccounts(accessToken);
+  let accounts;
+  try {
+    accounts = await listAdMobAccounts(accessToken);
+  } catch (error) {
+    const detail = String(error?.diagnosticCode || error?.message || error?.name || "unknown")
+      .toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 48);
+    throw Object.assign(new Error("AdMob account listing failed"), {
+      status: error?.status || 503,
+      diagnosticCode: error?.diagnosticCode || "admob_account_listing_" + (detail || "unknown")
+    });
+  }
   const publisherId = env.ADMOB_PUBLISHER_ID || (accounts.length === 1 ? accounts[0]?.publisherId : "");
   const account = accounts.find((item) => item.publisherId === publisherId);
   if (!account || !account.reportingTimeZone) {
