@@ -19,7 +19,7 @@ const TEXT = {
     win: 'You win!', lose: 'Computer wins!', playAgain: 'Play again',
     hit: 'A blot was hit!', double: 'Double roll — four moves available.',
     rules: 'Move all 15 checkers into your home board, then bear them off. Hit single opposing checkers to send them to the bar. A point with two or more opposing checkers is blocked.',
-    selected: 'Selected', remaining: 'Moves left', computerRolled: 'Computer rolled', computerMoved: 'Computer moved', point: 'Point', from: 'FROM', to: 'TO', moveLegend: 'Blue = starting point · Green = destination'
+    selected: 'Selected', remaining: 'Moves left', undoMove: 'UNDO LAST MOVE', commitMoves: 'COMMIT MOVES', computerRolled: 'Computer rolled', computerMoved: 'Computer moved', point: 'Point', from: 'FROM', to: 'TO', moveLegend: 'Blue = starting point · Green = destination'
   },
   'Français': {
     title: 'Backgammon', subtitle: 'Stratégie classique. Dés équitables. Sans triche.', opening: 'Lancer initial',
@@ -32,7 +32,7 @@ const TEXT = {
     win: 'Vous avez gagné !', lose: "L'ordinateur gagne !", playAgain: 'Rejouer',
     hit: 'Un pion isolé a été frappé !', double: 'Double ! Quatre déplacements disponibles.',
     rules: 'Déplacez vos 15 pions dans votre jan intérieur, puis sortez-les. Frappez les pions isolés adverses pour les envoyer à la barre. Une flèche occupée par deux pions adverses ou plus est bloquée.',
-    selected: 'Sélectionné', remaining: 'Coups restants', computerRolled: 'L’ordinateur a obtenu', computerMoved: 'Déplacement de l’ordinateur', point: 'Case', from: 'DÉPART', to: 'ARRIVÉE', moveLegend: 'Bleu = départ · Vert = arrivée'
+    selected: 'Sélectionné', remaining: 'Coups restants', undoMove: 'ANNULER LE DERNIER COUP', commitMoves: 'VALIDER LES COUPS', computerRolled: 'L’ordinateur a obtenu', computerMoved: 'Déplacement de l’ordinateur', point: 'Case', from: 'DÉPART', to: 'ARRIVÉE', moveLegend: 'Bleu = départ · Vert = arrivée'
   },
   'العربية': {
     title: 'طاولة الزهر', subtitle: 'استراتيجية كلاسيكية ونرد عادل بلا تلاعب.', opening: 'الرمي الافتتاحي',
@@ -45,7 +45,7 @@ const TEXT = {
     win: 'لقد فزت!', lose: 'الكمبيوتر فاز!', playAgain: 'العب مجدداً',
     hit: 'تم ضرب قطعة منفردة!', double: 'دبل! لديك أربع حركات.',
     rules: 'حرّك قطعك الخمس عشرة إلى منطقتك الداخلية ثم أخرجها. اضرب قطع الخصم المنفردة لإرسالها إلى البار. لا يمكن الوقوف على خانة فيها قطعتان أو أكثر للخصم.',
-    selected: 'محدد', remaining: 'الحركات المتبقية', computerRolled: 'نتيجة نرد الكمبيوتر', computerMoved: 'حركة الكمبيوتر', point: 'الخانة', from: 'من', to: 'إلى', moveLegend: 'الأزرق = نقطة الانطلاق · الأخضر = الوجهة'
+    selected: 'محدد', remaining: 'الحركات المتبقية', undoMove: 'التراجع عن آخر حركة', commitMoves: 'تثبيت الحركات', computerRolled: 'نتيجة نرد الكمبيوتر', computerMoved: 'حركة الكمبيوتر', point: 'الخانة', from: 'من', to: 'إلى', moveLegend: 'الأزرق = نقطة الانطلاق · الأخضر = الوجهة'
   }
 };
 
@@ -228,17 +228,19 @@ export default function Backgammon({ onBack, language = 'English' }) {
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
   const [history, setHistory] = useState([]);
+  const [turnSnapshot, setTurnSnapshot] = useState(null);
+  const [undoStack, setUndoStack] = useState([]);
 
   const reset = useCallback(() => {
     setBoard(initialBoard()); setBars({ 1: 0, '-1': 0 }); setBorne({ 1: 0, '-1': 0 });
     setTurn(1); setStarted(false); setDice([]); setComputerDice([]); setComputerMove(null); setCandidates([]); setSelected(null);
-    setRolling(false); setBusy(false); setWinner(0); setError(''); setNotice(''); setHistory([]);
+    setRolling(false); setBusy(false); setWinner(0); setError(''); setNotice(''); setHistory([]); setTurnSnapshot(null); setUndoStack([]);
   }, []);
 
   const finishTurn = useCallback((nextBoard, nextBars, nextBorne, nextTurn) => {
     if (nextBorne[nextTurn] >= 15) { setWinner(nextTurn); setCandidates([]); setDice([]); setSelected(null); return; }
     setBoard(nextBoard); setBars(nextBars); setBorne(nextBorne);
-    setTurn(-nextTurn); setDice([]); setCandidates([]); setSelected(null);
+    setTurn(-nextTurn); setDice([]); setCandidates([]); setSelected(null); setTurnSnapshot(null); setUndoStack([]);
     setNotice('');
   }, []);
 
@@ -259,6 +261,7 @@ export default function Backgammon({ onBack, language = 'English' }) {
         window.setTimeout(() => {
           setStarted(true);
           setTurn(openingTurn);
+          if (openingTurn === 1) { setTurnSnapshot({ board: [...board], bars: { ...bars }, borne: { ...borne } }); setUndoStack([]); }
           setDice(openingDice);
           const moves = allTurnSequences(board, bars, borne, openingTurn, openingDice);
           setCandidates(moves);
@@ -274,6 +277,8 @@ export default function Backgammon({ onBack, language = 'English' }) {
         const rolled = first === second ? [first, first, first, first] : [first, second];
         setHistory(prev => [{ side: turn, dice: [first, second], at: new Date().toISOString() }, ...prev].slice(0, 8));
         window.setTimeout(() => {
+          setTurnSnapshot({ board: [...board], bars: { ...bars }, borne: { ...borne } });
+          setUndoStack([]);
           setDice(rolled);
           const moves = allTurnSequences(board, bars, borne, 1, rolled);
           setCandidates(moves);
@@ -306,15 +311,29 @@ export default function Backgammon({ onBack, language = 'English' }) {
     const matching = candidates.filter(path => path.length && path[0].from === selected && path[0].to === to);
     if (!matching.length) return;
     const step = matching[0][0];
+    setUndoStack(prev => [...prev, { board: [...board], bars: { ...bars }, borne: { ...borne }, dice: [...dice], candidates: candidates.map(path => path.map(move => ({ ...move }))) }]);
     const next = applyStep(board, bars, borne, 1, step);
     const remaining = matching.map(path => path.slice(1)).filter(path => path.length);
     setBoard(next.board); setBars(next.bars); setBorne(next.borne);
     setDice(prev => { const idx = prev.indexOf(step.die); return idx < 0 ? prev : prev.filter((_, i) => i !== idx); });
     setSelected(null);
-    if (next.borne[1] >= 15) { setWinner(1); setCandidates([]); setDice([]); return; }
-    if (!remaining.length) finishTurn(next.board, next.bars, next.borne, 1);
-    else setCandidates(remaining);
-  }, [selected, turn, busy, candidates, board, bars, borne, finishTurn]);
+    if (next.borne[1] >= 15) { setCandidates([]); setDice([]); return; }
+    setCandidates(remaining);
+  }, [selected, turn, busy, candidates, board, bars, borne, dice]);
+
+  const undoLastMove = useCallback(() => {
+    if (turn !== 1 || !undoStack.length || busy || rolling) return;
+    const previous = undoStack[undoStack.length - 1];
+    setBoard(previous.board); setBars(previous.bars); setBorne(previous.borne);
+    setDice(previous.dice); setCandidates(previous.candidates); setSelected(null);
+    setUndoStack(stack => stack.slice(0, -1));
+    setNotice('');
+  }, [turn, undoStack, busy, rolling]);
+
+  const commitMoves = useCallback(() => {
+    if (turn !== 1 || busy || rolling || candidates.length) return;
+    finishTurn(board, bars, borne, 1);
+  }, [turn, busy, rolling, candidates, board, bars, borne, finishTurn]);
 
   useEffect(() => {
     if (turn !== -1 || winner || busy || rolling) return;
@@ -430,13 +449,18 @@ export default function Backgammon({ onBack, language = 'English' }) {
       <Die value={dice[0] || 1} rolling={rolling} />
       <Die value={dice[1] || (dice[0] || 1)} rolling={rolling} />
       {dice.length > 2 && <span className="text-xs font-bold text-amber-200">×4</span>}
-      {turn === 1 && !dice.length && <button onClick={roll} disabled={rolling || busy || !!winner} className="rounded-xl border-2 border-amber-200 bg-gradient-to-b from-yellow-300 to-amber-600 px-6 py-3 font-black tracking-wide text-slate-950 shadow-[0_4px_0_#815018] disabled:opacity-60">{rolling ? t.rolling : t.roll}</button>}
+      {turn === 1 && !dice.length && !turnSnapshot && <button onClick={roll} disabled={rolling || busy || !!winner} className="rounded-xl border-2 border-amber-200 bg-gradient-to-b from-yellow-300 to-amber-600 px-6 py-3 font-black tracking-wide text-slate-950 shadow-[0_4px_0_#815018] disabled:opacity-60">{rolling ? t.rolling : t.roll}</button>}
       <div className="min-w-[150px] text-center">
         <div className="text-sm font-black text-amber-200">{winner ? (winner === 1 ? t.win : t.lose) : turn === 1 ? t.yourTurn : t.cpuTurn}</div>
         <div className="mt-1 text-xs text-slate-300">{error || notice || (turn === -1 ? t.thinking : dice.length ? t.move : t.choose)}</div>
       </div>
     </div>
 
+    {turn === 1 && turnSnapshot && !rolling && !busy && !winner && <div className="flex flex-wrap items-center justify-center gap-3 rounded-xl border border-amber-300/40 bg-slate-900/90 p-3">
+      <button type="button" onClick={undoLastMove} disabled={!undoStack.length} className="rounded-xl border border-rose-300/60 bg-rose-950/70 px-5 py-3 text-sm font-black text-rose-100 disabled:cursor-not-allowed disabled:opacity-40">{t.undoMove}</button>
+      <button type="button" onClick={commitMoves} disabled={candidates.length > 0} className="rounded-xl border-2 border-emerald-200 bg-gradient-to-b from-emerald-300 to-emerald-600 px-6 py-3 text-sm font-black text-slate-950 shadow-[0_4px_0_#14532d] disabled:cursor-not-allowed disabled:opacity-40">{t.commitMoves}</button>
+      {candidates.length > 0 && <span className="w-full text-center text-[11px] text-amber-100/80">{t.move}</span>}
+    </div>}
     {computerMove && <div dir="ltr" className="rounded-xl border border-sky-300/50 bg-sky-950/50 px-4 py-2 text-center"><div className="text-xs font-black text-sky-200">{t.computerMoved}</div><div className="mt-1 text-sm font-bold text-white">{computerMove.from === -1 ? t.bar : `${t.point} ${computerMove.from + 1}`} → {computerMove.to === 24 ? t.borneOff : `${t.point} ${computerMove.to + 1}`} <span className="text-sky-200">({computerMove.die})</span></div><div className="mt-1 text-[10px] text-sky-100/70">{t.moveLegend}</div></div>}
     {computerDice.length === 2 && <div dir={language === 'العربية' ? 'rtl' : 'ltr'} className="rounded-xl border border-rose-300/40 bg-rose-950/40 px-4 py-3 text-center"><div className="text-xs font-black text-rose-200">{t.computerRolled}</div><div className="mt-2 flex items-center justify-center gap-3"><span className="rounded-lg border border-rose-200/50 bg-white px-3 py-1.5 text-xl font-black text-slate-900">{computerDice[0]}</span><span className="text-rose-100 font-black">+</span><span className="rounded-lg border border-rose-200/50 bg-white px-3 py-1.5 text-xl font-black text-slate-900">{computerDice[1]}</span></div></div>}
     {history.length > 0 && <div className="rounded-xl border border-slate-700 bg-slate-900/70 p-3"><div className="mb-2 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Recent dice rolls</div><div className="flex flex-wrap justify-center gap-2">{history.slice(0, 6).map((entry, index) => <span key={entry.at + index} className={`rounded-lg border px-3 py-1.5 text-xs font-bold ${entry.side === 1 ? 'border-amber-400/40 text-amber-200' : 'border-rose-400/40 text-rose-200'}`}>{entry.opening ? `${t.opening}: ${t.you} ${entry.dice[0]} · ${t.computer} ${entry.dice[1]} → ${entry.side === 1 ? t.you : t.computer}` : `${entry.side === 1 ? t.you : t.computer}: ${entry.dice[0]} + ${entry.dice[1]}`}</span>)}</div></div>}
