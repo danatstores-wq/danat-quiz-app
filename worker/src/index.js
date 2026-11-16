@@ -704,7 +704,8 @@ export default {
         return json({
           error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
             status === 413 ? "report_too_large" : "reconciliation_preview_failed",
-          diagnosticStage: error?.diagnosticStage || "authentication_or_request"
+          diagnosticStage: error?.diagnosticStage || "authentication_or_request",
+          diagnosticCode: error?.diagnosticCode || undefined
         }, status, cors);
       }
     }
