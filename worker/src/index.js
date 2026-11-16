@@ -18,9 +18,15 @@ function json(data, status = 200, headers = {}) {
 
 function corsHeaders(request, env) {
   const origin = request.headers.get("Origin");
-  if (!origin || origin !== env.APP_ORIGIN) return {};
+  const allowedOrigins = new Set([
+    env.APP_ORIGIN,
+    "https://localhost",
+    "http://localhost",
+    "capacitor://localhost"
+  ].filter(Boolean));
+  if (!origin || !allowedOrigins.has(origin)) return {};
   return {
-    "access-control-allow-origin": env.APP_ORIGIN,
+    "access-control-allow-origin": origin,
     "access-control-allow-methods": "GET, POST, OPTIONS",
     "access-control-allow-headers": "authorization, content-type",
     "vary": "Origin"
@@ -99,9 +105,13 @@ function pemToBytes(pem) {
 async function getFirebaseAccessToken(env) {
   const now = Math.floor(Date.now() / 1000);
   if (firebaseAccessTokenCache && firebaseAccessTokenCache.exp > now + 60) return firebaseAccessTokenCache.token;
-  if (!env.FIREBASE_SERVICE_ACCOUNT_JSON) throw Object.assign(new Error("Firebase service account secret is not configured"), { status: 503 });
+  // Accept the original lowercase Cloudflare secret name as well as the
+  // documented uppercase name, so existing deployments do not need a secret
+  // to be re-created just to match casing.
+  const serviceAccountJson = env.FIREBASE_SERVICE_ACCOUNT_JSON || env.firebase_service_account;
+  if (!serviceAccountJson) throw Object.assign(new Error("Firebase service account secret is not configured"), { status: 503 });
 
-  const account = JSON.parse(env.FIREBASE_SERVICE_ACCOUNT_JSON);
+  const account = JSON.parse(serviceAccountJson);
   if (!account.client_email || !account.private_key || !account.token_uri) throw new Error("Invalid Firebase service account secret");
 
   const header = encodeBase64Url(encoder.encode(JSON.stringify({ alg: "RS256", typ: "JWT" })));
