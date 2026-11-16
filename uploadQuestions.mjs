@@ -23,6 +23,17 @@ function parseServiceAccount(rawCredentials) {
     }
   }
 
+  // GitHub secret may have been copied without the outer opening brace.
+  if (candidate.startsWith('"') && candidate.includes(':')) {
+    const repaired = candidate.endsWith('}') ? `{${candidate}` : `{${candidate}}`;
+    try {
+      const parsed = JSON.parse(repaired);
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed;
+    } catch {
+      // Do not guess further; continue with standard parsing and safe diagnostics.
+    }
+  }
+
   for (let attempt = 0; attempt < 3; attempt += 1) {
     try {
       const parsed = JSON.parse(candidate);
