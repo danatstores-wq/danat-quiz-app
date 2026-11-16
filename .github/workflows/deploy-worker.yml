@@ -3,6 +3,7 @@ name: Deploy Danat Quiz API Worker
 on:
   push:
     branches:
+      - main
       - security/cloudflare-api
     paths:
       - "worker/**"
