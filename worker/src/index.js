@@ -427,17 +427,23 @@ async function createAdMobReconciliationPreview(request, env, uid) {
   const endDate = url.searchParams.get("endDate");
   if (!startDate || !endDate) throw Object.assign(new Error("startDate and endDate are required"), { status: 400 });
 
+  let diagnosticStage = "oauth_refresh";
+  try {
   const { accessToken } = await getAdMobAccessToken(env);
+  diagnosticStage = "admob_account_listing";
   const accounts = await listAdMobAccounts(accessToken);
   const publisherId = env.ADMOB_PUBLISHER_ID || (accounts.length === 1 ? accounts[0]?.publisherId : "");
   const account = accounts.find((item) => item.publisherId === publisherId);
   if (!account || !account.reportingTimeZone) {
     throw Object.assign(new Error("AdMob publisher account is missing or ambiguous; configure ADMOB_PUBLISHER_ID"), { status: 503 });
   }
+  diagnosticStage = "admob_report_generation";
   const report = await generateAdMobNetworkReport({
     accessToken, publisherId, startDate, endDate
   });
+  diagnosticStage = "firestore_verified_ad_ledger";
   const ledgerDocuments = await queryVerifiedAdLedger(env, startDate, endDate);
+  diagnosticStage = "revenue_reconciliation";
   const reconciliation = buildRevenueReconciliation({
     reportMessages: [report.header, ...report.rows, report.footer],
     ledgerDocuments,
@@ -463,6 +469,10 @@ async function createAdMobReconciliationPreview(request, env, uid) {
       }))
     }))
   };
+  } catch (error) {
+    error.diagnosticStage = diagnosticStage;
+    throw error;
+  }
 }
 
 async function stageAdMobReconciliation(request, env, uid) {
@@ -686,8 +696,16 @@ export default {
         return json(await createAdMobReconciliationPreview(request, env, user.uid), 200, cors);
       } catch (error) {
         const status = error?.status || 503;
-        return json({ error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
-          status === 413 ? "report_too_large" : "reconciliation_preview_failed" }, status, cors);
+        console.error("AdMob reconciliation preview failed", {
+          stage: error?.diagnosticStage || "authentication_or_request",
+          status,
+          message: String(error?.message || "unknown").slice(0, 160)
+        });
+        return json({
+          error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
+            status === 413 ? "report_too_large" : "reconciliation_preview_failed",
+          diagnosticStage: error?.diagnosticStage || "authentication_or_request"
+        }, status, cors);
       }
     }
 
