@@ -1,6 +1,6 @@
 # Danat Quiz Cloudflare API
 
-This Worker is the trusted backend for Firebase-authenticated app requests and AdMob rewarded-life verification.
+This Worker is the trusted backend for Firebase-authenticated app requests and AdMob rewarded-ad server-side verification.
 
 ## Routes
 
@@ -8,54 +8,61 @@ This Worker is the trusted backend for Firebase-authenticated app requests and A
 - `GET /v1/session` — validates a Firebase ID token.
 - `POST /v1/life-loss` — deducts one life using a server-side Firestore precondition.
 - `POST /v1/timed-lives` — enforces the three-hour cooldown and ten-life daily free-claim cap on the server.
-- `POST /v1/ad-session` — creates a one-time, ten-minute life-ad session for the authenticated player.
-- `POST /v1/ad-status` — returns pending/completed status for that player's ad session; the app uses this to display the server-confirmed life.
-- `GET /v1/admob/ssv` — AdMob's signed server-side verification callback.
+- `POST /v1/ad-session` — creates a one-time, ten-minute rewarded-ad session for the authenticated player.
+- `POST /v1/ad-status` — returns pending/completed status for that player's ad session.
+- `GET /v1/admob/ssv` — verifies AdMob's signed server-side verification callback.
 
-## Reward security flow
+## Verified-ad security flow
 
-1. The app authenticates the player with Firebase Auth (including anonymous guest accounts).
-2. The app requests a one-time ad session using its Firebase ID token.
+1. The app authenticates the player with Firebase Auth.
+2. The app requests a one-time ad session from the Worker using its Firebase ID token.
 3. The Worker stores the session in Firestore and returns its opaque ID.
 4. The native AdMob SDK sends the Firebase UID and session ID as SSV user/custom data.
-5. The Worker verifies the original signed query string using Google's current AdMob public key.
-6. The Worker validates the approved Android/iOS life ad-unit IDs, reward item/amount, UID, and unused/unexpired session.
-7. A single atomic Firestore commit increments `users/{uid}.livesBalance` and `rewardedAdsWatched`, creates an immutable `adRewardLedger/{transactionId}` record, and marks the session complete using the session's `updateTime` as a compare-and-set precondition. The unique transaction document prevents a repeated callback from granting twice, and the session precondition prevents two distinct callbacks from consuming one session.
+5. The Worker verifies the signed query string using Google's current AdMob public key.
+6. The Worker validates the approved ad-unit ID, reward item/amount, UID, and unused/unexpired session.
+7. A single atomic Firestore commit updates the player profile, creates an immutable `adRewardLedger/{transactionId}` record, and marks the session complete. A repeated transaction cannot grant twice.
 
-Client-side ad callbacks never grant lives. AdMob callbacks that encounter temporary Firestore failures receive HTTP 503 so Google can retry. Invalid callbacks are rejected.
+Only the signed AdMob callback is proof of a rewarded ad. Client-side ad callbacks and simulated game ad breaks do not count. The ledger records the player UID, ad-unit ID, placement, transaction ID, verification type, and UTC timestamp, which are the source records needed for later daily revenue reconciliation.
 
-## Required Cloudflare Worker secret
+## Approved rewarded ad units
 
-The Worker needs a Google service-account JSON document stored only as a Cloudflare secret named:
+| Placement | Platform | Ad unit ID |
+|---|---|---|
+| Life | Android | `ca-app-pub-1622329571366129/5894243820` |
+| Life | iOS | `ca-app-pub-1622329571366129/9787267701` |
+| Points | Android | `ca-app-pub-1622329571366129/4581162153` |
+| Points | iOS | `ca-app-pub-1622329571366129/8282614340` |
 
-`FIREBASE_SERVICE_ACCOUNT_JSON`
+The Worker currently validates life rewards as amount `1`, item `life`; points rewards default to amount `10`, item `points`. The app's currently observed rewarded-ad session flow invokes the life placement. Do not treat points ad units as active until the app actually requests a points session and their AdMob SSV settings have been configured and tested.
 
-The service account must belong to Firebase project `danat-quiz-app` and have the **Cloud Datastore User** role (Firestore data access). Never commit the JSON/private key to GitHub or put it in the app.
-
-The service-account JSON must contain `client_email`, `private_key`, and `token_uri`. The Worker exchanges a short-lived signed assertion for a Google OAuth access token and uses the Firestore REST API. Access tokens are cached only in Worker memory.
-
-### Add the secret before deployment
-
-1. In Firebase Console, open **Project settings → Service accounts** and generate a private key for the `danat-quiz-app` project. Keep the downloaded JSON private.
-2. In Cloudflare, open **Workers & Pages → danat-quiz-api → Settings → Variables and Secrets**.
-3. Add a variable of type **Secret** named `FIREBASE_SERVICE_ACCOUNT_JSON`, and paste the complete JSON file contents as its value. Save it. Never send the JSON or private key in chat or commit it to GitHub.
-4. Deploy the Worker only after the secret is saved. The Worker cannot write verified rewards to Firestore without it.
-
-## AdMob configuration required
-
-For both rewarded-life ad units below, enable Server-side verification and set the callback URL to:
+For each active production rewarded ad unit, enable Server-side verification and set the callback URL to:
 
 `https://danat-quiz-api.danatcoin.workers.dev/v1/admob/ssv`
 
-- Android life: `ca-app-pub-1622329571366129/5894243820`
-- iOS life: `ca-app-pub-1622329571366129/9787267701`
+Test ad units do not produce production SSV callbacks. Use AdMob's SSV test tool for callback verification, then confirm a production callback creates exactly one ledger record.
 
-Configure the reward on each ad unit as amount `1`, item `life` (exact lowercase spelling). Those values are also set in `wrangler.toml`. Do not configure the points ad units as life rewards.
+## Firebase Worker secret
 
-AdMob production callbacks are required for the real SSV flow; test ads do not send production SSV callbacks. Use AdMob's SSV test tool only after the callback URL has been deployed and configured.
+The Worker needs a Google service-account JSON document stored only as a Cloudflare secret named `FIREBASE_SERVICE_ACCOUNT_JSON`. The service account must belong to Firebase project `danat-quiz-app` and have the **Cloud Datastore User** role.
 
-## Deployment and setup status
+In Cloudflare, open **Workers & Pages → danat-quiz-api → Settings → Variables and Secrets** and add the complete JSON as a Secret named `FIREBASE_SERVICE_ACCOUNT_JSON`. The JSON must contain `client_email`, `private_key`, and `token_uri`. Never commit it to GitHub or send it in chat.
 
-This code is on the `security/cloudflare-api` branch only. It has not been deployed or merged. Before enabling the production ad units, configure the Cloudflare secret, deploy the Worker, verify `/health`, and configure/verify both AdMob callback URLs. Then test with a real production ad and confirm exactly one life and one ledger record are added.
+## DNC advertising-revenue allocation — not yet implemented
 
-The app currently fails closed: a client ad callback alone does not grant a life. After the ad finishes, the app polls `/v1/ad-status`; it updates the displayed life count only when the Worker reports a completed verified session.
+The current Worker records verified rewarded-ad events; it does **not** yet import AdMob earnings or issue DNC ad-revenue credits.
+
+The agreed allocation policy for the future revenue job is:
+
+- Use AdMob's reported estimated earnings by UTC date and ad unit as the revenue source.
+- Reserve 30% of eligible revenue for players and 70% for Danat.
+- Allocate the player pool proportionally to each registered player's verified SSV count for the same date and ad unit.
+- Convert the allocated USD amount to DNC at the agreed display rate of 1 DNC = 1 USD.
+- Keep ad-revenue credits separate from game points and manual admin credits.
+- Write immutable, idempotent allocation ledger records and a daily reconciliation record before updating player balances.
+- Never credit from simulated ads, client callbacks, or an unverified report. Do not silently treat estimated earnings as final settled AdMob payouts.
+
+No DNC ad-revenue credits are issued by the current Worker. The AdMob reporting/OAuth integration and scheduled allocation job still need to be added and tested.
+
+## Deployment status
+
+The Worker has previously been deployed to Cloudflare from branch `security/cloudflare-api`. The current source changes on this branch are not merged into `main`. The GitHub Actions workflow `.github/workflows/deploy-worker.yml` deploys this branch when files under `worker/**` change. After any code change, verify the workflow run and `GET /health` before relying on it.
