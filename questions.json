@@ -20763,5 +20763,7040 @@
     },
     "points": 10,
     "category": "Poetry"
+  },
+  {
+    "id": "q600",
+    "question": {
+      "en": "Who wrote “The Divine Comedy”?",
+      "ar": "من كتب قصيدة «The Divine Comedy»؟",
+      "fr": "Qui a écrit « The Divine Comedy » ?"
+    },
+    "options": {
+      "en": [
+        "Dante Alighieri",
+        "Homer",
+        "Homer",
+        "Walt Whitman"
+      ],
+      "ar": [
+        "دانتي أليغييري",
+        "هوميروس",
+        "هوميروس",
+        "والت ويتمان"
+      ],
+      "fr": [
+        "Dante Alighieri",
+        "Homer",
+        "Homer",
+        "Walt Whitman"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dante Alighieri",
+      "ar": "دانتي أليغييري",
+      "fr": "Dante Alighieri"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q601",
+    "question": {
+      "en": "Which answer identifies this history clue: The first emperor of Rome?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The first emperor of Rome؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The first emperor of Rome ?"
+    },
+    "options": {
+      "en": [
+        "Hieroglyphs",
+        "Augustus",
+        "1789",
+        "1989"
+      ],
+      "ar": [
+        "الهيروغليفية",
+        "أغسطس",
+        "١٧٨٩",
+        "١٩٨٩"
+      ],
+      "fr": [
+        "Hieroglyphs",
+        "Augustus",
+        "1789",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Augustus",
+      "ar": "أغسطس",
+      "fr": "Augustus"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q602",
+    "question": {
+      "en": "Who wrote “The Iliad”?",
+      "ar": "من كتب قصيدة «The Iliad»؟",
+      "fr": "Qui a écrit « The Iliad » ?"
+    },
+    "options": {
+      "en": [
+        "Edmund Spenser",
+        "Samuel Taylor Coleridge",
+        "Homer",
+        "William Wordsworth"
+      ],
+      "ar": [
+        "إدموند سبنسر",
+        "صمويل تايلور كوليردج",
+        "هوميروس",
+        "ويليام ووردزورث"
+      ],
+      "fr": [
+        "Edmund Spenser",
+        "Samuel Taylor Coleridge",
+        "Homer",
+        "William Wordsworth"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Homer",
+      "ar": "هوميروس",
+      "fr": "Homer"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q603",
+    "question": {
+      "en": "Which answer identifies this biology clue: The molecule carrying hereditary information?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The molecule carrying hereditary information؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The molecule carrying hereditary information ?"
+    },
+    "options": {
+      "en": [
+        "Liver",
+        "White blood cells",
+        "Dendrite",
+        "DNA"
+      ],
+      "ar": [
+        "الكبد",
+        "كريات الدم البيضاء",
+        "التغصن العصبي",
+        "الحمض النووي"
+      ],
+      "fr": [
+        "Liver",
+        "White blood cells",
+        "Dendrite",
+        "DNA"
+      ]
+    },
+    "correctAnswer": {
+      "en": "DNA",
+      "ar": "الحمض النووي",
+      "fr": "DNA"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q604",
+    "question": {
+      "en": "Who wrote “The Odyssey”?",
+      "ar": "من كتب قصيدة «The Odyssey»؟",
+      "fr": "Qui a écrit « The Odyssey » ?"
+    },
+    "options": {
+      "en": [
+        "Homer",
+        "Omar Khayyam",
+        "Ferdowsi",
+        "Rumi"
+      ],
+      "ar": [
+        "هوميروس",
+        "عمر الخيام",
+        "الفردوسي",
+        "جلال الدين الرومي"
+      ],
+      "fr": [
+        "Homer",
+        "Omar Khayyam",
+        "Ferdowsi",
+        "Rumi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Homer",
+      "ar": "هوميروس",
+      "fr": "Homer"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q605",
+    "question": {
+      "en": "Which answer identifies this science clue: The chemical symbol for gold?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The chemical symbol for gold؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The chemical symbol for gold ?"
+    },
+    "options": {
+      "en": [
+        "Sublimation",
+        "Au",
+        "Visible light",
+        "Albert Einstein"
+      ],
+      "ar": [
+        "التسامي",
+        "Au",
+        "الضوء المرئي",
+        "ألبرت أينشتاين"
+      ],
+      "fr": [
+        "Sublimation",
+        "Au",
+        "Visible light",
+        "Albert Einstein"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Au",
+      "ar": "Au",
+      "fr": "Au"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q606",
+    "question": {
+      "en": "Who wrote “Leaves of Grass”?",
+      "ar": "من كتب قصيدة «Leaves of Grass»؟",
+      "fr": "Qui a écrit « Leaves of Grass » ?"
+    },
+    "options": {
+      "en": [
+        "Oscar Wilde",
+        "Algernon Charles Swinburne",
+        "Walt Whitman",
+        "Henry Wadsworth Longfellow"
+      ],
+      "ar": [
+        "أوسكار وايلد",
+        "ألجرنون تشارلز سوينبرن",
+        "والت ويتمان",
+        "هنري وادزورث لونغفيلو"
+      ],
+      "fr": [
+        "Oscar Wilde",
+        "Algernon Charles Swinburne",
+        "Walt Whitman",
+        "Henry Wadsworth Longfellow"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Walt Whitman",
+      "ar": "والت ويتمان",
+      "fr": "Walt Whitman"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q607",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign traditionally associated with the Ram?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign traditionally associated with the Ram؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign traditionally associated with the Ram ?"
+    },
+    "options": {
+      "en": [
+        "Saturn",
+        "Jupiter",
+        "Air",
+        "Aries"
+      ],
+      "ar": [
+        "زحل",
+        "المشتري",
+        "الهواء",
+        "الحمل"
+      ],
+      "fr": [
+        "Saturn",
+        "Jupiter",
+        "Air",
+        "Aries"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Aries",
+      "ar": "الحمل",
+      "fr": "Aries"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q608",
+    "question": {
+      "en": "Who wrote “The Canterbury Tales”?",
+      "ar": "من كتب قصيدة «The Canterbury Tales»؟",
+      "fr": "Qui a écrit « The Canterbury Tales » ?"
+    },
+    "options": {
+      "en": [
+        "Geoffrey Chaucer",
+        "W. B. Yeats",
+        "W. B. Yeats",
+        "T. S. Eliot"
+      ],
+      "ar": [
+        "جيفري تشوسر",
+        "ويليام بتلر ييتس",
+        "ويليام بتلر ييتس",
+        "ت. س. إليوت"
+      ],
+      "fr": [
+        "Geoffrey Chaucer",
+        "W. B. Yeats",
+        "W. B. Yeats",
+        "T. S. Eliot"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Geoffrey Chaucer",
+      "ar": "جيفري تشوسر",
+      "fr": "Geoffrey Chaucer"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q609",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The value of pi rounded to two decimal places?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The value of pi rounded to two decimal places؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The value of pi rounded to two decimal places ?"
+    },
+    "options": {
+      "en": [
+        "11",
+        "3.14",
+        "Octagon",
+        "72"
+      ],
+      "ar": [
+        "١١",
+        "٣٫١٤",
+        "مثمن",
+        "٧٢"
+      ],
+      "fr": [
+        "11",
+        "3.14",
+        "Octagon",
+        "72"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3.14",
+      "ar": "٣٫١٤",
+      "fr": "3.14"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q610",
+    "question": {
+      "en": "Who wrote “The Aeneid”?",
+      "ar": "من كتب قصيدة «The Aeneid»؟",
+      "fr": "Qui a écrit « The Aeneid » ?"
+    },
+    "options": {
+      "en": [
+        "Original traditional ballad",
+        "William Blake",
+        "Virgil",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "قصيدة شعبية تقليدية",
+        "ويليام بليك",
+        "فيرجيل",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "Original traditional ballad",
+        "William Blake",
+        "Virgil",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Virgil",
+      "ar": "فيرجيل",
+      "fr": "Virgil"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q611",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Growing crops without synthetic pesticides or fertilizers?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Growing crops without synthetic pesticides or fertilizers؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Growing crops without synthetic pesticides or fertilizers ?"
+    },
+    "options": {
+      "en": [
+        "Mulch",
+        "Agroforestry",
+        "Pollination",
+        "Organic farming"
+      ],
+      "ar": [
+        "غطاء التربة",
+        "الحراجة الزراعية",
+        "التلقيح",
+        "الزراعة العضوية"
+      ],
+      "fr": [
+        "Mulch",
+        "Agroforestry",
+        "Pollination",
+        "Organic farming"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Organic farming",
+      "ar": "الزراعة العضوية",
+      "fr": "Organic farming"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q612",
+    "question": {
+      "en": "Who wrote “Don Juan”?",
+      "ar": "من كتب قصيدة «Don Juan»؟",
+      "fr": "Qui a écrit « Don Juan » ?"
+    },
+    "options": {
+      "en": [
+        "Lord Byron",
+        "John Donne",
+        "John Donne",
+        "George Herbert"
+      ],
+      "ar": [
+        "اللورد بايرون",
+        "جون دون",
+        "جون دون",
+        "جورج هربرت"
+      ],
+      "fr": [
+        "Lord Byron",
+        "John Donne",
+        "John Donne",
+        "George Herbert"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Lord Byron",
+      "ar": "اللورد بايرون",
+      "fr": "Lord Byron"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q613",
+    "question": {
+      "en": "Which answer identifies this history clue: The Magna Carta was sealed in?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The Magna Carta was sealed in؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The Magna Carta was sealed in ?"
+    },
+    "options": {
+      "en": [
+        "Silk Road",
+        "1215",
+        "Qin dynasty",
+        "Treaty of Versailles"
+      ],
+      "ar": [
+        "طريق الحرير",
+        "١٢١٥",
+        "أسرة تشين",
+        "معاهدة فرساي"
+      ],
+      "fr": [
+        "Silk Road",
+        "1215",
+        "Qin dynasty",
+        "Treaty of Versailles"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1215",
+      "ar": "١٢١٥",
+      "fr": "1215"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q614",
+    "question": {
+      "en": "Who wrote “Songs of Innocence”?",
+      "ar": "من كتب قصيدة «Songs of Innocence»؟",
+      "fr": "Qui a écrit « Songs of Innocence » ?"
+    },
+    "options": {
+      "en": [
+        "Dante Alighieri",
+        "Homer",
+        "William Blake",
+        "Elizabeth Bishop"
+      ],
+      "ar": [
+        "دانتي أليغييري",
+        "هوميروس",
+        "ويليام بليك",
+        "إليزابيث بيشوب"
+      ],
+      "fr": [
+        "Dante Alighieri",
+        "Homer",
+        "William Blake",
+        "Elizabeth Bishop"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Blake",
+      "ar": "ويليام بليك",
+      "fr": "William Blake"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q615",
+    "question": {
+      "en": "Which answer identifies this biology clue: The powerhouse of the cell?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The powerhouse of the cell؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The powerhouse of the cell ?"
+    },
+    "options": {
+      "en": [
+        "Four",
+        "Vitamin D",
+        "Homeostasis",
+        "Mitochondrion"
+      ],
+      "ar": [
+        "أربع حجرات",
+        "فيتامين د",
+        "الاتزان الداخلي",
+        "الميتوكوندريا"
+      ],
+      "fr": [
+        "Four",
+        "Vitamin D",
+        "Homeostasis",
+        "Mitochondrion"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mitochondrion",
+      "ar": "الميتوكوندريا",
+      "fr": "Mitochondrion"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q616",
+    "question": {
+      "en": "Who wrote “The Prelude”?",
+      "ar": "من كتب قصيدة «The Prelude»؟",
+      "fr": "Qui a écrit « The Prelude » ?"
+    },
+    "options": {
+      "en": [
+        "William Wordsworth",
+        "Geoffrey Chaucer",
+        "Virgil",
+        "Lord Byron"
+      ],
+      "ar": [
+        "ويليام ووردزورث",
+        "جيفري تشوسر",
+        "فيرجيل",
+        "اللورد بايرون"
+      ],
+      "fr": [
+        "William Wordsworth",
+        "Geoffrey Chaucer",
+        "Virgil",
+        "Lord Byron"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Wordsworth",
+      "ar": "ويليام ووردزورث",
+      "fr": "William Wordsworth"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q617",
+    "question": {
+      "en": "Which answer identifies this science clue: The planet with the greatest average surface temperature?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The planet with the greatest average surface temperature؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The planet with the greatest average surface temperature ?"
+    },
+    "options": {
+      "en": [
+        "Nucleus",
+        "Venus",
+        "Ampere",
+        "300,000 km/s"
+      ],
+      "ar": [
+        "النواة",
+        "الزهرة",
+        "الأمبير",
+        "٣٠٠ ألف كم/ث"
+      ],
+      "fr": [
+        "Nucleus",
+        "Venus",
+        "Ampere",
+        "300,000 km/s"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Venus",
+      "ar": "الزهرة",
+      "fr": "Venus"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q618",
+    "question": {
+      "en": "Who wrote “The Faerie Queene”?",
+      "ar": "من كتب قصيدة «The Faerie Queene»؟",
+      "fr": "Qui a écrit « The Faerie Queene » ?"
+    },
+    "options": {
+      "en": [
+        "Robert Frost",
+        "Rabindranath Tagore",
+        "Edmund Spenser",
+        "Emily Dickinson"
+      ],
+      "ar": [
+        "روبرت فروست",
+        "رابندرانات طاغور",
+        "إدموند سبنسر",
+        "إميلي ديكنسون"
+      ],
+      "fr": [
+        "Robert Frost",
+        "Rabindranath Tagore",
+        "Edmund Spenser",
+        "Emily Dickinson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Edmund Spenser",
+      "ar": "إدموند سبنسر",
+      "fr": "Edmund Spenser"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q619",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Bull?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Bull؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Bull ?"
+    },
+    "options": {
+      "en": [
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Taurus"
+      ],
+      "ar": [
+        "القوس",
+        "الجدي",
+        "الدلو",
+        "الثور"
+      ],
+      "fr": [
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Taurus"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Taurus",
+      "ar": "الثور",
+      "fr": "Taurus"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q620",
+    "question": {
+      "en": "Who wrote “The Rime of the Ancient Mariner”?",
+      "ar": "من كتب قصيدة «The Rime of the Ancient Mariner»؟",
+      "fr": "Qui a écrit « The Rime of the Ancient Mariner » ?"
+    },
+    "options": {
+      "en": [
+        "Samuel Taylor Coleridge",
+        "Kahlil Gibran",
+        "Henry Wadsworth Longfellow",
+        "Henry Wadsworth Longfellow"
+      ],
+      "ar": [
+        "صمويل تايلور كوليردج",
+        "جبران خليل جبران",
+        "هنري وادزورث لونغفيلو",
+        "هنري وادزورث لونغفيلو"
+      ],
+      "fr": [
+        "Samuel Taylor Coleridge",
+        "Kahlil Gibran",
+        "Henry Wadsworth Longfellow",
+        "Henry Wadsworth Longfellow"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Samuel Taylor Coleridge",
+      "ar": "صمويل تايلور كوليردج",
+      "fr": "Samuel Taylor Coleridge"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q621",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The square root of 144?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The square root of 144؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The square root of 144 ?"
+    },
+    "options": {
+      "en": [
+        "(0, 0)",
+        "12",
+        "Circumference",
+        "120"
+      ],
+      "ar": [
+        "(٠، ٠)",
+        "١٢",
+        "محيط الدائرة",
+        "١٢٠"
+      ],
+      "fr": [
+        "(0, 0)",
+        "12",
+        "Circumference",
+        "120"
+      ]
+    },
+    "correctAnswer": {
+      "en": "12",
+      "ar": "١٢",
+      "fr": "12"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q622",
+    "question": {
+      "en": "Who wrote “Hope is the thing with feathers”?",
+      "ar": "من كتب قصيدة «Hope is the thing with feathers»؟",
+      "fr": "Qui a écrit « Hope is the thing with feathers » ?"
+    },
+    "options": {
+      "en": [
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "Emily Dickinson",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "ماثيو آرنولد",
+        "ويليام بتلر ييتس",
+        "إميلي ديكنسون",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "Emily Dickinson",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Emily Dickinson",
+      "ar": "إميلي ديكنسون",
+      "fr": "Emily Dickinson"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q623",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The nutrient represented by N in NPK fertilizer?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The nutrient represented by N in NPK fertilizer؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The nutrient represented by N in NPK fertilizer ?"
+    },
+    "options": {
+      "en": [
+        "pH meter",
+        "Rainwater harvesting",
+        "Rhizobium bacteria",
+        "Nitrogen"
+      ],
+      "ar": [
+        "مقياس الرقم الهيدروجيني",
+        "حصاد مياه الأمطار",
+        "بكتيريا الرايزوبيوم",
+        "النيتروجين"
+      ],
+      "fr": [
+        "pH meter",
+        "Rainwater harvesting",
+        "Rhizobium bacteria",
+        "Nitrogen"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nitrogen",
+      "ar": "النيتروجين",
+      "fr": "Nitrogen"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q624",
+    "question": {
+      "en": "Who wrote “Stopping by Woods on a Snowy Evening”?",
+      "ar": "من كتب قصيدة «Stopping by Woods on a Snowy Evening»؟",
+      "fr": "Qui a écrit « Stopping by Woods on a Snowy Evening » ?"
+    },
+    "options": {
+      "en": [
+        "Robert Frost",
+        "Allen Ginsberg",
+        "Wallace Stevens",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "روبرت فروست",
+        "ألن غينسبرغ",
+        "والاس ستيفنز",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "Robert Frost",
+        "Allen Ginsberg",
+        "Wallace Stevens",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Robert Frost",
+      "ar": "روبرت فروست",
+      "fr": "Robert Frost"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q625",
+    "question": {
+      "en": "Which answer identifies this history clue: The ancient city buried by Vesuvius in 79 CE?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The ancient city buried by Vesuvius in 79 CE؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The ancient city buried by Vesuvius in 79 CE ?"
+    },
+    "options": {
+      "en": [
+        "George Washington",
+        "Pompeii",
+        "Augustus",
+        "1215"
+      ],
+      "ar": [
+        "جورج واشنطن",
+        "بومبي",
+        "أغسطس",
+        "١٢١٥"
+      ],
+      "fr": [
+        "George Washington",
+        "Pompeii",
+        "Augustus",
+        "1215"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pompeii",
+      "ar": "بومبي",
+      "fr": "Pompeii"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q626",
+    "question": {
+      "en": "Who wrote “Gitanjali”?",
+      "ar": "من كتب قصيدة «Gitanjali»؟",
+      "fr": "Qui a écrit « Gitanjali » ?"
+    },
+    "options": {
+      "en": [
+        "John Donne",
+        "John Donne",
+        "Rabindranath Tagore",
+        "Andrew Marvell"
+      ],
+      "ar": [
+        "جون دون",
+        "جون دون",
+        "رابندرانات طاغور",
+        "أندرو مارفيل"
+      ],
+      "fr": [
+        "John Donne",
+        "John Donne",
+        "Rabindranath Tagore",
+        "Andrew Marvell"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rabindranath Tagore",
+      "ar": "رابندرانات طاغور",
+      "fr": "Rabindranath Tagore"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q627",
+    "question": {
+      "en": "Which answer identifies this biology clue: The process plants use to make sugars from light?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The process plants use to make sugars from light؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The process plants use to make sugars from light ?"
+    },
+    "options": {
+      "en": [
+        "Chlorophyll",
+        "Mycology",
+        "Genetics",
+        "Photosynthesis"
+      ],
+      "ar": [
+        "الكلوروفيل",
+        "علم الفطريات",
+        "علم الوراثة",
+        "البناء الضوئي"
+      ],
+      "fr": [
+        "Chlorophyll",
+        "Mycology",
+        "Genetics",
+        "Photosynthesis"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Photosynthesis",
+      "ar": "البناء الضوئي",
+      "fr": "Photosynthesis"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q628",
+    "question": {
+      "en": "Who wrote “The Rubaiyat”?",
+      "ar": "من كتب قصيدة «The Rubaiyat»؟",
+      "fr": "Qui a écrit « The Rubaiyat » ?"
+    },
+    "options": {
+      "en": [
+        "Omar Khayyam",
+        "W. H. Auden",
+        "W. H. Auden",
+        "Dylan Thomas"
+      ],
+      "ar": [
+        "عمر الخيام",
+        "و. هـ. أودن",
+        "و. هـ. أودن",
+        "ديلان توماس"
+      ],
+      "fr": [
+        "Omar Khayyam",
+        "W. H. Auden",
+        "W. H. Auden",
+        "Dylan Thomas"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Omar Khayyam",
+      "ar": "عمر الخيام",
+      "fr": "Omar Khayyam"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q629",
+    "question": {
+      "en": "Which answer identifies this science clue: The SI unit of electric current?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The SI unit of electric current؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The SI unit of electric current ?"
+    },
+    "options": {
+      "en": [
+        "Newton",
+        "Ampere",
+        "Diamond",
+        "Nitrogen"
+      ],
+      "ar": [
+        "نيوتن",
+        "الأمبير",
+        "الألماس",
+        "النيتروجين"
+      ],
+      "fr": [
+        "Newton",
+        "Ampere",
+        "Diamond",
+        "Nitrogen"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ampere",
+      "ar": "الأمبير",
+      "fr": "Ampere"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q630",
+    "question": {
+      "en": "Who wrote “Shahnameh”?",
+      "ar": "من كتب قصيدة «Shahnameh»؟",
+      "fr": "Qui a écrit « Shahnameh » ?"
+    },
+    "options": {
+      "en": [
+        "Walt Whitman",
+        "Geoffrey Chaucer",
+        "Ferdowsi",
+        "Homer"
+      ],
+      "ar": [
+        "والت ويتمان",
+        "جيفري تشوسر",
+        "الفردوسي",
+        "هوميروس"
+      ],
+      "fr": [
+        "Walt Whitman",
+        "Geoffrey Chaucer",
+        "Ferdowsi",
+        "Homer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ferdowsi",
+      "ar": "الفردوسي",
+      "fr": "Ferdowsi"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q631",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Twins?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Twins؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Twins ?"
+    },
+    "options": {
+      "en": [
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Gemini"
+      ],
+      "ar": [
+        "المريخ",
+        "المشتري",
+        "زحل",
+        "الجوزاء"
+      ],
+      "fr": [
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Gemini"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gemini",
+      "ar": "الجوزاء",
+      "fr": "Gemini"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q632",
+    "question": {
+      "en": "Who wrote “Masnavi”?",
+      "ar": "من كتب قصيدة «Masnavi»؟",
+      "fr": "Qui a écrit « Masnavi » ?"
+    },
+    "options": {
+      "en": [
+        "Rumi",
+        "William Wordsworth",
+        "Edmund Spenser",
+        "Samuel Taylor Coleridge"
+      ],
+      "ar": [
+        "جلال الدين الرومي",
+        "ويليام ووردزورث",
+        "إدموند سبنسر",
+        "صمويل تايلور كوليردج"
+      ],
+      "fr": [
+        "Rumi",
+        "William Wordsworth",
+        "Edmund Spenser",
+        "Samuel Taylor Coleridge"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rumi",
+      "ar": "جلال الدين الرومي",
+      "fr": "Rumi"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q633",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The sum of the interior angles of a Euclidean triangle?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The sum of the interior angles of a Euclidean triangle؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The sum of the interior angles of a Euclidean triangle ?"
+    },
+    "options": {
+      "en": [
+        "12",
+        "180 degrees",
+        "6",
+        "3.14"
+      ],
+      "ar": [
+        "١٢",
+        "١٨٠ درجة",
+        "٦",
+        "٣٫١٤"
+      ],
+      "fr": [
+        "12",
+        "180 degrees",
+        "6",
+        "3.14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "180 degrees",
+      "ar": "١٨٠ درجة",
+      "fr": "180 degrees"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q634",
+    "question": {
+      "en": "Who wrote “The Prophet”?",
+      "ar": "من كتب قصيدة «The Prophet»؟",
+      "fr": "Qui a écrit « The Prophet » ?"
+    },
+    "options": {
+      "en": [
+        "Ferdowsi",
+        "Rumi",
+        "Kahlil Gibran",
+        "Omar Khayyam"
+      ],
+      "ar": [
+        "الفردوسي",
+        "جلال الدين الرومي",
+        "جبران خليل جبران",
+        "عمر الخيام"
+      ],
+      "fr": [
+        "Ferdowsi",
+        "Rumi",
+        "Kahlil Gibran",
+        "Omar Khayyam"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Kahlil Gibran",
+      "ar": "جبران خليل جبران",
+      "fr": "Kahlil Gibran"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q635",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The nutrient represented by P in NPK fertilizer?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The nutrient represented by P in NPK fertilizer؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The nutrient represented by P in NPK fertilizer ?"
+    },
+    "options": {
+      "en": [
+        "Flax",
+        "Clover",
+        "Crop rotation",
+        "Phosphorus"
+      ],
+      "ar": [
+        "الكتان",
+        "البرسيم",
+        "تناوب المحاصيل",
+        "الفوسفور"
+      ],
+      "fr": [
+        "Flax",
+        "Clover",
+        "Crop rotation",
+        "Phosphorus"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Phosphorus",
+      "ar": "الفوسفور",
+      "fr": "Phosphorus"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q636",
+    "question": {
+      "en": "Who wrote “The Song of Hiawatha”?",
+      "ar": "من كتب قصيدة «The Song of Hiawatha»؟",
+      "fr": "Qui a écrit « The Song of Hiawatha » ?"
+    },
+    "options": {
+      "en": [
+        "Henry Wadsworth Longfellow",
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "W. B. Yeats"
+      ],
+      "ar": [
+        "هنري وادزورث لونغفيلو",
+        "ماثيو آرنولد",
+        "ويليام بتلر ييتس",
+        "ويليام بتلر ييتس"
+      ],
+      "fr": [
+        "Henry Wadsworth Longfellow",
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "W. B. Yeats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Henry Wadsworth Longfellow",
+      "ar": "هنري وادزورث لونغفيلو",
+      "fr": "Henry Wadsworth Longfellow"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q637",
+    "question": {
+      "en": "Which answer identifies this history clue: The first president of the United States?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The first president of the United States؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The first president of the United States ?"
+    },
+    "options": {
+      "en": [
+        "Mahatma Gandhi",
+        "George Washington",
+        "Athens",
+        "1945"
+      ],
+      "ar": [
+        "المهاتما غاندي",
+        "جورج واشنطن",
+        "أثينا",
+        "١٩٤٥"
+      ],
+      "fr": [
+        "Mahatma Gandhi",
+        "George Washington",
+        "Athens",
+        "1945"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Washington",
+      "ar": "جورج واشنطن",
+      "fr": "George Washington"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q638",
+    "question": {
+      "en": "Who wrote “Paul Revere's Ride”?",
+      "ar": "من كتب قصيدة «Paul Revere's Ride»؟",
+      "fr": "Qui a écrit « Paul Revere's Ride » ?"
+    },
+    "options": {
+      "en": [
+        "Alfred, Lord Tennyson",
+        "Original traditional ballad",
+        "Henry Wadsworth Longfellow",
+        "Wallace Stevens"
+      ],
+      "ar": [
+        "ألفريد تينيسون",
+        "قصيدة شعبية تقليدية",
+        "هنري وادزورث لونغفيلو",
+        "والاس ستيفنز"
+      ],
+      "fr": [
+        "Alfred, Lord Tennyson",
+        "Original traditional ballad",
+        "Henry Wadsworth Longfellow",
+        "Wallace Stevens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Henry Wadsworth Longfellow",
+      "ar": "هنري وادزورث لونغفيلو",
+      "fr": "Henry Wadsworth Longfellow"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q639",
+    "question": {
+      "en": "Which answer identifies this biology clue: The largest organ of the human body?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The largest organ of the human body؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The largest organ of the human body ?"
+    },
+    "options": {
+      "en": [
+        "Chloroplast",
+        "Mutualism",
+        "Entomology",
+        "Skin"
+      ],
+      "ar": [
+        "البلاستيدة الخضراء",
+        "تبادل المنفعة",
+        "علم الحشرات",
+        "الجلد"
+      ],
+      "fr": [
+        "Chloroplast",
+        "Mutualism",
+        "Entomology",
+        "Skin"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Skin",
+      "ar": "الجلد",
+      "fr": "Skin"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q640",
+    "question": {
+      "en": "Who wrote “The Ballad of Reading Gaol”?",
+      "ar": "من كتب قصيدة «The Ballad of Reading Gaol»؟",
+      "fr": "Qui a écrit « The Ballad of Reading Gaol » ?"
+    },
+    "options": {
+      "en": [
+        "Oscar Wilde",
+        "William Blake",
+        "Andrew Marvell",
+        "Andrew Marvell"
+      ],
+      "ar": [
+        "أوسكار وايلد",
+        "ويليام بليك",
+        "أندرو مارفيل",
+        "أندرو مارفيل"
+      ],
+      "fr": [
+        "Oscar Wilde",
+        "William Blake",
+        "Andrew Marvell",
+        "Andrew Marvell"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Oscar Wilde",
+      "ar": "أوسكار وايلد",
+      "fr": "Oscar Wilde"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q641",
+    "question": {
+      "en": "Which answer identifies this science clue: The approximate speed of light in vacuum?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The approximate speed of light in vacuum؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The approximate speed of light in vacuum ?"
+    },
+    "options": {
+      "en": [
+        "Au",
+        "300,000 km/s",
+        "Moment magnitude scale",
+        "Thermodynamics"
+      ],
+      "ar": [
+        "Au",
+        "٣٠٠ ألف كم/ث",
+        "مقياس العزم الزلزالي",
+        "الديناميكا الحرارية"
+      ],
+      "fr": [
+        "Au",
+        "300,000 km/s",
+        "Moment magnitude scale",
+        "Thermodynamics"
+      ]
+    },
+    "correctAnswer": {
+      "en": "300,000 km/s",
+      "ar": "٣٠٠ ألف كم/ث",
+      "fr": "300,000 km/s"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q642",
+    "question": {
+      "en": "Who wrote “The Garden of Proserpine”?",
+      "ar": "من كتب قصيدة «The Garden of Proserpine»؟",
+      "fr": "Qui a écrit « The Garden of Proserpine » ?"
+    },
+    "options": {
+      "en": [
+        "George Herbert",
+        "W. H. Auden",
+        "Algernon Charles Swinburne",
+        "George Herbert"
+      ],
+      "ar": [
+        "جورج هربرت",
+        "و. هـ. أودن",
+        "ألجرنون تشارلز سوينبرن",
+        "جورج هربرت"
+      ],
+      "fr": [
+        "George Herbert",
+        "W. H. Auden",
+        "Algernon Charles Swinburne",
+        "George Herbert"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Algernon Charles Swinburne",
+      "ar": "ألجرنون تشارلز سوينبرن",
+      "fr": "Algernon Charles Swinburne"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q643",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Crab?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Crab؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Crab ?"
+    },
+    "options": {
+      "en": [
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Cancer"
+      ],
+      "ar": [
+        "العذراء",
+        "الميزان",
+        "العقرب",
+        "السرطان"
+      ],
+      "fr": [
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Cancer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cancer",
+      "ar": "السرطان",
+      "fr": "Cancer"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q644",
+    "question": {
+      "en": "Who wrote “The Eve of St. Agnes”?",
+      "ar": "من كتب قصيدة «The Eve of St. Agnes»؟",
+      "fr": "Qui a écrit « The Eve of St. Agnes » ?"
+    },
+    "options": {
+      "en": [
+        "John Keats",
+        "Dante Alighieri",
+        "Homer",
+        "Homer"
+      ],
+      "ar": [
+        "جون كيتس",
+        "دانتي أليغييري",
+        "هوميروس",
+        "هوميروس"
+      ],
+      "fr": [
+        "John Keats",
+        "Dante Alighieri",
+        "Homer",
+        "Homer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Keats",
+      "ar": "جون كيتس",
+      "fr": "John Keats"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q645",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: A polygon with eight sides?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: A polygon with eight sides؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : A polygon with eight sides ?"
+    },
+    "options": {
+      "en": [
+        "Prime number",
+        "Octagon",
+        "2",
+        "30"
+      ],
+      "ar": [
+        "عدد أولي",
+        "مثمن",
+        "٢",
+        "٣٠"
+      ],
+      "fr": [
+        "Prime number",
+        "Octagon",
+        "2",
+        "30"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Octagon",
+      "ar": "مثمن",
+      "fr": "Octagon"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q646",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The nutrient represented by K in NPK fertilizer?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The nutrient represented by K in NPK fertilizer؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The nutrient represented by K in NPK fertilizer ?"
+    },
+    "options": {
+      "en": [
+        "Aquaculture",
+        "Weeding",
+        "Potassium",
+        "Soybean"
+      ],
+      "ar": [
+        "الاستزراع المائي",
+        "إزالة الأعشاب الضارة",
+        "البوتاسيوم",
+        "فول الصويا"
+      ],
+      "fr": [
+        "Aquaculture",
+        "Weeding",
+        "Potassium",
+        "Soybean"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Potassium",
+      "ar": "البوتاسيوم",
+      "fr": "Potassium"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q647",
+    "question": {
+      "en": "Who wrote “Ulysses”?",
+      "ar": "من كتب قصيدة «Ulysses»؟",
+      "fr": "Qui a écrit « Ulysses » ?"
+    },
+    "options": {
+      "en": [
+        "Robert Frost",
+        "Rabindranath Tagore",
+        "Omar Khayyam",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "روبرت فروست",
+        "رابندرانات طاغور",
+        "عمر الخيام",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "Robert Frost",
+        "Rabindranath Tagore",
+        "Omar Khayyam",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alfred, Lord Tennyson",
+      "ar": "ألفريد تينيسون",
+      "fr": "Alfred, Lord Tennyson"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q648",
+    "question": {
+      "en": "Which answer identifies this history clue: The French Revolution began in?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The French Revolution began in؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The French Revolution began in ?"
+    },
+    "options": {
+      "en": [
+        "1789",
+        "October Revolution",
+        "Christopher Columbus",
+        "Aztec Empire"
+      ],
+      "ar": [
+        "١٧٨٩",
+        "ثورة أكتوبر",
+        "كريستوفر كولومبوس",
+        "إمبراطورية الأزتك"
+      ],
+      "fr": [
+        "1789",
+        "October Revolution",
+        "Christopher Columbus",
+        "Aztec Empire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1789",
+      "ar": "١٧٨٩",
+      "fr": "1789"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q649",
+    "question": {
+      "en": "Which answer identifies this biology clue: The blood cells that transport oxygen?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The blood cells that transport oxygen؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The blood cells that transport oxygen ?"
+    },
+    "options": {
+      "en": [
+        "Frog",
+        "Red blood cells",
+        "Homeostasis",
+        "ATP"
+      ],
+      "ar": [
+        "الضفدع",
+        "كريات الدم الحمراء",
+        "الاتزان الداخلي",
+        "أدينوسين ثلاثي الفوسفات"
+      ],
+      "fr": [
+        "Frog",
+        "Red blood cells",
+        "Homeostasis",
+        "ATP"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Red blood cells",
+      "ar": "كريات الدم الحمراء",
+      "fr": "Red blood cells"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q650",
+    "question": {
+      "en": "Which answer identifies this science clue: The center of an atom?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The center of an atom؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The center of an atom ?"
+    },
+    "options": {
+      "en": [
+        "Venus",
+        "Ampere",
+        "Nucleus",
+        "Au"
+      ],
+      "ar": [
+        "الزهرة",
+        "الأمبير",
+        "النواة",
+        "Au"
+      ],
+      "fr": [
+        "Venus",
+        "Ampere",
+        "Nucleus",
+        "Au"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nucleus",
+      "ar": "النواة",
+      "fr": "Nucleus"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q651",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Lion?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Lion؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Lion ?"
+    },
+    "options": {
+      "en": [
+        "Cancer",
+        "Virgo",
+        "Libra",
+        "Leo"
+      ],
+      "ar": [
+        "السرطان",
+        "العذراء",
+        "الميزان",
+        "الأسد"
+      ],
+      "fr": [
+        "Cancer",
+        "Virgo",
+        "Libra",
+        "Leo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Leo",
+      "ar": "الأسد",
+      "fr": "Leo"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q652",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The result of 9 multiplied by 8?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The result of 9 multiplied by 8؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The result of 9 multiplied by 8 ?"
+    },
+    "options": {
+      "en": [
+        "72",
+        "Length × width",
+        "90",
+        "Numerator"
+      ],
+      "ar": [
+        "٧٢",
+        "الطول × العرض",
+        "٩٠",
+        "البسط"
+      ],
+      "fr": [
+        "72",
+        "Length × width",
+        "90",
+        "Numerator"
+      ]
+    },
+    "correctAnswer": {
+      "en": "72",
+      "ar": "٧٢",
+      "fr": "72"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q653",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Irrigation that delivers water drop by drop near roots?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Irrigation that delivers water drop by drop near roots؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Irrigation that delivers water drop by drop near roots ?"
+    },
+    "options": {
+      "en": [
+        "Topsoil",
+        "Drip irrigation",
+        "Agroforestry",
+        "Pollination"
+      ],
+      "ar": [
+        "التربة السطحية",
+        "الري بالتنقيط",
+        "الحراجة الزراعية",
+        "التلقيح"
+      ],
+      "fr": [
+        "Topsoil",
+        "Drip irrigation",
+        "Agroforestry",
+        "Pollination"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Drip irrigation",
+      "ar": "الري بالتنقيط",
+      "fr": "Drip irrigation"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q654",
+    "question": {
+      "en": "Who wrote “Dover Beach”?",
+      "ar": "من كتب قصيدة «Dover Beach»؟",
+      "fr": "Qui a écrit « Dover Beach » ?"
+    },
+    "options": {
+      "en": [
+        "Original traditional ballad",
+        "William Blake",
+        "Matthew Arnold",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "قصيدة شعبية تقليدية",
+        "ويليام بليك",
+        "ماثيو آرنولد",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "Original traditional ballad",
+        "William Blake",
+        "Matthew Arnold",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Matthew Arnold",
+      "ar": "ماثيو آرنولد",
+      "fr": "Matthew Arnold"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q655",
+    "question": {
+      "en": "Which answer identifies this history clue: The Berlin Wall fell in?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The Berlin Wall fell in؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The Berlin Wall fell in ?"
+    },
+    "options": {
+      "en": [
+        "Treaty of Versailles",
+        "Silk Road",
+        "Jamestown",
+        "1989"
+      ],
+      "ar": [
+        "معاهدة فرساي",
+        "طريق الحرير",
+        "جيمستاون",
+        "١٩٨٩"
+      ],
+      "fr": [
+        "Treaty of Versailles",
+        "Silk Road",
+        "Jamestown",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1989",
+      "ar": "١٩٨٩",
+      "fr": "1989"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q656",
+    "question": {
+      "en": "Which answer identifies this biology clue: The basic unit of life?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The basic unit of life؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The basic unit of life ?"
+    },
+    "options": {
+      "en": [
+        "Cell",
+        "Mutualism",
+        "Entomology",
+        "Four"
+      ],
+      "ar": [
+        "الخلية",
+        "تبادل المنفعة",
+        "علم الحشرات",
+        "أربع حجرات"
+      ],
+      "fr": [
+        "Cell",
+        "Mutualism",
+        "Entomology",
+        "Four"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cell",
+      "ar": "الخلية",
+      "fr": "Cell"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q657",
+    "question": {
+      "en": "Which answer identifies this science clue: The pH of a neutral solution at room temperature?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The pH of a neutral solution at room temperature؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The pH of a neutral solution at room temperature ?"
+    },
+    "options": {
+      "en": [
+        "Moment magnitude scale",
+        "7",
+        "Dispersion",
+        "Methane"
+      ],
+      "ar": [
+        "مقياس العزم الزلزالي",
+        "٧",
+        "تشتت الضوء",
+        "الميثان"
+      ],
+      "fr": [
+        "Moment magnitude scale",
+        "7",
+        "Dispersion",
+        "Methane"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "٧",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q658",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Maiden?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Maiden؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Maiden ?"
+    },
+    "options": {
+      "en": [
+        "Aries",
+        "Taurus",
+        "Virgo",
+        "Water"
+      ],
+      "ar": [
+        "الحمل",
+        "الثور",
+        "العذراء",
+        "الماء"
+      ],
+      "fr": [
+        "Aries",
+        "Taurus",
+        "Virgo",
+        "Water"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Virgo",
+      "ar": "العذراء",
+      "fr": "Virgo"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q659",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The prime number immediately after 7?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The prime number immediately after 7؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The prime number immediately after 7 ?"
+    },
+    "options": {
+      "en": [
+        "180 degrees",
+        "Octagon",
+        "72",
+        "11"
+      ],
+      "ar": [
+        "١٨٠ درجة",
+        "مثمن",
+        "٧٢",
+        "١١"
+      ],
+      "fr": [
+        "180 degrees",
+        "Octagon",
+        "72",
+        "11"
+      ]
+    },
+    "correctAnswer": {
+      "en": "11",
+      "ar": "١١",
+      "fr": "11"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q660",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Loosening soil to prepare a seedbed?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Loosening soil to prepare a seedbed؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Loosening soil to prepare a seedbed ?"
+    },
+    "options": {
+      "en": [
+        "Tillage",
+        "Flax",
+        "Clover",
+        "Crop rotation"
+      ],
+      "ar": [
+        "حراثة التربة",
+        "الكتان",
+        "البرسيم",
+        "تناوب المحاصيل"
+      ],
+      "fr": [
+        "Tillage",
+        "Flax",
+        "Clover",
+        "Crop rotation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tillage",
+      "ar": "حراثة التربة",
+      "fr": "Tillage"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q661",
+    "question": {
+      "en": "Who wrote “The Second Coming”?",
+      "ar": "من كتب قصيدة «The Second Coming»؟",
+      "fr": "Qui a écrit « The Second Coming » ?"
+    },
+    "options": {
+      "en": [
+        "Rabindranath Tagore",
+        "W. B. Yeats",
+        "Emily Dickinson",
+        "Robert Frost"
+      ],
+      "ar": [
+        "رابندرانات طاغور",
+        "ويليام بتلر ييتس",
+        "إميلي ديكنسون",
+        "روبرت فروست"
+      ],
+      "fr": [
+        "Rabindranath Tagore",
+        "W. B. Yeats",
+        "Emily Dickinson",
+        "Robert Frost"
+      ]
+    },
+    "correctAnswer": {
+      "en": "W. B. Yeats",
+      "ar": "ويليام بتلر ييتس",
+      "fr": "W. B. Yeats"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q662",
+    "question": {
+      "en": "Which answer identifies this history clue: The ancient Egyptian writing system?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The ancient Egyptian writing system؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The ancient Egyptian writing system ?"
+    },
+    "options": {
+      "en": [
+        "1945",
+        "Mahatma Gandhi",
+        "Hieroglyphs",
+        "Athens"
+      ],
+      "ar": [
+        "١٩٤٥",
+        "المهاتما غاندي",
+        "الهيروغليفية",
+        "أثينا"
+      ],
+      "fr": [
+        "1945",
+        "Mahatma Gandhi",
+        "Hieroglyphs",
+        "Athens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Hieroglyphs",
+      "ar": "الهيروغليفية",
+      "fr": "Hieroglyphs"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q663",
+    "question": {
+      "en": "Which answer identifies this biology clue: The organ that filters blood to make urine?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The organ that filters blood to make urine؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The organ that filters blood to make urine ?"
+    },
+    "options": {
+      "en": [
+        "Vertebrates",
+        "Xylem",
+        "Phloem",
+        "Kidney"
+      ],
+      "ar": [
+        "الفقاريات",
+        "الخشب",
+        "اللحاء",
+        "الكلى"
+      ],
+      "fr": [
+        "Vertebrates",
+        "Xylem",
+        "Phloem",
+        "Kidney"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Kidney",
+      "ar": "الكلى",
+      "fr": "Kidney"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q664",
+    "question": {
+      "en": "Which answer identifies this science clue: The force that attracts objects toward Earth?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The force that attracts objects toward Earth؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The force that attracts objects toward Earth ?"
+    },
+    "options": {
+      "en": [
+        "Gravity",
+        "Sublimation",
+        "6",
+        "Mantle"
+      ],
+      "ar": [
+        "الجاذبية",
+        "التسامي",
+        "٦",
+        "الوشاح"
+      ],
+      "fr": [
+        "Gravity",
+        "Sublimation",
+        "6",
+        "Mantle"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gravity",
+      "ar": "الجاذبية",
+      "fr": "Gravity"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q665",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Scales?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Scales؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Scales ?"
+    },
+    "options": {
+      "en": [
+        "Jupiter",
+        "Libra",
+        "Saturn",
+        "Saturn"
+      ],
+      "ar": [
+        "المشتري",
+        "الميزان",
+        "زحل",
+        "زحل"
+      ],
+      "fr": [
+        "Jupiter",
+        "Libra",
+        "Saturn",
+        "Saturn"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Libra",
+      "ar": "الميزان",
+      "fr": "Libra"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q666",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The perimeter of a square with side length 5?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The perimeter of a square with side length 5؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The perimeter of a square with side length 5 ?"
+    },
+    "options": {
+      "en": [
+        "6",
+        "3.14",
+        "20",
+        "1/4"
+      ],
+      "ar": [
+        "٦",
+        "٣٫١٤",
+        "٢٠",
+        "١⁄٤"
+      ],
+      "fr": [
+        "6",
+        "3.14",
+        "20",
+        "1/4"
+      ]
+    },
+    "correctAnswer": {
+      "en": "20",
+      "ar": "٢٠",
+      "fr": "20"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q667",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The crop commonly used to make linen fiber?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The crop commonly used to make linen fiber؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The crop commonly used to make linen fiber ?"
+    },
+    "options": {
+      "en": [
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium",
+        "Flax"
+      ],
+      "ar": [
+        "النيتروجين",
+        "الفوسفور",
+        "البوتاسيوم",
+        "الكتان"
+      ],
+      "fr": [
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium",
+        "Flax"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Flax",
+      "ar": "الكتان",
+      "fr": "Flax"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q668",
+    "question": {
+      "en": "Who wrote “Sailing to Byzantium”?",
+      "ar": "من كتب قصيدة «Sailing to Byzantium»؟",
+      "fr": "Qui a écrit « Sailing to Byzantium » ?"
+    },
+    "options": {
+      "en": [
+        "W. B. Yeats",
+        "Andrew Marvell",
+        "Andrew Marvell",
+        "John Donne"
+      ],
+      "ar": [
+        "ويليام بتلر ييتس",
+        "أندرو مارفيل",
+        "أندرو مارفيل",
+        "جون دون"
+      ],
+      "fr": [
+        "W. B. Yeats",
+        "Andrew Marvell",
+        "Andrew Marvell",
+        "John Donne"
+      ]
+    },
+    "correctAnswer": {
+      "en": "W. B. Yeats",
+      "ar": "ويليام بتلر ييتس",
+      "fr": "W. B. Yeats"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q669",
+    "question": {
+      "en": "Which answer identifies this history clue: The capital of the Byzantine Empire?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The capital of the Byzantine Empire؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The capital of the Byzantine Empire ?"
+    },
+    "options": {
+      "en": [
+        "Amelia Earhart",
+        "Constantinople",
+        "Mayflower",
+        "Battle of Hastings"
+      ],
+      "ar": [
+        "أميليا إيرهارت",
+        "القسطنطينية",
+        "ماي فلاور",
+        "معركة هاستينغز"
+      ],
+      "fr": [
+        "Amelia Earhart",
+        "Constantinople",
+        "Mayflower",
+        "Battle of Hastings"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Constantinople",
+      "ar": "القسطنطينية",
+      "fr": "Constantinople"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q670",
+    "question": {
+      "en": "Which answer identifies this biology clue: The pigment that makes leaves green?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The pigment that makes leaves green؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The pigment that makes leaves green ?"
+    },
+    "options": {
+      "en": [
+        "Dendrite",
+        "Mitosis",
+        "Chlorophyll",
+        "White blood cells"
+      ],
+      "ar": [
+        "التغصن العصبي",
+        "الانقسام المتساوي",
+        "الكلوروفيل",
+        "كريات الدم البيضاء"
+      ],
+      "fr": [
+        "Dendrite",
+        "Mitosis",
+        "Chlorophyll",
+        "White blood cells"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Chlorophyll",
+      "ar": "الكلوروفيل",
+      "fr": "Chlorophyll"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q671",
+    "question": {
+      "en": "Which answer identifies this science clue: The chemical formula for water?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The chemical formula for water؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The chemical formula for water ?"
+    },
+    "options": {
+      "en": [
+        "Nitrogen",
+        "Newton",
+        "Visible light",
+        "H2O"
+      ],
+      "ar": [
+        "النيتروجين",
+        "نيوتن",
+        "الضوء المرئي",
+        "H2O"
+      ],
+      "fr": [
+        "Nitrogen",
+        "Newton",
+        "Visible light",
+        "H2O"
+      ]
+    },
+    "correctAnswer": {
+      "en": "H2O",
+      "ar": "H2O",
+      "fr": "H2O"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q672",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Scorpion?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Scorpion؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Scorpion ?"
+    },
+    "options": {
+      "en": [
+        "Scorpio",
+        "Mercury",
+        "Venus",
+        "Mars"
+      ],
+      "ar": [
+        "العقرب",
+        "عطارد",
+        "الزهرة",
+        "المريخ"
+      ],
+      "fr": [
+        "Scorpio",
+        "Mercury",
+        "Venus",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Scorpio",
+      "ar": "العقرب",
+      "fr": "Scorpio"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q673",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The area formula for a rectangle?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The area formula for a rectangle؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The area formula for a rectangle ?"
+    },
+    "options": {
+      "en": [
+        "7",
+        "Length × width",
+        "Equilateral triangle",
+        "1024"
+      ],
+      "ar": [
+        "٧",
+        "الطول × العرض",
+        "مثلث متساوي الأضلاع",
+        "١٠٢٤"
+      ],
+      "fr": [
+        "7",
+        "Length × width",
+        "Equilateral triangle",
+        "1024"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Length × width",
+      "ar": "الطول × العرض",
+      "fr": "Length × width"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q674",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The legume often planted to add nitrogen to soil?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The legume often planted to add nitrogen to soil؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The legume often planted to add nitrogen to soil ?"
+    },
+    "options": {
+      "en": [
+        "Cacao",
+        "Apiculture",
+        "Clover",
+        "Livestock farming"
+      ],
+      "ar": [
+        "الكاكاو",
+        "تربية النحل",
+        "البرسيم",
+        "تربية الماشية"
+      ],
+      "fr": [
+        "Cacao",
+        "Apiculture",
+        "Clover",
+        "Livestock farming"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Clover",
+      "ar": "البرسيم",
+      "fr": "Clover"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q675",
+    "question": {
+      "en": "Who wrote “The Hollow Men”?",
+      "ar": "من كتب قصيدة «The Hollow Men»؟",
+      "fr": "Qui a écrit « The Hollow Men » ?"
+    },
+    "options": {
+      "en": [
+        "Virgil",
+        "Lord Byron",
+        "William Blake",
+        "T. S. Eliot"
+      ],
+      "ar": [
+        "فيرجيل",
+        "اللورد بايرون",
+        "ويليام بليك",
+        "ت. س. إليوت"
+      ],
+      "fr": [
+        "Virgil",
+        "Lord Byron",
+        "William Blake",
+        "T. S. Eliot"
+      ]
+    },
+    "correctAnswer": {
+      "en": "T. S. Eliot",
+      "ar": "ت. س. إليوت",
+      "fr": "T. S. Eliot"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q676",
+    "question": {
+      "en": "Which answer identifies this history clue: The ship that carried the Pilgrims in 1620?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The ship that carried the Pilgrims in 1620؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The ship that carried the Pilgrims in 1620 ?"
+    },
+    "options": {
+      "en": [
+        "Mayflower",
+        "George Washington",
+        "1789",
+        "1989"
+      ],
+      "ar": [
+        "ماي فلاور",
+        "جورج واشنطن",
+        "١٧٨٩",
+        "١٩٨٩"
+      ],
+      "fr": [
+        "Mayflower",
+        "George Washington",
+        "1789",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mayflower",
+      "ar": "ماي فلاور",
+      "fr": "Mayflower"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q677",
+    "question": {
+      "en": "Which answer identifies this biology clue: The branch studying fungi?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The branch studying fungi؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The branch studying fungi ?"
+    },
+    "options": {
+      "en": [
+        "Genetics",
+        "Mycology",
+        "Kidney",
+        "Chlorophyll"
+      ],
+      "ar": [
+        "علم الوراثة",
+        "علم الفطريات",
+        "الكلى",
+        "الكلوروفيل"
+      ],
+      "fr": [
+        "Genetics",
+        "Mycology",
+        "Kidney",
+        "Chlorophyll"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mycology",
+      "ar": "علم الفطريات",
+      "fr": "Mycology"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q678",
+    "question": {
+      "en": "Which answer identifies this science clue: The scientist associated with the laws of motion?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The scientist associated with the laws of motion؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The scientist associated with the laws of motion ?"
+    },
+    "options": {
+      "en": [
+        "Thermometer",
+        "Electron",
+        "Isaac Newton",
+        "Evaporation"
+      ],
+      "ar": [
+        "مقياس الحرارة",
+        "الإلكترون",
+        "إسحاق نيوتن",
+        "التبخر"
+      ],
+      "fr": [
+        "Thermometer",
+        "Electron",
+        "Isaac Newton",
+        "Evaporation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Isaac Newton",
+      "ar": "إسحاق نيوتن",
+      "fr": "Isaac Newton"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q679",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Archer?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Archer؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Archer ?"
+    },
+    "options": {
+      "en": [
+        "Venus",
+        "Mercury",
+        "Moon",
+        "Sagittarius"
+      ],
+      "ar": [
+        "الزهرة",
+        "عطارد",
+        "القمر",
+        "القوس"
+      ],
+      "fr": [
+        "Venus",
+        "Mercury",
+        "Moon",
+        "Sagittarius"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sagittarius",
+      "ar": "القوس",
+      "fr": "Sagittarius"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q680",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The number of degrees in a right angle?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The number of degrees in a right angle؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The number of degrees in a right angle ?"
+    },
+    "options": {
+      "en": [
+        "90",
+        "(0, 0)",
+        "15",
+        "169"
+      ],
+      "ar": [
+        "٩٠",
+        "(٠، ٠)",
+        "١٥",
+        "١٦٩"
+      ],
+      "fr": [
+        "90",
+        "(0, 0)",
+        "15",
+        "169"
+      ]
+    },
+    "correctAnswer": {
+      "en": "90",
+      "ar": "٩٠",
+      "fr": "90"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q681",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Growing different crops in sequence on the same land?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Growing different crops in sequence on the same land؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Growing different crops in sequence on the same land ?"
+    },
+    "options": {
+      "en": [
+        "Rainwater harvesting",
+        "Crop rotation",
+        "Cotton plant",
+        "pH meter"
+      ],
+      "ar": [
+        "حصاد مياه الأمطار",
+        "تناوب المحاصيل",
+        "نبات القطن",
+        "مقياس الرقم الهيدروجيني"
+      ],
+      "fr": [
+        "Rainwater harvesting",
+        "Crop rotation",
+        "Cotton plant",
+        "pH meter"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Crop rotation",
+      "ar": "تناوب المحاصيل",
+      "fr": "Crop rotation"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q682",
+    "question": {
+      "en": "Who wrote “Daddy”?",
+      "ar": "من كتب قصيدة «Daddy»؟",
+      "fr": "Qui a écrit « Daddy » ?"
+    },
+    "options": {
+      "en": [
+        "T. S. Eliot",
+        "Allen Ginsberg",
+        "Sylvia Plath",
+        "W. B. Yeats"
+      ],
+      "ar": [
+        "ت. س. إليوت",
+        "ألن غينسبرغ",
+        "سيلفيا بلاث",
+        "ويليام بتلر ييتس"
+      ],
+      "fr": [
+        "T. S. Eliot",
+        "Allen Ginsberg",
+        "Sylvia Plath",
+        "W. B. Yeats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sylvia Plath",
+      "ar": "سيلفيا بلاث",
+      "fr": "Sylvia Plath"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q683",
+    "question": {
+      "en": "Which answer identifies this history clue: The battle in 1066 that changed English rule?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The battle in 1066 that changed English rule؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The battle in 1066 that changed English rule ?"
+    },
+    "options": {
+      "en": [
+        "Battle of Trafalgar",
+        "Augustus",
+        "1215",
+        "Battle of Hastings"
+      ],
+      "ar": [
+        "معركة الطرف الأغر",
+        "أغسطس",
+        "١٢١٥",
+        "معركة هاستينغز"
+      ],
+      "fr": [
+        "Battle of Trafalgar",
+        "Augustus",
+        "1215",
+        "Battle of Hastings"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Battle of Hastings",
+      "ar": "معركة هاستينغز",
+      "fr": "Battle of Hastings"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q684",
+    "question": {
+      "en": "Which answer identifies this biology clue: The study of heredity?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The study of heredity؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The study of heredity ?"
+    },
+    "options": {
+      "en": [
+        "Genetics",
+        "Photosynthesis",
+        "Skin",
+        "Red blood cells"
+      ],
+      "ar": [
+        "علم الوراثة",
+        "البناء الضوئي",
+        "الجلد",
+        "كريات الدم الحمراء"
+      ],
+      "fr": [
+        "Genetics",
+        "Photosynthesis",
+        "Skin",
+        "Red blood cells"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Genetics",
+      "ar": "علم الوراثة",
+      "fr": "Genetics"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q685",
+    "question": {
+      "en": "Which answer identifies this science clue: The nearest star to Earth?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The nearest star to Earth؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The nearest star to Earth ?"
+    },
+    "options": {
+      "en": [
+        "H2O",
+        "The Sun",
+        "7",
+        "Gravity"
+      ],
+      "ar": [
+        "H2O",
+        "الشمس",
+        "٧",
+        "الجاذبية"
+      ],
+      "fr": [
+        "H2O",
+        "The Sun",
+        "7",
+        "Gravity"
+      ]
+    },
+    "correctAnswer": {
+      "en": "The Sun",
+      "ar": "الشمس",
+      "fr": "The Sun"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q686",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Sea-Goat?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Sea-Goat؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Sea-Goat ?"
+    },
+    "options": {
+      "en": [
+        "Aquarius",
+        "Pisces",
+        "Capricorn",
+        "Sagittarius"
+      ],
+      "ar": [
+        "الدلو",
+        "الحوت",
+        "الجدي",
+        "القوس"
+      ],
+      "fr": [
+        "Aquarius",
+        "Pisces",
+        "Capricorn",
+        "Sagittarius"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Capricorn",
+      "ar": "الجدي",
+      "fr": "Capricorn"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q687",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The top number in a fraction?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The top number in a fraction؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The top number in a fraction ?"
+    },
+    "options": {
+      "en": [
+        "30",
+        "Prime number",
+        "Circumference",
+        "Numerator"
+      ],
+      "ar": [
+        "٣٠",
+        "عدد أولي",
+        "محيط الدائرة",
+        "البسط"
+      ],
+      "fr": [
+        "30",
+        "Prime number",
+        "Circumference",
+        "Numerator"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Numerator",
+      "ar": "البسط",
+      "fr": "Numerator"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q688",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: A protective soil covering used to conserve moisture?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: A protective soil covering used to conserve moisture؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : A protective soil covering used to conserve moisture ?"
+    },
+    "options": {
+      "en": [
+        "Mulch",
+        "Aquaculture",
+        "Weeding",
+        "Greenhouse"
+      ],
+      "ar": [
+        "غطاء التربة",
+        "الاستزراع المائي",
+        "إزالة الأعشاب الضارة",
+        "البيت الزجاجي"
+      ],
+      "fr": [
+        "Mulch",
+        "Aquaculture",
+        "Weeding",
+        "Greenhouse"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mulch",
+      "ar": "غطاء التربة",
+      "fr": "Mulch"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q689",
+    "question": {
+      "en": "Who wrote “Howl”?",
+      "ar": "من كتب قصيدة «Howl»؟",
+      "fr": "Qui a écrit « Howl » ?"
+    },
+    "options": {
+      "en": [
+        "Virgil",
+        "Allen Ginsberg",
+        "Walt Whitman",
+        "Geoffrey Chaucer"
+      ],
+      "ar": [
+        "فيرجيل",
+        "ألن غينسبرغ",
+        "والت ويتمان",
+        "جيفري تشوسر"
+      ],
+      "fr": [
+        "Virgil",
+        "Allen Ginsberg",
+        "Walt Whitman",
+        "Geoffrey Chaucer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Allen Ginsberg",
+      "ar": "ألن غينسبرغ",
+      "fr": "Allen Ginsberg"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q690",
+    "question": {
+      "en": "Which answer identifies this history clue: The first woman to fly solo across the Atlantic?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The first woman to fly solo across the Atlantic؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The first woman to fly solo across the Atlantic ?"
+    },
+    "options": {
+      "en": [
+        "Aztec Empire",
+        "Yuri Gagarin",
+        "Amelia Earhart",
+        "Christopher Columbus"
+      ],
+      "ar": [
+        "إمبراطورية الأزتك",
+        "يوري غاغارين",
+        "أميليا إيرهارت",
+        "كريستوفر كولومبوس"
+      ],
+      "fr": [
+        "Aztec Empire",
+        "Yuri Gagarin",
+        "Amelia Earhart",
+        "Christopher Columbus"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Amelia Earhart",
+      "ar": "أميليا إيرهارت",
+      "fr": "Amelia Earhart"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q691",
+    "question": {
+      "en": "Which answer identifies this biology clue: The human body's largest internal organ?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The human body's largest internal organ؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The human body's largest internal organ ?"
+    },
+    "options": {
+      "en": [
+        "ATP",
+        "Frog",
+        "DNA",
+        "Liver"
+      ],
+      "ar": [
+        "أدينوسين ثلاثي الفوسفات",
+        "الضفدع",
+        "الحمض النووي",
+        "الكبد"
+      ],
+      "fr": [
+        "ATP",
+        "Frog",
+        "DNA",
+        "Liver"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Liver",
+      "ar": "الكبد",
+      "fr": "Liver"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q692",
+    "question": {
+      "en": "Which answer identifies this science clue: The process of a liquid becoming a gas?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The process of a liquid becoming a gas؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The process of a liquid becoming a gas ?"
+    },
+    "options": {
+      "en": [
+        "Evaporation",
+        "Venus",
+        "Ampere",
+        "300,000 km/s"
+      ],
+      "ar": [
+        "التبخر",
+        "الزهرة",
+        "الأمبير",
+        "٣٠٠ ألف كم/ث"
+      ],
+      "fr": [
+        "Evaporation",
+        "Venus",
+        "Ampere",
+        "300,000 km/s"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Evaporation",
+      "ar": "التبخر",
+      "fr": "Evaporation"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q693",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Water-Bearer?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Water-Bearer؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Water-Bearer ?"
+    },
+    "options": {
+      "en": [
+        "Libra",
+        "Aquarius",
+        "Leo",
+        "Virgo"
+      ],
+      "ar": [
+        "الميزان",
+        "الدلو",
+        "الأسد",
+        "العذراء"
+      ],
+      "fr": [
+        "Libra",
+        "Aquarius",
+        "Leo",
+        "Virgo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Aquarius",
+      "ar": "الدلو",
+      "fr": "Aquarius"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q694",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The bottom number in a fraction?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The bottom number in a fraction؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The bottom number in a fraction ?"
+    },
+    "options": {
+      "en": [
+        "90",
+        "Numerator",
+        "Denominator",
+        "Length × width"
+      ],
+      "ar": [
+        "٩٠",
+        "البسط",
+        "المقام",
+        "الطول × العرض"
+      ],
+      "fr": [
+        "90",
+        "Numerator",
+        "Denominator",
+        "Length × width"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Denominator",
+      "ar": "المقام",
+      "fr": "Denominator"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q695",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Farming with trees alongside crops or livestock?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Farming with trees alongside crops or livestock؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Farming with trees alongside crops or livestock ?"
+    },
+    "options": {
+      "en": [
+        "Pollination",
+        "Topsoil",
+        "Powdery mildew",
+        "Agroforestry"
+      ],
+      "ar": [
+        "التلقيح",
+        "التربة السطحية",
+        "البياض الدقيقي",
+        "الحراجة الزراعية"
+      ],
+      "fr": [
+        "Pollination",
+        "Topsoil",
+        "Powdery mildew",
+        "Agroforestry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Agroforestry",
+      "ar": "الحراجة الزراعية",
+      "fr": "Agroforestry"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q696",
+    "question": {
+      "en": "Who wrote “The Snow Man”?",
+      "ar": "من كتب قصيدة «The Snow Man»؟",
+      "fr": "Qui a écrit « The Snow Man » ?"
+    },
+    "options": {
+      "en": [
+        "Wallace Stevens",
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "W. B. Yeats"
+      ],
+      "ar": [
+        "والاس ستيفنز",
+        "ماثيو آرنولد",
+        "ويليام بتلر ييتس",
+        "ويليام بتلر ييتس"
+      ],
+      "fr": [
+        "Wallace Stevens",
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "W. B. Yeats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Wallace Stevens",
+      "ar": "والاس ستيفنز",
+      "fr": "Wallace Stevens"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q697",
+    "question": {
+      "en": "Which answer identifies this history clue: The civilization that built Machu Picchu?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The civilization that built Machu Picchu؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The civilization that built Machu Picchu ?"
+    },
+    "options": {
+      "en": [
+        "Cleopatra VII",
+        "Inca",
+        "Silk Road",
+        "Jamestown"
+      ],
+      "ar": [
+        "كليوباترا السابعة",
+        "الإنكا",
+        "طريق الحرير",
+        "جيمستاون"
+      ],
+      "fr": [
+        "Cleopatra VII",
+        "Inca",
+        "Silk Road",
+        "Jamestown"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Inca",
+      "ar": "الإنكا",
+      "fr": "Inca"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q698",
+    "question": {
+      "en": "Which answer identifies this biology clue: The cells that help defend the body against infection?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The cells that help defend the body against infection؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The cells that help defend the body against infection ?"
+    },
+    "options": {
+      "en": [
+        "Four",
+        "Vitamin D",
+        "White blood cells",
+        "Entomology"
+      ],
+      "ar": [
+        "أربع حجرات",
+        "فيتامين د",
+        "كريات الدم البيضاء",
+        "علم الحشرات"
+      ],
+      "fr": [
+        "Four",
+        "Vitamin D",
+        "White blood cells",
+        "Entomology"
+      ]
+    },
+    "correctAnswer": {
+      "en": "White blood cells",
+      "ar": "كريات الدم البيضاء",
+      "fr": "White blood cells"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q699",
+    "question": {
+      "en": "Which answer identifies this science clue: The instrument used to measure temperature?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The instrument used to measure temperature؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The instrument used to measure temperature ?"
+    },
+    "options": {
+      "en": [
+        "Methane",
+        "Moment magnitude scale",
+        "Thermodynamics",
+        "Thermometer"
+      ],
+      "ar": [
+        "الميثان",
+        "مقياس العزم الزلزالي",
+        "الديناميكا الحرارية",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "Methane",
+        "Moment magnitude scale",
+        "Thermodynamics",
+        "Thermometer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thermometer",
+      "ar": "مقياس الحرارة",
+      "fr": "Thermometer"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q700",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The zodiac sign represented by the Fish?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The zodiac sign represented by the Fish؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The zodiac sign represented by the Fish ?"
+    },
+    "options": {
+      "en": [
+        "Pisces",
+        "Aries",
+        "Taurus",
+        "Gemini"
+      ],
+      "ar": [
+        "الحوت",
+        "الحمل",
+        "الثور",
+        "الجوزاء"
+      ],
+      "fr": [
+        "Pisces",
+        "Aries",
+        "Taurus",
+        "Gemini"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pisces",
+      "ar": "الحوت",
+      "fr": "Pisces"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q701",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The only even prime number?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The only even prime number؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The only even prime number ?"
+    },
+    "options": {
+      "en": [
+        "11",
+        "2",
+        "Octagon",
+        "72"
+      ],
+      "ar": [
+        "١١",
+        "٢",
+        "مثمن",
+        "٧٢"
+      ],
+      "fr": [
+        "11",
+        "2",
+        "Octagon",
+        "72"
+      ]
+    },
+    "correctAnswer": {
+      "en": "2",
+      "ar": "٢",
+      "fr": "2"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q702",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Bee activity that transfers pollen between flowers?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Bee activity that transfers pollen between flowers؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Bee activity that transfers pollen between flowers ?"
+    },
+    "options": {
+      "en": [
+        "Clover",
+        "Crop rotation",
+        "Pollination",
+        "Flax"
+      ],
+      "ar": [
+        "البرسيم",
+        "تناوب المحاصيل",
+        "التلقيح",
+        "الكتان"
+      ],
+      "fr": [
+        "Clover",
+        "Crop rotation",
+        "Pollination",
+        "Flax"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pollination",
+      "ar": "التلقيح",
+      "fr": "Pollination"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q703",
+    "question": {
+      "en": "Who wrote “The Lady of Shalott”?",
+      "ar": "من كتب قصيدة «The Lady of Shalott»؟",
+      "fr": "Qui a écrit « The Lady of Shalott » ?"
+    },
+    "options": {
+      "en": [
+        "William Wordsworth",
+        "Edmund Spenser",
+        "Samuel Taylor Coleridge",
+        "Alfred, Lord Tennyson"
+      ],
+      "ar": [
+        "ويليام ووردزورث",
+        "إدموند سبنسر",
+        "صمويل تايلور كوليردج",
+        "ألفريد تينيسون"
+      ],
+      "fr": [
+        "William Wordsworth",
+        "Edmund Spenser",
+        "Samuel Taylor Coleridge",
+        "Alfred, Lord Tennyson"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Alfred, Lord Tennyson",
+      "ar": "ألفريد تينيسون",
+      "fr": "Alfred, Lord Tennyson"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q704",
+    "question": {
+      "en": "Which answer identifies this history clue: The ancient Greek city associated with democracy?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The ancient Greek city associated with democracy؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The ancient Greek city associated with democracy ?"
+    },
+    "options": {
+      "en": [
+        "Athens",
+        "1945",
+        "Mahatma Gandhi",
+        "Qin dynasty"
+      ],
+      "ar": [
+        "أثينا",
+        "١٩٤٥",
+        "المهاتما غاندي",
+        "أسرة تشين"
+      ],
+      "fr": [
+        "Athens",
+        "1945",
+        "Mahatma Gandhi",
+        "Qin dynasty"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Athens",
+      "ar": "أثينا",
+      "fr": "Athens"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q705",
+    "question": {
+      "en": "Which answer identifies this biology clue: The part of a neuron that receives signals?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The part of a neuron that receives signals؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The part of a neuron that receives signals ?"
+    },
+    "options": {
+      "en": [
+        "Chloroplast",
+        "Dendrite",
+        "Xylem",
+        "Phloem"
+      ],
+      "ar": [
+        "البلاستيدة الخضراء",
+        "التغصن العصبي",
+        "الخشب",
+        "اللحاء"
+      ],
+      "fr": [
+        "Chloroplast",
+        "Dendrite",
+        "Xylem",
+        "Phloem"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dendrite",
+      "ar": "التغصن العصبي",
+      "fr": "Dendrite"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q706",
+    "question": {
+      "en": "Which answer identifies this science clue: The negatively charged subatomic particle?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The negatively charged subatomic particle؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The negatively charged subatomic particle ?"
+    },
+    "options": {
+      "en": [
+        "Mantle",
+        "Battery",
+        "Electron",
+        "6"
+      ],
+      "ar": [
+        "الوشاح",
+        "البطارية",
+        "الإلكترون",
+        "٦"
+      ],
+      "fr": [
+        "Mantle",
+        "Battery",
+        "Electron",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Electron",
+      "ar": "الإلكترون",
+      "fr": "Electron"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q707",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Aries?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Aries؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Aries ?"
+    },
+    "options": {
+      "en": [
+        "Capricorn",
+        "Aquarius",
+        "Pisces",
+        "Mars"
+      ],
+      "ar": [
+        "الجدي",
+        "الدلو",
+        "الحوت",
+        "المريخ"
+      ],
+      "fr": [
+        "Capricorn",
+        "Aquarius",
+        "Pisces",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mars",
+      "ar": "المريخ",
+      "fr": "Mars"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q708",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The result of 15 percent of 200?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The result of 15 percent of 200؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The result of 15 percent of 200 ?"
+    },
+    "options": {
+      "en": [
+        "30",
+        "6",
+        "3.14",
+        "12"
+      ],
+      "ar": [
+        "٣٠",
+        "٦",
+        "٣٫١٤",
+        "١٢"
+      ],
+      "fr": [
+        "30",
+        "6",
+        "3.14",
+        "12"
+      ]
+    },
+    "correctAnswer": {
+      "en": "30",
+      "ar": "٣٠",
+      "fr": "30"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q709",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The soil layer richest in organic matter?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The soil layer richest in organic matter؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The soil layer richest in organic matter ?"
+    },
+    "options": {
+      "en": [
+        "Drip irrigation",
+        "Topsoil",
+        "Phosphorus",
+        "Potassium"
+      ],
+      "ar": [
+        "الري بالتنقيط",
+        "التربة السطحية",
+        "الفوسفور",
+        "البوتاسيوم"
+      ],
+      "fr": [
+        "Drip irrigation",
+        "Topsoil",
+        "Phosphorus",
+        "Potassium"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Topsoil",
+      "ar": "التربة السطحية",
+      "fr": "Topsoil"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q710",
+    "question": {
+      "en": "Who wrote “The Raven's Shadow”?",
+      "ar": "من كتب قصيدة «The Raven's Shadow»؟",
+      "fr": "Qui a écrit « The Raven's Shadow » ?"
+    },
+    "options": {
+      "en": [
+        "Alfred, Lord Tennyson",
+        "Matthew Arnold",
+        "Original traditional ballad",
+        "John Keats"
+      ],
+      "ar": [
+        "ألفريد تينيسون",
+        "ماثيو آرنولد",
+        "قصيدة شعبية تقليدية",
+        "جون كيتس"
+      ],
+      "fr": [
+        "Alfred, Lord Tennyson",
+        "Matthew Arnold",
+        "Original traditional ballad",
+        "John Keats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Original traditional ballad",
+      "ar": "قصيدة شعبية تقليدية",
+      "fr": "Original traditional ballad"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q711",
+    "question": {
+      "en": "Which answer identifies this history clue: The year World War II ended?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The year World War II ended؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The year World War II ended ?"
+    },
+    "options": {
+      "en": [
+        "Mayflower",
+        "Battle of Hastings",
+        "Amelia Earhart",
+        "1945"
+      ],
+      "ar": [
+        "ماي فلاور",
+        "معركة هاستينغز",
+        "أميليا إيرهارت",
+        "١٩٤٥"
+      ],
+      "fr": [
+        "Mayflower",
+        "Battle of Hastings",
+        "Amelia Earhart",
+        "1945"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1945",
+      "ar": "١٩٤٥",
+      "fr": "1945"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q712",
+    "question": {
+      "en": "Which answer identifies this biology clue: The process by which cells divide to form two identical cells?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The process by which cells divide to form two identical cells؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The process by which cells divide to form two identical cells ?"
+    },
+    "options": {
+      "en": [
+        "Mitosis",
+        "White blood cells",
+        "Dendrite",
+        "Carbon dioxide"
+      ],
+      "ar": [
+        "الانقسام المتساوي",
+        "كريات الدم البيضاء",
+        "التغصن العصبي",
+        "ثاني أكسيد الكربون"
+      ],
+      "fr": [
+        "Mitosis",
+        "White blood cells",
+        "Dendrite",
+        "Carbon dioxide"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mitosis",
+      "ar": "الانقسام المتساوي",
+      "fr": "Mitosis"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q713",
+    "question": {
+      "en": "Which answer identifies this science clue: The hardest naturally occurring mineral?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The hardest naturally occurring mineral؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The hardest naturally occurring mineral ?"
+    },
+    "options": {
+      "en": [
+        "Albert Einstein",
+        "Diamond",
+        "Newton",
+        "Visible light"
+      ],
+      "ar": [
+        "ألبرت أينشتاين",
+        "الألماس",
+        "نيوتن",
+        "الضوء المرئي"
+      ],
+      "fr": [
+        "Albert Einstein",
+        "Diamond",
+        "Newton",
+        "Visible light"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Diamond",
+      "ar": "الألماس",
+      "fr": "Diamond"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q714",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Taurus?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Taurus؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Taurus ?"
+    },
+    "options": {
+      "en": [
+        "Scorpio",
+        "Sagittarius",
+        "Venus",
+        "Libra"
+      ],
+      "ar": [
+        "العقرب",
+        "القوس",
+        "الزهرة",
+        "الميزان"
+      ],
+      "fr": [
+        "Scorpio",
+        "Sagittarius",
+        "Venus",
+        "Libra"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Venus",
+      "ar": "الزهرة",
+      "fr": "Venus"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q715",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: A number divisible only by 1 and itself?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: A number divisible only by 1 and itself؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : A number divisible only by 1 and itself ?"
+    },
+    "options": {
+      "en": [
+        "1024",
+        "7",
+        "Obtuse angle",
+        "Prime number"
+      ],
+      "ar": [
+        "١٠٢٤",
+        "٧",
+        "زاوية منفرجة",
+        "عدد أولي"
+      ],
+      "fr": [
+        "1024",
+        "7",
+        "Obtuse angle",
+        "Prime number"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Prime number",
+      "ar": "عدد أولي",
+      "fr": "Prime number"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q716",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: A fungal plant disease seen as powdery growth?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: A fungal plant disease seen as powdery growth؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : A fungal plant disease seen as powdery growth ?"
+    },
+    "options": {
+      "en": [
+        "Powdery mildew",
+        "Cacao",
+        "Apiculture",
+        "Organic farming"
+      ],
+      "ar": [
+        "البياض الدقيقي",
+        "الكاكاو",
+        "تربية النحل",
+        "الزراعة العضوية"
+      ],
+      "fr": [
+        "Powdery mildew",
+        "Cacao",
+        "Apiculture",
+        "Organic farming"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Powdery mildew",
+      "ar": "البياض الدقيقي",
+      "fr": "Powdery mildew"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q717",
+    "question": {
+      "en": "Who wrote “The Prelude to Spring”?",
+      "ar": "من كتب قصيدة «The Prelude to Spring»؟",
+      "fr": "Qui a écrit « The Prelude to Spring » ?"
+    },
+    "options": {
+      "en": [
+        "Samuel Taylor Coleridge",
+        "William Blake",
+        "William Wordsworth",
+        "Edmund Spenser"
+      ],
+      "ar": [
+        "صمويل تايلور كوليردج",
+        "ويليام بليك",
+        "ويليام ووردزورث",
+        "إدموند سبنسر"
+      ],
+      "fr": [
+        "Samuel Taylor Coleridge",
+        "William Blake",
+        "William Wordsworth",
+        "Edmund Spenser"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Blake",
+      "ar": "ويليام بليك",
+      "fr": "William Blake"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q718",
+    "question": {
+      "en": "Which answer identifies this history clue: The leader of India's independence movement known for nonviolence?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The leader of India's independence movement known for nonviolence؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The leader of India's independence movement known for nonviolence ?"
+    },
+    "options": {
+      "en": [
+        "1989",
+        "Hieroglyphs",
+        "Mahatma Gandhi",
+        "1789"
+      ],
+      "ar": [
+        "١٩٨٩",
+        "الهيروغليفية",
+        "المهاتما غاندي",
+        "١٧٨٩"
+      ],
+      "fr": [
+        "1989",
+        "Hieroglyphs",
+        "Mahatma Gandhi",
+        "1789"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mahatma Gandhi",
+      "ar": "المهاتما غاندي",
+      "fr": "Mahatma Gandhi"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q719",
+    "question": {
+      "en": "Which answer identifies this biology clue: The gas humans exhale in greater concentration than they inhale?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The gas humans exhale in greater concentration than they inhale؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The gas humans exhale in greater concentration than they inhale ?"
+    },
+    "options": {
+      "en": [
+        "Chlorophyll",
+        "Mycology",
+        "Genetics",
+        "Carbon dioxide"
+      ],
+      "ar": [
+        "الكلوروفيل",
+        "علم الفطريات",
+        "علم الوراثة",
+        "ثاني أكسيد الكربون"
+      ],
+      "fr": [
+        "Chlorophyll",
+        "Mycology",
+        "Genetics",
+        "Carbon dioxide"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Carbon dioxide",
+      "ar": "ثاني أكسيد الكربون",
+      "fr": "Carbon dioxide"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q720",
+    "question": {
+      "en": "Which answer identifies this science clue: The gas that makes up most of Earth's atmosphere?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The gas that makes up most of Earth's atmosphere؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The gas that makes up most of Earth's atmosphere ?"
+    },
+    "options": {
+      "en": [
+        "Nitrogen",
+        "Evaporation",
+        "Thermometer",
+        "Electron"
+      ],
+      "ar": [
+        "النيتروجين",
+        "التبخر",
+        "مقياس الحرارة",
+        "الإلكترون"
+      ],
+      "fr": [
+        "Nitrogen",
+        "Evaporation",
+        "Thermometer",
+        "Electron"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nitrogen",
+      "ar": "النيتروجين",
+      "fr": "Nitrogen"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q721",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Gemini?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Gemini؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Gemini ?"
+    },
+    "options": {
+      "en": [
+        "Virgo",
+        "Mercury",
+        "Cancer",
+        "Leo"
+      ],
+      "ar": [
+        "العذراء",
+        "عطارد",
+        "السرطان",
+        "الأسد"
+      ],
+      "fr": [
+        "Virgo",
+        "Mercury",
+        "Cancer",
+        "Leo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "عطارد",
+      "fr": "Mercury"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q722",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The distance around a circle?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The distance around a circle؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The distance around a circle ?"
+    },
+    "options": {
+      "en": [
+        "169",
+        "Pi",
+        "Circumference",
+        "15"
+      ],
+      "ar": [
+        "١٦٩",
+        "باي",
+        "محيط الدائرة",
+        "١٥"
+      ],
+      "fr": [
+        "169",
+        "Pi",
+        "Circumference",
+        "15"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Circumference",
+      "ar": "محيط الدائرة",
+      "fr": "Circumference"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q723",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: A major source of cooking oil and animal feed?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: A major source of cooking oil and animal feed؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : A major source of cooking oil and animal feed ?"
+    },
+    "options": {
+      "en": [
+        "pH meter",
+        "Rainwater harvesting",
+        "Rhizobium bacteria",
+        "Soybean"
+      ],
+      "ar": [
+        "مقياس الرقم الهيدروجيني",
+        "حصاد مياه الأمطار",
+        "بكتيريا الرايزوبيوم",
+        "فول الصويا"
+      ],
+      "fr": [
+        "pH meter",
+        "Rainwater harvesting",
+        "Rhizobium bacteria",
+        "Soybean"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Soybean",
+      "ar": "فول الصويا",
+      "fr": "Soybean"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q724",
+    "question": {
+      "en": "Who wrote “The Garden”?",
+      "ar": "من كتب قصيدة «The Garden»؟",
+      "fr": "Qui a écrit « The Garden » ?"
+    },
+    "options": {
+      "en": [
+        "Andrew Marvell",
+        "Sylvia Plath",
+        "Allen Ginsberg",
+        "Wallace Stevens"
+      ],
+      "ar": [
+        "أندرو مارفيل",
+        "سيلفيا بلاث",
+        "ألن غينسبرغ",
+        "والاس ستيفنز"
+      ],
+      "fr": [
+        "Andrew Marvell",
+        "Sylvia Plath",
+        "Allen Ginsberg",
+        "Wallace Stevens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Andrew Marvell",
+      "ar": "أندرو مارفيل",
+      "fr": "Andrew Marvell"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q725",
+    "question": {
+      "en": "Which answer identifies this history clue: The first dynasty of imperial China?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The first dynasty of imperial China؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The first dynasty of imperial China ?"
+    },
+    "options": {
+      "en": [
+        "Pompeii",
+        "Qin dynasty",
+        "Augustus",
+        "1215"
+      ],
+      "ar": [
+        "بومبي",
+        "أسرة تشين",
+        "أغسطس",
+        "١٢١٥"
+      ],
+      "fr": [
+        "Pompeii",
+        "Qin dynasty",
+        "Augustus",
+        "1215"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Qin dynasty",
+      "ar": "أسرة تشين",
+      "fr": "Qin dynasty"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q726",
+    "question": {
+      "en": "Which answer identifies this biology clue: The animal group with a backbone?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The animal group with a backbone؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The animal group with a backbone ?"
+    },
+    "options": {
+      "en": [
+        "Red blood cells",
+        "Cell",
+        "Vertebrates",
+        "Skin"
+      ],
+      "ar": [
+        "كريات الدم الحمراء",
+        "الخلية",
+        "الفقاريات",
+        "الجلد"
+      ],
+      "fr": [
+        "Red blood cells",
+        "Cell",
+        "Vertebrates",
+        "Skin"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vertebrates",
+      "ar": "الفقاريات",
+      "fr": "Vertebrates"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q727",
+    "question": {
+      "en": "Which answer identifies this science clue: The unit of force in the SI system?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The unit of force in the SI system؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The unit of force in the SI system ?"
+    },
+    "options": {
+      "en": [
+        "Gravity",
+        "H2O",
+        "Isaac Newton",
+        "Newton"
+      ],
+      "ar": [
+        "الجاذبية",
+        "H2O",
+        "إسحاق نيوتن",
+        "نيوتن"
+      ],
+      "fr": [
+        "Gravity",
+        "H2O",
+        "Isaac Newton",
+        "Newton"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Newton",
+      "ar": "نيوتن",
+      "fr": "Newton"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q728",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Cancer?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Cancer؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Cancer ?"
+    },
+    "options": {
+      "en": [
+        "Moon",
+        "Capricorn",
+        "Aquarius",
+        "Pisces"
+      ],
+      "ar": [
+        "القمر",
+        "الجدي",
+        "الدلو",
+        "الحوت"
+      ],
+      "fr": [
+        "Moon",
+        "Capricorn",
+        "Aquarius",
+        "Pisces"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Moon",
+      "ar": "القمر",
+      "fr": "Moon"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q729",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The value of 5 factorial?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The value of 5 factorial؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The value of 5 factorial ?"
+    },
+    "options": {
+      "en": [
+        "Circumference",
+        "120",
+        "30",
+        "Prime number"
+      ],
+      "ar": [
+        "محيط الدائرة",
+        "١٢٠",
+        "٣٠",
+        "عدد أولي"
+      ],
+      "fr": [
+        "Circumference",
+        "120",
+        "30",
+        "Prime number"
+      ]
+    },
+    "correctAnswer": {
+      "en": "120",
+      "ar": "١٢٠",
+      "fr": "120"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q730",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Raising fish in controlled water systems?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Raising fish in controlled water systems؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Raising fish in controlled water systems ?"
+    },
+    "options": {
+      "en": [
+        "Greenhouse",
+        "Composting",
+        "Aquaculture",
+        "Weeding"
+      ],
+      "ar": [
+        "البيت الزجاجي",
+        "التسميد العضوي",
+        "الاستزراع المائي",
+        "إزالة الأعشاب الضارة"
+      ],
+      "fr": [
+        "Greenhouse",
+        "Composting",
+        "Aquaculture",
+        "Weeding"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Aquaculture",
+      "ar": "الاستزراع المائي",
+      "fr": "Aquaculture"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q731",
+    "question": {
+      "en": "Who wrote “To His Coy Mistress”?",
+      "ar": "من كتب قصيدة «To His Coy Mistress»؟",
+      "fr": "Qui a écrit « To His Coy Mistress » ?"
+    },
+    "options": {
+      "en": [
+        "Lord Byron",
+        "William Blake",
+        "William Wordsworth",
+        "Andrew Marvell"
+      ],
+      "ar": [
+        "اللورد بايرون",
+        "ويليام بليك",
+        "ويليام ووردزورث",
+        "أندرو مارفيل"
+      ],
+      "fr": [
+        "Lord Byron",
+        "William Blake",
+        "William Wordsworth",
+        "Andrew Marvell"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Andrew Marvell",
+      "ar": "أندرو مارفيل",
+      "fr": "Andrew Marvell"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q732",
+    "question": {
+      "en": "Which answer identifies this history clue: The treaty that ended World War I?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The treaty that ended World War I؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The treaty that ended World War I ?"
+    },
+    "options": {
+      "en": [
+        "Treaty of Versailles",
+        "Aztec Empire",
+        "Yuri Gagarin",
+        "Code of Hammurabi"
+      ],
+      "ar": [
+        "معاهدة فرساي",
+        "إمبراطورية الأزتك",
+        "يوري غاغارين",
+        "شريعة حمورابي"
+      ],
+      "fr": [
+        "Treaty of Versailles",
+        "Aztec Empire",
+        "Yuri Gagarin",
+        "Code of Hammurabi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Treaty of Versailles",
+      "ar": "معاهدة فرساي",
+      "fr": "Treaty of Versailles"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q733",
+    "question": {
+      "en": "Which answer identifies this biology clue: The plant tissue that transports water?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The plant tissue that transports water؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The plant tissue that transports water ?"
+    },
+    "options": {
+      "en": [
+        "Mitochondrion",
+        "Xylem",
+        "Frog",
+        "DNA"
+      ],
+      "ar": [
+        "الميتوكوندريا",
+        "الخشب",
+        "الضفدع",
+        "الحمض النووي"
+      ],
+      "fr": [
+        "Mitochondrion",
+        "Xylem",
+        "Frog",
+        "DNA"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Xylem",
+      "ar": "الخشب",
+      "fr": "Xylem"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q734",
+    "question": {
+      "en": "Which answer identifies this science clue: The part of the electromagnetic spectrum humans can see?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The part of the electromagnetic spectrum humans can see؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The part of the electromagnetic spectrum humans can see ?"
+    },
+    "options": {
+      "en": [
+        "300,000 km/s",
+        "Nucleus",
+        "Visible light",
+        "Ampere"
+      ],
+      "ar": [
+        "٣٠٠ ألف كم/ث",
+        "النواة",
+        "الضوء المرئي",
+        "الأمبير"
+      ],
+      "fr": [
+        "300,000 km/s",
+        "Nucleus",
+        "Visible light",
+        "Ampere"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Visible light",
+      "ar": "الضوء المرئي",
+      "fr": "Visible light"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q735",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Leo?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Leo؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Leo ?"
+    },
+    "options": {
+      "en": [
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sun"
+      ],
+      "ar": [
+        "العذراء",
+        "الميزان",
+        "العقرب",
+        "الشمس"
+      ],
+      "fr": [
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sun"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sun",
+      "ar": "الشمس",
+      "fr": "Sun"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q736",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The coordinate pair where the axes meet?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The coordinate pair where the axes meet؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The coordinate pair where the axes meet ?"
+    },
+    "options": {
+      "en": [
+        "(0, 0)",
+        "90",
+        "Numerator",
+        "Denominator"
+      ],
+      "ar": [
+        "(٠، ٠)",
+        "٩٠",
+        "البسط",
+        "المقام"
+      ],
+      "fr": [
+        "(0, 0)",
+        "90",
+        "Numerator",
+        "Denominator"
+      ]
+    },
+    "correctAnswer": {
+      "en": "(0, 0)",
+      "ar": "(٠، ٠)",
+      "fr": "(0, 0)"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q737",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Removing unwanted plants from a field?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Removing unwanted plants from a field؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Removing unwanted plants from a field ?"
+    },
+    "options": {
+      "en": [
+        "Powdery mildew",
+        "Weeding",
+        "Pollination",
+        "Topsoil"
+      ],
+      "ar": [
+        "البياض الدقيقي",
+        "إزالة الأعشاب الضارة",
+        "التلقيح",
+        "التربة السطحية"
+      ],
+      "fr": [
+        "Powdery mildew",
+        "Weeding",
+        "Pollination",
+        "Topsoil"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Weeding",
+      "ar": "إزالة الأعشاب الضارة",
+      "fr": "Weeding"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q738",
+    "question": {
+      "en": "Who wrote “The Flea”?",
+      "ar": "من كتب قصيدة «The Flea»؟",
+      "fr": "Qui a écrit « The Flea » ?"
+    },
+    "options": {
+      "en": [
+        "George Herbert",
+        "W. H. Auden",
+        "John Donne",
+        "George Herbert"
+      ],
+      "ar": [
+        "جورج هربرت",
+        "و. هـ. أودن",
+        "جون دون",
+        "جورج هربرت"
+      ],
+      "fr": [
+        "George Herbert",
+        "W. H. Auden",
+        "John Donne",
+        "George Herbert"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Donne",
+      "ar": "جون دون",
+      "fr": "John Donne"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q739",
+    "question": {
+      "en": "Which answer identifies this history clue: The ancient trade route linking East and West?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The ancient trade route linking East and West؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The ancient trade route linking East and West ?"
+    },
+    "options": {
+      "en": [
+        "Jamestown",
+        "Cleopatra VII",
+        "October Revolution",
+        "Silk Road"
+      ],
+      "ar": [
+        "جيمستاون",
+        "كليوباترا السابعة",
+        "ثورة أكتوبر",
+        "طريق الحرير"
+      ],
+      "fr": [
+        "Jamestown",
+        "Cleopatra VII",
+        "October Revolution",
+        "Silk Road"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Silk Road",
+      "ar": "طريق الحرير",
+      "fr": "Silk Road"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q740",
+    "question": {
+      "en": "Which answer identifies this biology clue: The plant tissue that transports sugars?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The plant tissue that transports sugars؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The plant tissue that transports sugars ?"
+    },
+    "options": {
+      "en": [
+        "Phloem",
+        "Four",
+        "Vitamin D",
+        "Homeostasis"
+      ],
+      "ar": [
+        "اللحاء",
+        "أربع حجرات",
+        "فيتامين د",
+        "الاتزان الداخلي"
+      ],
+      "fr": [
+        "Phloem",
+        "Four",
+        "Vitamin D",
+        "Homeostasis"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Phloem",
+      "ar": "اللحاء",
+      "fr": "Phloem"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q741",
+    "question": {
+      "en": "Which answer identifies this science clue: The scientist who proposed the theory of relativity?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The scientist who proposed the theory of relativity؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The scientist who proposed the theory of relativity ?"
+    },
+    "options": {
+      "en": [
+        "Au",
+        "Albert Einstein",
+        "Moment magnitude scale",
+        "Thermodynamics"
+      ],
+      "ar": [
+        "Au",
+        "ألبرت أينشتاين",
+        "مقياس العزم الزلزالي",
+        "الديناميكا الحرارية"
+      ],
+      "fr": [
+        "Au",
+        "Albert Einstein",
+        "Moment magnitude scale",
+        "Thermodynamics"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Albert Einstein",
+      "ar": "ألبرت أينشتاين",
+      "fr": "Albert Einstein"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q742",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Virgo?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Virgo؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Virgo ?"
+    },
+    "options": {
+      "en": [
+        "Saturn",
+        "Saturn",
+        "Mercury",
+        "Jupiter"
+      ],
+      "ar": [
+        "زحل",
+        "زحل",
+        "عطارد",
+        "المشتري"
+      ],
+      "fr": [
+        "Saturn",
+        "Saturn",
+        "Mercury",
+        "Jupiter"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "عطارد",
+      "fr": "Mercury"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q743",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The sum of the first five positive integers?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The sum of the first five positive integers؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The sum of the first five positive integers ?"
+    },
+    "options": {
+      "en": [
+        "72",
+        "11",
+        "20",
+        "15"
+      ],
+      "ar": [
+        "٧٢",
+        "١١",
+        "٢٠",
+        "١٥"
+      ],
+      "fr": [
+        "72",
+        "11",
+        "20",
+        "15"
+      ]
+    },
+    "correctAnswer": {
+      "en": "15",
+      "ar": "١٥",
+      "fr": "15"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q744",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: A structure for growing plants under controlled conditions?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: A structure for growing plants under controlled conditions؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : A structure for growing plants under controlled conditions ?"
+    },
+    "options": {
+      "en": [
+        "Greenhouse",
+        "Clover",
+        "Crop rotation",
+        "Mulch"
+      ],
+      "ar": [
+        "البيت الزجاجي",
+        "البرسيم",
+        "تناوب المحاصيل",
+        "غطاء التربة"
+      ],
+      "fr": [
+        "Greenhouse",
+        "Clover",
+        "Crop rotation",
+        "Mulch"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Greenhouse",
+      "ar": "البيت الزجاجي",
+      "fr": "Greenhouse"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q745",
+    "question": {
+      "en": "Who wrote “A Valediction: Forbidding Mourning”?",
+      "ar": "من كتب قصيدة «A Valediction: Forbidding Mourning»؟",
+      "fr": "Qui a écrit « A Valediction: Forbidding Mourning » ?"
+    },
+    "options": {
+      "en": [
+        "Kahlil Gibran",
+        "John Donne",
+        "Ferdowsi",
+        "Rumi"
+      ],
+      "ar": [
+        "جبران خليل جبران",
+        "جون دون",
+        "الفردوسي",
+        "جلال الدين الرومي"
+      ],
+      "fr": [
+        "Kahlil Gibran",
+        "John Donne",
+        "Ferdowsi",
+        "Rumi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Donne",
+      "ar": "جون دون",
+      "fr": "John Donne"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q746",
+    "question": {
+      "en": "Which answer identifies this history clue: The first successful English colony in America, founded in 1607?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The first successful English colony in America, founded in 1607؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The first successful English colony in America, founded in 1607 ?"
+    },
+    "options": {
+      "en": [
+        "Mahatma Gandhi",
+        "Qin dynasty",
+        "Jamestown",
+        "1945"
+      ],
+      "ar": [
+        "المهاتما غاندي",
+        "أسرة تشين",
+        "جيمستاون",
+        "١٩٤٥"
+      ],
+      "fr": [
+        "Mahatma Gandhi",
+        "Qin dynasty",
+        "Jamestown",
+        "1945"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jamestown",
+      "ar": "جيمستاون",
+      "fr": "Jamestown"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q747",
+    "question": {
+      "en": "Which answer identifies this biology clue: The organelle where photosynthesis occurs?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The organelle where photosynthesis occurs؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The organelle where photosynthesis occurs ?"
+    },
+    "options": {
+      "en": [
+        "Xylem",
+        "Phloem",
+        "Mutualism",
+        "Chloroplast"
+      ],
+      "ar": [
+        "الخشب",
+        "اللحاء",
+        "تبادل المنفعة",
+        "البلاستيدة الخضراء"
+      ],
+      "fr": [
+        "Xylem",
+        "Phloem",
+        "Mutualism",
+        "Chloroplast"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Chloroplast",
+      "ar": "البلاستيدة الخضراء",
+      "fr": "Chloroplast"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q748",
+    "question": {
+      "en": "Which answer identifies this science clue: The change from solid directly to gas?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The change from solid directly to gas؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The change from solid directly to gas ?"
+    },
+    "options": {
+      "en": [
+        "Sublimation",
+        "Mantle",
+        "Battery",
+        "Dispersion"
+      ],
+      "ar": [
+        "التسامي",
+        "الوشاح",
+        "البطارية",
+        "تشتت الضوء"
+      ],
+      "fr": [
+        "Sublimation",
+        "Mantle",
+        "Battery",
+        "Dispersion"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sublimation",
+      "ar": "التسامي",
+      "fr": "Sublimation"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q749",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Libra?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Libra؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Libra ?"
+    },
+    "options": {
+      "en": [
+        "Mars",
+        "Venus",
+        "Sun",
+        "Mercury"
+      ],
+      "ar": [
+        "المريخ",
+        "الزهرة",
+        "الشمس",
+        "عطارد"
+      ],
+      "fr": [
+        "Mars",
+        "Venus",
+        "Sun",
+        "Mercury"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Venus",
+      "ar": "الزهرة",
+      "fr": "Venus"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q750",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The square of 13?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The square of 13؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The square of 13 ?"
+    },
+    "options": {
+      "en": [
+        "12",
+        "180 degrees",
+        "169",
+        "3.14"
+      ],
+      "ar": [
+        "١٢",
+        "١٨٠ درجة",
+        "١٦٩",
+        "٣٫١٤"
+      ],
+      "fr": [
+        "12",
+        "180 degrees",
+        "169",
+        "3.14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "169",
+      "ar": "١٦٩",
+      "fr": "169"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q751",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Converting organic waste into nutrient-rich soil amendment?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Converting organic waste into nutrient-rich soil amendment؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Converting organic waste into nutrient-rich soil amendment ?"
+    },
+    "options": {
+      "en": [
+        "Potassium",
+        "Drip irrigation",
+        "Tillage",
+        "Composting"
+      ],
+      "ar": [
+        "البوتاسيوم",
+        "الري بالتنقيط",
+        "حراثة التربة",
+        "التسميد العضوي"
+      ],
+      "fr": [
+        "Potassium",
+        "Drip irrigation",
+        "Tillage",
+        "Composting"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Composting",
+      "ar": "التسميد العضوي",
+      "fr": "Composting"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q752",
+    "question": {
+      "en": "Who wrote “Holy Sonnet 10”?",
+      "ar": "من كتب قصيدة «Holy Sonnet 10»؟",
+      "fr": "Qui a écrit « Holy Sonnet 10 » ?"
+    },
+    "options": {
+      "en": [
+        "John Donne",
+        "George Herbert",
+        "George Herbert",
+        "W. H. Auden"
+      ],
+      "ar": [
+        "جون دون",
+        "جورج هربرت",
+        "جورج هربرت",
+        "و. هـ. أودن"
+      ],
+      "fr": [
+        "John Donne",
+        "George Herbert",
+        "George Herbert",
+        "W. H. Auden"
+      ]
+    },
+    "correctAnswer": {
+      "en": "John Donne",
+      "ar": "جون دون",
+      "fr": "John Donne"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q753",
+    "question": {
+      "en": "Which answer identifies this history clue: The queen of ancient Egypt allied with Julius Caesar?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The queen of ancient Egypt allied with Julius Caesar؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The queen of ancient Egypt allied with Julius Caesar ?"
+    },
+    "options": {
+      "en": [
+        "Inca",
+        "Cleopatra VII",
+        "Battle of Hastings",
+        "Amelia Earhart"
+      ],
+      "ar": [
+        "الإنكا",
+        "كليوباترا السابعة",
+        "معركة هاستينغز",
+        "أميليا إيرهارت"
+      ],
+      "fr": [
+        "Inca",
+        "Cleopatra VII",
+        "Battle of Hastings",
+        "Amelia Earhart"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cleopatra VII",
+      "ar": "كليوباترا السابعة",
+      "fr": "Cleopatra VII"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q754",
+    "question": {
+      "en": "Which answer identifies this biology clue: The relationship in which both species benefit?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The relationship in which both species benefit؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The relationship in which both species benefit ?"
+    },
+    "options": {
+      "en": [
+        "Mitosis",
+        "Carbon dioxide",
+        "Mutualism",
+        "Dendrite"
+      ],
+      "ar": [
+        "الانقسام المتساوي",
+        "ثاني أكسيد الكربون",
+        "تبادل المنفعة",
+        "التغصن العصبي"
+      ],
+      "fr": [
+        "Mitosis",
+        "Carbon dioxide",
+        "Mutualism",
+        "Dendrite"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mutualism",
+      "ar": "تبادل المنفعة",
+      "fr": "Mutualism"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q755",
+    "question": {
+      "en": "Which answer identifies this science clue: The number of protons in a carbon atom?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The number of protons in a carbon atom؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The number of protons in a carbon atom ?"
+    },
+    "options": {
+      "en": [
+        "Newton",
+        "Visible light",
+        "Albert Einstein",
+        "6"
+      ],
+      "ar": [
+        "نيوتن",
+        "الضوء المرئي",
+        "ألبرت أينشتاين",
+        "٦"
+      ],
+      "fr": [
+        "Newton",
+        "Visible light",
+        "Albert Einstein",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "٦",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q756",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The classical ruler of Scorpio?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The classical ruler of Scorpio؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The classical ruler of Scorpio ?"
+    },
+    "options": {
+      "en": [
+        "Mars",
+        "Venus",
+        "Mercury",
+        "Moon"
+      ],
+      "ar": [
+        "المريخ",
+        "الزهرة",
+        "عطارد",
+        "القمر"
+      ],
+      "fr": [
+        "Mars",
+        "Venus",
+        "Mercury",
+        "Moon"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mars",
+      "ar": "المريخ",
+      "fr": "Mars"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q757",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The ratio of a circle's circumference to its diameter?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The ratio of a circle's circumference to its diameter؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The ratio of a circle's circumference to its diameter ?"
+    },
+    "options": {
+      "en": [
+        "1/4",
+        "Pi",
+        "7",
+        "Obtuse angle"
+      ],
+      "ar": [
+        "١⁄٤",
+        "باي",
+        "٧",
+        "زاوية منفرجة"
+      ],
+      "fr": [
+        "1/4",
+        "Pi",
+        "7",
+        "Obtuse angle"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pi",
+      "ar": "باي",
+      "fr": "Pi"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q758",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The crop that produces cotton fiber?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The crop that produces cotton fiber؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The crop that produces cotton fiber ?"
+    },
+    "options": {
+      "en": [
+        "Organic farming",
+        "Nitrogen",
+        "Cotton plant",
+        "Apiculture"
+      ],
+      "ar": [
+        "الزراعة العضوية",
+        "النيتروجين",
+        "نبات القطن",
+        "تربية النحل"
+      ],
+      "fr": [
+        "Organic farming",
+        "Nitrogen",
+        "Cotton plant",
+        "Apiculture"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cotton plant",
+      "ar": "نبات القطن",
+      "fr": "Cotton plant"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q759",
+    "question": {
+      "en": "Who wrote “The Collar”?",
+      "ar": "من كتب قصيدة «The Collar»؟",
+      "fr": "Qui a écrit « The Collar » ?"
+    },
+    "options": {
+      "en": [
+        "Geoffrey Chaucer",
+        "Virgil",
+        "Lord Byron",
+        "George Herbert"
+      ],
+      "ar": [
+        "جيفري تشوسر",
+        "فيرجيل",
+        "اللورد بايرون",
+        "جورج هربرت"
+      ],
+      "fr": [
+        "Geoffrey Chaucer",
+        "Virgil",
+        "Lord Byron",
+        "George Herbert"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Herbert",
+      "ar": "جورج هربرت",
+      "fr": "George Herbert"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q760",
+    "question": {
+      "en": "Which answer identifies this history clue: The 1917 revolution that brought Bolsheviks to power?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The 1917 revolution that brought Bolsheviks to power؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The 1917 revolution that brought Bolsheviks to power ?"
+    },
+    "options": {
+      "en": [
+        "October Revolution",
+        "1989",
+        "Hieroglyphs",
+        "Constantinople"
+      ],
+      "ar": [
+        "ثورة أكتوبر",
+        "١٩٨٩",
+        "الهيروغليفية",
+        "القسطنطينية"
+      ],
+      "fr": [
+        "October Revolution",
+        "1989",
+        "Hieroglyphs",
+        "Constantinople"
+      ]
+    },
+    "correctAnswer": {
+      "en": "October Revolution",
+      "ar": "ثورة أكتوبر",
+      "fr": "October Revolution"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q761",
+    "question": {
+      "en": "Which answer identifies this biology clue: The study of insects?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The study of insects؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The study of insects ?"
+    },
+    "options": {
+      "en": [
+        "Liver",
+        "Entomology",
+        "Mycology",
+        "Genetics"
+      ],
+      "ar": [
+        "الكبد",
+        "علم الحشرات",
+        "علم الفطريات",
+        "علم الوراثة"
+      ],
+      "fr": [
+        "Liver",
+        "Entomology",
+        "Mycology",
+        "Genetics"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Entomology",
+      "ar": "علم الحشرات",
+      "fr": "Entomology"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q762",
+    "question": {
+      "en": "Which answer identifies this science clue: The layer of Earth beneath the crust?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The layer of Earth beneath the crust؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The layer of Earth beneath the crust ?"
+    },
+    "options": {
+      "en": [
+        "Electron",
+        "Diamond",
+        "Mantle",
+        "Thermometer"
+      ],
+      "ar": [
+        "الإلكترون",
+        "الألماس",
+        "الوشاح",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "Electron",
+        "Diamond",
+        "Mantle",
+        "Thermometer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mantle",
+      "ar": "الوشاح",
+      "fr": "Mantle"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q763",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Sagittarius?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Sagittarius؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Sagittarius ?"
+    },
+    "options": {
+      "en": [
+        "Capricorn",
+        "Aquarius",
+        "Pisces",
+        "Jupiter"
+      ],
+      "ar": [
+        "الجدي",
+        "الدلو",
+        "الحوت",
+        "المشتري"
+      ],
+      "fr": [
+        "Capricorn",
+        "Aquarius",
+        "Pisces",
+        "Jupiter"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jupiter",
+      "ar": "المشتري",
+      "fr": "Jupiter"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q764",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: A triangle with all three sides equal?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: A triangle with all three sides equal؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : A triangle with all three sides equal ?"
+    },
+    "options": {
+      "en": [
+        "Equilateral triangle",
+        "15",
+        "169",
+        "Pi"
+      ],
+      "ar": [
+        "مثلث متساوي الأضلاع",
+        "١٥",
+        "١٦٩",
+        "باي"
+      ],
+      "fr": [
+        "Equilateral triangle",
+        "15",
+        "169",
+        "Pi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Equilateral triangle",
+      "ar": "مثلث متساوي الأضلاع",
+      "fr": "Equilateral triangle"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q765",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: An instrument used to measure soil acidity?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: An instrument used to measure soil acidity؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : An instrument used to measure soil acidity ?"
+    },
+    "options": {
+      "en": [
+        "Livestock farming",
+        "pH meter",
+        "Rainwater harvesting",
+        "Rhizobium bacteria"
+      ],
+      "ar": [
+        "تربية الماشية",
+        "مقياس الرقم الهيدروجيني",
+        "حصاد مياه الأمطار",
+        "بكتيريا الرايزوبيوم"
+      ],
+      "fr": [
+        "Livestock farming",
+        "pH meter",
+        "Rainwater harvesting",
+        "Rhizobium bacteria"
+      ]
+    },
+    "correctAnswer": {
+      "en": "pH meter",
+      "ar": "مقياس الرقم الهيدروجيني",
+      "fr": "pH meter"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q766",
+    "question": {
+      "en": "Who wrote “The Pulley”?",
+      "ar": "من كتب قصيدة «The Pulley»؟",
+      "fr": "Qui a écrit « The Pulley » ?"
+    },
+    "options": {
+      "en": [
+        "W. B. Yeats",
+        "T. S. Eliot",
+        "George Herbert",
+        "W. B. Yeats"
+      ],
+      "ar": [
+        "ويليام بتلر ييتس",
+        "ت. س. إليوت",
+        "جورج هربرت",
+        "ويليام بتلر ييتس"
+      ],
+      "fr": [
+        "W. B. Yeats",
+        "T. S. Eliot",
+        "George Herbert",
+        "W. B. Yeats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Herbert",
+      "ar": "جورج هربرت",
+      "fr": "George Herbert"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q767",
+    "question": {
+      "en": "Which answer identifies this history clue: The explorer who reached the Americas in 1492?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The explorer who reached the Americas in 1492؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The explorer who reached the Americas in 1492 ?"
+    },
+    "options": {
+      "en": [
+        "1215",
+        "Pompeii",
+        "George Washington",
+        "Christopher Columbus"
+      ],
+      "ar": [
+        "١٢١٥",
+        "بومبي",
+        "جورج واشنطن",
+        "كريستوفر كولومبوس"
+      ],
+      "fr": [
+        "1215",
+        "Pompeii",
+        "George Washington",
+        "Christopher Columbus"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Christopher Columbus",
+      "ar": "كريستوفر كولومبوس",
+      "fr": "Christopher Columbus"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q768",
+    "question": {
+      "en": "Which answer identifies this biology clue: The human heart has this many chambers?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The human heart has this many chambers؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The human heart has this many chambers ?"
+    },
+    "options": {
+      "en": [
+        "Four",
+        "Red blood cells",
+        "Cell",
+        "Kidney"
+      ],
+      "ar": [
+        "أربع حجرات",
+        "كريات الدم الحمراء",
+        "الخلية",
+        "الكلى"
+      ],
+      "fr": [
+        "Four",
+        "Red blood cells",
+        "Cell",
+        "Kidney"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Four",
+      "ar": "أربع حجرات",
+      "fr": "Four"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q769",
+    "question": {
+      "en": "Which answer identifies this science clue: The device that converts chemical energy into electrical energy?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The device that converts chemical energy into electrical energy؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The device that converts chemical energy into electrical energy ?"
+    },
+    "options": {
+      "en": [
+        "The Sun",
+        "Battery",
+        "H2O",
+        "Isaac Newton"
+      ],
+      "ar": [
+        "الشمس",
+        "البطارية",
+        "H2O",
+        "إسحاق نيوتن"
+      ],
+      "fr": [
+        "The Sun",
+        "Battery",
+        "H2O",
+        "Isaac Newton"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Battery",
+      "ar": "البطارية",
+      "fr": "Battery"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q770",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The planet traditionally ruling Capricorn?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The planet traditionally ruling Capricorn؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The planet traditionally ruling Capricorn ?"
+    },
+    "options": {
+      "en": [
+        "Scorpio",
+        "Sagittarius",
+        "Saturn",
+        "Libra"
+      ],
+      "ar": [
+        "العقرب",
+        "القوس",
+        "زحل",
+        "الميزان"
+      ],
+      "fr": [
+        "Scorpio",
+        "Sagittarius",
+        "Saturn",
+        "Libra"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Saturn",
+      "ar": "زحل",
+      "fr": "Saturn"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q771",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The result of 2 to the power of 10?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The result of 2 to the power of 10؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The result of 2 to the power of 10 ?"
+    },
+    "options": {
+      "en": [
+        "Prime number",
+        "Circumference",
+        "120",
+        "1024"
+      ],
+      "ar": [
+        "عدد أولي",
+        "محيط الدائرة",
+        "١٢٠",
+        "١٠٢٤"
+      ],
+      "fr": [
+        "Prime number",
+        "Circumference",
+        "120",
+        "1024"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1024",
+      "ar": "١٠٢٤",
+      "fr": "1024"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q772",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Collecting rain for later agricultural use?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Collecting rain for later agricultural use؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Collecting rain for later agricultural use ?"
+    },
+    "options": {
+      "en": [
+        "Rainwater harvesting",
+        "Weeding",
+        "Greenhouse",
+        "Composting"
+      ],
+      "ar": [
+        "حصاد مياه الأمطار",
+        "إزالة الأعشاب الضارة",
+        "البيت الزجاجي",
+        "التسميد العضوي"
+      ],
+      "fr": [
+        "Rainwater harvesting",
+        "Weeding",
+        "Greenhouse",
+        "Composting"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rainwater harvesting",
+      "ar": "حصاد مياه الأمطار",
+      "fr": "Rainwater harvesting"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q773",
+    "question": {
+      "en": "Who wrote “The Unknown Citizen”?",
+      "ar": "من كتب قصيدة «The Unknown Citizen»؟",
+      "fr": "Qui a écrit « The Unknown Citizen » ?"
+    },
+    "options": {
+      "en": [
+        "Virgil",
+        "W. H. Auden",
+        "Walt Whitman",
+        "Geoffrey Chaucer"
+      ],
+      "ar": [
+        "فيرجيل",
+        "و. هـ. أودن",
+        "والت ويتمان",
+        "جيفري تشوسر"
+      ],
+      "fr": [
+        "Virgil",
+        "W. H. Auden",
+        "Walt Whitman",
+        "Geoffrey Chaucer"
+      ]
+    },
+    "correctAnswer": {
+      "en": "W. H. Auden",
+      "ar": "و. هـ. أودن",
+      "fr": "W. H. Auden"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q774",
+    "question": {
+      "en": "Which answer identifies this history clue: The empire ruled from Tenochtitlan?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The empire ruled from Tenochtitlan؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The empire ruled from Tenochtitlan ?"
+    },
+    "options": {
+      "en": [
+        "Code of Hammurabi",
+        "Battle of Trafalgar",
+        "Aztec Empire",
+        "Yuri Gagarin"
+      ],
+      "ar": [
+        "شريعة حمورابي",
+        "معركة الطرف الأغر",
+        "إمبراطورية الأزتك",
+        "يوري غاغارين"
+      ],
+      "fr": [
+        "Code of Hammurabi",
+        "Battle of Trafalgar",
+        "Aztec Empire",
+        "Yuri Gagarin"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Aztec Empire",
+      "ar": "إمبراطورية الأزتك",
+      "fr": "Aztec Empire"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q775",
+    "question": {
+      "en": "Which answer identifies this biology clue: The vitamin produced in skin with sunlight exposure?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The vitamin produced in skin with sunlight exposure؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The vitamin produced in skin with sunlight exposure ?"
+    },
+    "options": {
+      "en": [
+        "DNA",
+        "Mitochondrion",
+        "Photosynthesis",
+        "Vitamin D"
+      ],
+      "ar": [
+        "الحمض النووي",
+        "الميتوكوندريا",
+        "البناء الضوئي",
+        "فيتامين د"
+      ],
+      "fr": [
+        "DNA",
+        "Mitochondrion",
+        "Photosynthesis",
+        "Vitamin D"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vitamin D",
+      "ar": "فيتامين د",
+      "fr": "Vitamin D"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q776",
+    "question": {
+      "en": "Which answer identifies this science clue: The phenomenon that splits white light into colors?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The phenomenon that splits white light into colors؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The phenomenon that splits white light into colors ?"
+    },
+    "options": {
+      "en": [
+        "Dispersion",
+        "300,000 km/s",
+        "Nucleus",
+        "7"
+      ],
+      "ar": [
+        "تشتت الضوء",
+        "٣٠٠ ألف كم/ث",
+        "النواة",
+        "٧"
+      ],
+      "fr": [
+        "Dispersion",
+        "300,000 km/s",
+        "Nucleus",
+        "7"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dispersion",
+      "ar": "تشتت الضوء",
+      "fr": "Dispersion"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q777",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The classical ruler of Aquarius?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The classical ruler of Aquarius؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The classical ruler of Aquarius ?"
+    },
+    "options": {
+      "en": [
+        "Virgo",
+        "Saturn",
+        "Cancer",
+        "Leo"
+      ],
+      "ar": [
+        "العذراء",
+        "زحل",
+        "السرطان",
+        "الأسد"
+      ],
+      "fr": [
+        "Virgo",
+        "Saturn",
+        "Cancer",
+        "Leo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Saturn",
+      "ar": "زحل",
+      "fr": "Saturn"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q778",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The median of 2, 4, 7, 9, 12?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The median of 2, 4, 7, 9, 12؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The median of 2, 4, 7, 9, 12 ?"
+    },
+    "options": {
+      "en": [
+        "Denominator",
+        "2",
+        "7",
+        "Numerator"
+      ],
+      "ar": [
+        "المقام",
+        "٢",
+        "٧",
+        "البسط"
+      ],
+      "fr": [
+        "Denominator",
+        "2",
+        "7",
+        "Numerator"
+      ]
+    },
+    "correctAnswer": {
+      "en": "7",
+      "ar": "٧",
+      "fr": "7"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q779",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Nitrogen-fixing bacteria in legume root nodules?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Nitrogen-fixing bacteria in legume root nodules؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Nitrogen-fixing bacteria in legume root nodules ?"
+    },
+    "options": {
+      "en": [
+        "Topsoil",
+        "Powdery mildew",
+        "Soybean",
+        "Rhizobium bacteria"
+      ],
+      "ar": [
+        "التربة السطحية",
+        "البياض الدقيقي",
+        "فول الصويا",
+        "بكتيريا الرايزوبيوم"
+      ],
+      "fr": [
+        "Topsoil",
+        "Powdery mildew",
+        "Soybean",
+        "Rhizobium bacteria"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Rhizobium bacteria",
+      "ar": "بكتيريا الرايزوبيوم",
+      "fr": "Rhizobium bacteria"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q780",
+    "question": {
+      "en": "Who wrote “Musée des Beaux Arts”?",
+      "ar": "من كتب قصيدة «Musée des Beaux Arts»؟",
+      "fr": "Qui a écrit « Musée des Beaux Arts » ?"
+    },
+    "options": {
+      "en": [
+        "W. H. Auden",
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "W. B. Yeats"
+      ],
+      "ar": [
+        "و. هـ. أودن",
+        "ماثيو آرنولد",
+        "ويليام بتلر ييتس",
+        "ويليام بتلر ييتس"
+      ],
+      "fr": [
+        "W. H. Auden",
+        "Matthew Arnold",
+        "W. B. Yeats",
+        "W. B. Yeats"
+      ]
+    },
+    "correctAnswer": {
+      "en": "W. H. Auden",
+      "ar": "و. هـ. أودن",
+      "fr": "W. H. Auden"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q781",
+    "question": {
+      "en": "Which answer identifies this history clue: The first human in space?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The first human in space؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The first human in space ?"
+    },
+    "options": {
+      "en": [
+        "October Revolution",
+        "Yuri Gagarin",
+        "Jamestown",
+        "Cleopatra VII"
+      ],
+      "ar": [
+        "ثورة أكتوبر",
+        "يوري غاغارين",
+        "جيمستاون",
+        "كليوباترا السابعة"
+      ],
+      "fr": [
+        "October Revolution",
+        "Yuri Gagarin",
+        "Jamestown",
+        "Cleopatra VII"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Yuri Gagarin",
+      "ar": "يوري غاغارين",
+      "fr": "Yuri Gagarin"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q782",
+    "question": {
+      "en": "Which answer identifies this biology clue: The process by which organisms maintain stable internal conditions?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The process by which organisms maintain stable internal conditions؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The process by which organisms maintain stable internal conditions ?"
+    },
+    "options": {
+      "en": [
+        "Vitamin D",
+        "ATP",
+        "Homeostasis",
+        "Four"
+      ],
+      "ar": [
+        "فيتامين د",
+        "أدينوسين ثلاثي الفوسفات",
+        "الاتزان الداخلي",
+        "أربع حجرات"
+      ],
+      "fr": [
+        "Vitamin D",
+        "ATP",
+        "Homeostasis",
+        "Four"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Homeostasis",
+      "ar": "الاتزان الداخلي",
+      "fr": "Homeostasis"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q783",
+    "question": {
+      "en": "Which answer identifies this science clue: The main gas in natural gas?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The main gas in natural gas؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The main gas in natural gas ?"
+    },
+    "options": {
+      "en": [
+        "Thermodynamics",
+        "Au",
+        "Venus",
+        "Methane"
+      ],
+      "ar": [
+        "الديناميكا الحرارية",
+        "Au",
+        "الزهرة",
+        "الميثان"
+      ],
+      "fr": [
+        "Thermodynamics",
+        "Au",
+        "Venus",
+        "Methane"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Methane",
+      "ar": "الميثان",
+      "fr": "Methane"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q784",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The classical ruler of Pisces?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The classical ruler of Pisces؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The classical ruler of Pisces ?"
+    },
+    "options": {
+      "en": [
+        "Jupiter",
+        "Aries",
+        "Taurus",
+        "Gemini"
+      ],
+      "ar": [
+        "المشتري",
+        "الحمل",
+        "الثور",
+        "الجوزاء"
+      ],
+      "fr": [
+        "Jupiter",
+        "Aries",
+        "Taurus",
+        "Gemini"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jupiter",
+      "ar": "المشتري",
+      "fr": "Jupiter"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q785",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: An angle greater than 90 but less than 180 degrees?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: An angle greater than 90 but less than 180 degrees؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : An angle greater than 90 but less than 180 degrees ?"
+    },
+    "options": {
+      "en": [
+        "Length × width",
+        "Obtuse angle",
+        "11",
+        "20"
+      ],
+      "ar": [
+        "الطول × العرض",
+        "زاوية منفرجة",
+        "١١",
+        "٢٠"
+      ],
+      "fr": [
+        "Length × width",
+        "Obtuse angle",
+        "11",
+        "20"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Obtuse angle",
+      "ar": "زاوية منفرجة",
+      "fr": "Obtuse angle"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q786",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Raising animals for food and other products?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Raising animals for food and other products؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Raising animals for food and other products ?"
+    },
+    "options": {
+      "en": [
+        "Mulch",
+        "Agroforestry",
+        "Livestock farming",
+        "Crop rotation"
+      ],
+      "ar": [
+        "غطاء التربة",
+        "الحراجة الزراعية",
+        "تربية الماشية",
+        "تناوب المحاصيل"
+      ],
+      "fr": [
+        "Mulch",
+        "Agroforestry",
+        "Livestock farming",
+        "Crop rotation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Livestock farming",
+      "ar": "تربية الماشية",
+      "fr": "Livestock farming"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q787",
+    "question": {
+      "en": "Who wrote “Fern Hill”?",
+      "ar": "من كتب قصيدة «Fern Hill»؟",
+      "fr": "Qui a écrit « Fern Hill » ?"
+    },
+    "options": {
+      "en": [
+        "William Blake",
+        "Andrew Marvell",
+        "Andrew Marvell",
+        "Dylan Thomas"
+      ],
+      "ar": [
+        "ويليام بليك",
+        "أندرو مارفيل",
+        "أندرو مارفيل",
+        "ديلان توماس"
+      ],
+      "fr": [
+        "William Blake",
+        "Andrew Marvell",
+        "Andrew Marvell",
+        "Dylan Thomas"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Dylan Thomas",
+      "ar": "ديلان توماس",
+      "fr": "Dylan Thomas"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q788",
+    "question": {
+      "en": "Which answer identifies this history clue: The ancient law code associated with Babylonian king Hammurabi?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The ancient law code associated with Babylonian king Hammurabi؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The ancient law code associated with Babylonian king Hammurabi ?"
+    },
+    "options": {
+      "en": [
+        "Code of Hammurabi",
+        "Mahatma Gandhi",
+        "Qin dynasty",
+        "Treaty of Versailles"
+      ],
+      "ar": [
+        "شريعة حمورابي",
+        "المهاتما غاندي",
+        "أسرة تشين",
+        "معاهدة فرساي"
+      ],
+      "fr": [
+        "Code of Hammurabi",
+        "Mahatma Gandhi",
+        "Qin dynasty",
+        "Treaty of Versailles"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Code of Hammurabi",
+      "ar": "شريعة حمورابي",
+      "fr": "Code of Hammurabi"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q789",
+    "question": {
+      "en": "Which answer identifies this biology clue: The molecule that provides immediate cellular energy?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The molecule that provides immediate cellular energy؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The molecule that provides immediate cellular energy ?"
+    },
+    "options": {
+      "en": [
+        "Mutualism",
+        "ATP",
+        "Phloem",
+        "Chloroplast"
+      ],
+      "ar": [
+        "تبادل المنفعة",
+        "أدينوسين ثلاثي الفوسفات",
+        "اللحاء",
+        "البلاستيدة الخضراء"
+      ],
+      "fr": [
+        "Mutualism",
+        "ATP",
+        "Phloem",
+        "Chloroplast"
+      ]
+    },
+    "correctAnswer": {
+      "en": "ATP",
+      "ar": "أدينوسين ثلاثي الفوسفات",
+      "fr": "ATP"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q790",
+    "question": {
+      "en": "Which answer identifies this science clue: The scale commonly used to measure earthquake magnitude?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The scale commonly used to measure earthquake magnitude؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The scale commonly used to measure earthquake magnitude ?"
+    },
+    "options": {
+      "en": [
+        "Battery",
+        "Dispersion",
+        "Moment magnitude scale",
+        "Mantle"
+      ],
+      "ar": [
+        "البطارية",
+        "تشتت الضوء",
+        "مقياس العزم الزلزالي",
+        "الوشاح"
+      ],
+      "fr": [
+        "Battery",
+        "Dispersion",
+        "Moment magnitude scale",
+        "Mantle"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Moment magnitude scale",
+      "ar": "مقياس العزم الزلزالي",
+      "fr": "Moment magnitude scale"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q791",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The element associated with Gemini, Libra, and Aquarius?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The element associated with Gemini, Libra, and Aquarius؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The element associated with Gemini, Libra, and Aquarius ?"
+    },
+    "options": {
+      "en": [
+        "Jupiter",
+        "Water",
+        "Aries",
+        "Air"
+      ],
+      "ar": [
+        "المشتري",
+        "الماء",
+        "الحمل",
+        "الهواء"
+      ],
+      "fr": [
+        "Jupiter",
+        "Water",
+        "Aries",
+        "Air"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Air",
+      "ar": "الهواء",
+      "fr": "Air"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q792",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The reciprocal of 4?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The reciprocal of 4؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The reciprocal of 4 ?"
+    },
+    "options": {
+      "en": [
+        "1/4",
+        "12",
+        "180 degrees",
+        "Octagon"
+      ],
+      "ar": [
+        "١⁄٤",
+        "١٢",
+        "١٨٠ درجة",
+        "مثمن"
+      ],
+      "fr": [
+        "1/4",
+        "12",
+        "180 degrees",
+        "Octagon"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1/4",
+      "ar": "١⁄٤",
+      "fr": "1/4"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q793",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: The crop from which chocolate is made?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: The crop from which chocolate is made؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : The crop from which chocolate is made ?"
+    },
+    "options": {
+      "en": [
+        "Flax",
+        "Cacao",
+        "Drip irrigation",
+        "Tillage"
+      ],
+      "ar": [
+        "الكتان",
+        "الكاكاو",
+        "الري بالتنقيط",
+        "حراثة التربة"
+      ],
+      "fr": [
+        "Flax",
+        "Cacao",
+        "Drip irrigation",
+        "Tillage"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cacao",
+      "ar": "الكاكاو",
+      "fr": "Cacao"
+    },
+    "points": 10,
+    "category": "Agriculture"
+  },
+  {
+    "id": "q794",
+    "question": {
+      "en": "Who wrote “The Fish”?",
+      "ar": "من كتب قصيدة «The Fish»؟",
+      "fr": "Qui a écrit « The Fish » ?"
+    },
+    "options": {
+      "en": [
+        "Emily Dickinson",
+        "Robert Frost",
+        "Elizabeth Bishop",
+        "Samuel Taylor Coleridge"
+      ],
+      "ar": [
+        "إميلي ديكنسون",
+        "روبرت فروست",
+        "إليزابيث بيشوب",
+        "صمويل تايلور كوليردج"
+      ],
+      "fr": [
+        "Emily Dickinson",
+        "Robert Frost",
+        "Elizabeth Bishop",
+        "Samuel Taylor Coleridge"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Elizabeth Bishop",
+      "ar": "إليزابيث بيشوب",
+      "fr": "Elizabeth Bishop"
+    },
+    "points": 10,
+    "category": "Poetry"
+  },
+  {
+    "id": "q795",
+    "question": {
+      "en": "Which answer identifies this history clue: The 1805 naval battle won by Admiral Nelson?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التاريخ: The 1805 naval battle won by Admiral Nelson؟",
+      "fr": "Quelle réponse identifie cet indice (history) : The 1805 naval battle won by Admiral Nelson ?"
+    },
+    "options": {
+      "en": [
+        "Amelia Earhart",
+        "Inca",
+        "Athens",
+        "Battle of Trafalgar"
+      ],
+      "ar": [
+        "أميليا إيرهارت",
+        "الإنكا",
+        "أثينا",
+        "معركة الطرف الأغر"
+      ],
+      "fr": [
+        "Amelia Earhart",
+        "Inca",
+        "Athens",
+        "Battle of Trafalgar"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Battle of Trafalgar",
+      "ar": "معركة الطرف الأغر",
+      "fr": "Battle of Trafalgar"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q796",
+    "question": {
+      "en": "Which answer identifies this biology clue: The animal known for metamorphosis from tadpole?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الأحياء: The animal known for metamorphosis from tadpole؟",
+      "fr": "Quelle réponse identifie cet indice (biology) : The animal known for metamorphosis from tadpole ?"
+    },
+    "options": {
+      "en": [
+        "Frog",
+        "Mitosis",
+        "Carbon dioxide",
+        "Vertebrates"
+      ],
+      "ar": [
+        "الضفدع",
+        "الانقسام المتساوي",
+        "ثاني أكسيد الكربون",
+        "الفقاريات"
+      ],
+      "fr": [
+        "Frog",
+        "Mitosis",
+        "Carbon dioxide",
+        "Vertebrates"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Frog",
+      "ar": "الضفدع",
+      "fr": "Frog"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q797",
+    "question": {
+      "en": "Which answer identifies this science clue: The branch of physics dealing with heat?",
+      "ar": "أي إجابة تحدد هذه المعلومة في العلوم: The branch of physics dealing with heat؟",
+      "fr": "Quelle réponse identifie cet indice (science) : The branch of physics dealing with heat ?"
+    },
+    "options": {
+      "en": [
+        "Sublimation",
+        "Thermodynamics",
+        "Visible light",
+        "Albert Einstein"
+      ],
+      "ar": [
+        "التسامي",
+        "الديناميكا الحرارية",
+        "الضوء المرئي",
+        "ألبرت أينشتاين"
+      ],
+      "fr": [
+        "Sublimation",
+        "Thermodynamics",
+        "Visible light",
+        "Albert Einstein"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thermodynamics",
+      "ar": "الديناميكا الحرارية",
+      "fr": "Thermodynamics"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q798",
+    "question": {
+      "en": "Which answer identifies this astrology clue: The element associated with Cancer, Scorpio, and Pisces?",
+      "ar": "أي إجابة تحدد هذه المعلومة في التنجيم: The element associated with Cancer, Scorpio, and Pisces؟",
+      "fr": "Quelle réponse identifie cet indice (astrology) : The element associated with Cancer, Scorpio, and Pisces ?"
+    },
+    "options": {
+      "en": [
+        "Jupiter",
+        "Saturn",
+        "Water",
+        "Mars"
+      ],
+      "ar": [
+        "المشتري",
+        "زحل",
+        "الماء",
+        "المريخ"
+      ],
+      "fr": [
+        "Jupiter",
+        "Saturn",
+        "Water",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Water",
+      "ar": "الماء",
+      "fr": "Water"
+    },
+    "points": 10,
+    "category": "Astrology"
+  },
+  {
+    "id": "q799",
+    "question": {
+      "en": "Which answer identifies this mathematics clue: The number of faces on a cube?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الرياضيات: The number of faces on a cube؟",
+      "fr": "Quelle réponse identifie cet indice (mathematics) : The number of faces on a cube ?"
+    },
+    "options": {
+      "en": [
+        "7",
+        "Obtuse angle",
+        "1/4",
+        "6"
+      ],
+      "ar": [
+        "٧",
+        "زاوية منفرجة",
+        "١⁄٤",
+        "٦"
+      ],
+      "fr": [
+        "7",
+        "Obtuse angle",
+        "1/4",
+        "6"
+      ]
+    },
+    "correctAnswer": {
+      "en": "6",
+      "ar": "٦",
+      "fr": "6"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q800",
+    "question": {
+      "en": "Which answer identifies this agriculture clue: Keeping bees for honey and pollination?",
+      "ar": "أي إجابة تحدد هذه المعلومة في الزراعة: Keeping bees for honey and pollination؟",
+      "fr": "Quelle réponse identifie cet indice (agriculture) : Keeping bees for honey and pollination ?"
+    },
+    "options": {
+      "en": [
+        "Apiculture",
+        "Organic farming",
+        "Nitrogen",
+        "Phosphorus"
+      ],
+      "ar": [
+        "تربية النحل",
+        "الزراعة العضوية",
+        "النيتروجين",
+        "الفوسفور"
+      ],
+      "fr": [
+        "Apiculture",
+        "Organic farming",
+        "Nitrogen",
+        "Phosphorus"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Apiculture",
+      "ar": "تربية النحل",
+      "fr": "Apiculture"
+    },
+    "points": 10,
+    "category": "Agriculture"
   }
 ]
