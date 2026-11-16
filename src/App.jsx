@@ -1140,6 +1140,9 @@ export default function App() {
   const [adminNote, setAdminNote] = useState('');
   const [adminStatus, setAdminStatus] = useState('');
   const [adminLoading, setAdminLoading] = useState(false);
+  const [admobTestDate, setAdmobTestDate] = useState(() => new Date(Date.now() - 86400000).toISOString().slice(0, 10));
+  const [admobTestLoading, setAdmobTestLoading] = useState(false);
+  const [admobTestResult, setAdmobTestResult] = useState(null);
   const [authMode, setAuthMode] = useState('login');
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
@@ -1171,6 +1174,36 @@ export default function App() {
 
 
   const isDncAdmin = currentUser?.uid === '4ZOJfbUjq8MYKb0fgOcoQAbEUOl';
+
+  const testAdMobConnection = async () => {
+    if (!currentUser) return;
+    setAdmobTestLoading(true);
+    setAdmobTestResult(null);
+    try {
+      const token = await currentUser.getIdToken();
+      const params = new URLSearchParams({ startDate: admobTestDate, endDate: admobTestDate });
+      const response = await fetch(`${REWARD_API_URL}/v1/admin/admob/reconciliation-preview?${params.toString()}`, {
+        method: 'GET',
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const error = new Error(data.error || `HTTP_${response.status}`);
+        error.status = response.status;
+        throw error;
+      }
+      setAdmobTestResult({ ok: true, data });
+    } catch (error) {
+      const message = error.status === 403
+        ? 'This account is not authorized in ADMOB_ADMIN_UIDS.'
+        : error.status === 401
+          ? 'Your login session could not be verified. Please sign out and sign in again.'
+          : error.message || 'AdMob connection test failed.';
+      setAdmobTestResult({ ok: false, message });
+    } finally {
+      setAdmobTestLoading(false);
+    }
+  };
 
   const loadAdminPlayers = async () => {
     if (!isDncAdmin) return;
@@ -2452,6 +2485,47 @@ export default function App() {
                   );
                 })}
               </div>
+
+              {currentUser && (
+                <div className="w-full bg-[#17102b] rounded-2xl p-4 border border-cyan-400/40 shadow space-y-3">
+                  <div className="flex items-center justify-between border-b border-cyan-400/30 pb-2">
+                    <h3 className="text-sm font-black text-cyan-200">AdMob connection test</h3>
+                    <span className="text-[10px] text-slate-400">Read-only · No DNC credits</span>
+                  </div>
+                  <p className="text-[11px] text-slate-300">Check whether this signed-in account can read the AdMob estimated earnings report.</p>
+                  <input
+                    type="date"
+                    value={admobTestDate}
+                    onChange={(event) => setAdmobTestDate(event.target.value)}
+                    className="w-full rounded-xl border border-cyan-400/30 bg-[#0d031f] px-3 py-2.5 text-xs text-white"
+                  />
+                  <button
+                    type="button"
+                    onClick={testAdMobConnection}
+                    disabled={admobTestLoading || !admobTestDate}
+                    className="w-full rounded-xl bg-cyan-300 px-4 py-2.5 text-xs font-black text-slate-950 disabled:opacity-50"
+                  >
+                    {admobTestLoading ? 'Testing AdMob access…' : 'Test AdMob connection'}
+                  </button>
+                  {admobTestResult?.ok && (
+                    <div className="rounded-xl bg-emerald-950/50 border border-emerald-400/30 p-3 text-[11px] text-emerald-100 space-y-1">
+                      <div className="font-bold">AdMob report access successful</div>
+                      <div>Date: {admobTestResult.data.startDate}</div>
+                      <div>Account time zone: {admobTestResult.data.reportingTimeZone}</div>
+                      <div>Report rows: {admobTestResult.data.rows?.length ?? 0}</div>
+                      <div>Estimated earnings: ${(admobTestResult.data.rows || []).reduce((sum, row) => sum + Number(row.earningsUsd || 0), 0).toFixed(6)} USD</div>
+                      <div>Player pool (30%): ${(admobTestResult.data.rows || []).reduce((sum, row) => sum + Number(row.playerPoolUsd || 0), 0).toFixed(6)} USD</div>
+                      <div>Danat share (70%): ${(admobTestResult.data.rows || []).reduce((sum, row) => sum + Number(row.danatShareUsd || 0), 0).toFixed(6)} USD</div>
+                      <div className="pt-1 text-emerald-200">Preview only. No player balances changed.</div>
+                    </div>
+                  )}
+                  {admobTestResult && !admobTestResult.ok && (
+                    <div className="rounded-xl bg-rose-950/50 border border-rose-400/30 p-3 text-[11px] text-rose-100">
+                      Test failed: {admobTestResult.message}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {isDncAdmin && (
                 <div className="w-full bg-[#17102b] rounded-2xl p-4 border border-amber-400/50 shadow space-y-3">
