@@ -13,8 +13,8 @@ export function parseAdMobNetworkReport(payload) {
     const date = row.dimensionValues?.DATE?.value;
     const adUnit = row.dimensionValues?.AD_UNIT?.value;
     const micros = row.metricValues?.ESTIMATED_EARNINGS?.microsValue;
-    if (!/^\\d{8}$/.test(String(date || ""))) throw new Error("AdMob report row has an invalid DATE");
-    if (typeof adUnit !== "string" || !/^ca-app-pub-\\d+\\/\\d+$/.test(adUnit)) {
+    if (!/^\d{8}$/.test(String(date || ""))) throw new Error("AdMob report row has an invalid DATE");
+    if (typeof adUnit !== "string" || !/^ca-app-pub-\d+\/\d+$/.test(adUnit)) {
       throw new Error("AdMob report row has an invalid AD_UNIT");
     }
     const earningsMicros = Number(micros);
@@ -29,7 +29,7 @@ export function parseAdMobNetworkReport(payload) {
 // Split a daily ad-unit revenue row among players by their verified SSV count.
 // Largest-remainder rounding guarantees player credits sum exactly to the 30% pool.
 export function allocateRevenueRow({ date, adUnit, earningsMicros, verifiedCounts }) {
-  if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) throw new Error("Invalid report date");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Invalid report date");
   if (!Number.isSafeInteger(earningsMicros) || earningsMicros < 0) throw new Error("Invalid earnings micros");
   if (!verifiedCounts || typeof verifiedCounts !== "object" || Array.isArray(verifiedCounts)) {
     throw new Error("verifiedCounts must be a player-to-count object");
