@@ -11,6 +11,8 @@ This Worker is the trusted backend for Firebase-authenticated app requests and A
 - `POST /v1/ad-session` — creates a one-time, ten-minute rewarded-ad session for the authenticated player.
 - `POST /v1/ad-status` — returns pending/completed status for that player's ad session.
 - `GET /v1/admob/ssv` — verifies AdMob's signed server-side verification callback.
+- `GET /v1/admin/admob/reconciliation-preview?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD` — admin-only, read-only earnings and verified-view reconciliation preview.
+- `POST /v1/admin/admob/reconciliation-stage?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD` — admin-only, idempotently stores report rows for manual review; it does not issue DNC.
 
 ## Verified-ad security flow
 
@@ -47,21 +49,46 @@ The Worker needs a Google service-account JSON document stored only as a Cloudfl
 
 In Cloudflare, open **Workers & Pages → danat-quiz-api → Settings → Variables and Secrets** and add the complete JSON as a Secret named `FIREBASE_SERVICE_ACCOUNT_JSON`. The JSON must contain `client_email`, `private_key`, and `token_uri`. Never commit it to GitHub or send it in chat.
 
-## DNC advertising-revenue allocation — not yet implemented
+## AdMob earnings import and DNC revenue allocation
 
-The current Worker records verified rewarded-ad events; it does **not** yet import AdMob earnings or issue DNC ad-revenue credits.
+The Worker now includes a report client and an admin-only reconciliation preview/staging flow.
 
-The agreed allocation policy for the future revenue job is:
+### Required Cloudflare secrets
 
-- Use AdMob's reported estimated earnings by UTC date and ad unit as the revenue source.
-- Reserve 30% of eligible revenue for players and 70% for Danat.
-- Allocate the player pool proportionally to each registered player's verified SSV count for the same date and ad unit.
-- Convert the allocated USD amount to DNC at the agreed display rate of 1 DNC = 1 USD.
+Add these under **Workers & Pages → danat-quiz-api → Settings → Variables and Secrets**:
+
+- `ADMOB_OAUTH_CLIENT_ID` — OAuth client ID.
+- `ADMOB_OAUTH_CLIENT_SECRET` — OAuth client secret.
+- `ADMOB_REFRESH_TOKEN` — OAuth refresh token with the AdMob reporting scope.
+- `ADMOB_ADMIN_UIDS` — comma-separated Firebase Auth UIDs allowed to access the report endpoints.
+
+Optional variable:
+
+- `ADMOB_PUBLISHER_ID` — AdMob publisher ID (format `pub-...`). If omitted, the Worker automatically discovers the AdMob account when exactly one account is available. Multiple accounts require this variable.
+
+Never put OAuth credentials or refresh tokens in GitHub, app code, or chat. Do not reuse any refresh token previously pasted into chat; create a fresh one and store it directly as a Cloudflare secret. Google OAuth apps in Testing mode may have refresh-token lifetime restrictions.
+
+### Report endpoints
+
+Both endpoints require a Firebase ID token belonging to a UID listed in `ADMOB_ADMIN_UIDS`.
+
+- Preview: `GET /v1/admin/admob/reconciliation-preview?startDate=2026-11-15&endDate=2026-11-15`
+- Stage: `POST /v1/admin/admob/reconciliation-stage?startDate=2026-11-15&endDate=2026-11-15`
+
+The report requests `DATE` and `AD_UNIT` dimensions and `ESTIMATED_EARNINGS`, localized to USD. The account's AdMob reporting timezone is used to group verified SSV ledger timestamps into the same report dates. The query rejects a ledger result at its 10,000-document safety limit rather than silently allocating from incomplete data.
+
+Staged rows are stored in `adMobDailyReconciliations` with deterministic IDs, an immutable snapshot of per-player allocations, `status: pending_review`, and `creditsIssued: false`. Repeating a staging request does not overwrite an existing row. The stage endpoint is capped at 400 rows per request.
+
+### Allocation policy and safety
+
+- Reserve 30% of reported estimated earnings for players and 70% for Danat.
+- Allocate the player pool proportionally to registered players' verified AdMob SSV events for the same report date and ad unit.
+- Convert USD to DNC at the agreed display rate of 1 DNC = 1 USD. Values are kept as integer micros to avoid floating-point rounding.
+- Only `verification: admob_ssv` records count. Client callbacks and simulated ads are excluded.
+- Rows with no verified views allocate zero to players; the full row remains with Danat.
 - Keep ad-revenue credits separate from game points and manual admin credits.
-- Write immutable, idempotent allocation ledger records and a daily reconciliation record before updating player balances.
-- Never credit from simulated ads, client callbacks, or an unverified report. Do not silently treat estimated earnings as final settled AdMob payouts.
 
-No DNC ad-revenue credits are issued by the current Worker. The AdMob reporting/OAuth integration and scheduled allocation job still need to be added and tested.
+**Important:** this implementation only previews and stages estimated earnings for manual review. It does not approve reports, update player DNC balances, create spendable DNC credits, or claim that estimated earnings are final settled payouts. Do not enable credits until report corrections, reconciliation review, immutable credit-ledger writes, and balance-update idempotency have been implemented and tested.
 
 ## Deployment status
 
