@@ -6,12 +6,23 @@ const BATCH_SIZE = 400;
 
 function parseServiceAccount(rawCredentials) {
   let candidate = rawCredentials.replace(/^\uFEFF/, "").trim();
-
-  // Remove common Markdown fences if the entire secret was copied from a code block.
   candidate = candidate.replace(/^\x60{3}(?:json)?\s*/i, "").replace(/\s*\x60{3}$/i, "").trim();
 
-  // Accept a raw JSON object, a JSON-encoded string, or raw JSON accidentally
-  // surrounded by one extra pair of quote characters.
+  // If explanatory text or a label was pasted around the key, isolate the JSON object.
+  const firstBrace = candidate.indexOf("{");
+  const lastBrace = candidate.lastIndexOf("}");
+  if (firstBrace >= 0 && lastBrace > firstBrace) {
+    const objectCandidate = candidate.slice(firstBrace, lastBrace + 1);
+    try {
+      const parsedObject = JSON.parse(objectCandidate);
+      if (parsedObject && typeof parsedObject === "object" && !Array.isArray(parsedObject)) {
+        return parsedObject;
+      }
+    } catch {
+      // Continue with the normal parsing paths to produce a useful diagnostic.
+    }
+  }
+
   for (let attempt = 0; attempt < 3; attempt += 1) {
     try {
       const parsed = JSON.parse(candidate);
@@ -22,14 +33,20 @@ function parseServiceAccount(rawCredentials) {
       if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed;
       throw new Error("The parsed value is not a JSON object.");
     } catch (error) {
-      // Handle an extra pair of literal quotes around a multiline JSON object.
       if (candidate.length >= 2 && candidate[0] === '"' && candidate[candidate.length - 1] === '"') {
         candidate = candidate.slice(1, -1).trim();
         continue;
       }
       const detail = error instanceof SyntaxError ? error.message : error.message;
+      const firstNonSpace = candidate.match(/\S/)?.[0] ?? "(empty)";
+      const safeShape = Array.from(candidate.slice(0, 12)).map((ch) => {
+        if (/[A-Za-z]/.test(ch)) return "L";
+        if (/[0-9]/.test(ch)) return "D";
+        if (/\s/.test(ch)) return "W";
+        return ch;
+      }).join("");
       throw new Error(
-        `FIREBASE_SERVICE_ACCOUNT_JSON could not be parsed (${detail}). The secret must contain the complete service-account JSON object, without surrounding quote marks or Markdown fences.`
+        `FIREBASE_SERVICE_ACCOUNT_JSON could not be parsed (${detail}). Safe diagnostics: length=${candidate.length}, firstNonSpace=${JSON.stringify(firstNonSpace)}, first12Shape=${JSON.stringify(safeShape)}. No secret contents were printed. Store the complete raw service-account JSON object as the secret.`
       );
     }
   }
