@@ -1,11 +1,19 @@
+import { getAdMobAccessToken, listAdMobAccounts, generateAdMobNetworkReport } from "./admob-report.js";
+import { buildRevenueReconciliation } from "./revenue-reconciliation.js";
 const FIREBASE_PROJECT_ID = "danat-quiz-app";
 const FIREBASE_ISSUER = `https://securetoken.google.com/${FIREBASE_PROJECT_ID}`;
 const FIREBASE_JWKS_URL = "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com";
 const ADMOB_KEYS_URL = "https://www.gstatic.com/admob/reward/verifier-keys.json";
-const LIFE_AD_UNITS = new Set([
-  "ca-app-pub-1622329571366129/5894243820",
-  "ca-app-pub-1622329571366129/9787267701"
-]);
+const AD_UNITS_BY_PLACEMENT = {
+  life: new Set([
+    "ca-app-pub-1622329571366129/5894243820",
+    "ca-app-pub-1622329571366129/9787267701"
+  ]),
+  points: new Set([
+    "ca-app-pub-1622329571366129/4581162153",
+    "ca-app-pub-1622329571366129/8282614340"
+  ])
+};
 const encoder = new TextEncoder();
 let firebaseAccessTokenCache = null;
 
@@ -171,7 +179,7 @@ async function firestoreRequest(env, path, options = {}) {
   });
 }
 
-async function createAdSession(env, uid) {
+async function createAdSession(env, uid, placement) {
   const sessionId = crypto.randomUUID().replace(/-/g, "");
   const now = new Date();
   const response = await firestoreRequest(env, `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
@@ -180,7 +188,7 @@ async function createAdSession(env, uid) {
       writes: [{
         update: {
           name: documentPath("adRewardSessions", sessionId),
-          fields: firestoreFields({ uid, placement: "life", status: "pending", createdAt: now })
+          fields: firestoreFields({ uid, placement, status: "pending", createdAt: now })
         },
         currentDocument: { exists: false }
       }]
@@ -270,11 +278,21 @@ async function getAdSessionStatus(env, uid, sessionId) {
   }
   const status = session.fields?.status?.stringValue;
   if (status !== "completed") return { status: "pending" };
+  const placement = session.fields?.placement?.stringValue;
   const player = await readFirestoreDocument(env, "users", uid);
   if (!player) throw Object.assign(new Error("Player profile unavailable"), { status: 503 });
-  const livesValue = player.fields?.livesBalance;
-  const livesBalance = Number(livesValue?.integerValue ?? livesValue?.doubleValue ?? 0);
-  return { status: "completed", livesBalance: Number.isFinite(livesBalance) ? livesBalance : 0 };
+  const result = {
+    status: "completed",
+    placement,
+    verifiedRewardedAdsTotal: Number(player.fields?.verifiedRewardedAdsTotal?.integerValue || 0),
+    verifiedRewardedAdsWeek: Number(player.fields?.verifiedRewardedAdsWeek?.integerValue || 0)
+  };
+  if (placement === "life") {
+    const livesValue = player.fields?.livesBalance;
+    const livesBalance = Number(livesValue?.integerValue ?? livesValue?.doubleValue ?? 0);
+    result.livesBalance = Number.isFinite(livesBalance) ? livesBalance : 0;
+  }
+  return result;
 }
 
 async function processAdMobReward(request, env) {
@@ -286,98 +304,235 @@ async function processAdMobReward(request, env) {
   const amount = params.get("reward_amount");
   const rewardItem = params.get("reward_item");
 
-  if (!LIFE_AD_UNITS.has(adUnit) || !/^[a-f0-9]{32}$/i.test(sessionId) ||
-      !/^[a-f0-9]{16,128}$/i.test(transactionId) || amount !== (env.LIFE_REWARD_AMOUNT || "1") ||
-      rewardItem !== (env.LIFE_REWARD_ITEM || "life")) {
-    throw new Error("SSV reward does not match the configured life reward");
+  if (!/^[a-f0-9]{32}$/i.test(sessionId) || !/^[a-f0-9]{16,128}$/i.test(transactionId)) {
+    throw new Error("Malformed AdMob reward identifiers");
   }
-
   let session;
-  try {
-    session = await readFirestoreDocument(env, "adRewardSessions", sessionId);
-  } catch {
-    throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
-  }
+  try { session = await readFirestoreDocument(env, "adRewardSessions", sessionId); }
+  catch { throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 }); }
   if (!session) throw new Error("Unknown ad reward session");
   const fields = session.fields || {};
+  const placement = fields.placement?.stringValue;
+  const allowedUnits = AD_UNITS_BY_PLACEMENT[placement];
+  const expectedAmount = placement === "life" ? (env.LIFE_REWARD_AMOUNT || "1") :
+    placement === "points" ? (env.POINTS_REWARD_AMOUNT || "10") : null;
+  const expectedItem = placement === "life" ? (env.LIFE_REWARD_ITEM || "life") :
+    placement === "points" ? (env.POINTS_REWARD_ITEM || "points") : null;
+  if (!allowedUnits?.has(adUnit) || amount !== expectedAmount || rewardItem !== expectedItem) {
+    throw new Error("SSV reward does not match the configured ad placement");
+  }
   const sessionCreatedAt = Date.parse(fields.createdAt?.timestampValue || "");
-  if (fields.uid?.stringValue !== uid || fields.placement?.stringValue !== "life" ||
-      fields.status?.stringValue !== "pending" || !Number.isFinite(sessionCreatedAt) ||
-      Date.now() - sessionCreatedAt > 10 * 60 * 1000 || sessionCreatedAt > Date.now() + 60 * 1000) {
+  if (fields.uid?.stringValue !== uid || fields.status?.stringValue !== "pending" ||
+      !Number.isFinite(sessionCreatedAt) || Date.now() - sessionCreatedAt > 10 * 60 * 1000 ||
+      sessionCreatedAt > Date.now() + 60 * 1000) {
     let existing;
-    try {
-      existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
-    } catch {
-      throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
-    }
+    try { existing = await readFirestoreDocument(env, "adRewardLedger", transactionId); }
+    catch { throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 }); }
     if (existing) return { duplicate: true };
     throw new Error("Ad reward session is invalid or already used");
   }
-
   let playerProfile;
-  try {
-    playerProfile = await readFirestoreDocument(env, "users", uid);
-  } catch {
-    throw Object.assign(new Error("Player profile lookup failed"), { status: 503 });
-  }
-  if (!playerProfile) throw new Error("Player profile does not exist");
-  if (!session.updateTime) throw new Error("Ad session update time is missing");
+  try { playerProfile = await readFirestoreDocument(env, "users", uid); }
+  catch { throw Object.assign(new Error("Player profile lookup failed"), { status: 503 }); }
+  if (!playerProfile?.updateTime) throw new Error("Player profile does not exist or cannot be updated");
 
   const now = new Date();
-  const ledgerFields = firestoreFields({
-    playerUid: uid,
-    transactionId,
-    adUnit,
-    rewardItem,
-    rewardAmount: Number(amount),
-    placement: "life",
-    createdAt: now
-  });
+  const weekStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const weekday = weekStart.getUTCDay();
+  weekStart.setUTCDate(weekStart.getUTCDate() - ((weekday + 6) % 7));
+  const weekStartKey = weekStart.toISOString().slice(0, 10);
+  const playerFields = playerProfile.fields || {};
+  const previousWeek = playerFields.verifiedRewardedAdsWeekStart?.stringValue;
+  const previousWeekCount = Number(playerFields.verifiedRewardedAdsWeek?.integerValue || 0);
+  const totalCount = Number(playerFields.verifiedRewardedAdsTotal?.integerValue || 0) + 1;
+  const weeklyCount = previousWeek === weekStartKey ? previousWeekCount + 1 : 1;
+  const currentLives = Number(playerFields.livesBalance?.integerValue ?? playerFields.livesBalance?.doubleValue ?? 3);
+  const ledgerFields = firestoreFields({ playerUid: uid, transactionId, adUnit, rewardItem,
+    rewardAmount: Number(amount), placement, verification: "admob_ssv", createdAt: now, weekStart: weekStartKey });
+  const updatedFields = {
+    verifiedRewardedAdsTotal: totalCount, verifiedRewardedAdsWeek: weeklyCount,
+    verifiedRewardedAdsWeekStart: weekStartKey, lastVerifiedRewardedAdAt: now, rewardedAdsWatched: totalCount
+  };
+  const mask = ["verifiedRewardedAdsTotal", "verifiedRewardedAdsWeek", "verifiedRewardedAdsWeekStart",
+    "lastVerifiedRewardedAdAt", "rewardedAdsWatched"];
+  if (placement === "life") { updatedFields.livesBalance = currentLives + 1; mask.push("livesBalance"); }
+  const userUpdate = {
+    update: { name: documentPath("users", uid), fields: firestoreFields(updatedFields) },
+    updateMask: { fieldPaths: mask },
+    currentDocument: { updateTime: playerProfile.updateTime }
+  };
   let commitResponse;
   try {
-    commitResponse = await firestoreRequest(env, `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
-    method: "POST",
-    body: JSON.stringify({
-      writes: [
-        {
-          update: { name: documentPath("users", uid), fields: {} },
-          updateMask: { fieldPaths: [] },
-          updateTransforms: [
-            { fieldPath: "livesBalance", increment: { integerValue: "1" } },
-            { fieldPath: "rewardedAdsWatched", increment: { integerValue: "1" } }
-          ],
-          currentDocument: { exists: true }
-        },
-        {
-          update: { name: documentPath("adRewardLedger", transactionId), fields: ledgerFields },
-          currentDocument: { exists: false }
-        },
-        {
-          update: {
-            name: documentPath("adRewardSessions", sessionId),
-            fields: firestoreFields({ status: "completed", transactionId, completedAt: now })
-          },
+    commitResponse = await firestoreRequest(env, "projects/" + FIREBASE_PROJECT_ID + "/databases/(default)/documents:commit", {
+      method: "POST", body: JSON.stringify({ writes: [
+        userUpdate,
+        { update: { name: documentPath("adRewardLedger", transactionId), fields: ledgerFields }, currentDocument: { exists: false } },
+        { update: { name: documentPath("adRewardSessions", sessionId),
+          fields: firestoreFields({ status: "completed", transactionId, completedAt: now }) },
           updateMask: { fieldPaths: ["status", "transactionId", "completedAt"] },
-          currentDocument: { updateTime: session.updateTime }
-        }
-      ]
-    })
+          currentDocument: { updateTime: session.updateTime } }
+      ] })
     });
-  } catch {
-    throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
-  }
-
+  } catch { throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 }); }
   if (!commitResponse.ok) {
     let existing;
-    try {
-      existing = await readFirestoreDocument(env, "adRewardLedger", transactionId);
-    } catch {
-      throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 });
-    }
+    try { existing = await readFirestoreDocument(env, "adRewardLedger", transactionId); }
+    catch { throw Object.assign(new Error("Reward storage temporarily unavailable"), { status: 503 }); }
     if (existing) return { duplicate: true };
-    throw Object.assign(new Error("Firestore reward commit failed"), { status: 503 });
+    throw Object.assign(new Error("Firestore reward commit failed; callback may be retried"), { status: 503 });
   }
-  return { duplicate: false };
+  return { duplicate: false, placement, verifiedRewardedAdsTotal: totalCount, verifiedRewardedAdsWeek: weeklyCount };
+}
+
+function isAdMobAdmin(uid, env) {
+  const allowed = (env.ADMOB_ADMIN_UIDS || "").split(",").map((value) => value.trim()).filter(Boolean);
+  return allowed.includes(uid);
+}
+
+async function queryVerifiedAdLedger(env, startDate, endDate) {
+  const start = new Date(`${startDate}T00:00:00.000Z`);
+  const end = new Date(`${endDate}T00:00:00.000Z`);
+  // AdMob's account reporting timezone can differ from UTC. Query a safe
+  // surrounding UTC window, then bucket every event using reportingTimeZone.
+  start.setUTCDate(start.getUTCDate() - 2);
+  end.setUTCDate(end.getUTCDate() + 3);
+  const response = await firestoreRequest(env,
+    `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:runQuery`, {
+      method: "POST",
+      body: JSON.stringify({
+        structuredQuery: {
+          from: [{ collectionId: "adRewardLedger" }],
+          where: { compositeFilter: { op: "AND", filters: [
+            { fieldFilter: { field: { fieldPath: "createdAt" }, op: "GREATER_THAN_OR_EQUAL", value: { timestampValue: start.toISOString() } } },
+            { fieldFilter: { field: { fieldPath: "createdAt" }, op: "LESS_THAN", value: { timestampValue: end.toISOString() } } }
+          ] } },
+          orderBy: [{ field: { fieldPath: "createdAt" }, direction: "ASCENDING" }],
+          limit: 10000
+        }
+      })
+    });
+  if (!response.ok) throw Object.assign(new Error("Could not read verified-ad ledger"), { status: 503 });
+  const results = await response.json();
+  const documents = Array.isArray(results) ? results.map((item) => item.document).filter(Boolean) : [];
+  if (documents.length >= 10000) {
+    throw Object.assign(new Error("Verified-ad query reached its safety limit; narrow the report date range"), { status: 413 });
+  }
+  return documents;
+}
+
+async function createAdMobReconciliationPreview(request, env, uid) {
+  if (!isAdMobAdmin(uid, env)) throw Object.assign(new Error("Admin access required"), { status: 403 });
+  const url = new URL(request.url);
+  const startDate = url.searchParams.get("startDate");
+  const endDate = url.searchParams.get("endDate");
+  if (!startDate || !endDate) throw Object.assign(new Error("startDate and endDate are required"), { status: 400 });
+
+  let diagnosticStage = "oauth_refresh";
+  try {
+  const { accessToken } = await getAdMobAccessToken(env);
+  diagnosticStage = "admob_account_listing";
+  const accounts = await listAdMobAccounts(accessToken);
+  const publisherId = env.ADMOB_PUBLISHER_ID || (accounts.length === 1 ? accounts[0]?.publisherId : "");
+  const account = accounts.find((item) => item.publisherId === publisherId);
+  if (!account || !account.reportingTimeZone) {
+    throw Object.assign(new Error("AdMob publisher account is missing or ambiguous; configure ADMOB_PUBLISHER_ID"), { status: 503 });
+  }
+  diagnosticStage = "admob_report_generation";
+  const report = await generateAdMobNetworkReport({
+    accessToken, publisherId, startDate, endDate
+  });
+  diagnosticStage = "firestore_verified_ad_ledger";
+  const ledgerDocuments = await queryVerifiedAdLedger(env, startDate, endDate);
+  diagnosticStage = "revenue_reconciliation";
+  const reconciliation = buildRevenueReconciliation({
+    reportMessages: [report.header, ...report.rows, report.footer],
+    ledgerDocuments,
+    timeZone: account.reportingTimeZone
+  });
+  return {
+    status: "preview_only",
+    creditingEnabled: false,
+    earningsType: "estimated",
+    currencyCode: "USD",
+    reportingTimeZone: account.reportingTimeZone,
+    publisherId,
+    startDate,
+    endDate,
+    rows: reconciliation.map((row) => ({
+      ...row,
+      earningsUsd: row.earningsMicros / 1_000_000,
+      playerPoolUsd: row.playerPoolMicros / 1_000_000,
+      danatShareUsd: row.danatShareMicros / 1_000_000,
+      allocations: row.allocations.map((allocation) => ({
+        ...allocation,
+        dnc: allocation.micros / 1_000_000
+      }))
+    }))
+  };
+  } catch (error) {
+    error.diagnosticStage = diagnosticStage;
+    throw error;
+  }
+}
+
+async function stageAdMobReconciliation(request, env, uid) {
+  const preview = await createAdMobReconciliationPreview(request, env, uid);
+  if (preview.rows.length > 400) {
+    throw Object.assign(new Error("Report contains too many rows to stage safely"), { status: 413 });
+  }
+  let created = 0;
+  let alreadyStaged = 0;
+  const staged = [];
+  for (const row of preview.rows) {
+    const fingerprintInput = JSON.stringify({
+      date: row.date, adUnit: row.adUnit, earningsMicros: row.earningsMicros,
+      playerPoolMicros: row.playerPoolMicros, danatShareMicros: row.danatShareMicros,
+      totalVerifiedAds: row.totalVerifiedAds, allocations: row.allocations
+    });
+    const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", encoder.encode(fingerprintInput)));
+    const fingerprint = [...digest].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+    const reportId = `report-${row.date}-${fingerprint}`;
+    const fields = firestoreFields({
+      date: row.date,
+      adUnit: row.adUnit,
+      publisherId: preview.publisherId,
+      currencyCode: "USD",
+      earningsType: "estimated",
+      earningsMicros: row.earningsMicros,
+      playerPoolMicros: row.playerPoolMicros,
+      danatShareMicros: row.danatShareMicros,
+      totalVerifiedAds: row.totalVerifiedAds,
+      allocationsJson: JSON.stringify(row.allocations),
+      status: "pending_review",
+      creditsIssued: false,
+      reportingTimeZone: preview.reportingTimeZone,
+      createdAt: new Date()
+    });
+    const response = await firestoreRequest(env,
+      `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:commit`, {
+        method: "POST",
+        body: JSON.stringify({ writes: [{
+          update: { name: documentPath("adMobDailyReconciliations", reportId), fields },
+          currentDocument: { exists: false }
+        }] })
+      });
+    if (response.ok) {
+      created++;
+      staged.push({ reportId, date: row.date, adUnit: row.adUnit, status: "pending_review" });
+    } else {
+      const existing = await readFirestoreDocument(env, "adMobDailyReconciliations", reportId);
+      if (!existing) throw Object.assign(new Error("Could not stage reconciliation row"), { status: 503 });
+      alreadyStaged++;
+      staged.push({ reportId, date: row.date, adUnit: row.adUnit, status: existing.fields?.status?.stringValue || "pending_review" });
+    }
+  }
+  return {
+    status: "staged_for_manual_review",
+    creditingEnabled: false,
+    created,
+    alreadyStaged,
+    staged
+  };
 }
 
 async function updatePlayerLifeLoss(env, uid) {
@@ -471,7 +626,7 @@ export default {
     }
 
     if (url.pathname === "/health" && request.method === "GET") {
-      return json({ status: "ok", service: "danat-quiz-api", version: 2 }, 200, cors);
+      return json({ status: "ok", service: "danat-quiz-api", version: 3 }, 200, cors);
     }
 
     if (url.pathname === "/v1/session" && request.method === "GET") {
@@ -504,9 +659,10 @@ export default {
     if (url.pathname === "/v1/ad-session" && request.method === "POST") {
       try {
         const user = await verifyFirebaseIdToken(request);
+        if (user.isAnonymous) return json({ error: "registered_account_required" }, 403, cors);
         const body = await request.json();
-        if (body?.placement !== "life") return json({ error: "invalid_placement" }, 400, cors);
-        const sessionId = await createAdSession(env, user.uid);
+        if (!["life", "points"].includes(body?.placement)) return json({ error: "invalid_placement" }, 400, cors);
+        const sessionId = await createAdSession(env, user.uid, body.placement);
         return json({ sessionId, customData: sessionId }, 201, cors);
       } catch (error) {
         return json({ error: "ad_session_unavailable" }, 503, cors);
@@ -520,6 +676,36 @@ export default {
         return json(await getAdSessionStatus(env, user.uid, body?.sessionId), 200, cors);
       } catch (error) {
         return json({ error: "ad_status_unavailable" }, error?.status || 503, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/admin/admob/reconciliation-stage" && request.method === "POST") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        return json(await stageAdMobReconciliation(request, env, user.uid), 200, cors);
+      } catch (error) {
+        const status = error?.status || 503;
+        return json({ error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
+          status === 413 ? "report_too_large" : "reconciliation_stage_failed" }, status, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/admin/admob/reconciliation-preview" && request.method === "GET") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        return json(await createAdMobReconciliationPreview(request, env, user.uid), 200, cors);
+      } catch (error) {
+        const status = error?.status || 503;
+        console.error("AdMob reconciliation preview failed", {
+          stage: error?.diagnosticStage || "authentication_or_request",
+          status,
+          message: String(error?.message || "unknown").slice(0, 160)
+        });
+        return json({
+          error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
+            status === 413 ? "report_too_large" : "reconciliation_preview_failed",
+          diagnosticStage: error?.diagnosticStage || "authentication_or_request"
+        }, status, cors);
       }
     }
 
