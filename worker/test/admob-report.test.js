@@ -27,9 +27,9 @@ test("discovers all AdMob accounts across pages", async () => {
   const accounts = await listAdMobAccounts("access-token", async (url) => {
     calls++;
     if (String(url).includes("pageToken=next")) {
-      return Response.json({ accounts: [{ publisherId: "pub-222" }] });
+      return Response.json({ account: [{ publisherId: "pub-222" }] });
     }
-    return Response.json({ accounts: [{ publisherId: "pub-111" }], nextPageToken: "next" });
+    return Response.json({ account: [{ publisherId: "pub-111" }], nextPageToken: "next" });
   });
   assert.equal(calls, 2);
   assert.deepEqual(accounts.map((account) => account.publisherId), ["pub-111", "pub-222"]);
