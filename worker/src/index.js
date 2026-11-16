@@ -1,3 +1,5 @@
+import { getAdMobAccessToken, listAdMobAccounts, generateAdMobNetworkReport } from "./admob-report.js";
+import { buildRevenueReconciliation } from "./revenue-reconciliation.js";
 const FIREBASE_PROJECT_ID = "danat-quiz-app";
 const FIREBASE_ISSUER = `https://securetoken.google.com/${FIREBASE_PROJECT_ID}`;
 const FIREBASE_JWKS_URL = "https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com";
@@ -382,6 +384,87 @@ async function processAdMobReward(request, env) {
   return { duplicate: false, placement, verifiedRewardedAdsTotal: totalCount, verifiedRewardedAdsWeek: weeklyCount };
 }
 
+function isAdMobAdmin(uid, env) {
+  const allowed = (env.ADMOB_ADMIN_UIDS || "").split(",").map((value) => value.trim()).filter(Boolean);
+  return allowed.includes(uid);
+}
+
+async function queryVerifiedAdLedger(env, startDate, endDate) {
+  const start = new Date(`${startDate}T00:00:00.000Z`);
+  const end = new Date(`${endDate}T00:00:00.000Z`);
+  // AdMob's account reporting timezone can differ from UTC. Query a safe
+  // surrounding UTC window, then bucket every event using reportingTimeZone.
+  start.setUTCDate(start.getUTCDate() - 2);
+  end.setUTCDate(end.getUTCDate() + 3);
+  const response = await firestoreRequest(env,
+    `projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents:runQuery`, {
+      method: "POST",
+      body: JSON.stringify({
+        structuredQuery: {
+          from: [{ collectionId: "adRewardLedger" }],
+          where: { compositeFilter: { op: "AND", filters: [
+            { fieldFilter: { field: { fieldPath: "createdAt" }, op: "GREATER_THAN_OR_EQUAL", value: { timestampValue: start.toISOString() } } },
+            { fieldFilter: { field: { fieldPath: "createdAt" }, op: "LESS_THAN", value: { timestampValue: end.toISOString() } } }
+          ] } },
+          orderBy: [{ field: { fieldPath: "createdAt" }, direction: "ASCENDING" }],
+          limit: 10000
+        }
+      })
+    });
+  if (!response.ok) throw Object.assign(new Error("Could not read verified-ad ledger"), { status: 503 });
+  const results = await response.json();
+  const documents = Array.isArray(results) ? results.map((item) => item.document).filter(Boolean) : [];
+  if (documents.length >= 10000) {
+    throw Object.assign(new Error("Verified-ad query reached its safety limit; narrow the report date range"), { status: 413 });
+  }
+  return documents;
+}
+
+async function createAdMobReconciliationPreview(request, env, uid) {
+  if (!isAdMobAdmin(uid, env)) throw Object.assign(new Error("Admin access required"), { status: 403 });
+  const url = new URL(request.url);
+  const startDate = url.searchParams.get("startDate");
+  const endDate = url.searchParams.get("endDate");
+  if (!startDate || !endDate) throw Object.assign(new Error("startDate and endDate are required"), { status: 400 });
+
+  const { accessToken } = await getAdMobAccessToken(env);
+  const accounts = await listAdMobAccounts(accessToken);
+  const publisherId = env.ADMOB_PUBLISHER_ID || (accounts.length === 1 ? accounts[0]?.publisherId : "");
+  const account = accounts.find((item) => item.publisherId === publisherId);
+  if (!account || !account.reportingTimeZone) {
+    throw Object.assign(new Error("AdMob publisher account is missing or ambiguous; configure ADMOB_PUBLISHER_ID"), { status: 503 });
+  }
+  const report = await generateAdMobNetworkReport({
+    accessToken, publisherId, startDate, endDate
+  });
+  const ledgerDocuments = await queryVerifiedAdLedger(env, startDate, endDate);
+  const reconciliation = buildRevenueReconciliation({
+    reportMessages: [report.header, ...report.rows, report.footer],
+    ledgerDocuments,
+    timeZone: account.reportingTimeZone
+  });
+  return {
+    status: "preview_only",
+    creditingEnabled: false,
+    earningsType: "estimated",
+    currencyCode: "USD",
+    reportingTimeZone: account.reportingTimeZone,
+    publisherId,
+    startDate,
+    endDate,
+    rows: reconciliation.map((row) => ({
+      ...row,
+      earningsUsd: row.earningsMicros / 1_000_000,
+      playerPoolUsd: row.playerPoolMicros / 1_000_000,
+      danatShareUsd: row.danatShareMicros / 1_000_000,
+      allocations: row.allocations.map((allocation) => ({
+        ...allocation,
+        dnc: allocation.micros / 1_000_000
+      }))
+    }))
+  };
+}
+
 async function updatePlayerLifeLoss(env, uid) {
   const player = await readFirestoreDocument(env, "users", uid);
   if (!player?.updateTime) throw Object.assign(new Error("Player profile unavailable"), { status: 404 });
@@ -523,6 +606,17 @@ export default {
         return json(await getAdSessionStatus(env, user.uid, body?.sessionId), 200, cors);
       } catch (error) {
         return json({ error: "ad_status_unavailable" }, error?.status || 503, cors);
+      }
+    }
+
+    if (url.pathname === "/v1/admin/admob/reconciliation-preview" && request.method === "GET") {
+      try {
+        const user = await verifyFirebaseIdToken(request);
+        return json(await createAdMobReconciliationPreview(request, env, user.uid), 200, cors);
+      } catch (error) {
+        const status = error?.status || 503;
+        return json({ error: status === 403 ? "forbidden" : status === 400 ? "invalid_request" :
+          status === 413 ? "report_too_large" : "reconciliation_preview_failed" }, status, cors);
       }
     }
 
