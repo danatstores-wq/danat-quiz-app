@@ -435,7 +435,10 @@ async function createAdMobReconciliationPreview(request, env, uid) {
   const publisherId = env.ADMOB_PUBLISHER_ID || (accounts.length === 1 ? accounts[0]?.publisherId : "");
   const account = accounts.find((item) => item.publisherId === publisherId);
   if (!account || !account.reportingTimeZone) {
-    throw Object.assign(new Error("AdMob publisher account is missing or ambiguous; configure ADMOB_PUBLISHER_ID"), { status: 503 });
+    throw Object.assign(new Error("AdMob publisher account is missing or ambiguous; configure ADMOB_PUBLISHER_ID"), {
+      status: 503,
+      diagnosticCode: accounts.length === 0 ? "admob_no_publisher_accounts" : "admob_publisher_id_missing_or_ambiguous"
+    });
   }
   diagnosticStage = "admob_report_generation";
   const report = await generateAdMobNetworkReport({
