@@ -27,7 +27,10 @@ async function readJsonResponse(response, label) {
     data = await response.json();
   } catch {
     if (!response.ok) {
-      throw Object.assign(new Error(`${label} request failed`), { status: response.status === 401 ? 401 : 503 });
+      throw Object.assign(new Error(`${label} request failed`), {
+        status: response.status === 401 ? 401 : 503,
+        diagnosticCode: "http_" + response.status + "_non_json_response"
+      });
     }
     throw Object.assign(new Error(`${label} returned invalid JSON`), { status: 502 });
   }
