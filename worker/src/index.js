@@ -411,7 +411,18 @@ async function queryVerifiedAdLedger(env, startDate, endDate) {
         }
       })
     });
-  if (!response.ok) throw Object.assign(new Error("Could not read verified-ad ledger"), { status: 503 });
+  if (!response.ok) {
+    let diagnosticCode = "firestore_http_" + response.status;
+    try {
+      const errorBody = await response.json();
+      const rawCode = errorBody?.error?.status || errorBody?.error?.details?.[0]?.reason;
+      if (typeof rawCode === "string") {
+        const safeCode = rawCode.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 48);
+        if (safeCode) diagnosticCode += "_" + safeCode;
+      }
+    } catch {}
+    throw Object.assign(new Error("Could not read verified-ad ledger"), { status: 503, diagnosticCode });
+  }
   const results = await response.json();
   const documents = Array.isArray(results) ? results.map((item) => item.document).filter(Boolean) : [];
   if (documents.length >= 10000) {
