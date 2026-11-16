@@ -1193,6 +1193,7 @@ export default function App() {
         const error = new Error(data.error || `HTTP_${response.status}`);
         error.status = response.status;
         error.diagnosticStage = data.diagnosticStage || '';
+        error.diagnosticCode = data.diagnosticCode || '';
         throw error;
       }
       setAdmobTestResult({ ok: true, data });
@@ -1202,7 +1203,7 @@ export default function App() {
         : error.status === 401
           ? 'Your login session could not be verified. Please sign out and sign in again.'
           : error.diagnosticStage
-            ? `${error.message} (step: ${error.diagnosticStage})`
+            ? `${error.message} (step: ${error.diagnosticStage}${error.diagnosticCode ? `; code: ${error.diagnosticCode}` : ''})`
             : error.message || 'AdMob connection test failed.';
       setAdmobTestResult({ ok: false, message });
     } finally {
