@@ -9,7 +9,7 @@ function requireSecret(value, name) {
 }
 
 function parseIsoDate(value, name) {
-  if (typeof value !== "string" || !/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
     throw new Error(`Invalid ${name}`);
   }
   const [year, month, day] = value.split("-").map(Number);
@@ -75,7 +75,7 @@ export async function generateAdMobNetworkReport({
   accessToken, publisherId, startDate, endDate, fetchImpl = fetch
 }) {
   if (typeof accessToken !== "string" || !accessToken) throw new Error("Missing AdMob access token");
-  if (typeof publisherId !== "string" || !/^pub-\\d+$/.test(publisherId)) throw new Error("Invalid AdMob publisher ID");
+  if (typeof publisherId !== "string" || !/^pub-\d+$/.test(publisherId)) throw new Error("Invalid AdMob publisher ID");
   const start = parseIsoDate(startDate, "start date");
   const end = parseIsoDate(endDate, "end date");
   const startKey = Date.UTC(start.year, start.month - 1, start.day);
