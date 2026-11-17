@@ -483,8 +483,27 @@ async function createAdMobReconciliationPreview(request, env, uid) {
     ledgerDocuments,
     timeZone: account.reportingTimeZone
   });
+  // Safe aggregate diagnostics help distinguish an empty AdMob report from
+  // a missing verified-SSV ledger without exposing player identifiers.
+  const verifiedLedgerByAdUnit = {};
+  let verifiedSsvRecordCount = 0;
+  for (const document of ledgerDocuments) {
+    const fields = document?.fields || document;
+    const verification = fields.verification?.stringValue ?? fields.verification;
+    if (verification !== "admob_ssv") continue;
+    verifiedSsvRecordCount++;
+    const adUnit = fields.adUnit?.stringValue ?? fields.adUnit ?? "unknown";
+    verifiedLedgerByAdUnit[adUnit] = (verifiedLedgerByAdUnit[adUnit] || 0) + 1;
+  }
   return {
     status: "preview_only",
+    diagnostics: {
+      reportRowCount: report.rows.length,
+      reportMatchingRowCount: Number(report.footer?.matchingRowCount || 0),
+      ledgerDocumentCount: ledgerDocuments.length,
+      verifiedSsvRecordCount,
+      verifiedLedgerByAdUnit
+    },
     creditingEnabled: false,
     earningsType: "estimated",
     currencyCode: "USD",
