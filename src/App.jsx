@@ -2533,10 +2533,22 @@ export default function App() {
                       <div className="font-bold">AdMob report access successful</div>
                       <div>Date: {admobTestResult.data.startDate}</div>
                       <div>Account time zone: {admobTestResult.data.reportingTimeZone}</div>
-                      <div>Report rows: {admobTestResult.data.rows?.length ?? 0}</div>
+                      <div>Report rows: {admobTestResult.data.diagnostics?.reportRowCount ?? admobTestResult.data.rows?.length ?? 0}</div>
                       <div>Estimated earnings: ${(admobTestResult.data.rows || []).reduce((sum, row) => sum + Number(row.earningsUsd || 0), 0).toFixed(6)} USD</div>
                       <div>Player pool (30%): ${(admobTestResult.data.rows || []).reduce((sum, row) => sum + Number(row.playerPoolUsd || 0), 0).toFixed(6)} USD</div>
                       <div>Danat share (70%): ${(admobTestResult.data.rows || []).reduce((sum, row) => sum + Number(row.danatShareUsd || 0), 0).toFixed(6)} USD</div>
+                      <div className="mt-2 border-t border-emerald-400/20 pt-2 font-bold">Diagnostics</div>
+                      <div>AdMob matching rows: {admobTestResult.data.diagnostics?.reportMatchingRowCount ?? 'Not available'}</div>
+                      <div>Ledger documents found: {admobTestResult.data.diagnostics?.ledgerDocumentCount ?? 'Not available'}</div>
+                      <div>Verified AdMob SSV records: {admobTestResult.data.diagnostics?.verifiedSsvRecordCount ?? 'Not available'}</div>
+                      <div className="pt-1">Verified records by ad unit:</div>
+                      {Object.entries(admobTestResult.data.diagnostics?.verifiedLedgerByAdUnit || {}).length > 0 ? (
+                        Object.entries(admobTestResult.data.diagnostics.verifiedLedgerByAdUnit).map(([adUnit, count]) => (
+                          <div key={adUnit} className="break-all">{adUnit}: {count}</div>
+                        ))
+                      ) : (
+                        <div>No verified SSV records found for this date.</div>
+                      )}
                       <div className="pt-1 text-emerald-200">Preview only. No player balances changed.</div>
                     </div>
                   )}
