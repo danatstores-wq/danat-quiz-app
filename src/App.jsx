@@ -1400,6 +1400,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const autoClaimAttempted = new Set();
     const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
       if (authUser) {
         setCurrentUser(authUser);
@@ -1431,6 +1432,27 @@ export default function App() {
             avatar: data.avatar ?? prev.avatar,
             language: data.language ?? prev.language,
           }));
+
+          // Automatically claim the timed life bonus once per signed-in app session.
+          // The server enforces the 3-hour cooldown and 10-lives-per-24-hours limit.
+          if (!autoClaimAttempted.has(authUser.uid)) {
+            autoClaimAttempted.add(authUser.uid);
+            try {
+              const bonus = await callTrustedApi(authUser, '/v1/timed-lives');
+              if (bonus.claimed && Number.isInteger(bonus.livesBalance)) {
+                setLives(bonus.livesBalance);
+                setUser(prev => ({
+                  ...prev,
+                  livesBalance: bonus.livesBalance,
+                  lastSpiritClaimTime: bonus.lastSpiritClaimTime,
+                  dailyClaimedLives: bonus.dailyClaimedLives,
+                  lastDailyResetTime: bonus.lastDailyResetTime
+                }));
+              }
+            } catch (error) {
+              console.warn('Automatic timed-life claim failed:', error);
+            }
+          }
         }
       } else {
         setCurrentUser(null);
