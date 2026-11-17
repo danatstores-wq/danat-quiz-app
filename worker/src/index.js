@@ -764,6 +764,12 @@ export default {
     }
 
     if (url.pathname === "/v1/admob/ssv" && request.method === "GET") {
+      // AdMob's dashboard URL-verification probe may request the callback
+      // endpoint without a signed reward payload. Confirm reachability only;
+      // never create a reward or ledger entry for this probe.
+      if (!url.search) {
+        return json({ status: "ok", verification: "endpoint_reachable" }, 200);
+      }
       try {
         const result = await processAdMobReward(request, env);
         return json({ received: true, duplicate: result.duplicate }, 200);
