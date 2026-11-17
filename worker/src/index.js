@@ -236,7 +236,7 @@ async function verifyAdMobSignature(request) {
   if (!signatureText || !keyId || [...tailParams.keys()].join(",") !== "signature,key_id") throw new Error("Missing SSV signature fields");
 
   const params = new URLSearchParams(signedQuery);
-  const required = ["ad_unit", "custom_data", "reward_amount", "reward_item", "timestamp", "transaction_id", "user_id"];
+  const required = ["ad_unit", "reward_amount", "reward_item", "timestamp", "transaction_id"];
   for (const name of required) if (!params.has(name)) throw new Error(`Missing SSV field: ${name}`);
   let timestamp = Number(params.get("timestamp"));
   if (timestamp > 1e14) timestamp /= 1000;
@@ -764,13 +764,17 @@ export default {
     }
 
     if (url.pathname === "/v1/admob/ssv" && request.method === "GET") {
-      // AdMob's dashboard URL-verification probe may request the callback
-      // endpoint without a signed reward payload. Confirm reachability only;
-      // never create a reward or ledger entry for this probe.
+      // AdMob's dashboard verification test sends a signed sample callback.
+      // When optional User ID and Custom data are left blank, acknowledge the
+      // signature test but never create a player reward or ledger entry.
       if (!url.search) {
         return json({ status: "ok", verification: "endpoint_reachable" }, 200);
       }
       try {
+        const params = await verifyAdMobSignature(request);
+        if (!params.has("user_id") || !params.has("custom_data")) {
+          return json({ received: true, verification: "signature_valid_test_only", rewarded: false }, 200);
+        }
         const result = await processAdMobReward(request, env);
         return json({ received: true, duplicate: result.duplicate }, 200);
       } catch (error) {
