@@ -27798,5 +27798,7040 @@
     },
     "points": 10,
     "category": "Agriculture"
+  },
+  {
+    "id": "q801",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Japan?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة اليابان؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale du Japon ?"
+    },
+    "options": {
+      "en": [
+        "Tokyo",
+        "Ottawa",
+        "Seoul",
+        "Canberra"
+      ],
+      "ar": [
+        "طوكيو",
+        "أوتاوا",
+        "سيول",
+        "كانبرا"
+      ],
+      "fr": [
+        "Tokyo",
+        "Ottawa",
+        "Séoul",
+        "Canberra"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tokyo",
+      "ar": "طوكيو",
+      "fr": "Tokyo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q802",
+    "question": {
+      "en": "What is described by this clue: The capital city of Japan?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة اليابان؟",
+      "fr": "Que décrit cet indice : La capitale du Japon ?"
+    },
+    "options": {
+      "en": [
+        "Canberra",
+        "Buenos Aires",
+        "Brasília",
+        "Tokyo"
+      ],
+      "ar": [
+        "كانبرا",
+        "بوينس آيرس",
+        "برازيليا",
+        "طوكيو"
+      ],
+      "fr": [
+        "Canberra",
+        "Buenos Aires",
+        "Brasília",
+        "Tokyo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tokyo",
+      "ar": "طوكيو",
+      "fr": "Tokyo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q803",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Japan?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة اليابان؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale du Japon ?"
+    },
+    "options": {
+      "en": [
+        "Oslo",
+        "Cairo",
+        "Tokyo",
+        "Brasília"
+      ],
+      "ar": [
+        "أوسلو",
+        "القاهرة",
+        "طوكيو",
+        "برازيليا"
+      ],
+      "fr": [
+        "Oslo",
+        "Le Caire",
+        "Tokyo",
+        "Brasília"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Tokyo",
+      "ar": "طوكيو",
+      "fr": "Tokyo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q804",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Canada?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة كندا؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale du Canada ?"
+    },
+    "options": {
+      "en": [
+        "Cairo",
+        "Bangkok",
+        "Nairobi",
+        "Ottawa"
+      ],
+      "ar": [
+        "القاهرة",
+        "بانكوك",
+        "نيروبي",
+        "أوتاوا"
+      ],
+      "fr": [
+        "Le Caire",
+        "Bangkok",
+        "Nairobi",
+        "Ottawa"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ottawa",
+      "ar": "أوتاوا",
+      "fr": "Ottawa"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q805",
+    "question": {
+      "en": "What is described by this clue: The capital city of Canada?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة كندا؟",
+      "fr": "Que décrit cet indice : La capitale du Canada ?"
+    },
+    "options": {
+      "en": [
+        "Tokyo",
+        "Seoul",
+        "Ottawa",
+        "Nairobi"
+      ],
+      "ar": [
+        "طوكيو",
+        "سيول",
+        "أوتاوا",
+        "نيروبي"
+      ],
+      "fr": [
+        "Tokyo",
+        "Séoul",
+        "Ottawa",
+        "Nairobi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ottawa",
+      "ar": "أوتاوا",
+      "fr": "Ottawa"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q806",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Canada?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة كندا؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale du Canada ?"
+    },
+    "options": {
+      "en": [
+        "Buenos Aires",
+        "Ottawa",
+        "Seoul",
+        "Canberra"
+      ],
+      "ar": [
+        "بوينس آيرس",
+        "أوتاوا",
+        "سيول",
+        "كانبرا"
+      ],
+      "fr": [
+        "Buenos Aires",
+        "Ottawa",
+        "Séoul",
+        "Canberra"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ottawa",
+      "ar": "أوتاوا",
+      "fr": "Ottawa"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q807",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Australia?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة أستراليا؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale de l’Australie ?"
+    },
+    "options": {
+      "en": [
+        "Brasília",
+        "Oslo",
+        "Canberra",
+        "Buenos Aires"
+      ],
+      "ar": [
+        "برازيليا",
+        "أوسلو",
+        "كانبرا",
+        "بوينس آيرس"
+      ],
+      "fr": [
+        "Brasília",
+        "Oslo",
+        "Canberra",
+        "Buenos Aires"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Canberra",
+      "ar": "كانبرا",
+      "fr": "Canberra"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q808",
+    "question": {
+      "en": "What is described by this clue: The capital city of Australia?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة أستراليا؟",
+      "fr": "Que décrit cet indice : La capitale de l’Australie ?"
+    },
+    "options": {
+      "en": [
+        "Bangkok",
+        "Canberra",
+        "Oslo",
+        "Cairo"
+      ],
+      "ar": [
+        "بانكوك",
+        "كانبرا",
+        "أوسلو",
+        "القاهرة"
+      ],
+      "fr": [
+        "Bangkok",
+        "Canberra",
+        "Oslo",
+        "Le Caire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Canberra",
+      "ar": "كانبرا",
+      "fr": "Canberra"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q809",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Australia?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة أستراليا؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale de l’Australie ?"
+    },
+    "options": {
+      "en": [
+        "Canberra",
+        "Bangkok",
+        "Nairobi",
+        "Tokyo"
+      ],
+      "ar": [
+        "كانبرا",
+        "بانكوك",
+        "نيروبي",
+        "طوكيو"
+      ],
+      "fr": [
+        "Canberra",
+        "Bangkok",
+        "Nairobi",
+        "Tokyo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Canberra",
+      "ar": "كانبرا",
+      "fr": "Canberra"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q810",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Brazil?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة البرازيل؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale du Brésil ?"
+    },
+    "options": {
+      "en": [
+        "Ottawa",
+        "Brasília",
+        "Tokyo",
+        "Seoul"
+      ],
+      "ar": [
+        "أوتاوا",
+        "برازيليا",
+        "طوكيو",
+        "سيول"
+      ],
+      "fr": [
+        "Ottawa",
+        "Brasília",
+        "Tokyo",
+        "Séoul"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Brasília",
+      "ar": "برازيليا",
+      "fr": "Brasília"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q811",
+    "question": {
+      "en": "What is described by this clue: The capital city of Brazil?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة البرازيل؟",
+      "fr": "Que décrit cet indice : La capitale du Brésil ?"
+    },
+    "options": {
+      "en": [
+        "Brasília",
+        "Ottawa",
+        "Buenos Aires",
+        "Canberra"
+      ],
+      "ar": [
+        "برازيليا",
+        "أوتاوا",
+        "بوينس آيرس",
+        "كانبرا"
+      ],
+      "fr": [
+        "Brasília",
+        "Ottawa",
+        "Buenos Aires",
+        "Canberra"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Brasília",
+      "ar": "برازيليا",
+      "fr": "Brasília"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q812",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Brazil?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة البرازيل؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale du Brésil ?"
+    },
+    "options": {
+      "en": [
+        "Canberra",
+        "Oslo",
+        "Cairo",
+        "Brasília"
+      ],
+      "ar": [
+        "كانبرا",
+        "أوسلو",
+        "القاهرة",
+        "برازيليا"
+      ],
+      "fr": [
+        "Canberra",
+        "Oslo",
+        "Le Caire",
+        "Brasília"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Brasília",
+      "ar": "برازيليا",
+      "fr": "Brasília"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q813",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Egypt?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة مصر؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale de l’Égypte ?"
+    },
+    "options": {
+      "en": [
+        "Cairo",
+        "Brasília",
+        "Bangkok",
+        "Nairobi"
+      ],
+      "ar": [
+        "القاهرة",
+        "برازيليا",
+        "بانكوك",
+        "نيروبي"
+      ],
+      "fr": [
+        "Le Caire",
+        "Brasília",
+        "Bangkok",
+        "Nairobi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cairo",
+      "ar": "القاهرة",
+      "fr": "Le Caire"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q814",
+    "question": {
+      "en": "What is described by this clue: The capital city of Egypt?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة مصر؟",
+      "fr": "Que décrit cet indice : La capitale de l’Égypte ?"
+    },
+    "options": {
+      "en": [
+        "Nairobi",
+        "Tokyo",
+        "Seoul",
+        "Cairo"
+      ],
+      "ar": [
+        "نيروبي",
+        "طوكيو",
+        "سيول",
+        "القاهرة"
+      ],
+      "fr": [
+        "Nairobi",
+        "Tokyo",
+        "Séoul",
+        "Le Caire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cairo",
+      "ar": "القاهرة",
+      "fr": "Le Caire"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q815",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Egypt?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة مصر؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale de l’Égypte ?"
+    },
+    "options": {
+      "en": [
+        "Ottawa",
+        "Buenos Aires",
+        "Cairo",
+        "Seoul"
+      ],
+      "ar": [
+        "أوتاوا",
+        "بوينس آيرس",
+        "القاهرة",
+        "سيول"
+      ],
+      "fr": [
+        "Ottawa",
+        "Buenos Aires",
+        "Le Caire",
+        "Séoul"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Cairo",
+      "ar": "القاهرة",
+      "fr": "Le Caire"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q816",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Kenya?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة كينيا؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale du Kenya ?"
+    },
+    "options": {
+      "en": [
+        "Buenos Aires",
+        "Canberra",
+        "Oslo",
+        "Nairobi"
+      ],
+      "ar": [
+        "بوينس آيرس",
+        "كانبرا",
+        "أوسلو",
+        "نيروبي"
+      ],
+      "fr": [
+        "Buenos Aires",
+        "Canberra",
+        "Oslo",
+        "Nairobi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nairobi",
+      "ar": "نيروبي",
+      "fr": "Nairobi"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q817",
+    "question": {
+      "en": "What is described by this clue: The capital city of Kenya?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة كينيا؟",
+      "fr": "Que décrit cet indice : La capitale du Kenya ?"
+    },
+    "options": {
+      "en": [
+        "Brasília",
+        "Bangkok",
+        "Nairobi",
+        "Oslo"
+      ],
+      "ar": [
+        "برازيليا",
+        "بانكوك",
+        "نيروبي",
+        "أوسلو"
+      ],
+      "fr": [
+        "Brasília",
+        "Bangkok",
+        "Nairobi",
+        "Oslo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nairobi",
+      "ar": "نيروبي",
+      "fr": "Nairobi"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q818",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Kenya?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة كينيا؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale du Kenya ?"
+    },
+    "options": {
+      "en": [
+        "Tokyo",
+        "Nairobi",
+        "Bangkok",
+        "Cairo"
+      ],
+      "ar": [
+        "طوكيو",
+        "نيروبي",
+        "بانكوك",
+        "القاهرة"
+      ],
+      "fr": [
+        "Tokyo",
+        "Nairobi",
+        "Bangkok",
+        "Le Caire"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nairobi",
+      "ar": "نيروبي",
+      "fr": "Nairobi"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q819",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of South Korea?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة كوريا الجنوبية؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale de la Corée du Sud ?"
+    },
+    "options": {
+      "en": [
+        "Nairobi",
+        "Ottawa",
+        "Seoul",
+        "Tokyo"
+      ],
+      "ar": [
+        "نيروبي",
+        "أوتاوا",
+        "سيول",
+        "طوكيو"
+      ],
+      "fr": [
+        "Nairobi",
+        "Ottawa",
+        "Séoul",
+        "Tokyo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Seoul",
+      "ar": "سيول",
+      "fr": "Séoul"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q820",
+    "question": {
+      "en": "What is described by this clue: The capital city of South Korea?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة كوريا الجنوبية؟",
+      "fr": "Que décrit cet indice : La capitale de la Corée du Sud ?"
+    },
+    "options": {
+      "en": [
+        "Canberra",
+        "Seoul",
+        "Ottawa",
+        "Buenos Aires"
+      ],
+      "ar": [
+        "كانبرا",
+        "سيول",
+        "أوتاوا",
+        "بوينس آيرس"
+      ],
+      "fr": [
+        "Canberra",
+        "Séoul",
+        "Ottawa",
+        "Buenos Aires"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Seoul",
+      "ar": "سيول",
+      "fr": "Séoul"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q821",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of South Korea?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة كوريا الجنوبية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale de la Corée du Sud ?"
+    },
+    "options": {
+      "en": [
+        "Seoul",
+        "Canberra",
+        "Oslo",
+        "Brasília"
+      ],
+      "ar": [
+        "سيول",
+        "كانبرا",
+        "أوسلو",
+        "برازيليا"
+      ],
+      "fr": [
+        "Séoul",
+        "Canberra",
+        "Oslo",
+        "Brasília"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Seoul",
+      "ar": "سيول",
+      "fr": "Séoul"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q822",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Argentina?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة الأرجنتين؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale de l’Argentine ?"
+    },
+    "options": {
+      "en": [
+        "Cairo",
+        "Buenos Aires",
+        "Brasília",
+        "Bangkok"
+      ],
+      "ar": [
+        "القاهرة",
+        "بوينس آيرس",
+        "برازيليا",
+        "بانكوك"
+      ],
+      "fr": [
+        "Le Caire",
+        "Buenos Aires",
+        "Brasília",
+        "Bangkok"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Buenos Aires",
+      "ar": "بوينس آيرس",
+      "fr": "Buenos Aires"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q823",
+    "question": {
+      "en": "What is described by this clue: The capital city of Argentina?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة الأرجنتين؟",
+      "fr": "Que décrit cet indice : La capitale de l’Argentine ?"
+    },
+    "options": {
+      "en": [
+        "Buenos Aires",
+        "Cairo",
+        "Tokyo",
+        "Nairobi"
+      ],
+      "ar": [
+        "بوينس آيرس",
+        "القاهرة",
+        "طوكيو",
+        "نيروبي"
+      ],
+      "fr": [
+        "Buenos Aires",
+        "Le Caire",
+        "Tokyo",
+        "Nairobi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Buenos Aires",
+      "ar": "بوينس آيرس",
+      "fr": "Buenos Aires"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q824",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Argentina?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة الأرجنتين؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale de l’Argentine ?"
+    },
+    "options": {
+      "en": [
+        "Nairobi",
+        "Ottawa",
+        "Seoul",
+        "Buenos Aires"
+      ],
+      "ar": [
+        "نيروبي",
+        "أوتاوا",
+        "سيول",
+        "بوينس آيرس"
+      ],
+      "fr": [
+        "Nairobi",
+        "Ottawa",
+        "Séoul",
+        "Buenos Aires"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Buenos Aires",
+      "ar": "بوينس آيرس",
+      "fr": "Buenos Aires"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q825",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Norway?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة النرويج؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale de la Norvège ?"
+    },
+    "options": {
+      "en": [
+        "Oslo",
+        "Seoul",
+        "Canberra",
+        "Buenos Aires"
+      ],
+      "ar": [
+        "أوسلو",
+        "سيول",
+        "كانبرا",
+        "بوينس آيرس"
+      ],
+      "fr": [
+        "Oslo",
+        "Séoul",
+        "Canberra",
+        "Buenos Aires"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Oslo",
+      "ar": "أوسلو",
+      "fr": "Oslo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q826",
+    "question": {
+      "en": "What is described by this clue: The capital city of Norway?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة النرويج؟",
+      "fr": "Que décrit cet indice : La capitale de la Norvège ?"
+    },
+    "options": {
+      "en": [
+        "Buenos Aires",
+        "Brasília",
+        "Bangkok",
+        "Oslo"
+      ],
+      "ar": [
+        "بوينس آيرس",
+        "برازيليا",
+        "بانكوك",
+        "أوسلو"
+      ],
+      "fr": [
+        "Buenos Aires",
+        "Brasília",
+        "Bangkok",
+        "Oslo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Oslo",
+      "ar": "أوسلو",
+      "fr": "Oslo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q827",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Norway?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة النرويج؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale de la Norvège ?"
+    },
+    "options": {
+      "en": [
+        "Cairo",
+        "Tokyo",
+        "Oslo",
+        "Bangkok"
+      ],
+      "ar": [
+        "القاهرة",
+        "طوكيو",
+        "أوسلو",
+        "بانكوك"
+      ],
+      "fr": [
+        "Le Caire",
+        "Tokyo",
+        "Oslo",
+        "Bangkok"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Oslo",
+      "ar": "أوسلو",
+      "fr": "Oslo"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q828",
+    "question": {
+      "en": "Which answer matches this clue: The capital city of Thailand?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عاصمة تايلاند؟",
+      "fr": "Quelle réponse correspond à cet indice : La capitale de la Thaïlande ?"
+    },
+    "options": {
+      "en": [
+        "Tokyo",
+        "Nairobi",
+        "Ottawa",
+        "Bangkok"
+      ],
+      "ar": [
+        "طوكيو",
+        "نيروبي",
+        "أوتاوا",
+        "بانكوك"
+      ],
+      "fr": [
+        "Tokyo",
+        "Nairobi",
+        "Ottawa",
+        "Bangkok"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bangkok",
+      "ar": "بانكوك",
+      "fr": "Bangkok"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q829",
+    "question": {
+      "en": "What is described by this clue: The capital city of Thailand?",
+      "ar": "ما الذي تصفه هذه المعلومة: عاصمة تايلاند؟",
+      "fr": "Que décrit cet indice : La capitale de la Thaïlande ?"
+    },
+    "options": {
+      "en": [
+        "Seoul",
+        "Canberra",
+        "Bangkok",
+        "Ottawa"
+      ],
+      "ar": [
+        "سيول",
+        "كانبرا",
+        "بانكوك",
+        "أوتاوا"
+      ],
+      "fr": [
+        "Séoul",
+        "Canberra",
+        "Bangkok",
+        "Ottawa"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bangkok",
+      "ar": "بانكوك",
+      "fr": "Bangkok"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q830",
+    "question": {
+      "en": "Identify the correct answer for this clue: The capital city of Thailand?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عاصمة تايلاند؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La capitale de la Thaïlande ?"
+    },
+    "options": {
+      "en": [
+        "Brasília",
+        "Bangkok",
+        "Canberra",
+        "Buenos Aires"
+      ],
+      "ar": [
+        "برازيليا",
+        "بانكوك",
+        "كانبرا",
+        "بوينس آيرس"
+      ],
+      "fr": [
+        "Brasília",
+        "Bangkok",
+        "Canberra",
+        "Buenos Aires"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Bangkok",
+      "ar": "بانكوك",
+      "fr": "Bangkok"
+    },
+    "points": 10,
+    "category": "Geography"
+  },
+  {
+    "id": "q831",
+    "question": {
+      "en": "Which answer matches this clue: The chemical symbol for gold?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الرمز الكيميائي للذهب؟",
+      "fr": "Quelle réponse correspond à cet indice : Le symbole chimique de l’or ?"
+    },
+    "options": {
+      "en": [
+        "300,000 km/s",
+        "Albert Einstein",
+        "Au",
+        "Ohm"
+      ],
+      "ar": [
+        "300,000 كم/ث",
+        "ألبرت أينشتاين",
+        "Au",
+        "أوم"
+      ],
+      "fr": [
+        "300 000 km/s",
+        "Albert Einstein",
+        "Au",
+        "ohm"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Au",
+      "ar": "Au",
+      "fr": "Au"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q832",
+    "question": {
+      "en": "What is described by this clue: The chemical symbol for gold?",
+      "ar": "ما الذي تصفه هذه المعلومة: الرمز الكيميائي للذهب؟",
+      "fr": "Que décrit cet indice : Le symbole chimique de l’or ?"
+    },
+    "options": {
+      "en": [
+        "Evaporation",
+        "Au",
+        "Albert Einstein",
+        "O"
+      ],
+      "ar": [
+        "التبخر",
+        "Au",
+        "ألبرت أينشتاين",
+        "O"
+      ],
+      "fr": [
+        "évaporation",
+        "Au",
+        "Albert Einstein",
+        "O"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Au",
+      "ar": "Au",
+      "fr": "Au"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q833",
+    "question": {
+      "en": "Identify the correct answer for this clue: The chemical symbol for gold?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الرمز الكيميائي للذهب؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le symbole chimique de l’or ?"
+    },
+    "options": {
+      "en": [
+        "Au",
+        "Evaporation",
+        "Gravity",
+        "Diamond"
+      ],
+      "ar": [
+        "Au",
+        "التبخر",
+        "الجاذبية",
+        "الألماس"
+      ],
+      "fr": [
+        "Au",
+        "évaporation",
+        "gravité",
+        "diamant"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Au",
+      "ar": "Au",
+      "fr": "Au"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q834",
+    "question": {
+      "en": "Which answer matches this clue: The chemical symbol for oxygen?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الرمز الكيميائي للأكسجين؟",
+      "fr": "Quelle réponse correspond à cet indice : Le symbole chimique de l’oxygène ?"
+    },
+    "options": {
+      "en": [
+        "Nucleus",
+        "O",
+        "Diamond",
+        "Thermometer"
+      ],
+      "ar": [
+        "النواة",
+        "O",
+        "الألماس",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "noyau",
+        "O",
+        "diamant",
+        "thermomètre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "O",
+      "ar": "O",
+      "fr": "O"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q835",
+    "question": {
+      "en": "What is described by this clue: The chemical symbol for oxygen?",
+      "ar": "ما الذي تصفه هذه المعلومة: الرمز الكيميائي للأكسجين؟",
+      "fr": "Que décrit cet indice : Le symbole chimique de l’oxygène ?"
+    },
+    "options": {
+      "en": [
+        "O",
+        "Nucleus",
+        "Ohm",
+        "300,000 km/s"
+      ],
+      "ar": [
+        "O",
+        "النواة",
+        "أوم",
+        "300,000 كم/ث"
+      ],
+      "fr": [
+        "O",
+        "noyau",
+        "ohm",
+        "300 000 km/s"
+      ]
+    },
+    "correctAnswer": {
+      "en": "O",
+      "ar": "O",
+      "fr": "O"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q836",
+    "question": {
+      "en": "Identify the correct answer for this clue: The chemical symbol for oxygen?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الرمز الكيميائي للأكسجين؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le symbole chimique de l’oxygène ?"
+    },
+    "options": {
+      "en": [
+        "300,000 km/s",
+        "Albert Einstein",
+        "Au",
+        "O"
+      ],
+      "ar": [
+        "300,000 كم/ث",
+        "ألبرت أينشتاين",
+        "Au",
+        "O"
+      ],
+      "fr": [
+        "300 000 km/s",
+        "Albert Einstein",
+        "Au",
+        "O"
+      ]
+    },
+    "correctAnswer": {
+      "en": "O",
+      "ar": "O",
+      "fr": "O"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q837",
+    "question": {
+      "en": "Which answer matches this clue: The force that pulls objects toward Earth?",
+      "ar": "أي إجابة تطابق هذه المعلومة: القوة التي تجذب الأجسام نحو الأرض؟",
+      "fr": "Quelle réponse correspond à cet indice : La force qui attire les objets vers la Terre ?"
+    },
+    "options": {
+      "en": [
+        "Gravity",
+        "Au",
+        "Evaporation",
+        "O"
+      ],
+      "ar": [
+        "الجاذبية",
+        "Au",
+        "التبخر",
+        "O"
+      ],
+      "fr": [
+        "gravité",
+        "Au",
+        "évaporation",
+        "O"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gravity",
+      "ar": "الجاذبية",
+      "fr": "gravité"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q838",
+    "question": {
+      "en": "What is described by this clue: The force that pulls objects toward Earth?",
+      "ar": "ما الذي تصفه هذه المعلومة: القوة التي تجذب الأجسام نحو الأرض؟",
+      "fr": "Que décrit cet indice : La force qui attire les objets vers la Terre ?"
+    },
+    "options": {
+      "en": [
+        "O",
+        "Diamond",
+        "Thermometer",
+        "Gravity"
+      ],
+      "ar": [
+        "O",
+        "الألماس",
+        "مقياس الحرارة",
+        "الجاذبية"
+      ],
+      "fr": [
+        "O",
+        "diamant",
+        "thermomètre",
+        "gravité"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gravity",
+      "ar": "الجاذبية",
+      "fr": "gravité"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q839",
+    "question": {
+      "en": "Identify the correct answer for this clue: The force that pulls objects toward Earth?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: القوة التي تجذب الأجسام نحو الأرض؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La force qui attire les objets vers la Terre ?"
+    },
+    "options": {
+      "en": [
+        "Nucleus",
+        "Ohm",
+        "Gravity",
+        "Thermometer"
+      ],
+      "ar": [
+        "النواة",
+        "أوم",
+        "الجاذبية",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "noyau",
+        "ohm",
+        "gravité",
+        "thermomètre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gravity",
+      "ar": "الجاذبية",
+      "fr": "gravité"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q840",
+    "question": {
+      "en": "Which answer matches this clue: The instrument used to measure temperature?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الأداة المستخدمة لقياس درجة الحرارة؟",
+      "fr": "Quelle réponse correspond à cet indice : L’instrument utilisé pour mesurer la température ?"
+    },
+    "options": {
+      "en": [
+        "Ohm",
+        "300,000 km/s",
+        "Albert Einstein",
+        "Thermometer"
+      ],
+      "ar": [
+        "أوم",
+        "300,000 كم/ث",
+        "ألبرت أينشتاين",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "ohm",
+        "300 000 km/s",
+        "Albert Einstein",
+        "thermomètre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thermometer",
+      "ar": "مقياس الحرارة",
+      "fr": "thermomètre"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q841",
+    "question": {
+      "en": "What is described by this clue: The instrument used to measure temperature?",
+      "ar": "ما الذي تصفه هذه المعلومة: الأداة المستخدمة لقياس درجة الحرارة؟",
+      "fr": "Que décrit cet indice : L’instrument utilisé pour mesurer la température ?"
+    },
+    "options": {
+      "en": [
+        "Au",
+        "Evaporation",
+        "Thermometer",
+        "Albert Einstein"
+      ],
+      "ar": [
+        "Au",
+        "التبخر",
+        "مقياس الحرارة",
+        "ألبرت أينشتاين"
+      ],
+      "fr": [
+        "Au",
+        "évaporation",
+        "thermomètre",
+        "Albert Einstein"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thermometer",
+      "ar": "مقياس الحرارة",
+      "fr": "thermomètre"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q842",
+    "question": {
+      "en": "Identify the correct answer for this clue: The instrument used to measure temperature?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الأداة المستخدمة لقياس درجة الحرارة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’instrument utilisé pour mesurer la température ?"
+    },
+    "options": {
+      "en": [
+        "Diamond",
+        "Thermometer",
+        "Evaporation",
+        "O"
+      ],
+      "ar": [
+        "الألماس",
+        "مقياس الحرارة",
+        "التبخر",
+        "O"
+      ],
+      "fr": [
+        "diamant",
+        "thermomètre",
+        "évaporation",
+        "O"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Thermometer",
+      "ar": "مقياس الحرارة",
+      "fr": "thermomètre"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q843",
+    "question": {
+      "en": "Which answer matches this clue: The unit of electrical resistance?",
+      "ar": "أي إجابة تطابق هذه المعلومة: وحدة قياس المقاومة الكهربائية؟",
+      "fr": "Quelle réponse correspond à cet indice : L’unité de résistance électrique ?"
+    },
+    "options": {
+      "en": [
+        "Gravity",
+        "Nucleus",
+        "Ohm",
+        "Diamond"
+      ],
+      "ar": [
+        "الجاذبية",
+        "النواة",
+        "أوم",
+        "الألماس"
+      ],
+      "fr": [
+        "gravité",
+        "noyau",
+        "ohm",
+        "diamant"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ohm",
+      "ar": "أوم",
+      "fr": "ohm"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q844",
+    "question": {
+      "en": "What is described by this clue: The unit of electrical resistance?",
+      "ar": "ما الذي تصفه هذه المعلومة: وحدة قياس المقاومة الكهربائية؟",
+      "fr": "Que décrit cet indice : L’unité de résistance électrique ?"
+    },
+    "options": {
+      "en": [
+        "300,000 km/s",
+        "Ohm",
+        "Nucleus",
+        "Thermometer"
+      ],
+      "ar": [
+        "300,000 كم/ث",
+        "أوم",
+        "النواة",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "300 000 km/s",
+        "ohm",
+        "noyau",
+        "thermomètre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ohm",
+      "ar": "أوم",
+      "fr": "ohm"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q845",
+    "question": {
+      "en": "Identify the correct answer for this clue: The unit of electrical resistance?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: وحدة قياس المقاومة الكهربائية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’unité de résistance électrique ?"
+    },
+    "options": {
+      "en": [
+        "Ohm",
+        "300,000 km/s",
+        "Albert Einstein",
+        "Au"
+      ],
+      "ar": [
+        "أوم",
+        "300,000 كم/ث",
+        "ألبرت أينشتاين",
+        "Au"
+      ],
+      "fr": [
+        "ohm",
+        "300 000 km/s",
+        "Albert Einstein",
+        "Au"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ohm",
+      "ar": "أوم",
+      "fr": "ohm"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q846",
+    "question": {
+      "en": "Which answer matches this clue: The scientist associated with the theory of relativity?",
+      "ar": "أي إجابة تطابق هذه المعلومة: العالم المرتبط بنظرية النسبية؟",
+      "fr": "Quelle réponse correspond à cet indice : Le scientifique associé à la théorie de la relativité ?"
+    },
+    "options": {
+      "en": [
+        "O",
+        "Albert Einstein",
+        "Au",
+        "Evaporation"
+      ],
+      "ar": [
+        "O",
+        "ألبرت أينشتاين",
+        "Au",
+        "التبخر"
+      ],
+      "fr": [
+        "O",
+        "Albert Einstein",
+        "Au",
+        "évaporation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Albert Einstein",
+      "ar": "ألبرت أينشتاين",
+      "fr": "Albert Einstein"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q847",
+    "question": {
+      "en": "What is described by this clue: The scientist associated with the theory of relativity?",
+      "ar": "ما الذي تصفه هذه المعلومة: العالم المرتبط بنظرية النسبية؟",
+      "fr": "Que décrit cet indice : Le scientifique associé à la théorie de la relativité ?"
+    },
+    "options": {
+      "en": [
+        "Albert Einstein",
+        "O",
+        "Diamond",
+        "Gravity"
+      ],
+      "ar": [
+        "ألبرت أينشتاين",
+        "O",
+        "الألماس",
+        "الجاذبية"
+      ],
+      "fr": [
+        "Albert Einstein",
+        "O",
+        "diamant",
+        "gravité"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Albert Einstein",
+      "ar": "ألبرت أينشتاين",
+      "fr": "Albert Einstein"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q848",
+    "question": {
+      "en": "Identify the correct answer for this clue: The scientist associated with the theory of relativity?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: العالم المرتبط بنظرية النسبية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le scientifique associé à la théorie de la relativité ?"
+    },
+    "options": {
+      "en": [
+        "Gravity",
+        "Nucleus",
+        "Thermometer",
+        "Albert Einstein"
+      ],
+      "ar": [
+        "الجاذبية",
+        "النواة",
+        "مقياس الحرارة",
+        "ألبرت أينشتاين"
+      ],
+      "fr": [
+        "gravité",
+        "noyau",
+        "thermomètre",
+        "Albert Einstein"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Albert Einstein",
+      "ar": "ألبرت أينشتاين",
+      "fr": "Albert Einstein"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q849",
+    "question": {
+      "en": "Which answer matches this clue: The process by which a liquid becomes a gas?",
+      "ar": "أي إجابة تطابق هذه المعلومة: العملية التي يتحول فيها السائل إلى غاز؟",
+      "fr": "Quelle réponse correspond à cet indice : Le processus par lequel un liquide devient un gaz ?"
+    },
+    "options": {
+      "en": [
+        "Evaporation",
+        "Thermometer",
+        "300,000 km/s",
+        "Ohm"
+      ],
+      "ar": [
+        "التبخر",
+        "مقياس الحرارة",
+        "300,000 كم/ث",
+        "أوم"
+      ],
+      "fr": [
+        "évaporation",
+        "thermomètre",
+        "300 000 km/s",
+        "ohm"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Evaporation",
+      "ar": "التبخر",
+      "fr": "évaporation"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q850",
+    "question": {
+      "en": "What is described by this clue: The process by which a liquid becomes a gas?",
+      "ar": "ما الذي تصفه هذه المعلومة: العملية التي يتحول فيها السائل إلى غاز؟",
+      "fr": "Que décrit cet indice : Le processus par lequel un liquide devient un gaz ?"
+    },
+    "options": {
+      "en": [
+        "Ohm",
+        "Au",
+        "Albert Einstein",
+        "Evaporation"
+      ],
+      "ar": [
+        "أوم",
+        "Au",
+        "ألبرت أينشتاين",
+        "التبخر"
+      ],
+      "fr": [
+        "ohm",
+        "Au",
+        "Albert Einstein",
+        "évaporation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Evaporation",
+      "ar": "التبخر",
+      "fr": "évaporation"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q851",
+    "question": {
+      "en": "Identify the correct answer for this clue: The process by which a liquid becomes a gas?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: العملية التي يتحول فيها السائل إلى غاز؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le processus par lequel un liquide devient un gaz ?"
+    },
+    "options": {
+      "en": [
+        "O",
+        "Diamond",
+        "Evaporation",
+        "Albert Einstein"
+      ],
+      "ar": [
+        "O",
+        "الألماس",
+        "التبخر",
+        "ألبرت أينشتاين"
+      ],
+      "fr": [
+        "O",
+        "diamant",
+        "évaporation",
+        "Albert Einstein"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Evaporation",
+      "ar": "التبخر",
+      "fr": "évaporation"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q852",
+    "question": {
+      "en": "Which answer matches this clue: The hardest naturally occurring mineral?",
+      "ar": "أي إجابة تطابق هذه المعلومة: أصلب معدن طبيعي؟",
+      "fr": "Quelle réponse correspond à cet indice : Le minéral naturel le plus dur ?"
+    },
+    "options": {
+      "en": [
+        "Evaporation",
+        "Gravity",
+        "Nucleus",
+        "Diamond"
+      ],
+      "ar": [
+        "التبخر",
+        "الجاذبية",
+        "النواة",
+        "الألماس"
+      ],
+      "fr": [
+        "évaporation",
+        "gravité",
+        "noyau",
+        "diamant"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Diamond",
+      "ar": "الألماس",
+      "fr": "diamant"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q853",
+    "question": {
+      "en": "What is described by this clue: The hardest naturally occurring mineral?",
+      "ar": "ما الذي تصفه هذه المعلومة: أصلب معدن طبيعي؟",
+      "fr": "Que décrit cet indice : Le minéral naturel le plus dur ?"
+    },
+    "options": {
+      "en": [
+        "Thermometer",
+        "300,000 km/s",
+        "Diamond",
+        "Nucleus"
+      ],
+      "ar": [
+        "مقياس الحرارة",
+        "300,000 كم/ث",
+        "الألماس",
+        "النواة"
+      ],
+      "fr": [
+        "thermomètre",
+        "300 000 km/s",
+        "diamant",
+        "noyau"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Diamond",
+      "ar": "الألماس",
+      "fr": "diamant"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q854",
+    "question": {
+      "en": "Identify the correct answer for this clue: The hardest naturally occurring mineral?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: أصلب معدن طبيعي؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le minéral naturel le plus dur ?"
+    },
+    "options": {
+      "en": [
+        "Au",
+        "Diamond",
+        "300,000 km/s",
+        "Ohm"
+      ],
+      "ar": [
+        "Au",
+        "الألماس",
+        "300,000 كم/ث",
+        "أوم"
+      ],
+      "fr": [
+        "Au",
+        "diamant",
+        "300 000 km/s",
+        "ohm"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Diamond",
+      "ar": "الألماس",
+      "fr": "diamant"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q855",
+    "question": {
+      "en": "Which answer matches this clue: The center of an atom?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مركز الذرة؟",
+      "fr": "Quelle réponse correspond à cet indice : Le centre d’un atome ?"
+    },
+    "options": {
+      "en": [
+        "Albert Einstein",
+        "O",
+        "Nucleus",
+        "Au"
+      ],
+      "ar": [
+        "ألبرت أينشتاين",
+        "O",
+        "النواة",
+        "Au"
+      ],
+      "fr": [
+        "Albert Einstein",
+        "O",
+        "noyau",
+        "Au"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nucleus",
+      "ar": "النواة",
+      "fr": "noyau"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q856",
+    "question": {
+      "en": "What is described by this clue: The center of an atom?",
+      "ar": "ما الذي تصفه هذه المعلومة: مركز الذرة؟",
+      "fr": "Que décrit cet indice : Le centre d’un atome ?"
+    },
+    "options": {
+      "en": [
+        "Gravity",
+        "Nucleus",
+        "O",
+        "Evaporation"
+      ],
+      "ar": [
+        "الجاذبية",
+        "النواة",
+        "O",
+        "التبخر"
+      ],
+      "fr": [
+        "gravité",
+        "noyau",
+        "O",
+        "évaporation"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nucleus",
+      "ar": "النواة",
+      "fr": "noyau"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q857",
+    "question": {
+      "en": "Identify the correct answer for this clue: The center of an atom?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مركز الذرة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le centre d’un atome ?"
+    },
+    "options": {
+      "en": [
+        "Nucleus",
+        "Gravity",
+        "Diamond",
+        "Thermometer"
+      ],
+      "ar": [
+        "النواة",
+        "الجاذبية",
+        "الألماس",
+        "مقياس الحرارة"
+      ],
+      "fr": [
+        "noyau",
+        "gravité",
+        "diamant",
+        "thermomètre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Nucleus",
+      "ar": "النواة",
+      "fr": "noyau"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q858",
+    "question": {
+      "en": "Which answer matches this clue: The approximate speed of light in a vacuum?",
+      "ar": "أي إجابة تطابق هذه المعلومة: السرعة التقريبية للضوء في الفراغ؟",
+      "fr": "Quelle réponse correspond à cet indice : La vitesse approximative de la lumière dans le vide ?"
+    },
+    "options": {
+      "en": [
+        "Ohm",
+        "300,000 km/s",
+        "Thermometer",
+        "Nucleus"
+      ],
+      "ar": [
+        "أوم",
+        "300,000 كم/ث",
+        "مقياس الحرارة",
+        "النواة"
+      ],
+      "fr": [
+        "ohm",
+        "300 000 km/s",
+        "thermomètre",
+        "noyau"
+      ]
+    },
+    "correctAnswer": {
+      "en": "300,000 km/s",
+      "ar": "300,000 كم/ث",
+      "fr": "300 000 km/s"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q859",
+    "question": {
+      "en": "What is described by this clue: The approximate speed of light in a vacuum?",
+      "ar": "ما الذي تصفه هذه المعلومة: السرعة التقريبية للضوء في الفراغ؟",
+      "fr": "Que décrit cet indice : La vitesse approximative de la lumière dans le vide ?"
+    },
+    "options": {
+      "en": [
+        "300,000 km/s",
+        "Ohm",
+        "Au",
+        "Albert Einstein"
+      ],
+      "ar": [
+        "300,000 كم/ث",
+        "أوم",
+        "Au",
+        "ألبرت أينشتاين"
+      ],
+      "fr": [
+        "300 000 km/s",
+        "ohm",
+        "Au",
+        "Albert Einstein"
+      ]
+    },
+    "correctAnswer": {
+      "en": "300,000 km/s",
+      "ar": "300,000 كم/ث",
+      "fr": "300 000 km/s"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q860",
+    "question": {
+      "en": "Identify the correct answer for this clue: The approximate speed of light in a vacuum?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: السرعة التقريبية للضوء في الفراغ؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La vitesse approximative de la lumière dans le vide ?"
+    },
+    "options": {
+      "en": [
+        "Albert Einstein",
+        "O",
+        "Evaporation",
+        "300,000 km/s"
+      ],
+      "ar": [
+        "ألبرت أينشتاين",
+        "O",
+        "التبخر",
+        "300,000 كم/ث"
+      ],
+      "fr": [
+        "Albert Einstein",
+        "O",
+        "évaporation",
+        "300 000 km/s"
+      ]
+    },
+    "correctAnswer": {
+      "en": "300,000 km/s",
+      "ar": "300,000 كم/ث",
+      "fr": "300 000 km/s"
+    },
+    "points": 10,
+    "category": "Science"
+  },
+  {
+    "id": "q861",
+    "question": {
+      "en": "Which answer matches this clue: The ancient civilization that built the pyramids at Giza?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الحضارة القديمة التي بنت أهرامات الجيزة؟",
+      "fr": "Quelle réponse correspond à cet indice : La civilisation antique qui a construit les pyramides de Gizeh ?"
+    },
+    "options": {
+      "en": [
+        "Ancient Egyptians",
+        "Magna Carta",
+        "Mayflower",
+        "1989"
+      ],
+      "ar": [
+        "المصريون القدماء",
+        "الماغنا كارتا",
+        "مايفلاور",
+        "1989"
+      ],
+      "fr": [
+        "Égyptiens de l’Antiquité",
+        "Magna Carta",
+        "Mayflower",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ancient Egyptians",
+      "ar": "المصريون القدماء",
+      "fr": "Égyptiens de l’Antiquité"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q862",
+    "question": {
+      "en": "What is described by this clue: The ancient civilization that built the pyramids at Giza?",
+      "ar": "ما الذي تصفه هذه المعلومة: الحضارة القديمة التي بنت أهرامات الجيزة؟",
+      "fr": "Que décrit cet indice : La civilisation antique qui a construit les pyramides de Gizeh ?"
+    },
+    "options": {
+      "en": [
+        "Silk Road",
+        "Pompeii",
+        "Neil Armstrong",
+        "Ancient Egyptians"
+      ],
+      "ar": [
+        "طريق الحرير",
+        "بومبي",
+        "نيل أرمسترونغ",
+        "المصريون القدماء"
+      ],
+      "fr": [
+        "route de la soie",
+        "Pompéi",
+        "Neil Armstrong",
+        "Égyptiens de l’Antiquité"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ancient Egyptians",
+      "ar": "المصريون القدماء",
+      "fr": "Égyptiens de l’Antiquité"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q863",
+    "question": {
+      "en": "Identify the correct answer for this clue: The ancient civilization that built the pyramids at Giza?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الحضارة القديمة التي بنت أهرامات الجيزة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La civilisation antique qui a construit les pyramides de Gizeh ?"
+    },
+    "options": {
+      "en": [
+        "Magna Carta",
+        "Mayflower",
+        "Ancient Egyptians",
+        "Sumerians"
+      ],
+      "ar": [
+        "الماغنا كارتا",
+        "مايفلاور",
+        "المصريون القدماء",
+        "السومريون"
+      ],
+      "fr": [
+        "Magna Carta",
+        "Mayflower",
+        "Égyptiens de l’Antiquité",
+        "Sumériens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ancient Egyptians",
+      "ar": "المصريون القدماء",
+      "fr": "Égyptiens de l’Antiquité"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q864",
+    "question": {
+      "en": "Which answer matches this clue: The year the Berlin Wall fell?",
+      "ar": "أي إجابة تطابق هذه المعلومة: السنة التي سقط فيها جدار برلين؟",
+      "fr": "Quelle réponse correspond à cet indice : L’année de la chute du mur de Berlin ?"
+    },
+    "options": {
+      "en": [
+        "Ancient Egyptians",
+        "Silk Road",
+        "Pompeii",
+        "1989"
+      ],
+      "ar": [
+        "المصريون القدماء",
+        "طريق الحرير",
+        "بومبي",
+        "1989"
+      ],
+      "fr": [
+        "Égyptiens de l’Antiquité",
+        "route de la soie",
+        "Pompéi",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1989",
+      "ar": "1989",
+      "fr": "1989"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q865",
+    "question": {
+      "en": "What is described by this clue: The year the Berlin Wall fell?",
+      "ar": "ما الذي تصفه هذه المعلومة: السنة التي سقط فيها جدار برلين؟",
+      "fr": "Que décrit cet indice : L’année de la chute du mur de Berlin ?"
+    },
+    "options": {
+      "en": [
+        "Sumerians",
+        "Magna Carta",
+        "1989",
+        "Neil Armstrong"
+      ],
+      "ar": [
+        "السومريون",
+        "الماغنا كارتا",
+        "1989",
+        "نيل أرمسترونغ"
+      ],
+      "fr": [
+        "Sumériens",
+        "Magna Carta",
+        "1989",
+        "Neil Armstrong"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1989",
+      "ar": "1989",
+      "fr": "1989"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q866",
+    "question": {
+      "en": "Identify the correct answer for this clue: The year the Berlin Wall fell?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: السنة التي سقط فيها جدار برلين؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’année de la chute du mur de Berlin ?"
+    },
+    "options": {
+      "en": [
+        "Silk Road",
+        "1989",
+        "Mayflower",
+        "Ancient Egyptians"
+      ],
+      "ar": [
+        "طريق الحرير",
+        "1989",
+        "مايفلاور",
+        "المصريون القدماء"
+      ],
+      "fr": [
+        "route de la soie",
+        "1989",
+        "Mayflower",
+        "Égyptiens de l’Antiquité"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1989",
+      "ar": "1989",
+      "fr": "1989"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q867",
+    "question": {
+      "en": "Which answer matches this clue: The first person to walk on the Moon?",
+      "ar": "أي إجابة تطابق هذه المعلومة: أول شخص مشى على سطح القمر؟",
+      "fr": "Quelle réponse correspond à cet indice : La première personne à marcher sur la Lune ?"
+    },
+    "options": {
+      "en": [
+        "1989",
+        "Sumerians",
+        "Neil Armstrong",
+        "Pompeii"
+      ],
+      "ar": [
+        "1989",
+        "السومريون",
+        "نيل أرمسترونغ",
+        "بومبي"
+      ],
+      "fr": [
+        "1989",
+        "Sumériens",
+        "Neil Armstrong",
+        "Pompéi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Neil Armstrong",
+      "ar": "نيل أرمسترونغ",
+      "fr": "Neil Armstrong"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q868",
+    "question": {
+      "en": "What is described by this clue: The first person to walk on the Moon?",
+      "ar": "ما الذي تصفه هذه المعلومة: أول شخص مشى على سطح القمر؟",
+      "fr": "Que décrit cet indice : La première personne à marcher sur la Lune ?"
+    },
+    "options": {
+      "en": [
+        "Ancient Egyptians",
+        "Neil Armstrong",
+        "Magna Carta",
+        "Mayflower"
+      ],
+      "ar": [
+        "المصريون القدماء",
+        "نيل أرمسترونغ",
+        "الماغنا كارتا",
+        "مايفلاور"
+      ],
+      "fr": [
+        "Égyptiens de l’Antiquité",
+        "Neil Armstrong",
+        "Magna Carta",
+        "Mayflower"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Neil Armstrong",
+      "ar": "نيل أرمسترونغ",
+      "fr": "Neil Armstrong"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q869",
+    "question": {
+      "en": "Identify the correct answer for this clue: The first person to walk on the Moon?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: أول شخص مشى على سطح القمر؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La première personne à marcher sur la Lune ?"
+    },
+    "options": {
+      "en": [
+        "Neil Armstrong",
+        "Silk Road",
+        "Pompeii",
+        "1989"
+      ],
+      "ar": [
+        "نيل أرمسترونغ",
+        "طريق الحرير",
+        "بومبي",
+        "1989"
+      ],
+      "fr": [
+        "Neil Armstrong",
+        "route de la soie",
+        "Pompéi",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Neil Armstrong",
+      "ar": "نيل أرمسترونغ",
+      "fr": "Neil Armstrong"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q870",
+    "question": {
+      "en": "Which answer matches this clue: The ship that carried the Pilgrims to North America in 1620?",
+      "ar": "أي إجابة تطابق هذه المعلومة: السفينة التي نقلت الحجاج إلى أمريكا الشمالية عام 1620؟",
+      "fr": "Quelle réponse correspond à cet indice : Le navire qui transporta les pèlerins en Amérique du Nord en 1620 ?"
+    },
+    "options": {
+      "en": [
+        "Neil Armstrong",
+        "Mayflower",
+        "Sumerians",
+        "Magna Carta"
+      ],
+      "ar": [
+        "نيل أرمسترونغ",
+        "مايفلاور",
+        "السومريون",
+        "الماغنا كارتا"
+      ],
+      "fr": [
+        "Neil Armstrong",
+        "Mayflower",
+        "Sumériens",
+        "Magna Carta"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mayflower",
+      "ar": "مايفلاور",
+      "fr": "Mayflower"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q871",
+    "question": {
+      "en": "What is described by this clue: The ship that carried the Pilgrims to North America in 1620?",
+      "ar": "ما الذي تصفه هذه المعلومة: السفينة التي نقلت الحجاج إلى أمريكا الشمالية عام 1620؟",
+      "fr": "Que décrit cet indice : Le navire qui transporta les pèlerins en Amérique du Nord en 1620 ?"
+    },
+    "options": {
+      "en": [
+        "Mayflower",
+        "Ancient Egyptians",
+        "Silk Road",
+        "Pompeii"
+      ],
+      "ar": [
+        "مايفلاور",
+        "المصريون القدماء",
+        "طريق الحرير",
+        "بومبي"
+      ],
+      "fr": [
+        "Mayflower",
+        "Égyptiens de l’Antiquité",
+        "route de la soie",
+        "Pompéi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mayflower",
+      "ar": "مايفلاور",
+      "fr": "Mayflower"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q872",
+    "question": {
+      "en": "Identify the correct answer for this clue: The ship that carried the Pilgrims to North America in 1620?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: السفينة التي نقلت الحجاج إلى أمريكا الشمالية عام 1620؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le navire qui transporta les pèlerins en Amérique du Nord en 1620 ?"
+    },
+    "options": {
+      "en": [
+        "1989",
+        "Sumerians",
+        "Magna Carta",
+        "Mayflower"
+      ],
+      "ar": [
+        "1989",
+        "السومريون",
+        "الماغنا كارتا",
+        "مايفلاور"
+      ],
+      "fr": [
+        "1989",
+        "Sumériens",
+        "Magna Carta",
+        "Mayflower"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mayflower",
+      "ar": "مايفلاور",
+      "fr": "Mayflower"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q873",
+    "question": {
+      "en": "Which answer matches this clue: The city buried by the eruption of Mount Vesuvius in AD 79?",
+      "ar": "أي إجابة تطابق هذه المعلومة: المدينة التي دفنها ثوران جبل فيزوف عام 79 ميلادية؟",
+      "fr": "Quelle réponse correspond à cet indice : La ville ensevelie par l’éruption du Vésuve en 79 apr. J.-C. ?"
+    },
+    "options": {
+      "en": [
+        "Pompeii",
+        "Neil Armstrong",
+        "Ancient Egyptians",
+        "Silk Road"
+      ],
+      "ar": [
+        "بومبي",
+        "نيل أرمسترونغ",
+        "المصريون القدماء",
+        "طريق الحرير"
+      ],
+      "fr": [
+        "Pompéi",
+        "Neil Armstrong",
+        "Égyptiens de l’Antiquité",
+        "route de la soie"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pompeii",
+      "ar": "بومبي",
+      "fr": "Pompéi"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q874",
+    "question": {
+      "en": "What is described by this clue: The city buried by the eruption of Mount Vesuvius in AD 79?",
+      "ar": "ما الذي تصفه هذه المعلومة: المدينة التي دفنها ثوران جبل فيزوف عام 79 ميلادية؟",
+      "fr": "Que décrit cet indice : La ville ensevelie par l’éruption du Vésuve en 79 apr. J.-C. ?"
+    },
+    "options": {
+      "en": [
+        "Mayflower",
+        "1989",
+        "Sumerians",
+        "Pompeii"
+      ],
+      "ar": [
+        "مايفلاور",
+        "1989",
+        "السومريون",
+        "بومبي"
+      ],
+      "fr": [
+        "Mayflower",
+        "1989",
+        "Sumériens",
+        "Pompéi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pompeii",
+      "ar": "بومبي",
+      "fr": "Pompéi"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q875",
+    "question": {
+      "en": "Identify the correct answer for this clue: The city buried by the eruption of Mount Vesuvius in AD 79?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: المدينة التي دفنها ثوران جبل فيزوف عام 79 ميلادية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La ville ensevelie par l’éruption du Vésuve en 79 apr. J.-C. ?"
+    },
+    "options": {
+      "en": [
+        "Neil Armstrong",
+        "Ancient Egyptians",
+        "Pompeii",
+        "Magna Carta"
+      ],
+      "ar": [
+        "نيل أرمسترونغ",
+        "المصريون القدماء",
+        "بومبي",
+        "الماغنا كارتا"
+      ],
+      "fr": [
+        "Neil Armstrong",
+        "Égyptiens de l’Antiquité",
+        "Pompéi",
+        "Magna Carta"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Pompeii",
+      "ar": "بومبي",
+      "fr": "Pompéi"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q876",
+    "question": {
+      "en": "Which answer matches this clue: The document signed in 1215 that limited the English king’s power?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الوثيقة الموقعة عام 1215 التي حدّت من سلطة ملك إنجلترا؟",
+      "fr": "Quelle réponse correspond à cet indice : Le document signé en 1215 qui limita le pouvoir du roi d’Angleterre ?"
+    },
+    "options": {
+      "en": [
+        "Silk Road",
+        "Mayflower",
+        "1989",
+        "Magna Carta"
+      ],
+      "ar": [
+        "طريق الحرير",
+        "مايفلاور",
+        "1989",
+        "الماغنا كارتا"
+      ],
+      "fr": [
+        "route de la soie",
+        "Mayflower",
+        "1989",
+        "Magna Carta"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Magna Carta",
+      "ar": "الماغنا كارتا",
+      "fr": "Magna Carta"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q877",
+    "question": {
+      "en": "What is described by this clue: The document signed in 1215 that limited the English king’s power?",
+      "ar": "ما الذي تصفه هذه المعلومة: الوثيقة الموقعة عام 1215 التي حدّت من سلطة ملك إنجلترا؟",
+      "fr": "Que décrit cet indice : Le document signé en 1215 qui limita le pouvoir du roi d’Angleterre ?"
+    },
+    "options": {
+      "en": [
+        "Pompeii",
+        "Neil Armstrong",
+        "Magna Carta",
+        "Sumerians"
+      ],
+      "ar": [
+        "بومبي",
+        "نيل أرمسترونغ",
+        "الماغنا كارتا",
+        "السومريون"
+      ],
+      "fr": [
+        "Pompéi",
+        "Neil Armstrong",
+        "Magna Carta",
+        "Sumériens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Magna Carta",
+      "ar": "الماغنا كارتا",
+      "fr": "Magna Carta"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q878",
+    "question": {
+      "en": "Identify the correct answer for this clue: The document signed in 1215 that limited the English king’s power?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الوثيقة الموقعة عام 1215 التي حدّت من سلطة ملك إنجلترا؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le document signé en 1215 qui limita le pouvoir du roi d’Angleterre ?"
+    },
+    "options": {
+      "en": [
+        "Mayflower",
+        "Magna Carta",
+        "Ancient Egyptians",
+        "Silk Road"
+      ],
+      "ar": [
+        "مايفلاور",
+        "الماغنا كارتا",
+        "المصريون القدماء",
+        "طريق الحرير"
+      ],
+      "fr": [
+        "Mayflower",
+        "Magna Carta",
+        "Égyptiens de l’Antiquité",
+        "route de la soie"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Magna Carta",
+      "ar": "الماغنا كارتا",
+      "fr": "Magna Carta"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q879",
+    "question": {
+      "en": "Which answer matches this clue: The ancient trade route connecting China with the Mediterranean?",
+      "ar": "أي إجابة تطابق هذه المعلومة: طريق التجارة القديم الذي ربط الصين بالبحر المتوسط؟",
+      "fr": "Quelle réponse correspond à cet indice : L’ancienne route commerciale reliant la Chine à la Méditerranée ?"
+    },
+    "options": {
+      "en": [
+        "Sumerians",
+        "Pompeii",
+        "Silk Road",
+        "1989"
+      ],
+      "ar": [
+        "السومريون",
+        "بومبي",
+        "طريق الحرير",
+        "1989"
+      ],
+      "fr": [
+        "Sumériens",
+        "Pompéi",
+        "route de la soie",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Silk Road",
+      "ar": "طريق الحرير",
+      "fr": "route de la soie"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q880",
+    "question": {
+      "en": "What is described by this clue: The ancient trade route connecting China with the Mediterranean?",
+      "ar": "ما الذي تصفه هذه المعلومة: طريق التجارة القديم الذي ربط الصين بالبحر المتوسط؟",
+      "fr": "Que décrit cet indice : L’ancienne route commerciale reliant la Chine à la Méditerranée ?"
+    },
+    "options": {
+      "en": [
+        "Magna Carta",
+        "Silk Road",
+        "Neil Armstrong",
+        "Ancient Egyptians"
+      ],
+      "ar": [
+        "الماغنا كارتا",
+        "طريق الحرير",
+        "نيل أرمسترونغ",
+        "المصريون القدماء"
+      ],
+      "fr": [
+        "Magna Carta",
+        "route de la soie",
+        "Neil Armstrong",
+        "Égyptiens de l’Antiquité"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Silk Road",
+      "ar": "طريق الحرير",
+      "fr": "route de la soie"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q881",
+    "question": {
+      "en": "Identify the correct answer for this clue: The ancient trade route connecting China with the Mediterranean?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: طريق التجارة القديم الذي ربط الصين بالبحر المتوسط؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’ancienne route commerciale reliant la Chine à la Méditerranée ?"
+    },
+    "options": {
+      "en": [
+        "Silk Road",
+        "Mayflower",
+        "1989",
+        "Sumerians"
+      ],
+      "ar": [
+        "طريق الحرير",
+        "مايفلاور",
+        "1989",
+        "السومريون"
+      ],
+      "fr": [
+        "route de la soie",
+        "Mayflower",
+        "1989",
+        "Sumériens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Silk Road",
+      "ar": "طريق الحرير",
+      "fr": "route de la soie"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q882",
+    "question": {
+      "en": "Which answer matches this clue: The civilization that developed cuneiform writing in Mesopotamia?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الحضارة التي طورت الكتابة المسمارية في بلاد الرافدين؟",
+      "fr": "Quelle réponse correspond à cet indice : La civilisation qui développa l’écriture cunéiforme en Mésopotamie ?"
+    },
+    "options": {
+      "en": [
+        "Ancient Egyptians",
+        "Sumerians",
+        "Pompeii",
+        "Neil Armstrong"
+      ],
+      "ar": [
+        "المصريون القدماء",
+        "السومريون",
+        "بومبي",
+        "نيل أرمسترونغ"
+      ],
+      "fr": [
+        "Égyptiens de l’Antiquité",
+        "Sumériens",
+        "Pompéi",
+        "Neil Armstrong"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sumerians",
+      "ar": "السومريون",
+      "fr": "Sumériens"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q883",
+    "question": {
+      "en": "What is described by this clue: The civilization that developed cuneiform writing in Mesopotamia?",
+      "ar": "ما الذي تصفه هذه المعلومة: الحضارة التي طورت الكتابة المسمارية في بلاد الرافدين؟",
+      "fr": "Que décrit cet indice : La civilisation qui développa l’écriture cunéiforme en Mésopotamie ?"
+    },
+    "options": {
+      "en": [
+        "Sumerians",
+        "Magna Carta",
+        "Mayflower",
+        "1989"
+      ],
+      "ar": [
+        "السومريون",
+        "الماغنا كارتا",
+        "مايفلاور",
+        "1989"
+      ],
+      "fr": [
+        "Sumériens",
+        "Magna Carta",
+        "Mayflower",
+        "1989"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sumerians",
+      "ar": "السومريون",
+      "fr": "Sumériens"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q884",
+    "question": {
+      "en": "Identify the correct answer for this clue: The civilization that developed cuneiform writing in Mesopotamia?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الحضارة التي طورت الكتابة المسمارية في بلاد الرافدين؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La civilisation qui développa l’écriture cunéiforme en Mésopotamie ?"
+    },
+    "options": {
+      "en": [
+        "Silk Road",
+        "Pompeii",
+        "Neil Armstrong",
+        "Sumerians"
+      ],
+      "ar": [
+        "طريق الحرير",
+        "بومبي",
+        "نيل أرمسترونغ",
+        "السومريون"
+      ],
+      "fr": [
+        "route de la soie",
+        "Pompéi",
+        "Neil Armstrong",
+        "Sumériens"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sumerians",
+      "ar": "السومريون",
+      "fr": "Sumériens"
+    },
+    "points": 10,
+    "category": "History"
+  },
+  {
+    "id": "q885",
+    "question": {
+      "en": "Which answer matches this clue: The author of the play Hamlet?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف مسرحية هاملت؟",
+      "fr": "Quelle réponse correspond à cet indice : L’auteur de la pièce Hamlet ?"
+    },
+    "options": {
+      "en": [
+        "William Shakespeare",
+        "Miguel de Cervantes",
+        "The Iliad",
+        "Antoine de Saint-Exupéry"
+      ],
+      "ar": [
+        "ويليام شكسبير",
+        "ميغيل دي ثيربانتس",
+        "الإلياذة",
+        "أنطوان دو سانت إكزوبيري"
+      ],
+      "fr": [
+        "William Shakespeare",
+        "Miguel de Cervantes",
+        "L’Iliade",
+        "Antoine de Saint-Exupéry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Shakespeare",
+      "ar": "ويليام شكسبير",
+      "fr": "William Shakespeare"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q886",
+    "question": {
+      "en": "What is described by this clue: The author of the play Hamlet?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف مسرحية هاملت؟",
+      "fr": "Que décrit cet indice : L’auteur de la pièce Hamlet ?"
+    },
+    "options": {
+      "en": [
+        "George Orwell",
+        "Gabriel García Márquez",
+        "Jane Austen",
+        "William Shakespeare"
+      ],
+      "ar": [
+        "جورج أورويل",
+        "غابرييل غارسيا ماركيز",
+        "جين أوستن",
+        "ويليام شكسبير"
+      ],
+      "fr": [
+        "George Orwell",
+        "Gabriel García Márquez",
+        "Jane Austen",
+        "William Shakespeare"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Shakespeare",
+      "ar": "ويليام شكسبير",
+      "fr": "William Shakespeare"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q887",
+    "question": {
+      "en": "Identify the correct answer for this clue: The author of the play Hamlet?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف مسرحية هاملت؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’auteur de la pièce Hamlet ?"
+    },
+    "options": {
+      "en": [
+        "Miguel de Cervantes",
+        "The Iliad",
+        "William Shakespeare",
+        "Sherlock Holmes"
+      ],
+      "ar": [
+        "ميغيل دي ثيربانتس",
+        "الإلياذة",
+        "ويليام شكسبير",
+        "شيرلوك هولمز"
+      ],
+      "fr": [
+        "Miguel de Cervantes",
+        "L’Iliade",
+        "William Shakespeare",
+        "Sherlock Holmes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "William Shakespeare",
+      "ar": "ويليام شكسبير",
+      "fr": "William Shakespeare"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q888",
+    "question": {
+      "en": "Which answer matches this clue: The author of Don Quixote?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف دون كيشوت؟",
+      "fr": "Quelle réponse correspond à cet indice : L’auteur de Don Quichotte ?"
+    },
+    "options": {
+      "en": [
+        "Antoine de Saint-Exupéry",
+        "George Orwell",
+        "Gabriel García Márquez",
+        "Miguel de Cervantes"
+      ],
+      "ar": [
+        "أنطوان دو سانت إكزوبيري",
+        "جورج أورويل",
+        "غابرييل غارسيا ماركيز",
+        "ميغيل دي ثيربانتس"
+      ],
+      "fr": [
+        "Antoine de Saint-Exupéry",
+        "George Orwell",
+        "Gabriel García Márquez",
+        "Miguel de Cervantes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Miguel de Cervantes",
+      "ar": "ميغيل دي ثيربانتس",
+      "fr": "Miguel de Cervantes"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q889",
+    "question": {
+      "en": "What is described by this clue: The author of Don Quixote?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف دون كيشوت؟",
+      "fr": "Que décrit cet indice : L’auteur de Don Quichotte ?"
+    },
+    "options": {
+      "en": [
+        "Sherlock Holmes",
+        "William Shakespeare",
+        "Miguel de Cervantes",
+        "Jane Austen"
+      ],
+      "ar": [
+        "شيرلوك هولمز",
+        "ويليام شكسبير",
+        "ميغيل دي ثيربانتس",
+        "جين أوستن"
+      ],
+      "fr": [
+        "Sherlock Holmes",
+        "William Shakespeare",
+        "Miguel de Cervantes",
+        "Jane Austen"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Miguel de Cervantes",
+      "ar": "ميغيل دي ثيربانتس",
+      "fr": "Miguel de Cervantes"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q890",
+    "question": {
+      "en": "Identify the correct answer for this clue: The author of Don Quixote?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف دون كيشوت؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’auteur de Don Quichotte ?"
+    },
+    "options": {
+      "en": [
+        "George Orwell",
+        "Miguel de Cervantes",
+        "The Iliad",
+        "Antoine de Saint-Exupéry"
+      ],
+      "ar": [
+        "جورج أورويل",
+        "ميغيل دي ثيربانتس",
+        "الإلياذة",
+        "أنطوان دو سانت إكزوبيري"
+      ],
+      "fr": [
+        "George Orwell",
+        "Miguel de Cervantes",
+        "L’Iliade",
+        "Antoine de Saint-Exupéry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Miguel de Cervantes",
+      "ar": "ميغيل دي ثيربانتس",
+      "fr": "Miguel de Cervantes"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q891",
+    "question": {
+      "en": "Which answer matches this clue: The author of the novel 1984?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف رواية 1984؟",
+      "fr": "Quelle réponse correspond à cet indice : L’auteur du roman 1984 ?"
+    },
+    "options": {
+      "en": [
+        "Jane Austen",
+        "Sherlock Holmes",
+        "George Orwell",
+        "Gabriel García Márquez"
+      ],
+      "ar": [
+        "جين أوستن",
+        "شيرلوك هولمز",
+        "جورج أورويل",
+        "غابرييل غارسيا ماركيز"
+      ],
+      "fr": [
+        "Jane Austen",
+        "Sherlock Holmes",
+        "George Orwell",
+        "Gabriel García Márquez"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Orwell",
+      "ar": "جورج أورويل",
+      "fr": "George Orwell"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q892",
+    "question": {
+      "en": "What is described by this clue: The author of the novel 1984?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف رواية 1984؟",
+      "fr": "Que décrit cet indice : L’auteur du roman 1984 ?"
+    },
+    "options": {
+      "en": [
+        "Antoine de Saint-Exupéry",
+        "George Orwell",
+        "William Shakespeare",
+        "The Iliad"
+      ],
+      "ar": [
+        "أنطوان دو سانت إكزوبيري",
+        "جورج أورويل",
+        "ويليام شكسبير",
+        "الإلياذة"
+      ],
+      "fr": [
+        "Antoine de Saint-Exupéry",
+        "George Orwell",
+        "William Shakespeare",
+        "L’Iliade"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Orwell",
+      "ar": "جورج أورويل",
+      "fr": "George Orwell"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q893",
+    "question": {
+      "en": "Identify the correct answer for this clue: The author of the novel 1984?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف رواية 1984؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’auteur du roman 1984 ?"
+    },
+    "options": {
+      "en": [
+        "George Orwell",
+        "Miguel de Cervantes",
+        "Gabriel García Márquez",
+        "Jane Austen"
+      ],
+      "ar": [
+        "جورج أورويل",
+        "ميغيل دي ثيربانتس",
+        "غابرييل غارسيا ماركيز",
+        "جين أوستن"
+      ],
+      "fr": [
+        "George Orwell",
+        "Miguel de Cervantes",
+        "Gabriel García Márquez",
+        "Jane Austen"
+      ]
+    },
+    "correctAnswer": {
+      "en": "George Orwell",
+      "ar": "جورج أورويل",
+      "fr": "George Orwell"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q894",
+    "question": {
+      "en": "Which answer matches this clue: The fictional detective created by Arthur Conan Doyle?",
+      "ar": "أي إجابة تطابق هذه المعلومة: المحقق الخيالي الذي ابتكره آرثر كونان دويل؟",
+      "fr": "Quelle réponse correspond à cet indice : Le détective fictif créé par Arthur Conan Doyle ?"
+    },
+    "options": {
+      "en": [
+        "The Iliad",
+        "Sherlock Holmes",
+        "George Orwell",
+        "William Shakespeare"
+      ],
+      "ar": [
+        "الإلياذة",
+        "شيرلوك هولمز",
+        "جورج أورويل",
+        "ويليام شكسبير"
+      ],
+      "fr": [
+        "L’Iliade",
+        "Sherlock Holmes",
+        "George Orwell",
+        "William Shakespeare"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sherlock Holmes",
+      "ar": "شيرلوك هولمز",
+      "fr": "Sherlock Holmes"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q895",
+    "question": {
+      "en": "What is described by this clue: The fictional detective created by Arthur Conan Doyle?",
+      "ar": "ما الذي تصفه هذه المعلومة: المحقق الخيالي الذي ابتكره آرثر كونان دويل؟",
+      "fr": "Que décrit cet indice : Le détective fictif créé par Arthur Conan Doyle ?"
+    },
+    "options": {
+      "en": [
+        "Sherlock Holmes",
+        "Antoine de Saint-Exupéry",
+        "Miguel de Cervantes",
+        "Gabriel García Márquez"
+      ],
+      "ar": [
+        "شيرلوك هولمز",
+        "أنطوان دو سانت إكزوبيري",
+        "ميغيل دي ثيربانتس",
+        "غابرييل غارسيا ماركيز"
+      ],
+      "fr": [
+        "Sherlock Holmes",
+        "Antoine de Saint-Exupéry",
+        "Miguel de Cervantes",
+        "Gabriel García Márquez"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sherlock Holmes",
+      "ar": "شيرلوك هولمز",
+      "fr": "Sherlock Holmes"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q896",
+    "question": {
+      "en": "Identify the correct answer for this clue: The fictional detective created by Arthur Conan Doyle?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: المحقق الخيالي الذي ابتكره آرثر كونان دويل؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le détective fictif créé par Arthur Conan Doyle ?"
+    },
+    "options": {
+      "en": [
+        "Jane Austen",
+        "George Orwell",
+        "William Shakespeare",
+        "Sherlock Holmes"
+      ],
+      "ar": [
+        "جين أوستن",
+        "جورج أورويل",
+        "ويليام شكسبير",
+        "شيرلوك هولمز"
+      ],
+      "fr": [
+        "Jane Austen",
+        "George Orwell",
+        "William Shakespeare",
+        "Sherlock Holmes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sherlock Holmes",
+      "ar": "شيرلوك هولمز",
+      "fr": "Sherlock Holmes"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q897",
+    "question": {
+      "en": "Which answer matches this clue: The author of The Little Prince?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف الأمير الصغير؟",
+      "fr": "Quelle réponse correspond à cet indice : L’auteur du Petit Prince ?"
+    },
+    "options": {
+      "en": [
+        "Antoine de Saint-Exupéry",
+        "The Iliad",
+        "Sherlock Holmes",
+        "Miguel de Cervantes"
+      ],
+      "ar": [
+        "أنطوان دو سانت إكزوبيري",
+        "الإلياذة",
+        "شيرلوك هولمز",
+        "ميغيل دي ثيربانتس"
+      ],
+      "fr": [
+        "Antoine de Saint-Exupéry",
+        "L’Iliade",
+        "Sherlock Holmes",
+        "Miguel de Cervantes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antoine de Saint-Exupéry",
+      "ar": "أنطوان دو سانت إكزوبيري",
+      "fr": "Antoine de Saint-Exupéry"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q898",
+    "question": {
+      "en": "What is described by this clue: The author of The Little Prince?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف الأمير الصغير؟",
+      "fr": "Que décrit cet indice : L’auteur du Petit Prince ?"
+    },
+    "options": {
+      "en": [
+        "Gabriel García Márquez",
+        "Jane Austen",
+        "George Orwell",
+        "Antoine de Saint-Exupéry"
+      ],
+      "ar": [
+        "غابرييل غارسيا ماركيز",
+        "جين أوستن",
+        "جورج أورويل",
+        "أنطوان دو سانت إكزوبيري"
+      ],
+      "fr": [
+        "Gabriel García Márquez",
+        "Jane Austen",
+        "George Orwell",
+        "Antoine de Saint-Exupéry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antoine de Saint-Exupéry",
+      "ar": "أنطوان دو سانت إكزوبيري",
+      "fr": "Antoine de Saint-Exupéry"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q899",
+    "question": {
+      "en": "Identify the correct answer for this clue: The author of The Little Prince?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف الأمير الصغير؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’auteur du Petit Prince ?"
+    },
+    "options": {
+      "en": [
+        "The Iliad",
+        "Sherlock Holmes",
+        "Antoine de Saint-Exupéry",
+        "William Shakespeare"
+      ],
+      "ar": [
+        "الإلياذة",
+        "شيرلوك هولمز",
+        "أنطوان دو سانت إكزوبيري",
+        "ويليام شكسبير"
+      ],
+      "fr": [
+        "L’Iliade",
+        "Sherlock Holmes",
+        "Antoine de Saint-Exupéry",
+        "William Shakespeare"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antoine de Saint-Exupéry",
+      "ar": "أنطوان دو سانت إكزوبيري",
+      "fr": "Antoine de Saint-Exupéry"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q900",
+    "question": {
+      "en": "Which answer matches this clue: The author of Pride and Prejudice?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلفة كبرياء وتحامل؟",
+      "fr": "Quelle réponse correspond à cet indice : L’autrice d’Orgueil et Préjugés ?"
+    },
+    "options": {
+      "en": [
+        "Miguel de Cervantes",
+        "Gabriel García Márquez",
+        "Antoine de Saint-Exupéry",
+        "Jane Austen"
+      ],
+      "ar": [
+        "ميغيل دي ثيربانتس",
+        "غابرييل غارسيا ماركيز",
+        "أنطوان دو سانت إكزوبيري",
+        "جين أوستن"
+      ],
+      "fr": [
+        "Miguel de Cervantes",
+        "Gabriel García Márquez",
+        "Antoine de Saint-Exupéry",
+        "Jane Austen"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jane Austen",
+      "ar": "جين أوستن",
+      "fr": "Jane Austen"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q901",
+    "question": {
+      "en": "What is described by this clue: The author of Pride and Prejudice?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلفة كبرياء وتحامل؟",
+      "fr": "Que décrit cet indice : L’autrice d’Orgueil et Préjugés ?"
+    },
+    "options": {
+      "en": [
+        "William Shakespeare",
+        "The Iliad",
+        "Jane Austen",
+        "George Orwell"
+      ],
+      "ar": [
+        "ويليام شكسبير",
+        "الإلياذة",
+        "جين أوستن",
+        "جورج أورويل"
+      ],
+      "fr": [
+        "William Shakespeare",
+        "L’Iliade",
+        "Jane Austen",
+        "George Orwell"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jane Austen",
+      "ar": "جين أوستن",
+      "fr": "Jane Austen"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q902",
+    "question": {
+      "en": "Identify the correct answer for this clue: The author of Pride and Prejudice?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلفة كبرياء وتحامل؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’autrice d’Orgueil et Préjugés ?"
+    },
+    "options": {
+      "en": [
+        "Gabriel García Márquez",
+        "Jane Austen",
+        "Sherlock Holmes",
+        "Miguel de Cervantes"
+      ],
+      "ar": [
+        "غابرييل غارسيا ماركيز",
+        "جين أوستن",
+        "شيرلوك هولمز",
+        "ميغيل دي ثيربانتس"
+      ],
+      "fr": [
+        "Gabriel García Márquez",
+        "Jane Austen",
+        "Sherlock Holmes",
+        "Miguel de Cervantes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jane Austen",
+      "ar": "جين أوستن",
+      "fr": "Jane Austen"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q903",
+    "question": {
+      "en": "Which answer matches this clue: The epic poem traditionally attributed to Homer about the Trojan War?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الملحمة الشعرية المنسوبة تقليدياً إلى هوميروس عن حرب طروادة؟",
+      "fr": "Quelle réponse correspond à cet indice : L’épopée traditionnellement attribuée à Homère sur la guerre de Troie ?"
+    },
+    "options": {
+      "en": [
+        "George Orwell",
+        "William Shakespeare",
+        "The Iliad",
+        "Antoine de Saint-Exupéry"
+      ],
+      "ar": [
+        "جورج أورويل",
+        "ويليام شكسبير",
+        "الإلياذة",
+        "أنطوان دو سانت إكزوبيري"
+      ],
+      "fr": [
+        "George Orwell",
+        "William Shakespeare",
+        "L’Iliade",
+        "Antoine de Saint-Exupéry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "The Iliad",
+      "ar": "الإلياذة",
+      "fr": "L’Iliade"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q904",
+    "question": {
+      "en": "What is described by this clue: The epic poem traditionally attributed to Homer about the Trojan War?",
+      "ar": "ما الذي تصفه هذه المعلومة: الملحمة الشعرية المنسوبة تقليدياً إلى هوميروس عن حرب طروادة؟",
+      "fr": "Que décrit cet indice : L’épopée traditionnellement attribuée à Homère sur la guerre de Troie ?"
+    },
+    "options": {
+      "en": [
+        "Miguel de Cervantes",
+        "The Iliad",
+        "Jane Austen",
+        "Sherlock Holmes"
+      ],
+      "ar": [
+        "ميغيل دي ثيربانتس",
+        "الإلياذة",
+        "جين أوستن",
+        "شيرلوك هولمز"
+      ],
+      "fr": [
+        "Miguel de Cervantes",
+        "L’Iliade",
+        "Jane Austen",
+        "Sherlock Holmes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "The Iliad",
+      "ar": "الإلياذة",
+      "fr": "L’Iliade"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q905",
+    "question": {
+      "en": "Identify the correct answer for this clue: The epic poem traditionally attributed to Homer about the Trojan War?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الملحمة الشعرية المنسوبة تقليدياً إلى هوميروس عن حرب طروادة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’épopée traditionnellement attribuée à Homère sur la guerre de Troie ?"
+    },
+    "options": {
+      "en": [
+        "The Iliad",
+        "Gabriel García Márquez",
+        "Antoine de Saint-Exupéry",
+        "George Orwell"
+      ],
+      "ar": [
+        "الإلياذة",
+        "غابرييل غارسيا ماركيز",
+        "أنطوان دو سانت إكزوبيري",
+        "جورج أورويل"
+      ],
+      "fr": [
+        "L’Iliade",
+        "Gabriel García Márquez",
+        "Antoine de Saint-Exupéry",
+        "George Orwell"
+      ]
+    },
+    "correctAnswer": {
+      "en": "The Iliad",
+      "ar": "الإلياذة",
+      "fr": "L’Iliade"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q906",
+    "question": {
+      "en": "Which answer matches this clue: The author of One Hundred Years of Solitude?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف مئة عام من العزلة؟",
+      "fr": "Quelle réponse correspond à cet indice : L’auteur de Cent ans de solitude ?"
+    },
+    "options": {
+      "en": [
+        "Sherlock Holmes",
+        "Gabriel García Márquez",
+        "William Shakespeare",
+        "Jane Austen"
+      ],
+      "ar": [
+        "شيرلوك هولمز",
+        "غابرييل غارسيا ماركيز",
+        "ويليام شكسبير",
+        "جين أوستن"
+      ],
+      "fr": [
+        "Sherlock Holmes",
+        "Gabriel García Márquez",
+        "William Shakespeare",
+        "Jane Austen"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gabriel García Márquez",
+      "ar": "غابرييل غارسيا ماركيز",
+      "fr": "Gabriel García Márquez"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q907",
+    "question": {
+      "en": "What is described by this clue: The author of One Hundred Years of Solitude?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف مئة عام من العزلة؟",
+      "fr": "Que décrit cet indice : L’auteur de Cent ans de solitude ?"
+    },
+    "options": {
+      "en": [
+        "Gabriel García Márquez",
+        "Miguel de Cervantes",
+        "The Iliad",
+        "Antoine de Saint-Exupéry"
+      ],
+      "ar": [
+        "غابرييل غارسيا ماركيز",
+        "ميغيل دي ثيربانتس",
+        "الإلياذة",
+        "أنطوان دو سانت إكزوبيري"
+      ],
+      "fr": [
+        "Gabriel García Márquez",
+        "Miguel de Cervantes",
+        "L’Iliade",
+        "Antoine de Saint-Exupéry"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gabriel García Márquez",
+      "ar": "غابرييل غارسيا ماركيز",
+      "fr": "Gabriel García Márquez"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q908",
+    "question": {
+      "en": "Identify the correct answer for this clue: The author of One Hundred Years of Solitude?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف مئة عام من العزلة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’auteur de Cent ans de solitude ?"
+    },
+    "options": {
+      "en": [
+        "George Orwell",
+        "William Shakespeare",
+        "Jane Austen",
+        "Gabriel García Márquez"
+      ],
+      "ar": [
+        "جورج أورويل",
+        "ويليام شكسبير",
+        "جين أوستن",
+        "غابرييل غارسيا ماركيز"
+      ],
+      "fr": [
+        "George Orwell",
+        "William Shakespeare",
+        "Jane Austen",
+        "Gabriel García Márquez"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Gabriel García Márquez",
+      "ar": "غابرييل غارسيا ماركيز",
+      "fr": "Gabriel García Márquez"
+    },
+    "points": 10,
+    "category": "Literature"
+  },
+  {
+    "id": "q909",
+    "question": {
+      "en": "Which answer matches this clue: The composer of the Ninth Symphony?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف السيمفونية التاسعة؟",
+      "fr": "Quelle réponse correspond à cet indice : Le compositeur de la Neuvième Symphonie ?"
+    },
+    "options": {
+      "en": [
+        "Ludwig van Beethoven",
+        "Crescendo",
+        "Strings",
+        "Antonio Vivaldi"
+      ],
+      "ar": [
+        "لودفيغ فان بيتهوفن",
+        "تصاعد الصوت",
+        "الآلات الوترية",
+        "أنطونيو فيفالدي"
+      ],
+      "fr": [
+        "Ludwig van Beethoven",
+        "crescendo",
+        "cordes",
+        "Antonio Vivaldi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ludwig van Beethoven",
+      "ar": "لودفيغ فان بيتهوفن",
+      "fr": "Ludwig van Beethoven"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q910",
+    "question": {
+      "en": "What is described by this clue: The composer of the Ninth Symphony?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف السيمفونية التاسعة؟",
+      "fr": "Que décrit cet indice : Le compositeur de la Neuvième Symphonie ?"
+    },
+    "options": {
+      "en": [
+        "Elvis Presley",
+        "Liverpool",
+        "Piano",
+        "Ludwig van Beethoven"
+      ],
+      "ar": [
+        "إلفيس بريسلي",
+        "ليفربول",
+        "البيانو",
+        "لودفيغ فان بيتهوفن"
+      ],
+      "fr": [
+        "Elvis Presley",
+        "Liverpool",
+        "piano",
+        "Ludwig van Beethoven"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ludwig van Beethoven",
+      "ar": "لودفيغ فان بيتهوفن",
+      "fr": "Ludwig van Beethoven"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q911",
+    "question": {
+      "en": "Identify the correct answer for this clue: The composer of the Ninth Symphony?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف السيمفونية التاسعة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le compositeur de la Neuvième Symphonie ?"
+    },
+    "options": {
+      "en": [
+        "Crescendo",
+        "Strings",
+        "Ludwig van Beethoven",
+        "Drums"
+      ],
+      "ar": [
+        "تصاعد الصوت",
+        "الآلات الوترية",
+        "لودفيغ فان بيتهوفن",
+        "الطبول"
+      ],
+      "fr": [
+        "crescendo",
+        "cordes",
+        "Ludwig van Beethoven",
+        "batterie"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Ludwig van Beethoven",
+      "ar": "لودفيغ فان بيتهوفن",
+      "fr": "Ludwig van Beethoven"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q912",
+    "question": {
+      "en": "Which answer matches this clue: The instrument with 88 keys in its standard modern form?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الآلة الموسيقية التي تضم 88 مفتاحاً في شكلها الحديث القياسي؟",
+      "fr": "Quelle réponse correspond à cet indice : L’instrument qui possède 88 touches dans sa forme moderne standard ?"
+    },
+    "options": {
+      "en": [
+        "Antonio Vivaldi",
+        "Elvis Presley",
+        "Liverpool",
+        "Piano"
+      ],
+      "ar": [
+        "أنطونيو فيفالدي",
+        "إلفيس بريسلي",
+        "ليفربول",
+        "البيانو"
+      ],
+      "fr": [
+        "Antonio Vivaldi",
+        "Elvis Presley",
+        "Liverpool",
+        "piano"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Piano",
+      "ar": "البيانو",
+      "fr": "piano"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q913",
+    "question": {
+      "en": "What is described by this clue: The instrument with 88 keys in its standard modern form?",
+      "ar": "ما الذي تصفه هذه المعلومة: الآلة الموسيقية التي تضم 88 مفتاحاً في شكلها الحديث القياسي؟",
+      "fr": "Que décrit cet indice : L’instrument qui possède 88 touches dans sa forme moderne standard ?"
+    },
+    "options": {
+      "en": [
+        "Drums",
+        "Crescendo",
+        "Piano",
+        "Ludwig van Beethoven"
+      ],
+      "ar": [
+        "الطبول",
+        "تصاعد الصوت",
+        "البيانو",
+        "لودفيغ فان بيتهوفن"
+      ],
+      "fr": [
+        "batterie",
+        "crescendo",
+        "piano",
+        "Ludwig van Beethoven"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Piano",
+      "ar": "البيانو",
+      "fr": "piano"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q914",
+    "question": {
+      "en": "Identify the correct answer for this clue: The instrument with 88 keys in its standard modern form?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الآلة الموسيقية التي تضم 88 مفتاحاً في شكلها الحديث القياسي؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’instrument qui possède 88 touches dans sa forme moderne standard ?"
+    },
+    "options": {
+      "en": [
+        "Elvis Presley",
+        "Piano",
+        "Strings",
+        "Antonio Vivaldi"
+      ],
+      "ar": [
+        "إلفيس بريسلي",
+        "البيانو",
+        "الآلات الوترية",
+        "أنطونيو فيفالدي"
+      ],
+      "fr": [
+        "Elvis Presley",
+        "piano",
+        "cordes",
+        "Antonio Vivaldi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Piano",
+      "ar": "البيانو",
+      "fr": "piano"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q915",
+    "question": {
+      "en": "Which answer matches this clue: The family of instruments to which the violin belongs?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عائلة الآلات التي ينتمي إليها الكمان؟",
+      "fr": "Quelle réponse correspond à cet indice : La famille d’instruments à laquelle appartient le violon ?"
+    },
+    "options": {
+      "en": [
+        "Ludwig van Beethoven",
+        "Drums",
+        "Strings",
+        "Liverpool"
+      ],
+      "ar": [
+        "لودفيغ فان بيتهوفن",
+        "الطبول",
+        "الآلات الوترية",
+        "ليفربول"
+      ],
+      "fr": [
+        "Ludwig van Beethoven",
+        "batterie",
+        "cordes",
+        "Liverpool"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Strings",
+      "ar": "الآلات الوترية",
+      "fr": "cordes"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q916",
+    "question": {
+      "en": "What is described by this clue: The family of instruments to which the violin belongs?",
+      "ar": "ما الذي تصفه هذه المعلومة: عائلة الآلات التي ينتمي إليها الكمان؟",
+      "fr": "Que décrit cet indice : La famille d’instruments à laquelle appartient le violon ?"
+    },
+    "options": {
+      "en": [
+        "Antonio Vivaldi",
+        "Strings",
+        "Crescendo",
+        "Piano"
+      ],
+      "ar": [
+        "أنطونيو فيفالدي",
+        "الآلات الوترية",
+        "تصاعد الصوت",
+        "البيانو"
+      ],
+      "fr": [
+        "Antonio Vivaldi",
+        "cordes",
+        "crescendo",
+        "piano"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Strings",
+      "ar": "الآلات الوترية",
+      "fr": "cordes"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q917",
+    "question": {
+      "en": "Identify the correct answer for this clue: The family of instruments to which the violin belongs?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عائلة الآلات التي ينتمي إليها الكمان؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La famille d’instruments à laquelle appartient le violon ?"
+    },
+    "options": {
+      "en": [
+        "Strings",
+        "Elvis Presley",
+        "Liverpool",
+        "Ludwig van Beethoven"
+      ],
+      "ar": [
+        "الآلات الوترية",
+        "إلفيس بريسلي",
+        "ليفربول",
+        "لودفيغ فان بيتهوفن"
+      ],
+      "fr": [
+        "cordes",
+        "Elvis Presley",
+        "Liverpool",
+        "Ludwig van Beethoven"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Strings",
+      "ar": "الآلات الوترية",
+      "fr": "cordes"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q918",
+    "question": {
+      "en": "Which answer matches this clue: The city where the Beatles formed?",
+      "ar": "أي إجابة تطابق هذه المعلومة: المدينة التي تأسست فيها فرقة البيتلز؟",
+      "fr": "Quelle réponse correspond à cet indice : La ville où les Beatles se sont formés ?"
+    },
+    "options": {
+      "en": [
+        "Piano",
+        "Liverpool",
+        "Drums",
+        "Crescendo"
+      ],
+      "ar": [
+        "البيانو",
+        "ليفربول",
+        "الطبول",
+        "تصاعد الصوت"
+      ],
+      "fr": [
+        "piano",
+        "Liverpool",
+        "batterie",
+        "crescendo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Liverpool",
+      "ar": "ليفربول",
+      "fr": "Liverpool"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q919",
+    "question": {
+      "en": "What is described by this clue: The city where the Beatles formed?",
+      "ar": "ما الذي تصفه هذه المعلومة: المدينة التي تأسست فيها فرقة البيتلز؟",
+      "fr": "Que décrit cet indice : La ville où les Beatles se sont formés ?"
+    },
+    "options": {
+      "en": [
+        "Liverpool",
+        "Antonio Vivaldi",
+        "Elvis Presley",
+        "Strings"
+      ],
+      "ar": [
+        "ليفربول",
+        "أنطونيو فيفالدي",
+        "إلفيس بريسلي",
+        "الآلات الوترية"
+      ],
+      "fr": [
+        "Liverpool",
+        "Antonio Vivaldi",
+        "Elvis Presley",
+        "cordes"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Liverpool",
+      "ar": "ليفربول",
+      "fr": "Liverpool"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q920",
+    "question": {
+      "en": "Identify the correct answer for this clue: The city where the Beatles formed?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: المدينة التي تأسست فيها فرقة البيتلز؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La ville où les Beatles se sont formés ?"
+    },
+    "options": {
+      "en": [
+        "Ludwig van Beethoven",
+        "Drums",
+        "Crescendo",
+        "Liverpool"
+      ],
+      "ar": [
+        "لودفيغ فان بيتهوفن",
+        "الطبول",
+        "تصاعد الصوت",
+        "ليفربول"
+      ],
+      "fr": [
+        "Ludwig van Beethoven",
+        "batterie",
+        "crescendo",
+        "Liverpool"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Liverpool",
+      "ar": "ليفربول",
+      "fr": "Liverpool"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q921",
+    "question": {
+      "en": "Which answer matches this clue: The musical term for gradually getting louder?",
+      "ar": "أي إجابة تطابق هذه المعلومة: المصطلح الموسيقي للتدرج في رفع الصوت؟",
+      "fr": "Quelle réponse correspond à cet indice : Le terme musical désignant une augmentation progressive du volume ?"
+    },
+    "options": {
+      "en": [
+        "Crescendo",
+        "Piano",
+        "Antonio Vivaldi",
+        "Elvis Presley"
+      ],
+      "ar": [
+        "تصاعد الصوت",
+        "البيانو",
+        "أنطونيو فيفالدي",
+        "إلفيس بريسلي"
+      ],
+      "fr": [
+        "crescendo",
+        "piano",
+        "Antonio Vivaldi",
+        "Elvis Presley"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Crescendo",
+      "ar": "تصاعد الصوت",
+      "fr": "crescendo"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q922",
+    "question": {
+      "en": "What is described by this clue: The musical term for gradually getting louder?",
+      "ar": "ما الذي تصفه هذه المعلومة: المصطلح الموسيقي للتدرج في رفع الصوت؟",
+      "fr": "Que décrit cet indice : Le terme musical désignant une augmentation progressive du volume ?"
+    },
+    "options": {
+      "en": [
+        "Strings",
+        "Ludwig van Beethoven",
+        "Drums",
+        "Crescendo"
+      ],
+      "ar": [
+        "الآلات الوترية",
+        "لودفيغ فان بيتهوفن",
+        "الطبول",
+        "تصاعد الصوت"
+      ],
+      "fr": [
+        "cordes",
+        "Ludwig van Beethoven",
+        "batterie",
+        "crescendo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Crescendo",
+      "ar": "تصاعد الصوت",
+      "fr": "crescendo"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q923",
+    "question": {
+      "en": "Identify the correct answer for this clue: The musical term for gradually getting louder?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: المصطلح الموسيقي للتدرج في رفع الصوت؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le terme musical désignant une augmentation progressive du volume ?"
+    },
+    "options": {
+      "en": [
+        "Piano",
+        "Antonio Vivaldi",
+        "Crescendo",
+        "Liverpool"
+      ],
+      "ar": [
+        "البيانو",
+        "أنطونيو فيفالدي",
+        "تصاعد الصوت",
+        "ليفربول"
+      ],
+      "fr": [
+        "piano",
+        "Antonio Vivaldi",
+        "crescendo",
+        "Liverpool"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Crescendo",
+      "ar": "تصاعد الصوت",
+      "fr": "crescendo"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q924",
+    "question": {
+      "en": "Which answer matches this clue: The singer known as the King of Rock and Roll?",
+      "ar": "أي إجابة تطابق هذه المعلومة: المغني المعروف بلقب ملك الروك أند رول؟",
+      "fr": "Quelle réponse correspond à cet indice : Le chanteur surnommé le roi du rock’n’roll ?"
+    },
+    "options": {
+      "en": [
+        "Crescendo",
+        "Strings",
+        "Ludwig van Beethoven",
+        "Elvis Presley"
+      ],
+      "ar": [
+        "تصاعد الصوت",
+        "الآلات الوترية",
+        "لودفيغ فان بيتهوفن",
+        "إلفيس بريسلي"
+      ],
+      "fr": [
+        "crescendo",
+        "cordes",
+        "Ludwig van Beethoven",
+        "Elvis Presley"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Elvis Presley",
+      "ar": "إلفيس بريسلي",
+      "fr": "Elvis Presley"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q925",
+    "question": {
+      "en": "What is described by this clue: The singer known as the King of Rock and Roll?",
+      "ar": "ما الذي تصفه هذه المعلومة: المغني المعروف بلقب ملك الروك أند رول؟",
+      "fr": "Que décrit cet indice : Le chanteur surnommé le roi du rock’n’roll ?"
+    },
+    "options": {
+      "en": [
+        "Liverpool",
+        "Piano",
+        "Elvis Presley",
+        "Drums"
+      ],
+      "ar": [
+        "ليفربول",
+        "البيانو",
+        "إلفيس بريسلي",
+        "الطبول"
+      ],
+      "fr": [
+        "Liverpool",
+        "piano",
+        "Elvis Presley",
+        "batterie"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Elvis Presley",
+      "ar": "إلفيس بريسلي",
+      "fr": "Elvis Presley"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q926",
+    "question": {
+      "en": "Identify the correct answer for this clue: The singer known as the King of Rock and Roll?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: المغني المعروف بلقب ملك الروك أند رول؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le chanteur surnommé le roi du rock’n’roll ?"
+    },
+    "options": {
+      "en": [
+        "Strings",
+        "Elvis Presley",
+        "Antonio Vivaldi",
+        "Crescendo"
+      ],
+      "ar": [
+        "الآلات الوترية",
+        "إلفيس بريسلي",
+        "أنطونيو فيفالدي",
+        "تصاعد الصوت"
+      ],
+      "fr": [
+        "cordes",
+        "Elvis Presley",
+        "Antonio Vivaldi",
+        "crescendo"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Elvis Presley",
+      "ar": "إلفيس بريسلي",
+      "fr": "Elvis Presley"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q927",
+    "question": {
+      "en": "Which answer matches this clue: The instrument played by a drummer in a standard drum kit?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الآلة التي يعزف عليها عازف الإيقاع في مجموعة الطبول؟",
+      "fr": "Quelle réponse correspond à cet indice : L’instrument joué par un batteur dans une batterie standard ?"
+    },
+    "options": {
+      "en": [
+        "Elvis Presley",
+        "Liverpool",
+        "Drums",
+        "Ludwig van Beethoven"
+      ],
+      "ar": [
+        "إلفيس بريسلي",
+        "ليفربول",
+        "الطبول",
+        "لودفيغ فان بيتهوفن"
+      ],
+      "fr": [
+        "Elvis Presley",
+        "Liverpool",
+        "batterie",
+        "Ludwig van Beethoven"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Drums",
+      "ar": "الطبول",
+      "fr": "batterie"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q928",
+    "question": {
+      "en": "What is described by this clue: The instrument played by a drummer in a standard drum kit?",
+      "ar": "ما الذي تصفه هذه المعلومة: الآلة التي يعزف عليها عازف الإيقاع في مجموعة الطبول؟",
+      "fr": "Que décrit cet indice : L’instrument joué par un batteur dans une batterie standard ?"
+    },
+    "options": {
+      "en": [
+        "Crescendo",
+        "Drums",
+        "Piano",
+        "Antonio Vivaldi"
+      ],
+      "ar": [
+        "تصاعد الصوت",
+        "الطبول",
+        "البيانو",
+        "أنطونيو فيفالدي"
+      ],
+      "fr": [
+        "crescendo",
+        "batterie",
+        "piano",
+        "Antonio Vivaldi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Drums",
+      "ar": "الطبول",
+      "fr": "batterie"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q929",
+    "question": {
+      "en": "Identify the correct answer for this clue: The instrument played by a drummer in a standard drum kit?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الآلة التي يعزف عليها عازف الإيقاع في مجموعة الطبول؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’instrument joué par un batteur dans une batterie standard ?"
+    },
+    "options": {
+      "en": [
+        "Drums",
+        "Strings",
+        "Ludwig van Beethoven",
+        "Elvis Presley"
+      ],
+      "ar": [
+        "الطبول",
+        "الآلات الوترية",
+        "لودفيغ فان بيتهوفن",
+        "إلفيس بريسلي"
+      ],
+      "fr": [
+        "batterie",
+        "cordes",
+        "Ludwig van Beethoven",
+        "Elvis Presley"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Drums",
+      "ar": "الطبول",
+      "fr": "batterie"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q930",
+    "question": {
+      "en": "Which answer matches this clue: The composer of The Four Seasons?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مؤلف مقطوعة الفصول الأربعة؟",
+      "fr": "Quelle réponse correspond à cet indice : Le compositeur des Quatre Saisons ?"
+    },
+    "options": {
+      "en": [
+        "Drums",
+        "Antonio Vivaldi",
+        "Liverpool",
+        "Piano"
+      ],
+      "ar": [
+        "الطبول",
+        "أنطونيو فيفالدي",
+        "ليفربول",
+        "البيانو"
+      ],
+      "fr": [
+        "batterie",
+        "Antonio Vivaldi",
+        "Liverpool",
+        "piano"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antonio Vivaldi",
+      "ar": "أنطونيو فيفالدي",
+      "fr": "Antonio Vivaldi"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q931",
+    "question": {
+      "en": "What is described by this clue: The composer of The Four Seasons?",
+      "ar": "ما الذي تصفه هذه المعلومة: مؤلف مقطوعة الفصول الأربعة؟",
+      "fr": "Que décrit cet indice : Le compositeur des Quatre Saisons ?"
+    },
+    "options": {
+      "en": [
+        "Antonio Vivaldi",
+        "Crescendo",
+        "Strings",
+        "Ludwig van Beethoven"
+      ],
+      "ar": [
+        "أنطونيو فيفالدي",
+        "تصاعد الصوت",
+        "الآلات الوترية",
+        "لودفيغ فان بيتهوفن"
+      ],
+      "fr": [
+        "Antonio Vivaldi",
+        "crescendo",
+        "cordes",
+        "Ludwig van Beethoven"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antonio Vivaldi",
+      "ar": "أنطونيو فيفالدي",
+      "fr": "Antonio Vivaldi"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q932",
+    "question": {
+      "en": "Identify the correct answer for this clue: The composer of The Four Seasons?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مؤلف مقطوعة الفصول الأربعة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le compositeur des Quatre Saisons ?"
+    },
+    "options": {
+      "en": [
+        "Elvis Presley",
+        "Liverpool",
+        "Piano",
+        "Antonio Vivaldi"
+      ],
+      "ar": [
+        "إلفيس بريسلي",
+        "ليفربول",
+        "البيانو",
+        "أنطونيو فيفالدي"
+      ],
+      "fr": [
+        "Elvis Presley",
+        "Liverpool",
+        "piano",
+        "Antonio Vivaldi"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Antonio Vivaldi",
+      "ar": "أنطونيو فيفالدي",
+      "fr": "Antonio Vivaldi"
+    },
+    "points": 10,
+    "category": "Music"
+  },
+  {
+    "id": "q933",
+    "question": {
+      "en": "Which answer matches this clue: The organ that pumps blood around the human body?",
+      "ar": "أي إجابة تطابق هذه المعلومة: العضو الذي يضخ الدم في جسم الإنسان؟",
+      "fr": "Quelle réponse correspond à cet indice : L’organe qui fait circuler le sang dans le corps humain ?"
+    },
+    "options": {
+      "en": [
+        "Heart",
+        "Vitamin D",
+        "Photosynthesis",
+        "White blood cells"
+      ],
+      "ar": [
+        "القلب",
+        "فيتامين د",
+        "البناء الضوئي",
+        "خلايا الدم البيضاء"
+      ],
+      "fr": [
+        "cœur",
+        "vitamine D",
+        "photosynthèse",
+        "globules blancs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Heart",
+      "ar": "القلب",
+      "fr": "cœur"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q934",
+    "question": {
+      "en": "What is described by this clue: The organ that pumps blood around the human body?",
+      "ar": "ما الذي تصفه هذه المعلومة: العضو الذي يضخ الدم في جسم الإنسان؟",
+      "fr": "Que décrit cet indice : L’organe qui fait circuler le sang dans le corps humain ?"
+    },
+    "options": {
+      "en": [
+        "DNA",
+        "Four",
+        "Roots",
+        "Heart"
+      ],
+      "ar": [
+        "الحمض النووي DNA",
+        "أربع",
+        "الجذور",
+        "القلب"
+      ],
+      "fr": [
+        "ADN",
+        "quatre",
+        "racines",
+        "cœur"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Heart",
+      "ar": "القلب",
+      "fr": "cœur"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q935",
+    "question": {
+      "en": "Identify the correct answer for this clue: The organ that pumps blood around the human body?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: العضو الذي يضخ الدم في جسم الإنسان؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’organe qui fait circuler le sang dans le corps humain ?"
+    },
+    "options": {
+      "en": [
+        "Vitamin D",
+        "Photosynthesis",
+        "Heart",
+        "Skin"
+      ],
+      "ar": [
+        "فيتامين د",
+        "البناء الضوئي",
+        "القلب",
+        "الجلد"
+      ],
+      "fr": [
+        "vitamine D",
+        "photosynthèse",
+        "cœur",
+        "peau"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Heart",
+      "ar": "القلب",
+      "fr": "cœur"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q936",
+    "question": {
+      "en": "Which answer matches this clue: The molecule that carries genetic instructions in most living organisms?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الجزيء الذي يحمل التعليمات الوراثية لدى معظم الكائنات الحية؟",
+      "fr": "Quelle réponse correspond à cet indice : La molécule qui porte les instructions génétiques chez la plupart des êtres vivants ?"
+    },
+    "options": {
+      "en": [
+        "White blood cells",
+        "Heart",
+        "Four",
+        "DNA"
+      ],
+      "ar": [
+        "خلايا الدم البيضاء",
+        "القلب",
+        "أربع",
+        "الحمض النووي DNA"
+      ],
+      "fr": [
+        "globules blancs",
+        "cœur",
+        "quatre",
+        "ADN"
+      ]
+    },
+    "correctAnswer": {
+      "en": "DNA",
+      "ar": "الحمض النووي DNA",
+      "fr": "ADN"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q937",
+    "question": {
+      "en": "What is described by this clue: The molecule that carries genetic instructions in most living organisms?",
+      "ar": "ما الذي تصفه هذه المعلومة: الجزيء الذي يحمل التعليمات الوراثية لدى معظم الكائنات الحية؟",
+      "fr": "Que décrit cet indice : La molécule qui porte les instructions génétiques chez la plupart des êtres vivants ?"
+    },
+    "options": {
+      "en": [
+        "Skin",
+        "Vitamin D",
+        "DNA",
+        "Roots"
+      ],
+      "ar": [
+        "الجلد",
+        "فيتامين د",
+        "الحمض النووي DNA",
+        "الجذور"
+      ],
+      "fr": [
+        "peau",
+        "vitamine D",
+        "ADN",
+        "racines"
+      ]
+    },
+    "correctAnswer": {
+      "en": "DNA",
+      "ar": "الحمض النووي DNA",
+      "fr": "ADN"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q938",
+    "question": {
+      "en": "Identify the correct answer for this clue: The molecule that carries genetic instructions in most living organisms?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الجزيء الذي يحمل التعليمات الوراثية لدى معظم الكائنات الحية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La molécule qui porte les instructions génétiques chez la plupart des êtres vivants ?"
+    },
+    "options": {
+      "en": [
+        "Heart",
+        "DNA",
+        "Photosynthesis",
+        "White blood cells"
+      ],
+      "ar": [
+        "القلب",
+        "الحمض النووي DNA",
+        "البناء الضوئي",
+        "خلايا الدم البيضاء"
+      ],
+      "fr": [
+        "cœur",
+        "ADN",
+        "photosynthèse",
+        "globules blancs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "DNA",
+      "ar": "الحمض النووي DNA",
+      "fr": "ADN"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q939",
+    "question": {
+      "en": "Which answer matches this clue: The largest organ of the human body?",
+      "ar": "أي إجابة تطابق هذه المعلومة: أكبر عضو في جسم الإنسان؟",
+      "fr": "Quelle réponse correspond à cet indice : Le plus grand organe du corps humain ?"
+    },
+    "options": {
+      "en": [
+        "Roots",
+        "DNA",
+        "Skin",
+        "Four"
+      ],
+      "ar": [
+        "الجذور",
+        "الحمض النووي DNA",
+        "الجلد",
+        "أربع"
+      ],
+      "fr": [
+        "racines",
+        "ADN",
+        "peau",
+        "quatre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Skin",
+      "ar": "الجلد",
+      "fr": "peau"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q940",
+    "question": {
+      "en": "What is described by this clue: The largest organ of the human body?",
+      "ar": "ما الذي تصفه هذه المعلومة: أكبر عضو في جسم الإنسان؟",
+      "fr": "Que décrit cet indice : Le plus grand organe du corps humain ?"
+    },
+    "options": {
+      "en": [
+        "White blood cells",
+        "Skin",
+        "Vitamin D",
+        "Photosynthesis"
+      ],
+      "ar": [
+        "خلايا الدم البيضاء",
+        "الجلد",
+        "فيتامين د",
+        "البناء الضوئي"
+      ],
+      "fr": [
+        "globules blancs",
+        "peau",
+        "vitamine D",
+        "photosynthèse"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Skin",
+      "ar": "الجلد",
+      "fr": "peau"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q941",
+    "question": {
+      "en": "Identify the correct answer for this clue: The largest organ of the human body?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: أكبر عضو في جسم الإنسان؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le plus grand organe du corps humain ?"
+    },
+    "options": {
+      "en": [
+        "Skin",
+        "Heart",
+        "Four",
+        "Roots"
+      ],
+      "ar": [
+        "الجلد",
+        "القلب",
+        "أربع",
+        "الجذور"
+      ],
+      "fr": [
+        "peau",
+        "cœur",
+        "quatre",
+        "racines"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Skin",
+      "ar": "الجلد",
+      "fr": "peau"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q942",
+    "question": {
+      "en": "Which answer matches this clue: The blood cells that help fight infections?",
+      "ar": "أي إجابة تطابق هذه المعلومة: خلايا الدم التي تساعد على مقاومة العدوى؟",
+      "fr": "Quelle réponse correspond à cet indice : Les cellules sanguines qui aident à combattre les infections ?"
+    },
+    "options": {
+      "en": [
+        "Photosynthesis",
+        "White blood cells",
+        "DNA",
+        "Vitamin D"
+      ],
+      "ar": [
+        "البناء الضوئي",
+        "خلايا الدم البيضاء",
+        "الحمض النووي DNA",
+        "فيتامين د"
+      ],
+      "fr": [
+        "photosynthèse",
+        "globules blancs",
+        "ADN",
+        "vitamine D"
+      ]
+    },
+    "correctAnswer": {
+      "en": "White blood cells",
+      "ar": "خلايا الدم البيضاء",
+      "fr": "globules blancs"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q943",
+    "question": {
+      "en": "What is described by this clue: The blood cells that help fight infections?",
+      "ar": "ما الذي تصفه هذه المعلومة: خلايا الدم التي تساعد على مقاومة العدوى؟",
+      "fr": "Que décrit cet indice : Les cellules sanguines qui aident à combattre les infections ?"
+    },
+    "options": {
+      "en": [
+        "White blood cells",
+        "Skin",
+        "Heart",
+        "Four"
+      ],
+      "ar": [
+        "خلايا الدم البيضاء",
+        "الجلد",
+        "القلب",
+        "أربع"
+      ],
+      "fr": [
+        "globules blancs",
+        "peau",
+        "cœur",
+        "quatre"
+      ]
+    },
+    "correctAnswer": {
+      "en": "White blood cells",
+      "ar": "خلايا الدم البيضاء",
+      "fr": "globules blancs"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q944",
+    "question": {
+      "en": "Identify the correct answer for this clue: The blood cells that help fight infections?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: خلايا الدم التي تساعد على مقاومة العدوى؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Les cellules sanguines qui aident à combattre les infections ?"
+    },
+    "options": {
+      "en": [
+        "Roots",
+        "DNA",
+        "Vitamin D",
+        "White blood cells"
+      ],
+      "ar": [
+        "الجذور",
+        "الحمض النووي DNA",
+        "فيتامين د",
+        "خلايا الدم البيضاء"
+      ],
+      "fr": [
+        "racines",
+        "ADN",
+        "vitamine D",
+        "globules blancs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "White blood cells",
+      "ar": "خلايا الدم البيضاء",
+      "fr": "globules blancs"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q945",
+    "question": {
+      "en": "Which answer matches this clue: The part of a plant that usually absorbs water from soil?",
+      "ar": "أي إجابة تطابق هذه المعلومة: جزء النبات الذي يمتص الماء عادةً من التربة؟",
+      "fr": "Quelle réponse correspond à cet indice : La partie d’une plante qui absorbe généralement l’eau du sol ?"
+    },
+    "options": {
+      "en": [
+        "Roots",
+        "Photosynthesis",
+        "Skin",
+        "Heart"
+      ],
+      "ar": [
+        "الجذور",
+        "البناء الضوئي",
+        "الجلد",
+        "القلب"
+      ],
+      "fr": [
+        "racines",
+        "photosynthèse",
+        "peau",
+        "cœur"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Roots",
+      "ar": "الجذور",
+      "fr": "racines"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q946",
+    "question": {
+      "en": "What is described by this clue: The part of a plant that usually absorbs water from soil?",
+      "ar": "ما الذي تصفه هذه المعلومة: جزء النبات الذي يمتص الماء عادةً من التربة؟",
+      "fr": "Que décrit cet indice : La partie d’une plante qui absorbe généralement l’eau du sol ?"
+    },
+    "options": {
+      "en": [
+        "Four",
+        "White blood cells",
+        "DNA",
+        "Roots"
+      ],
+      "ar": [
+        "أربع",
+        "خلايا الدم البيضاء",
+        "الحمض النووي DNA",
+        "الجذور"
+      ],
+      "fr": [
+        "quatre",
+        "globules blancs",
+        "ADN",
+        "racines"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Roots",
+      "ar": "الجذور",
+      "fr": "racines"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q947",
+    "question": {
+      "en": "Identify the correct answer for this clue: The part of a plant that usually absorbs water from soil?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: جزء النبات الذي يمتص الماء عادةً من التربة؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La partie d’une plante qui absorbe généralement l’eau du sol ?"
+    },
+    "options": {
+      "en": [
+        "Photosynthesis",
+        "Skin",
+        "Roots",
+        "Vitamin D"
+      ],
+      "ar": [
+        "البناء الضوئي",
+        "الجلد",
+        "الجذور",
+        "فيتامين د"
+      ],
+      "fr": [
+        "photosynthèse",
+        "peau",
+        "racines",
+        "vitamine D"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Roots",
+      "ar": "الجذور",
+      "fr": "racines"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q948",
+    "question": {
+      "en": "Which answer matches this clue: The process plants use to make food using light?",
+      "ar": "أي إجابة تطابق هذه المعلومة: العملية التي تستخدمها النباتات لصنع الغذاء باستخدام الضوء؟",
+      "fr": "Quelle réponse correspond à cet indice : Le processus par lequel les plantes fabriquent leur nourriture grâce à la lumière ?"
+    },
+    "options": {
+      "en": [
+        "Heart",
+        "Four",
+        "White blood cells",
+        "Photosynthesis"
+      ],
+      "ar": [
+        "القلب",
+        "أربع",
+        "خلايا الدم البيضاء",
+        "البناء الضوئي"
+      ],
+      "fr": [
+        "cœur",
+        "quatre",
+        "globules blancs",
+        "photosynthèse"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Photosynthesis",
+      "ar": "البناء الضوئي",
+      "fr": "photosynthèse"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q949",
+    "question": {
+      "en": "What is described by this clue: The process plants use to make food using light?",
+      "ar": "ما الذي تصفه هذه المعلومة: العملية التي تستخدمها النباتات لصنع الغذاء باستخدام الضوء؟",
+      "fr": "Que décrit cet indice : Le processus par lequel les plantes fabriquent leur nourriture grâce à la lumière ?"
+    },
+    "options": {
+      "en": [
+        "Vitamin D",
+        "Roots",
+        "Photosynthesis",
+        "DNA"
+      ],
+      "ar": [
+        "فيتامين د",
+        "الجذور",
+        "البناء الضوئي",
+        "الحمض النووي DNA"
+      ],
+      "fr": [
+        "vitamine D",
+        "racines",
+        "photosynthèse",
+        "ADN"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Photosynthesis",
+      "ar": "البناء الضوئي",
+      "fr": "photosynthèse"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q950",
+    "question": {
+      "en": "Identify the correct answer for this clue: The process plants use to make food using light?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: العملية التي تستخدمها النباتات لصنع الغذاء باستخدام الضوء؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le processus par lequel les plantes fabriquent leur nourriture grâce à la lumière ?"
+    },
+    "options": {
+      "en": [
+        "Four",
+        "Photosynthesis",
+        "Skin",
+        "Heart"
+      ],
+      "ar": [
+        "أربع",
+        "البناء الضوئي",
+        "الجلد",
+        "القلب"
+      ],
+      "fr": [
+        "quatre",
+        "photosynthèse",
+        "peau",
+        "cœur"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Photosynthesis",
+      "ar": "البناء الضوئي",
+      "fr": "photosynthèse"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q951",
+    "question": {
+      "en": "Which answer matches this clue: The number of chambers in a human heart?",
+      "ar": "أي إجابة تطابق هذه المعلومة: عدد حجرات قلب الإنسان؟",
+      "fr": "Quelle réponse correspond à cet indice : Le nombre de cavités du cœur humain ?"
+    },
+    "options": {
+      "en": [
+        "DNA",
+        "Vitamin D",
+        "Four",
+        "White blood cells"
+      ],
+      "ar": [
+        "الحمض النووي DNA",
+        "فيتامين د",
+        "أربع",
+        "خلايا الدم البيضاء"
+      ],
+      "fr": [
+        "ADN",
+        "vitamine D",
+        "quatre",
+        "globules blancs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Four",
+      "ar": "أربع",
+      "fr": "quatre"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q952",
+    "question": {
+      "en": "What is described by this clue: The number of chambers in a human heart?",
+      "ar": "ما الذي تصفه هذه المعلومة: عدد حجرات قلب الإنسان؟",
+      "fr": "Que décrit cet indice : Le nombre de cavités du cœur humain ?"
+    },
+    "options": {
+      "en": [
+        "Heart",
+        "Four",
+        "Roots",
+        "Skin"
+      ],
+      "ar": [
+        "القلب",
+        "أربع",
+        "الجذور",
+        "الجلد"
+      ],
+      "fr": [
+        "cœur",
+        "quatre",
+        "racines",
+        "peau"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Four",
+      "ar": "أربع",
+      "fr": "quatre"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q953",
+    "question": {
+      "en": "Identify the correct answer for this clue: The number of chambers in a human heart?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: عدد حجرات قلب الإنسان؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le nombre de cavités du cœur humain ?"
+    },
+    "options": {
+      "en": [
+        "Four",
+        "Photosynthesis",
+        "White blood cells",
+        "DNA"
+      ],
+      "ar": [
+        "أربع",
+        "البناء الضوئي",
+        "خلايا الدم البيضاء",
+        "الحمض النووي DNA"
+      ],
+      "fr": [
+        "quatre",
+        "photosynthèse",
+        "globules blancs",
+        "ADN"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Four",
+      "ar": "أربع",
+      "fr": "quatre"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q954",
+    "question": {
+      "en": "Which answer matches this clue: The vitamin produced in human skin with sunlight exposure?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الفيتامين الذي ينتجه جلد الإنسان عند التعرض لأشعة الشمس؟",
+      "fr": "Quelle réponse correspond à cet indice : La vitamine produite par la peau humaine sous l’effet du soleil ?"
+    },
+    "options": {
+      "en": [
+        "Skin",
+        "Vitamin D",
+        "Four",
+        "Roots"
+      ],
+      "ar": [
+        "الجلد",
+        "فيتامين د",
+        "أربع",
+        "الجذور"
+      ],
+      "fr": [
+        "peau",
+        "vitamine D",
+        "quatre",
+        "racines"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vitamin D",
+      "ar": "فيتامين د",
+      "fr": "vitamine D"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q955",
+    "question": {
+      "en": "What is described by this clue: The vitamin produced in human skin with sunlight exposure?",
+      "ar": "ما الذي تصفه هذه المعلومة: الفيتامين الذي ينتجه جلد الإنسان عند التعرض لأشعة الشمس؟",
+      "fr": "Que décrit cet indice : La vitamine produite par la peau humaine sous l’effet du soleil ?"
+    },
+    "options": {
+      "en": [
+        "Vitamin D",
+        "Heart",
+        "Photosynthesis",
+        "White blood cells"
+      ],
+      "ar": [
+        "فيتامين د",
+        "القلب",
+        "البناء الضوئي",
+        "خلايا الدم البيضاء"
+      ],
+      "fr": [
+        "vitamine D",
+        "cœur",
+        "photosynthèse",
+        "globules blancs"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vitamin D",
+      "ar": "فيتامين د",
+      "fr": "vitamine D"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q956",
+    "question": {
+      "en": "Identify the correct answer for this clue: The vitamin produced in human skin with sunlight exposure?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الفيتامين الذي ينتجه جلد الإنسان عند التعرض لأشعة الشمس؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La vitamine produite par la peau humaine sous l’effet du soleil ?"
+    },
+    "options": {
+      "en": [
+        "DNA",
+        "Four",
+        "Roots",
+        "Vitamin D"
+      ],
+      "ar": [
+        "الحمض النووي DNA",
+        "أربع",
+        "الجذور",
+        "فيتامين د"
+      ],
+      "fr": [
+        "ADN",
+        "quatre",
+        "racines",
+        "vitamine D"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Vitamin D",
+      "ar": "فيتامين د",
+      "fr": "vitamine D"
+    },
+    "points": 10,
+    "category": "Biology"
+  },
+  {
+    "id": "q957",
+    "question": {
+      "en": "Which answer matches this clue: The planet closest to the Sun?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الكوكب الأقرب إلى الشمس؟",
+      "fr": "Quelle réponse correspond à cet indice : La planète la plus proche du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "Mercury",
+        "Sun",
+        "Jupiter",
+        "Sputnik 1"
+      ],
+      "ar": [
+        "عطارد",
+        "الشمس",
+        "المشتري",
+        "سبوتنيك 1"
+      ],
+      "fr": [
+        "Mercure",
+        "Soleil",
+        "Jupiter",
+        "Spoutnik 1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "عطارد",
+      "fr": "Mercure"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q958",
+    "question": {
+      "en": "What is described by this clue: The planet closest to the Sun?",
+      "ar": "ما الذي تصفه هذه المعلومة: الكوكب الأقرب إلى الشمس؟",
+      "fr": "Que décrit cet indice : La planète la plus proche du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "Moon",
+        "Milky Way",
+        "Mars",
+        "Mercury"
+      ],
+      "ar": [
+        "القمر",
+        "درب التبانة",
+        "المريخ",
+        "عطارد"
+      ],
+      "fr": [
+        "Lune",
+        "Voie lactée",
+        "Mars",
+        "Mercure"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "عطارد",
+      "fr": "Mercure"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q959",
+    "question": {
+      "en": "Identify the correct answer for this clue: The planet closest to the Sun?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الكوكب الأقرب إلى الشمس؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La planète la plus proche du Soleil ?"
+    },
+    "options": {
+      "en": [
+        "Sun",
+        "Jupiter",
+        "Mercury",
+        "Saturn"
+      ],
+      "ar": [
+        "الشمس",
+        "المشتري",
+        "عطارد",
+        "زحل"
+      ],
+      "fr": [
+        "Soleil",
+        "Jupiter",
+        "Mercure",
+        "Saturne"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mercury",
+      "ar": "عطارد",
+      "fr": "Mercure"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q960",
+    "question": {
+      "en": "Which answer matches this clue: The largest planet in our Solar System?",
+      "ar": "أي إجابة تطابق هذه المعلومة: أكبر كوكب في مجموعتنا الشمسية؟",
+      "fr": "Quelle réponse correspond à cet indice : La plus grande planète de notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Sputnik 1",
+        "Moon",
+        "Milky Way",
+        "Jupiter"
+      ],
+      "ar": [
+        "سبوتنيك 1",
+        "القمر",
+        "درب التبانة",
+        "المشتري"
+      ],
+      "fr": [
+        "Spoutnik 1",
+        "Lune",
+        "Voie lactée",
+        "Jupiter"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jupiter",
+      "ar": "المشتري",
+      "fr": "Jupiter"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q961",
+    "question": {
+      "en": "What is described by this clue: The largest planet in our Solar System?",
+      "ar": "ما الذي تصفه هذه المعلومة: أكبر كوكب في مجموعتنا الشمسية؟",
+      "fr": "Que décrit cet indice : La plus grande planète de notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Saturn",
+        "Sun",
+        "Jupiter",
+        "Mars"
+      ],
+      "ar": [
+        "زحل",
+        "الشمس",
+        "المشتري",
+        "المريخ"
+      ],
+      "fr": [
+        "Saturne",
+        "Soleil",
+        "Jupiter",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jupiter",
+      "ar": "المشتري",
+      "fr": "Jupiter"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q962",
+    "question": {
+      "en": "Identify the correct answer for this clue: The largest planet in our Solar System?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: أكبر كوكب في مجموعتنا الشمسية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La plus grande planète de notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Moon",
+        "Jupiter",
+        "Mercury",
+        "Sputnik 1"
+      ],
+      "ar": [
+        "القمر",
+        "المشتري",
+        "عطارد",
+        "سبوتنيك 1"
+      ],
+      "fr": [
+        "Lune",
+        "Jupiter",
+        "Mercure",
+        "Spoutnik 1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Jupiter",
+      "ar": "المشتري",
+      "fr": "Jupiter"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q963",
+    "question": {
+      "en": "Which answer matches this clue: The galaxy that contains our Solar System?",
+      "ar": "أي إجابة تطابق هذه المعلومة: المجرة التي تضم مجموعتنا الشمسية؟",
+      "fr": "Quelle réponse correspond à cet indice : La galaxie qui contient notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Mars",
+        "Saturn",
+        "Milky Way",
+        "Jupiter"
+      ],
+      "ar": [
+        "المريخ",
+        "زحل",
+        "درب التبانة",
+        "المشتري"
+      ],
+      "fr": [
+        "Mars",
+        "Saturne",
+        "Voie lactée",
+        "Jupiter"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Milky Way",
+      "ar": "درب التبانة",
+      "fr": "Voie lactée"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q964",
+    "question": {
+      "en": "What is described by this clue: The galaxy that contains our Solar System?",
+      "ar": "ما الذي تصفه هذه المعلومة: المجرة التي تضم مجموعتنا الشمسية؟",
+      "fr": "Que décrit cet indice : La galaxie qui contient notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Sputnik 1",
+        "Milky Way",
+        "Sun",
+        "Mercury"
+      ],
+      "ar": [
+        "سبوتنيك 1",
+        "درب التبانة",
+        "الشمس",
+        "عطارد"
+      ],
+      "fr": [
+        "Spoutnik 1",
+        "Voie lactée",
+        "Soleil",
+        "Mercure"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Milky Way",
+      "ar": "درب التبانة",
+      "fr": "Voie lactée"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q965",
+    "question": {
+      "en": "Identify the correct answer for this clue: The galaxy that contains our Solar System?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: المجرة التي تضم مجموعتنا الشمسية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La galaxie qui contient notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Milky Way",
+        "Moon",
+        "Jupiter",
+        "Mars"
+      ],
+      "ar": [
+        "درب التبانة",
+        "القمر",
+        "المشتري",
+        "المريخ"
+      ],
+      "fr": [
+        "Voie lactée",
+        "Lune",
+        "Jupiter",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Milky Way",
+      "ar": "درب التبانة",
+      "fr": "Voie lactée"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q966",
+    "question": {
+      "en": "Which answer matches this clue: The star at the center of our Solar System?",
+      "ar": "أي إجابة تطابق هذه المعلومة: النجم الموجود في مركز مجموعتنا الشمسية؟",
+      "fr": "Quelle réponse correspond à cet indice : L’étoile au centre de notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Mercury",
+        "Sun",
+        "Saturn",
+        "Milky Way"
+      ],
+      "ar": [
+        "عطارد",
+        "الشمس",
+        "زحل",
+        "درب التبانة"
+      ],
+      "fr": [
+        "Mercure",
+        "Soleil",
+        "Saturne",
+        "Voie lactée"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sun",
+      "ar": "الشمس",
+      "fr": "Soleil"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q967",
+    "question": {
+      "en": "What is described by this clue: The star at the center of our Solar System?",
+      "ar": "ما الذي تصفه هذه المعلومة: النجم الموجود في مركز مجموعتنا الشمسية؟",
+      "fr": "Que décrit cet indice : L’étoile au centre de notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Sun",
+        "Sputnik 1",
+        "Moon",
+        "Jupiter"
+      ],
+      "ar": [
+        "الشمس",
+        "سبوتنيك 1",
+        "القمر",
+        "المشتري"
+      ],
+      "fr": [
+        "Soleil",
+        "Spoutnik 1",
+        "Lune",
+        "Jupiter"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sun",
+      "ar": "الشمس",
+      "fr": "Soleil"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q968",
+    "question": {
+      "en": "Identify the correct answer for this clue: The star at the center of our Solar System?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: النجم الموجود في مركز مجموعتنا الشمسية؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : L’étoile au centre de notre système solaire ?"
+    },
+    "options": {
+      "en": [
+        "Mars",
+        "Saturn",
+        "Milky Way",
+        "Sun"
+      ],
+      "ar": [
+        "المريخ",
+        "زحل",
+        "درب التبانة",
+        "الشمس"
+      ],
+      "fr": [
+        "Mars",
+        "Saturne",
+        "Voie lactée",
+        "Soleil"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sun",
+      "ar": "الشمس",
+      "fr": "Soleil"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q969",
+    "question": {
+      "en": "Which answer matches this clue: The natural satellite of Earth?",
+      "ar": "أي إجابة تطابق هذه المعلومة: القمر الطبيعي للأرض؟",
+      "fr": "Quelle réponse correspond à cet indice : Le satellite naturel de la Terre ?"
+    },
+    "options": {
+      "en": [
+        "Moon",
+        "Mercury",
+        "Sputnik 1",
+        "Sun"
+      ],
+      "ar": [
+        "القمر",
+        "عطارد",
+        "سبوتنيك 1",
+        "الشمس"
+      ],
+      "fr": [
+        "Lune",
+        "Mercure",
+        "Spoutnik 1",
+        "Soleil"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Moon",
+      "ar": "القمر",
+      "fr": "Lune"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q970",
+    "question": {
+      "en": "What is described by this clue: The natural satellite of Earth?",
+      "ar": "ما الذي تصفه هذه المعلومة: القمر الطبيعي للأرض؟",
+      "fr": "Que décrit cet indice : Le satellite naturel de la Terre ?"
+    },
+    "options": {
+      "en": [
+        "Jupiter",
+        "Mars",
+        "Saturn",
+        "Moon"
+      ],
+      "ar": [
+        "المشتري",
+        "المريخ",
+        "زحل",
+        "القمر"
+      ],
+      "fr": [
+        "Jupiter",
+        "Mars",
+        "Saturne",
+        "Lune"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Moon",
+      "ar": "القمر",
+      "fr": "Lune"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q971",
+    "question": {
+      "en": "Identify the correct answer for this clue: The natural satellite of Earth?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: القمر الطبيعي للأرض؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le satellite naturel de la Terre ?"
+    },
+    "options": {
+      "en": [
+        "Mercury",
+        "Sputnik 1",
+        "Moon",
+        "Milky Way"
+      ],
+      "ar": [
+        "عطارد",
+        "سبوتنيك 1",
+        "القمر",
+        "درب التبانة"
+      ],
+      "fr": [
+        "Mercure",
+        "Spoutnik 1",
+        "Lune",
+        "Voie lactée"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Moon",
+      "ar": "القمر",
+      "fr": "Lune"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q972",
+    "question": {
+      "en": "Which answer matches this clue: The planet famous for its prominent ring system?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الكوكب المشهور بنظام حلقاته البارز؟",
+      "fr": "Quelle réponse correspond à cet indice : La planète célèbre pour son système d’anneaux remarquable ?"
+    },
+    "options": {
+      "en": [
+        "Sun",
+        "Jupiter",
+        "Mars",
+        "Saturn"
+      ],
+      "ar": [
+        "الشمس",
+        "المشتري",
+        "المريخ",
+        "زحل"
+      ],
+      "fr": [
+        "Soleil",
+        "Jupiter",
+        "Mars",
+        "Saturne"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Saturn",
+      "ar": "زحل",
+      "fr": "Saturne"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q973",
+    "question": {
+      "en": "What is described by this clue: The planet famous for its prominent ring system?",
+      "ar": "ما الذي تصفه هذه المعلومة: الكوكب المشهور بنظام حلقاته البارز؟",
+      "fr": "Que décrit cet indice : La planète célèbre pour son système d’anneaux remarquable ?"
+    },
+    "options": {
+      "en": [
+        "Milky Way",
+        "Mercury",
+        "Saturn",
+        "Moon"
+      ],
+      "ar": [
+        "درب التبانة",
+        "عطارد",
+        "زحل",
+        "القمر"
+      ],
+      "fr": [
+        "Voie lactée",
+        "Mercure",
+        "Saturne",
+        "Lune"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Saturn",
+      "ar": "زحل",
+      "fr": "Saturne"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q974",
+    "question": {
+      "en": "Identify the correct answer for this clue: The planet famous for its prominent ring system?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الكوكب المشهور بنظام حلقاته البارز؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La planète célèbre pour son système d’anneaux remarquable ?"
+    },
+    "options": {
+      "en": [
+        "Jupiter",
+        "Saturn",
+        "Sputnik 1",
+        "Sun"
+      ],
+      "ar": [
+        "المشتري",
+        "زحل",
+        "سبوتنيك 1",
+        "الشمس"
+      ],
+      "fr": [
+        "Jupiter",
+        "Saturne",
+        "Spoutnik 1",
+        "Soleil"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Saturn",
+      "ar": "زحل",
+      "fr": "Saturne"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q975",
+    "question": {
+      "en": "Which answer matches this clue: The name of the first artificial satellite launched into space?",
+      "ar": "أي إجابة تطابق هذه المعلومة: اسم أول قمر صناعي أُطلق إلى الفضاء؟",
+      "fr": "Quelle réponse correspond à cet indice : Le nom du premier satellite artificiel lancé dans l’espace ?"
+    },
+    "options": {
+      "en": [
+        "Moon",
+        "Milky Way",
+        "Sputnik 1",
+        "Mars"
+      ],
+      "ar": [
+        "القمر",
+        "درب التبانة",
+        "سبوتنيك 1",
+        "المريخ"
+      ],
+      "fr": [
+        "Lune",
+        "Voie lactée",
+        "Spoutnik 1",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sputnik 1",
+      "ar": "سبوتنيك 1",
+      "fr": "Spoutnik 1"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q976",
+    "question": {
+      "en": "What is described by this clue: The name of the first artificial satellite launched into space?",
+      "ar": "ما الذي تصفه هذه المعلومة: اسم أول قمر صناعي أُطلق إلى الفضاء؟",
+      "fr": "Que décrit cet indice : Le nom du premier satellite artificiel lancé dans l’espace ?"
+    },
+    "options": {
+      "en": [
+        "Sun",
+        "Sputnik 1",
+        "Mercury",
+        "Saturn"
+      ],
+      "ar": [
+        "الشمس",
+        "سبوتنيك 1",
+        "عطارد",
+        "زحل"
+      ],
+      "fr": [
+        "Soleil",
+        "Spoutnik 1",
+        "Mercure",
+        "Saturne"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sputnik 1",
+      "ar": "سبوتنيك 1",
+      "fr": "Spoutnik 1"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q977",
+    "question": {
+      "en": "Identify the correct answer for this clue: The name of the first artificial satellite launched into space?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: اسم أول قمر صناعي أُطلق إلى الفضاء؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le nom du premier satellite artificiel lancé dans l’espace ?"
+    },
+    "options": {
+      "en": [
+        "Sputnik 1",
+        "Jupiter",
+        "Mars",
+        "Moon"
+      ],
+      "ar": [
+        "سبوتنيك 1",
+        "المشتري",
+        "المريخ",
+        "القمر"
+      ],
+      "fr": [
+        "Spoutnik 1",
+        "Jupiter",
+        "Mars",
+        "Lune"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Sputnik 1",
+      "ar": "سبوتنيك 1",
+      "fr": "Spoutnik 1"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q978",
+    "question": {
+      "en": "Which answer matches this clue: The planet known as the Red Planet?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الكوكب المعروف بالكوكب الأحمر؟",
+      "fr": "Quelle réponse correspond à cet indice : La planète surnommée la planète rouge ?"
+    },
+    "options": {
+      "en": [
+        "Saturn",
+        "Mars",
+        "Milky Way",
+        "Mercury"
+      ],
+      "ar": [
+        "زحل",
+        "المريخ",
+        "درب التبانة",
+        "عطارد"
+      ],
+      "fr": [
+        "Saturne",
+        "Mars",
+        "Voie lactée",
+        "Mercure"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mars",
+      "ar": "المريخ",
+      "fr": "Mars"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q979",
+    "question": {
+      "en": "What is described by this clue: The planet known as the Red Planet?",
+      "ar": "ما الذي تصفه هذه المعلومة: الكوكب المعروف بالكوكب الأحمر؟",
+      "fr": "Que décrit cet indice : La planète surnommée la planète rouge ?"
+    },
+    "options": {
+      "en": [
+        "Mars",
+        "Sun",
+        "Jupiter",
+        "Sputnik 1"
+      ],
+      "ar": [
+        "المريخ",
+        "الشمس",
+        "المشتري",
+        "سبوتنيك 1"
+      ],
+      "fr": [
+        "Mars",
+        "Soleil",
+        "Jupiter",
+        "Spoutnik 1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mars",
+      "ar": "المريخ",
+      "fr": "Mars"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q980",
+    "question": {
+      "en": "Identify the correct answer for this clue: The planet known as the Red Planet?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الكوكب المعروف بالكوكب الأحمر؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La planète surnommée la planète rouge ?"
+    },
+    "options": {
+      "en": [
+        "Moon",
+        "Milky Way",
+        "Mercury",
+        "Mars"
+      ],
+      "ar": [
+        "القمر",
+        "درب التبانة",
+        "عطارد",
+        "المريخ"
+      ],
+      "fr": [
+        "Lune",
+        "Voie lactée",
+        "Mercure",
+        "Mars"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Mars",
+      "ar": "المريخ",
+      "fr": "Mars"
+    },
+    "points": 10,
+    "category": "Astronomy"
+  },
+  {
+    "id": "q981",
+    "question": {
+      "en": "Which answer matches this clue: The value of pi rounded to two decimal places?",
+      "ar": "أي إجابة تطابق هذه المعلومة: قيمة باي مقربة إلى منزلتين عشريتين؟",
+      "fr": "Quelle réponse correspond à cet indice : La valeur de pi arrondie à deux décimales ?"
+    },
+    "options": {
+      "en": [
+        "3.14",
+        "144",
+        "Prime number",
+        "13"
+      ],
+      "ar": [
+        "3.14",
+        "144",
+        "عدد أولي",
+        "13"
+      ],
+      "fr": [
+        "3,14",
+        "144",
+        "nombre premier",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3.14",
+      "ar": "3.14",
+      "fr": "3,14"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q982",
+    "question": {
+      "en": "What is described by this clue: The value of pi rounded to two decimal places?",
+      "ar": "ما الذي تصفه هذه المعلومة: قيمة باي مقربة إلى منزلتين عشريتين؟",
+      "fr": "Que décrit cet indice : La valeur de pi arrondie à deux décimales ?"
+    },
+    "options": {
+      "en": [
+        "Octagon",
+        "144",
+        "Prime number",
+        "3.14"
+      ],
+      "ar": [
+        "مثمّن",
+        "144",
+        "عدد أولي",
+        "3.14"
+      ],
+      "fr": [
+        "octogone",
+        "144",
+        "nombre premier",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3.14",
+      "ar": "3.14",
+      "fr": "3,14"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q983",
+    "question": {
+      "en": "Identify the correct answer for this clue: The value of pi rounded to two decimal places?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: قيمة باي مقربة إلى منزلتين عشريتين؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La valeur de pi arrondie à deux décimales ?"
+    },
+    "options": {
+      "en": [
+        "Octagon",
+        "144",
+        "3.14",
+        "1"
+      ],
+      "ar": [
+        "مثمّن",
+        "144",
+        "3.14",
+        "1"
+      ],
+      "fr": [
+        "octogone",
+        "144",
+        "3,14",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "3.14",
+      "ar": "3.14",
+      "fr": "3,14"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q984",
+    "question": {
+      "en": "Which answer matches this clue: The result of 12 multiplied by 12?",
+      "ar": "أي إجابة تطابق هذه المعلومة: ناتج ضرب 12 في 12؟",
+      "fr": "Quelle réponse correspond à cet indice : Le résultat de 12 multiplié par 12 ?"
+    },
+    "options": {
+      "en": [
+        "180 degrees",
+        "1",
+        "Octagon",
+        "144"
+      ],
+      "ar": [
+        "180 درجة",
+        "1",
+        "مثمّن",
+        "144"
+      ],
+      "fr": [
+        "180 degrés",
+        "1",
+        "octogone",
+        "144"
+      ]
+    },
+    "correctAnswer": {
+      "en": "144",
+      "ar": "144",
+      "fr": "144"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q985",
+    "question": {
+      "en": "What is described by this clue: The result of 12 multiplied by 12?",
+      "ar": "ما الذي تصفه هذه المعلومة: ناتج ضرب 12 في 12؟",
+      "fr": "Que décrit cet indice : Le résultat de 12 multiplié par 12 ?"
+    },
+    "options": {
+      "en": [
+        "180 degrees",
+        "1",
+        "144",
+        "13"
+      ],
+      "ar": [
+        "180 درجة",
+        "1",
+        "144",
+        "13"
+      ],
+      "fr": [
+        "180 degrés",
+        "1",
+        "144",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "144",
+      "ar": "144",
+      "fr": "144"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q986",
+    "question": {
+      "en": "Identify the correct answer for this clue: The result of 12 multiplied by 12?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: ناتج ضرب 12 في 12؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le résultat de 12 multiplié par 12 ?"
+    },
+    "options": {
+      "en": [
+        "180 degrees",
+        "144",
+        "Prime number",
+        "13"
+      ],
+      "ar": [
+        "180 درجة",
+        "144",
+        "عدد أولي",
+        "13"
+      ],
+      "fr": [
+        "180 degrés",
+        "144",
+        "nombre premier",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "144",
+      "ar": "144",
+      "fr": "144"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q987",
+    "question": {
+      "en": "Which answer matches this clue: A polygon with eight sides?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مضلع له ثمانية أضلاع؟",
+      "fr": "Quelle réponse correspond à cet indice : Un polygone à huit côtés ?"
+    },
+    "options": {
+      "en": [
+        "Prime number",
+        "13",
+        "Octagon",
+        "3.14"
+      ],
+      "ar": [
+        "عدد أولي",
+        "13",
+        "مثمّن",
+        "3.14"
+      ],
+      "fr": [
+        "nombre premier",
+        "13",
+        "octogone",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Octagon",
+      "ar": "مثمّن",
+      "fr": "octogone"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q988",
+    "question": {
+      "en": "What is described by this clue: A polygon with eight sides?",
+      "ar": "ما الذي تصفه هذه المعلومة: مضلع له ثمانية أضلاع؟",
+      "fr": "Que décrit cet indice : Un polygone à huit côtés ?"
+    },
+    "options": {
+      "en": [
+        "Prime number",
+        "Octagon",
+        "144",
+        "3.14"
+      ],
+      "ar": [
+        "عدد أولي",
+        "مثمّن",
+        "144",
+        "3.14"
+      ],
+      "fr": [
+        "nombre premier",
+        "octogone",
+        "144",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Octagon",
+      "ar": "مثمّن",
+      "fr": "octogone"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q989",
+    "question": {
+      "en": "Identify the correct answer for this clue: A polygon with eight sides?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مضلع له ثمانية أضلاع؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Un polygone à huit côtés ?"
+    },
+    "options": {
+      "en": [
+        "Octagon",
+        "1",
+        "144",
+        "3.14"
+      ],
+      "ar": [
+        "مثمّن",
+        "1",
+        "144",
+        "3.14"
+      ],
+      "fr": [
+        "octogone",
+        "1",
+        "144",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Octagon",
+      "ar": "مثمّن",
+      "fr": "octogone"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q990",
+    "question": {
+      "en": "Which answer matches this clue: The number that is neither prime nor composite?",
+      "ar": "أي إجابة تطابق هذه المعلومة: العدد الذي ليس أولياً ولا مركباً؟",
+      "fr": "Quelle réponse correspond à cet indice : Le nombre qui n’est ni premier ni composé ?"
+    },
+    "options": {
+      "en": [
+        "144",
+        "1",
+        "180 degrees",
+        "Octagon"
+      ],
+      "ar": [
+        "144",
+        "1",
+        "180 درجة",
+        "مثمّن"
+      ],
+      "fr": [
+        "144",
+        "1",
+        "180 degrés",
+        "octogone"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q991",
+    "question": {
+      "en": "What is described by this clue: The number that is neither prime nor composite?",
+      "ar": "ما الذي تصفه هذه المعلومة: العدد الذي ليس أولياً ولا مركباً؟",
+      "fr": "Que décrit cet indice : Le nombre qui n’est ni premier ni composé ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "13",
+        "180 degrees",
+        "Octagon"
+      ],
+      "ar": [
+        "1",
+        "13",
+        "180 درجة",
+        "مثمّن"
+      ],
+      "fr": [
+        "1",
+        "13",
+        "180 degrés",
+        "octogone"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q992",
+    "question": {
+      "en": "Identify the correct answer for this clue: The number that is neither prime nor composite?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: العدد الذي ليس أولياً ولا مركباً؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le nombre qui n’est ni premier ni composé ?"
+    },
+    "options": {
+      "en": [
+        "Prime number",
+        "13",
+        "180 degrees",
+        "1"
+      ],
+      "ar": [
+        "عدد أولي",
+        "13",
+        "180 درجة",
+        "1"
+      ],
+      "fr": [
+        "nombre premier",
+        "13",
+        "180 degrés",
+        "1"
+      ]
+    },
+    "correctAnswer": {
+      "en": "1",
+      "ar": "1",
+      "fr": "1"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q993",
+    "question": {
+      "en": "Which answer matches this clue: The sum of the interior angles of a triangle?",
+      "ar": "أي إجابة تطابق هذه المعلومة: مجموع الزوايا الداخلية للمثلث؟",
+      "fr": "Quelle réponse correspond à cet indice : La somme des angles intérieurs d’un triangle ?"
+    },
+    "options": {
+      "en": [
+        "180 degrees",
+        "3.14",
+        "Prime number",
+        "13"
+      ],
+      "ar": [
+        "180 درجة",
+        "3.14",
+        "عدد أولي",
+        "13"
+      ],
+      "fr": [
+        "180 degrés",
+        "3,14",
+        "nombre premier",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "180 degrees",
+      "ar": "180 درجة",
+      "fr": "180 degrés"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q994",
+    "question": {
+      "en": "What is described by this clue: The sum of the interior angles of a triangle?",
+      "ar": "ما الذي تصفه هذه المعلومة: مجموع الزوايا الداخلية للمثلث؟",
+      "fr": "Que décrit cet indice : La somme des angles intérieurs d’un triangle ?"
+    },
+    "options": {
+      "en": [
+        "144",
+        "3.14",
+        "Prime number",
+        "180 degrees"
+      ],
+      "ar": [
+        "144",
+        "3.14",
+        "عدد أولي",
+        "180 درجة"
+      ],
+      "fr": [
+        "144",
+        "3,14",
+        "nombre premier",
+        "180 degrés"
+      ]
+    },
+    "correctAnswer": {
+      "en": "180 degrees",
+      "ar": "180 درجة",
+      "fr": "180 degrés"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q995",
+    "question": {
+      "en": "Identify the correct answer for this clue: The sum of the interior angles of a triangle?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: مجموع الزوايا الداخلية للمثلث؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La somme des angles intérieurs d’un triangle ?"
+    },
+    "options": {
+      "en": [
+        "144",
+        "3.14",
+        "180 degrees",
+        "Octagon"
+      ],
+      "ar": [
+        "144",
+        "3.14",
+        "180 درجة",
+        "مثمّن"
+      ],
+      "fr": [
+        "144",
+        "3,14",
+        "180 degrés",
+        "octogone"
+      ]
+    },
+    "correctAnswer": {
+      "en": "180 degrees",
+      "ar": "180 درجة",
+      "fr": "180 degrés"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q996",
+    "question": {
+      "en": "Which answer matches this clue: The square root of 169?",
+      "ar": "أي إجابة تطابق هذه المعلومة: الجذر التربيعي للعدد 169؟",
+      "fr": "Quelle réponse correspond à cet indice : La racine carrée de 169 ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "Octagon",
+        "144",
+        "13"
+      ],
+      "ar": [
+        "1",
+        "مثمّن",
+        "144",
+        "13"
+      ],
+      "fr": [
+        "1",
+        "octogone",
+        "144",
+        "13"
+      ]
+    },
+    "correctAnswer": {
+      "en": "13",
+      "ar": "13",
+      "fr": "13"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q997",
+    "question": {
+      "en": "What is described by this clue: The square root of 169?",
+      "ar": "ما الذي تصفه هذه المعلومة: الجذر التربيعي للعدد 169؟",
+      "fr": "Que décrit cet indice : La racine carrée de 169 ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "Octagon",
+        "13",
+        "180 degrees"
+      ],
+      "ar": [
+        "1",
+        "مثمّن",
+        "13",
+        "180 درجة"
+      ],
+      "fr": [
+        "1",
+        "octogone",
+        "13",
+        "180 degrés"
+      ]
+    },
+    "correctAnswer": {
+      "en": "13",
+      "ar": "13",
+      "fr": "13"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q998",
+    "question": {
+      "en": "Identify the correct answer for this clue: The square root of 169?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: الجذر التربيعي للعدد 169؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : La racine carrée de 169 ?"
+    },
+    "options": {
+      "en": [
+        "1",
+        "13",
+        "Prime number",
+        "180 degrees"
+      ],
+      "ar": [
+        "1",
+        "13",
+        "عدد أولي",
+        "180 درجة"
+      ],
+      "fr": [
+        "1",
+        "13",
+        "nombre premier",
+        "180 degrés"
+      ]
+    },
+    "correctAnswer": {
+      "en": "13",
+      "ar": "13",
+      "fr": "13"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q999",
+    "question": {
+      "en": "Which answer matches this clue: The name of a number divisible by exactly two positive integers?",
+      "ar": "أي إجابة تطابق هذه المعلومة: اسم العدد الذي يقبل القسمة على عددين صحيحين موجبين فقط؟",
+      "fr": "Quelle réponse correspond à cet indice : Le nom d’un nombre divisible par exactement deux entiers positifs ?"
+    },
+    "options": {
+      "en": [
+        "13",
+        "180 degrees",
+        "Prime number",
+        "3.14"
+      ],
+      "ar": [
+        "13",
+        "180 درجة",
+        "عدد أولي",
+        "3.14"
+      ],
+      "fr": [
+        "13",
+        "180 degrés",
+        "nombre premier",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Prime number",
+      "ar": "عدد أولي",
+      "fr": "nombre premier"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q1000",
+    "question": {
+      "en": "What is described by this clue: The name of a number divisible by exactly two positive integers?",
+      "ar": "ما الذي تصفه هذه المعلومة: اسم العدد الذي يقبل القسمة على عددين صحيحين موجبين فقط؟",
+      "fr": "Que décrit cet indice : Le nom d’un nombre divisible par exactement deux entiers positifs ?"
+    },
+    "options": {
+      "en": [
+        "13",
+        "Prime number",
+        "144",
+        "3.14"
+      ],
+      "ar": [
+        "13",
+        "عدد أولي",
+        "144",
+        "3.14"
+      ],
+      "fr": [
+        "13",
+        "nombre premier",
+        "144",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Prime number",
+      "ar": "عدد أولي",
+      "fr": "nombre premier"
+    },
+    "points": 10,
+    "category": "Mathematics"
+  },
+  {
+    "id": "q1001",
+    "question": {
+      "en": "Identify the correct answer for this clue: The name of a number divisible by exactly two positive integers?",
+      "ar": "حدد الإجابة الصحيحة لهذه المعلومة: اسم العدد الذي يقبل القسمة على عددين صحيحين موجبين فقط؟",
+      "fr": "Identifiez la bonne réponse pour cet indice : Le nom d’un nombre divisible par exactement deux entiers positifs ?"
+    },
+    "options": {
+      "en": [
+        "Prime number",
+        "Octagon",
+        "144",
+        "3.14"
+      ],
+      "ar": [
+        "عدد أولي",
+        "مثمّن",
+        "144",
+        "3.14"
+      ],
+      "fr": [
+        "nombre premier",
+        "octogone",
+        "144",
+        "3,14"
+      ]
+    },
+    "correctAnswer": {
+      "en": "Prime number",
+      "ar": "عدد أولي",
+      "fr": "nombre premier"
+    },
+    "points": 10,
+    "category": "Mathematics"
   }
 ]
