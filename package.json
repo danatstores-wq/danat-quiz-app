@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:mobile": "node scripts/build-mobile.mjs",
-    "cap:add:android": "npm run build:mobile && cap add android && node scripts/configure-native-ads.mjs && cap sync android",
+    "cap:add:android": "npm run build:mobile && cap add android && node scripts/configure-android-icon.mjs && node scripts/configure-native-ads.mjs && cap sync android",
     "cap:add:ios": "npm run build:mobile && cap add ios && node scripts/configure-native-ads.mjs && cap sync ios",
     "cap:sync": "npm run build:mobile && cap sync"
   },
